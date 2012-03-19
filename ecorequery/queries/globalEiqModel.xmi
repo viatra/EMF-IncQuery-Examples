@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage">
+  <patterns name="EClass">
+    <parameters name="EClass"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="EClass"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="SuperTypeOf">
+    <parameters name="Super"/>
+    <parameters name="Sub"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eSuperTypes"/>
+            </type>
+          </tail>
+          <src var="Sub"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Super"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="Super"/>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="Sub"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="EClassAttribute">
+    <parameters name="E"/>
+    <parameters name="Attr"/>
+    <parameters name="Type"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="E"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+            </type>
+          </tail>
+          <src var="E"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Attr"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+        </type>
+        <var var="Attr"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+            </type>
+          </tail>
+          <src var="Attr"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Type"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="EClassWithEStringAttribute">
+    <parameters name="E"/>
+    <parameters name="Attr"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="E"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.2">
+        <parameters var="E"/>
+        <parameters var="Attr"/>
+        <parameters var="Type"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.8">
+        <parameters var="Type"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="EReferenceWithStarMultiplicity">
+    <parameters name="ERef"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+        </type>
+        <var var="ERef"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+            </type>
+          </tail>
+          <src var="ERef"/>
+          <dst xsi:type="patternLanguage:IntValue"/>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+            </type>
+          </tail>
+          <src var="ERef"/>
+          <dst xsi:type="patternLanguage:IntValue" value="-1"/>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="EReferenceWithOneMultiplicity">
+    <parameters name="ERef"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+        </type>
+        <var var="ERef"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+            </type>
+          </tail>
+          <src var="ERef"/>
+          <dst xsi:type="patternLanguage:IntValue" value="1"/>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+            </type>
+          </tail>
+          <src var="ERef"/>
+          <dst xsi:type="patternLanguage:IntValue" value="1"/>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="SampleQuery">
+    <parameters name="XElement"/>
+    <parameters name="YElement"/>
+    <parameters name="Relates"/>
+    <parameters name="Label1"/>
+    <parameters name="Label2"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="XElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+            </type>
+          </tail>
+          <src var="XElement"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Relates"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+        </type>
+        <var var="Relates"/>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="YElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+            </type>
+          </tail>
+          <src var="Relates"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="YElement"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
+        <parameters var="Relates"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters var="XElement"/>
+        <parameters var="Label1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters var="YElement"/>
+        <parameters var="Label2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
+        <parameters var="XElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
+        <parameters var="YElement"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="SampleQuery2">
+    <parameters name="XElement"/>
+    <parameters name="YElement"/>
+    <parameters name="Relates1"/>
+    <parameters name="Relates2"/>
+    <parameters name="Label1"/>
+    <parameters name="Label2"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="XElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+            </type>
+          </tail>
+          <src var="XElement"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Relates1"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+        </type>
+        <var var="Relates1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eOpposite"/>
+            </type>
+          </tail>
+          <src var="Relates1"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Relates2"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+        </type>
+        <var var="Relates2"/>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        </type>
+        <var var="YElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+            </type>
+          </tail>
+          <src var="Relates1"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="YElement"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
+        <parameters var="Relates1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.5">
+        <parameters var="Relates2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters var="XElement"/>
+        <parameters var="Label1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters var="YElement"/>
+        <parameters var="Label2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
+        <parameters var="XElement"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
+        <parameters var="YElement"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="IsEString">
+    <parameters name="Element"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.10">
+        <parameters var="Element"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.9">
+        <parameters var="Element"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="ECoreNamedElement">
+    <parameters name="Element"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+        </type>
+        <var var="Element"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+            </type>
+          </tail>
+          <src var="Element"/>
+          <dst xsi:type="patternLanguage:StringValue" value="EString"/>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="IsInECore">
+    <parameters name="Element"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/ePackage"/>
+            </type>
+          </tail>
+          <src var="Element"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="EP"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+        </type>
+        <var var="EP"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+            </type>
+          </tail>
+          <src var="EP"/>
+          <dst xsi:type="patternLanguage:StringValue" value="http://www.eclipse.org/emf/2002/Ecore"/>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <importPackages>
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </importPackages>
+</eMFPatternLanguage:PatternModel>
