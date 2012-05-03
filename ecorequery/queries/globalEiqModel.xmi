@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage">
-  <patterns name="EClass">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.EClass">
     <parameters name="EClass"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
@@ -11,7 +11,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="SuperTypeOf">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf">
     <parameters name="Super"/>
     <parameters name="Sub"/>
     <bodies>
@@ -45,7 +45,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="EClassAttribute">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.EClassAttribute">
     <parameters name="E"/>
     <parameters name="Attr"/>
     <parameters name="Type"/>
@@ -96,7 +96,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="EClassWithEStringAttribute">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute">
     <parameters name="E"/>
     <parameters name="Attr"/>
     <bodies>
@@ -107,16 +107,24 @@
         <var var="E"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.2">
-        <parameters var="E"/>
-        <parameters var="Attr"/>
-        <parameters var="Type"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="E"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Attr"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Type"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.8">
-        <parameters var="Type"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Type"/>
+        </parameters>
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="EReferenceWithStarMultiplicity">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity">
     <parameters name="ERef"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
@@ -155,7 +163,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="EReferenceWithOneMultiplicity">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity">
     <parameters name="ERef"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
@@ -194,7 +202,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="SampleQuery">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.SampleQuery">
     <parameters name="XElement"/>
     <parameters name="YElement"/>
     <parameters name="Relates"/>
@@ -252,25 +260,39 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
-        <parameters var="Relates"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Relates"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters var="XElement"/>
-        <parameters var="Label1"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="XElement"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Label1"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters var="YElement"/>
-        <parameters var="Label2"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YElement"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Label2"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
-        <parameters var="XElement"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="XElement"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
-        <parameters var="YElement"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YElement"/>
+        </parameters>
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="SampleQuery2">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.SampleQuery2">
     <parameters name="XElement"/>
     <parameters name="YElement"/>
     <parameters name="Relates1"/>
@@ -351,40 +373,62 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
-        <parameters var="Relates1"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Relates1"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.5">
-        <parameters var="Relates2"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Relates2"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters var="XElement"/>
-        <parameters var="Label1"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="XElement"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Label1"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters var="YElement"/>
-        <parameters var="Label2"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YElement"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Label2"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
-        <parameters var="XElement"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="XElement"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true" patternRef="//@patterns.10">
-        <parameters var="YElement"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YElement"/>
+        </parameters>
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="IsEString">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.IsEString">
     <parameters name="Element"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.10">
-        <parameters var="Element"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Element"/>
+        </parameters>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.9">
-        <parameters var="Element"/>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Element"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:StringValue" value="EString"/>
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="ECoreNamedElement">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement">
     <parameters name="Element"/>
+    <parameters name="Name"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
@@ -403,12 +447,14 @@
             </type>
           </tail>
           <src var="Element"/>
-          <dst xsi:type="patternLanguage:StringValue" value="EString"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Name"/>
+          </dst>
         </head>
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="IsInECore">
+  <patterns name="hu.bme.mit.incquery.ecorequeries.example.IsInECore">
     <parameters name="Element"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
@@ -449,7 +495,4 @@
       </constraints>
     </bodies>
   </patterns>
-  <importPackages>
-    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
-  </importPackages>
 </eMFPatternLanguage:PatternModel>

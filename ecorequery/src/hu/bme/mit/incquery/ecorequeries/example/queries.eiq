@@ -118,16 +118,16 @@ pattern SampleQuery2(XElement, YElement, Relates1, Relates2, Label1, Label2) = {
 
 pattern IsEString(Element) = {
 	find IsInECore(Element);
-	find ECoreNamedElement(Element);
+	find ECoreNamedElement(Element,"EString");
 }
 
 /*
  * Generic pattern: Element is an ECore model element, having name Name
  */ 
 
-pattern ECoreNamedElement(Element) = {
+pattern ECoreNamedElement(Element,Name) = {
        ENamedElement(Element);
-       ENamedElement.name(Element,"EString");
+       ENamedElement.name(Element,Name);
 }
 
 /*
