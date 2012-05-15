@@ -1,0 +1,95 @@
+package school
+
+import "http:///school.ecore" 
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+
+	pattern school (S) = {
+		School(S);
+	}
+
+
+	/**
+	 * School names pattern
+	 */
+	pattern schoolName(S, Name) = {
+ 		School(S);
+ 		School.name(S, Name);
+  		School.name(S, Name);
+ 		EString(Name);
+ 	}
+	 	
+	/**
+	 * Students name pattern
+	 */
+   	pattern studentName(S, Name) = {
+ 		Student(S);
+  		Student.name(S, Name);
+ 		EString(Name);
+ 	}		
+ 	
+ 	/**
+ 	 * Return the students of the school
+ 	 */
+ 	pattern studentOfSchool(Student, School, Year, SchoolClass) = {
+ 		School(School);
+ 		School.years(School, Year);
+ 		Year(Year);
+ 		Year.schoolClasses(Year, SchoolClass);
+ 		SchoolClass(SchoolClass);
+ 		SchoolClass.students(SchoolClass, Student);
+ 		Student(Student);
+ 		
+ 	}	
+ 		
+ 		
+ 	/**
+ 	 * Return a students pair, who study in same school and the first one is the older
+ 	 */
+ 	pattern inSameSchoolDifferentYears(ElderStudent: Student, YoungerStudent: Student) = {
+ 		find studentOfSchool(ElderStudent, School, Year1, SchoolClass1);
+ 		find studentOfSchool(YoungerStudent, School, Year2, SchoolClass2); 
+
+ 		Year.startingDate(Year1, Date1);
+ 		EInt(Date1);
+ 		Year.startingDate(Year2, Date2);
+ 		EInt(Date2); 		
+ 				
+ 		ElderStudent != YoungerStudent;		
+ 		Date1 != Date2;
+ 		// Date1 != Date2;
+ 		
+ 	}	
+  				
+
+	/**
+	 * Return a students pair, who study in same school class and the first one is the older
+	 */
+ 	pattern sameCodeClassDifferentYears(ElderStudent, YoungerStudent) = {
+ 		find inSameSchoolDifferentYears(ElderStudent, YoungerStudent);
+ 		
+  		SchoolClass.students(SchoolClass1, ElderStudent);
+  		SchoolClass(SchoolClass1);
+ 		SchoolClass.code(SchoolClass1, Code1);
+ 		EChar(Code1);
+   		SchoolClass.students(SchoolClass2, YoungerStudent);
+  		SchoolClass(SchoolClass2);
+ 		SchoolClass.code(SchoolClass2, Code2);
+ 		EChar(Code2);
+ 		
+ 	}
+
+ 	pattern sameCodeClassDifferentYearsBetter(ElderStudent, YoungerStudent) = {
+ 		find inSameSchoolDifferentYears(ElderStudent, YoungerStudent);
+ 		
+  		SchoolClass.students(SchoolClass1, ElderStudent);
+  		SchoolClass(SchoolClass1);
+ 		SchoolClass.code(SchoolClass1, Code);
+ 		EChar(Code);
+   		SchoolClass.students(SchoolClass2, YoungerStudent);
+  		SchoolClass(SchoolClass2);
+ 		SchoolClass.code(SchoolClass2, Code);
+ 		
+ 	}
+
+
