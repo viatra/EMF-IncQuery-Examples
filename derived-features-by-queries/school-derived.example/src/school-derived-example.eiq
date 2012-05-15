@@ -1,0 +1,30 @@
+import "http:///school.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+pattern coursesOfTeacherWithMostCourses(School, Teacher, Course) = {
+   School(School);
+   School.teachersWithMostCourses(School,Teacher);
+   Teacher(Teacher);
+   Teacher.courses(Teacher,Course);
+   Course(Course);
+}
+
+pattern classesOfLastYear(School, Year, Clss) = {
+   School(School);
+   School.lastYear(School,Year);
+   Year(Year);
+   Year.schoolClasses(Year,Clss);
+   SchoolClass(Clss);
+}
+
+pattern schoolWithMostTeachers(School, NoTeacher) = {
+   School(School);
+   EInt(NoTeacher);
+   School.numberOfTeachers(School, NoTeacher);
+
+   School(School2);
+   EInt(NoTeacher2);
+   School.numberOfTeachers(School2, NoTeacher2);
+
+   NoTeacher == NoTeacher2;
+}

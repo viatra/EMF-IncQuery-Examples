@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http:///school.ecore" currentYear="2011">
+  <years startingDate="2012">
+    <schoolClasses code="97"/>
+  </years>
+  <years startingDate="2011">
+    <schoolClasses code="98"/>
+  </years>
+  <teachers name="T1" courses="//@courses.0 //@courses.1"/>
+  <teachers name="T2"/>
+  <teachers name="T3"/>
+  <courses subject="C1"/>
+  <courses subject="C2"/>
+</school:School>
