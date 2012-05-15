@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.gs.dsl/src"
+    modelPluginID="hu.bme.mit.inf.gs.dsl" modelName="SoaModel" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false">
+  <foreignModel>SoaModel.ecore</foreignModel>
+  <genPackages prefix="Soamodel" disposableProviderFactory="true" ecorePackage="SoaModel.ecore#/">
+    <genClasses image="false" ecoreClass="SoaModel.ecore#//ServiceComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceComponent/methods"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//ServiceComponent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//ServiceComponent/namespace"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//CSharpComponent"/>
+    <genClasses ecoreClass="SoaModel.ecore#//JEEComponent"/>
+    <genClasses ecoreClass="SoaModel.ecore#//ServiceMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//ServiceMethod/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceMethod/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceMethod/methodType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//ServiceMethod/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceMethod/postconditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceMethod/preconditions"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoaModel.ecore#//Parameter/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//Parameter/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SoaModel.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//DataType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//Entity/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//Entity/oclConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//BuiltInDataType"/>
+    <genClasses ecoreClass="SoaModel.ecore#//CollectionType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoaModel.ecore#//CollectionType/itemType"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//Attribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoaModel.ecore#//Attribute/attributeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//Attribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//ServiceOrientedArchitecture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceOrientedArchitecture/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//ServiceOrientedArchitecture/dataTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//ServiceOrientedArchitecture/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//OCLConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//OCLConstraint/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//OCLConstraint/description"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//Enum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoaModel.ecore#//Enum/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//EnumLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoaModel.ecore#//EnumLiteral/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SoaModel.ecore#//OSGiComponent"/>
+    <genClasses ecoreClass="SoaModel.ecore#//OCLPostcondition" labelFeature="#//soamodel/OCLConstraint/description"/>
+    <genClasses ecoreClass="SoaModel.ecore#//OCLDataConstraint" labelFeature="#//soamodel/OCLConstraint/description"/>
+    <genClasses ecoreClass="SoaModel.ecore#//OCLPrecondition" labelFeature="#//soamodel/OCLConstraint/description"/>
+  </genPackages>
+</genmodel:GenModel>
