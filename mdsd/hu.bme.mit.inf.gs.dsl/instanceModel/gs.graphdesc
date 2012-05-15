@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphdesc:GVFigureDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:graphdesc="http://org.emftools.emf2gv.graphdesc/1.1.0" alignSameEClasses="true">
+  <ePackages href="http://soamodel/1.0#/"/>
+  <classFigures headerBackgroundColor="#D0BCFE" bodyBackgroundColor="#EFE8FE">
+    <eClass href="http://soamodel/1.0#//ServiceComponent"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceComponent/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" targetArrowType="box" color="#FF0000">
+      <eReference href="http://soamodel/1.0#//ServiceComponent/connectsTo"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceComponent/methods"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#CD9BFF" bodyBackgroundColor="#DEE9FD">
+    <eClass href="http://soamodel/1.0#//CSharpComponent"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceComponent/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure">
+      <eReference href="http://soamodel/1.0#//ServiceComponent/connectsTo"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceComponent/methods"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#98FB98" bodyBackgroundColor="#DCFDDC">
+    <eClass href="http://soamodel/1.0#//JEEComponent"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceComponent/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure">
+      <eReference href="http://soamodel/1.0#//ServiceComponent/connectsTo"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceComponent/methods"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFF575" bodyBackgroundColor="#FFFBD1">
+    <eClass href="http://soamodel/1.0#//ServiceMethod"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceMethod/name"/>
+    <attributeFigures xsi:type="graphdesc:RichAttributeFigure" labelExpression="name + ' : ' + parameterType.name">
+      <eReference href="http://soamodel/1.0#//ServiceMethod/parameters"/>
+    </attributeFigures>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" sourceArrowType="crow" style="dashed">
+      <eReference href="http://soamodel/1.0#//ServiceMethod/methodType"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceMethod/preconditions"/>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceMethod/postconditions"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#E3D6AA" bodyBackgroundColor="#F5F1E2">
+    <eClass href="http://soamodel/1.0#//Parameter"/>
+    <labelEAttribute href="http://soamodel/1.0#//Parameter/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure">
+      <eReference href="http://soamodel/1.0#//Parameter/parameterType"/>
+    </referenceFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFC895" bodyBackgroundColor="#FFECDB">
+    <eClass href="http://soamodel/1.0#//Entity"/>
+    <labelEAttribute href="http://soamodel/1.0#//DataType/name"/>
+    <attributeFigures xsi:type="graphdesc:RichAttributeFigure" labelExpression="name + ' : ' + attributeType.name">
+      <eReference href="http://soamodel/1.0#//Entity/attributes"/>
+    </attributeFigures>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" targetArrowType="inv" color="#800000" style="bold">
+      <eReference href="http://soamodel/1.0#//Entity/superType"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//Entity/oclConstraints"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#D0BCFE" bodyBackgroundColor="#EFE8FE">
+    <eClass href="http://soamodel/1.0#//Attribute"/>
+    <labelEAttribute href="http://soamodel/1.0#//Attribute/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure">
+      <eReference href="http://soamodel/1.0#//Attribute/attributeType"/>
+    </referenceFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#8080C0" bodyBackgroundColor="#DEE9FD">
+    <eClass href="http://soamodel/1.0#//ServiceOrientedArchitecture"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceOrientedArchitecture/name"/>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceOrientedArchitecture/components"/>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceOrientedArchitecture/dataTypes"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#98FB98" bodyBackgroundColor="#DCFDDC">
+    <eClass href="http://soamodel/1.0#//Enum"/>
+    <labelEAttribute href="http://soamodel/1.0#//DataType/name"/>
+    <attributeFigures xsi:type="graphdesc:RichAttributeFigure" labelExpression="name">
+      <eReference href="http://soamodel/1.0#//Enum/literals"/>
+    </attributeFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFF575" bodyBackgroundColor="#FFFBD1">
+    <eClass href="http://soamodel/1.0#//EnumLiteral"/>
+    <labelEAttribute href="http://soamodel/1.0#//EnumLiteral/name"/>
+  </classFigures>
+  <classFigures headerBackgroundColor="#E3D6AA" bodyBackgroundColor="#F5F1E2">
+    <eClass href="http://soamodel/1.0#//OSGiComponent"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceComponent/name"/>
+    <attributeFigures xsi:type="graphdesc:AttributeFigure">
+      <eAttribute href="http://soamodel/1.0#//ServiceComponent/namespace"/>
+    </attributeFigures>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" sourceArrowType="diamond">
+      <eReference href="http://soamodel/1.0#//ServiceComponent/methods"/>
+    </referenceFigures>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure">
+      <eReference href="http://soamodel/1.0#//ServiceComponent/connectsTo"/>
+    </referenceFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFC895" bodyBackgroundColor="#FFECDB">
+    <eClass href="http://soamodel/1.0#//OCLPostcondition"/>
+    <labelEAttribute href="http://soamodel/1.0#//OCLConstraint/description"/>
+    <attributeFigures xsi:type="graphdesc:AttributeFigure">
+      <eAttribute href="http://soamodel/1.0#//OCLConstraint/constraint"/>
+    </attributeFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FA8072" bodyBackgroundColor="#FDD4D0">
+    <eClass href="http://soamodel/1.0#//OCLDataConstraint"/>
+    <labelEAttribute href="http://soamodel/1.0#//OCLConstraint/description"/>
+    <attributeFigures xsi:type="graphdesc:AttributeFigure">
+      <eAttribute href="http://soamodel/1.0#//OCLConstraint/constraint"/>
+    </attributeFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFC8C8" bodyBackgroundColor="#FFECEC">
+    <eClass href="http://soamodel/1.0#//OCLPrecondition"/>
+    <labelEAttribute href="http://soamodel/1.0#//OCLConstraint/description"/>
+    <attributeFigures xsi:type="graphdesc:AttributeFigure">
+      <eAttribute href="http://soamodel/1.0#//OCLConstraint/constraint"/>
+    </attributeFigures>
+  </classFigures>
+  <classFigures headerBackgroundColor="#FFF575" bodyBackgroundColor="#FFFBD1">
+    <eClass href="http://soamodel/1.0#//RestMethod"/>
+    <labelEAttribute href="http://soamodel/1.0#//ServiceMethod/name"/>
+    <attributeFigures xsi:type="graphdesc:RichAttributeFigure" labelExpression="name + ' : ' + parameterType.name">
+      <eReference href="http://soamodel/1.0#//ServiceMethod/parameters"/>
+    </attributeFigures>
+    <attributeFigures xsi:type="graphdesc:AttributeFigure">
+      <eAttribute href="http://soamodel/1.0#//RestMethod/httpMethod"/>
+    </attributeFigures>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" sourceArrowType="crow" style="dashed">
+      <eReference href="http://soamodel/1.0#//ServiceMethod/methodType"/>
+    </referenceFigures>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceMethod/preconditions"/>
+    <nestedFiguresEReferences href="http://soamodel/1.0#//ServiceMethod/postconditions"/>
+  </classFigures>
+  <classFigures>
+    <eClass href="http://soamodel/1.0#//CollectionType"/>
+    <labelEAttribute href="http://soamodel/1.0#//DataType/name"/>
+    <referenceFigures xsi:type="graphdesc:ReferenceFigure" style="dashed">
+      <eReference href="http://soamodel/1.0#//CollectionType/itemType"/>
+    </referenceFigures>
+  </classFigures>
+  <classFigures>
+    <eClass href="http://soamodel/1.0#//BuiltInDataType"/>
+    <labelEAttribute href="http://soamodel/1.0#//DataType/name"/>
+  </classFigures>
+</graphdesc:GVFigureDescription>

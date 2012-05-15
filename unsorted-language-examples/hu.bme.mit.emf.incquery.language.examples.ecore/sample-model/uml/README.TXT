@@ -1,0 +1,1 @@
+UML Ecore model copied from Eclipse UML

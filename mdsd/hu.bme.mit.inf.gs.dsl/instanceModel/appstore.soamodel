@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soamodel:ServiceOrientedArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soamodel="platform:/resource/hu.bme.mit.inf.gs.dsl/model/SoaModel.ecore" name="appstore">  <components xsi:type="soamodel:CSharpComponent" name="AppRepository" namespace="AppRepository" URI="http://localhost:8001" persists="//@dataTypes.5 //@dataTypes.6 //@dataTypes.7 //@dataTypes.8 //@dataTypes.9">
+    <methods xsi:type="soamodel:RestMethod" description="Lists all applications." methodType="//@dataTypes.15" name="ListApplications" path="applications"/>
+    <methods xsi:type="soamodel:RestMethod" description="" methodType="//@dataTypes.15" name="ListApplicationsByCategory" path="applications/{categoryName}">
+      <parameters parameterType="//@dataTypes.4" name="categoryName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.5" name="GetApplication" path="application/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="Creates a new application for the given creator and returns the ID of the new application." methodType="//@dataTypes.3" name="CreateApplication" httpMethod="POST" path="application/{creator}">
+      <parameters parameterType="//@dataTypes.4" name="creator"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="AddApplicationVersion" httpMethod="POST" path="application/version/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.8" name="version"/>
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="AddApplicationMetadata" httpMethod="POST" path="application/metadata/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.7" name="metadata"/>
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="Gets the last commited application version." methodType="//@dataTypes.8" name="GetApplicationVersion" path="application/version/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="Gets the last commited metadata version." methodType="//@dataTypes.7" name="GetApplicationMetadata" path="application/metadata/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" name="SetMetadataAcceptance" httpMethod="POST" path="application/metadata/acceptance/?id={metadataID}&amp;acceptance={acceptance}">
+      <parameters parameterType="//@dataTypes.3" name="metadataID"/>
+      <parameters parameterType="//@dataTypes.20" name="acceptance"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" name="SetVersionAcceptance" httpMethod="POST" path="application/version/acceptance/?id={versionID}&amp;acceptance={acceptance}">
+      <parameters parameterType="//@dataTypes.3" name="versionID"/>
+      <parameters parameterType="//@dataTypes.20" name="acceptance"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" name="DeleteApplication" httpMethod="DELETE" path="application/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" methodType="//@dataTypes.3" name="CreateApplicationAccount" httpMethod="POST" path="applicationaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="DeleteApplicationAccount" httpMethod="DELETE" path="applicationaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" methodType="//@dataTypes.6" name="GetApplicationAccount" path="applicationaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="BuyApplication" httpMethod="POST" path="buy/{userLoginName}/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" name="UnbuyApplication" httpMethod="DELETE" path="buy/{userLoginName}/?id={applicationID}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+      <parameters parameterType="//@dataTypes.3" name="applicationID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.5" name="GetBoughtApplications" path="applications/bought/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+  </components>
+  <components xsi:type="soamodel:JEEComponent" name="CreditManager" namespace="CreditManager" connectsTo="//@components.3" URI="http://localhost:8003" persists="//@dataTypes.10 //@dataTypes.11">
+    <methods xsi:type="soamodel:RestMethod" name="AddTransaction" httpMethod="POST" path="transaction">
+      <parameters parameterType="//@dataTypes.11" name="transaction"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" name="DeleteTransaction" httpMethod="DELETE" path="transaction/{transactionID}">
+      <parameters parameterType="//@dataTypes.3" name="transactionID"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.10" name="CreateCreditAccount" httpMethod="POST" path="creditaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="DeleteCreditAccount" httpMethod="DELETE" path="creditaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.2" name="GetCreditAmount" path="creditaccount/amount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.10" name="GetCreditAccount" path="creditaccount/{userLoginName}">
+      <parameters parameterType="//@dataTypes.4" name="userLoginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="Adds multiple credit transactions." name="AddTransactions" httpMethod="POST" path="transactions/multiple">
+      <parameters parameterType="//@dataTypes.17" name="transactions"/>
+    </methods>
+  </components>
+  <components xsi:type="soamodel:CSharpComponent" name="CodeVerifier" namespace="CodeVerifier" connectsTo="//@components.0" URI="http://localhost:8004">
+    <methods xsi:type="soamodel:RestMethod" description="" methodType="//@dataTypes.20" name="VerifyCode" httpMethod="POST" path="code">
+      <parameters parameterType="//@dataTypes.8" name="applicationVersion"/>
+      <preconditions constraint="applicationVersion.acceptanceResult=AcceptanceResult::Unknown" description="Acceptance result is Unknown."/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.20" name="VerifyMetadata" httpMethod="POST" path="metadata">
+      <parameters parameterType="//@dataTypes.7" name="applicationMetadata"/>
+      <preconditions constraint="applicationMetadata.acceptanceResult=AcceptanceResult::Unknown" description="Acceptance result is Unknown."/>
+    </methods>
+  </components>
+  <components xsi:type="soamodel:JEEComponent" name="UserManager" namespace="UserManager" URI="http://localhost:8002" persists="//@dataTypes.12 //@dataTypes.13">
+    <methods xsi:type="soamodel:RestMethod" methodType="//@dataTypes.13" name="GetUserObject" path="user/{loginName}">
+      <parameters parameterType="//@dataTypes.4" name="loginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="ModifyUser" httpMethod="POST" path="user/modify/{loginName}">
+      <parameters parameterType="//@dataTypes.4" name="loginName"/>
+      <parameters parameterType="//@dataTypes.13" name="newUser"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="AddUser" httpMethod="POST" path="user">
+      <parameters parameterType="//@dataTypes.13" name="user"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="DeleteUser" httpMethod="DELETE" path="user/{loginName}">
+      <parameters parameterType="//@dataTypes.4" name="loginName"/>
+    </methods>
+    <methods xsi:type="soamodel:RestMethod" description="" name="GetOperatorCreditAccountID" path="operator"/>
+  </components>
+  <dataTypes xsi:type="soamodel:BuiltInDataType" name="Boolean"/>
+  <dataTypes xsi:type="soamodel:BuiltInDataType" name="Date"/>
+  <dataTypes xsi:type="soamodel:BuiltInDataType" name="Double"/>
+  <dataTypes xsi:type="soamodel:BuiltInDataType" name="Integer"/>
+  <dataTypes xsi:type="soamodel:BuiltInDataType" name="String"/>
+  <dataTypes xsi:type="soamodel:Entity" name="Application" persistedBy="//@components.0" generatedID="true" ID="//@dataTypes.5/@attributes.0">
+    <attributes attributeType="//@dataTypes.3" name="applicationID"/>
+    <attributes attributeType="//@dataTypes.8" name="lastAcceptedVersion"/>
+    <attributes attributeType="//@dataTypes.8" name="lastCommitedVersion"/>
+    <attributes attributeType="//@dataTypes.7" name="lastAcceptedMetadata"/>
+    <attributes attributeType="//@dataTypes.7" name="lastCommitedMetadata"/>
+    <attributes attributeType="//@dataTypes.4" name="creatorName"/>
+    <oclConstraints constraint="Application.allInstances->forAll(i1, i2 | i1&lt;>i2 implies i1.id &lt;> i2.id)" description="Application.id is unique."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="ApplicationAccount" persistedBy="//@components.0" generatedID="true" ID="//@dataTypes.6/@attributes.2">
+    <attributes attributeType="//@dataTypes.4" name="accountUserName"/>
+    <attributes attributeType="//@dataTypes.15" name="boughtApplications"/>
+    <attributes attributeType="//@dataTypes.3" name="applicationAccountID"/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="ApplicationMetadata" persistedBy="//@components.0" generatedID="true" ID="//@dataTypes.7/@attributes.0">
+    <attributes attributeType="//@dataTypes.3" name="applicationMetadataID"/>
+    <attributes attributeType="//@dataTypes.1" name="timestamp"/>
+    <attributes attributeType="//@dataTypes.4" name="name"/>
+    <attributes attributeType="//@dataTypes.2" name="price"/>
+    <attributes attributeType="//@dataTypes.4" name="description"/>
+    <attributes attributeType="//@dataTypes.16" name="categories"/>
+    <attributes attributeType="//@dataTypes.20" name="acceptanceResult"/>
+    <attributes attributeType="//@dataTypes.3" name="ageRestriction"/>
+    <oclConstraints constraint="ApplicationMetadata.allInstances->forAll(i1, i2 | i1&lt;>i2 implies i1.id &lt;> i2.id)" description="ApplicationMetadata.id is unique."/>
+    <oclConstraints constraint="self.name&lt;>''" description="ApplicationMetadata.name is not empty."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="ApplicationVersion" persistedBy="//@components.0" generatedID="true" ID="//@dataTypes.8/@attributes.0">
+    <attributes attributeType="//@dataTypes.3" name="applicationVersionID"/>
+    <attributes attributeType="//@dataTypes.1" name="timestamp"/>
+    <attributes attributeType="//@dataTypes.4" name="versionString"/>
+    <attributes attributeType="//@dataTypes.20" name="acceptanceResult"/>
+    <attributes attributeType="//@dataTypes.19" name="filePaths"/>
+    <oclConstraints constraint="ApplicationVersion.allInstances->forAll(i1, i2 | i1&lt;>i2 implies i1.id &lt;> i2.id)" description="ApplicationVersion.id is unique."/>
+    <oclConstraints constraint="self.versionString&lt;>''" description="ApplicationVersion.versionString is not empty."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="Category" persistedBy="//@components.0" ID="//@dataTypes.9/@attributes.0">
+    <attributes attributeType="//@dataTypes.4" name="categoryName"/>
+    <oclConstraints constraint="self.name&lt;>''" description="Category.name is not empty."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="CreditAccount" persistedBy="//@components.1" generatedID="true" ID="//@dataTypes.10/@attributes.2">
+    <attributes attributeType="//@dataTypes.17" name="transactions"/>
+    <attributes attributeType="//@dataTypes.4" name="userName"/>
+    <attributes attributeType="//@dataTypes.3" name="creditAccountID"/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="CreditTransaction" persistedBy="//@components.1" generatedID="true" ID="//@dataTypes.11/@attributes.0">
+    <attributes attributeType="//@dataTypes.3" name="creditTransactionID"/>
+    <attributes attributeType="//@dataTypes.2" name="timestamp"/>
+    <attributes attributeType="//@dataTypes.2" name="amount"/>
+    <attributes attributeType="//@dataTypes.4" name="description"/>
+    <attributes attributeType="//@dataTypes.4" name="userName"/>
+    <oclConstraints constraint="CreditTransaction.allInstances->forAll(i1, i2 | i1&lt;>i2 implies i1.id &lt;> i2.id)" description="CreditTransaction.id is unique."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="Role" persistedBy="//@components.3" ID="//@dataTypes.12/@attributes.0">
+    <attributes attributeType="//@dataTypes.4" name="roleName"/>
+    <oclConstraints constraint="self.name&lt;>''" description="Role.name is not empty."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:Entity" name="User" persistedBy="//@components.3" ID="//@dataTypes.13/@attributes.0">
+    <attributes attributeType="//@dataTypes.4" name="loginName"/>
+    <attributes attributeType="//@dataTypes.4" name="password"/>
+    <attributes attributeType="//@dataTypes.4" name="email"/>
+    <attributes attributeType="//@dataTypes.18" name="roles"/>
+    <attributes attributeType="//@dataTypes.3" name="creditAccountFID"/>
+    <attributes attributeType="//@dataTypes.3" name="applicationAccountFID"/>
+    <attributes attributeType="//@dataTypes.4" name="fullName"/>
+    <attributes attributeType="//@dataTypes.1" name="birthDate"/>
+    <oclConstraints constraint="User.allInstances->forAll(i1, i2 | i1&lt;>i2 implies i1.loginName &lt;> i2.loginName)" description="User.loginName is unique."/>
+    <oclConstraints constraint="self.loginName&lt;>''" description="User.loginName is not empty."/>
+  </dataTypes>
+  <dataTypes xsi:type="soamodel:CollectionType" name="ApplicationAccount collection" itemType="//@dataTypes.6"/>
+  <dataTypes xsi:type="soamodel:CollectionType" name="Application collection" itemType="//@dataTypes.5"/>
+  <dataTypes xsi:type="soamodel:CollectionType" name="Category collection" itemType="//@dataTypes.9"/>
+  <dataTypes xsi:type="soamodel:CollectionType" name="CreditTransaction collection" itemType="//@dataTypes.11"/>
+  <dataTypes xsi:type="soamodel:CollectionType" name="Role collection" itemType="//@dataTypes.12"/>
+  <dataTypes xsi:type="soamodel:CollectionType" name="String collection" itemType="//@dataTypes.4"/>
+  <dataTypes xsi:type="soamodel:Enum" name="AcceptanceResult">
+    <literals name="Unknown"/>
+    <literals name="Accepted" value="1"/>
+    <literals name="Rejected" value="2"/>
+  </dataTypes>
+</soamodel:ServiceOrientedArchitecture>

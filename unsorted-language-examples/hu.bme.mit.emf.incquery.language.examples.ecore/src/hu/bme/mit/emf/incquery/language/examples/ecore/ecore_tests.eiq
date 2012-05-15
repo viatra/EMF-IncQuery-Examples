@@ -1,0 +1,97 @@
+package hu.bme.mit.emf.incquery.language.examples.ecore
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+pattern thisIsEInt(X)= {
+	ENamedElement.name(X, Name);
+	"EInt" == Name ;
+}
+
+pattern thisIsEIntConcise(X)= {
+	ENamedElement.name(X, "EInt");
+}
+
+pattern thisIsEInt2(X)= {
+	find thisIsEInt(X);
+	check(5<=6);
+}
+
+pattern thisIsEInt3NoMatch(X)= {
+	find thisIsEInt(X);
+	check(5>=6);
+}
+
+// should log an internal exception during evaluation
+pattern thisIsEIntBuggycheckWithExpectedException(E) = {
+	find thisIsEInt(E);
+	check(5 == 6/(3-3));	
+}
+
+pattern thisIsEIntTwice(X, X2)= {
+	find thisIsEInt(X);
+	X == X2 ;
+}
+
+pattern thisIsNotEInt(X, X2)= {
+	find thisIsEInt(X);
+	EDataType(X2);
+	X != X2 ;
+}
+
+// CHECK EXPR
+
+pattern hasAss(X)= {
+	ENamedElement.name(X, Name);
+	EString(Name);
+	check(Name.contains("ass"));
+}
+ 
+
+// COUNTING EXERCISES
+pattern EClassAttribute(E, Attr, Type) = {
+	EClass.eAttributes(E, Attr);
+	ETypedElement.eType(Attr, Type);	
+}
+pattern numberOfAttributes(E, Num) = {
+	EClass(E);
+	Num == count find EClassAttribute(E, SomeAttr, SomeType);
+}
+pattern withTwoAttributes(E) = {
+	EClass(E);
+	2 ==  count find EClassAttribute(E, SomeAttr, SomeType);
+	//check(Num == 2);
+}
+pattern howManyAttributesOfAGivenType(E, Type, Num) = {
+	find EClassAttribute(E, AnyAttr, Type);
+	Num == count find EClassAttribute(E, SomeAttr, Type);
+}
+pattern twoAttributesOfThisType(E, Type) = {
+	find EClassAttribute(E, AnyAttr, Type);
+	2 == count find EClassAttribute(E, SomeAttr, Type);
+}
+
+// the path segment head is actually a subclass of the owning EClass of the navigation feature
+// ("name" is defined in ENamedElement)
+pattern pathSegmentHeadSubclass(A,B) = {
+	EDataType.name(A,B);
+}
+
+// transitive closure
+pattern references(Class1,Class2) = {
+	EClass.eReferences.eType(Class1, Class2);
+}
+pattern referencesTransitively(Class1,Class2) = {
+	find references+(Class1,Class2);
+}
+pattern referencesLoop(Clazz) = {
+	find references+(Clazz,Clazz);
+}
+/* 
+pattern closureError(Class1) = {
+	find buggycheck+(Class1);
+} or {
+	neg find references+(Class1,Class2);
+} or {  
+   3 == count find references+(Class1,Class2);
+}
+*/
