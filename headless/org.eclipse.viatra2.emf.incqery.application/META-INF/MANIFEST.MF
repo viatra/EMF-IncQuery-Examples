@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: IncQuery Application
-Bundle-SymbolicName: org.eclipse.viatra2.emf.incqery.application;singleton:=true
+Bundle-SymbolicName: org.eclipse.viatra2.emf.incquery.application;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",

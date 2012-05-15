@@ -8,7 +8,7 @@
  * Contributors:
  *    Abel Hegedus - initial API and implementation
  *******************************************************************************/
-package org.eclipse.viatra2.emf.incqery.application;
+package org.eclipse.viatra2.emf.incquery.application;
 
 import java.util.Map;
 

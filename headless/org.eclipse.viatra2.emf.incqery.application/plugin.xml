@@ -2,14 +2,14 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="org.eclipse.viatra2.emf.incqery.application.app"
+         id="org.eclipse.viatra2.emf.incquery.application.app"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
             thread="main"
             visible="true">
          <run
-               class="org.eclipse.viatra2.emf.incqery.application.IncQueryApplication">
+               class="org.eclipse.viatra2.emf.incquery.application.IncQueryApplication">
          </run>
       </application>
    </extension>
@@ -17,7 +17,7 @@
          id="incquery"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.eclipse.viatra2.emf.incqery.application.app"
+            application="org.eclipse.viatra2.emf.incquery.application.app"
             name="IncQuery Application">
          <property
                name="appName"
