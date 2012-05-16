@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="school.school"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.school.SchoolMatcherFactory"
+            id="school.school">
+      </matcher>
+   </extension>
+   <extension
+         id="school.schoolName"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.schoolname.SchoolNameMatcherFactory"
+            id="school.schoolName">
+      </matcher>
+   </extension>
+   <extension
+         id="school.studentName"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.studentname.StudentNameMatcherFactory"
+            id="school.studentName">
+      </matcher>
+   </extension>
+   <extension
+         id="school.studentOfSchool"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.studentofschool.StudentOfSchoolMatcherFactory"
+            id="school.studentOfSchool">
+      </matcher>
+   </extension>
+   <extension
+         id="school.inSameSchoolDifferentYears"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.insameschooldifferentyears.InSameSchoolDifferentYearsMatcherFactory"
+            id="school.inSameSchoolDifferentYears">
+      </matcher>
+   </extension>
+   <extension
+         id="school.sameCodeClassDifferentYears"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.samecodeclassdifferentyears.SameCodeClassDifferentYearsMatcherFactory"
+            id="school.sameCodeClassDifferentYears">
+      </matcher>
+   </extension>
+
+</plugin>
