@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage">
+<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage" xmlns:types="http://www.eclipse.org/xtext/common/JavaVMTypes" xmlns:xbase="http://www.eclipse.org/xtext/xbase/Xbase">
   <patterns name="coursesOfTeacherWithMostCourses" fileName="platform:/resource/school-derived.example/src/school-derived-example.eiq">
     <parameters name="School"/>
     <parameters name="Teacher"/>
     <parameters name="Course"/>
     <bodies>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.0.0::1::/2"/>
-        </type>
-        <var var="School"/>
-      </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.1.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.1.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//School/teachersWithMostCourses"/>
             </type>
           </tail>
           <src var="School"/>
@@ -27,20 +21,14 @@
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.2.0::1::/2"/>
-        </type>
-        <var var="Teacher"/>
-      </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.3.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.3.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//Teacher/courses"/>
             </type>
           </tail>
           <src var="Teacher"/>
@@ -49,12 +37,6 @@
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.0.4.0.1.4.0::1::/2"/>
-        </type>
-        <var var="Course"/>
-      </constraints>
     </bodies>
   </patterns>
   <patterns name="classesOfLastYear" fileName="platform:/resource/school-derived.example/src/school-derived-example.eiq">
@@ -62,20 +44,14 @@
     <parameters name="Year"/>
     <parameters name="Clss"/>
     <bodies>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.0.0::1::/2"/>
-        </type>
-        <var var="School"/>
-      </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.1.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.1.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//School/lastYear"/>
             </type>
           </tail>
           <src var="School"/>
@@ -84,20 +60,14 @@
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.2.0::1::/2"/>
-        </type>
-        <var var="Year"/>
-      </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.3.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.3.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//Year/schoolClasses"/>
             </type>
           </tail>
           <src var="Year"/>
@@ -106,38 +76,20 @@
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.1.4.0.1.4.0::1::/2"/>
-        </type>
-        <var var="Clss"/>
-      </constraints>
     </bodies>
   </patterns>
   <patterns name="schoolWithMostTeachers" fileName="platform:/resource/school-derived.example/src/school-derived-example.eiq">
     <parameters name="School"/>
     <parameters name="NoTeacher"/>
     <bodies>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.0.0::1::/2"/>
-        </type>
-        <var var="School"/>
-      </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        </type>
-        <var var="NoTeacher"/>
-      </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.2.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.2.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//School/numberOfTeachers"/>
             </type>
           </tail>
           <src var="School"/>
@@ -146,44 +98,76 @@
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.3.0::1::/2"/>
-        </type>
-        <var var="School2"/>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
+        <call patternRef="//@patterns.3">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="School"/>
+          </parameters>
+        </call>
       </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        </type>
-        <var var="NoTeacher2"/>
+    </bodies>
+  </patterns>
+  <patterns name="moreTeachers" fileName="platform:/resource/school-derived.example/src/school-derived-example.eiq">
+    <parameters name="School">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//School/numberOfTeachers"/>
+            </type>
+          </tail>
+          <src var="School"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="NT"/>
+          </dst>
+        </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.5.1.0::1::/2"/>
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="../src/school-derived-example.eiq#xtextLink_::0.1.2.4.0.1.5.1.1.0::1::/1"/>
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//School/numberOfTeachers"/>
             </type>
           </tail>
           <src var="School2"/>
           <dst xsi:type="patternLanguage:VariableValue">
-            <value var="NoTeacher2"/>
+            <value var="NT2"/>
           </dst>
         </head>
       </constraints>
-      <constraints xsi:type="patternLanguage:CompareConstraint">
-        <leftOperand xsi:type="patternLanguage:VariableValue">
-          <value var="NoTeacher"/>
-        </leftOperand>
-        <rightOperand xsi:type="patternLanguage:VariableValue">
-          <value var="NoTeacher2"/>
-        </rightOperand>
+      <constraints xsi:type="patternLanguage:CheckConstraint">
+        <expression xsi:type="xbase:XBinaryOperation">
+          <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessThan(java.lang.Comparable,C)"/>
+          <leftOperand xsi:type="xbase:XCastedExpression">
+            <type xsi:type="types:JvmParameterizedTypeReference">
+              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
+            </type>
+            <target xsi:type="xbase:XFeatureCall">
+              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-example.eiq#/0/@patterns.3/@bodies.0/@variables.2"/>
+            </target>
+          </leftOperand>
+          <rightOperand xsi:type="xbase:XCastedExpression">
+            <type xsi:type="types:JvmParameterizedTypeReference">
+              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
+            </type>
+            <target xsi:type="xbase:XFeatureCall">
+              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-example.eiq#/0/@patterns.3/@bodies.0/@variables.0"/>
+            </target>
+          </rightOperand>
+        </expression>
       </constraints>
     </bodies>
   </patterns>
-  <importPackages/>
   <importPackages/>
 </eMFPatternLanguage:PatternModel>

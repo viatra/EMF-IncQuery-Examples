@@ -12,8 +12,8 @@ import teacherwithmostcourses.TeacherWithMostCoursesMatch;
 public abstract class TeacherWithMostCoursesProcessor implements IMatchProcessor<TeacherWithMostCoursesMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param School the value of pattern parameter School in the currently processed match 
-   * @param Teacher the value of pattern parameter Teacher in the currently processed match 
+   * @param pSchool the value of pattern parameter School in the currently processed match 
+   * @param pTeacher the value of pattern parameter Teacher in the currently processed match 
    * 
    */
   public abstract void process(final Object School, final Object Teacher);

@@ -26,11 +26,27 @@
       </matcher>
    </extension>
    <extension
+         id="moreCourses"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="morecourses.MoreCoursesMatcherFactory"
+            id="moreCourses">
+      </matcher>
+   </extension>
+   <extension
          id="lastYear"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="lastyear.LastYearMatcherFactory"
             id="lastYear">
+      </matcher>
+   </extension>
+   <extension
+         id="laterYear"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="lateryear.LaterYearMatcherFactory"
+            id="laterYear">
       </matcher>
    </extension>
 

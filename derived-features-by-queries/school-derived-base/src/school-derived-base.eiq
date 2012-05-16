@@ -1,29 +1,31 @@
 import "http:///school.ecore"
-import "http://www.eclipse.org/emf/2002/Ecore"
 
-pattern teachers(School,Teacher) = {
-   School(School);
+pattern teachers(School : School, Teacher : Teacher) = {
    School.teachers(School,Teacher);
-   Teacher(Teacher);
 }
 
-pattern coursesOfTeacher(Teacher, Course) = {
-   Teacher(Teacher);
+pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
    Teacher.courses(Teacher,Course);
-   Course(Course);
 }
 
-pattern teacherWithMostCourses(School, Teacher) = {
-
+pattern teacherWithMostCourses(School : School, Teacher : Teacher) = {
    find teachers(School,Teacher);
-   find coursesOfTeacher(Teacher,Course);
-   find coursesOfTeacher(Teacher,Course2);
-   Course != Course2;
+   neg find moreCourses(Teacher);
 }
 
-pattern lastYear(School, Year) = {
-   Year(Year);
-   EInt(Date);
-   Year.startingDate(Year, Date);
-   School.currentYear(School, Date);
+pattern moreCourses(Teacher : Teacher) = {
+	N == count find coursesOfTeacher(Teacher,Course);
+    M == count find coursesOfTeacher(Teacher2,Course2);
+    check((N as Integer) < (M as Integer));
+}
+
+pattern lastYear(School : School, Year : Year) = {
+   School.years(School,Year);
+   neg find laterYear(Year);
+}
+
+pattern laterYear(Year : Year) = {
+	Year.startingDate(Year, Date);
+	Year.startingDate(Year2, Date2);
+	check((Date as Integer) < (Date2 as Integer));
 }

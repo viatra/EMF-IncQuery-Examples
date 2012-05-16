@@ -5,6 +5,8 @@ Bundle-SymbolicName: school-derived-base;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Export-Package: coursesofteacher,
  lastyear,
+ lateryear,
+ morecourses,
  teachers,
  teacherwithmostcourses
 Require-Bundle: org.eclipse.pde.core,

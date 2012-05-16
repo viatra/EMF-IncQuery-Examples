@@ -10,24 +10,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.DerivedFeatureAdapter;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.MatcherFactoryRegistry;
 
 import school.Course;
@@ -169,31 +163,24 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	protected SchoolImpl() {
 		super();
-		
+
 		IMatcherFactory tmf = MatcherFactoryRegistry.getMatcherFactory("teachers");
 		IMatcherFactory lyf = MatcherFactoryRegistry.getMatcherFactory("lastYear");
 		IMatcherFactory twmcf = MatcherFactoryRegistry.getMatcherFactory("teacherWithMostCourses");
-		
-		numberOfSchoolsHandler = IncqueryFeatureHelper.createHandler(this,
-				SchoolPackage.Literals.SCHOOL__NUMBER_OF_TEACHERS,
-				tmf,
-				"School",
-				null,
-				FeatureKind.COUNTER);
-		
-		lastYearHandler = IncqueryFeatureHelper.createHandler(this,
-				SchoolPackage.Literals.SCHOOL__LAST_YEAR,
-				lyf,
-				"School",
-				"Year",
-				FeatureKind.SINGLE_REFERENCE);
 
-		teachersWithMostCourses = IncqueryFeatureHelper.createHandler(this,
-				SchoolPackage.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
-				twmcf,
-				"School",
-				"Teacher",
-				FeatureKind.MANY_REFERENCE);
+		if (tmf != null) {
+			numberOfSchoolsHandler = IncqueryFeatureHelper.createHandler(this,
+					SchoolPackage.Literals.SCHOOL__NUMBER_OF_TEACHERS, tmf, "School", null, FeatureKind.COUNTER);
+		}
+		if (lyf != null) {
+			lastYearHandler = IncqueryFeatureHelper.createHandler(this, SchoolPackage.Literals.SCHOOL__LAST_YEAR, lyf,
+					"School", "Year", FeatureKind.SINGLE_REFERENCE);
+		}
+		if (twmcf != null) {
+			teachersWithMostCourses = IncqueryFeatureHelper.createHandler(this,
+					SchoolPackage.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES, twmcf, "School", "Teacher",
+					FeatureKind.MANY_REFERENCE);
+		}
 	}
 
 	/**

@@ -5,6 +5,7 @@ Bundle-SymbolicName: school-derived.example;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Export-Package: classesoflastyear,
  coursesofteacherwithmostcourses,
+ moreteachers,
  schoolwithmostteachers
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,

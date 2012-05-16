@@ -12,8 +12,8 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
 public abstract class LastYearProcessor implements IMatchProcessor<LastYearMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param School the value of pattern parameter School in the currently processed match 
-   * @param Year the value of pattern parameter Year in the currently processed match 
+   * @param pSchool the value of pattern parameter School in the currently processed match 
+   * @param pYear the value of pattern parameter Year in the currently processed match 
    * 
    */
   public abstract void process(final Object School, final Object Year);

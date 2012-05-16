@@ -10,6 +10,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
+import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
 
 /**
@@ -18,10 +19,8 @@ import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
  * 
  * 
  * 
- * pattern coursesOfTeacher(Teacher, Course) = {
- *    Teacher(Teacher);
+ * pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
  *    Teacher.courses(Teacher,Course);
- *    Course(Course);
  * }
  * 
  * @see CoursesOfTeacherMatch
@@ -58,8 +57,8 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @return matches represented as a CoursesOfTeacherMatch object.
    * 
    */
@@ -71,8 +70,8 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @return a match represented as a CoursesOfTeacherMatch object, or null if no match is found.
    * 
    */
@@ -84,8 +83,8 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
@@ -96,8 +95,8 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
@@ -108,8 +107,8 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
@@ -121,14 +120,31 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param Teacher the fixed value of pattern parameter Teacher, or null if not bound.
-   * @param Course the fixed value of pattern parameter Course, or null if not bound.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
   public boolean forOneArbitraryMatch(final Object pTeacher, final Object pCourse, final IMatchProcessor<? super CoursesOfTeacherMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTeacher, pCourse}, processor);
+    
+  }
+  
+  /**
+   * Registers a new filtered delta monitor on this pattern matcher.
+   * The DeltaMonitor can be used to track changes (delta) in the set of filtered pattern matches from now on, considering those matches only that conform to the given fixed values of some parameters. 
+   * It can also be reset to track changes from a later point in time, 
+   * and changes can even be acknowledged on an individual basis. 
+   * See {@link DeltaMonitor} for details.
+   * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
+   * @param pTeacher the fixed value of pattern parameter Teacher, or null if not bound.
+   * @param pCourse the fixed value of pattern parameter Course, or null if not bound.
+   * 	 @return the delta monitor.
+   * 
+   */
+  public DeltaMonitor<CoursesOfTeacherMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pTeacher, final Object pCourse) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTeacher, pCourse});
     
   }
   

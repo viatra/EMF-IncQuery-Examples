@@ -25,5 +25,13 @@
             id="schoolWithMostTeachers">
       </matcher>
    </extension>
+   <extension
+         id="moreTeachers"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="moreteachers.MoreTeachersMatcherFactory"
+            id="moreTeachers">
+      </matcher>
+   </extension>
 
 </plugin>
