@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-
+  <extension
+         id="school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.wellbehavedContribution"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="numberOfTeachers"
+            package-nsUri="http:///school.ecore">
+      </wellbehaving-derived-feature>
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="teachersWithMostCourses"
+            package-nsUri="http:///school.ecore">
+      </wellbehaving-derived-feature>
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="lastYear"
+            package-nsUri="http:///school.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
    <extension
          id="teachers"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
