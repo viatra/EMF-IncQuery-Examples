@@ -3,9 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.depgraph.eIQ
 Bundle-SymbolicName: hu.bme.mit.depgraph.eIQ;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: dependedby,
- dependedbytran,
- dependedcomponents
+Export-Package: query.dependedby,
+ query.dependedbytran,
+ query.dependedcomponents,
+ queryt.dependedby,
+ queryt.dependedcomponents
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
