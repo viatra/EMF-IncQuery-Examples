@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="almafa.queryPattern"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="almafa.querypattern.QueryPatternMatcherFactory"
+            id="almafa.queryPattern">
+      </matcher>
+   </extension>
+   <extension
+         id="queryPattern"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="querypattern.QueryPatternMatcherFactory"
+            id="queryPattern">
+      </matcher>
+   </extension>
+   <extension
+         id="dependedBy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedby.DependedByMatcherFactory"
+            id="dependedBy">
+      </matcher>
+   </extension>
+   <extension
+         id="dependedComponents"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedcomponents.DependedComponentsMatcherFactory"
+            id="dependedComponents">
+      </matcher>
+   </extension>
+   <extension
+         id="dependedBy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedby.DependedByMatcherFactory"
+            id="dependedBy">
+      </matcher>
+   </extension>
+   <extension
+         id="dependedByTran"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedbytran.DependedByTranMatcherFactory"
+            id="dependedByTran">
+      </matcher>
+   </extension>
+   <extension
+         id="dependedComponents"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedcomponents.DependedComponentsMatcherFactory"
+            id="dependedComponents">
+      </matcher>
+   </extension>
+
+</plugin>

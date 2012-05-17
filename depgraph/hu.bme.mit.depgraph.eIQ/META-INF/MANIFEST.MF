@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.depgraph.eIQ
+Bundle-SymbolicName: hu.bme.mit.depgraph.eIQ;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: dependedby,
+ dependedbytran,
+ dependedcomponents
+Require-Bundle: org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

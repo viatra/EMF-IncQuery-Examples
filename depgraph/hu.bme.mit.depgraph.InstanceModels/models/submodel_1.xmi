@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dg:DependencyGraph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dg="http://dependency-graph/1.0">
+  <products name="ABBTECLib" containingFolders="abbtec/common/lib/ABBTECLib" productPath="\\cs-ccr-nfsdev/pcrops/dist/abbtec/common/lib/ABBTECLib\4.0.0/build/dist\ABBTECLib.jar">
+    <versions>4.0.0</versions>
+    <classes simpleName="CommonBC" packageName="cern.abbtec.common.bc" extends="" implements="cern.abbtec.common.bc.fesa.FesaClassNotificationSender cern.abbtec.common.bc.CommonBCInt">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.CommonBC#CommonBC():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getSingleInstanceFesaClasses():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getRequiredFesaClassSingletons():cern.abbtec.common.bc.fesa.FesaClass[]">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#initBCConfig(cern.abbtec.common.bc.config.BCConfig):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#connectToEquipment(cern.abbtec.common.lib.app.CERNUser,cern.abbtec.common.bc.config.BCConfig):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getFesaClassCdo(java.lang.Class,java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#updateDeviceProperty(java.lang.String,java.lang.String,cern.abbtec.common.bc.fesa.cdo.FesaClassCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getSenderName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#sendFesaClassNotificationMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#sendEquipmentStatusToJMSQueue(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getJmsTemplate():org.springframework.jms.core.JmsTemplate">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#setJmsTemplate(org.springframework.jms.core.JmsTemplate):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#getJmsDestination():javax.jms.Destination">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#setJmsDestination(javax.jms.Destination):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBC#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.CommonBC.logger">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.CommonBC.singleInstanceFesaClasses">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.CommonBC.jmsTemplate">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.CommonBC.jmsDestination">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="CommonBCInt" packageName="cern.abbtec.common.bc" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.CommonBCInt#connectToEquipment(cern.abbtec.common.lib.app.CERNUser,cern.abbtec.common.bc.config.BCConfig):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBCInt#updateDeviceProperty(java.lang.String,java.lang.String,cern.abbtec.common.bc.fesa.cdo.FesaClassCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.CommonBCInt#getFesaClassCdo(java.lang.Class,java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="AcceleratorData" packageName="cern.abbtec.common.bc.cdo" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.cdo.AcceleratorData#AcceleratorData():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.AcceleratorData#getName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.AcceleratorData#setName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.cdo.AcceleratorData.name">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="CdoHwConfigData" packageName="cern.abbtec.common.bc.cdo" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#CdoHwConfigData():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#getGIRQHWConf():java.lang.Integer">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#setGIRQHWConf(java.lang.Integer):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#getGIRQControllerModuleId():java.lang.Long">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#setGIRQControllerModuleId(java.lang.Long):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#getGIRQGroupModuleId():java.lang.Long">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#setGIRQGroupModuleId(java.lang.Long):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#getGIRQModuleModuleId():java.lang.Long">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.cdo.CdoHwConfigData#setGIRQModuleModuleId(java.lang.Long):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.cdo.CdoHwConfigData.gIRQHWConf">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.cdo.CdoHwConfigData.gIRQControllerModuleId">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.cdo.CdoHwConfigData.gIRQGroupModuleId">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.cdo.CdoHwConfigData.gIRQModuleModuleId">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="BCConfig" packageName="cern.abbtec.common.bc.config" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.config.BCConfig#BCConfig():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.BCConfig#getConfigurationName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.BCConfig#setConfigurationName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.BCConfig#getFesaClassesConfig():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.BCConfig#setFesaClassesConfig(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.config.BCConfig.configurationName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.config.BCConfig.fesaClassesConfig">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassConfig" packageName="cern.abbtec.common.bc.config" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.config.FesaClassConfig#FesaClassConfig():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.FesaClassConfig#getFesaClass():java.lang.Class">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.FesaClassConfig#setFesaClass(java.lang.Class):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.FesaClassConfig#getFecs():java.lang.String[]">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.config.FesaClassConfig#setFecs(java.lang.String[]):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.config.FesaClassConfig.fesaClass">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.config.FesaClassConfig.fecs">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClass" packageName="cern.abbtec.common.bc.fesa" extends="" implements="cern.japc.ParameterValueListener">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#FesaClass():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaDevicesDmImpls():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaDevicesSH():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFecFesaClassCDOs():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#ExtractDeviceNameFromNotification(cern.japc.AcquiredParameterValue):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#ExtractPropertyNameFromNotification(cern.japc.AcquiredParameterValue):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getDevicesFecNames():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaClassName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getGlobalPropertiesBeanName():java.lang.String[]">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getDevicePropertiesBeanName():java.lang.String[]">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createDeviceDmImpl(java.lang.String):cern.japc.fesa.core.dm.impl.FesaEquipmentModuleImpl">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createFesaBeanForGlobalProperty(java.lang.String,java.lang.String):cern.japc.fesa.core.bean.FesaBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createFesaBeanForDeviceProperty(java.lang.String,java.lang.String):cern.japc.fesa.core.bean.FesaBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#updateDeviceProperty(java.lang.String,cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaDeviceDmImpl(java.lang.String):cern.japc.fesa.core.dm.impl.FesaEquipmentModuleImpl">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#initFesaClass(java.lang.String,cern.abbtec.common.bc.fesa.FesaClassNotificationSender):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#addFesaClassNotificationSender(cern.abbtec.common.bc.fesa.FesaClassNotificationSender):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createFecFesaClassCdo(java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createFecFesaClassGlobalCdo(java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#createFecFesaClassDeviceCdo(java.lang.String):java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaClassCdo(java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaClassCdoCloned(java.lang.String):cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#startListener(java.lang.String,java.lang.String,cern.japc.ParameterValueListener):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#updateDeviceProperty(java.lang.String,java.lang.String,cern.abbtec.common.bc.fesa.cdo.FesaClassCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#startListeningOnFEC(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#startListeningOnDevice(cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#valueReceived(java.lang.String,cern.japc.AcquiredParameterValue):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#exceptionOccured(java.lang.String,java.lang.String,cern.japc.ParameterException):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#updateFesaClassCdoFromNotification(cern.japc.AcquiredParameterValue):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getGlobalDeviceName(java.lang.String):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getDevicesNamesAtFEC(java.lang.String):java.util.Vector">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getDeviceFecName(java.lang.String):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#isGlobalDevice(java.lang.String):boolean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#getFesaClassNotificationSenders():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#setFesaClassNotificationSenders(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClass#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.logger">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.KEY_FESA_GLOBAL_DEVICE_DESCRIPTOR">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.devicesFecNames">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.fesaDevicesDmImpls">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.fesaDevicesSH">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.fecFesaClassCDOs">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.FesaClass.fesaClassNotificationSenders">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassNotificationSender" packageName="cern.abbtec.common.bc.fesa" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClassNotificationSender#getSenderName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.FesaClassNotificationSender#sendFesaClassNotificationMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="FesaClassCdo" packageName="cern.abbtec.common.bc.fesa.cdo" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#FesaClassCdo():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#getGlobalCdo():cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#setGlobalCdo(cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#getDevicesCdo():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#setDevicesCdo(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#getDscName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#setDscName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#clone():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#getFesaClass():java.lang.Class">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo#setFesaClass(java.lang.Class):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo.fesaClass">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo.dscName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo.globalCdo">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassCdo.devicesCdo">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassDeviceCdo" packageName="cern.abbtec.common.bc.fesa.cdo" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#FesaClassDeviceCdo():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#getDeviceName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#setDeviceName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#getProperties():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#setProperties(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo#clone():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo.deviceName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassDeviceCdo.properties">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassPropertyCdo" packageName="cern.abbtec.common.bc.fesa.cdo" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#FesaClassPropertyCdo():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#clone():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#getFesaPropertyName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#setFesaPropertyName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#getFesaPropertyBean():cern.japc.fesa.core.bean.FesaBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo#setFesaPropertyBean(cern.japc.fesa.core.bean.FesaBean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo.fesaPropertyName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.cdo.FesaClassPropertyCdo.fesaPropertyBean">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassBean$1" packageName="cern.abbtec.common.bc.fesa.gui.beans" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean$1#FesaClassBean$1(cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean$1#componentRemoved(java.awt.event.ContainerEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean$1.this$0">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassBean" packageName="cern.abbtec.common.bc.fesa.gui.beans" extends="cern.abbtec.common.lib.app.CommonJPanel" implements="cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getFesaClass():java.lang.Class">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#createFesaGlobalBean():cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#createFesaDeviceBean():cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#drawFesaClassChildrenBeans():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#updateBean(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#FesaClassBean():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#initBean(java.lang.String,cern.abbtec.common.bc.CommonBCInt):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#updateTitledBorder():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#initDependencies():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#cleanDependencies():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#processFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#updateFromFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#createFesaClassChildrenBeans(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#updateFesaClassChildrenBeans(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#initComponents():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#formComponentRemoved(java.awt.event.ContainerEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getFecName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#setFecName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getFesaClassGlobalBean():cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#setFesaClassGlobalBean(cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getFesaClassDeviceBeans():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#setFesaClassDeviceBeans(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getCommonBC():cern.abbtec.common.bc.CommonBCInt">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#setCommonBC(cern.abbtec.common.bc.CommonBCInt):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#getFesaClassChildrenBeansCreated():java.lang.Boolean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#setFesaClassChildrenBeansCreated(java.lang.Boolean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean#access$000(cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean,java.awt.event.ContainerEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean.fecName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean.commonBC">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean.fesaClassGlobalBean">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean.fesaClassDeviceBeans">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean.fesaClassChildrenBeansCreated">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassBeanUpdater" packageName="cern.abbtec.common.bc.fesa.gui.beans" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater#FesaClassBeanUpdater(cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean,cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater#run():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater#doUpdate():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater#getFesaClassBean():cern.abbtec.common.bc.fesa.gui.beans.FesaClassBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater#getFesaClassMessage():cern.abbtec.common.bc.fesa.jms.FesaClassMessage">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater.fesaClassBean">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassBeanUpdater.fesaClassMessage">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassDeviceBean" packageName="cern.abbtec.common.bc.fesa.gui.beans" extends="cern.abbtec.common.lib.app.CommonJPanel" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#createFesaClassPropertyBean(java.lang.String):cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#drawPropertyBeans():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#updateBean(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#FesaClassDeviceBean():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#updateTitledBorder():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#updateFromFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#createPropertyBeans(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#updatePropertyBeans(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#initComponents():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#getDeviceName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#setDeviceName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#getFesaClassPropertyBeans():java.util.Hashtable">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#setFesaClassPropertyBeans(java.util.Hashtable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#getCommonBC():cern.abbtec.common.bc.CommonBCInt">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean#setCommonBC(cern.abbtec.common.bc.CommonBCInt):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean.deviceName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean.fesaClassPropertyBeans">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassDeviceBean.commonBC">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassPropertyBean" packageName="cern.abbtec.common.bc.fesa.gui.beans" extends="cern.abbtec.common.lib.app.CommonJPanel" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#getDeviceName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#setDeviceName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#updateBean(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#FesaClassPropertyBean():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#updateTitledBorder():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#updateFromFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#initComponents():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#getFesaPropertyBeanName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#setFesaPropertyBeanName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#getCommonBC():cern.abbtec.common.bc.CommonBCInt">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean#setCommonBC(cern.abbtec.common.bc.CommonBCInt):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean.commonBC">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean.deviceName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.gui.beans.FesaClassPropertyBean.fesaPropertyBeanName">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassMessage" packageName="cern.abbtec.common.bc.fesa.jms" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#FesaClassMessage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#getFesaClassCdo():cern.abbtec.common.bc.fesa.cdo.FesaClassCdo">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#setFesaClassCdo(cern.abbtec.common.bc.fesa.cdo.FesaClassCdo):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#getDeviceName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#setDeviceName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#getPropertyName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage#setPropertyName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage.ANY_DEVICE">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage.ANY_PROPERTY">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage.deviceName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage.propertyName">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessage.fesaClassCdo">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassMessageConsumer" packageName="cern.abbtec.common.bc.fesa.jms" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#getFesaClassMessageProcessors():java.util.Vector">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#addFesaClassMessageProcessor(cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#remFesaClassMessageProcessor(cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#getSingleInstance():cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#FesaClassMessageConsumer():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#onMessage(javax.jms.Message):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#processMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer.logger">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer.singleInstance">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumer.fesaClassMessageProcessors">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassMessageConsumerWorker" packageName="cern.abbtec.common.bc.fesa.jms" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#FesaClassMessageConsumerWorker(cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor,cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#doInBackground():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#getFesaClassMessage():cern.abbtec.common.bc.fesa.jms.FesaClassMessage">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#getFesaClassMessageProcessor():cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker.logger">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker.fesaClassMessageProcessor">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageConsumerWorker.fesaClassMessage">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="FesaClassMessageCreator" packageName="cern.abbtec.common.bc.fesa.jms" extends="" implements="org.springframework.jms.core.MessageCreator">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#FesaClassMessageCreator(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#createMessage(javax.jms.Session):javax.jms.Message">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#getFesaClassMessage():cern.abbtec.common.bc.fesa.jms.FesaClassMessage">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#setFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator.logger">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.bc.fesa.jms.FesaClassMessageCreator.fesaClassMessage">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="IntFesaClassMessageProcessor" packageName="cern.abbtec.common.bc.fesa.jms" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.bc.fesa.jms.IntFesaClassMessageProcessor#processFesaClassMessage(cern.abbtec.common.bc.fesa.jms.FesaClassMessage):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="JPanelDevicesSelector" packageName="cern.abbtec.common.gui.beans" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.gui.beans.JPanelDevicesSelector#JPanelDevicesSelector():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.gui.beans.JPanelDevicesSelector#initComponents():void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="CERNUser" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.CERNUser#CERNUser():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CERNUser#getName():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CERNUser#setName(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CERNUser#getConnectedSince():java.util.Date">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CERNUser#setConnectedSince(java.util.Date):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.app.CERNUser.name">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CERNUser.connectedSince">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="CommonAppClient" packageName="cern.abbtec.common.lib.app" extends="" implements="cern.abbtec.common.lib.app.IntAppConfiguration cern.abbtec.common.lib.app.IntAppLog cern.abbtec.common.lib.app.IntLogger cern.abbtec.common.lib.app.IntAppContainer cern.abbtec.common.lib.app.IntAppRmiClient cern.abbtec.common.lib.app.IntAppSecurity cern.accsoft.security.rba.util.gui.AuthenticationListener">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getSpringApplicationContext():org.springframework.context.ApplicationContext">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setSpringApplicationContext(org.springframework.context.ApplicationContext):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getSpringBeanFactory():org.springframework.beans.factory.BeanFactory">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setSpringBeanFactory(org.springframework.beans.factory.BeanFactory):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getMainFormTitle():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#cleanApplicationDependencies():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getBLComponent():cern.abbtec.common.bc.CommonBCInt">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#CommonAppClient():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initMainFormView():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initAppConfigurationModel():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initLog():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initJDialogLogging():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initAppContainer():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initRmiObjectManager():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#initAppBLComponent():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#maximizedAppView():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getModelAppConfiguration():cern.abbtec.common.lib.app.ModelAppConfiguration">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setModelAppConfiguration(cern.abbtec.common.lib.app.ModelAppConfiguration):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#showAppLogging():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getRmiObjectManager():cern.abbtec.common.lib.app.RmiObjectManager">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setRmiObjectManager(cern.abbtec.common.lib.app.RmiObjectManager):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#loginUser(javax.swing.JFrame):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#loadCERNUser():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#resetCERNUser():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#loginPerformed():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#logoutPerformed():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#tokenExpired():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#exitApplication():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getCernUser():cern.abbtec.common.lib.app.CERNUser">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setCernUser(cern.abbtec.common.lib.app.CERNUser):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getjDialogLogging():cern.abbtec.common.lib.log.JDialogLogging">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setjDialogLogging(cern.abbtec.common.lib.log.JDialogLogging):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getRbaIntegrator():cern.accsoft.security.rba.util.gui.RBAIntegrator">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setRbaIntegrator(cern.accsoft.security.rba.util.gui.RBAIntegrator):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#getCommonBC():cern.abbtec.common.bc.CommonBCInt">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#setCommonBC(cern.abbtec.common.bc.CommonBCInt):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppClient#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.springApplicationContext">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.springBeanFactory">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.cernUser">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.modelAppConfiguration">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.rmiObjectManager">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.jDialogLogging">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.rbaIntegrator">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppClient.commonBC">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="CommonAppServer" packageName="cern.abbtec.common.lib.app" extends="" implements="cern.abbtec.common.lib.app.IntAppConfiguration cern.abbtec.common.lib.app.IntAppLog cern.abbtec.common.lib.app.IntLogger cern.abbtec.common.lib.app.IntAppContainer">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#getSpringApplicationContext():org.springframework.context.ApplicationContext">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#setSpringApplicationContext(org.springframework.context.ApplicationContext):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#getSpringBeanFactory():org.springframework.beans.factory.BeanFactory">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#setSpringBeanFactory(org.springframework.beans.factory.BeanFactory):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#CommonAppServer():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#initAppConfigurationModel():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#getModelAppConfiguration():cern.abbtec.common.lib.app.ModelAppConfiguration">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#setModelAppConfiguration(cern.abbtec.common.lib.app.ModelAppConfiguration):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#initLog():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#initAppContainer():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonAppServer#&lt;clinit>():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppServer.modelAppConfiguration">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppServer.springApplicationContext">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.CommonAppServer.springBeanFactory">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="CommonJInternalJFrame" packageName="cern.abbtec.common.lib.app" extends="" implements="cern.abbtec.common.lib.app.IntLogger">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.CommonJInternalJFrame#CommonJInternalJFrame():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonJInternalJFrame#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="CommonJPanel" packageName="cern.abbtec.common.lib.app" extends="" implements="cern.abbtec.common.lib.app.IntLogger">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.CommonJPanel#CommonJPanel():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.CommonJPanel#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="IntAppConfiguration" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_APPRUNNINGMODE">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_SPRINGCONFIGURATIONFILE_DEV">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_SPRINGCONFIGURATIONFILE_PROD">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_LOG4JCONFIGURATION">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_LOG4JCONFIGURATION_DEV">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_LOG4JCONFIGURATION_PROD">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.SYSTEM_PROPERTY_SWINGDEFAULTLAFCONFIGURATION">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.CST_PROPERTYVALUE_APPRUNNINGMODE_DEV">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.IntAppConfiguration.CST_PROPERTYVALUE_APPRUNNINGMODE_PROD">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="IntAppContainer" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.IntAppContainer#initAppContainer():void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="IntAppLog" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.IntAppLog#initLog():void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="IntAppRmiClient" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.IntAppRmiClient#initRmiObjectManager():void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="IntAppSecurity" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.IntAppSecurity#loginUser(javax.swing.JFrame):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="IntLogger" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.IntLogger#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="ModelAppConfiguration" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#ModelAppConfiguration():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getRunningMode():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setRunningMode(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getLog4jFileConfPathDev():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setLog4jFileConfPathDev(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getLog4jFileConfPathProd():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setLog4jFileConfPathProd(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getSpringFileConfPathDev():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setSpringFileConfPathDev(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getSpringFileConfPathProd():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setSpringFileConfPathProd(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#getSwingDefaultLAFClassConf():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.ModelAppConfiguration#setSwingDefaultLAFClassConf(java.lang.String):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.runningMode">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.log4jFileConfPathDev">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.log4jFileConfPathProd">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.springFileConfPathDev">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.springFileConfPathProd">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.ModelAppConfiguration.swingDefaultLAFClassConf">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="RmiObjectManager" packageName="cern.abbtec.common.lib.app" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#RmiObjectManager():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getMkInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setMkInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getBetsInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setBetsInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getZsInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setZsInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getLsaInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setLsaInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getMkClockDiagInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setMkClockDiagInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#getAbbtecStatesInt():java.lang.Object">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.app.RmiObjectManager#setAbbtecStatesInt(java.lang.Object):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.betsInt">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.mkInt">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.zsInt">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.lsaInt">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.mkClockDiagInt">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.app.RmiObjectManager.abbtecStatesInt">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="ExceptionAlerter" packageName="cern.abbtec.common.lib.exception" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#ExceptionAlerter():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#showErrorAlert(java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#showWarmingAlert(java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#showMessageAlert(java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#logMessageAlert(java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.ExceptionAlerter#logErrorAlert(java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="UncaughtExceptionManager" packageName="cern.abbtec.common.lib.exception" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.exception.UncaughtExceptionManager#UncaughtExceptionManager():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.exception.UncaughtExceptionManager#uncaughtException(java.lang.Thread,java.lang.Throwable):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="JDialogLogging$1" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$1#JDialogLogging$1(cern.abbtec.common.lib.log.JDialogLogging):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$1#actionPerformed(java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging$1.this$0">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="JDialogLogging$2" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$2#JDialogLogging$2(cern.abbtec.common.lib.log.JDialogLogging):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$2#actionPerformed(java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging$2.this$0">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="JDialogLogging$3" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$3#JDialogLogging$3():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging$3#run():void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="JDialogLogging" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#JDialogLogging(java.awt.Frame,boolean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#initApplicationAppender():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#initJTextAreaListener():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#getLoggingLevel():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#setLoggingLevel():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#refreshLoggingView():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#initComponents():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#jComboLoggingLevelActionPerformed(java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#jButton1ActionPerformed(java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#main(java.lang.String[]):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#getApplicationAppender():org.apache.log4j.WriterAppender">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#setApplicationAppender(org.apache.log4j.WriterAppender):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#isDataChanged():boolean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#setDataChanged(boolean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#insertUpdate(javax.swing.event.DocumentEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#removeUpdate(javax.swing.event.DocumentEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#changedUpdate(javax.swing.event.DocumentEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#setVisible(boolean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#isRefreshViewToTheEnd():boolean">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#setRefreshViewToTheEnd(boolean):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#access$000(cern.abbtec.common.lib.log.JDialogLogging,java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.JDialogLogging#access$100(cern.abbtec.common.lib.log.JDialogLogging,java.awt.event.ActionEvent):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.applicationAppender">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.dataChanged">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.refreshViewToTheEnd">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.jButton1">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.jCheckBox1">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.jComboLoggingLevel">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.jScrollPaneLogging">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.jTextAreaLogging">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.JDialogLogging.bindingGroup">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="LoggerAspectImpl" packageName="cern.abbtec.common.lib.log" extends="" implements="cern.abbtec.common.lib.log.LoggerAspectInt">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#LoggerAspectImpl():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#inBetsSimPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#inABBTECRmiServerPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#inMKBLPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#inMKGUIPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#doDebug(org.aspectj.lang.JoinPoint):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectImpl#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.log.LoggerAspectImpl.logger">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="LoggerAspectInt" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#inBetsSimPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#inABBTECRmiServerPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#inMKBLPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#inMKGUIPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.LoggerAspectInt#doDebug(org.aspectj.lang.JoinPoint):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="OutputStreamTextArea" packageName="cern.abbtec.common.lib.log" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#OutputStreamTextArea(javax.swing.JTextArea):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#write(int):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#getJTextArea():javax.swing.JTextArea">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#setJTextArea(javax.swing.JTextArea):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#getSBuilder():java.lang.StringBuilder">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.log.OutputStreamTextArea#setSBuilder(java.lang.StringBuilder):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.log.OutputStreamTextArea.jTextArea">
+        <versions>4.0.0</versions>
+      </fields>
+      <fields signature="cern.abbtec.common.lib.log.OutputStreamTextArea.sBuilder">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="RbaMethodRoles" packageName="cern.abbtec.common.lib.security" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.security.RbaMethodRoles#roles():java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="RbaSecurityAspectImpl" packageName="cern.abbtec.common.lib.security" extends="" implements="cern.abbtec.common.lib.security.RbaSecurityAspectInt">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl#RbaSecurityAspectImpl():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl#inBusinessLogicPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl#inRbaMethodRoles(cern.abbtec.common.lib.security.RbaMethodRoles):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl#isUserInRole(cern.abbtec.common.lib.security.RbaMethodRoles):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <fields signature="cern.abbtec.common.lib.security.RbaSecurityAspectImpl.logger">
+        <versions>4.0.0</versions>
+      </fields>
+    </classes>
+    <classes simpleName="RbaSecurityAspectInt" packageName="cern.abbtec.common.lib.security" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectInt#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectInt#inBusinessLogicPackage():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectInt#inRbaMethodRoles(cern.abbtec.common.lib.security.RbaMethodRoles):void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.lib.security.RbaSecurityAspectInt#isUserInRole(cern.abbtec.common.lib.security.RbaMethodRoles):void">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+    <classes simpleName="NanoSecondsTimeTool" packageName="cern.abbtec.common.tools" extends="" implements="">
+      <versions>4.0.0</versions>
+      <methods signature="cern.abbtec.common.tools.NanoSecondsTimeTool#NanoSecondsTimeTool():void">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.tools.NanoSecondsTimeTool#getMilliSecondsReadableDelay(java.lang.Long):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.tools.NanoSecondsTimeTool#getDateTimeShortFormat(java.lang.Long):java.lang.String">
+        <versions>4.0.0</versions>
+      </methods>
+      <methods signature="cern.abbtec.common.tools.NanoSecondsTimeTool#getLogger():org.apache.commons.logging.Log">
+        <versions>4.0.0</versions>
+      </methods>
+    </classes>
+  </products>
+</dg:DependencyGraph>
