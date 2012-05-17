@@ -22,10 +22,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
  */
 public class IncQueryApplication implements IApplication {
 
-	// -m
-	// d:\PhD\EclipseSpace\eclipse-3.7.1-x64\runtime-IncQuery_v2\railway\model\railway.ecore
 	private static String modelParam = "-m";
-	// -p EClassNames
 	private static String patternParam = "-p";
 
 	/*
@@ -73,7 +70,7 @@ public class IncQueryApplication implements IApplication {
 			return IApplication.EXIT_OK;
 		}
 
-		IncQueryEngine.getDefaultLogger().logError(new IncQueryHeadless().execute(model, "EClassNames"));
+		new IncQueryHeadless().execute(model, patternFQN);
 
 		return IApplication.EXIT_OK;
 	}

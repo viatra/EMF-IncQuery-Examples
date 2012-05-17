@@ -29,6 +29,13 @@ import org.eclipse.viatra2.emf.incquery.runtime.extensibility.MatcherFactoryRegi
  */
 public class IncQueryHeadless {
 
+	/**
+	 * Returns the match set for patternFQN over the model in modelPath in pretty printed form
+	 * 
+	 * @param modelPath
+	 * @param patternFQN
+	 * @return
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String execute(String modelPath, String patternFQN) {
 
@@ -40,7 +47,7 @@ public class IncQueryHeadless {
 		Resource resource = resourceSet.getResource(fileURI, true);
 
 		long resourceInit = System.nanoTime();
-		IncQueryEngine.getDefaultLogger().logDebug("EMF load took: " + (resourceInit - start) / 1000000 + " ms");
+		IncQueryEngine.getDefaultLogger().logError("EMF load took: " + (resourceInit - start) / 1000000 + " ms");
 
 		if (resource != null) {
 			try {
@@ -55,9 +62,7 @@ public class IncQueryHeadless {
 
 				long collectedMatches = System.nanoTime();
 
-				// System.out.println("Init took: " + (matcherInit-start) +
-				// " Collecting took: " + (collectedMatches-matcherInit) + " ns");
-				IncQueryEngine.getDefaultLogger().logDebug(
+				IncQueryEngine.getDefaultLogger().logError(
 						"Init took: " + (matcherInit - startMatching) / 1000000 + " Collecting took: "
 								+ (collectedMatches - matcherInit) / 1000000 + " ms");
 
@@ -74,12 +79,12 @@ public class IncQueryHeadless {
 				}
 
 				long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-				IncQueryEngine.getDefaultLogger().logDebug("Used memory: " + usedMemory + " bytes");
-				IncQueryEngine.getDefaultLogger().logDebug("Used memory: " + (usedMemory / 1024) / 1024 + " megabytes");
+				IncQueryEngine.getDefaultLogger().logError("Used memory: " + usedMemory + " bytes");
+				IncQueryEngine.getDefaultLogger().logError("Used memory: " + (usedMemory / 1024) / 1024 + " megabytes");
 
-				IncQueryEngine.getDefaultLogger().logDebug("Found matches:");
+				IncQueryEngine.getDefaultLogger().logError("Found matches:");
 				for (IPatternMatch match : matches) {
-					IncQueryEngine.getDefaultLogger().logDebug(match.prettyPrint());
+					IncQueryEngine.getDefaultLogger().logError(match.prettyPrint());
 					results.append(match.prettyPrint());
 				}
 				
