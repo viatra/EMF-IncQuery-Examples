@@ -1,0 +1,142 @@
+package hu.bme.mit.incquery.ecorequeries.example
+
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+/*
+ * Generic pattern: EClass is an EClass in ECore
+ */
+
+pattern EClass(EClass) = {
+	EClass(EClass);
+}
+
+/*
+ * Generic pattern: Super and Sub is an EClass and Sub is Super's childclass
+ */
+pattern SuperTypeOf(Super,Sub) = {
+	EClass.eSuperTypes(Sub,Super);
+	EClass(Super);
+	EClass(Sub);
+}	
+
+/*
+ * Generic pattern: E is an EClass, which has an EAttribute Attr, having a datatype Type
+ */
+
+pattern EClassAttribute(E, Attr, Type) = {
+	EClass(E); 
+	EClass.eStructuralFeatures(E,Attr);
+	EAttribute(Attr);
+	ETypedElement.eType(Attr,Type);
+}
+
+/*
+ * Problem-specific pattern: E is an EClass, which has an EAttribute Attr, having EString as its datatype
+ */
+
+pattern EClassWithEStringAttribute(E,Attr) = {
+	EClass(E);
+	find EClassAttribute(E,Attr,Type);
+	find IsEString(Type);
+}
+
+/*
+ * ERef is an EReference with a 0-* multiplicity constraint
+ */
+	
+pattern EReferenceWithStarMultiplicity(ERef) = {
+	EReference(ERef);
+	ETypedElement.lowerBound(ERef,0); 
+	ETypedElement.upperBound(ERef,-1);
+}
+
+/*
+ * ERef is an EReference with a 1-1 multiplicity constraint
+ */ 
+
+pattern EReferenceWithOneMultiplicity(ERef) = {
+	EReference(ERef);
+	ETypedElement.lowerBound(ERef,1);
+	ETypedElement.upperBound(ERef,1);
+}
+
+/*
+ * implements the sample query given in example.pdf
+ */ 
+
+pattern SampleQuery(XElement, YElement, Relates, Label1, Label2) = {
+	// structural block, defining the basic pattern body
+	EClass(XElement);
+	EClass.eStructuralFeatures(XElement,Relates);
+	EReference(Relates);
+	EClass(YElement);
+	ETypedElement.eType(Relates,YElement);
+
+	// express the multiplicity of the ERef between X and Y
+	find EReferenceWithStarMultiplicity(Relates);
+	// express that both X and Y have got an attribute of type EString
+	find EClassWithEStringAttribute(XElement, Label1);
+	find EClassWithEStringAttribute(YElement, Label2);
+	
+	// filter out matching to Ecore.ecore (as the pattern would also have matches there)
+	neg find IsInECore(XElement);
+	neg find IsInECore(YElement);
+}
+
+pattern SampleQuery2(XElement, YElement, Relates1, Relates2, Label1, Label2) = {
+	// structural block, defining the basic pattern body
+	EClass(XElement);
+	EClass.eStructuralFeatures(XElement,Relates1);
+	EReference(Relates1);
+	
+	EReference.eOpposite(Relates1,Relates2);
+	EReference(Relates2);
+	
+	EClass(YElement);
+	ETypedElement.eType(Relates1,YElement);
+	
+	// express the multiplicity of the ERef between X and Y
+	find EReferenceWithStarMultiplicity(Relates1);
+	find EReferenceWithOneMultiplicity(Relates2);
+	
+	// express that both X and Y have got an attribute of type EString
+	find EClassWithEStringAttribute(XElement, Label1);
+	find EClassWithEStringAttribute(YElement, Label2);
+	
+	// filter out matching to Ecore.ecore (as the pattern would also have matches there)
+	neg find IsInECore(XElement);
+	neg find IsInECore(YElement);
+}
+
+/*
+ * helper patterns
+ */ 
+
+/*
+ * Element is "the" EString in the ECore package
+ */ 
+
+pattern IsEString(Element) = {
+	find IsInECore(Element);
+	find ECoreNamedElement(Element,"EString");
+}
+
+/*
+ * Generic pattern: Element is an ECore model element, having name Name
+ */ 
+
+pattern ECoreNamedElement(Element,Name) = {
+       ENamedElement(Element);
+       ENamedElement.name(Element,Name);
+}
+
+/*
+ * Generic pattern: Element resides in "the" Ecore package
+ */ 
+
+pattern IsInECore(Element) = {
+	EClassifier.ePackage(Element,EP);
+	EPackage(EP);
+	EPackage.nsURI(EP,"http://www.eclipse.org/emf/2002/Ecore");
+}
+	
