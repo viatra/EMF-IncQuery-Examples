@@ -12,10 +12,10 @@ import school.studentofschool.StudentOfSchoolMatch;
 public abstract class StudentOfSchoolProcessor implements IMatchProcessor<StudentOfSchoolMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param Student the value of pattern parameter Student in the currently processed match 
-   * @param School the value of pattern parameter School in the currently processed match 
-   * @param Year the value of pattern parameter Year in the currently processed match 
-   * @param SchoolClass the value of pattern parameter SchoolClass in the currently processed match 
+   * @param pStudent the value of pattern parameter Student in the currently processed match 
+   * @param pSchool the value of pattern parameter School in the currently processed match 
+   * @param pYear the value of pattern parameter Year in the currently processed match 
+   * @param pSchoolClass the value of pattern parameter SchoolClass in the currently processed match 
    * 
    */
   public abstract void process(final Object Student, final Object School, final Object Year, final Object SchoolClass);

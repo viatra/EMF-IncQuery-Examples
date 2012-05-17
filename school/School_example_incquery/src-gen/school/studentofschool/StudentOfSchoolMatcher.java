@@ -9,6 +9,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
+import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
 import school.studentofschool.StudentOfSchoolMatch;
 
@@ -16,7 +17,7 @@ import school.studentofschool.StudentOfSchoolMatch;
  * Generated pattern matcher API of the studentOfSchool pattern, 
  * providing pattern-specific query methods.
  * 
- * 		
+ * 
  *  	
  *  	 
  *  	pattern studentOfSchool(Student, School, Year, SchoolClass) = {
@@ -63,10 +64,10 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @return matches represented as a StudentOfSchoolMatch object.
    * 
    */
@@ -78,10 +79,10 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @return a match represented as a StudentOfSchoolMatch object, or null if no match is found.
    * 
    */
@@ -93,10 +94,10 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
@@ -107,10 +108,10 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
@@ -121,10 +122,10 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
@@ -136,16 +137,35 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param Student the fixed value of pattern parameter Student, or null if not bound.
-   * @param School the fixed value of pattern parameter School, or null if not bound.
-   * @param Year the fixed value of pattern parameter Year, or null if not bound.
-   * @param SchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
   public boolean forOneArbitraryMatch(final Object pStudent, final Object pSchool, final Object pYear, final Object pSchoolClass, final IMatchProcessor<? super StudentOfSchoolMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pStudent, pSchool, pYear, pSchoolClass}, processor);
+    
+  }
+  
+  /**
+   * Registers a new filtered delta monitor on this pattern matcher.
+   * The DeltaMonitor can be used to track changes (delta) in the set of filtered pattern matches from now on, considering those matches only that conform to the given fixed values of some parameters. 
+   * It can also be reset to track changes from a later point in time, 
+   * and changes can even be acknowledged on an individual basis. 
+   * See {@link DeltaMonitor} for details.
+   * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
+   * @param pStudent the fixed value of pattern parameter Student, or null if not bound.
+   * @param pSchool the fixed value of pattern parameter School, or null if not bound.
+   * @param pYear the fixed value of pattern parameter Year, or null if not bound.
+   * @param pSchoolClass the fixed value of pattern parameter SchoolClass, or null if not bound.
+   * 	 @return the delta monitor.
+   * 
+   */
+  public DeltaMonitor<StudentOfSchoolMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pStudent, final Object pSchool, final Object pYear, final Object pSchoolClass) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pStudent, pSchool, pYear, pSchoolClass});
     
   }
   

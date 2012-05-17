@@ -12,7 +12,7 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 	/**
 	 * School names pattern
 	 */
-	pattern schoolName(S, Name) = { 		
+	pattern schoolName(S, Name) = {	
  		School.name(S, Name);
  	}
 
@@ -21,7 +21,7 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 	 */
    	pattern studentName(S, Name) = {
   		Student.name(S, Name);
- 	}		
+ 	}
  	
  	/**
  	 * Return the students of the school

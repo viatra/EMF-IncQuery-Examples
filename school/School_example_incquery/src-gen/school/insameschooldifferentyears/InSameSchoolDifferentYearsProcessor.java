@@ -12,8 +12,8 @@ import school.insameschooldifferentyears.InSameSchoolDifferentYearsMatch;
 public abstract class InSameSchoolDifferentYearsProcessor implements IMatchProcessor<InSameSchoolDifferentYearsMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param ElderStudent the value of pattern parameter ElderStudent in the currently processed match 
-   * @param YoungerStudent the value of pattern parameter YoungerStudent in the currently processed match 
+   * @param pElderStudent the value of pattern parameter ElderStudent in the currently processed match 
+   * @param pYoungerStudent the value of pattern parameter YoungerStudent in the currently processed match 
    * 
    */
   public abstract void process(final Object ElderStudent, final Object YoungerStudent);

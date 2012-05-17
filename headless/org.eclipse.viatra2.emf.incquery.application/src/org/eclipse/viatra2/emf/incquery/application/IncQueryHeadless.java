@@ -17,11 +17,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
-
-import eclassnames.EClassNamesMatch;
-import eclassnames.EClassNamesMatcher;
+import org.eclipse.viatra2.emf.incquery.runtime.extensibility.MatcherFactoryRegistry;
 
 /**
  * @author Abel Hegedus
@@ -29,59 +29,76 @@ import eclassnames.EClassNamesMatcher;
  */
 public class IncQueryHeadless {
 
-	public void execute(String modelPath) {
-		
-		//Loads the resource
+	/**
+	 * Returns the match set for patternFQN over the model in modelPath in pretty printed form
+	 * 
+	 * @param modelPath
+	 * @param patternFQN
+	 * @return
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public String execute(String modelPath, String patternFQN) {
+
+		StringBuilder results = new StringBuilder();
+		// Loads the resource
 		long start = System.nanoTime();
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URI fileURI = URI.createFileURI(modelPath);
 		Resource resource = resourceSet.getResource(fileURI, true);
-		
+
 		long resourceInit = System.nanoTime();
-		IncQueryEngine.getDefaultLogger().logDebug("EMF load took: " + (resourceInit-start)/1000000 + " ms");
-		 
-		if(resource != null)
-				{	
-					try {
-						//get all matches of the pattern
-						long startMatching = System.nanoTime();
-						
-						EClassNamesMatcher matcher = EClassNamesMatcher.FACTORY.getMatcher(resource);
-						
-						long matcherInit = System.nanoTime();
-						
-						Collection<EClassNamesMatch> matches = matcher.getAllMatches();
-						
-						long collectedMatches = System.nanoTime();
-						
-						//System.out.println("Init took: " + (matcherInit-start) + " Collecting took: " + (collectedMatches-matcherInit) + " ns");
-						IncQueryEngine.getDefaultLogger().logDebug("Init took: " + (matcherInit-startMatching)/1000000 + " Collecting took: " + (collectedMatches-matcherInit)/1000000 + " ms");
-						
-						System.gc();
-						System.gc();
-						System.gc();
-						System.gc();
-						System.gc();
-						
-						try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						
-						long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-						IncQueryEngine.getDefaultLogger().logDebug("Used memory: " + usedMemory + " bytes");
-						IncQueryEngine.getDefaultLogger().logDebug("Used memory: " + (usedMemory/1024)/1024 + " megabytes");
-					
-						IncQueryEngine.getDefaultLogger().logDebug("Found matches:");
-						for (EClassNamesMatch eClassNamesMatch : matches) {
-							IncQueryEngine.getDefaultLogger().logDebug(eClassNamesMatch.prettyPrint());
-						}
-					
-					} catch (IncQueryRuntimeException e) {
-						e.printStackTrace(); 
-					}
+		IncQueryEngine.getDefaultLogger().logError("EMF load took: " + (resourceInit - start) / 1000000 + " ms");
+
+		if (resource != null) {
+			try {
+				// get all matches of the pattern
+				long startMatching = System.nanoTime();
+
+				IncQueryMatcher matcher = MatcherFactoryRegistry.getMatcherFactory(patternFQN).getMatcher(resource);
+
+				long matcherInit = System.nanoTime();
+
+				Collection<IPatternMatch> matches = matcher.getAllMatches();
+
+				long collectedMatches = System.nanoTime();
+
+				IncQueryEngine.getDefaultLogger().logError(
+						"Init took: " + (matcherInit - startMatching) / 1000000 + " Collecting took: "
+								+ (collectedMatches - matcherInit) / 1000000 + " ms");
+
+				System.gc();
+				System.gc();
+				System.gc();
+				System.gc();
+				System.gc();
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
+
+				long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+				IncQueryEngine.getDefaultLogger().logError("Used memory: " + usedMemory + " bytes");
+				IncQueryEngine.getDefaultLogger().logError("Used memory: " + (usedMemory / 1024) / 1024 + " megabytes");
+
+				IncQueryEngine.getDefaultLogger().logError("Found matches:");
+				for (IPatternMatch match : matches) {
+					IncQueryEngine.getDefaultLogger().logError(match.prettyPrint());
+					results.append(match.prettyPrint());
+				}
+				
+				if(matches.size() == 0) {
+					results.append("Empty match set");
+				}
+
+			} catch (IncQueryRuntimeException e) {
+				e.printStackTrace();
+				results.append(e.getMessage());
+			}
+		} else {
+			results.append("Resource not found");
+		}
+		return results.toString();
 	}
 }
