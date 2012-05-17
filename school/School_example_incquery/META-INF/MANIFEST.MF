@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: School_example_incquery
+Bundle-SymbolicName: School_example_incquery;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: school.insameschooldifferentyears,
+ school.samecodeclassdifferentyears,
+ school.school,
+ school.schoolname,
+ school.studentname,
+ school.studentofschool
+Require-Bundle: org.eclipse.pde.core,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.transaction,
+ org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
