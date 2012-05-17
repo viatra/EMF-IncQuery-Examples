@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage" xmlns:types="http://www.eclipse.org/xtext/common/JavaVMTypes" xmlns:xbase="http://www.eclipse.org/xtext/xbase/Xbase">
-  <patterns name="school.school">
+  <patterns name="school.school" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="S"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
@@ -11,7 +11,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="school.schoolName">
+  <patterns name="school.schoolName" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="S"/>
     <parameters name="Name"/>
     <bodies>
@@ -33,7 +33,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="school.studentName">
+  <patterns name="school.studentName" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="S"/>
     <parameters name="Name"/>
     <bodies>
@@ -55,7 +55,7 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="school.studentOfSchool">
+  <patterns name="school.studentOfSchool" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="Student"/>
     <parameters name="School"/>
     <parameters name="Year"/>
@@ -135,37 +135,41 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="school.inSameSchoolDifferentYears">
+  <patterns name="school.inSameSchoolDifferentYears" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="ElderStudent"/>
     <parameters name="YoungerStudent"/>
     <bodies>
-      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="ElderStudent"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="School"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="Year1"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="SchoolClass1"/>
-        </parameters>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
+        <call patternRef="//@patterns.3">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="ElderStudent"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="School"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="Year1"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="SchoolClass1"/>
+          </parameters>
+        </call>
       </constraints>
-      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="YoungerStudent"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="School"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="Year2"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="SchoolClass2"/>
-        </parameters>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
+        <call patternRef="//@patterns.3">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="YoungerStudent"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="School"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="Year2"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="SchoolClass2"/>
+          </parameters>
+        </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
@@ -222,17 +226,19 @@
       </constraints>
     </bodies>
   </patterns>
-  <patterns name="school.sameCodeClassDifferentYears">
+  <patterns name="school.sameCodeClassDifferentYears" fileName="platform:/resource/School_example_incquery/src/school/school.eiq">
     <parameters name="ElderStudent"/>
     <parameters name="YoungerStudent"/>
     <bodies>
-      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="ElderStudent"/>
-        </parameters>
-        <parameters xsi:type="patternLanguage:VariableValue">
-          <value var="YoungerStudent"/>
-        </parameters>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
+        <call patternRef="//@patterns.4">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="ElderStudent"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="YoungerStudent"/>
+          </parameters>
+        </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
@@ -324,7 +330,6 @@
       </constraints>
     </bodies>
   </patterns>
-  <importPackages>
-    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
-  </importPackages>
+  <importPackages/>
+  <importPackages/>
 </eMFPatternLanguage:PatternModel>

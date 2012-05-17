@@ -12,7 +12,7 @@ import school.school.SchoolMatch;
 public abstract class SchoolProcessor implements IMatchProcessor<SchoolMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param S the value of pattern parameter S in the currently processed match 
+   * @param pS the value of pattern parameter S in the currently processed match 
    * 
    */
   public abstract void process(final Object S);

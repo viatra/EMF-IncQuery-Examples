@@ -12,8 +12,8 @@ import school.studentname.StudentNameMatch;
 public abstract class StudentNameProcessor implements IMatchProcessor<StudentNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param S the value of pattern parameter S in the currently processed match 
-   * @param Name the value of pattern parameter Name in the currently processed match 
+   * @param pS the value of pattern parameter S in the currently processed match 
+   * @param pName the value of pattern parameter Name in the currently processed match 
    * 
    */
   public abstract void process(final Object S, final Object Name);

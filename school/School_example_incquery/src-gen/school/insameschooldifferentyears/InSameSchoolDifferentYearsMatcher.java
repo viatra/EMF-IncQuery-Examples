@@ -9,6 +9,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
+import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
 import school.insameschooldifferentyears.InSameSchoolDifferentYearsMatch;
 
@@ -63,8 +64,8 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @return matches represented as a InSameSchoolDifferentYearsMatch object.
    * 
    */
@@ -76,8 +77,8 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @return a match represented as a InSameSchoolDifferentYearsMatch object, or null if no match is found.
    * 
    */
@@ -89,8 +90,8 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
@@ -101,8 +102,8 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
@@ -113,8 +114,8 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
@@ -126,14 +127,31 @@ public class InSameSchoolDifferentYearsMatcher extends BaseGeneratedMatcher<InSa
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.  
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param ElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
-   * @param YoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
    * @param processor the action that will process the selected match. 
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
   public boolean forOneArbitraryMatch(final Object pElderStudent, final Object pYoungerStudent, final IMatchProcessor<? super InSameSchoolDifferentYearsMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pElderStudent, pYoungerStudent}, processor);
+    
+  }
+  
+  /**
+   * Registers a new filtered delta monitor on this pattern matcher.
+   * The DeltaMonitor can be used to track changes (delta) in the set of filtered pattern matches from now on, considering those matches only that conform to the given fixed values of some parameters. 
+   * It can also be reset to track changes from a later point in time, 
+   * and changes can even be acknowledged on an individual basis. 
+   * See {@link DeltaMonitor} for details.
+   * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
+   * @param pElderStudent the fixed value of pattern parameter ElderStudent, or null if not bound.
+   * @param pYoungerStudent the fixed value of pattern parameter YoungerStudent, or null if not bound.
+   * 	 @return the delta monitor.
+   * 
+   */
+  public DeltaMonitor<InSameSchoolDifferentYearsMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pElderStudent, final Object pYoungerStudent) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pElderStudent, pYoungerStudent});
     
   }
   
