@@ -20,43 +20,46 @@
       </matcher>
    </extension>
    <extension
-         id="dependedBy"
+         id="query.dependedBy"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="dependedby.DependedByMatcherFactory"
-            id="dependedBy">
+            factory="query.dependedby.DependedByMatcherFactory"
+            id="query.dependedBy">
       </matcher>
    </extension>
    <extension
-         id="dependedComponents"
+         id="query.dependedByTran"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="dependedcomponents.DependedComponentsMatcherFactory"
-            id="dependedComponents">
+            factory="query.dependedbytran.DependedByTranMatcherFactory"
+            id="query.dependedByTran">
       </matcher>
    </extension>
    <extension
-         id="dependedBy"
+         id="query.dependedComponents"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="dependedby.DependedByMatcherFactory"
-            id="dependedBy">
+            factory="query.dependedcomponents.DependedComponentsMatcherFactory"
+            id="query.dependedComponents">
       </matcher>
    </extension>
    <extension
-         id="dependedByTran"
+         id="queryt.dependedBy"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="dependedbytran.DependedByTranMatcherFactory"
-            id="dependedByTran">
+            factory="queryt.dependedby.DependedByMatcherFactory"
+            id="queryt.dependedBy">
       </matcher>
    </extension>
    <extension
-         id="dependedComponents"
+         id="queryt.dependedComponents"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="dependedcomponents.DependedComponentsMatcherFactory"
-            id="dependedComponents">
+            factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
+            id="queryt.dependedComponents">
       </matcher>
    </extension>
 
