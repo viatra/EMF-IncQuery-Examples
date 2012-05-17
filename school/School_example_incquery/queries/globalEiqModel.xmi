@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage" xmlns:types="http://www.eclipse.org/xtext/common/JavaVMTypes" xmlns:xbase="http://www.eclipse.org/xtext/xbase/Xbase">
+  <patterns name="school.school">
+    <parameters name="S"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+        </type>
+        <var var="S"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.schoolName">
+    <parameters name="S"/>
+    <parameters name="Name"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//School/name"/>
+            </type>
+          </tail>
+          <src var="S"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Name"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.studentName">
+    <parameters name="S"/>
+    <parameters name="Name"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Student"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//Student/name"/>
+            </type>
+          </tail>
+          <src var="S"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Name"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.studentOfSchool">
+    <parameters name="Student"/>
+    <parameters name="School"/>
+    <parameters name="Year"/>
+    <parameters name="SchoolClass"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+        </type>
+        <var var="School"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//School"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//School/years"/>
+            </type>
+          </tail>
+          <src var="School"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Year"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
+        </type>
+        <var var="Year"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//Year/schoolClasses"/>
+            </type>
+          </tail>
+          <src var="Year"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="SchoolClass"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+        </type>
+        <var var="SchoolClass"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//SchoolClass/students"/>
+            </type>
+          </tail>
+          <src var="SchoolClass"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Student"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Student"/>
+        </type>
+        <var var="Student"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.inSameSchoolDifferentYears">
+    <parameters name="ElderStudent"/>
+    <parameters name="YoungerStudent"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="ElderStudent"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="School"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Year1"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="SchoolClass1"/>
+        </parameters>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.3">
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YoungerStudent"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="School"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="Year2"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="SchoolClass2"/>
+        </parameters>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//Year/startingDate"/>
+            </type>
+          </tail>
+          <src var="Year1"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Date1"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//Year/startingDate"/>
+            </type>
+          </tail>
+          <src var="Year2"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Date2"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:CheckConstraint">
+        <expression xsi:type="xbase:XBinaryOperation">
+          <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessThan(java.lang.Comparable,C)"/>
+          <leftOperand xsi:type="xbase:XCastedExpression">
+            <type xsi:type="types:JvmParameterizedTypeReference">
+              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
+            </type>
+            <target xsi:type="xbase:XFeatureCall">
+              <feature xsi:type="patternLanguage:Variable" href="../src/school/school.eiq#/0/@patterns.4/@bodies.0/@variables.0"/>
+            </target>
+          </leftOperand>
+          <rightOperand xsi:type="xbase:XCastedExpression">
+            <type xsi:type="types:JvmParameterizedTypeReference">
+              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
+            </type>
+            <target xsi:type="xbase:XFeatureCall">
+              <feature xsi:type="patternLanguage:Variable" href="../src/school/school.eiq#/0/@patterns.4/@bodies.0/@variables.4"/>
+            </target>
+          </rightOperand>
+        </expression>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.sameCodeClassDifferentYears">
+    <parameters name="ElderStudent"/>
+    <parameters name="YoungerStudent"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" patternRef="//@patterns.4">
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="ElderStudent"/>
+        </parameters>
+        <parameters xsi:type="patternLanguage:VariableValue">
+          <value var="YoungerStudent"/>
+        </parameters>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//SchoolClass/students"/>
+            </type>
+          </tail>
+          <src var="SchoolClass1"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ElderStudent"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+        </type>
+        <var var="SchoolClass1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//SchoolClass/code"/>
+            </type>
+          </tail>
+          <src var="SchoolClass1"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Code1"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+        </type>
+        <var var="Code1"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http:///school.ecore#//SchoolClass/students"/>
+            </type>
+          </tail>
+          <src var="SchoolClass2"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="YoungerStudent"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+        </type>
+        <var var="SchoolClass2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http:///school.ecore#//SchoolClass"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http:///school.ecore#//SchoolClass/code"/>
+            </type>
+          </tail>
+          <src var="SchoolClass2"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="Code2"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+        </type>
+        <var var="Code2"/>
+      </constraints>
+    </bodies>
+  </patterns>
+  <importPackages>
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </importPackages>
+</eMFPatternLanguage:PatternModel>

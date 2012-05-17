@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:school="http:///school.ecore" name="Hogwarts School of Witchcraft and Wizardry" address="Hogsmeade">
+  <years startingDate="1991">
+    <schoolClasses code="71" courses="//@courses.0 //@courses.1 //@courses.2" homeroomTeacher="//@teachers.0">
+      <students name="Seamus Finnigan"/>
+      <students name="Neville Longbottom"/>
+    </schoolClasses>
+    <schoolClasses code="83">
+      <students name="Gregory Goyle"/>
+    </schoolClasses>
+  </years>
+  <years startingDate="1989">
+    <schoolClasses code="71" homeroomTeacher="//@teachers.2">
+      <students name="Lee Jordan"/>
+    </schoolClasses>
+  </years>
+  <teachers name="Snape" courses="//@courses.1" homeroomedClass="//@years.0/@schoolClasses.1"/>
+  <teachers name="Slughorn" courses="//@courses.2"/>
+  <teachers name="McGonagall" courses="//@courses.0" homeroomedClass="//@years.1/@schoolClasses.0"/>
+  <courses subject="Transfiguration" weight="4"/>
+  <courses xsi:type="school:SpecialisationCourse" subject="Potions" weight="2" specialisation="basic"/>
+  <courses xsi:type="school:SpecialisationCourse" subject="Potions" weight="2" specialisation="advanced"/>
+</school:School>
