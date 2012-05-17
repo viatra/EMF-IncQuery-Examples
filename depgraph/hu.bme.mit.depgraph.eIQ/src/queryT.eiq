@@ -1,0 +1,32 @@
+import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://dependency-graph/1.0"
+
+
+	// dependedBy relation
+	pattern dependedBy(Source, Target) =
+	{
+		CodeElement(Source);
+		Dependency(Target);
+		CodeElement.incomingDeps(Source, Target);
+	}
+	or
+	{
+		Dependency(Source);
+		CodeElement(Target);
+		Dependency.from(Source, Target);
+	}
+	or
+	{
+		ApiClass(Source);
+		Product(Target);
+		ApiClass.product(Source, Target);
+	}
+		
+	// the dependent software component finding pattern
+	pattern dependedComponents(Component, Product) =
+	{
+		CodeElement(Component);
+		Product(Product);
+		find dependedBy+(Component, Product);
+	}
+	

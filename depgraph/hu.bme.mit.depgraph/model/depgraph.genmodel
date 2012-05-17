@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.depgraph/src"
+    modelPluginID="hu.bme.mit.depgraph" modelName="Depgraph" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>depgraph.ecore</foreignModel>
+  <genPackages prefix="Domain" disposableProviderFactory="true" ecorePackage="depgraph.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="depgraph.ecore#//DependencyType">
+      <genEnumLiterals ecoreEnumLiteral="depgraph.ecore#//DependencyType/METHOD_CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="depgraph.ecore#//DependencyType/FIELD_REF"/>
+      <genEnumLiterals ecoreEnumLiteral="depgraph.ecore#//DependencyType/CLASS_DEF"/>
+      <genEnumLiterals ecoreEnumLiteral="depgraph.ecore#//DependencyType/INHERITANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="depgraph.ecore#//DependencyType/OVERRIDED_FUNC"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="depgraph.ecore#//GraphElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//GraphElement/uuid"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="depgraph.ecore#//CodeElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference depgraph.ecore#//CodeElement/incomingDeps"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference depgraph.ecore#//CodeElement/outgoingDeps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//CodeElement/versions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//CodeElement/id"/>
+      <genOperations ecoreOperation="depgraph.ecore#//CodeElement/getDisplayName"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Product/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference depgraph.ecore#//Product/classes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Product/containingFolders"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Product/productPath"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//ApiClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/simpleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/packageName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference depgraph.ecore#//ApiClass/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference depgraph.ecore#//ApiClass/fields"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference depgraph.ecore#//ApiClass/product"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/extends"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/implements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/private"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/anonymous"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//ApiClass/referencedClasses"/>
+      <genOperations ecoreOperation="depgraph.ecore#//ApiClass/getFqName"/>
+      <genOperations ecoreOperation="depgraph.ecore#//ApiClass/getSourcePath"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Method/signature"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference depgraph.ecore#//Method/apiClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Method/private"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Method/referencedFields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Method/referencedMethods"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Method/static"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Field/signature"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference depgraph.ecore#//Field/apiClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Field/private"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//Dependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference depgraph.ecore#//Dependency/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference depgraph.ecore#//Dependency/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute depgraph.ecore#//Dependency/type"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//DependencyGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference depgraph.ecore#//DependencyGraph/dependencies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference depgraph.ecore#//DependencyGraph/products"/>
+    </genClasses>
+    <genClasses ecoreClass="depgraph.ecore#//TransitiveDependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference depgraph.ecore#//TransitiveDependency/transitiveFrom"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
