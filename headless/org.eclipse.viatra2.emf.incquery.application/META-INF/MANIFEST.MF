@@ -5,5 +5,4 @@ Bundle-SymbolicName: org.eclipse.viatra2.emf.incquery.application;singleton:=tru
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
- org.eclipse.viatra2.emf.incquery.runtime;bundle-version="0.6.0",
- headlessQueries.incquery;bundle-version="0.0.1"
+ org.eclipse.viatra2.emf.incquery.runtime;bundle-version="0.6.0"

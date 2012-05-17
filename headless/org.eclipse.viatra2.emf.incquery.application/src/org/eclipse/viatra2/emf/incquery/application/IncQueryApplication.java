@@ -18,14 +18,21 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 
 /**
  * @author Abel Hegedus
- *
+ * 
  */
 public class IncQueryApplication implements IApplication {
 
+	// -m
+	// d:\PhD\EclipseSpace\eclipse-3.7.1-x64\runtime-IncQuery_v2\railway\model\railway.ecore
 	private static String modelParam = "-m";
-	//  -m d:\PhD\EclipseSpace\eclipse-3.7.1-x64\runtime-IncQuery_v2\railway\model\railway.ecore
-	/* (non-Javadoc)
-	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
+	// -p EClassNames
+	private static String patternParam = "-p";
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.
+	 * IApplicationContext)
 	 */
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
@@ -33,14 +40,20 @@ public class IncQueryApplication implements IApplication {
 		Map<String, Object> arguments = context.getArguments();
 		String[] args = (String[]) arguments.get("application.args");
 		String model = null;
+		String patternFQN = null;
 		if (args == null || args.length == 0) {
 			displayHelp();
 			return IApplication.EXIT_OK;
-		} 
-		int i=0;
+		}
+		int i = 0;
 		while (i < args.length) {
 			if (args[i].equals(modelParam)) {
-				model = args[i+1];
+				model = args[i + 1];
+				i += 2;
+				continue;
+			}
+			if (args[i].equals(patternParam)) {
+				patternFQN = args[i + 1];
 				i += 2;
 				continue;
 			} else {
@@ -48,20 +61,26 @@ public class IncQueryApplication implements IApplication {
 				continue;
 			}
 		}
-		
-		if(model == null) {
+
+		if (model == null) {
 			IncQueryEngine.getDefaultLogger().logError("Model parameter not set");
 			displayHelp();
 			return IApplication.EXIT_OK;
 		}
-		
-		new IncQueryHeadless().execute(model);
-		
+		if (patternFQN == null) {
+			IncQueryEngine.getDefaultLogger().logError("PatternFQN parameter not set");
+			displayHelp();
+			return IApplication.EXIT_OK;
+		}
+
+		IncQueryEngine.getDefaultLogger().logError(new IncQueryHeadless().execute(model, "EClassNames"));
 
 		return IApplication.EXIT_OK;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */
 	@Override
@@ -70,9 +89,10 @@ public class IncQueryApplication implements IApplication {
 
 	}
 
-	
-	
 	private void displayHelp() {
-		IncQueryEngine.getDefaultLogger().logError("Usage:\n<call> -m <modelFilePAth>\n  -m    :  Required, the model to match on.");
+		IncQueryEngine
+				.getDefaultLogger()
+				.logError(
+						"Usage:\n<call> -m <modelFilePAth> -p <patternFQN>\n  -m    :  Required, the model to match on.\n  -m    :  Required, the pattern to match");
 	}
 }
