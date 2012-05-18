@@ -94,8 +94,8 @@ public final class SchoolNameMatch extends BasePatternMatch implements IPatternM
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"S\"=" + prettyPrintValue(fS) + "\n");
-    result.append("\"Name\"=" + prettyPrintValue(fName) + "\n");
+    result.append("\"S\"=" + prettyPrintValue(fS) + ", ");
+    result.append("\"Name\"=" + prettyPrintValue(fName));
     return result.toString();
     
   }

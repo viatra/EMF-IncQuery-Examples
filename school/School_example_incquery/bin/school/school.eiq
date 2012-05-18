@@ -44,25 +44,22 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  		find studentOfSchool(YoungerStudent, School, Year2, SchoolClass2);
  		
  		Year.startingDate(Year1, Date1);
- 		Year.startingDate(Year2, Date2); 		 	 		
-		 			 				
+ 		Year.startingDate(Year2, Date2);
 		check((Date1 as Integer) < (Date2 as Integer));
- 	}	
+ 	}
   				
 
 	/**
-	 * Return a students pair, who study in same school class and the first one is the older
+	 * Return a students pair, who study in same school class code and the first one is the older
 	 */
  	pattern sameCodeClassDifferentYears(ElderStudent, YoungerStudent) = {
  		find inSameSchoolDifferentYears(ElderStudent, YoungerStudent);
  		
   		SchoolClass.students(SchoolClass1, ElderStudent);
   		SchoolClass(SchoolClass1);
- 		SchoolClass.code(SchoolClass1, Code1);
- 		EChar(Code1);
+ 		SchoolClass.code(SchoolClass1, Code);
    		SchoolClass.students(SchoolClass2, YoungerStudent);
   		SchoolClass(SchoolClass2);
- 		SchoolClass.code(SchoolClass2, Code2);
- 		EChar(Code2);
- 		
+ 		SchoolClass.code(SchoolClass2, Code);
+ 	
  	}

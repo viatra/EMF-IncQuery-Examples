@@ -210,17 +210,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school/school.eiq#/0/@patterns.4/@bodies.0/@variables.0"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.4/@bodies.0/@variables.0"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school/school.eiq#/0/@patterns.4/@bodies.0/@variables.4"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.4/@bodies.0/@variables.4"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -274,15 +270,9 @@
           </tail>
           <src var="SchoolClass1"/>
           <dst xsi:type="patternLanguage:VariableValue">
-            <value var="Code1"/>
+            <value var="Code"/>
           </dst>
         </head>
-      </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
-        </type>
-        <var var="Code1"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
@@ -318,15 +308,9 @@
           </tail>
           <src var="SchoolClass2"/>
           <dst xsi:type="patternLanguage:VariableValue">
-            <value var="Code2"/>
+            <value var="Code"/>
           </dst>
         </head>
-      </constraints>
-      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
-        <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
-        </type>
-        <var var="Code2"/>
       </constraints>
     </bodies>
   </patterns>

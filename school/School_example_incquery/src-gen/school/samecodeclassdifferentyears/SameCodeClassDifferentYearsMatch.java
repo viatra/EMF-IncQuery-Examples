@@ -94,8 +94,8 @@ public final class SameCodeClassDifferentYearsMatch extends BasePatternMatch imp
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"ElderStudent\"=" + prettyPrintValue(fElderStudent) + "\n");
-    result.append("\"YoungerStudent\"=" + prettyPrintValue(fYoungerStudent) + "\n");
+    result.append("\"ElderStudent\"=" + prettyPrintValue(fElderStudent) + ", ");
+    result.append("\"YoungerStudent\"=" + prettyPrintValue(fYoungerStudent));
     return result.toString();
     
   }

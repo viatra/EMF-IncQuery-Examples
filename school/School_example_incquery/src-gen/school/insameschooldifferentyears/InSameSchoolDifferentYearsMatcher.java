@@ -25,8 +25,7 @@ import school.insameschooldifferentyears.InSameSchoolDifferentYearsMatch;
  *  		find studentOfSchool(YoungerStudent, School, Year2, SchoolClass2);
  *  		
  *  		Year.startingDate(Year1, Date1);
- *  		Year.startingDate(Year2, Date2); 		 	 		
- * 		 			 				
+ *  		Year.startingDate(Year2, Date2);
  * 		check((Date1 as Integer) < (Date2 as Integer));
  *  	}
  * 

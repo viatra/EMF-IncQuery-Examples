@@ -17,7 +17,7 @@ import school.samecodeclassdifferentyears.SameCodeClassDifferentYearsMatch;
  * Generated pattern matcher API of the sameCodeClassDifferentYears pattern, 
  * providing pattern-specific query methods.
  * 
- * 	
+ * 
  *   				
  * 
  * 	 
@@ -26,13 +26,11 @@ import school.samecodeclassdifferentyears.SameCodeClassDifferentYearsMatch;
  *  		
  *   		SchoolClass.students(SchoolClass1, ElderStudent);
  *   		SchoolClass(SchoolClass1);
- *  		SchoolClass.code(SchoolClass1, Code1);
- *  		EChar(Code1);
+ *  		SchoolClass.code(SchoolClass1, Code);
  *    		SchoolClass.students(SchoolClass2, YoungerStudent);
  *   		SchoolClass(SchoolClass2);
- *  		SchoolClass.code(SchoolClass2, Code2);
- *  		EChar(Code2);
- *  		
+ *  		SchoolClass.code(SchoolClass2, Code);
+ *  	
  *  	}
  * 
  * @see SameCodeClassDifferentYearsMatch

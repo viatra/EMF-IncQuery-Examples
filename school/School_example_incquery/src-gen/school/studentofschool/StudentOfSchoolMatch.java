@@ -130,10 +130,10 @@ public final class StudentOfSchoolMatch extends BasePatternMatch implements IPat
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"Student\"=" + prettyPrintValue(fStudent) + "\n");
-    result.append("\"School\"=" + prettyPrintValue(fSchool) + "\n");
-    result.append("\"Year\"=" + prettyPrintValue(fYear) + "\n");
-    result.append("\"SchoolClass\"=" + prettyPrintValue(fSchoolClass) + "\n");
+    result.append("\"Student\"=" + prettyPrintValue(fStudent) + ", ");
+    result.append("\"School\"=" + prettyPrintValue(fSchool) + ", ");
+    result.append("\"Year\"=" + prettyPrintValue(fYear) + ", ");
+    result.append("\"SchoolClass\"=" + prettyPrintValue(fSchoolClass));
     return result.toString();
     
   }
