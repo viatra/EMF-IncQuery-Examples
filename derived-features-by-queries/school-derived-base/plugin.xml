@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-  <extension
+
+   <extension
          id="school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.wellbehavedContribution"
          name=""
          point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">

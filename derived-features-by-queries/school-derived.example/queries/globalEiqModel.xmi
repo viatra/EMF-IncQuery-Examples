@@ -153,17 +153,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-example.eiq#/0/@patterns.3/@bodies.0/@variables.2"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.3/@bodies.0/@variables.2"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-example.eiq#/0/@patterns.3/@bodies.0/@variables.0"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.3/@bodies.0/@variables.0"/>
           </rightOperand>
         </expression>
       </constraints>

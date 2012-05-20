@@ -94,9 +94,10 @@ public final class TeacherWithMostCoursesMatch extends BasePatternMatch implemen
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"School\"=" + prettyPrintValue(fSchool) + "\n");
-    result.append("\"Teacher\"=" + prettyPrintValue(fTeacher) + "\n");
-    return result.toString();
+    result.append("\"School\"=" + prettyPrintValue(fSchool) + ", ");
+    
+    result.append("\"Teacher\"=" + prettyPrintValue(fTeacher)
+    );return result.toString();
     
   }
   

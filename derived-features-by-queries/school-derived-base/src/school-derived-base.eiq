@@ -16,6 +16,8 @@ pattern teacherWithMostCourses(School : School, Teacher : Teacher) = {
 pattern moreCourses(Teacher : Teacher) = {
 	N == count find coursesOfTeacher(Teacher,Course);
     M == count find coursesOfTeacher(Teacher2,Course2);
+    Teacher(Teacher2);
+    Teacher != Teacher2;
     check((N as Integer) < (M as Integer));
 }
 
@@ -27,5 +29,7 @@ pattern lastYear(School : School, Year : Year) = {
 pattern laterYear(Year : Year) = {
 	Year.startingDate(Year, Date);
 	Year.startingDate(Year2, Date2);
+	Year(Year2);
+	Year != Year2;
 	check((Date as Integer) < (Date2 as Integer));
 }

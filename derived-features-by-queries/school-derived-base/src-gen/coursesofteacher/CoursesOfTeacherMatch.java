@@ -94,9 +94,10 @@ public final class CoursesOfTeacherMatch extends BasePatternMatch implements IPa
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"Teacher\"=" + prettyPrintValue(fTeacher) + "\n");
-    result.append("\"Course\"=" + prettyPrintValue(fCourse) + "\n");
-    return result.toString();
+    result.append("\"Teacher\"=" + prettyPrintValue(fTeacher) + ", ");
+    
+    result.append("\"Course\"=" + prettyPrintValue(fCourse)
+    );return result.toString();
     
   }
   

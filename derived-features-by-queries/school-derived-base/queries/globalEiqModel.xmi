@@ -130,6 +130,20 @@
           </call>
         </rightOperand>
       </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Teacher"/>
+        </type>
+        <var var="Teacher2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:CompareConstraint" feature="!=">
+        <leftOperand xsi:type="patternLanguage:VariableValue">
+          <value var="Teacher"/>
+        </leftOperand>
+        <rightOperand xsi:type="patternLanguage:VariableValue">
+          <value var="Teacher2"/>
+        </rightOperand>
+      </constraints>
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessThan(java.lang.Comparable,C)"/>
@@ -137,17 +151,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-base.eiq#/0/@patterns.3/@bodies.0/@variables.2"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.3/@bodies.0/@variables.2"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-base.eiq#/0/@patterns.3/@bodies.0/@variables.1"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.3/@bodies.0/@variables.1"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -229,6 +239,20 @@
           </dst>
         </head>
       </constraints>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http:///school.ecore#//Year"/>
+        </type>
+        <var var="Year2"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:CompareConstraint" feature="!=">
+        <leftOperand xsi:type="patternLanguage:VariableValue">
+          <value var="Year"/>
+        </leftOperand>
+        <rightOperand xsi:type="patternLanguage:VariableValue">
+          <value var="Year2"/>
+        </rightOperand>
+      </constraints>
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessThan(java.lang.Comparable,C)"/>
@@ -236,17 +260,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-base.eiq#/0/@patterns.5/@bodies.0/@variables.0"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.5/@bodies.0/@variables.0"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall">
-              <feature xsi:type="patternLanguage:Variable" href="../src/school-derived-base.eiq#/0/@patterns.5/@bodies.0/@variables.1"/>
-            </target>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.5/@bodies.0/@variables.1"/>
           </rightOperand>
         </expression>
       </constraints>

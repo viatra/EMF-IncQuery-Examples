@@ -94,9 +94,10 @@ public final class LastYearMatch extends BasePatternMatch implements IPatternMat
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"School\"=" + prettyPrintValue(fSchool) + "\n");
-    result.append("\"Year\"=" + prettyPrintValue(fYear) + "\n");
-    return result.toString();
+    result.append("\"School\"=" + prettyPrintValue(fSchool) + ", ");
+    
+    result.append("\"Year\"=" + prettyPrintValue(fYear)
+    );return result.toString();
     
   }
   
