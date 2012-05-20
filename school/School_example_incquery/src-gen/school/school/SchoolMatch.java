@@ -76,8 +76,8 @@ public final class SchoolMatch extends BasePatternMatch implements IPatternMatch
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"S\"=" + prettyPrintValue(fS));
-    return result.toString();
+    result.append("\"S\"=" + prettyPrintValue(fS)
+    );return result.toString();
     
   }
   

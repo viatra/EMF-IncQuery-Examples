@@ -95,8 +95,9 @@ public final class StudentNameMatch extends BasePatternMatch implements IPattern
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"S\"=" + prettyPrintValue(fS) + ", ");
-    result.append("\"Name\"=" + prettyPrintValue(fName));
-    return result.toString();
+    
+    result.append("\"Name\"=" + prettyPrintValue(fName)
+    );return result.toString();
     
   }
   
