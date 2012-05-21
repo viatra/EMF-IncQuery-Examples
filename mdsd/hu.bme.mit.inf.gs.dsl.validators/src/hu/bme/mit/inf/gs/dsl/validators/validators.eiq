@@ -187,6 +187,7 @@ pattern SuperType(E, S) = {
 }
 
 
+/*
 @Constraint(message="The Entity $E.name$ has a circle in its inheritance graph.", severity="error", location="E")
 pattern NoCirclesInInheritance(E) = {
     neg find SuperType(E, ST);
@@ -195,6 +196,6 @@ pattern NoCirclesInInheritance(E) = {
 	Entity.superType(E, ST);
     find NoCirclesInInheritance(ST);
 }
-
+ */
 
 

@@ -161,5 +161,13 @@
             id="hu.bme.mit.inf.gs.dsl.validators.OCLConstraintDescriptionUnfinished">
       </matcher>
    </extension>
+   <extension
+         id="hu.bme.mit.inf.gs.dsl.validators.SuperType"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="hu.bme.mit.inf.gs.dsl.validators.supertype.SuperTypeMatcherFactory"
+            id="hu.bme.mit.inf.gs.dsl.validators.SuperType">
+      </matcher>
+   </extension>
 
 </plugin>
