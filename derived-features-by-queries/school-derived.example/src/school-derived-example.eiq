@@ -1,4 +1,5 @@
-import "http:///school.ecore"
+import "http:///school-derived.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore"
 
 pattern coursesOfTeacherWithMostCourses(School, Teacher, Course) = {
    School.teachersWithMostCourses(School,Teacher);
@@ -10,6 +11,7 @@ pattern classesOfLastYear(School, Year, Clss) = {
    Year.schoolClasses(Year,Clss);
 }
 
+/* commented out because it doesn't make sense with current instance model example
 pattern schoolWithMostTeachers(School, NoTeacher) = {
   
   School.numberOfTeachers(School, NoTeacher);
@@ -17,7 +19,11 @@ pattern schoolWithMostTeachers(School, NoTeacher) = {
 }
 
 pattern moreTeachers(School : School) = {
+	EInt(NT);
+	EInt(NT2);
   School.numberOfTeachers(School, NT);
   School.numberOfTeachers(School2, NT2);
-  check((NT as Integer) < (NT2 as Integer));
+//  check((NT as Integer) < (NT2 as Integer));
+   check(NT < NT2);
 }
+  */

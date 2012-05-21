@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http:///school.ecore" currentYear="2011">
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http:///school-derived.ecore" currentYear="2011">
   <years startingDate="2012">
     <schoolClasses code="97"/>
   </years>

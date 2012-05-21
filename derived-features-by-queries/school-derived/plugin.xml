@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http:///school.ecore"
+            uri="http:///school-derived.ecore"
             class="school.SchoolPackage"
             genModel="model/school.genmodel"/>
    </extension>
