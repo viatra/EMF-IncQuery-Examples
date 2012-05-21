@@ -3,7 +3,6 @@ package query
 import "http://www.eclipse.org/emf/2002/Ecore"
 import "http://dependency-graph/1.0"
 
-
 	// dependedBy relation
 	pattern dependedBy(Source, Target) =
 	{

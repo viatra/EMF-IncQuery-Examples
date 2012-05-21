@@ -2,30 +2,28 @@
 <plugin>
 
    <extension
-         id="almafa.queryPattern"
-         name=""
+         id="dependedBy"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="almafa.querypattern.QueryPatternMatcherFactory"
-            id="almafa.queryPattern">
+            factory="dependedby.DependedByMatcherFactory"
+            id="dependedBy">
       </matcher>
    </extension>
    <extension
-         id="queryPattern"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="querypattern.QueryPatternMatcherFactory"
-            id="queryPattern">
-      </matcher>
-   </extension>
-   <extension
+<<<<<<< HEAD
          id="query.dependedBy"
          name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="query.dependedby.DependedByMatcherFactory"
             id="query.dependedBy">
+=======
+         id="dependedByTran"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="dependedbytran.DependedByTranMatcherFactory"
+            id="dependedByTran">
+>>>>>>> regenerate everything with iq-master
       </matcher>
    </extension>
    <extension
@@ -47,6 +45,7 @@
       </matcher>
    </extension>
    <extension
+<<<<<<< HEAD
          id="queryt.dependedBy"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -56,6 +55,9 @@
    </extension>
    <extension
          id="queryt.dependedComponents"
+=======
+         id="dependedComponents"
+>>>>>>> regenerate everything with iq-master
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
