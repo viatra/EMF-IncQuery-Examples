@@ -2,50 +2,6 @@
 <plugin>
 
    <extension
-         id="dependedBy"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="dependedby.DependedByMatcherFactory"
-            id="dependedBy">
-      </matcher>
-   </extension>
-   <extension
-<<<<<<< HEAD
-         id="query.dependedBy"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="query.dependedby.DependedByMatcherFactory"
-            id="query.dependedBy">
-=======
-         id="dependedByTran"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="dependedbytran.DependedByTranMatcherFactory"
-            id="dependedByTran">
->>>>>>> regenerate everything with iq-master
-      </matcher>
-   </extension>
-   <extension
-         id="query.dependedByTran"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="query.dependedbytran.DependedByTranMatcherFactory"
-            id="query.dependedByTran">
-      </matcher>
-   </extension>
-   <extension
-         id="query.dependedComponents"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="query.dependedcomponents.DependedComponentsMatcherFactory"
-            id="query.dependedComponents">
-      </matcher>
-   </extension>
-   <extension
-<<<<<<< HEAD
          id="queryt.dependedBy"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -55,13 +11,34 @@
    </extension>
    <extension
          id="queryt.dependedComponents"
-=======
-         id="dependedComponents"
->>>>>>> regenerate everything with iq-master
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
             id="queryt.dependedComponents">
+      </matcher>
+   </extension>
+   <extension
+         id="query.dependedBy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="query.dependedby.DependedByMatcherFactory"
+            id="query.dependedBy">
+      </matcher>
+   </extension>
+   <extension
+         id="query.dependedByTran"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="query.dependedbytran.DependedByTranMatcherFactory"
+            id="query.dependedByTran">
+      </matcher>
+   </extension>
+   <extension
+         id="query.dependedComponents"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="query.dependedcomponents.DependedComponentsMatcherFactory"
+            id="query.dependedComponents">
       </matcher>
    </extension>
 
