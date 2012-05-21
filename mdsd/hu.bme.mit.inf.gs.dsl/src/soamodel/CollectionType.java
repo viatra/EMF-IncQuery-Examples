@@ -20,7 +20,8 @@ package soamodel;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getCollectionType()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='existingCollectionItem UniqueItemType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot existingCollectionItem='DataType.allInstances()->exists(d : DataType | self.itemType = d)' UniqueItemType='CollectionType.allInstances()->forAll(C1 : CollectionType, C2 : CollectionType | C1.itemType <> C2.itemType or C1 = C2)'"
  * @generated
  */
 public interface CollectionType extends DataType {

@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see soamodel.SoamodelPackage#getOCLConstraint()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='FilledOCLDescription'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot FilledOCLDescription='self.description.size() > 0'"
  * @generated
  */
 public interface OCLConstraint extends EObject {

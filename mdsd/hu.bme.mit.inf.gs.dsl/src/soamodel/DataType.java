@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link soamodel.DataType#getName <em>Name</em>}</li>
+ *   <li>{@link soamodel.DataType#getExtendedBy <em>Extended By</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,5 +51,31 @@ public interface DataType extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extended By</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Extended By</em>' reference.
+	 * @see #setExtendedBy(Entity)
+	 * @see soamodel.SoamodelPackage#getDataType_ExtendedBy()
+	 * @model
+	 * @generated
+	 */
+	Entity getExtendedBy();
+
+	/**
+	 * Sets the value of the '{@link soamodel.DataType#getExtendedBy <em>Extended By</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Extended By</em>' reference.
+	 * @see #getExtendedBy()
+	 * @generated
+	 */
+	void setExtendedBy(Entity value);
 
 } // DataType

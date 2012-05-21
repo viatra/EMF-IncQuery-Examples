@@ -25,7 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getServiceOrientedArchitecture()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='uniqueDatatypeNames uniqueComponentNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot uniqueDatatypeNames='self.dataTypes->forAll(t1 : DataType, t2 : DataType | t1.name <> t2.name or t1 = t2)' uniqueComponentNames='self.components->forAll(s1 : ServiceComponent, s2 : ServiceComponent | s1.name <> s2.name or s1 = s2)'"
  * @generated
  */
 public interface ServiceOrientedArchitecture extends EObject {

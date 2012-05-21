@@ -21,7 +21,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getEnum()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueLiteralNames LivingDataType UniqueLiteralValues'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot UniqueLiteralNames='self.literals->forAll(L1 : EnumLiteral, L2 : EnumLiteral | L1.name <> L2.name or L1 = L2)' LivingDataType='ServiceOrientedArchitecture.allInstances()->exists(a : ServiceOrientedArchitecture | a.dataTypes->exists(c : DataType | c = self))' UniqueLiteralValues='self.literals->forAll(l1 : EnumLiteral, l2 : EnumLiteral | l1.value <> l2.value or l1 = l2)'"
  * @generated
  */
 public interface Enum extends DataType {

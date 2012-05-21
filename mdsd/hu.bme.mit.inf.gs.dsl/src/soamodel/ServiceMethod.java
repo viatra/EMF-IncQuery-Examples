@@ -28,7 +28,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getServiceMethod()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='FilledMethodDescription OnlyRestMethods DifferentParameternames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot FilledMethodDescription='self.description.size() > 0' OnlyRestMethods='RestMethod.allInstances()->includes(self)' DifferentParameternames='self.parameters->forAll(p1 : Parameter, p2 : Parameter | p1.name <> p2.name or p1 = p2)'"
  * @generated
  */
 public interface ServiceMethod extends EObject {

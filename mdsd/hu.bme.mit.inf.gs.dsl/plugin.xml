@@ -10,5 +10,11 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://soamodel/1.0"
+            class="soamodel.SoamodelPackage"
+            genModel="model/SoaModel.genmodel"/>
+   </extension>
 
 </plugin>

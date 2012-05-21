@@ -24,6 +24,7 @@ import soamodel.SoamodelPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link soamodel.impl.EnumLiteralImpl#getName <em>Name</em>}</li>
+ *   <li>{@link soamodel.impl.EnumLiteralImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +50,26 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int VALUE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected int value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,10 +115,33 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(int newValue) {
+		int oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SoamodelPackage.ENUM_LITERAL__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SoamodelPackage.ENUM_LITERAL__NAME:
 				return getName();
+			case SoamodelPackage.ENUM_LITERAL__VALUE:
+				return new Integer(getValue());
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,6 +155,9 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 		switch (featureID) {
 			case SoamodelPackage.ENUM_LITERAL__NAME:
 				setName((String)newValue);
+				return;
+			case SoamodelPackage.ENUM_LITERAL__VALUE:
+				setValue(((Integer)newValue).intValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 			case SoamodelPackage.ENUM_LITERAL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case SoamodelPackage.ENUM_LITERAL__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,6 +189,8 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 		switch (featureID) {
 			case SoamodelPackage.ENUM_LITERAL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SoamodelPackage.ENUM_LITERAL__VALUE:
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,6 +206,8 @@ public class EnumLiteralImpl extends EObjectImpl implements EnumLiteral {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

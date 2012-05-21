@@ -26,7 +26,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getEntity()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='uniqueEntityNames singleAttributeNameInEntity InternalIDAttribute'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot uniqueEntityNames='not Entity.allInstances()->exists(e1 : Entity, e2 : Entity | (e1.name = e2.name and e1 <> e2))' singleAttributeNameInEntity='self.attributes->forAll(a1 : Attribute, a2 : Attribute | a1.name <> a2.name or a1 = a2)' InternalIDAttribute='self.ID.attributeOf = self'"
  * @generated
  */
 public interface Entity extends DataType {

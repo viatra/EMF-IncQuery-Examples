@@ -29,7 +29,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see soamodel.SoamodelPackage#getServiceComponent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueServiceMethodSignatures LivingComponent UniqueSCURINamespace'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot UniqueServiceMethodSignatures='self.methods->forAll(m1 : ServiceMethod, m2 : ServiceMethod | (m1.name <> m2.name or m1 = m2)) and self.methods->forAll(m : ServiceMethod | m.parameters->forAll(p1 : Parameter, p2 : Parameter | (p1.parameterType <> p2.parameterType or p1 = p2)))' LivingComponent='ServiceOrientedArchitecture.allInstances()->exists(a : ServiceOrientedArchitecture | a.components->exists(c : ServiceComponent | c = self))' UniqueSCURINamespace='ServiceComponent.allInstances()->forAll(SC1 : ServiceComponent, SC2 : ServiceComponent | SC1.URI <> SC2.URI and SC1.namespace <> SC2.namespace or SC1 = SC2)'"
  * @generated
  */
 public interface ServiceComponent extends EObject {

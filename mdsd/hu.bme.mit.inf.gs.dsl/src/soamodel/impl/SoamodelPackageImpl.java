@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import soamodel.Attribute;
@@ -34,6 +35,7 @@ import soamodel.ServiceMethod;
 import soamodel.ServiceOrientedArchitecture;
 import soamodel.SoamodelFactory;
 import soamodel.SoamodelPackage;
+import soamodel.util.SoamodelValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -233,6 +235,15 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 
 		// Initialize created meta-data
 		theSoamodelPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theSoamodelPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return SoamodelValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theSoamodelPackage.freeze();
@@ -439,6 +450,15 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 	 */
 	public EAttribute getDataType_Name() {
 		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataType_ExtendedBy() {
+		return (EReference)dataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -671,6 +691,15 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEnumLiteral_Value() {
+		return (EAttribute)enumLiteralEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOSGiComponent() {
 		return osGiComponentEClass;
 	}
@@ -793,6 +822,7 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
+		createEReference(dataTypeEClass, DATA_TYPE__EXTENDED_BY);
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
@@ -826,6 +856,7 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 
 		enumLiteralEClass = createEClass(ENUM_LITERAL);
 		createEAttribute(enumLiteralEClass, ENUM_LITERAL__NAME);
+		createEAttribute(enumLiteralEClass, ENUM_LITERAL__VALUE);
 
 		osGiComponentEClass = createEClass(OS_GI_COMPONENT);
 
@@ -907,6 +938,7 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataType_ExtendedBy(), this.getEntity(), null, "extendedBy", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Attributes(), this.getAttribute(), this.getAttribute_AttributeOf(), "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -940,6 +972,7 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 
 		initEClass(enumLiteralEClass, EnumLiteral.class, "EnumLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumLiteral_Name(), ecorePackage.getEString(), "name", null, 1, 1, EnumLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumLiteral_Value(), ecorePackage.getEInt(), "value", null, 1, 1, EnumLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(osGiComponentEClass, OSGiComponent.class, "OSGiComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -964,8 +997,134 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });		
+		addAnnotation
+		  (serviceComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueServiceMethodSignatures LivingComponent UniqueSCURINamespace"
+		   });			
+		addAnnotation
+		  (serviceMethodEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "FilledMethodDescription OnlyRestMethods DifferentParameternames"
+		   });			
+		addAnnotation
+		  (entityEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "uniqueEntityNames singleAttributeNameInEntity InternalIDAttribute"
+		   });			
+		addAnnotation
+		  (collectionTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "existingCollectionItem UniqueItemType"
+		   });			
+		addAnnotation
+		  (serviceOrientedArchitectureEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "uniqueDatatypeNames uniqueComponentNames"
+		   });				
+		addAnnotation
+		  (oclConstraintEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "FilledOCLDescription"
+		   });			
+		addAnnotation
+		  (enumEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueLiteralNames LivingDataType UniqueLiteralValues"
+		   });	
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";				
+		addAnnotation
+		  (serviceComponentEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueServiceMethodSignatures", "self.methods->forAll(m1 : ServiceMethod, m2 : ServiceMethod | (m1.name <> m2.name or m1 = m2)) and self.methods->forAll(m : ServiceMethod | m.parameters->forAll(p1 : Parameter, p2 : Parameter | (p1.parameterType <> p2.parameterType or p1 = p2)))",
+			 "LivingComponent", "ServiceOrientedArchitecture.allInstances()->exists(a : ServiceOrientedArchitecture | a.components->exists(c : ServiceComponent | c = self))",
+			 "UniqueSCURINamespace", "ServiceComponent.allInstances()->forAll(SC1 : ServiceComponent, SC2 : ServiceComponent | SC1.URI <> SC2.URI and SC1.namespace <> SC2.namespace or SC1 = SC2)"
+		   });			
+		addAnnotation
+		  (serviceMethodEClass, 
+		   source, 
+		   new String[] {
+			 "FilledMethodDescription", "self.description.size() > 0",
+			 "OnlyRestMethods", "RestMethod.allInstances()->includes(self)",
+			 "DifferentParameternames", "self.parameters->forAll(p1 : Parameter, p2 : Parameter | p1.name <> p2.name or p1 = p2)"
+		   });			
+		addAnnotation
+		  (entityEClass, 
+		   source, 
+		   new String[] {
+			 "uniqueEntityNames", "not Entity.allInstances()->exists(e1 : Entity, e2 : Entity | (e1.name = e2.name and e1 <> e2))",
+			 "singleAttributeNameInEntity", "self.attributes->forAll(a1 : Attribute, a2 : Attribute | a1.name <> a2.name or a1 = a2)",
+			 "InternalIDAttribute", "self.ID.attributeOf = self"
+		   });			
+		addAnnotation
+		  (collectionTypeEClass, 
+		   source, 
+		   new String[] {
+			 "existingCollectionItem", "DataType.allInstances()->exists(d : DataType | self.itemType = d)",
+			 "UniqueItemType", "CollectionType.allInstances()->forAll(C1 : CollectionType, C2 : CollectionType | C1.itemType <> C2.itemType or C1 = C2)"
+		   });			
+		addAnnotation
+		  (serviceOrientedArchitectureEClass, 
+		   source, 
+		   new String[] {
+			 "uniqueDatatypeNames", "self.dataTypes->forAll(t1 : DataType, t2 : DataType | t1.name <> t2.name or t1 = t2)",
+			 "uniqueComponentNames", "self.components->forAll(s1 : ServiceComponent, s2 : ServiceComponent | s1.name <> s2.name or s1 = s2)"
+		   });				
+		addAnnotation
+		  (oclConstraintEClass, 
+		   source, 
+		   new String[] {
+			 "FilledOCLDescription", "self.description.size() > 0"
+		   });			
+		addAnnotation
+		  (enumEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueLiteralNames", "self.literals->forAll(L1 : EnumLiteral, L2 : EnumLiteral | L1.name <> L2.name or L1 = L2)",
+			 "LivingDataType", "ServiceOrientedArchitecture.allInstances()->exists(a : ServiceOrientedArchitecture | a.dataTypes->exists(c : DataType | c = self))",
+			 "UniqueLiteralValues", "self.literals->forAll(l1 : EnumLiteral, l2 : EnumLiteral | l1.value <> l2.value or l1 = l2)"
+		   });
 	}
 
 	/**
@@ -975,13 +1134,13 @@ public class SoamodelPackageImpl extends EPackageImpl implements SoamodelPackage
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";													
 		addAnnotation
 		  (getServiceOrientedArchitecture_Components(), 
 		   source, 
 		   new String[] {
 			 "name", "dataTypes"
-		   });
+		   });				
 	}
 
 } //SoamodelPackageImpl

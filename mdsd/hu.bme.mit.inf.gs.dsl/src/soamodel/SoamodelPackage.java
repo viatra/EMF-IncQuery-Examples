@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see soamodel.SoamodelFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface SoamodelPackage extends EPackage {
@@ -436,13 +437,22 @@ public interface SoamodelPackage extends EPackage {
 	int DATA_TYPE__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__EXTENDED_BY = 1;
+
+	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FEATURE_COUNT = 1;
+	int DATA_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link soamodel.impl.EntityImpl <em>Entity</em>}' class.
@@ -462,6 +472,15 @@ public interface SoamodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__EXTENDED_BY = DATA_TYPE__EXTENDED_BY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -546,6 +565,15 @@ public interface SoamodelPackage extends EPackage {
 	int BUILT_IN_DATA_TYPE__NAME = DATA_TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILT_IN_DATA_TYPE__EXTENDED_BY = DATA_TYPE__EXTENDED_BY;
+
+	/**
 	 * The number of structural features of the '<em>Built In Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -572,6 +600,15 @@ public interface SoamodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_TYPE__EXTENDED_BY = DATA_TYPE__EXTENDED_BY;
 
 	/**
 	 * The feature id for the '<em><b>Item Type</b></em>' reference.
@@ -741,6 +778,15 @@ public interface SoamodelPackage extends EPackage {
 	int ENUM__NAME = DATA_TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Extended By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM__EXTENDED_BY = DATA_TYPE__EXTENDED_BY;
+
+	/**
 	 * The feature id for the '<em><b>Literals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,13 +824,22 @@ public interface SoamodelPackage extends EPackage {
 	int ENUM_LITERAL__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_LITERAL__VALUE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Enum Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_LITERAL_FEATURE_COUNT = 1;
+	int ENUM_LITERAL_FEATURE_COUNT = 2;
 
 
 	/**
@@ -1319,6 +1374,17 @@ public interface SoamodelPackage extends EPackage {
 	EAttribute getDataType_Name();
 
 	/**
+	 * Returns the meta object for the reference '{@link soamodel.DataType#getExtendedBy <em>Extended By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Extended By</em>'.
+	 * @see soamodel.DataType#getExtendedBy()
+	 * @see #getDataType()
+	 * @generated
+	 */
+	EReference getDataType_ExtendedBy();
+
+	/**
 	 * Returns the meta object for class '{@link soamodel.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1584,6 +1650,17 @@ public interface SoamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEnumLiteral_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link soamodel.EnumLiteral#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see soamodel.EnumLiteral#getValue()
+	 * @see #getEnumLiteral()
+	 * @generated
+	 */
+	EAttribute getEnumLiteral_Value();
 
 	/**
 	 * Returns the meta object for class '{@link soamodel.OSGiComponent <em>OS Gi Component</em>}'.
@@ -1878,6 +1955,14 @@ public interface SoamodelPackage extends EPackage {
 		EAttribute DATA_TYPE__NAME = eINSTANCE.getDataType_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Extended By</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_TYPE__EXTENDED_BY = eINSTANCE.getDataType_ExtendedBy();
+
+		/**
 		 * The meta object literal for the '{@link soamodel.impl.EntityImpl <em>Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2092,6 +2177,14 @@ public interface SoamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENUM_LITERAL__NAME = eINSTANCE.getEnumLiteral_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUM_LITERAL__VALUE = eINSTANCE.getEnumLiteral_Value();
 
 		/**
 		 * The meta object literal for the '{@link soamodel.impl.OSGiComponentImpl <em>OS Gi Component</em>}' class.
