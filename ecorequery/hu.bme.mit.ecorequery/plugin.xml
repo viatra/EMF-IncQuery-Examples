@@ -2,11 +2,11 @@
 <plugin>
 
    <extension
-         id="hu.bme.mit.incquery.ecorequeries.example.MyPattern"
+         id="hu.bme.mit.incquery.ecorequeries.example.EObject"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="hu.bme.mit.incquery.ecorequeries.example.mypattern.MyPatternMatcherFactory"
-            id="hu.bme.mit.incquery.ecorequeries.example.MyPattern">
+            factory="hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory"
+            id="hu.bme.mit.incquery.ecorequeries.example.EObject">
       </matcher>
    </extension>
    <extension
