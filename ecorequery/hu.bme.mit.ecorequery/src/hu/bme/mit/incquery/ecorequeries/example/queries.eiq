@@ -2,6 +2,11 @@ package hu.bme.mit.incquery.ecorequeries.example
 
 import "http://www.eclipse.org/emf/2002/Ecore"
 
+
+pattern MyPattern(E) = {
+	EObject(E);
+}
+
 /*
  * Generic pattern: EClass is an EClass in ECore
  */

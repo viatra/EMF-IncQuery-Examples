@@ -11,6 +11,7 @@ Export-Package: hu.bme.mit.incquery.ecorequeries.example.eclass,
  hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity,
  hu.bme.mit.incquery.ecorequeries.example.isestring,
  hu.bme.mit.incquery.ecorequeries.example.isinecore,
+ hu.bme.mit.incquery.ecorequeries.example.mypattern,
  hu.bme.mit.incquery.ecorequeries.example.samplequery,
  hu.bme.mit.incquery.ecorequeries.example.samplequery2,
  hu.bme.mit.incquery.ecorequeries.example.supertypeof

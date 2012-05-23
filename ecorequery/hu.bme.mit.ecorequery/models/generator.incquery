@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<incquerygenmodel:IncQueryGenmodel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:incquerygenmodel="http://incquerygenmodel/1.0">
-  <ecoreModel>
-    <models href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#/"/>
-  </ecoreModel>
-</incquerygenmodel:IncQueryGenmodel>
