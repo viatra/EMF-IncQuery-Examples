@@ -82,7 +82,8 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  		EChar(Code2);
  		
  	}
-
+ 	
+	@Handler(fileExtension = "school")
  	pattern sameCodeClassDifferentYearsBetter(ElderStudent, YoungerStudent) = {
  		find inSameSchoolDifferentYears(ElderStudent, YoungerStudent);
  		
@@ -105,6 +106,9 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  		Student.friendsWith(S2,S1);
  	}
  	
+ 	@PatternUI(message = "$S1.name$ is friends with $S2.name$")
+ //	@ObservableValue(name = "S1")
+ @Handler(fileExtension = "school")
  	pattern inTheCircleOfFriends(S1:Student, S2:Student) = {
  		find friendsWith+(S1,S2);
  	}
@@ -115,11 +119,11 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  	 * Caused by: java.lang.NoSuchMethodException: Could not find method school.Course.getSubject()
 	 * at org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter.invokeOperation(XbaseInterpreter.java:720)
  	 */
- /*	pattern specialCourses(C:Course) = {
+/* 	pattern specialCourses(C:Course) = {
  		Course(C);
  		check(C.subject.contains("fig"));
  	}
- 	*/
+  */	
  	
  	pattern specialCourses2(C:Course) = {
  		Course(C);
