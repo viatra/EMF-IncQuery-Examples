@@ -18,5 +18,5 @@ Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction;visibility:=reexport,
  org.eclipse.viatra2.emf.incquery.runtime;visibility:=reexport,
- school;bundle-version="1.0.0"
+ school;bundle-version="1.0.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -41,7 +41,7 @@ public interface SchoolPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///school.ecore";
+	String eNS_URI = "http://school.ecore";
 
 	/**
 	 * The package namespace name.

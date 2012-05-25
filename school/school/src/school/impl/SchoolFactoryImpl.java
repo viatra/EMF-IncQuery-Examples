@@ -31,7 +31,7 @@ public class SchoolFactoryImpl extends EFactoryImpl implements SchoolFactory {
 	 */
 	public static SchoolFactory init() {
 		try {
-			SchoolFactory theSchoolFactory = (SchoolFactory)EPackage.Registry.INSTANCE.getEFactory("http:///school.ecore"); 
+			SchoolFactory theSchoolFactory = (SchoolFactory)EPackage.Registry.INSTANCE.getEFactory("http://school.ecore"); 
 			if (theSchoolFactory != null) {
 				return theSchoolFactory;
 			}

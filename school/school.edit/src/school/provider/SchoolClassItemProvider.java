@@ -110,7 +110,7 @@ public class SchoolClassItemProvider
 				 getString("_UI_SchoolClass_courses_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SchoolClass_courses_feature", "_UI_SchoolClass_type"),
 				 SchoolPackage.Literals.SCHOOL_CLASS__COURSES,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id$ 
+ * $Id$
  */
 package school.presentation;
 

@@ -2,9 +2,9 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/school/src"
-    modelPluginID="school" modelName="School" importerID="org.eclipse.emf.importer.java"
+    modelPluginID="school" modelName="School" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false">
-  <foreignModel>@model</foreignModel>
+  <foreignModel>school.ecore</foreignModel>
   <genPackages prefix="School" disposableProviderFactory="true" ecorePackage="school.ecore#/">
     <genClasses ecoreClass="school.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute school.ecore#//Course/subject"/>
@@ -24,7 +24,7 @@
       <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute school.ecore#//SchoolClass/code"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference school.ecore#//SchoolClass/year"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference school.ecore#//SchoolClass/students"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference school.ecore#//SchoolClass/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference school.ecore#//SchoolClass/courses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference school.ecore#//SchoolClass/homeroomTeacher"/>
     </genClasses>
     <genClasses ecoreClass="school.ecore#//SpecialisationCourse">
@@ -33,11 +33,12 @@
     <genClasses ecoreClass="school.ecore#//Student">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute school.ecore#//Student/name"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference school.ecore#//Student/schoolClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference school.ecore#//Student/friendsWith"/>
     </genClasses>
     <genClasses ecoreClass="school.ecore#//Teacher">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute school.ecore#//Teacher/name"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference school.ecore#//Teacher/school"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference school.ecore#//Teacher/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference school.ecore#//Teacher/courses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference school.ecore#//Teacher/homeroomedClass"/>
     </genClasses>
     <genClasses ecoreClass="school.ecore#//Year">

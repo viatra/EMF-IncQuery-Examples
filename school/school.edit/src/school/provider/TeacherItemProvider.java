@@ -15,8 +15,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,7 +26,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import school.SchoolFactory;
 import school.SchoolPackage;
 import school.Teacher;
 
@@ -110,7 +107,7 @@ public class TeacherItemProvider
 				 getString("_UI_Teacher_courses_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Teacher_courses_feature", "_UI_Teacher_type"),
 				 SchoolPackage.Literals.TEACHER__COURSES,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
