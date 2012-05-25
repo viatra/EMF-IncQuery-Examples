@@ -2,22 +2,6 @@
 <plugin>
 
    <extension
-         id="queryt.dependedBy"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="queryt.dependedby.DependedByMatcherFactory"
-            id="queryt.dependedBy">
-      </matcher>
-   </extension>
-   <extension
-         id="queryt.dependedComponents"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
-            id="queryt.dependedComponents">
-      </matcher>
-   </extension>
-   <extension
          id="query.dependedBy"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -39,6 +23,22 @@
       <matcher
             factory="query.dependedcomponents.DependedComponentsMatcherFactory"
             id="query.dependedComponents">
+      </matcher>
+   </extension>
+   <extension
+         id="queryt.dependedBy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="queryt.dependedby.DependedByMatcherFactory"
+            id="queryt.dependedBy">
+      </matcher>
+   </extension>
+   <extension
+         id="queryt.dependedComponents"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
+            id="queryt.dependedComponents">
       </matcher>
    </extension>
 
