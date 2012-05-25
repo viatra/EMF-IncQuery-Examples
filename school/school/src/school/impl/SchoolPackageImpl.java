@@ -352,6 +352,15 @@ public class SchoolPackageImpl extends EPackageImpl implements SchoolPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStudent_FriendsWith() {
+		return (EReference)studentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTeacher() {
 		return teacherEClass;
 	}
@@ -483,6 +492,7 @@ public class SchoolPackageImpl extends EPackageImpl implements SchoolPackage {
 		studentEClass = createEClass(STUDENT);
 		createEAttribute(studentEClass, STUDENT__NAME);
 		createEReference(studentEClass, STUDENT__SCHOOL_CLASS);
+		createEReference(studentEClass, STUDENT__FRIENDS_WITH);
 
 		teacherEClass = createEClass(TEACHER);
 		createEAttribute(teacherEClass, TEACHER__NAME);
@@ -546,7 +556,7 @@ public class SchoolPackageImpl extends EPackageImpl implements SchoolPackage {
 		initEReference(getSchoolClass_Year(), this.getYear(), this.getYear_SchoolClasses(), "year", null, 0, 1, SchoolClass.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchoolClass_Students(), this.getStudent(), this.getStudent_SchoolClass(), "students", null, 0, -1, SchoolClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchoolClass_Courses(), this.getCourse(), this.getCourse_SchoolClass(), "courses", null, 0, -1, SchoolClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchoolClass_HomeroomTeacher(), this.getTeacher(), null, "homeroomTeacher", null, 0, 1, SchoolClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchoolClass_HomeroomTeacher(), this.getTeacher(), this.getTeacher_HomeroomedClass(), "homeroomTeacher", null, 0, 1, SchoolClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specialisationCourseEClass, SpecialisationCourse.class, "SpecialisationCourse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecialisationCourse_Specialisation(), ecorePackage.getEString(), "specialisation", null, 0, 1, SpecialisationCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -554,12 +564,13 @@ public class SchoolPackageImpl extends EPackageImpl implements SchoolPackage {
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStudent_SchoolClass(), this.getSchoolClass(), this.getSchoolClass_Students(), "schoolClass", null, 0, 1, Student.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStudent_FriendsWith(), this.getStudent(), null, "friendsWith", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(teacherEClass, Teacher.class, "Teacher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTeacher_Name(), ecorePackage.getEString(), "name", null, 0, 1, Teacher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTeacher_School(), this.getSchool(), this.getSchool_Teachers(), "school", null, 0, 1, Teacher.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTeacher_Courses(), this.getCourse(), this.getCourse_Teacher(), "courses", null, 0, -1, Teacher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTeacher_HomeroomedClass(), this.getSchoolClass(), null, "homeroomedClass", null, 0, 1, Teacher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTeacher_HomeroomedClass(), this.getSchoolClass(), this.getSchoolClass_HomeroomTeacher(), "homeroomedClass", null, 0, 1, Teacher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(yearEClass, Year.class, "Year", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getYear_StartingDate(), ecorePackage.getEInt(), "startingDate", null, 0, 1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

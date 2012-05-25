@@ -2,69 +2,6 @@
 <plugin>
 
    <extension
-         id="test_school.school.school"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.school.SchoolMatcherFactory"
-            id="school.school">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.schoolName"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.schoolname.SchoolNameMatcherFactory"
-            id="school.schoolName">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.studentName"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.studentname.StudentNameMatcherFactory"
-            id="school.studentName">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.studentOfSchool"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.studentofschool.StudentOfSchoolMatcherFactory"
-            id="school.studentOfSchool">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.inSameSchoolDifferentYears"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.insameschooldifferentyears.InSameSchoolDifferentYearsMatcherFactory"
-            id="school.inSameSchoolDifferentYears">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.sameCodeClassDifferentYears"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.samecodeclassdifferentyears.SameCodeClassDifferentYearsMatcherFactory"
-            id="school.sameCodeClassDifferentYears">
-      </matcher>
-   </extension>
-   <extension
-         id="test_school.school.sameCodeClassDifferentYearsBetter"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.samecodeclassdifferentyearsbetter.SameCodeClassDifferentYearsBetterMatcherFactory"
-            id="school.sameCodeClassDifferentYearsBetter">
-      </matcher>
-   </extension>
-   <extension
          id="school.school"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -97,6 +34,14 @@
       </matcher>
    </extension>
    <extension
+         id="school.studentOfSchoolCompact"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.studentofschoolcompact.StudentOfSchoolCompactMatcherFactory"
+            id="school.studentOfSchoolCompact">
+      </matcher>
+   </extension>
+   <extension
          id="school.inSameSchoolDifferentYears"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -118,6 +63,30 @@
       <matcher
             factory="school.samecodeclassdifferentyearsbetter.SameCodeClassDifferentYearsBetterMatcherFactory"
             id="school.sameCodeClassDifferentYearsBetter">
+      </matcher>
+   </extension>
+   <extension
+         id="school.friendsWith"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.friendswith.FriendsWithMatcherFactory"
+            id="school.friendsWith">
+      </matcher>
+   </extension>
+   <extension
+         id="school.inTheCircleOfFriends"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory"
+            id="school.inTheCircleOfFriends">
+      </matcher>
+   </extension>
+   <extension
+         id="school.specialCourses2"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.specialcourses2.SpecialCourses2MatcherFactory"
+            id="school.specialCourses2">
       </matcher>
    </extension>
 

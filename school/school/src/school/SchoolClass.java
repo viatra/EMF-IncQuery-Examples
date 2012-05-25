@@ -56,6 +56,7 @@ public interface SchoolClass extends EObject {
 	EList<Course> getCourses();
 	/**
 	 * Returns the value of the '<em><b>Homeroom Teacher</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link school.Teacher#getHomeroomedClass <em>Homeroomed Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Homeroom Teacher</em>' reference isn't clear,
@@ -65,7 +66,8 @@ public interface SchoolClass extends EObject {
 	 * @return the value of the '<em>Homeroom Teacher</em>' reference.
 	 * @see #setHomeroomTeacher(Teacher)
 	 * @see school.SchoolPackage#getSchoolClass_HomeroomTeacher()
-	 * @model
+	 * @see school.Teacher#getHomeroomedClass
+	 * @model opposite="homeroomedClass"
 	 * @generated
 	 */
 	Teacher getHomeroomTeacher();

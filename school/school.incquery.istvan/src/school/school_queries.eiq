@@ -13,33 +13,38 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 	 * School names pattern
 	 */
 	pattern schoolName(S, Name) = {
- 		School(S);
+// 		School(S);
  		School.name(S, Name);
-  		School.name(S, Name);
- 		EString(Name);
+// 		EString(Name);
  	}
 	 	
 	/**
 	 * Students name pattern
 	 */
    	pattern studentName(S, Name) = {
- 		Student(S);
+// 		Student(S);
   		Student.name(S, Name);
- 		EString(Name);
+// 		EString(Name);
  	}		
  	
  	/**
  	 * Return the students of the school
  	 */
- 	pattern studentOfSchool(Student, School, Year, SchoolClass) = {
- 		School(School);
- 		School.years(School, Year);
- 		Year(Year);
- 		Year.schoolClasses(Year, SchoolClass);
- 		SchoolClass(SchoolClass);
- 		SchoolClass.students(SchoolClass, Student);
- 		Student(Student);
- 		
+ 	 @ObservableValue(name = "Y", expression = "Y.startingDate")
+ 	 @ObservableValue(name = "S", expression = "S.name")
+ 	 @ObservableValue(name = "Sch", expression = "Sch.name")
+ 	 @ObservableValue(name = "SC", expression = "SC.code")
+ 	pattern studentOfSchool(S:Student, Sch:School, Y:Year, SC:SchoolClass) = {
+ 		School.years(Sch, Y);
+ 		Year.schoolClasses(Y, SC);
+ 		SchoolClass.students(SC, S);
+ 	}
+ 	
+ 	/*
+ 	 * Path expression demo
+ 	 */
+ 	pattern studentOfSchoolCompact(S:Student, Sch:School) = {
+ 		School.years.schoolClasses.students(Sch,S);
  	}	
  		
  		
@@ -57,7 +62,6 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  				
  		ElderStudent != YoungerStudent;		
  		Date1 != Date2;
- 		// Date1 != Date2;
  		
  	}	
   				
@@ -91,5 +95,38 @@ import "http://www.eclipse.org/emf/2002/Ecore"
  		SchoolClass.code(SchoolClass2, Code);
  		
  	}
+ 	
+ 	/*
+ 	 * Transitive closure demo
+ 	 */
+ 	pattern friendsWith(S1:Student, S2:Student) = {
+ 		Student.friendsWith(S1,S2);
+ 	} or {
+ 		Student.friendsWith(S2,S1);
+ 	}
+ 	
+ 	pattern inTheCircleOfFriends(S1:Student, S2:Student) = {
+ 		find friendsWith+(S1,S2);
+ 	}
+ 	
+ 	/*
+ 	 * check expression demo
+ 	 * TODO: fails with a weird exception:
+ 	 * Caused by: java.lang.NoSuchMethodException: Could not find method school.Course.getSubject()
+	 * at org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter.invokeOperation(XbaseInterpreter.java:720)
+ 	 */
+ /*	pattern specialCourses(C:Course) = {
+ 		Course(C);
+ 		check(C.subject.contains("fig"));
+ 	}
+ 	*/
+ 	
+ 	pattern specialCourses2(C:Course) = {
+ 		Course(C);
+ 		Course.subject(C,Sub);
+ 	//	EString(Sub);
+ 		check((Sub as String).contains("fig"));
+ 	}
+ 	
 
 

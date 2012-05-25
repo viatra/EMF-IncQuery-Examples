@@ -65,6 +65,7 @@ public class StudentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addFriendsWithPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class StudentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Friends With feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFriendsWithPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Student_friendsWith_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Student_friendsWith_feature", "_UI_Student_type"),
+				 SchoolPackage.Literals.STUDENT__FRIENDS_WITH,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

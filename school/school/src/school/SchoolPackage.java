@@ -353,13 +353,22 @@ public interface SchoolPackage extends EPackage {
 	int STUDENT__SCHOOL_CLASS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Friends With</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__FRIENDS_WITH = 2;
+
+	/**
 	 * The number of structural features of the '<em>Student</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = 2;
+	int STUDENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link school.impl.TeacherImpl <em>Teacher</em>}' class.
@@ -712,6 +721,17 @@ public interface SchoolPackage extends EPackage {
 	EReference getStudent_SchoolClass();
 
 	/**
+	 * Returns the meta object for the reference list '{@link school.Student#getFriendsWith <em>Friends With</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Friends With</em>'.
+	 * @see school.Student#getFriendsWith()
+	 * @see #getStudent()
+	 * @generated
+	 */
+	EReference getStudent_FriendsWith();
+
+	/**
 	 * Returns the meta object for class '{@link school.Teacher <em>Teacher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1023,6 +1043,14 @@ public interface SchoolPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STUDENT__SCHOOL_CLASS = eINSTANCE.getStudent_SchoolClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Friends With</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STUDENT__FRIENDS_WITH = eINSTANCE.getStudent_FriendsWith();
 
 		/**
 		 * The meta object literal for the '{@link school.impl.TeacherImpl <em>Teacher</em>}' class.

@@ -235,11 +235,33 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHomeroomTeacher(Teacher newHomeroomTeacher) {
+	public NotificationChain basicSetHomeroomTeacher(Teacher newHomeroomTeacher, NotificationChain msgs) {
 		Teacher oldHomeroomTeacher = homeroomTeacher;
 		homeroomTeacher = newHomeroomTeacher;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, oldHomeroomTeacher, homeroomTeacher));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, oldHomeroomTeacher, newHomeroomTeacher);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeroomTeacher(Teacher newHomeroomTeacher) {
+		if (newHomeroomTeacher != homeroomTeacher) {
+			NotificationChain msgs = null;
+			if (homeroomTeacher != null)
+				msgs = ((InternalEObject)homeroomTeacher).eInverseRemove(this, SchoolPackage.TEACHER__HOMEROOMED_CLASS, Teacher.class, msgs);
+			if (newHomeroomTeacher != null)
+				msgs = ((InternalEObject)newHomeroomTeacher).eInverseAdd(this, SchoolPackage.TEACHER__HOMEROOMED_CLASS, Teacher.class, msgs);
+			msgs = basicSetHomeroomTeacher(newHomeroomTeacher, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, newHomeroomTeacher, newHomeroomTeacher));
 	}
 
 	/**
@@ -259,6 +281,10 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStudents()).basicAdd(otherEnd, msgs);
 			case SchoolPackage.SCHOOL_CLASS__COURSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
+			case SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER:
+				if (homeroomTeacher != null)
+					msgs = ((InternalEObject)homeroomTeacher).eInverseRemove(this, SchoolPackage.TEACHER__HOMEROOMED_CLASS, Teacher.class, msgs);
+				return basicSetHomeroomTeacher((Teacher)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -277,6 +303,8 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
 				return ((InternalEList<?>)getStudents()).basicRemove(otherEnd, msgs);
 			case SchoolPackage.SCHOOL_CLASS__COURSES:
 				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+			case SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER:
+				return basicSetHomeroomTeacher(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

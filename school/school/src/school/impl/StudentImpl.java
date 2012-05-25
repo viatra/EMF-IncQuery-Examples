@@ -6,15 +6,18 @@
  */
 package school.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import school.SchoolClass;
@@ -30,6 +33,7 @@ import school.Student;
  * <ul>
  *   <li>{@link school.impl.StudentImpl#getName <em>Name</em>}</li>
  *   <li>{@link school.impl.StudentImpl#getSchoolClass <em>School Class</em>}</li>
+ *   <li>{@link school.impl.StudentImpl#getFriendsWith <em>Friends With</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +59,16 @@ public class StudentImpl extends EObjectImpl implements Student {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFriendsWith() <em>Friends With</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFriendsWith()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Student> friendsWith;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +156,18 @@ public class StudentImpl extends EObjectImpl implements Student {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Student> getFriendsWith() {
+		if (friendsWith == null) {
+			friendsWith = new EObjectResolvingEList<Student>(Student.class, this, SchoolPackage.STUDENT__FRIENDS_WITH);
+		}
+		return friendsWith;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -193,6 +219,8 @@ public class StudentImpl extends EObjectImpl implements Student {
 				return getName();
 			case SchoolPackage.STUDENT__SCHOOL_CLASS:
 				return getSchoolClass();
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				return getFriendsWith();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +230,7 @@ public class StudentImpl extends EObjectImpl implements Student {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -210,6 +239,10 @@ public class StudentImpl extends EObjectImpl implements Student {
 				return;
 			case SchoolPackage.STUDENT__SCHOOL_CLASS:
 				setSchoolClass((SchoolClass)newValue);
+				return;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				getFriendsWith().clear();
+				getFriendsWith().addAll((Collection<? extends Student>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,6 +262,9 @@ public class StudentImpl extends EObjectImpl implements Student {
 			case SchoolPackage.STUDENT__SCHOOL_CLASS:
 				setSchoolClass((SchoolClass)null);
 				return;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				getFriendsWith().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -245,6 +281,8 @@ public class StudentImpl extends EObjectImpl implements Student {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SchoolPackage.STUDENT__SCHOOL_CLASS:
 				return getSchoolClass() != null;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				return friendsWith != null && !friendsWith.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
