@@ -1,23 +1,28 @@
 package school
 
 import "http://school.ecore"
-
  
- /*
- * Step 1: simple queries
- */
+ // Step 1: simple queries
  
- // all schools
+ /* 
+  * all schools
+  */
  pattern schools(Sch) = {
  	School(Sch);
  }
  
- // all students
+ /*
+  *  all students
+  */
  pattern teachers(T) = {
  	Teacher(T);
  }
  
- // query along a reference
+ /* 
+  * a sample query along a reference
+  * 
+  * Teacher T teaches in school Sch.
+  */
  pattern teachersOfSchool(T:Teacher,Sch:School) = {
  	School.teachers(Sch,T); 
  	// note that there is no restriction on the direction of navigation:
@@ -25,41 +30,58 @@ import "http://school.ecore"
  }
  
  
- /*
-  * Step 2: pattern calls, negative application conditions
-  */
+// Step 2: pattern calls, negative application conditions
+
+/* 
+ * Courses of a teacher.
+ * 
+ * Teacher T teaches in Course C
+ */
  pattern coursesOfTeacher(T:Teacher, C:Course) = {
  	Teacher.courses(T,C);
  } 
-
+ 
+/*
+ * Teacher T teaches a course which is being taught to SchoolClass SC 
+ */
  pattern classesOfTeacher(T:Teacher, SC:SchoolClass) = {
  	find coursesOfTeacher(T,C);
  	Course.schoolClass(C,SC);
- 	// could also be shorter: Teacher.courses.schoolClass(T,SC);
  }
  
+ /*
+  * Teacher T is a teacher who doesn't teach any schoolclass.
+  */
  pattern teacherWithoutClass(T:Teacher) = {
 	neg find classesOfTeacher(T,SC); 	
  }
 
+ // Step 3: path expressions
+ 
  /*
-  * Step 3: path expressions
+  * Student S attends school Sch
   */
  pattern studentOfSchool(S:Student,Sch:School) = {
  	Student.schoolClass.courses.school(S,Sch);
  	// logically equivalent: School.courses.schoolClass.students(Sch,S);
  }
   
- /*
-  * Step 4: check conditions
-  */
+// Step 4: check conditions
   
- // attribute value constraint with a constant
+ /*
+  * Attribute value constraint with a constant:
+  * 
+  * Course C has weight 30
+  */
  pattern courseWithWeightThirty(C:Course) = {
  	Course.weight(C,30);
  }
  
- // a bit more complicated check expression
+ /*
+  *  a bit more complicated check expression:
+  * 
+  * Course C has a subject name which is longer than C's weight.
+  */
  pattern courseWithNameLongerThanWeight(C:Course) = {
  	Course.subject(C,CName);
  	Course.weight(C,W);
@@ -67,8 +89,12 @@ import "http://school.ecore"
  	// casts will not be necessary once IncQuery has full type inference (v.0.7)
  }
  
-  // check condition with some XBase magic
- // this must be the most primitive prime tester ever
+  /*
+   * A check condition with some Xbase magic:
+   * (this must be the most primitive prime tester ever :-)
+   * 
+   * Course C has a weight which is a prime number
+   */
  pattern courseWithPrimeWeight(C:Course) = {
  	Course.weight(C,W);
  	check({ // make sure the check() expression returns a boolean value on all execution paths
@@ -88,10 +114,11 @@ import "http://school.ecore"
  // for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
  // for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
  
- /*
-  * Step 5: counting, simple check condition, negative application condition
-  */
-  // T1 teaches more classes than T2
+ // Step 5: counting (match cardinalities)
+  
+  /*
+   * Teacher T1 teaches more classes than teacher T2
+   */
   @Off // this @Off annotation hides this pattern from the UI
   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) = {
   	N == count find classesOfTeacher(T1,_SC1);
@@ -99,14 +126,22 @@ import "http://school.ecore"
   	check((N as Integer) > (M as Integer));
   }
   
+  /*
+   * Teacher T teaches the most courses.
+   * 
+   * Note: there can be multiple matches to T as there might be cases
+   * where multiple teachers teach the same and maximum amount of courses.
+   */
   pattern teachesTheMostCourses(T:Teacher) = {
-  	neg find teachesMoreClasses(_Tx,T);
+  	neg find teachesMoreClasses(_Tx,T); // there is noone who would teach more courses
   }
   
-  /*
-   * Step 6: disjunction, recursion, transitive closure
-   */
-   // S1 is friendly to S2, i.e. they are friends in either direction
+ // Step 6: disjunction, recursion, transitive closure
+ 
+   /*
+    * Student S1 is friendly to student S2, i.e. they are friends in either direction
+    * 
+    */
    @Off
    pattern friendlyTo(S1:Student, S2:Student) = {
    	Student.friendsWith(S1,S2);
@@ -114,6 +149,13 @@ import "http://school.ecore"
    	Student.friendsWith(S2,S1);
    }
    
+   /*
+    * Student Someone is in the circle of student S1's friends:
+    *  - they are either friendly directly
+    *  - or there is a common friend who is in both student's circle of friends
+    * 
+    * Note the symmetry of the query.
+    */
    pattern inTheCircleOfFriends(S1:Student, Someone:Student) = {
    	find friendlyTo(S1,Someone);
    	S1!=Someone;
@@ -123,12 +165,20 @@ import "http://school.ecore"
    	S1!=Someone;
    }
    
+   /*
+    * This is semantically equivalent to inTheCircleOfFriends:
+    * 
+    * Student S1 is transitively friendly to student Someone
+    */
    pattern inTheCircleOfFriends_shorter(S1:Student,Someone:Student) = {
    	find friendlyTo+(S1,Someone);
    	// this is not only a short-hand notation, but also much more efficient!
    	// use it whenever possible
    }
    
+   /*
+    * Student S1 has more transitive friends than student S2
+    */
    @Off
    pattern moreFriendsThan(S1:Student,S2:Student) = {
    	N == count find inTheCircleOfFriends_shorter(S1,_Sx1);
@@ -136,19 +186,26 @@ import "http://school.ecore"
    	check ((N as Integer) > (M as Integer));
    }
    
+   /*
+    * Student S has the largest circle of friends.
+    * 
+    * Note: again, there can be multiple matches in case there are
+    * equally large friend circles.
+    */
    pattern theOnesWithTheBiggestCircle(S:Student) = {
    	neg find moreFriendsThan(Sx,S);
    }
    
    
+// Step 7: combine everything, @PatternUI, @ObservableValue
+
    /*
-    * Step 7: combine everything, @PatternUI, @ObservableValue
     * 
     * We want to find those years, which had courses taught by the busiest teacher
     * and included the most sociable students
     * 
     */
-    @PatternUI(message="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate")
+    @PatternUI(message="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
     @ObservableValue(name = "Y", expression="Y.startingDate")
     @ObservableValue(name = "C", expression="C.subject")
     @ObservableValue(name = "T", expression="T.name")
