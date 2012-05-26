@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:school="http:///school.ecore" name="Hogwarts School of Witchcraft and Wizardry" address="Hogsmeade">
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:school="http://school.ecore" name="Hogwarts School of Witchcraft and Wizardry" address="Hogsmeade">
   <years startingDate="1991">
     <schoolClasses code="71" courses="//@courses.0 //@courses.1 //@courses.2" homeroomTeacher="//@teachers.1">
       <students name="Seamus Finnigan"/>
