@@ -1,6 +1,7 @@
 package school
 
 import "http://school.ecore"
+
  
  // Step 1: simple queries
  
@@ -12,7 +13,7 @@ import "http://school.ecore"
  }
  
  /*
-  *  all students
+  *  all teachers
   */
  pattern teachers(T) = {
  	Teacher(T);
@@ -158,7 +159,7 @@ import "http://school.ecore"
     */
    pattern inTheCircleOfFriends(S1:Student, Someone:Student) = {
    	find friendlyTo(S1,Someone);
-   	S1!=Someone;
+  	S1!=Someone; // we do not allow self-loops
    } or {
    	find friendlyTo(S1,CommonFriend);
    	find inTheCircleOfFriends(CommonFriend,Someone);
@@ -172,6 +173,7 @@ import "http://school.ecore"
     */
    pattern inTheCircleOfFriends_shorter(S1:Student,Someone:Student) = {
    	find friendlyTo+(S1,Someone);
+   	S1!=Someone; // we do not allow self loops
    	// this is not only a short-hand notation, but also much more efficient!
    	// use it whenever possible
    }
@@ -197,7 +199,7 @@ import "http://school.ecore"
    }
    
    
-// Step 7: combine everything, @PatternUI, @ObservableValue
+// Step 7: combine everything, @PatternUI, @ObservableValue, @Handler
 
    /*
     * 
@@ -206,10 +208,10 @@ import "http://school.ecore"
     * 
     */
     @PatternUI(message="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
-    @ObservableValue(name = "Y", expression="Y.startingDate")
-    @ObservableValue(name = "C", expression="C.subject")
-    @ObservableValue(name = "T", expression="T.name")
-    @ObservableValue(name = "S", expression="S.name")
+    @ObservableValue(name = "Year", expression="Y.startingDate")
+    @ObservableValue(name = "Teacher", expression="T.name")
+    @ObservableValue(name = "Student", expression="S.name")
+    @Handler(fileExtension = "school")
     pattern finalPattern(Y:Year,C:Course,T:Teacher,S:Student) = {
     	Year.schoolClasses.courses(Y,C);
     	Course.teacher(C,T);
