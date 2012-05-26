@@ -2,11 +2,8 @@ package bpmn1
 
 import "http://stp.eclipse.org/bpmn"
 
-pattern MyPattern(P)= {
-	Activity(P);
-}
-
-@Off pattern loopingActivity(A : Activity)= {
+@Off 
+pattern loopingActivity(A : Activity)= {
 	Activity.looping(A, true);
 }
 
@@ -21,7 +18,6 @@ pattern badLoopingActivity(A : Activity)= {
 @Constraint(location = "A", message =
 "$A.name$ is a lonely activity", severity = "warning" )
 pattern lonelyActivity(A : Activity)= {
-//	neg find someTypeOfEvent(A);
 	neg find hasInOrOut(A);
 }
 
@@ -34,29 +30,23 @@ pattern hasInOrOut(A:Activity)= {
 
 @Off
 pattern inEdge(A: Activity)= {
-	find sequenceFlowEdge(SeqEdgeTo, SomeActivity, A);
+	find sequenceFlowEdge(_SeqEdgeTo, _SomeActivity, A);
 } or {
-	find messageFlowEdge(MessEdgeTo, SomeMessActivity, A);
+	find messageFlowEdge(_MessEdgeTo, _SomeMessActivity, A);
 }
 @Off
 pattern outEdge(A: Activity)= {
-	find sequenceFlowEdge(SeqEdgeFrom, A, OtherActivity);
+	find sequenceFlowEdge(_SeqEdgeFrom, A, _OtherActivity);
 } or {
-	find messageFlowEdge(MessEdgeFrom, A, OtherMessActivity);
+	find messageFlowEdge(_MessEdgeFrom, A, _OtherMessActivity);
 }
 @Off
-pattern sequenceFlowEdge(Flow, Src, Dst)= {
-	SequenceEdge(Flow);
-	Activity(Src);
-	Activity(Dst);
+pattern sequenceFlowEdge(Flow:SequenceEdge, Src:Activity, Dst:Activity)= {
 	SequenceEdge.source(Flow, Src);
 	SequenceEdge.target(Flow, Dst);
 }
 @Off
-pattern messageFlowEdge(Flow, Src, Dst)= {
-	MessagingEdge(Flow);
-	Activity(Src);
-	Activity(Dst);
+pattern messageFlowEdge(Flow:MessagingEdge, Src:Activity, Dst:Activity)= {
 	MessagingEdge.source(Flow, Src);
 	MessagingEdge.target(Flow, Dst);
 }

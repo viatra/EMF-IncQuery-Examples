@@ -38,7 +38,6 @@ Export-Package: bpmn1.badloopingactivity,
  bpmn1.lonelyactivity,
  bpmn1.loopingactivity,
  bpmn1.messageflowedge,
- bpmn1.mypattern,
  bpmn1.outedge,
  bpmn1.sequenceflowedge,
  bpmn1.sometypeofevent
