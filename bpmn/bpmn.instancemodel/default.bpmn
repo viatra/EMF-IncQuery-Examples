@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmi:id="_WA2e8KazEeGrr_s-iXMcBQ" iD="_WA134aazEeGrr_s-iXMcBQ">
+  <pools xmi:type="bpmn:Pool" xmi:id="_WBsMcaazEeGrr_s-iXMcBQ" iD="_WBsMcKazEeGrr_s-iXMcBQ" name="Pool">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_WCCKsaazEeGrr_s-iXMcBQ" iD="_WCCKsKazEeGrr_s-iXMcBQ" outgoingEdges="_vi3F4ac9EeGE67ctMyA4Ww" incomingEdges="_vBFOgac9EeGE67ctMyA4Ww" name="Task" activityType="Task"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_n2ny8ac9EeGE67ctMyA4Ww" iD="_n2ny8Kc9EeGE67ctMyA4Ww" outgoingEdges="_wyloYac9EeGE67ctMyA4Ww" incomingEdges="_vi3F4ac9EeGE67ctMyA4Ww" name="Simple" activityType="Task" looping="true"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_smW4gac9EeGE67ctMyA4Ww" iD="_smW4gKc9EeGE67ctMyA4Ww" outgoingEdges="_vBFOgac9EeGE67ctMyA4Ww" name="Start" activityType="EventStartEmpty"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_wHwisac9EeGE67ctMyA4Ww" iD="_wHwisKc9EeGE67ctMyA4Ww" incomingEdges="_wyloYac9EeGE67ctMyA4Ww" name="End" activityType="EventEndEmpty"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_vBFOgac9EeGE67ctMyA4Ww" iD="_vBFOgKc9EeGE67ctMyA4Ww"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_vi3F4ac9EeGE67ctMyA4Ww" iD="_vi3F4Kc9EeGE67ctMyA4Ww"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_wyloYac9EeGE67ctMyA4Ww" iD="_wyloYKc9EeGE67ctMyA4Ww"/>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_OpqFIadGEeGcRvnF9E_4RA" iD="_OpqFIKdGEeGcRvnF9E_4RA" name="Pool0">
+    <vertices xmi:type="bpmn:Activity" xmi:id="_Pbr_AadGEeGcRvnF9E_4RA" iD="_Pbr_AKdGEeGcRvnF9E_4RA" name="Lonely"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_6bm6oKdJEeGAPZcK_lYVTA" iD="_6biCIKdJEeGAPZcK_lYVTA" name="SomeTask"/>
+  </pools>
+</bpmn:BpmnDiagram>
