@@ -155,23 +155,9 @@ import "http://school.ecore"
     *  - they are either friendly directly
     *  - or there is a common friend who is in both student's circle of friends
     * 
-    * Note the symmetry of the query.
-    */
-   pattern inTheCircleOfFriends(S1:Student, Someone:Student) = {
-   	find friendlyTo(S1,Someone);
-  	S1!=Someone; // we do not allow self-loops
-   } or {
-   	find friendlyTo(S1,CommonFriend);
-   	find inTheCircleOfFriends(CommonFriend,Someone);
-   	S1!=Someone;
-   }
-   
-   /*
-    * This is semantically equivalent to inTheCircleOfFriends:
-    * 
     * Student S1 is transitively friendly to student Someone
     */
-   pattern inTheCircleOfFriends_shorter(S1:Student,Someone:Student) = {
+   pattern inTheCircleOfFriends(S1:Student,Someone:Student) = {
    	find friendlyTo+(S1,Someone);
    	S1!=Someone; // we do not allow self loops
    	// this is not only a short-hand notation, but also much more efficient!
@@ -183,8 +169,8 @@ import "http://school.ecore"
     */
    @Off
    pattern moreFriendsThan(S1:Student,S2:Student) = {
-   	N == count find inTheCircleOfFriends_shorter(S1,_Sx1);
-   	M == count find inTheCircleOfFriends_shorter(S2,_Sx2);
+   	N == count find inTheCircleOfFriends(S1,_Sx1);
+   	M == count find inTheCircleOfFriends(S2,_Sx2);
    	check ((N as Integer) > (M as Integer));
    }
    

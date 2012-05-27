@@ -114,14 +114,6 @@
       </matcher>
    </extension>
    <extension
-         id="school.inTheCircleOfFriends_shorter"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="school.inthecircleoffriends_shorter.InTheCircleOfFriends_shorterMatcherFactory"
-            id="school.inTheCircleOfFriends_shorter">
-      </matcher>
-   </extension>
-   <extension
          id="school.moreFriendsThan"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
