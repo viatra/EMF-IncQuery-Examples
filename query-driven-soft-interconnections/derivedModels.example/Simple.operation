@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation:Checklist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:operation="http://operation/1.0" id="chl1" name="First Checklist" processId="rootProcess">
+  <entries id="cle1" name="First CLE" taskId="st1">
+    <info id="" name="Info1"/>
+    <jobPaths>Simple/Job1</jobPaths>
+  </entries>
+</operation:Checklist>

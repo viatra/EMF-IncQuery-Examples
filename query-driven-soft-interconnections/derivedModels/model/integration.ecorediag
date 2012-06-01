@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_P_SOsHwtEeGHztdWf87pxQ" type="EcoreTools" name="integration.ecorediag" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_SuiqQHwtEeGHztdWf87pxQ" type="1002">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Su1lMHwtEeGHztdWf87pxQ" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Su1lMXwtEeGHztdWf87pxQ" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_SusbQHwtEeGHztdWf87pxQ" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_SusbQXwtEeGHztdWf87pxQ" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_SusbQnwtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_SusbQ3wtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_SusbRHwtEeGHztdWf87pxQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_SuiqQXwtEeGHztdWf87pxQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_SuiqQnwtEeGHztdWf87pxQ"/>
+    <element xmi:type="ecore:EPackage" href="operation.ecore#/"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SuiqQ3wtEeGHztdWf87pxQ" x="240" y="96"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_TMwQQHwtEeGHztdWf87pxQ" type="1002">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TNDLMHwtEeGHztdWf87pxQ" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TNDLMXwtEeGHztdWf87pxQ" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_TMwQRHwtEeGHztdWf87pxQ" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_TMwQRXwtEeGHztdWf87pxQ" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_TMwQRnwtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_TMwQR3wtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_TMwQSHwtEeGHztdWf87pxQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_TMwQQXwtEeGHztdWf87pxQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_TMwQQnwtEeGHztdWf87pxQ"/>
+    <element xmi:type="ecore:EPackage" href="process.ecore#/"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMwQQ3wtEeGHztdWf87pxQ" x="24" y="48"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UBk_cHwtEeGHztdWf87pxQ" type="1002">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UBk_eXwtEeGHztdWf87pxQ" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_UBk_enwtEeGHztdWf87pxQ" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_UBk_dHwtEeGHztdWf87pxQ" type="4006"/>
+    <children xmi:type="notation:Node" xmi:id="_UBk_dXwtEeGHztdWf87pxQ" type="5003">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UBk_dnwtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UBk_d3wtEeGHztdWf87pxQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UBk_eHwtEeGHztdWf87pxQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UBk_cXwtEeGHztdWf87pxQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
+    <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_UBk_cnwtEeGHztdWf87pxQ"/>
+    <element xmi:type="ecore:EPackage" href="system.ecore#/"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UBk_c3wtEeGHztdWf87pxQ" x="468" y="48"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_P_SOsXwtEeGHztdWf87pxQ"/>
+  <element xmi:type="ecore:EPackage" href="integration.ecore#/"/>
+</notation:Diagram>

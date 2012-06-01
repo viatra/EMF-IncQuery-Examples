@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="process.presentation.ProcessModelWizardID"
+            name="%_UI_ProcessModelWizard_label"
+            class="process.presentation.ProcessModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ProcessModelFile.gif">
+         <description>%_UI_ProcessModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="process.presentation.ProcessEditorID"
+            name="%_UI_ProcessEditor_label"
+            icon="icons/full/obj16/ProcessModelFile.gif"
+            extensions="process"
+            class="process.presentation.ProcessEditor"
+            contributorClass="process.presentation.ProcessActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="operation.presentation.OperationModelWizardID"
+            name="%_UI_OperationModelWizard_label"
+            class="operation.presentation.OperationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/OperationModelFile.gif">
+         <description>%_UI_OperationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="operation.presentation.OperationEditorID"
+            name="%_UI_OperationEditor_label"
+            icon="icons/full/obj16/OperationModelFile.gif"
+            extensions="operation"
+            class="operation.presentation.OperationEditor"
+            contributorClass="operation.presentation.OperationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="system.presentation.SystemModelWizardID"
+            name="%_UI_SystemModelWizard_label"
+            class="system.presentation.SystemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SystemModelFile.gif">
+         <description>%_UI_SystemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="system.presentation.SystemEditorID"
+            name="%_UI_SystemEditor_label"
+            icon="icons/full/obj16/SystemModelFile.gif"
+            extensions="system"
+            class="system.presentation.SystemEditor"
+            contributorClass="system.presentation.SystemActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/derivedModels/src"
+    modelPluginID="derivedModels" modelName="DerivedModel" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false">
+  <foreignModel>derivedModel.ecore</foreignModel>
+  <genPackages prefix="Process" disposableProviderFactory="true" ecorePackage="process.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="process.ecore#//TaskKind">
+      <genEnumLiterals ecoreEnumLiteral="process.ecore#//TaskKind/user"/>
+      <genEnumLiterals ecoreEnumLiteral="process.ecore#//TaskKind/manual"/>
+      <genEnumLiterals ecoreEnumLiteral="process.ecore#//TaskKind/service"/>
+    </genEnums>
+    <genClasses ecoreClass="process.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//Task/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="process.ecore#//Process">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference process.ecore#//Process/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="process.ecore#//ProcessElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//ProcessElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute process.ecore#//ProcessElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="process.ecore#//Gateway"/>
+    <genClasses ecoreClass="process.ecore#//Activity">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference process.ecore#//Activity/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Activity/next"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference process.ecore#//Activity/previous"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Operation" disposableProviderFactory="true" ecorePackage="operation.ecore#/">
+    <genClasses ecoreClass="operation.ecore#//MenuItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//MenuItem/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//MenuItem/location"/>
+    </genClasses>
+    <genClasses ecoreClass="operation.ecore#//RuntimeInformation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//RuntimeInformation/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="operation.ecore#//ChecklistEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference operation.ecore#//ChecklistEntry/menu"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference operation.ecore#//ChecklistEntry/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//ChecklistEntry/taskId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//ChecklistEntry/jobPaths"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference operation.ecore#//ChecklistEntry/task"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference operation.ecore#//ChecklistEntry/jobs"/>
+    </genClasses>
+    <genClasses ecoreClass="operation.ecore#//Checklist">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference operation.ecore#//Checklist/entries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference operation.ecore#//Checklist/menu"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference operation.ecore#//Checklist/process"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//Checklist/processId"/>
+    </genClasses>
+    <genClasses ecoreClass="operation.ecore#//OperationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//OperationElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute operation.ecore#//OperationElement/name"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="System" disposableProviderFactory="true" ecorePackage="system.ecore#/">
+    <genClasses ecoreClass="system.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference system.ecore#//System/provides"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//System/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference system.ecore#//System/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference system.ecore#//System/data"/>
+    </genClasses>
+    <genClasses ecoreClass="system.ecore#//Interface">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference system.ecore#//Interface/provider"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Interface/user"/>
+    </genClasses>
+    <genClasses ecoreClass="system.ecore#//Job">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Job/runsOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Job/calls"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute system.ecore#//Job/taskIds"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Job/tasks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Job/info"/>
+    </genClasses>
+    <genClasses ecoreClass="system.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute system.ecore#//Data/readingTaskIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute system.ecore#//Data/writingTaskIds"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Data/writingTask"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference system.ecore#//Data/readingTask"/>
+    </genClasses>
+    <genClasses ecoreClass="system.ecore#//ResourceElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute system.ecore#//ResourceElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

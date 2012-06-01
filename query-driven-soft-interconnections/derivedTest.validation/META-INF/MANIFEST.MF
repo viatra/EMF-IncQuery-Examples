@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: derivedTest.validation
+Bundle-SymbolicName: derivedTest.validation;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: derivedTest,
+ org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.viatra2.emf.incquery.validation.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

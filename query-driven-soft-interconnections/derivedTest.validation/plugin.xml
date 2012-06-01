@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="validation.constraint.system.queries.UndefinedServiceTasks"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="system.queries.UndefinedServiceTasks"
+            class="system.queries.undefinedservicetasks.UndefinedServiceTasksConstraint">
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.operation.queries.IncorrectEntryInChecklist"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="operation.queries.IncorrectEntryInChecklist"
+            class="operation.queries.incorrectentryinchecklist.IncorrectEntryInChecklistConstraint">
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.operation.queries.TaskChecklistEntryJobCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="operation.queries.TaskChecklistEntryJobCorrespondence"
+            class="operation.queries.taskchecklistentryjobcorrespondence.TaskChecklistEntryJobCorrespondenceConstraint">
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.operation.queries.DataReadByChecklistEntry"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="operation.queries.DataReadByChecklistEntry"
+            class="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryConstraint">
+      </constraint>
+   </extension>
+
+</plugin>

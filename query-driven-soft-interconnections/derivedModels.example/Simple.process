@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:process="http://process/1.0" id="rootProcess" name="Root">
+  <contents xsi:type="process:Task" id="st2" name="Other Service Task" kind="service"/>
+  <contents xsi:type="process:Task" id="st1" name="First Service Task" kind="service"/>
+</process:Process>

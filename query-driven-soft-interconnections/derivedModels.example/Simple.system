@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:system="http://system/1.0" name="Simple">
+  <contains name="Job1" runsOn="/">
+    <taskIds>st1</taskIds>
+  </contains>
+  <contains name="Job2" runsOn="/">
+    <taskIds>st1</taskIds>
+  </contains>
+  <data name="Data">
+    <readingTaskIds>st1</readingTaskIds>
+    <writingTaskIds>st2</writingTaskIds>
+  </data>
+</system:System>

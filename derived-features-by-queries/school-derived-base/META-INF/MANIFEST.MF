@@ -4,6 +4,7 @@ Bundle-Name: school-derived-base
 Bundle-SymbolicName: school-derived-base;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Export-Package: coursesofteacher,
+ eclassnames,
  lastyear,
  lateryear,
  morecourses,

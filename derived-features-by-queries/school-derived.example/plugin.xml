@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
 
-   <extension
-         id="coursesOfTeacherWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="coursesofteacherwithmostcourses.CoursesOfTeacherWithMostCoursesMatcherFactory"
-            id="coursesOfTeacherWithMostCourses">
-      </matcher>
-   </extension>
-   <extension
-         id="classesOfLastYear"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="classesoflastyear.ClassesOfLastYearMatcherFactory"
-            id="classesOfLastYear">
-      </matcher>
-   </extension>
-
 </plugin>
