@@ -1,0 +1,68 @@
+package operation.queries
+
+import "http://process/1.0"
+import "http://system/1.0"
+import "http://operation/1.0"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+/* ChecklistEntry.jobs relation */
+pattern ChecklistEntryJobCorrespondence(CLE : ChecklistEntry, Job : Job) = {
+  Job.name(Job,JobName);
+  System.name(System,SysName);
+  Job.runsOn(Job,System);
+  ChecklistEntry.jobPaths(CLE,JobPath);
+  check((JobPath as String).equals((SysName as String).concat('/').concat(JobName as String)));
+}
+
+/* ChecklistEntry.task relation */
+pattern ChecklistEntryTaskCorrespondence(CLE : ChecklistEntry, Task : Task) = {
+	Task.id(Task, TaskId);
+	ChecklistEntry.taskId(CLE,TaskId);
+}
+
+/* Checklist.process relation */
+pattern ChecklistProcessCorrespondence(Checklist : Checklist, Process : Process) = {
+	Process.id(Process,ProcessId);
+	Checklist.processId(Checklist,ProcessId);
+}
+
+private pattern ChecklistEntryTaskInCheckListProcess(CLE, Task) = {
+	find ChecklistEntryTaskCorrespondence(CLE,Task);
+	find ChecklistProcessCorrespondence(Checklist,Process);
+	Process.contents(Process,Task);
+	Checklist.entries(Checklist,CLE);
+}
+
+private pattern TaskInProcess(Task, Process) = {
+	Process(Process);
+	Task(Task);
+	Process.contents(Process,Task);
+}
+
+// validation query (checklist entries are connected to tasks in the process of the checklist)
+@Constraint(location = "ChecklistEntry",
+	message = "Entry $ChecklistEntry.name$ corresponds to Task $Task.name$ outside of process $Process.name$ defined for the checklist!",
+	severity = "error")
+pattern IncorrectEntryInChecklist(ChecklistEntry,Task,Process) = {
+	Checklist.entries(Checklist,ChecklistEntry);
+	find ChecklistProcessCorrespondence(Checklist,Process);
+	find ChecklistEntryTaskCorrespondence(ChecklistEntry,Task);
+	neg find TaskInProcess(Task,Process);
+}
+
+// hyper-edge (Task <-- CheckListEntry --> Job
+@Constraint(location = "CLE",
+	message = "Task $Task.name$ connected to Job $Job.name$ through entry $CLE.name$",
+	severity = "info")
+pattern TaskChecklistEntryJobCorrespondence(Task, CLE, Job) = {
+	find ChecklistEntryTaskCorrespondence(CLE,Task);
+	find ChecklistEntryJobCorrespondence(CLE,Job);	
+}
+
+@Constraint(location = "CLE",
+	message = "Entry $CLE.name$ connected to $Data.name$ through $Task.name$",
+	severity = "info")
+pattern DataReadByChecklistEntry(CLE, Task, Data) = {
+	find ChecklistEntryTaskCorrespondence(CLE,Task);
+	find DataTaskReadCorrespondence(Data, Task);
+}

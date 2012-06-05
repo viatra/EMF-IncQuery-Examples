@@ -1,0 +1,76 @@
+package system.queries
+
+import "http://process/1.0"
+import "http://system/1.0"
+import "http://operation/1.0"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+private pattern TaskKind(Task : Task, Kind : TaskKind) = {
+	Task.kind(Task, Kind);
+}
+
+// first query n-to-m traceability
+/* Job.tasks relation */
+pattern JobTaskCorrespondence(Job : Job, Task : Task) = {
+	Job.taskIds(Job,TaskId);
+	Task.id(Task,TaskId);
+}
+
+private pattern TaskHasJob(Task : Task) = {
+	find JobTaskCorrespondence(_Job,Task);
+}
+
+/* Data.readingTask relation */
+pattern DataTaskReadCorrespondence(Data : Data, Task : Task) = {
+	Data.readingTaskIds(Data,TaskId);
+	Task.id(Task,TaskId);
+}
+
+/* Data.writingTask relation */
+pattern DataTaskWriteCorrespondence(Data : Data ,Task : Task) = {
+	Data.writingTaskIds(Data,TaskId);
+	Task.id(Task,TaskId);
+}
+
+/* Job.info relation */
+pattern JobInfoCorrespondence(Job : Job, Info : RuntimeInformation) = {
+	ChecklistEntry.info(CLE, Info);
+	ChecklistEntry.jobs(CLE, Job);
+}
+
+// second query (validation view)
+@Constraint(location = "Task", message = "Service Task $Task.name$ has no job", severity = "warning")
+pattern UndefinedServiceTasks(Task) = {
+	Task(Task);
+	Task.kind(Task, ::service);
+	neg find TaskHasJob(Task);
+}
+
+// third query (complex query for additional info in process model)
+pattern TasksAffectedThroughData(SourceTask, AffectedTask) = {
+	Task(SourceTask);
+	Task(AffectedTask);
+	Data(Data);
+	find DataTaskWriteCorrespondence(Data, SourceTask);
+	find DataTaskReadCorrespondence(Data, AffectedTask);
+}
+
+// extra transitive query, Gaben would probably cry... 
+/*pattern TransitiveAffectedTasksThroughData(SourceTask, AffectedTask) = {
+	Task(SourceTask);
+	Task(AffectedTask);
+	find TasksAffectedThroughData(SourceTask, AffectedTask);
+} or {
+	Task(SourceTask);
+	Task(InnerAffectedTask);
+	find TasksAffectedThroughData(SourceTask, InnerAffectedTask);
+	Task(AffectedTask);
+	find TransitiveAffectedTasksThroughData(InnerAffectedTask, AffectedTask);
+}*/
+
+// transitive query, new style... 
+pattern TransitiveAffectedTasksThroughData(SourceTask, AffectedTask) = {
+	Task(SourceTask);
+	Task(AffectedTask);
+	find TasksAffectedThroughData+(SourceTask, AffectedTask);
+}
