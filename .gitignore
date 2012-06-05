@@ -8,4 +8,4 @@ src-gen
 xtend-gen
 +keep.txt
 +.keep.txt
-queries
+globalEiqModel.xmi
