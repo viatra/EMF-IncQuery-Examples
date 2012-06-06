@@ -112,5 +112,14 @@
             id="operation.queries.DataReadByChecklistEntry">
       </matcher>
    </extension>
+   <extension
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+      <wellbehaving-derived-feature
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
 
 </plugin>
