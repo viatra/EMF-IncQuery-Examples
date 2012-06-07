@@ -1,0 +1,13 @@
+package bpmn2
+
+import "http://www.omg.org/spec/BPMN/20100524/DI"
+import "http://www.omg.org/spec/BPMN/20100524/MODEL"
+
+pattern Activity(A) = {
+	Activity(A);
+}
+
+pattern Event(E,L) = {
+	Event(E);
+	Event.incomingConversationLinks(E,L);
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="bpmn2.Activity"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn2.activity.ActivityMatcherFactory"
+            id="bpmn2.Activity">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn2.Event"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn2.event.EventMatcherFactory"
+            id="bpmn2.Event">
+      </matcher>
+   </extension>
+
+</plugin>
