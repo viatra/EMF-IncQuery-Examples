@@ -67,6 +67,8 @@ class SchoolTests {
 		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
 	}
 	// parse pattern from text, load expected from URI, assertMatchResults, FAIL
+	// reason of failure: snapshot contents is not consistent with actual model
+	// in this case: unexpected matches
 	@Test
 	def simpleFailedTest(){
 		val patternModel = coursesInput
@@ -74,6 +76,7 @@ class SchoolTests {
 	}
 	
 	// parse pattern from text, load expected from URI, assertMatchResults, error
+	// error should be an exception (parser exception)
 	@Test
 	def simpleErrorTest(){
 		val patternModel = parseHelper.parse('
@@ -137,6 +140,7 @@ class SchoolTests {
 	}
 	
 	// parse pattern from text, load expected from URI, call compare methods, FAIL
+	// see simpleFailedTest for details
 	@Test
 	def buildYourOwnFailedTest(){
 		val patternModel = coursesInput
