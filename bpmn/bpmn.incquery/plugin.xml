@@ -2,70 +2,6 @@
 <plugin>
 
    <extension
-         id="bpmn1.loopingActivity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.loopingactivity.LoopingActivityMatcherFactory"
-            id="bpmn1.loopingActivity">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.badLoopingActivity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.badloopingactivity.BadLoopingActivityMatcherFactory"
-            id="bpmn1.badLoopingActivity">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.lonelyActivity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.lonelyactivity.LonelyActivityMatcherFactory"
-            id="bpmn1.lonelyActivity">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.hasInOrOut"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.hasinorout.HasInOrOutMatcherFactory"
-            id="bpmn1.hasInOrOut">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.inEdge"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.inedge.InEdgeMatcherFactory"
-            id="bpmn1.inEdge">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.outEdge"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.outedge.OutEdgeMatcherFactory"
-            id="bpmn1.outEdge">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.sequenceFlowEdge"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.sequenceflowedge.SequenceFlowEdgeMatcherFactory"
-            id="bpmn1.sequenceFlowEdge">
-      </matcher>
-   </extension>
-   <extension
-         id="bpmn1.messageFlowEdge"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="bpmn1.messageflowedge.MessageFlowEdgeMatcherFactory"
-            id="bpmn1.messageFlowEdge">
-      </matcher>
-   </extension>
-   <extension
          id="bpmn1.someTypeOfEvent"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -303,6 +239,70 @@
       <matcher
             factory="bpmn1.eventintermediate.EventIntermediateMatcherFactory"
             id="bpmn1.EventIntermediate">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.loopingActivity"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.loopingactivity.LoopingActivityMatcherFactory"
+            id="bpmn1.loopingActivity">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.badLoopingActivity"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.badloopingactivity.BadLoopingActivityMatcherFactory"
+            id="bpmn1.badLoopingActivity">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.lonelyActivity"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.lonelyactivity.LonelyActivityMatcherFactory"
+            id="bpmn1.lonelyActivity">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.hasInOrOut"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.hasinorout.HasInOrOutMatcherFactory"
+            id="bpmn1.hasInOrOut">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.inEdge"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.inedge.InEdgeMatcherFactory"
+            id="bpmn1.inEdge">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.outEdge"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.outedge.OutEdgeMatcherFactory"
+            id="bpmn1.outEdge">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.sequenceFlowEdge"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.sequenceflowedge.SequenceFlowEdgeMatcherFactory"
+            id="bpmn1.sequenceFlowEdge">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.messageFlowEdge"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.messageflowedge.MessageFlowEdgeMatcherFactory"
+            id="bpmn1.messageFlowEdge">
       </matcher>
    </extension>
 
