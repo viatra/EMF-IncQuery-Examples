@@ -14,5 +14,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  school;bundle-version="1.0.0",
  school.incquery;bundle-version="0.0.1",
  org.eclipse.viatra2.emf.incquery.snapshot;bundle-version="0.6.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
