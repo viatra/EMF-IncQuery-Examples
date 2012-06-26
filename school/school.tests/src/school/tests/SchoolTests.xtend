@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2010-2012, Abel Hegedus, Istvan Rath and Daniel Varro
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Abel Hegedus - initial API and implementation
+ *   Istvan Rath - extensions, first real test set
+ *******************************************************************************/
+
 package school.tests
 
 import com.google.inject.Inject
@@ -14,6 +26,11 @@ import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
 
+/**
+ * Basic test set for testing IncQuery with the school example.
+ * See https://viatra.inf.mit.bme.hu/incquery/new/examples/school for details on the example.
+ * @author Istvan Rath
+ */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class SchoolTests {
@@ -25,26 +42,14 @@ class SchoolTests {
 	@Inject
 	ParseHelper parseHelper
 	
-	def coursesInput() {
-		parseHelper.parse('
-			package school
+	/*
+	 * Use the XMI-serialized version of the school queries for this test set
+	 */
+	def queryInput() {
+		return "school.incquery/queries/globalEiqModel.xmi".loadPatternModelFromUri as PatternModel
+	}
+	
 
-			import "http://school.ecore"
-			
-			pattern teachers(T) = {
-			 	Teacher(T);
-			}
-
-			pattern coursesOfTeacher(T:Teacher, C:Course) = {
-			  Teacher.courses(T,C);
- 			} 
-			 
-			pattern classesOfTeacher(T:Teacher, SC:SchoolClass) = {
-		 	  find coursesOfTeacher(T,C);
-		 	  Course.schoolClass(C,SC);
-            }
-		') as PatternModel
-	}	
 	// parse pattern from text, load expected from URI, assertMatchResults, CORRECT 
 	@Test
 	def simpleCorrectTest(){
@@ -60,62 +65,7 @@ class SchoolTests {
 		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
 	}
 	
-	// parse pattern from text, load expected from URI, assertMatchResults with partial match, CORRECT
-	@Test
-	def simpleFilteredTest(){
-		val patternModel = coursesInput
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
-	}
-	// parse pattern from text, load expected from URI, assertMatchResults, FAIL
-	// reason of failure: snapshot contents is not consistent with actual model
-	// in this case: unexpected matches
-	@Test
-	def simpleFailedTest(){
-		val patternModel = coursesInput
-		patternModel.assertMatchResults("school.tests/model/faulty.eiqsnapshot")
-	}
-	
-	// parse pattern from text, load expected from URI, assertMatchResults, error
-	// error should be an exception (parser exception)
-	@Test
-	def simpleErrorTest(){
-		val patternModel = parseHelper.parse('
-			package school
-
-			import "http://school.ecore"
-
-			pattern coursesOfTeacher(T:Teacher, C:Course) = {
-			  Teacher.courses(T,C);
- 			} 
-			 
-			pattern classesOfTeacher(T:Teacher, SC:SchoolClass) = {
-		 	  find coursesOfTeacher(T,C);
-		 	  ExceptionCourse.schoolClass(C,SC);
-            }
-		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
-	}
-	
-	// parse pattern from text, load expected from URI, assertMatchResults, exception
-	@Test(expected=typeof(NullPointerException))
-	def simpleExceptionTest(){
-		val patternModel = parseHelper.parse('
-			package school
-
-			import "http://school.ecore"
-
-			pattern coursesOfTeacher(T:Teacher, C:Course) = {
-			  Teacher.courses(T,C);
- 			} 
-			 
-			pattern classesOfTeacher(T:Teacher, SC:SchoolClass) = {
-		 	  find coursesOfTeacher(T,C);
-		 	  ExceptionCourse.schoolClass(C,SC);
-            }
-		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
-	}
-	
+		
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def simpleXMIUriTest(){
@@ -128,38 +78,5 @@ class SchoolTests {
 		assertMatchResults("school.incquery/src/school/schoolqueries.eiq", "school.tests/model/correct.eiqsnapshot")
 	}
 	
-	// parse pattern from text, load expected from URI, call compare methods, CORRECT
-	@Test
-	def buildYourOwnTest(){
-		val patternModel = coursesInput
-		val snapshot = "school.tests/model/correct.eiqsnapshot".loadExpectedResultsFromUri
-		val expected = snapshot.getMatchSetRecordForPattern("school.teachers")
-		val matcher = patternModel.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, "school.teachers")
-		val results = matcher.compareResultSets(expected)
-		assertArrayEquals(newHashSet,results)
-	}
 	
-	// parse pattern from text, load expected from URI, call compare methods, FAIL
-	// see simpleFailedTest for details
-	@Test
-	def buildYourOwnFailedTest(){
-		val patternModel = coursesInput
-		val matcher = patternModel.initializeMatcherFromModel(patternModel, "school.classesOfTeacher")
-		val expected = "school.tests/model/faulty.eiqsnapshot".loadExpectedResultsFromUri.getMatchSetRecordForPattern("school.classesOfTeacher")
-		val results = matcher.compareResultSets(expected)
-		assertArrayEquals(newHashSet,results)
-	}
-	
-	// use queries to compare expected match set with actual one
-	@Test
-	def compareAsRecordsTest(){
-		val patternModel = coursesInput
-		val snapshot = "school.tests/model/correct.eiqsnapshot".loadExpectedResultsFromUri
-		val expected = snapshot.getMatchSetRecordsForPattern("school.classesOfTeacher")
-		val matcher = patternModel.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, "school.classesOfTeacher")
-		expected.forEach()[
-			val results = matcher.compareResultSetsAsRecords(it)
-			assertArrayEquals(newHashSet,results)
-		]
-	}
 }
