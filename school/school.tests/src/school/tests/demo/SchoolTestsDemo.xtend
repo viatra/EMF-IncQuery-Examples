@@ -27,7 +27,7 @@ import static org.junit.Assert.*
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class SchoolTests {
+class SchoolTestsDemo {
 	
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
@@ -68,14 +68,14 @@ class SchoolTests {
 			 	Teacher(T);
 			 }
 		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
+		patternModel.assertMatchResults("school.tests/model/demo/correct.eiqsnapshot")
 	}
 	
 	// parse pattern from text, load expected from URI, assertMatchResults with partial match, CORRECT
 	@Test
 	def simpleFilteredTest(){
 		val patternModel = coursesInput
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
+		patternModel.assertMatchResults("school.tests/model/demo/correct.eiqsnapshot")
 	}
 	// parse pattern from text, load expected from URI, assertMatchResults, FAIL
 	// reason of failure: snapshot contents is not consistent with actual model
@@ -83,7 +83,7 @@ class SchoolTests {
 	@Test
 	def simpleFailedTest(){
 		val patternModel = coursesInput
-		patternModel.assertMatchResults("school.tests/model/faulty.eiqsnapshot")
+		patternModel.assertMatchResults("school.tests/model/demo/faulty.eiqsnapshot")
 	}
 	
 	// parse pattern from text, load expected from URI, assertMatchResults, error
@@ -104,7 +104,7 @@ class SchoolTests {
 		 	  ExceptionCourse.schoolClass(C,SC);
             }
 		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
+		patternModel.assertMatchResults("school.tests/model/demo/correct.eiqsnapshot")
 	}
 	
 	// parse pattern from text, load expected from URI, assertMatchResults, exception
@@ -124,26 +124,26 @@ class SchoolTests {
 		 	  ExceptionCourse.schoolClass(C,SC);
             }
 		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
+		patternModel.assertMatchResults("school.tests/model/demo/correct.eiqsnapshot")
 	}
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def simpleXMIUriTest(){
-		assertMatchResults("school.incquery/queries/globalEiqModel.xmi", "school.tests/model/correct.eiqsnapshot")
+		assertMatchResults("school.incquery/queries/globalEiqModel.xmi", "school.tests/model/demo/correct.eiqsnapshot")
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def simpleEIQURITest(){
-		assertMatchResults("school.incquery/src/school/schoolqueries.eiq", "school.tests/model/correct.eiqsnapshot")
+		assertMatchResults("school.incquery/src/school/schoolqueries.eiq", "school.tests/model/demo/correct.eiqsnapshot")
 	}
 	
 	// parse pattern from text, load expected from URI, call compare methods, CORRECT
 	@Test
 	def buildYourOwnTest(){
 		val patternModel = coursesInput
-		val snapshot = "school.tests/model/correct.eiqsnapshot".loadExpectedResultsFromUri
+		val snapshot = "school.tests/model/demo/correct.eiqsnapshot".loadExpectedResultsFromUri
 		val expected = snapshot.getMatchSetRecordForPattern("school.teachers")
 		val matcher = patternModel.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, "school.teachers")
 		val results = matcher.compareResultSets(expected)
@@ -156,7 +156,7 @@ class SchoolTests {
 	def buildYourOwnFailedTest(){
 		val patternModel = coursesInput
 		val matcher = patternModel.initializeMatcherFromModel(patternModel, "school.classesOfTeacher")
-		val expected = "school.tests/model/faulty.eiqsnapshot".loadExpectedResultsFromUri.getMatchSetRecordForPattern("school.classesOfTeacher")
+		val expected = "school.tests/model/demo/faulty.eiqsnapshot".loadExpectedResultsFromUri.getMatchSetRecordForPattern("school.classesOfTeacher")
 		val results = matcher.compareResultSets(expected)
 		assertArrayEquals(newHashSet,results)
 	}
@@ -165,7 +165,7 @@ class SchoolTests {
 	@Test
 	def compareAsRecordsTest(){
 		val patternModel = coursesInput
-		val snapshot = "school.tests/model/correct.eiqsnapshot".loadExpectedResultsFromUri
+		val snapshot = "school.tests/model/demo/correct.eiqsnapshot".loadExpectedResultsFromUri
 		val expected = snapshot.getMatchSetRecordsForPattern("school.classesOfTeacher")
 		val matcher = patternModel.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, "school.classesOfTeacher")
 		expected.forEach()[

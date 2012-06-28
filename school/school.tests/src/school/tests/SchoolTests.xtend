@@ -25,6 +25,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
+import org.eclipse.viatra2.emf.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
+import org.eclipse.xtext.junit4.parameterized.ParameterizedXtextRunner
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -39,44 +41,61 @@ class SchoolTests {
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
 	
-	@Inject
-	ParseHelper parseHelper
+	//@Inject	ParseHelper parseHelper
 	
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	def queryInput() {
+	def queryInputXMI() {
 		return "school.incquery/queries/globalEiqModel.xmi".loadPatternModelFromUri as PatternModel
 	}
 	
-
-	// parse pattern from text, load expected from URI, assertMatchResults, CORRECT 
-	@Test
-	def simpleCorrectTest(){
-		val patternModel = parseHelper.parse('
-			package school
-
-			import "http://school.ecore"
-
-			pattern teachers(T) = {
-			 	Teacher(T);
-			 }
-		') as PatternModel
-		patternModel.assertMatchResults("school.tests/model/correct.eiqsnapshot")
+	def queryInputEIQ() {
+		return "school.incquery/src/school/schoolqueries.eiq".loadPatternModelFromUri as PatternModel
 	}
-	
+		
+	def snapshot() {
+		return "school.tests/model/tests.eiqsnapshot".loadExpectedResultsFromUri as IncQuerySnapshot
+	}
+
 		
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
-	@Test
-	def simpleXMIUriTest(){
-		assertMatchResults("school.incquery/queries/globalEiqModel.xmi", "school.tests/model/correct.eiqsnapshot")
+	//@Test
+	def testAllQueriesXMI(){
+		assertMatchResults(queryInputXMI, snapshot)
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	@Test
-	def simpleEIQURITest(){
-		assertMatchResults("school.incquery/src/school/schoolqueries.eiq", "school.tests/model/correct.eiqsnapshot")
+	//@Test
+	def testAllQueriesEIQ(){
+		assertMatchResults(queryInputXMI, snapshot)
 	}
+	
+
+	
+	def testQuery(String queryFQN){
+		val expected = snapshot.getMatchSetRecordForPattern(queryFQN)
+		val matcher = queryInputXMI.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, queryFQN)
+		val results = matcher.compareResultSets(expected)
+		assertArrayEquals(newHashSet,results)
+	}
+	
+	@Test def testSchools() { testQuery("school.schools") }
+	@Test def testTeachers() { testQuery("school.teachers") }
+	@Test def testTeachersOfSchool() { testQuery("school.teachersOfSchool") }
+	@Test def testCoursesOfTeacher() { testQuery("school.coursesOfTeacher") }
+	@Test def testClassesOfTeacher() { testQuery("school.classesOfTeacher") }
+	@Test def testTeacherWithoutClass() { testQuery("school.teacherWithoutClass") }
+	@Test def testStudentOfSchool() { testQuery("school.studentOfSchool") }
+	@Test def testCourseWithWeightThirty() { testQuery("school.courseWithWeightThirty") }
+	@Test def testCourseWithNameLongerThanWeight() { testQuery("school.courseWithNameLongerThanWeight") }
+	@Test def testCourseWithPrimeWeight() { testQuery("school.courseWithPrimeWeight") }
+	
+	
+	
+	
+	
+	
 	
 	
 }
