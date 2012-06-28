@@ -46,40 +46,49 @@ class SchoolTests {
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	def queryInputXMI() {
+	def queryInputXMI() { // Creates new resource set
 		return "school.incquery/queries/globalEiqModel.xmi".loadPatternModelFromUri as PatternModel
 	}
 	
-	def queryInputEIQ() {
+	def queryInputEIQ() { // Creates new resource set
 		return "school.incquery/src/school/schoolqueries.eiq".loadPatternModelFromUri as PatternModel
 	}
 		
-	def snapshot() {
+	def snapshot() { // Creates new resource set
 		return "school.tests/model/tests.eiqsnapshot".loadExpectedResultsFromUri as IncQuerySnapshot
 	}
 
 		
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
-	@Test
+	//@Test
 	def testAllQueriesXMI(){
 		assertMatchResults(queryInputXMI, snapshot)
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	@Test
+	//@Test
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
 	
 
 	
-	def testQuery(String queryFQN){
-		val expected = snapshot.getMatchSetRecordForPattern(queryFQN)
+	def testQuery_wrong(String queryFQN){
+		val expected = snapshot.getMatchSetRecordForPattern(queryFQN) // expected in RS1
+		// pattern model in RS2, emfRoot from RS3
 		val matcher = queryInputXMI.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, queryFQN)
+		// trivially stored matches in RS1 will not provide matches in the RS3 
 		val results = matcher.compareResultSets(expected)
 		assertArrayEquals(newHashSet,results)
 	}
-	/*
+	
+	def testQuery(String queryFQN){
+		val sns = snapshot
+		val matcher = queryInputXMI.initializeMatcherFromModel(sns.EMFRootForSnapshot, queryFQN)
+		val results = matcher.compareResultSets(sns.getMatchSetRecordForPattern(queryFQN))
+		assertArrayEquals(newHashSet,results)
+	}
+	
 	@Test def testSchools() { testQuery("school.schools") }
 	@Test def testTeachers() { testQuery("school.teachers") }
 	@Test def testTeachersOfSchool() { testQuery("school.teachersOfSchool") }
@@ -90,7 +99,6 @@ class SchoolTests {
 	@Test def testCourseWithWeightThirty() { testQuery("school.courseWithWeightThirty") }
 	@Test def testCourseWithNameLongerThanWeight() { testQuery("school.courseWithNameLongerThanWeight") }
 	@Test def testCourseWithPrimeWeight() { testQuery("school.courseWithPrimeWeight") }
-	 */
 	
 	
 	
