@@ -4,15 +4,14 @@ Bundle-Name: school-derived-base
 Bundle-SymbolicName: school-derived-base;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Export-Package: coursesofteacher,
- eclassnames,
  lastyear,
- lateryear,
- morecourses,
  teachers,
  teacherwithmostcourses
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.viatra2.emf.incquery.runtime,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ school-derived,
+ school-derived-base
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

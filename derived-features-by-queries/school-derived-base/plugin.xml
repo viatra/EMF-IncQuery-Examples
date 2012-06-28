@@ -2,23 +2,62 @@
 <plugin>
 
    <extension
-         id="school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.school.incquery.wellbehavedContribution"
-         name=""
+         id="teachers"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="teachers.TeachersMatcherFactory"
+            id="teachers">
+      </matcher>
+   </extension>
+   <extension
+         id="extension.derived.teachers"
          point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="numberOfTeachers"
-            package-nsUri="http:///school.ecore">
+            package-nsUri="http:///school-derived.ecore">
       </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="coursesOfTeacher"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="coursesofteacher.CoursesOfTeacherMatcherFactory"
+            id="coursesOfTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="teacherWithMostCourses"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="teacherwithmostcourses.TeacherWithMostCoursesMatcherFactory"
+            id="teacherWithMostCourses">
+      </matcher>
+   </extension>
+   <extension
+         id="extension.derived.teacherWithMostCourses"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="teachersWithMostCourses"
-            package-nsUri="http:///school.ecore">
+            package-nsUri="http:///school-derived.ecore">
       </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="lastYear"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="lastyear.LastYearMatcherFactory"
+            id="lastYear">
+      </matcher>
+   </extension>
+   <extension
+         id="extension.derived.lastYear"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="lastYear"
-            package-nsUri="http:///school.ecore">
+            package-nsUri="http:///school-derived.ecore">
       </wellbehaving-derived-feature>
    </extension>
 

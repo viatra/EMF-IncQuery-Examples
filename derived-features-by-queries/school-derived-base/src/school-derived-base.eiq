@@ -1,5 +1,7 @@
 import "http:///school-derived.ecore"
 
+@DerivedFeature(feature = "numberOfTeachers", kind = "counter")
+@Off
 pattern teachers(School : School, Teacher : Teacher) = {
    School.teachers(School,Teacher);
 }
@@ -8,26 +10,29 @@ pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
    Teacher.courses(Teacher,Course);
 }
 
+@DerivedFeature(feature = "teachersWithMostCourses")
+@Off
 pattern teacherWithMostCourses(School : School, Teacher : Teacher) = {
    find teachers(School,Teacher);
    neg find moreCourses(Teacher);
 }
 
-pattern moreCourses(Teacher : Teacher) = {
-	Teacher(Teacher); // added to trick validator
-	N == count find coursesOfTeacher(Teacher,Course);
-    M == count find coursesOfTeacher(Teacher2,Course2);
+private pattern moreCourses(Teacher : Teacher) = {
+	N == count find coursesOfTeacher(Teacher,_Course);
+    M == count find coursesOfTeacher(Teacher2,_Course2);
     Teacher(Teacher2);
     Teacher != Teacher2;
     check((N as Integer) < (M as Integer));
 }
 
+@DerivedFeature(feature = "lastYear")
+@Off
 pattern lastYear(School : School, Year : Year) = {
    School.years(School,Year);
    neg find laterYear(Year);
 }
 
-pattern laterYear(Year : Year) = {
+private pattern laterYear(Year : Year) = {
 	Year.startingDate(Year, Date);
 	Year.startingDate(Year2, Date2);
 	Year(Year2);
