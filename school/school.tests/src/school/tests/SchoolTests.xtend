@@ -79,6 +79,18 @@ class SchoolTests {
 		assertArrayEquals(newHashSet,results)
 	}
 	
+	def testModelModification(String queryFQN){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		
+		val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("snapshot/for/modified/results")
+		pm.assertMatchResults(newSns)
+		
+	}
+	
 	@Test def testSchools() { testQuery("school.schools") }
 	@Test def testTeachers() { testQuery("school.teachers") }
 	@Test def testTeachersOfSchool() { testQuery("school.teachersOfSchool") }
