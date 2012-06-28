@@ -2,8 +2,17 @@
 <plugin>
 
    <extension
-         id="system.queries.JobTaskCorrespondence"
          name=""
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+      <wellbehaving-derived-feature
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="system.queries.JobTaskCorrespondence"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.jobtaskcorrespondence.JobTaskCorrespondenceMatcherFactory"
@@ -11,8 +20,16 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.system.queries.JobTaskCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Job"
+            feature-name="tasks"
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="system.queries.DataTaskReadCorrespondence"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.datataskreadcorrespondence.DataTaskReadCorrespondenceMatcherFactory"
@@ -20,8 +37,16 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.system.queries.DataTaskReadCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Data"
+            feature-name="readingTask"
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="system.queries.DataTaskWriteCorrespondence"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.datataskwritecorrespondence.DataTaskWriteCorrespondenceMatcherFactory"
@@ -29,8 +54,16 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.system.queries.DataTaskWriteCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Data"
+            feature-name="writingTask"
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="system.queries.JobInfoCorrespondence"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.jobinfocorrespondence.JobInfoCorrespondenceMatcherFactory"
@@ -38,8 +71,16 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.system.queries.JobInfoCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Job"
+            feature-name="info"
+            package-nsUri="http://system/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="system.queries.UndefinedServiceTasks"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.undefinedservicetasks.UndefinedServiceTasksMatcherFactory"
@@ -48,7 +89,6 @@
    </extension>
    <extension
          id="system.queries.TasksAffectedThroughData"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.tasksaffectedthroughdata.TasksAffectedThroughDataMatcherFactory"
@@ -57,7 +97,6 @@
    </extension>
    <extension
          id="system.queries.TransitiveAffectedTasksThroughData"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="system.queries.transitiveaffectedtasksthroughdata.TransitiveAffectedTasksThroughDataMatcherFactory"
@@ -73,6 +112,15 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.operation.queries.ChecklistEntryJobCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="ChecklistEntry"
+            feature-name="jobs"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="operation.queries.ChecklistEntryTaskCorrespondence"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -81,12 +129,30 @@
       </matcher>
    </extension>
    <extension
+         id="extension.derived.operation.queries.ChecklistEntryTaskCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="ChecklistEntry"
+            feature-name="task"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="operation.queries.ChecklistProcessCorrespondence"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="operation.queries.checklistprocesscorrespondence.ChecklistProcessCorrespondenceMatcherFactory"
             id="operation.queries.ChecklistProcessCorrespondence">
       </matcher>
+   </extension>
+   <extension
+         id="extension.derived.operation.queries.ChecklistProcessCorrespondence"
+         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Checklist"
+            feature-name="process"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
    </extension>
    <extension
          id="operation.queries.IncorrectEntryInChecklist"
@@ -111,15 +177,6 @@
             factory="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryMatcherFactory"
             id="operation.queries.DataReadByChecklistEntry">
       </matcher>
-   </extension>
-   <extension
-         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            package-nsUri="http://operation/1.0">
-      </wellbehaving-derived-feature>
-      <wellbehaving-derived-feature
-            package-nsUri="http://system/1.0">
-      </wellbehaving-derived-feature>
    </extension>
 
 </plugin>

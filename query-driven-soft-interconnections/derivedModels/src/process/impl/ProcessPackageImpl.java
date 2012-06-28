@@ -7,6 +7,7 @@
 package process.impl;
 
 import operation.OperationPackage;
+
 import operation.impl.OperationPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import process.Activity;
@@ -23,7 +25,9 @@ import process.ProcessFactory;
 import process.ProcessPackage;
 import process.Task;
 import process.TaskKind;
+
 import system.SystemPackage;
+
 import system.impl.SystemPackageImpl;
 
 /**

@@ -9,19 +9,23 @@ package system.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Interface;
 import system.Job;
 import system.SystemPackage;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,29 +75,13 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	 */
 	protected EList taskIds;
 
-	// Derived features
-	private IncqueryFeatureHandler tasksHandler;
-	private IncqueryFeatureHandler infoHandler;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	protected JobImpl() {
 		super();
-
-		/*IMatcherFactory tmf = MatcherFactoryRegistry.getMatcherFactory("system.queries.JobTaskCorrespondence");
-		if (tmf != null) {
-			tasksHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackage.Literals.JOB__TASKS, tmf, "Job", "Task",
-					FeatureKind.MANY_REFERENCE);
-		}
-		IMatcherFactory imf = MatcherFactoryRegistry.getMatcherFactory("system.queries.JobInfoCorrespondence");
-		if (imf != null) {
-			infoHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackage.Literals.JOB__INFO, imf, "Job", "Info",
-					FeatureKind.MANY_REFERENCE);
-		}*/
 	}
 
 	/**
@@ -170,25 +158,27 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public EList getTasks() {
-		if (tasksHandler == null) {
-			tasksHandler = IncqueryFeatureHelper.createHandler(this, SystemPackage.Literals.JOB__TASKS,
-					"system.queries.JobTaskCorrespondence", "Job", "Task", FeatureKind.MANY_REFERENCE);
-		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(tasksHandler, this, SystemPackage.Literals.JOB__TASKS);
+	public EList getTasksGen() {
+		// TODO: implement this method to return the 'Tasks' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public EList getInfo() {
-		if (infoHandler == null) {
-			infoHandler = IncqueryFeatureHelper.createHandler(this, SystemPackage.Literals.JOB__INFO,
-					"system.queries.JobInfoCorrespondence", "Job", "Info", FeatureKind.MANY_REFERENCE);
-		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(infoHandler, this, SystemPackage.Literals.JOB__INFO);
+	public EList getInfoGen() {
+		// TODO: implement this method to return the 'Info' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -291,4 +281,44 @@ public class JobImpl extends ResourceElementImpl implements Job {
 		return result.toString();
 	}
 
-} // JobImpl
+	/**
+	 * EMF-IncQuery handler for derived feature tasks
+	 */
+	private IncqueryFeatureHandler tasksHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature tasks
+	 */
+	public EList getTasks() {
+		if (tasksHandler == null) {
+			tasksHandler = IncqueryFeatureHelper.createHandler(this,
+					SystemPackageImpl.Literals.JOB__TASKS,
+					"system.queries.JobTaskCorrespondence", "Job", "Task",
+					FeatureKind.MANY_REFERENCE, true);
+		}
+		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
+				tasksHandler, this, SystemPackageImpl.Literals.JOB__TASKS);
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature info
+	 */
+	private IncqueryFeatureHandler infoHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature info
+	 */
+	public EList getInfo() {
+		if (infoHandler == null) {
+			infoHandler = IncqueryFeatureHelper.createHandler(this,
+					SystemPackageImpl.Literals.JOB__INFO,
+					"system.queries.JobInfoCorrespondence", "Job", "Info",
+					FeatureKind.MANY_REFERENCE, true);
+		}
+		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
+				infoHandler, this, SystemPackageImpl.Literals.JOB__INFO);
+	}
+
+} //JobImpl

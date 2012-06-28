@@ -437,6 +437,17 @@ public interface OperationPackage extends EPackage {
 	EReference getChecklistEntry_Menu();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link operation.ChecklistEntry#getInfo <em>Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Info</em>'.
+	 * @see operation.ChecklistEntry#getInfo()
+	 * @see #getChecklistEntry()
+	 * @generated
+	 */
+	EReference getChecklistEntry_Info();
+
+	/**
 	 * Returns the meta object for the attribute '{@link operation.ChecklistEntry#getTaskId <em>Task Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,17 +490,6 @@ public interface OperationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getChecklistEntry_Jobs();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link operation.ChecklistEntry#getInfo <em>Info</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Info</em>'.
-	 * @see operation.ChecklistEntry#getInfo()
-	 * @see #getChecklistEntry()
-	 * @generated
-	 */
-	EReference getChecklistEntry_Info();
 
 	/**
 	 * Returns the meta object for class '{@link operation.Checklist <em>Checklist</em>}'.
@@ -662,6 +662,14 @@ public interface OperationPackage extends EPackage {
 		EReference CHECKLIST_ENTRY__MENU = eINSTANCE.getChecklistEntry_Menu();
 
 		/**
+		 * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHECKLIST_ENTRY__INFO = eINSTANCE.getChecklistEntry_Info();
+
+		/**
 		 * The meta object literal for the '<em><b>Task Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -692,14 +700,6 @@ public interface OperationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHECKLIST_ENTRY__JOBS = eINSTANCE.getChecklistEntry_Jobs();
-
-		/**
-		 * The meta object literal for the '<em><b>Info</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHECKLIST_ENTRY__INFO = eINSTANCE.getChecklistEntry_Info();
 
 		/**
 		 * The meta object literal for the '{@link operation.impl.ChecklistImpl <em>Checklist</em>}' class.

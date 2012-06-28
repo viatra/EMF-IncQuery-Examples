@@ -20,5 +20,6 @@ Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.viatra2.emf.incquery.runtime,
- derivedModels;bundle-version="1.0.0"
+ derivedModels;bundle-version="1.0.0",
+ derivedTest
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

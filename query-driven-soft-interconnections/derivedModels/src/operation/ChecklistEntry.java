@@ -7,6 +7,7 @@
 package operation;
 
 import org.eclipse.emf.common.util.EList;
+
 import process.Task;
 
 /**
@@ -56,6 +57,32 @@ public interface ChecklistEntry extends OperationElement {
 	 * @generated
 	 */
 	void setMenu(MenuItem value);
+
+	/**
+	 * Returns the value of the '<em><b>Info</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Info</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Info</em>' containment reference.
+	 * @see #setInfo(RuntimeInformation)
+	 * @see operation.OperationPackage#getChecklistEntry_Info()
+	 * @model containment="true"
+	 * @generated
+	 */
+	RuntimeInformation getInfo();
+
+	/**
+	 * Sets the value of the '{@link operation.ChecklistEntry#getInfo <em>Info</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Info</em>' containment reference.
+	 * @see #getInfo()
+	 * @generated
+	 */
+	void setInfo(RuntimeInformation value);
 
 	/**
 	 * Returns the value of the '<em><b>Task Id</b></em>' attribute.
@@ -129,31 +156,5 @@ public interface ChecklistEntry extends OperationElement {
 	 * @generated
 	 */
 	EList getJobs();
-
-	/**
-	 * Returns the value of the '<em><b>Info</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Info</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Info</em>' containment reference.
-	 * @see #setInfo(RuntimeInformation)
-	 * @see operation.OperationPackage#getChecklistEntry_Info()
-	 * @model containment="true"
-	 * @generated
-	 */
-	RuntimeInformation getInfo();
-
-	/**
-	 * Sets the value of the '{@link operation.ChecklistEntry#getInfo <em>Info</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Info</em>' containment reference.
-	 * @see #getInfo()
-	 * @generated
-	 */
-	void setInfo(RuntimeInformation value);
 
 } // ChecklistEntry

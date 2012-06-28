@@ -6,6 +6,8 @@ import "http://operation/1.0"
 import "http://www.eclipse.org/emf/2002/Ecore"
 
 /* ChecklistEntry.jobs relation */
+@DerivedFeature(feature = "jobs")
+@Off
 pattern ChecklistEntryJobCorrespondence(CLE : ChecklistEntry, Job : Job) = {
   Job.name(Job,JobName);
   System.name(System,SysName);
@@ -15,12 +17,16 @@ pattern ChecklistEntryJobCorrespondence(CLE : ChecklistEntry, Job : Job) = {
 }
 
 /* ChecklistEntry.task relation */
+@DerivedFeature(feature = "task")
+@Off
 pattern ChecklistEntryTaskCorrespondence(CLE : ChecklistEntry, Task : Task) = {
 	Task.id(Task, TaskId);
 	ChecklistEntry.taskId(CLE,TaskId);
 }
 
 /* Checklist.process relation */
+@DerivedFeature(feature = "process")
+@Off
 pattern ChecklistProcessCorrespondence(Checklist : Checklist, Process : Process) = {
 	Process.id(Process,ProcessId);
 	Checklist.processId(Checklist,ProcessId);

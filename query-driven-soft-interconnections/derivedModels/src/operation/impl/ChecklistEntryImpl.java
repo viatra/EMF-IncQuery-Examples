@@ -15,16 +15,20 @@ import operation.RuntimeInformation;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+import process.Task;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
-
-import process.Task;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,28 +99,13 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	 */
 	protected EList jobPaths;
 
-	private IncqueryFeatureHandler taskHandler;
-	private IncqueryFeatureHandler jobHandler;	
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	protected ChecklistEntryImpl() {
 		super();
-		
-		/*IMatcherFactory tmf = MatcherFactoryRegistry.getMatcherFactory("operation.queries.ChecklistEntryTaskCorrespondence");
-		if (tmf != null) {
-			taskHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST_ENTRY__TASK, tmf, "CLE", "Task",
-					FeatureKind.SINGLE_REFERENCE);
-		}
-		IMatcherFactory jmf = MatcherFactoryRegistry.getMatcherFactory("operation.queries.ChecklistEntryJobCorrespondence");
-		if (jmf != null) {
-			jobHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST_ENTRY__JOBS, jmf, "CLE", "Job",
-					FeatureKind.MANY_REFERENCE);
-		}*/
 	}
 
 	/**
@@ -171,6 +160,49 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RuntimeInformation getInfo() {
+		return info;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInfo(RuntimeInformation newInfo, NotificationChain msgs) {
+		RuntimeInformation oldInfo = info;
+		info = newInfo;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OperationPackage.CHECKLIST_ENTRY__INFO, oldInfo, newInfo);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInfo(RuntimeInformation newInfo) {
+		if (newInfo != info) {
+			NotificationChain msgs = null;
+			if (info != null)
+				msgs = ((InternalEObject)info).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OperationPackage.CHECKLIST_ENTRY__INFO, null, msgs);
+			if (newInfo != null)
+				msgs = ((InternalEObject)newInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OperationPackage.CHECKLIST_ENTRY__INFO, null, msgs);
+			msgs = basicSetInfo(newInfo, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OperationPackage.CHECKLIST_ENTRY__INFO, newInfo, newInfo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTaskId() {
 		return taskId;
 	}
@@ -212,32 +244,13 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public Task basicGetTask() {
-		if (taskHandler != null) {
-			return (Task) taskHandler.getSingleReferenceValue();
-		} else {
-			taskHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST_ENTRY__TASK, "operation.queries.ChecklistEntryTaskCorrespondence", "CLE", "Task",
-					FeatureKind.SINGLE_REFERENCE);
-			if (taskHandler != null) {
-				return (Task) taskHandler.getSingleReferenceValue();
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public EList getJobs() {
-		if(jobHandler == null) {
-			jobHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST_ENTRY__JOBS, "operation.queries.ChecklistEntryJobCorrespondence", "CLE", "Job",
-					FeatureKind.MANY_REFERENCE);
-		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(jobHandler, this, OperationPackage.Literals.CHECKLIST_ENTRY__JOBS);
+	public Task basicGetTaskGen() {
+		// TODO: implement this method to return the 'Task' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -245,42 +258,12 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeInformation getInfo() {
-		return info;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInfo(RuntimeInformation newInfo, NotificationChain msgs) {
-		RuntimeInformation oldInfo = info;
-		info = newInfo;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OperationPackage.CHECKLIST_ENTRY__INFO, oldInfo, newInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInfo(RuntimeInformation newInfo) {
-		if (newInfo != info) {
-			NotificationChain msgs = null;
-			if (info != null)
-				msgs = ((InternalEObject)info).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - OperationPackage.CHECKLIST_ENTRY__INFO, null, msgs);
-			if (newInfo != null)
-				msgs = ((InternalEObject)newInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - OperationPackage.CHECKLIST_ENTRY__INFO, null, msgs);
-			msgs = basicSetInfo(newInfo, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OperationPackage.CHECKLIST_ENTRY__INFO, newInfo, newInfo));
+	public EList getJobsGen() {
+		// TODO: implement this method to return the 'Jobs' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -406,6 +389,51 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 		result.append(jobPaths);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature jobs
+	 */
+	private IncqueryFeatureHandler jobsHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature jobs
+	 */
+	public EList getJobs() {
+		if (jobsHandler == null) {
+			jobsHandler = IncqueryFeatureHelper.createHandler(this,
+					OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS,
+					"operation.queries.ChecklistEntryJobCorrespondence", "CLE",
+					"Job", FeatureKind.MANY_REFERENCE, true);
+		}
+		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
+				jobsHandler, this,
+				OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS);
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature task
+	 */
+	private IncqueryFeatureHandler taskHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature task
+	 */
+	public Task basicGetTask() {
+		if (taskHandler != null) {
+			return (process.Task) taskHandler.getSingleReferenceValue();
+		} else {
+			taskHandler = IncqueryFeatureHelper.createHandler(this,
+					OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
+					"operation.queries.ChecklistEntryTaskCorrespondence",
+					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true);
+			if (taskHandler != null) {
+				return (process.Task) taskHandler.getSingleReferenceValue();
+			}
+		}
+		return null;
 	}
 
 } //ChecklistEntryImpl

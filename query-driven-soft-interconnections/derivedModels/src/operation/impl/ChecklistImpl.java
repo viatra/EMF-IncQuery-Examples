@@ -15,10 +15,14 @@ import operation.OperationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
@@ -82,21 +86,13 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 	 */
 	protected String processId = PROCESS_ID_EDEFAULT;
 
-	private IncqueryFeatureHandler processHandler;
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	protected ChecklistImpl() {
 		super();
-		
-		/*IMatcherFactory tmf = MatcherFactoryRegistry.getMatcherFactory("operation.queries.ChecklistProcessCorrespondence");
-		if (tmf != null) {
-			processHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST__PROCESS, tmf, "Checklist", "Process",
-					FeatureKind.SINGLE_REFERENCE);
-		}*/
 	}
 
 	/**
@@ -145,19 +141,13 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public process.Process basicGetProcess() {
-		if (processHandler != null) {
-			return (process.Process) processHandler.getSingleReferenceValue();
-		} else {
-			processHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackage.Literals.CHECKLIST__PROCESS, "operation.queries.ChecklistProcessCorrespondence", "Checklist", "Process",
-					FeatureKind.SINGLE_REFERENCE);
-			if(processHandler != null) {
-				return (process.Process) processHandler.getSingleReferenceValue();
-			}
-		}
-		return null;
+	public process.Process basicGetProcessGen() {
+		// TODO: implement this method to return the 'Process' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -290,6 +280,31 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 		result.append(processId);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature process
+	 */
+	private IncqueryFeatureHandler processHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature process
+	 */
+	public process.Process basicGetProcess() {
+		if (processHandler != null) {
+			return (process.Process) processHandler.getSingleReferenceValue();
+		} else {
+			processHandler = IncqueryFeatureHelper.createHandler(this,
+					OperationPackageImpl.Literals.CHECKLIST__PROCESS,
+					"operation.queries.ChecklistProcessCorrespondence",
+					"Checklist", "Process", FeatureKind.SINGLE_REFERENCE, true);
+			if (processHandler != null) {
+				return (process.Process) processHandler
+						.getSingleReferenceValue();
+			}
+		}
+		return null;
 	}
 
 } //ChecklistImpl

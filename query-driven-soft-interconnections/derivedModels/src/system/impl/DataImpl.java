@@ -9,14 +9,16 @@ package system.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Data;
 import system.SystemPackage;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,28 +57,13 @@ public class DataImpl extends ResourceElementImpl implements Data {
 	 */
 	protected EList writingTaskIds;
 
-	private IncqueryFeatureHandler writingTasksHandler;
-	private IncqueryFeatureHandler readingTasksHandler;
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	protected DataImpl() {
 		super();
-		
-		/*IMatcherFactory wmf = MatcherFactoryRegistry.getMatcherFactory("system.queries.DataTaskWriteCorrespondence");
-		IMatcherFactory rmf = MatcherFactoryRegistry.getMatcherFactory("system.queries.DataTaskReadCorrespondence");
-		if (wmf != null) {
-			writingTasksHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackage.Literals.DATA__WRITING_TASK, wmf, "Data", "Task",
-					FeatureKind.MANY_REFERENCE);
-		}
-		if (rmf != null) {
-			readingTasksHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackage.Literals.DATA__READING_TASK, rmf, "Data", "Task",
-					FeatureKind.MANY_REFERENCE);
-		}*/
 	}
 
 	/**
@@ -115,26 +102,27 @@ public class DataImpl extends ResourceElementImpl implements Data {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public EList getWritingTask() {
-		if (writingTasksHandler == null) {
-			writingTasksHandler = IncqueryFeatureHelper.createHandler(this, SystemPackage.Literals.DATA__WRITING_TASK,
-					"system.queries.DataTaskWriteCorrespondence", "Data", "Task", FeatureKind.MANY_REFERENCE);
-		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(writingTasksHandler, this, SystemPackage.Literals.DATA__WRITING_TASK);
+	public EList getWritingTaskGen() {
+		// TODO: implement this method to return the 'Writing Task' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public EList getReadingTask() {
-		if (readingTasksHandler == null) {
-			readingTasksHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackage.Literals.DATA__READING_TASK, "system.queries.DataTaskReadCorrespondence", "Data", "Task",
-					FeatureKind.MANY_REFERENCE);
-		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(readingTasksHandler, this, SystemPackage.Literals.DATA__READING_TASK);
+	public EList getReadingTaskGen() {
+		// TODO: implement this method to return the 'Reading Task' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -226,6 +214,48 @@ public class DataImpl extends ResourceElementImpl implements Data {
 		result.append(writingTaskIds);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature readingTask
+	 */
+	private IncqueryFeatureHandler readingTaskHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature readingTask
+	 */
+	public EList getReadingTask() {
+		if (readingTaskHandler == null) {
+			readingTaskHandler = IncqueryFeatureHelper.createHandler(this,
+					SystemPackageImpl.Literals.DATA__READING_TASK,
+					"system.queries.DataTaskReadCorrespondence", "Data",
+					"Task", FeatureKind.MANY_REFERENCE, true);
+		}
+		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
+				readingTaskHandler, this,
+				SystemPackageImpl.Literals.DATA__READING_TASK);
+	}
+
+	/**
+	 * EMF-IncQuery handler for derived feature writingTask
+	 */
+	private IncqueryFeatureHandler writingTaskHandler;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @derived getter created by EMF-InccQuery for derived feature writingTask
+	 */
+	public EList getWritingTask() {
+		if (writingTaskHandler == null) {
+			writingTaskHandler = IncqueryFeatureHelper.createHandler(this,
+					SystemPackageImpl.Literals.DATA__WRITING_TASK,
+					"system.queries.DataTaskWriteCorrespondence", "Data",
+					"Task", FeatureKind.MANY_REFERENCE, true);
+		}
+		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
+				writingTaskHandler, this,
+				SystemPackageImpl.Literals.DATA__WRITING_TASK);
 	}
 
 } //DataImpl

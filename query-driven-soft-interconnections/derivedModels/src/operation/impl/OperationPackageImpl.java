@@ -18,11 +18,15 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import process.ProcessPackage;
+
 import process.impl.ProcessPackageImpl;
+
 import system.SystemPackage;
+
 import system.impl.SystemPackageImpl;
 
 /**
@@ -204,6 +208,15 @@ public class OperationPackageImpl extends EPackageImpl implements OperationPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getChecklistEntry_Info() {
+		return (EReference)checklistEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getChecklistEntry_TaskId() {
 		return (EAttribute)checklistEntryEClass.getEStructuralFeatures().get(2);
 	}
@@ -233,15 +246,6 @@ public class OperationPackageImpl extends EPackageImpl implements OperationPacka
 	 */
 	public EReference getChecklistEntry_Jobs() {
 		return (EReference)checklistEntryEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChecklistEntry_Info() {
-		return (EReference)checklistEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
