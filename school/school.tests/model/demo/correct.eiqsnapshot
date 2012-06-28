@@ -3,7 +3,7 @@
   <matchSetRecords patternQualifiedName="school.teachers">
     <matches>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="T">
-        <value href="../../../../school.instancemodel/BUTE.school#//@teachers.3"/>
+        <value href="../../../school.instancemodel/BUTE.school#//@teachers.3"/>
       </substitutions>
     </matches>
     <matches>
@@ -125,5 +125,4 @@
     <filter/>
   </matchSetRecords>
   <modelRoots href="../../../school.instancemodel/BUTE.school#/"/>
-  <modelRoots href="#/"/>
 </eiqSnapshot:IncQuerySnapshot>
