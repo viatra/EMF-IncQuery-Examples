@@ -60,15 +60,15 @@ class SchoolTests {
 
 		
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
-	//@Test
+	@Test
 	def testAllQueriesXMI(){
 		assertMatchResults(queryInputXMI, snapshot)
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	//@Test
+	@Test
 	def testAllQueriesEIQ(){
-		assertMatchResults(queryInputXMI, snapshot)
+		assertMatchResults(queryInputEIQ, snapshot)
 	}
 	
 
@@ -79,7 +79,7 @@ class SchoolTests {
 		val results = matcher.compareResultSets(expected)
 		assertArrayEquals(newHashSet,results)
 	}
-	
+	/*
 	@Test def testSchools() { testQuery("school.schools") }
 	@Test def testTeachers() { testQuery("school.teachers") }
 	@Test def testTeachersOfSchool() { testQuery("school.teachersOfSchool") }
@@ -90,7 +90,7 @@ class SchoolTests {
 	@Test def testCourseWithWeightThirty() { testQuery("school.courseWithWeightThirty") }
 	@Test def testCourseWithNameLongerThanWeight() { testQuery("school.courseWithNameLongerThanWeight") }
 	@Test def testCourseWithPrimeWeight() { testQuery("school.courseWithPrimeWeight") }
-	
+	 */
 	
 	
 	
