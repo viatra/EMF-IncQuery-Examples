@@ -60,13 +60,13 @@ class SchoolTests {
 
 		
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
-	//@Test
+	@Test
 	def testAllQueriesXMI(){
 		assertMatchResults(queryInputXMI, snapshot)
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	//@Test
+	@Test
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
@@ -85,11 +85,14 @@ class SchoolTests {
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
+		// TODO
 		
 		val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("snapshot/for/modified/results")
 		pm.assertMatchResults(newSns)
 		
 	}
+	
+	// simple test cases, for each query of the school example
 	
 	@Test def testSchools() { testQuery("school.schools") }
 	@Test def testTeachers() { testQuery("school.teachers") }
@@ -101,6 +104,16 @@ class SchoolTests {
 	@Test def testCourseWithWeightThirty() { testQuery("school.courseWithWeightThirty") }
 	@Test def testCourseWithNameLongerThanWeight() { testQuery("school.courseWithNameLongerThanWeight") }
 	@Test def testCourseWithPrimeWeight() { testQuery("school.courseWithPrimeWeight") }
+	@Test def testTeachesMoreClasses() { testQuery("school.teachesMoreClasses") }
+	@Test def testTeachesTheMostCourses() { testQuery("school.teachesTheMostCourses") }
+	@Test def testFriendlyTo() { testQuery("school.friendlyTo") }
+	@Test def testInTheCircleOfFriends() { testQuery("school.inTheCircleOfFriends") }
+	@Test def testMoreFriendsThan() { testQuery("school.moreFriendsThan") }
+	@Test def testTheOnesWithTheBiggestCircle() { testQuery("school.theOnesWithTheBiggestCircle") }
+	@Test def testFinalPattern() { testQuery("school.finalPattern") }
+	
+	
+	
 	
 	
 	
