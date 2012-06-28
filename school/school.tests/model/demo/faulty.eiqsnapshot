@@ -3,23 +3,23 @@
   <matchSetRecords patternQualifiedName="school.classesOfTeacher">
     <matches>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="T">
-        <value href="../../school.instancemodel/BUTE.school#//@teachers.3"/>
+        <value href="../../../school.instancemodel/BUTE.school#//@teachers.3"/>
       </substitutions>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="SC">
-        <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.0"/>
+        <value href="../../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.0"/>
       </substitutions>
     </matches>
     <matches>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="T">
-        <value href="../../school.instancemodel/BUTE.school#//@teachers.1"/>
+        <value href="../../../school.instancemodel/BUTE.school#//@teachers.1"/>
       </substitutions>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="SC">
-        <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.1"/>
+        <value href="../../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.1"/>
       </substitutions>
     </matches>
     <filter/>
   </matchSetRecords>
-  <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
+  <modelRoots href="../../../school.instancemodel/BUTE.school#/"/>
   <modelRoots href="correct.eiqsnapshot#/"/>
   <modelRoots href="#/"/>
 </eiqSnapshot:IncQuerySnapshot>
