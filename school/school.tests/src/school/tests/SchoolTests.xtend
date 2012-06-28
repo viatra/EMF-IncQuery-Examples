@@ -71,16 +71,6 @@ class SchoolTests {
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
 	
-
-	
-	def testQuery_wrong(String queryFQN){
-		val expected = snapshot.getMatchSetRecordForPattern(queryFQN) // expected in RS1
-		// pattern model in RS2, emfRoot from RS3
-		val matcher = queryInputXMI.initializeMatcherFromModel(snapshot.EMFRootForSnapshot, queryFQN)
-		// trivially stored matches in RS1 will not provide matches in the RS3 
-		val results = matcher.compareResultSets(expected)
-		assertArrayEquals(newHashSet,results)
-	}
 	
 	def testQuery(String queryFQN){
 		val sns = snapshot
