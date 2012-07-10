@@ -2,16 +2,30 @@
 <plugin>
 
    <extension
-         id="validation.constraint.system.queries.UndefinedServiceTasks"
+         id="generated.incquery.validation.menu.derivedModels.editor"
          name=""
-         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
-      <constraint
-            name="system.queries.UndefinedServiceTasks"
-            class="system.queries.undefinedservicetasks.UndefinedServiceTasksConstraint">
-      </constraint>
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:derivedModels.editor">
+         <menu
+               label="EMF-IncQuery">
+            <command
+                  commandId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.initValidators"
+                  label="Initialize EMF-IncQuery Validators"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.notifierdef">
+                  </reference>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
    <extension
          id="validation.constraint.operation.queries.IncorrectEntryInChecklist"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
             name="operation.queries.IncorrectEntryInChecklist"
@@ -20,6 +34,7 @@
    </extension>
    <extension
          id="validation.constraint.operation.queries.TaskChecklistEntryJobCorrespondence"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
             name="operation.queries.TaskChecklistEntryJobCorrespondence"
@@ -28,10 +43,19 @@
    </extension>
    <extension
          id="validation.constraint.operation.queries.DataReadByChecklistEntry"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
             name="operation.queries.DataReadByChecklistEntry"
             class="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryConstraint">
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.system.queries.UndefinedServiceTasks"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="system.queries.UndefinedServiceTasks"
+            class="system.queries.undefinedservicetasks.UndefinedServiceTasksConstraint">
       </constraint>
    </extension>
 
