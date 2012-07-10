@@ -47,293 +47,316 @@ public class SchoolItemProvider
 		IItemLabelProvider,
 		IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
+   * This constructs an instance from a factory and a notifier.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public SchoolItemProvider(AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
+    super(adapterFactory);
+  }
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
+   * This returns the property descriptors for the adapted class.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+    if (itemPropertyDescriptors == null) {
+      super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addAddressPropertyDescriptor(object);
-			addNumberOfTeachersPropertyDescriptor(object);
-			addTeachersWithMostCoursesPropertyDescriptor(object);
-			addLastYearPropertyDescriptor(object);
-			addCurrentYearPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+      addNamePropertyDescriptor(object);
+      addAddressPropertyDescriptor(object);
+      addNumberOfTeachersPropertyDescriptor(object);
+      addTeachersWithMostCoursesPropertyDescriptor(object);
+      addLastYearPropertyDescriptor(object);
+      addCurrentYearPropertyDescriptor(object);
+      addMinWeightInLastYearPropertyDescriptor(object);
+    }
+    return itemPropertyDescriptors;
+  }
 
 	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Name feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_name_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_name_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_name_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__NAME,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
 
 	/**
-	 * This adds a property descriptor for the Address feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Address feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addAddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_address_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_address_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__ADDRESS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_address_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_address_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__ADDRESS,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+         null,
+         null));
+  }
 
 	/**
-	 * This adds a property descriptor for the Number Of Teachers feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Number Of Teachers feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addNumberOfTeachersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_numberOfTeachers_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_numberOfTeachers_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__NUMBER_OF_TEACHERS,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_numberOfTeachers_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_numberOfTeachers_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__NUMBER_OF_TEACHERS,
+         false,
+         false,
+         false,
+         ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+         null,
+         null));
+  }
 
 	/**
-	 * This adds a property descriptor for the Teachers With Most Courses feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Teachers With Most Courses feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addTeachersWithMostCoursesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_teachersWithMostCourses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_teachersWithMostCourses_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_teachersWithMostCourses_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_teachersWithMostCourses_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
+         false,
+         false,
+         false,
+         null,
+         null,
+         null));
+  }
 
 	/**
-	 * This adds a property descriptor for the Last Year feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Last Year feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addLastYearPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_lastYear_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_lastYear_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__LAST_YEAR,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_lastYear_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_lastYear_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__LAST_YEAR,
+         false,
+         false,
+         false,
+         null,
+         null,
+         null));
+  }
 
 	/**
-	 * This adds a property descriptor for the Current Year feature.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Current Year feature.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected void addCurrentYearPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_School_currentYear_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_School_currentYear_feature", "_UI_School_type"),
-				 SchoolPackage.Literals.SCHOOL__CURRENT_YEAR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_currentYear_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_currentYear_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__CURRENT_YEAR,
+         true,
+         false,
+         false,
+         ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+         null,
+         null));
+  }
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Min Weight In Last Year feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addMinWeightInLastYearPropertyDescriptor(Object object) {
+    itemPropertyDescriptors.add
+      (createItemPropertyDescriptor
+        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+         getResourceLocator(),
+         getString("_UI_School_minWeightInLastYear_feature"),
+         getString("_UI_PropertyDescriptor_description", "_UI_School_minWeightInLastYear_feature", "_UI_School_type"),
+         SchoolPackage.Literals.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR,
+         true,
+         false,
+         true,
+         null,
+         null,
+         null));
+  }
+
+  /**
+   * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+   * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+   * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(SchoolPackage.Literals.SCHOOL__YEARS);
-			childrenFeatures.add(SchoolPackage.Literals.SCHOOL__TEACHERS);
-			childrenFeatures.add(SchoolPackage.Literals.SCHOOL__COURSES);
-		}
-		return childrenFeatures;
-	}
+    if (childrenFeatures == null) {
+      super.getChildrenFeatures(object);
+      childrenFeatures.add(SchoolPackage.Literals.SCHOOL__YEARS);
+      childrenFeatures.add(SchoolPackage.Literals.SCHOOL__TEACHERS);
+      childrenFeatures.add(SchoolPackage.Literals.SCHOOL__COURSES);
+    }
+    return childrenFeatures;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
+    // Check the type of the specified child object and return the proper feature to use for
+    // adding (see {@link AddCommand}) it as a child.
 
-		return super.getChildFeature(object, child);
-	}
+    return super.getChildFeature(object, child);
+  }
 
 	/**
-	 * This returns School.gif.
-	 * <!-- begin-user-doc -->
+   * This returns School.gif.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/School"));
-	}
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/School"));
+  }
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
+   * This returns the label text for the adapted class.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String getText(Object object) {
-		String label = ((School)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_School_type") :
-			getString("_UI_School_type") + " " + label;
-	}
+    String label = ((School)object).getName();
+    return label == null || label.length() == 0 ?
+      getString("_UI_School_type") :
+      getString("_UI_School_type") + " " + label;
+  }
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
+   * This handles model notifications by calling {@link #updateChildren} to update any cached
+   * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
+    updateChildren(notification);
 
-		switch (notification.getFeatureID(School.class)) {
-			case SchoolPackage.SCHOOL__NAME:
-			case SchoolPackage.SCHOOL__ADDRESS:
-			case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
-			case SchoolPackage.SCHOOL__CURRENT_YEAR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SchoolPackage.SCHOOL__YEARS:
-			case SchoolPackage.SCHOOL__TEACHERS:
-			case SchoolPackage.SCHOOL__COURSES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
-		super.notifyChanged(notification);
-	}
+    switch (notification.getFeatureID(School.class)) {
+      case SchoolPackage.SCHOOL__NAME:
+      case SchoolPackage.SCHOOL__ADDRESS:
+      case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
+      case SchoolPackage.SCHOOL__CURRENT_YEAR:
+        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+        return;
+      case SchoolPackage.SCHOOL__YEARS:
+      case SchoolPackage.SCHOOL__TEACHERS:
+      case SchoolPackage.SCHOOL__COURSES:
+        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+        return;
+    }
+    super.notifyChanged(notification);
+  }
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
+   * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+   * that can be created under this object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
+    super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SchoolPackage.Literals.SCHOOL__YEARS,
-				 SchoolFactory.eINSTANCE.createYear()));
+    newChildDescriptors.add
+      (createChildParameter
+        (SchoolPackage.Literals.SCHOOL__YEARS,
+         SchoolFactory.eINSTANCE.createYear()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SchoolPackage.Literals.SCHOOL__TEACHERS,
-				 SchoolFactory.eINSTANCE.createTeacher()));
+    newChildDescriptors.add
+      (createChildParameter
+        (SchoolPackage.Literals.SCHOOL__TEACHERS,
+         SchoolFactory.eINSTANCE.createTeacher()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SchoolPackage.Literals.SCHOOL__COURSES,
-				 SchoolFactory.eINSTANCE.createCourse()));
+    newChildDescriptors.add
+      (createChildParameter
+        (SchoolPackage.Literals.SCHOOL__COURSES,
+         SchoolFactory.eINSTANCE.createCourse()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SchoolPackage.Literals.SCHOOL__COURSES,
-				 SchoolFactory.eINSTANCE.createSpecialisationCourse()));
-	}
+    newChildDescriptors.add
+      (createChildParameter
+        (SchoolPackage.Literals.SCHOOL__COURSES,
+         SchoolFactory.eINSTANCE.createSpecialisationCourse()));
+  }
 
 	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
+   * Return the resource locator for this item provider's resources.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return SchoolEditPlugin.INSTANCE;
-	}
+    return SchoolEditPlugin.INSTANCE;
+  }
 
 }

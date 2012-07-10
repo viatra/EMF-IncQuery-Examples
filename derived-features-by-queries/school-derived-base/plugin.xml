@@ -2,6 +2,56 @@
 <plugin>
 
    <extension
+         id="extension.derived.teachers"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="numberOfTeachers"
+            package-nsUri="http:///school-derived.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="extension.derived.teachersWithMostCourses"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="teachersWithMostCourses"
+            package-nsUri="http:///school-derived.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="extension.derived.lastYear"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="School"
+            feature-name="lastYear"
+            package-nsUri="http:///school-derived.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="extension.derived.homeroomCourses"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="SchoolClass"
+            feature-name="homeroomCourses"
+            package-nsUri="http:///school-derived.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="extension.derived.courseWeights"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Year"
+            feature-name="weightOfRegularCourses"
+            package-nsUri="http:///school-derived.ecore">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
          id="teachers"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -10,38 +60,12 @@
       </matcher>
    </extension>
    <extension
-         id="extension.derived.teachers"
-         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="School"
-            feature-name="numberOfTeachers"
-            package-nsUri="http:///school-derived.ecore">
-      </wellbehaving-derived-feature>
-   </extension>
-   <extension
-         id="coursesOfTeacher"
+         id="teachersWithMostCourses"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factory="coursesofteacher.CoursesOfTeacherMatcherFactory"
-            id="coursesOfTeacher">
+            factory="teacherswithmostcourses.TeachersWithMostCoursesMatcherFactory"
+            id="teachersWithMostCourses">
       </matcher>
-   </extension>
-   <extension
-         id="teacherWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="teacherwithmostcourses.TeacherWithMostCoursesMatcherFactory"
-            id="teacherWithMostCourses">
-      </matcher>
-   </extension>
-   <extension
-         id="extension.derived.teacherWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="School"
-            feature-name="teachersWithMostCourses"
-            package-nsUri="http:///school-derived.ecore">
-      </wellbehaving-derived-feature>
    </extension>
    <extension
          id="lastYear"
@@ -52,13 +76,20 @@
       </matcher>
    </extension>
    <extension
-         id="extension.derived.lastYear"
-         point="org.eclipse.viatra2.emf.incquery.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="School"
-            feature-name="lastYear"
-            package-nsUri="http:///school-derived.ecore">
-      </wellbehaving-derived-feature>
+         id="homeroomCourses"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="homeroomcourses.HomeroomCoursesMatcherFactory"
+            id="homeroomCourses">
+      </matcher>
+   </extension>
+   <extension
+         id="courseWeights"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="courseweights.CourseWeightsMatcherFactory"
+            id="courseWeights">
+      </matcher>
    </extension>
 
 </plugin>

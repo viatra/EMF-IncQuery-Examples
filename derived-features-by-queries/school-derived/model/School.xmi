@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<school:School
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:school="http:///school-derived.ecore"
+    xsi:schemaLocation="http:///school-derived.ecore school.ecore"
+    name="Test School"
+    address="Test Street">
+  <years startingDate="2011">
+    <schoolClasses
+        code="65"
+        courses="//@courses.0"
+        homeroomTeacher="//@teachers.1"/>
+  </years>
+  <years startingDate="2012">
+    <schoolClasses
+        code="66"
+        courses="//@courses.1"
+        homeroomTeacher="//@teachers.0"/>
+  </years>
+  <teachers
+      name="John Doe"
+      courses="//@courses.0"
+      homeroomedClass="//@years.1/@schoolClasses.0"/>
+  <teachers
+      name="Jane Doe"
+      courses="//@courses.1"
+      homeroomedClass="//@years.0/@schoolClasses.0"/>
+  <courses subject="Models"
+      weight="4"/>
+  <courses xsi:type="school:SpecialisationCourse"
+      subject="Transformations"
+      weight="3"
+      specialisation="Model transformations"/>
+</school:School>

@@ -3,8 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: school-derived.example
 Bundle-SymbolicName: school-derived.example;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: classesoflastyear,
- coursesofteacherwithmostcourses
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

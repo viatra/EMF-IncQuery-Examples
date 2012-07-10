@@ -47,6 +47,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
  *   <li>{@link school.impl.SchoolImpl#getTeachersWithMostCourses <em>Teachers With Most Courses</em>}</li>
  *   <li>{@link school.impl.SchoolImpl#getLastYear <em>Last Year</em>}</li>
  *   <li>{@link school.impl.SchoolImpl#getCurrentYear <em>Current Year</em>}</li>
+ *   <li>{@link school.impl.SchoolImpl#getMinWeightInLastYear <em>Min Weight In Last Year</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,450 +55,509 @@ import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
  */
 public class SchoolImpl extends EObjectImpl implements School {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddress()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
 	protected static final String ADDRESS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAddress()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getAddress()
+   * @generated
+   * @ordered
+   */
 	protected String address = ADDRESS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getYears() <em>Years</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getYears() <em>Years</em>}' containment reference list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getYears()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getYears()
+   * @generated
+   * @ordered
+   */
 	protected EList<Year> years;
 
 	/**
-	 * The cached value of the '{@link #getTeachers() <em>Teachers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getTeachers() <em>Teachers</em>}' containment reference list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTeachers()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getTeachers()
+   * @generated
+   * @ordered
+   */
 	protected EList<Teacher> teachers;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCourses()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCourses()
+   * @generated
+   * @ordered
+   */
 	protected EList<Course> courses;
 
 	/**
-	 * The default value of the '{@link #getNumberOfTeachers() <em>Number Of Teachers</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getNumberOfTeachers() <em>Number Of Teachers</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumberOfTeachers()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNumberOfTeachers()
+   * @generated
+   * @ordered
+   */
 	protected static final int NUMBER_OF_TEACHERS_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getCurrentYear() <em>Current Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getCurrentYear() <em>Current Year</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentYear()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCurrentYear()
+   * @generated
+   * @ordered
+   */
 	protected static final int CURRENT_YEAR_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getCurrentYear() <em>Current Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCurrentYear() <em>Current Year</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCurrentYear()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCurrentYear()
+   * @generated
+   * @ordered
+   */
 	protected int currentYear = CURRENT_YEAR_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getMinWeightInLastYear() <em>Min Weight In Last Year</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMinWeightInLastYear()
+   * @generated
+   * @ordered
+   */
+  protected Course minWeightInLastYear;
+
+  /**
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SchoolImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return SchoolPackage.Literals.SCHOOL;
-	}
+    return SchoolPackage.Literals.SCHOOL;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getName() {
-		return name;
-	}
+    return name;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__NAME, oldName, name));
-	}
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__NAME, oldName, name));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getAddress() {
-		return address;
-	}
+    return address;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setAddress(String newAddress) {
-		String oldAddress = address;
-		address = newAddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__ADDRESS, oldAddress, address));
-	}
+    String oldAddress = address;
+    address = newAddress;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__ADDRESS, oldAddress, address));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<Year> getYears() {
-		if (years == null) {
-			years = new EObjectContainmentWithInverseEList<Year>(Year.class, this, SchoolPackage.SCHOOL__YEARS, SchoolPackage.YEAR__SCHOOL);
-		}
-		return years;
-	}
+    if (years == null) {
+      years = new EObjectContainmentWithInverseEList<Year>(Year.class, this, SchoolPackage.SCHOOL__YEARS, SchoolPackage.YEAR__SCHOOL);
+    }
+    return years;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<Teacher> getTeachers() {
-		if (teachers == null) {
-			teachers = new EObjectContainmentWithInverseEList<Teacher>(Teacher.class, this, SchoolPackage.SCHOOL__TEACHERS, SchoolPackage.TEACHER__SCHOOL);
-		}
-		return teachers;
-	}
+    if (teachers == null) {
+      teachers = new EObjectContainmentWithInverseEList<Teacher>(Teacher.class, this, SchoolPackage.SCHOOL__TEACHERS, SchoolPackage.TEACHER__SCHOOL);
+    }
+    return teachers;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<Course> getCourses() {
-		if (courses == null) {
-			courses = new EObjectContainmentWithInverseEList<Course>(Course.class, this, SchoolPackage.SCHOOL__COURSES, SchoolPackage.COURSE__SCHOOL);
-		}
-		return courses;
-	}
+    if (courses == null) {
+      courses = new EObjectContainmentWithInverseEList<Course>(Course.class, this, SchoolPackage.SCHOOL__COURSES, SchoolPackage.COURSE__SCHOOL);
+    }
+    return courses;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public int getNumberOfTeachersGen() {
-		// TODO: implement this method to return the 'Number Of Teachers' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+    // TODO: implement this method to return the 'Number Of Teachers' attribute
+    // Ensure that you remove @generated or mark it @generated NOT
+    throw new UnsupportedOperationException();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<Teacher> getTeachersWithMostCoursesGen() {
-		// TODO: implement this method to return the 'Teachers With Most Courses' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
-	}
+    // TODO: implement this method to return the 'Teachers With Most Courses' reference list
+    // Ensure that you remove @generated or mark it @generated NOT
+    // The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+    // so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+    throw new UnsupportedOperationException();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public Year getLastYear() {
-		Year lastYear = basicGetLastYear();
-		return lastYear != null && lastYear.eIsProxy() ? (Year)eResolveProxy((InternalEObject)lastYear) : lastYear;
-	}
+    Year lastYear = basicGetLastYear();
+    return lastYear != null && lastYear.eIsProxy() ? (Year)eResolveProxy((InternalEObject)lastYear) : lastYear;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public Year basicGetLastYearGen() {
-		// TODO: implement this method to return the 'Last Year' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+    // TODO: implement this method to return the 'Last Year' reference
+    // -> do not perform proxy resolution
+    // Ensure that you remove @generated or mark it @generated NOT
+    throw new UnsupportedOperationException();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public int getCurrentYear() {
-		return currentYear;
-	}
+    return currentYear;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setCurrentYear(int newCurrentYear) {
-		int oldCurrentYear = currentYear;
-		currentYear = newCurrentYear;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__CURRENT_YEAR, oldCurrentYear, currentYear));
-	}
+    int oldCurrentYear = currentYear;
+    currentYear = newCurrentYear;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__CURRENT_YEAR, oldCurrentYear, currentYear));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Course getMinWeightInLastYear() {
+    if (minWeightInLastYear != null && minWeightInLastYear.eIsProxy()) {
+      InternalEObject oldMinWeightInLastYear = (InternalEObject)minWeightInLastYear;
+      minWeightInLastYear = (Course)eResolveProxy(oldMinWeightInLastYear);
+      if (minWeightInLastYear != oldMinWeightInLastYear) {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR, oldMinWeightInLastYear, minWeightInLastYear));
+      }
+    }
+    return minWeightInLastYear;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Course basicGetMinWeightInLastYear() {
+    return minWeightInLastYear;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMinWeightInLastYear(Course newMinWeightInLastYear) {
+    Course oldMinWeightInLastYear = minWeightInLastYear;
+    minWeightInLastYear = newMinWeightInLastYear;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR, oldMinWeightInLastYear, minWeightInLastYear));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__YEARS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getYears()).basicAdd(otherEnd, msgs);
-			case SchoolPackage.SCHOOL__TEACHERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeachers()).basicAdd(otherEnd, msgs);
-			case SchoolPackage.SCHOOL__COURSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__YEARS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getYears()).basicAdd(otherEnd, msgs);
+      case SchoolPackage.SCHOOL__TEACHERS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getTeachers()).basicAdd(otherEnd, msgs);
+      case SchoolPackage.SCHOOL__COURSES:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
+    }
+    return super.eInverseAdd(otherEnd, featureID, msgs);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__YEARS:
-				return ((InternalEList<?>)getYears()).basicRemove(otherEnd, msgs);
-			case SchoolPackage.SCHOOL__TEACHERS:
-				return ((InternalEList<?>)getTeachers()).basicRemove(otherEnd, msgs);
-			case SchoolPackage.SCHOOL__COURSES:
-				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__YEARS:
+        return ((InternalEList<?>)getYears()).basicRemove(otherEnd, msgs);
+      case SchoolPackage.SCHOOL__TEACHERS:
+        return ((InternalEList<?>)getTeachers()).basicRemove(otherEnd, msgs);
+      case SchoolPackage.SCHOOL__COURSES:
+        return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__NAME:
-				return getName();
-			case SchoolPackage.SCHOOL__ADDRESS:
-				return getAddress();
-			case SchoolPackage.SCHOOL__YEARS:
-				return getYears();
-			case SchoolPackage.SCHOOL__TEACHERS:
-				return getTeachers();
-			case SchoolPackage.SCHOOL__COURSES:
-				return getCourses();
-			case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
-				return getNumberOfTeachers();
-			case SchoolPackage.SCHOOL__TEACHERS_WITH_MOST_COURSES:
-				return getTeachersWithMostCourses();
-			case SchoolPackage.SCHOOL__LAST_YEAR:
-				if (resolve) return getLastYear();
-				return basicGetLastYear();
-			case SchoolPackage.SCHOOL__CURRENT_YEAR:
-				return getCurrentYear();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__NAME:
+        return getName();
+      case SchoolPackage.SCHOOL__ADDRESS:
+        return getAddress();
+      case SchoolPackage.SCHOOL__YEARS:
+        return getYears();
+      case SchoolPackage.SCHOOL__TEACHERS:
+        return getTeachers();
+      case SchoolPackage.SCHOOL__COURSES:
+        return getCourses();
+      case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
+        return getNumberOfTeachers();
+      case SchoolPackage.SCHOOL__TEACHERS_WITH_MOST_COURSES:
+        return getTeachersWithMostCourses();
+      case SchoolPackage.SCHOOL__LAST_YEAR:
+        if (resolve) return getLastYear();
+        return basicGetLastYear();
+      case SchoolPackage.SCHOOL__CURRENT_YEAR:
+        return getCurrentYear();
+      case SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR:
+        if (resolve) return getMinWeightInLastYear();
+        return basicGetMinWeightInLastYear();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__NAME:
-				setName((String)newValue);
-				return;
-			case SchoolPackage.SCHOOL__ADDRESS:
-				setAddress((String)newValue);
-				return;
-			case SchoolPackage.SCHOOL__YEARS:
-				getYears().clear();
-				getYears().addAll((Collection<? extends Year>)newValue);
-				return;
-			case SchoolPackage.SCHOOL__TEACHERS:
-				getTeachers().clear();
-				getTeachers().addAll((Collection<? extends Teacher>)newValue);
-				return;
-			case SchoolPackage.SCHOOL__COURSES:
-				getCourses().clear();
-				getCourses().addAll((Collection<? extends Course>)newValue);
-				return;
-			case SchoolPackage.SCHOOL__CURRENT_YEAR:
-				setCurrentYear((Integer)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__NAME:
+        setName((String)newValue);
+        return;
+      case SchoolPackage.SCHOOL__ADDRESS:
+        setAddress((String)newValue);
+        return;
+      case SchoolPackage.SCHOOL__YEARS:
+        getYears().clear();
+        getYears().addAll((Collection<? extends Year>)newValue);
+        return;
+      case SchoolPackage.SCHOOL__TEACHERS:
+        getTeachers().clear();
+        getTeachers().addAll((Collection<? extends Teacher>)newValue);
+        return;
+      case SchoolPackage.SCHOOL__COURSES:
+        getCourses().clear();
+        getCourses().addAll((Collection<? extends Course>)newValue);
+        return;
+      case SchoolPackage.SCHOOL__CURRENT_YEAR:
+        setCurrentYear((Integer)newValue);
+        return;
+      case SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR:
+        setMinWeightInLastYear((Course)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case SchoolPackage.SCHOOL__ADDRESS:
-				setAddress(ADDRESS_EDEFAULT);
-				return;
-			case SchoolPackage.SCHOOL__YEARS:
-				getYears().clear();
-				return;
-			case SchoolPackage.SCHOOL__TEACHERS:
-				getTeachers().clear();
-				return;
-			case SchoolPackage.SCHOOL__COURSES:
-				getCourses().clear();
-				return;
-			case SchoolPackage.SCHOOL__CURRENT_YEAR:
-				setCurrentYear(CURRENT_YEAR_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case SchoolPackage.SCHOOL__ADDRESS:
+        setAddress(ADDRESS_EDEFAULT);
+        return;
+      case SchoolPackage.SCHOOL__YEARS:
+        getYears().clear();
+        return;
+      case SchoolPackage.SCHOOL__TEACHERS:
+        getTeachers().clear();
+        return;
+      case SchoolPackage.SCHOOL__COURSES:
+        getCourses().clear();
+        return;
+      case SchoolPackage.SCHOOL__CURRENT_YEAR:
+        setCurrentYear(CURRENT_YEAR_EDEFAULT);
+        return;
+      case SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR:
+        setMinWeightInLastYear((Course)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case SchoolPackage.SCHOOL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SchoolPackage.SCHOOL__ADDRESS:
-				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case SchoolPackage.SCHOOL__YEARS:
-				return years != null && !years.isEmpty();
-			case SchoolPackage.SCHOOL__TEACHERS:
-				return teachers != null && !teachers.isEmpty();
-			case SchoolPackage.SCHOOL__COURSES:
-				return courses != null && !courses.isEmpty();
-			case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
-				return getNumberOfTeachers() != NUMBER_OF_TEACHERS_EDEFAULT;
-			case SchoolPackage.SCHOOL__TEACHERS_WITH_MOST_COURSES:
-				return !getTeachersWithMostCourses().isEmpty();
-			case SchoolPackage.SCHOOL__LAST_YEAR:
-				return basicGetLastYear() != null;
-			case SchoolPackage.SCHOOL__CURRENT_YEAR:
-				return currentYear != CURRENT_YEAR_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID) {
+      case SchoolPackage.SCHOOL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SchoolPackage.SCHOOL__ADDRESS:
+        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+      case SchoolPackage.SCHOOL__YEARS:
+        return years != null && !years.isEmpty();
+      case SchoolPackage.SCHOOL__TEACHERS:
+        return teachers != null && !teachers.isEmpty();
+      case SchoolPackage.SCHOOL__COURSES:
+        return courses != null && !courses.isEmpty();
+      case SchoolPackage.SCHOOL__NUMBER_OF_TEACHERS:
+        return getNumberOfTeachers() != NUMBER_OF_TEACHERS_EDEFAULT;
+      case SchoolPackage.SCHOOL__TEACHERS_WITH_MOST_COURSES:
+        return !getTeachersWithMostCourses().isEmpty();
+      case SchoolPackage.SCHOOL__LAST_YEAR:
+        return basicGetLastYear() != null;
+      case SchoolPackage.SCHOOL__CURRENT_YEAR:
+        return currentYear != CURRENT_YEAR_EDEFAULT;
+      case SchoolPackage.SCHOOL__MIN_WEIGHT_IN_LAST_YEAR:
+        return minWeightInLastYear != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", address: ");
-		result.append(address);
-		result.append(", currentYear: ");
-		result.append(currentYear);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", address: ");
+    result.append(address);
+    result.append(", currentYear: ");
+    result.append(currentYear);
+    result.append(')');
+    return result.toString();
+  }
 
 	/**
 	 * EMF-IncQuery handler for derived feature numberOfTeachers
@@ -537,7 +597,7 @@ public class SchoolImpl extends EObjectImpl implements School {
 					.createHandler(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
-							"teacherWithMostCourses", "School", "Teacher",
+							"teachersWithMostCourses", "School", "Teacher",
 							FeatureKind.MANY_REFERENCE, true);
 		}
 		return IncqueryFeatureHelper.getManyReferenceValueForHandler(

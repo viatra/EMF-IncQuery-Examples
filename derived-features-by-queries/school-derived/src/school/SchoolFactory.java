@@ -18,83 +18,83 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface SchoolFactory extends EFactory {
 	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	SchoolFactory eINSTANCE = school.impl.SchoolFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Course</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Course</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Course</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Course</em>'.
+   * @generated
+   */
 	Course createCourse();
 
 	/**
-	 * Returns a new object of class '<em>School</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>School</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>School</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>School</em>'.
+   * @generated
+   */
 	School createSchool();
 
 	/**
-	 * Returns a new object of class '<em>Class</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Class</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Class</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Class</em>'.
+   * @generated
+   */
 	SchoolClass createSchoolClass();
 
 	/**
-	 * Returns a new object of class '<em>Specialisation Course</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Specialisation Course</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Specialisation Course</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Specialisation Course</em>'.
+   * @generated
+   */
 	SpecialisationCourse createSpecialisationCourse();
 
 	/**
-	 * Returns a new object of class '<em>Student</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Student</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Student</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Student</em>'.
+   * @generated
+   */
 	Student createStudent();
 
 	/**
-	 * Returns a new object of class '<em>Teacher</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Teacher</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Teacher</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Teacher</em>'.
+   * @generated
+   */
 	Teacher createTeacher();
 
 	/**
-	 * Returns a new object of class '<em>Year</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Year</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Year</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Year</em>'.
+   * @generated
+   */
 	Year createYear();
 
 	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
+   * Returns the package supported by this factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
+   * @return the package supported by this factory.
+   * @generated
+   */
 	SchoolPackage getSchoolPackage();
 
 } //SchoolFactory

@@ -6,13 +6,13 @@ pattern teachers(School : School, Teacher : Teacher) = {
    School.teachers(School,Teacher);
 }
 
-pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
+private pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
    Teacher.courses(Teacher,Course);
 }
 
-@DerivedFeature(feature = "teachersWithMostCourses")
+@DerivedFeature
 @Off
-pattern teacherWithMostCourses(School : School, Teacher : Teacher) = {
+pattern teachersWithMostCourses(School : School, Teacher : Teacher) = {
    find teachers(School,Teacher);
    neg find moreCourses(Teacher);
 }
@@ -25,7 +25,7 @@ private pattern moreCourses(Teacher : Teacher) = {
     check((N as Integer) < (M as Integer));
 }
 
-@DerivedFeature(feature = "lastYear")
+@DerivedFeature
 @Off
 pattern lastYear(School : School, Year : Year) = {
    School.years(School,Year);
@@ -38,4 +38,25 @@ private pattern laterYear(Year : Year) = {
 	Year(Year2);
 	Year != Year2;
 	check((Date as Integer) < (Date2 as Integer));
+}
+
+@DerivedFeature
+@Off
+pattern homeroomCourses(SchC : SchoolClass, C : Course) = {
+  SchoolClass.courses(SchC,C);
+  Course.teacher(C,T);
+  SchoolClass.homeroomTeacher(SchC,T);
+}
+
+@DerivedFeature(feature = "weightOfRegularCourses", source = Y, kind = "sum")
+@Off
+pattern courseWeights(Sch: School, W, Y : Year) = {
+  School.years(Sch,Y);
+  Year.schoolClasses.courses(Y,C);
+  neg find specialCourse(C);
+  Course.weight(C,W);
+}
+
+private pattern specialCourse(SC : SpecialisationCourse) = {
+  SpecialisationCourse(SC);
 }

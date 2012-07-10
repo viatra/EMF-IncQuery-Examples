@@ -3,10 +3,11 @@ Bundle-ManifestVersion: 2
 Bundle-Name: school-derived-base
 Bundle-SymbolicName: school-derived-base;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: coursesofteacher,
+Export-Package: courseweights,
+ homeroomcourses,
  lastyear,
  teachers,
- teacherwithmostcourses
+ teacherswithmostcourses
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

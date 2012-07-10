@@ -27,57 +27,57 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Student extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see school.SchoolPackage#getStudent_Name()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see school.SchoolPackage#getStudent_Name()
+   * @model
+   * @generated
+   */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link school.Student#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link school.Student#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>School Class</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link school.SchoolClass#getStudents <em>Students</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>School Class</b></em>' container reference.
+   * It is bidirectional and its opposite is '{@link school.SchoolClass#getStudents <em>Students</em>}'.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>School Class</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>School Class</em>' container reference.
-	 * @see #setSchoolClass(SchoolClass)
-	 * @see school.SchoolPackage#getStudent_SchoolClass()
-	 * @see school.SchoolClass#getStudents
-	 * @model opposite="students"
-	 * @generated
-	 */
+   * @return the value of the '<em>School Class</em>' container reference.
+   * @see #setSchoolClass(SchoolClass)
+   * @see school.SchoolPackage#getStudent_SchoolClass()
+   * @see school.SchoolClass#getStudents
+   * @model opposite="students"
+   * @generated
+   */
 	SchoolClass getSchoolClass();
 
 	/**
-	 * Sets the value of the '{@link school.Student#getSchoolClass <em>School Class</em>}' container reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link school.Student#getSchoolClass <em>School Class</em>}' container reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>School Class</em>' container reference.
-	 * @see #getSchoolClass()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>School Class</em>' container reference.
+   * @see #getSchoolClass()
+   * @generated
+   */
 	void setSchoolClass(SchoolClass value);
 
 } // Student

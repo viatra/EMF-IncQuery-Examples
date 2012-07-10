@@ -38,310 +38,310 @@ import school.util.SchoolAdapterFactory;
  */
 public class SchoolItemProviderAdapterFactory extends SchoolAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the root adapter factory that delegates to this adapter factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-	 * <!-- begin-user-doc -->
+   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-	 * <!-- begin-user-doc -->
+   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
-	 * This constructs an instance.
-	 * <!-- begin-user-doc -->
+   * This constructs an instance.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public SchoolItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+    supportedTypes.add(IEditingDomainItemProvider.class);
+    supportedTypes.add(IStructuredItemContentProvider.class);
+    supportedTypes.add(ITreeItemContentProvider.class);
+    supportedTypes.add(IItemLabelProvider.class);
+    supportedTypes.add(IItemPropertySource.class);
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.Course} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.Course} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CourseItemProvider courseItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.Course}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.Course}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createCourseAdapter() {
-		if (courseItemProvider == null) {
-			courseItemProvider = new CourseItemProvider(this);
-		}
+    if (courseItemProvider == null) {
+      courseItemProvider = new CourseItemProvider(this);
+    }
 
-		return courseItemProvider;
-	}
+    return courseItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.School} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.School} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SchoolItemProvider schoolItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.School}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.School}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createSchoolAdapter() {
-		if (schoolItemProvider == null) {
-			schoolItemProvider = new SchoolItemProvider(this);
-		}
+    if (schoolItemProvider == null) {
+      schoolItemProvider = new SchoolItemProvider(this);
+    }
 
-		return schoolItemProvider;
-	}
+    return schoolItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.SchoolClass} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.SchoolClass} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SchoolClassItemProvider schoolClassItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.SchoolClass}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.SchoolClass}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createSchoolClassAdapter() {
-		if (schoolClassItemProvider == null) {
-			schoolClassItemProvider = new SchoolClassItemProvider(this);
-		}
+    if (schoolClassItemProvider == null) {
+      schoolClassItemProvider = new SchoolClassItemProvider(this);
+    }
 
-		return schoolClassItemProvider;
-	}
+    return schoolClassItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.SpecialisationCourse} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.SpecialisationCourse} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SpecialisationCourseItemProvider specialisationCourseItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.SpecialisationCourse}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.SpecialisationCourse}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createSpecialisationCourseAdapter() {
-		if (specialisationCourseItemProvider == null) {
-			specialisationCourseItemProvider = new SpecialisationCourseItemProvider(this);
-		}
+    if (specialisationCourseItemProvider == null) {
+      specialisationCourseItemProvider = new SpecialisationCourseItemProvider(this);
+    }
 
-		return specialisationCourseItemProvider;
-	}
+    return specialisationCourseItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.Student} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.Student} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected StudentItemProvider studentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.Student}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.Student}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createStudentAdapter() {
-		if (studentItemProvider == null) {
-			studentItemProvider = new StudentItemProvider(this);
-		}
+    if (studentItemProvider == null) {
+      studentItemProvider = new StudentItemProvider(this);
+    }
 
-		return studentItemProvider;
-	}
+    return studentItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.Teacher} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.Teacher} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected TeacherItemProvider teacherItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.Teacher}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.Teacher}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createTeacherAdapter() {
-		if (teacherItemProvider == null) {
-			teacherItemProvider = new TeacherItemProvider(this);
-		}
+    if (teacherItemProvider == null) {
+      teacherItemProvider = new TeacherItemProvider(this);
+    }
 
-		return teacherItemProvider;
-	}
+    return teacherItemProvider;
+  }
 
 	/**
-	 * This keeps track of the one adapter used for all {@link school.Year} instances.
-	 * <!-- begin-user-doc -->
+   * This keeps track of the one adapter used for all {@link school.Year} instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected YearItemProvider yearItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link school.Year}.
-	 * <!-- begin-user-doc -->
+   * This creates an adapter for a {@link school.Year}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter createYearAdapter() {
-		if (yearItemProvider == null) {
-			yearItemProvider = new YearItemProvider(this);
-		}
+    if (yearItemProvider == null) {
+      yearItemProvider = new YearItemProvider(this);
+    }
 
-		return yearItemProvider;
-	}
+    return yearItemProvider;
+  }
 
 	/**
-	 * This returns the root adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+   * This returns the root adapter factory that contains this factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-	}
+    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+  }
 
 	/**
-	 * This sets the composed adapter factory that contains this factory.
-	 * <!-- begin-user-doc -->
+   * This sets the composed adapter factory that contains this factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+    this.parentAdapterFactory = parentAdapterFactory;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean isFactoryForType(Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    return supportedTypes.contains(type) || super.isFactoryForType(type);
+  }
 
 	/**
-	 * This implementation substitutes the factory itself as the key for the adapter.
-	 * <!-- begin-user-doc -->
+   * This implementation substitutes the factory itself as the key for the adapter.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
-		return super.adapt(notifier, this);
-	}
+    return super.adapt(notifier, this);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+    if (isFactoryForType(type)) {
+      Object adapter = super.adapt(object, type);
+      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+        return adapter;
+      }
+    }
 
-		return null;
-	}
+    return null;
+  }
 
 	/**
-	 * This adds a listener.
-	 * <!-- begin-user-doc -->
+   * This adds a listener.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+    changeNotifier.addListener(notifyChangedListener);
+  }
 
 	/**
-	 * This removes a listener.
-	 * <!-- begin-user-doc -->
+   * This removes a listener.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+    changeNotifier.removeListener(notifyChangedListener);
+  }
 
 	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-	 * <!-- begin-user-doc -->
+   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void fireNotifyChanged(Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+    if (parentAdapterFactory != null) {
+      parentAdapterFactory.fireNotifyChanged(notification);
+    }
+  }
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
+   * This disposes all of the item providers created by this factory. 
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void dispose() {
-		if (courseItemProvider != null) courseItemProvider.dispose();
-		if (schoolItemProvider != null) schoolItemProvider.dispose();
-		if (schoolClassItemProvider != null) schoolClassItemProvider.dispose();
-		if (specialisationCourseItemProvider != null) specialisationCourseItemProvider.dispose();
-		if (studentItemProvider != null) studentItemProvider.dispose();
-		if (teacherItemProvider != null) teacherItemProvider.dispose();
-		if (yearItemProvider != null) yearItemProvider.dispose();
-	}
+    if (courseItemProvider != null) courseItemProvider.dispose();
+    if (schoolItemProvider != null) schoolItemProvider.dispose();
+    if (schoolClassItemProvider != null) schoolClassItemProvider.dispose();
+    if (specialisationCourseItemProvider != null) specialisationCourseItemProvider.dispose();
+    if (studentItemProvider != null) studentItemProvider.dispose();
+    if (teacherItemProvider != null) teacherItemProvider.dispose();
+    if (yearItemProvider != null) yearItemProvider.dispose();
+  }
 
 }
