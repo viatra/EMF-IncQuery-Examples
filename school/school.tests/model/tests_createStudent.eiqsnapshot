@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="school.studentOfSchoolNames">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="New Student"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="Istvan Rath"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="Akos Horvath"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="Abel Hegedus"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="Zoltan Ujhelyi"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SName" value="Gabor Bergmann"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SchName" value="Budapest University of Technology and Economics"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
+</eiqSnapshot:IncQuerySnapshot>
