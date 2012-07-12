@@ -13,8 +13,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.GenericPatternMatch
 import org.junit.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EcoreFactory
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.ENamedElement
+import org.eclipse.emf.ecore.EStructuralFeature
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
@@ -70,8 +69,7 @@ class EcorequeriesTestsModelManipulation extends EcorequeryTestsBase {
 					if(e.name == "BusinessProcess"){
 						val newEAttribute = EcoreFactory::eINSTANCE.createEAttribute
 						newEAttribute.setName("NewEAttribute")
-						e.EStructuralFeatures.add(newEAttribute)
-						//e.EAttributes.add(newEAttribute)						
+						e.EStructuralFeatures.add(newEAttribute)					
 					}
 				}
 			}
@@ -80,5 +78,78 @@ class EcorequeriesTestsModelManipulation extends EcorequeryTestsBase {
 			pm.assertMatchResults(newSns)
 		}
 			
+	}
+	
+	@Test
+	def testsDeleteEReference(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// delete an EReference "supports" from EClass "BusinessProcess"
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "hu.bme.mit.incquery.ecorequeries.example.EClass")
+		val match = matcher.allMatches
+		
+		Assert::assertNotNull(match)
+		if (match != null) {			
+			for(GenericPatternMatch g : match){
+				val e = g.get("EClass") as EClass
+				Assert::assertNotNull(e)
+				if(e != null){
+					if(e.name == "BusinessProcess"){						
+						
+						val list = e.EStructuralFeatures
+						val i = list.iterator
+						while (i.hasNext()) {
+						   val s = i.next();
+						   if(s.name == "supports"){
+						   	i.remove();						   
+						   }
+						}
+												
+					}
+				}
+			}
+					
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("hu.bme.mit.ecorequery.tests/model/tests_deleteEReference.eiqsnapshot")
+			pm.assertMatchResults(newSns)
+		}
+			
+	}
+	
+	
+	@Test
+	def testsChangeMultiplicity(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// change an EReference "dependsOn" upperBound from 1 to 10
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "hu.bme.mit.incquery.ecorequeries.example.EClass")
+		val match = matcher.allMatches
+		
+		Assert::assertNotNull(match)
+		if (match != null) {			
+			for(GenericPatternMatch g : match){
+				val e = g.get("EClass") as EClass
+				Assert::assertNotNull(e)
+				if(e != null){
+					if(e.name == "BusinessApplication"){
+						val list = e.EStructuralFeatures
+						for(EStructuralFeature esf : list){
+							if(esf.name == "dependsOn"){
+								esf.setUpperBound(10)
+							}
+						}
+											
+					}
+				}
+			}
+					
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("hu.bme.mit.ecorequery.tests/model/tests_changeMultiplicity.eiqsnapshot")
+			pm.assertMatchResults(newSns)
+		}			
 	}
 }

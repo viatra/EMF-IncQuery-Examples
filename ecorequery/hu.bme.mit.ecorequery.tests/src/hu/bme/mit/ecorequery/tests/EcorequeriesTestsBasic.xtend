@@ -15,10 +15,9 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
 
 /**
- * Basic test set for testing IncQuery with the school example.
- * These tests just perform a simple match set check against all the queries in the School example.
- * See https://viatra.inf.mit.bme.hu/incquery/new/examples/school for details on the example.
- * @author Istvan Rath
+ * Basic test set for testing IncQuery with the ECore Queries example.
+ * These tests just perform a simple match set check against all the queries in the ECore Queries example.
+ * See http://viatra.inf.mit.bme.hu/incquery/new/examples/ecorequery for details on the example.
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
