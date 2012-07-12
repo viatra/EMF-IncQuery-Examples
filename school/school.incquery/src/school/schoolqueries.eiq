@@ -12,12 +12,21 @@ import "http://school.ecore"
  	School(Sch);
  }
  
+ pattern schoolsNames(SchName) = {
+ 	School.name(_Sch, SchName);
+ }
+ 
  /*
   *  all teachers
   */
  pattern teachers(T) = {
  	Teacher(T);
  }
+ 
+ pattern teachersNames(TN) = {
+ 	Teacher.name(_T,TN);
+ }
+ 
  
  /* 
   * a sample query along a reference
@@ -28,6 +37,12 @@ import "http://school.ecore"
  	School.teachers(Sch,T); 
  	// note that there is no restriction on the direction of navigation:
  	// all "Sch"s can be queried from Ts and vice-versa
+ }
+ 
+  pattern teachersOfSchoolNames(TName,SName) = {
+ 	School.teachers(Sch,T);
+ 	School.name(Sch, SName);
+ 	Teacher.name(T, TName); 
  }
  
  
@@ -42,6 +57,12 @@ import "http://school.ecore"
  	Teacher.courses(T,C);
  } 
  
+ pattern coursesOfTeacherNames(TName, CName) = {
+ 	Teacher.courses(T,C);
+ 	Teacher.name(T, TName); 
+ 	Course.subject(C, CName);
+ } 
+ 
 /*
  * Teacher T teaches a course which is being taught to SchoolClass SC 
  */
@@ -50,6 +71,17 @@ import "http://school.ecore"
  	Course.schoolClass(C,SC);
  }
  
+ pattern classesOfSchool(SC)= {
+ 	SchoolClass(SC);
+ }
+
+ pattern classesOfTeacherNames(TName, SCName) = {
+ 	find coursesOfTeacher(T,C);
+ 	Teacher.name(T, TName);
+ 	Course.schoolClass(C,SC);
+ 	SchoolClass.code(SC, SCName); 	
+ }
+  
  /*
   * Teacher T is a teacher who doesn't teach any schoolclass.
   */
@@ -64,6 +96,13 @@ import "http://school.ecore"
   */
  pattern studentOfSchool(S:Student,Sch:School) = {
  	Student.schoolClass.courses.school(S,Sch);
+ 	// logically equivalent: School.courses.schoolClass.students(Sch,S);
+ }
+ 
+ pattern studentOfSchoolNames(SName, SchName) = {
+ 	Student.schoolClass.courses.school(S,Sch);
+ 	Student.name(S, SName);
+ 	School.name(Sch, SchName);
  	// logically equivalent: School.courses.schoolClass.students(Sch,S);
  }
   
