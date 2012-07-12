@@ -82,6 +82,14 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicityname.EReferenceWithOneMultiplicityNameMatcherFactory"
+            id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.ecorequeries.example.SampleQuery"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher

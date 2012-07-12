@@ -80,6 +80,12 @@ pattern EReferenceWithOneMultiplicity(ERef) = {
 	ETypedElement.upperBound(ERef,1);
 }
 
+pattern EReferenceWithOneMultiplicityName(ERefName) = {
+	EReference.name(ERef, ERefName);
+	ETypedElement.lowerBound(ERef,1);
+	ETypedElement.upperBound(ERef,1);
+}
+
 /*
  * implements the sample query given in example.pdf
  */ 
