@@ -113,8 +113,7 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 					pm.assertMatchResults(newSns)
 				}
 			}
-		}
-				
+		}				
 	}
 	
 	@Test
@@ -157,7 +156,7 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
-		// delete the Teacher "Istvan Majzik"
+		// delete the Course "Prolog programming"
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
 		val s = matcher.oneArbitraryMatch.get("Sch") as School
 		Assert::assertNotNull(s)
@@ -200,15 +199,12 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 					c.setSchool(s)
 					c.setSubject("System Integration")	
 					c.setWeight(30)		
-					c.setTeacher(t)
-								
-					val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse.eiqsnapshot")
-					pm.assertMatchResults(newSns)						
+					c.setTeacher(t)									
 				}
-			}
-												
-		}
-				
+			}			
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse.eiqsnapshot")
+					pm.assertMatchResults(newSns)													
+		}				
 	}
 	
 	@Test
@@ -233,11 +229,9 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 						}
 					}				
 				}					
-			}
-					
+			}					
 			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseTeacher.eiqsnapshot")
 			pm.assertMatchResults(newSns)						
-
 		}
 												
 	}
@@ -274,7 +268,6 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 			}					
 			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseClass.eiqsnapshot")
 			pm.assertMatchResults(newSns)						
-
 		}
 												
 	}
@@ -304,8 +297,7 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 						}
 					}
 				}
-			}
-							
+			}							
 			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudent.eiqsnapshot")
 			pm.assertMatchResults(newSns)
 		}
