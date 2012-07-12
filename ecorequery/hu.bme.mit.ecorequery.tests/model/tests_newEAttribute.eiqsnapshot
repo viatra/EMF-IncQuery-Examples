@@ -1,0 +1,2230 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EObject">
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EClass">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessApplication"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="EClass">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EClassName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EModelElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EStructuralFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EEnumLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EDataType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EGenericType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EAnnotation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EFactory"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EClassifier"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EPackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="BusinessApplication"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="BusinessProcess"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EEnum"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EStringToStringMapEntry"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="ETypedElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="ETypeParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="ENamedElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EReference"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="EName" value="EParameter"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Super">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Sub">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EStructuralFeature"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EReference"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EClassifier"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EDataType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EClassifier"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ENamedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EClassifier"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EModelElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="ENamedElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EDataType"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EEnum"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ETypedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ETypedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ENamedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EEnumLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ENamedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EPackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EModelElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EAnnotation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EModelElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EFactory"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ETypedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EStructuralFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ENamedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="ETypeParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="EStructuralFeature"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="EAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SuperName" value="ENamedElement"/>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="SubName" value="ETypedElement"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EClassAttribute">
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute">
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eTypeArguments"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eReferences"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/contents"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllSuperTypes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eSubpackages"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eSuperTypes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eExceptions"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess/supports"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllReferences"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllStructuralFeatures"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/references"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eTypeParameters"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllContainments"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllAttributes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllOperations"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eKeys"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eGenericSuperTypes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter/eBounds"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/eTypeParameters"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAttributes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eGenericExceptions"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllGenericSuperTypes"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eLiterals"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="contents"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllContainments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eBounds"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAnnotations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eTypeParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eClassifiers"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="supports"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eTypeArguments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eGenericExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="details"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eKeys"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eSubpackages"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="references"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eFactoryInstance"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessApplication/dependsOn"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eReferenceType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute/eAttributeType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/ePackage"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="ERef">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eRawType"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.SampleQuery">
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.SampleQuery2">
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.IsEString">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eUnset"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eUnset"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/getContainerClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getContainerClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ETypeParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ECharacterObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ECharacterObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getOperationID/operation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="operation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/eTypeParameters"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eTypeParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEStructuralFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEStructuralFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess/NewEAttribute"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="NewEAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/contents"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="contents"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEList/E"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="E"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/defaultValueLiteral"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="defaultValueLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eIsSet"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eIsSet"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EFeatureMapEntry"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eInvoke/operation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="operation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/defaultValue"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="defaultValue"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAnnotations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessApplication/dependsOn"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="dependsOn"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="nsURI"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEStructuralFeature.1/featureName"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="featureName"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="lowerBound"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eClassifier"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eClassifier"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllReferences"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EBoolean"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType/serializable"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="serializable"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETreeIterator/E"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="E"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEOperation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ecore"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter/eBounds"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eBounds"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/getEClassifier"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEClassifier"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/defaultValue"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="defaultValue"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eRawType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eRawType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EBigInteger"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eResource"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eResource"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEStructuralFeature.1"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEStructuralFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/resolveProxies"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="resolveProxies"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/getEClassifier/name"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral/instance"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="instance"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllOperations"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="details"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EIntegerObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EInt"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute/eAttributeType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAttributeType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eUnset/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/getClassifierID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getClassifierID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/eContainingClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContainingClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EMap/K"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="K"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="BusinessProcess"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EDoubleObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getOverride"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getOverride"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess/supports"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="supports"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eExceptions"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllGenericSuperTypes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eReferenceType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eReferenceType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/unsettable"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="unsettable"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getFeatureCount"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getFeatureCount"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/isSuperTypeOf/someClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="someClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute/iD"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="iD"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eIDAttribute"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eIDAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/isOverrideOf/someOperation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="someOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainmentFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContainmentFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/ePackage"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ePackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EShort"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/instanceTypeName"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="instanceTypeName"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eInvoke/arguments"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="arguments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllSuperTypes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsPrefix"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="nsPrefix"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EStringToStringMapEntry"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEOperation/operationID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="operationID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EFactory"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EDiagnosticChain"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eGet.1/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getOverride/operation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="operation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eSuperPackage"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eSuperPackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="upperBound"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EJavaObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eGet/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="key"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/volatile"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="volatile"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EShortObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EShortObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/getOperationID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getOperationID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteral/name"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral/value"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="value"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EChar"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/create"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="create"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/transient"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="transient"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/isInstance"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="isInstance"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/interface"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="interface"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/many"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="many"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eSubpackages"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eSubpackages"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getOperationCount"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getOperationCount"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAttributes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EClassifier"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/isOverrideOf"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="isOverrideOf"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteral.1/value"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="value"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/required"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="required"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EEnumerator"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EEnumLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eGet.1"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eGet"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EEnum"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eKeys"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eKeys"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/convertToString"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="convertToString"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EPackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ETypedElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EByte"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EAnnotation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eGet.1/resolve"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="resolve"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/convertToString/eDataType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eDataType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/instanceClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="instanceClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eUpperBound"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eUpperBound"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteralByLiteral/literal"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="literal"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/convertToString/instanceValue"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="instanceValue"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eContainingClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContainingClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EResourceSet"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EJavaClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/isInstance/object"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="object"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eGenericType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eGenericType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="value"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/createFromString"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="createFromString"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainingFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContainingFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ELong"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/containment"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="containment"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/create/eClass"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eClass"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EParameter/eOperation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eOperation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/container"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="container"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eFactoryInstance"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eFactoryInstance"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EJavaClass/T"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="T"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllAttributes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EResource"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eGenericExceptions"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eGenericExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/createFromString/literalValue"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="literalValue"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EStructuralFeature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EFloat"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EMap/V"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="V"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContainer"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessProcess/name"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessApplication/name"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eSet/newValue"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="newValue"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eOpposite"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eOpposite"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#//BusinessApplication"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="BusinessApplication"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EDouble"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EDataType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/getFeatureID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getFeatureID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContents"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eContents"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EDate"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EString"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eTypeParameter"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eTypeParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/abstract"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="abstract"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETreeIterator"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ETreeIterator"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteral"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEEnumLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eClassifiers"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllContainments"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllContainments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EByteObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral/literal"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="literal"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/ordered"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ordered"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/createFromString/eDataType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eDataType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eIsSet/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eReferences"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eTypeArguments"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eTypeArguments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/getEAnnotation/source"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="source"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/getEAnnotation"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEAnnotation"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eTypeParameters"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eTypeParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eOperations"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory/ePackage"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ePackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eGenericSuperTypes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eCrossReferences"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eCrossReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eIsProxy"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eIsProxy"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/unique"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="unique"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EModelElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EReference"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eAllContents"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllContents"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eSet"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eSet"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/references"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="references"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ELongObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#/"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="test"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EEList"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteralByLiteral"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEEnumLiteralByLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="ENamedElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eSet/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/source"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="source"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/eModelElement"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eModelElement"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/derived"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="derived"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getFeatureID/feature"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="feature"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFeatureMap"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EFeatureMap"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EMap"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eAllStructuralFeatures"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eAllStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral/eEnum"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eEnum"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getEStructuralFeature/featureID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="featureID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/isSuperTypeOf"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="isSuperTypeOf"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eSuperTypes"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature/changeable"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="changeable"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/getEEnumLiteral.1"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getEEnumLiteral"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EByteArray"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getFeatureID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getFeatureID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation/eParameters"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass/getOperationID"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="getOperationID"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EBigDecimal"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EInvocationTargetException"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EInvocationTargetException"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EBooleanObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eLiterals"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EGenericType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eGet"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eGet"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EParameter"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/instanceClassName"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="instanceClassName"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="EFloatObject"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eInvoke"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eInvoke"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType/eLowerBound"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="eLowerBound"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.IsInECore">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFactory"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EGenericType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypeParameter"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EOperation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EParameter"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EInvocationTargetException"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFeatureMap"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EResource"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ETreeIterator"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EJavaClass"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EShortObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//EResourceSet"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Element">
+        <value href="http://www.eclipse.org/emf/2002/Ecore#//ECharacterObject"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#/"/>
+</eiqSnapshot:IncQuerySnapshot>

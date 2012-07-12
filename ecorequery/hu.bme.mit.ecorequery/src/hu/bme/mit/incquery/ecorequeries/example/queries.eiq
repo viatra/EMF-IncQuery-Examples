@@ -15,6 +15,9 @@ pattern EClass(EClass) = {
 	EClass(EClass);
 }
 
+pattern EClassName(EName) = {
+	EClass.name(_EClass, EName);
+}
 /*
  * Generic pattern: Super and Sub is an EClass and Sub is Super's childclass
  */
@@ -22,6 +25,12 @@ pattern SuperTypeOf(Super,Sub) = {
 	EClass.eSuperTypes(Sub,Super);
 	EClass(Super);
 	EClass(Sub);
+}
+
+pattern SuperTypeOfName(SuperName,SubName) = {
+	EClass.eSuperTypes(Sub,Super);
+	EClass.name(Super, SuperName);
+	EClass.name(Sub, SubName);
 }	
 
 /*
@@ -51,6 +60,12 @@ pattern EClassWithEStringAttribute(E,Attr) = {
 	
 pattern EReferenceWithStarMultiplicity(ERef) = {
 	EReference(ERef);
+	ETypedElement.lowerBound(ERef,0); 
+	ETypedElement.upperBound(ERef,-1);
+}
+
+pattern EReferenceWithStarMultiplicityName(ERefName) = {
+	EReference.name(ERef, ERefName);
 	ETypedElement.lowerBound(ERef,0); 
 	ETypedElement.upperBound(ERef,-1);
 }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eLiterals"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="contents"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllContainments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllOperations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eBounds"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAnnotations"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eTypeParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eGenericSuperTypes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eClassifiers"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eStructuralFeatures"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="supports"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAllReferences"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eTypeArguments"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eGenericExceptions"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eParameters"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="details"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eKeys"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAttributes"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eSubpackages"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="references"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#/"/>
+</eiqSnapshot:IncQuerySnapshot>
