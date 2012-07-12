@@ -129,12 +129,6 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 		Assert::assertNotNull(s)
 		if (s!=null) {	
 			val ts = s.teachers		
-
-//			for(Teacher t : ts){
-//				if(t.name == "Prolog Programming"){
-//					ts.remove(t)											
-//				}
-//			}	
 			val iterator = ts.iterator
 			while(iterator.hasNext()){
 				val item = iterator.next
@@ -162,13 +156,14 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 		Assert::assertNotNull(s)
 		if (s!=null) {	
 			val courses = s.courses	
-
-			for(Course c : courses){
-				if(c.subject == "Prolog programming"){
-					courses.remove(c)											
-				}
-			}	
-			
+			val i = courses.iterator();
+			while (i.hasNext()) {
+			   val c = i.next(); // must be called before you can call i.remove()
+			   if(c.subject == "Prolog programming"){
+			   	i.remove();			   	
+			   }
+			}			
+						
 			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteCourse.eiqsnapshot")
 			pm.assertMatchResults(newSns)				
 						
