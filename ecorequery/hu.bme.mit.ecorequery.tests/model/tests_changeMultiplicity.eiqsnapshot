@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="ePackage"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eAttributeType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eFactoryInstance"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eRawType"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="ERefName" value="eReferenceType"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#/"/>
+</eiqSnapshot:IncQuerySnapshot>
