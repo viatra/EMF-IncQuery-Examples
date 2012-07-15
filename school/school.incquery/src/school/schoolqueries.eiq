@@ -86,7 +86,7 @@ import "http://school.ecore"
   * Teacher T is a teacher who doesn't teach any schoolclass.
   */
  pattern teacherWithoutClass(T:Teacher) = {
-	neg find classesOfTeacher(T,SC); 	
+	neg find classesOfTeacher(T,_SC); 	
  }
 
  // Step 3: path expressions
@@ -159,7 +159,7 @@ import "http://school.ecore"
   /*
    * Teacher T1 teaches more classes than teacher T2
    */
-  @Off // this @Off annotation hides this pattern from the UI
+  @QueryExplorer(display = false)
   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) = {
   	N == count find classesOfTeacher(T1,_SC1);
   	M == count find classesOfTeacher(T2,_SC2);
@@ -182,7 +182,7 @@ import "http://school.ecore"
     * Student S1 is friendly to student S2, i.e. they are friends in either direction
     * 
     */
-   @Off
+   @QueryExplorer(display = false)
    pattern friendlyTo(S1:Student, S2:Student) = {
    	Student.friendsWith(S1,S2);
    } or {
@@ -206,7 +206,7 @@ import "http://school.ecore"
    /*
     * Student S1 has more transitive friends than student S2
     */
-   @Off
+   @QueryExplorer(display = false)
    pattern moreFriendsThan(S1:Student,S2:Student) = {
    	N == count find inTheCircleOfFriends(S1,_Sx1);
    	M == count find inTheCircleOfFriends(S2,_Sx2);
@@ -220,7 +220,7 @@ import "http://school.ecore"
     * equally large friend circles.
     */
    pattern theOnesWithTheBiggestCircle(S:Student) = {
-   	neg find moreFriendsThan(Sx,S);
+   	neg find moreFriendsThan(_Sx,S);
    }
    
    
