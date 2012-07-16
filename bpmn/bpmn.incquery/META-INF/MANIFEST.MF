@@ -3,7 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: bpmn.incquery
 Bundle-SymbolicName: bpmn.incquery;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: bpmn1.badloopingactivity,
+Export-Package: bpmn1.activities,
+ bpmn1.activitiesnames,
+ bpmn1.badloopingactivity,
  bpmn1.eventend,
  bpmn1.eventendcancel,
  bpmn1.eventendcompensation,
@@ -36,11 +38,13 @@ Export-Package: bpmn1.badloopingactivity,
  bpmn1.hasinorout,
  bpmn1.inedge,
  bpmn1.lonelyactivity,
+ bpmn1.lonelyactivitynames,
  bpmn1.loopingactivity,
  bpmn1.messageflowedge,
  bpmn1.outedge,
  bpmn1.sequenceflowedge,
- bpmn1.sometypeofevent
+ bpmn1.sometypeofevent,
+ bpmn1.sometypeofeventnames
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

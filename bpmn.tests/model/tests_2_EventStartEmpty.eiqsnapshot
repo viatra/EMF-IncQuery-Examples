@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="bpmn1.EventStartEmpty">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_6bm6oKdJEeGAPZcK_lYVTA"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_wHwisac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_smW4gac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_Pbr_AadGEeGcRvnF9E_4RA"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="G">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../bpmn.instancemodel/default.bpmn#_WA2e8KazEeGrr_s-iXMcBQ"/>
+</eiqSnapshot:IncQuerySnapshot>

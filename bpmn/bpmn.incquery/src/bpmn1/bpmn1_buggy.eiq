@@ -6,15 +6,28 @@ import "http://stp.eclipse.org/bpmn"
 /*
  * At the moment, these are not in a working condition
  */
-@Off
+
 pattern someTypeOfEvent(E)= {
-	find EventStart(E);
+	find EventStart(E);	
 } or {
 	find EventIntermediate(E);
 } or {
 	find EventEnd(E);
 }
-@Off
+
+
+pattern someTypeOfEventNames(ENames)= {
+	find EventStart(E);	
+	Activity.name(E, ENames);
+} or {
+	find EventIntermediate(E);
+	Activity.name(E, ENames);
+} or {
+	find EventEnd(E);
+	Activity.name(E, ENames);
+}
+
+
 pattern EventStart(E)= {
 	find EventStartEmpty(E);
 } or {
@@ -39,67 +52,67 @@ pattern EventStartEmpty(G)= {
 //	check ((AT as org.eclipse.stp.bpmn.ActivityType).ordinal == 2 ); // throws exception
 // see https://github.com/ujhelyiz/EMF-IncQuery/issues/47
 }
-@Off
+
 pattern EventStartMessage(G)= {
-	Activity.activityType(G, "EventStartMessage");
+	Activity.activityType(G, ActivityType::EventStartMessage);
 }
-@Off
+
 pattern EventStartRule(G)= {
-	Activity.activityType(G, "EventStartRule");
+	Activity.activityType(G, ActivityType::EventStartRule);
 }
-@Off
+
 pattern EventStartTimer(G)= {
-	Activity.activityType(G, "EventStartTimer");
+	Activity.activityType(G, ActivityType::EventStartTimer);
 }
-@Off
+
 pattern EventStartLink(G)= {
-	Activity.activityType(G, "EventStartLink");
+	Activity.activityType(G, ActivityType::EventStartLink);
 }
-@Off
+
 pattern EventStartMultiple(G)= {
-	Activity.activityType(G, "EventStartMultiple");
+	Activity.activityType(G, ActivityType::EventStartMultiple);
 }
-@Off
+
 pattern EventStartSignal(G)= {
-	Activity.activityType(G, "EventStartSignal");
+	Activity.activityType(G, ActivityType::EventStartSignal);
 }
-@Off
+
 pattern EventEndEmpty(G)= {
-	Activity.activityType(G, "EventEndEmpty");
+	Activity.activityType(G, ActivityType::EventEndEmpty);
 }
-@Off
+
 pattern EventEndMessage(G)= {
-	Activity.activityType(G, "EventEndMessage");
+	Activity.activityType(G, ActivityType::EventEndMessage);
 }
-@Off
+
 pattern EventEndError(G)= {
-	Activity.activityType(G, "EventEndError");
+	Activity.activityType(G, ActivityType::EventEndError);
 }
-@Off
+
 pattern EventEndCompensation(G)= {
-	Activity.activityType(G, "EventEndCompensation");
+	Activity.activityType(G, ActivityType::EventEndCompensation);
 }
-@Off
+
 pattern EventEndTerminate(G)= {
-	Activity.activityType(G, "EventEndTerminate");
+	Activity.activityType(G, ActivityType::EventEndTerminate);
 }
-@Off
+
 pattern EventEndLink(G)= {
-	Activity.activityType(G, "EventEndLink");
+	Activity.activityType(G, ActivityType::EventEndLink);
 }
-@Off
+
 pattern EventEndMultiple(G)= {
-	Activity.activityType(G, "EventEndMultiple");
+	Activity.activityType(G, ActivityType::EventEndMultiple);
 }
-@Off
+
 pattern EventEndCancel(G)= {
-	Activity.activityType(G, "EventEndCancel");
+	Activity.activityType(G, ActivityType::EventEndCancel);
 }
-@Off
+
 pattern EventEndSignal(G)= {
-	Activity.activityType(G, "EventEndSignal");
+	Activity.activityType(G, ActivityType::EventEndSignal);
 }
-@Off
+
 pattern EventEnd(E)= {
 	find EventEndEmpty(E);
 } or {
@@ -119,47 +132,47 @@ pattern EventEnd(E)= {
 } or {
 	find EventEndSignal(E);
 }
-@Off
+
 pattern EventIntermediateEmpty(G)= {
-	Activity.activityType(G, "EventIntermediateEmpty");
+	Activity.activityType(G, ActivityType::EventIntermediateEmpty);
 }
-@Off
+
 pattern EventIntermediateMessage(G)= {
-	Activity.activityType(G, "EventIntermediateMessage");
+	Activity.activityType(G, ActivityType::EventIntermediateMessage);
 }
-@Off
+
 pattern EventIntermediateTimer(G)= {
-	Activity.activityType(G, "EventIntermediateTimer");
+	Activity.activityType(G, ActivityType::EventIntermediateTimer);
 }
-@Off
+
 pattern EventIntermediateError(G)= {
-	Activity.activityType(G, "EventIntermediateError");
+	Activity.activityType(G, ActivityType::EventIntermediateError);
 }
-@Off
+
 pattern EventIntermediateCompensation(G)= {
-	Activity.activityType(G, "EventIntermediateCompensation");
+	Activity.activityType(G, ActivityType::EventIntermediateCompensation);
 }
-@Off
+
 pattern EventIntermediateRule(G)= {
-	Activity.activityType(G, "EventIntermediateRule");
+	Activity.activityType(G, ActivityType::EventIntermediateRule);
 }
-@Off
+
 pattern EventIntermediateLink(G)= {
-	Activity.activityType(G, "EventIntermediateLink");
+	Activity.activityType(G, ActivityType::EventIntermediateLink);
 }
-@Off
+
 pattern EventIntermediateMultiple(G)= {
-	Activity.activityType(G, "EventIntermediateMultiple");
+	Activity.activityType(G, ActivityType::EventIntermediateMultiple);
 }
-@Off
+
 pattern EventIntermediateCancel(G)= {
-	Activity.activityType(G, "EventIntermediateCancel");
+	Activity.activityType(G, ActivityType::EventIntermediateCancel);
 }
-@Off
+
 pattern EventIntermediateSignal(G)= {
-	Activity.activityType(G, "EventIntermediateSignal");
+	Activity.activityType(G, ActivityType::EventIntermediateSignal);
 }
-@Off
+
 pattern EventIntermediate(E)= {
 	find EventIntermediateEmpty(E);
 } or {
@@ -180,4 +193,12 @@ pattern EventIntermediate(E)= {
 	find EventIntermediateCancel(E);
 } or {
 	find EventIntermediateSignal(E);
+}
+
+pattern Activities(A:Activity) = {
+	Activity(A);
+}
+
+pattern ActivitiesNames(ANames) = {
+	Activity.name(_A, ANames);
 }

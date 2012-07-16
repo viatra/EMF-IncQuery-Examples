@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="bpmn1.loopingActivity">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.badLoopingActivity">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.lonelyActivity">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_6bm6oKdJEeGAPZcK_lYVTA"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_Pbr_AadGEeGcRvnF9E_4RA"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.hasInOrOut">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_smW4gac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_wHwisac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.inEdge">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_wHwisac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.outEdge">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="A">
+        <value href="../../bpmn.instancemodel/default.bpmn#_smW4gac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.sequenceFlowEdge">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Flow">
+        <value href="../../bpmn.instancemodel/default.bpmn#_vBFOgac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Src">
+        <value href="../../bpmn.instancemodel/default.bpmn#_smW4gac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Dst">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Flow">
+        <value href="../../bpmn.instancemodel/default.bpmn#_vi3F4ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Src">
+        <value href="../../bpmn.instancemodel/default.bpmn#_WCCKsaazEeGrr_s-iXMcBQ"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Dst">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Flow">
+        <value href="../../bpmn.instancemodel/default.bpmn#_wyloYac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Src">
+        <value href="../../bpmn.instancemodel/default.bpmn#_n2ny8ac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="Dst">
+        <value href="../../bpmn.instancemodel/default.bpmn#_wHwisac9EeGE67ctMyA4Ww"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <matchSetRecords patternQualifiedName="bpmn1.messageFlowEdge">
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../bpmn.instancemodel/default.bpmn#_WA2e8KazEeGrr_s-iXMcBQ"/>
+</eiqSnapshot:IncQuerySnapshot>

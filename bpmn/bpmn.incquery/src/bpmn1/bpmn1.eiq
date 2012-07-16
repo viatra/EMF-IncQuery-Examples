@@ -21,6 +21,11 @@ pattern lonelyActivity(A : Activity)= {
 	neg find hasInOrOut(A);
 }
 
+pattern lonelyActivityNames(ANames)= {
+	neg find hasInOrOut(A);
+	Activity.name(A, ANames);
+}
+
 
 @Off
 pattern hasInOrOut(A:Activity)= {

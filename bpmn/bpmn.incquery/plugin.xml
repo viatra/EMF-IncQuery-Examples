@@ -3,6 +3,7 @@
 
    <extension
          id="bpmn1.someTypeOfEvent"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.sometypeofevent.SomeTypeOfEventMatcherFactory"
@@ -10,7 +11,17 @@
       </matcher>
    </extension>
    <extension
+         id="bpmn1.someTypeOfEventNames"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.sometypeofeventnames.SomeTypeOfEventNamesMatcherFactory"
+            id="bpmn1.someTypeOfEventNames">
+      </matcher>
+   </extension>
+   <extension
          id="bpmn1.EventStart"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstart.EventStartMatcherFactory"
@@ -19,6 +30,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartEmpty"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartempty.EventStartEmptyMatcherFactory"
@@ -27,6 +39,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartMessage"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartmessage.EventStartMessageMatcherFactory"
@@ -35,6 +48,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartRule"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartrule.EventStartRuleMatcherFactory"
@@ -43,6 +57,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartTimer"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstarttimer.EventStartTimerMatcherFactory"
@@ -51,6 +66,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartLink"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartlink.EventStartLinkMatcherFactory"
@@ -59,6 +75,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartMultiple"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartmultiple.EventStartMultipleMatcherFactory"
@@ -67,6 +84,7 @@
    </extension>
    <extension
          id="bpmn1.EventStartSignal"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventstartsignal.EventStartSignalMatcherFactory"
@@ -75,6 +93,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndEmpty"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendempty.EventEndEmptyMatcherFactory"
@@ -83,6 +102,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndMessage"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendmessage.EventEndMessageMatcherFactory"
@@ -91,6 +111,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndError"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventenderror.EventEndErrorMatcherFactory"
@@ -99,6 +120,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndCompensation"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendcompensation.EventEndCompensationMatcherFactory"
@@ -107,6 +129,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndTerminate"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendterminate.EventEndTerminateMatcherFactory"
@@ -115,6 +138,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndLink"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendlink.EventEndLinkMatcherFactory"
@@ -123,6 +147,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndMultiple"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendmultiple.EventEndMultipleMatcherFactory"
@@ -131,6 +156,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndCancel"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendcancel.EventEndCancelMatcherFactory"
@@ -139,6 +165,7 @@
    </extension>
    <extension
          id="bpmn1.EventEndSignal"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventendsignal.EventEndSignalMatcherFactory"
@@ -147,6 +174,7 @@
    </extension>
    <extension
          id="bpmn1.EventEnd"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventend.EventEndMatcherFactory"
@@ -155,6 +183,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateEmpty"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediateempty.EventIntermediateEmptyMatcherFactory"
@@ -163,6 +192,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateMessage"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatemessage.EventIntermediateMessageMatcherFactory"
@@ -171,6 +201,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateTimer"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatetimer.EventIntermediateTimerMatcherFactory"
@@ -179,6 +210,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateError"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediateerror.EventIntermediateErrorMatcherFactory"
@@ -187,6 +219,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateCompensation"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatecompensation.EventIntermediateCompensationMatcherFactory"
@@ -195,6 +228,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateRule"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediaterule.EventIntermediateRuleMatcherFactory"
@@ -203,6 +237,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateLink"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatelink.EventIntermediateLinkMatcherFactory"
@@ -211,6 +246,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateMultiple"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatemultiple.EventIntermediateMultipleMatcherFactory"
@@ -219,6 +255,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateCancel"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatecancel.EventIntermediateCancelMatcherFactory"
@@ -227,6 +264,7 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediateSignal"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediatesignal.EventIntermediateSignalMatcherFactory"
@@ -235,10 +273,29 @@
    </extension>
    <extension
          id="bpmn1.EventIntermediate"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.eventintermediate.EventIntermediateMatcherFactory"
             id="bpmn1.EventIntermediate">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.Activities"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.activities.ActivitiesMatcherFactory"
+            id="bpmn1.Activities">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.ActivitiesNames"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.activitiesnames.ActivitiesNamesMatcherFactory"
+            id="bpmn1.ActivitiesNames">
       </matcher>
    </extension>
    <extension
@@ -263,6 +320,14 @@
       <matcher
             factory="bpmn1.lonelyactivity.LonelyActivityMatcherFactory"
             id="bpmn1.lonelyActivity">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.lonelyActivityNames"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.lonelyactivitynames.LonelyActivityNamesMatcherFactory"
+            id="bpmn1.lonelyActivityNames">
       </matcher>
    </extension>
    <extension
