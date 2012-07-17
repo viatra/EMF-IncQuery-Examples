@@ -156,6 +156,11 @@ pattern ECoreNamedElement(Element,Name) = {
        ENamedElement.name(Element,Name);
 }
 
+pattern ECoreNamedElementName(Name) = {
+       ENamedElement(Element);
+       ENamedElement.name(Element,Name);
+}
+
 /*
  * Generic pattern: Element resides in "the" Ecore package
  */ 

@@ -122,6 +122,14 @@
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameMatcherFactory"
+            id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName">
+      </matcher>
+   </extension>
+   <extension
          id="hu.bme.mit.incquery.ecorequeries.example.IsInECore"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher

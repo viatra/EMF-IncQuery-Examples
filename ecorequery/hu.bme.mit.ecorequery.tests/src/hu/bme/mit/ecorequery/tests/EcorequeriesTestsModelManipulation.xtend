@@ -74,7 +74,7 @@ class EcorequeriesTestsModelManipulation extends EcorequeryTestsBase {
 				}
 			}
 					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("hu.bme.mit.ecorequery.tests/model/tests_newEAttribute.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("hu.bme.mit.ecorequery.tests/model/tests_newAttribute.eiqsnapshot")
 			pm.assertMatchResults(newSns)
 		}
 			

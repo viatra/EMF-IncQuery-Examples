@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="Resource">
+  <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="BusinessProcess"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="test"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="name"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="dependsOn"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="NewEAttribute"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="BusinessApplication"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="Name" value="supports"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../hu.bme.mit.ecorequery/instancemodels/My.ecore#/"/>
+</eiqSnapshot:IncQuerySnapshot>
