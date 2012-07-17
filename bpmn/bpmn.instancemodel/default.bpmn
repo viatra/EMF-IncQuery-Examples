@@ -5,7 +5,7 @@
     <vertices xmi:type="bpmn:Activity" xmi:id="_n2ny8ac9EeGE67ctMyA4Ww" iD="_n2ny8Kc9EeGE67ctMyA4Ww" outgoingEdges="_wyloYac9EeGE67ctMyA4Ww" incomingEdges="_vi3F4ac9EeGE67ctMyA4Ww" name="Simple" activityType="Task" looping="true"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_smW4gac9EeGE67ctMyA4Ww" iD="_smW4gKc9EeGE67ctMyA4Ww" outgoingEdges="_vBFOgac9EeGE67ctMyA4Ww" name="Start" activityType="EventStartEmpty"/>
     <vertices xmi:type="bpmn:Activity" xmi:id="_wHwisac9EeGE67ctMyA4Ww" iD="_wHwisKc9EeGE67ctMyA4Ww" incomingEdges="_wyloYac9EeGE67ctMyA4Ww" name="End" activityType="EventEndEmpty"/>
-    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_vBFOgac9EeGE67ctMyA4Ww" iD="_vBFOgKc9EeGE67ctMyA4Ww"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_vBFOgac9EeGE67ctMyA4Ww" iD="_vBFOgKc9EeGE67ctMyA4Ww" name="StartToTask" ncname=""/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_vi3F4ac9EeGE67ctMyA4Ww" iD="_vi3F4Kc9EeGE67ctMyA4Ww"/>
     <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_wyloYac9EeGE67ctMyA4Ww" iD="_wyloYKc9EeGE67ctMyA4Ww"/>
   </pools>

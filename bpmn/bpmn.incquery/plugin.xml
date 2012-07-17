@@ -363,11 +363,51 @@
       </matcher>
    </extension>
    <extension
+         id="bpmn1.sequenceFlowEdgeName"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.sequenceflowedgename.SequenceFlowEdgeNameMatcherFactory"
+            id="bpmn1.sequenceFlowEdgeName">
+      </matcher>
+   </extension>
+   <extension
          id="bpmn1.messageFlowEdge"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="bpmn1.messageflowedge.MessageFlowEdgeMatcherFactory"
             id="bpmn1.messageFlowEdge">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.pool"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.pool.PoolMatcherFactory"
+            id="bpmn1.pool">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.poolNames"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.poolnames.PoolNamesMatcherFactory"
+            id="bpmn1.poolNames">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.artifact"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.artifact.ArtifactMatcherFactory"
+            id="bpmn1.artifact">
+      </matcher>
+   </extension>
+   <extension
+         id="bpmn1.artifactNames"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="bpmn1.artifactnames.ArtifactNamesMatcherFactory"
+            id="bpmn1.artifactNames">
       </matcher>
    </extension>
 

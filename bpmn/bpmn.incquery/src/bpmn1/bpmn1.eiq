@@ -50,8 +50,32 @@ pattern sequenceFlowEdge(Flow:SequenceEdge, Src:Activity, Dst:Activity)= {
 	SequenceEdge.source(Flow, Src);
 	SequenceEdge.target(Flow, Dst);
 }
+
+pattern sequenceFlowEdgeName(FName)= {
+	SequenceEdge.source(Flow, _Src);
+	SequenceEdge.target(Flow, _Dst);
+	SequenceEdge.name(Flow, FName);
+}
+
 @Off
 pattern messageFlowEdge(Flow:MessagingEdge, Src:Activity, Dst:Activity)= {
 	MessagingEdge.source(Flow, Src);
 	MessagingEdge.target(Flow, Dst);
+}
+
+
+pattern pool(P:Pool)={
+	Pool(P);
+}
+
+pattern poolNames(PNames)={
+	Pool.name(_P, PNames);
+}
+
+pattern artifact(A:Artifact)={
+	Artifact(A);
+}
+
+pattern artifactNames(ANames)={
+	Artifact.name(_A, ANames);
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="bpmn1.sequenceFlowEdgeName">
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../bpmn.instancemodel/default.bpmn#_WA2e8KazEeGrr_s-iXMcBQ"/>
+</eiqSnapshot:IncQuerySnapshot>
