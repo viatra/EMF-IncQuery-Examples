@@ -29,6 +29,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.GenericPatternMatch
 import school.Course
 import school.SchoolClass
 import school.Year
+import school.Student
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -297,6 +298,201 @@ class SchoolTestsModelManipulation extends SchoolTestsBase {
 			pm.assertMatchResults(newSns)
 		}
 	}
+	
+	@Test
+	def createStudentWithFriend(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// add a new Student "David Nagy" to Year "2011", SchoolClass "A" with a friend Student "Istvan Rath"
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {					
+			val years = s.years
+			for(Year y : years){
+				if(y.startingDate == 2011){
+					val classes = y.schoolClasses
+					for(SchoolClass c : classes){						
+						if(c.code == 'A'.charAt(0)){
+							val student = SchoolFactory::eINSTANCE.createStudent						
+							student.setSchoolClass(c)	
+							
+							val matcher2 = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.studentOfSchool")
+							val students = matcher2.allMatches
+							Assert::assertNotNull(students)
+							if(students != null){
+								for(GenericPatternMatch g :students){
+									val friend = g.get("S") as Student
+									Assert::assertNotNull(friend)
+									if(friend!=null){	
+										if(friend.name == "Istvan Rath"){
+											student.friendsWith.add(friend)	
+										}
 
+									}
+									
+								}
+							}
+							
+							student.setName("David Nagy")
+																					
+						}
+					}
+				}
+			}							
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudentWithFriend.eiqsnapshot")
+			val newSns2 = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_biggestCircleName.eiqsnapshot")
+			pm.assertMatchResults(newSns)
+			pm.assertMatchResults(newSns2)
+		}
+	}
+	
+	
+	@Test
+	def	deleteYear(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// delete the Year "2012" from the model
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {	
+			
+			val list = s.years	
+			val i = list.iterator();
+			while (i.hasNext()) {
+			   val y = i.next();
+			   if(y.startingDate == 2012){
+			   	i.remove();			   	
+			   }
+			}			
+						
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteYear.eiqsnapshot")
+			pm.assertMatchResults(newSns)											
+		}				
+	}
+	
+	@Test
+	def	deleteSchoolClass(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// delete the SchoolClass "C" from the model
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {					
+			val years = s.years
+			for(Year y : years){
+				if(y.startingDate == 2012){
+					val list = y.schoolClasses	
+					val i = list.iterator();
+					while (i.hasNext()) {
+					   val c = i.next();
+					   if(c.code == 'C'.charAt(0) || c.code == 'D'.charAt(0)){
+					   	i.remove();			   	
+					   }
+					}																
+				}	
+			}
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteSchoolClass.eiqsnapshot")
+			pm.assertMatchResults(newSns)				
+		}
+	}
+	
+	@Test
+	def	createCourseWeight2(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// add a new Course "System Integration" to Teacher "Daniel Varro"
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {
+			val teachers = s.teachers
+			
+			for(Teacher t : teachers)
+			{					
+				if(t.name == "Daniel Varro")
+				{
+					val c = SchoolFactory::eINSTANCE.createCourse
+					c.setSchool(s)
+					c.setSubject("NewCourse")	
+					c.setWeight(2)		
+					c.setTeacher(t)									
+				}
+			}			
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_2.eiqsnapshot")
+					pm.assertMatchResults(newSns)													
+		}				
+	}
+	
+	@Test
+	def	createCourseWeight43(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// add a new Course "System Integration" to Teacher "Daniel Varro"
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {
+			val teachers = s.teachers
+			
+			for(Teacher t : teachers)
+			{					
+				if(t.name == "Daniel Varro")
+				{
+					val c = SchoolFactory::eINSTANCE.createCourse
+					c.setSchool(s)
+					c.setSubject("NewCourse")	
+					c.setWeight(43)		
+					c.setTeacher(t)									
+				}
+			}			
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_43.eiqsnapshot")
+					pm.assertMatchResults(newSns)													
+		}				
+	}
+	
+		@Test
+	def	deleteTeacher2(){
+		val sns = snapshot
+		val pm = queryInputEIQ
+		pm.assertMatchResults(sns)
+		
+		// MODEL MODIFICATION HERE
+		// delete the Teacher "Daniel Varro"
+		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+		val s = matcher.oneArbitraryMatch.get("Sch") as School
+		Assert::assertNotNull(s)
+		if (s!=null) {	
+			val ts = s.teachers		
+			val iterator = ts.iterator
+			while(iterator.hasNext()){
+				val item = iterator.next
+				if(item.name == "Daniel Varro")
+	        		iterator.remove();
+			}	
+			
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacherVarro.eiqsnapshot")
+			pm.assertMatchResults(newSns)				
+						
+		}
+				
+	}
 				
 }

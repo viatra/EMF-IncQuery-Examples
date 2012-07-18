@@ -88,6 +88,11 @@ import "http://school.ecore"
  pattern teacherWithoutClass(T:Teacher) = {
 	neg find classesOfTeacher(T,_SC); 	
  }
+ 
+ pattern teacherWithoutClassNames(TNames) = {
+	neg find classesOfTeacher(T,_SC); 	
+	Teacher.name(T, TNames);
+ }
 
  // Step 3: path expressions
  
@@ -123,6 +128,13 @@ import "http://school.ecore"
   * Course C has a subject name which is longer than C's weight.
   */
  pattern courseWithNameLongerThanWeight(C:Course) = {
+ 	Course.subject(C,CName);
+ 	Course.weight(C,W);
+ 	check((CName as String).length > (W as Integer));
+ 	// casts will not be necessary once IncQuery has full type inference (v.0.7)
+ }
+ 
+ pattern courseWithNameLongerThanWeightInt(W) = {
  	Course.subject(C,CName);
  	Course.weight(C,W);
  	check((CName as String).length > (W as Integer));
@@ -203,6 +215,13 @@ import "http://school.ecore"
    	// use it whenever possible
    }
    
+   pattern inTheCircleOfFriendsNames(S1Name,SomeoneName) = {
+   	find friendlyTo+(S1,Someone);
+   	S1!=Someone; // we do not allow self loops
+   	Student.name(S1, S1Name);
+   	Student.name(Someone, SomeoneName);
+   }
+   
    /*
     * Student S1 has more transitive friends than student S2
     */
@@ -221,6 +240,11 @@ import "http://school.ecore"
     */
    pattern theOnesWithTheBiggestCircle(S:Student) = {
    	neg find moreFriendsThan(_Sx,S);
+   }
+   
+   pattern theOnesWithTheBiggestCircleName(SName) = {
+   	neg find moreFriendsThan(_Sx,S);
+   	Student.name(S, SName);
    }
    
    
@@ -244,4 +268,23 @@ import "http://school.ecore"
     	
     	find theOnesWithTheBiggestCircle(S);
     	find teachesTheMostCourses(T);
+    }
+    
+    @PatternUI(message="The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+    @ObservableValue(name = "Year", expression="YDate")
+    @ObservableValue(name = "Teacher", expression="TName")
+    @ObservableValue(name = "Student", expression="SName")
+    @Handler(fileExtension = "school")
+    pattern finalPattern2(YDate, CSub, TName, SName) = {
+    	Year.schoolClasses.courses(Y,C);
+    	Course.teacher(C,T);
+    	Student.schoolClass.courses(S,C);
+    	
+    	find theOnesWithTheBiggestCircle(S);
+    	find teachesTheMostCourses(T);
+    	
+    	Year.startingDate(Y, YDate);
+    	Course.subject(C, CSub);
+    	Teacher.name(T, TName);
+    	Student.name(S, SName);
     }
