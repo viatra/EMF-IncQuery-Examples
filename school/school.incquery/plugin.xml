@@ -3,6 +3,7 @@
 
    <extension
          id="school.schools"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.schools.SchoolsMatcherFactory"
@@ -11,6 +12,7 @@
    </extension>
    <extension
          id="school.schoolsNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.schoolsnames.SchoolsNamesMatcherFactory"
@@ -19,6 +21,7 @@
    </extension>
    <extension
          id="school.teachers"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachers.TeachersMatcherFactory"
@@ -27,6 +30,7 @@
    </extension>
    <extension
          id="school.teachersNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachersnames.TeachersNamesMatcherFactory"
@@ -35,6 +39,7 @@
    </extension>
    <extension
          id="school.teachersOfSchool"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachersofschool.TeachersOfSchoolMatcherFactory"
@@ -43,6 +48,7 @@
    </extension>
    <extension
          id="school.teachersOfSchoolNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachersofschoolnames.TeachersOfSchoolNamesMatcherFactory"
@@ -51,6 +57,7 @@
    </extension>
    <extension
          id="school.coursesOfTeacher"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursesofteacher.CoursesOfTeacherMatcherFactory"
@@ -59,6 +66,7 @@
    </extension>
    <extension
          id="school.coursesOfTeacherNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursesofteachernames.CoursesOfTeacherNamesMatcherFactory"
@@ -67,6 +75,7 @@
    </extension>
    <extension
          id="school.classesOfTeacher"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.classesofteacher.ClassesOfTeacherMatcherFactory"
@@ -75,6 +84,7 @@
    </extension>
    <extension
          id="school.classesOfSchool"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.classesofschool.ClassesOfSchoolMatcherFactory"
@@ -83,6 +93,7 @@
    </extension>
    <extension
          id="school.classesOfTeacherNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory"
@@ -91,6 +102,7 @@
    </extension>
    <extension
          id="school.teacherWithoutClass"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teacherwithoutclass.TeacherWithoutClassMatcherFactory"
@@ -99,6 +111,7 @@
    </extension>
    <extension
          id="school.teacherWithoutClassNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory"
@@ -107,6 +120,7 @@
    </extension>
    <extension
          id="school.studentOfSchool"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.studentofschool.StudentOfSchoolMatcherFactory"
@@ -115,6 +129,7 @@
    </extension>
    <extension
          id="school.studentOfSchoolNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.studentofschoolnames.StudentOfSchoolNamesMatcherFactory"
@@ -123,6 +138,7 @@
    </extension>
    <extension
          id="school.courseWithWeightThirty"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory"
@@ -131,6 +147,7 @@
    </extension>
    <extension
          id="school.courseWithNameLongerThanWeight"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatcherFactory"
@@ -139,6 +156,7 @@
    </extension>
    <extension
          id="school.courseWithNameLongerThanWeightInt"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntMatcherFactory"
@@ -147,6 +165,7 @@
    </extension>
    <extension
          id="school.courseWithPrimeWeight"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory"
@@ -155,6 +174,7 @@
    </extension>
    <extension
          id="school.teachesMoreClasses"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachesmoreclasses.TeachesMoreClassesMatcherFactory"
@@ -163,6 +183,7 @@
    </extension>
    <extension
          id="school.teachesTheMostCourses"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory"
@@ -171,6 +192,7 @@
    </extension>
    <extension
          id="school.friendlyTo"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.friendlyto.FriendlyToMatcherFactory"
@@ -179,6 +201,7 @@
    </extension>
    <extension
          id="school.inTheCircleOfFriends"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory"
@@ -187,6 +210,7 @@
    </extension>
    <extension
          id="school.inTheCircleOfFriendsNames"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory"
@@ -195,6 +219,7 @@
    </extension>
    <extension
          id="school.moreFriendsThan"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.morefriendsthan.MoreFriendsThanMatcherFactory"
@@ -203,6 +228,7 @@
    </extension>
    <extension
          id="school.theOnesWithTheBiggestCircle"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory"
@@ -211,6 +237,7 @@
    </extension>
    <extension
          id="school.theOnesWithTheBiggestCircleName"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMatcherFactory"
@@ -219,6 +246,7 @@
    </extension>
    <extension
          id="school.finalPattern"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.finalpattern.FinalPatternMatcherFactory"
@@ -227,10 +255,27 @@
    </extension>
    <extension
          id="school.finalPattern2"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factory="school.finalpattern2.FinalPattern2MatcherFactory"
             id="school.finalPattern2">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithTeacher"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.coursewithteacher.CourseWithTeacherMatcherFactory"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factory="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory"
+            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 
