@@ -14,7 +14,6 @@ import java.util.Map;
 
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 
 /**
  * @author Abel Hegedus
@@ -60,12 +59,12 @@ public class IncQueryApplication implements IApplication {
 		}
 
 		if (model == null) {
-			IncQueryEngine.getDefaultLogger().logError("Model parameter not set");
+		  System.out.println("Model parameter not set");
 			displayHelp();
 			return IApplication.EXIT_OK;
 		}
 		if (patternFQN == null) {
-			IncQueryEngine.getDefaultLogger().logError("PatternFQN parameter not set");
+		  System.out.println("PatternFQN parameter not set");
 			displayHelp();
 			return IApplication.EXIT_OK;
 		}
@@ -87,9 +86,7 @@ public class IncQueryApplication implements IApplication {
 	}
 
 	private void displayHelp() {
-		IncQueryEngine
-				.getDefaultLogger()
-				.logError(
+		System.out.println(
 						"Usage:\n<call> -m <modelFilePAth> -p <patternFQN>\n  -m    :  Required, the model to match on.\n  -m    :  Required, the pattern to match");
 	}
 }

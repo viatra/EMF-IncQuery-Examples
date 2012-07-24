@@ -18,9 +18,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
+import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.MatcherFactoryRegistry;
 
 /**
@@ -47,7 +46,7 @@ public class IncQueryHeadless {
 		Resource resource = resourceSet.getResource(fileURI, true);
 
 		long resourceInit = System.nanoTime();
-		IncQueryEngine.getDefaultLogger().logError("EMF load took: " + (resourceInit - start) / 1000000 + " ms");
+		System.out.println("EMF load took: " + (resourceInit - start) / 1000000 + " ms");
 
 		if (resource != null) {
 			try {
@@ -62,7 +61,7 @@ public class IncQueryHeadless {
 
 				long collectedMatches = System.nanoTime();
 
-				IncQueryEngine.getDefaultLogger().logError(
+				System.out.println(
 						"Init took: " + (matcherInit - startMatching) / 1000000 + " Collecting took: "
 								+ (collectedMatches - matcherInit) / 1000000 + " ms");
 
@@ -79,12 +78,12 @@ public class IncQueryHeadless {
 				}
 
 				long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-				IncQueryEngine.getDefaultLogger().logError("Used memory: " + usedMemory + " bytes");
-				IncQueryEngine.getDefaultLogger().logError("Used memory: " + (usedMemory / 1024) / 1024 + " megabytes");
+				System.out.println("Used memory: " + usedMemory + " bytes");
+				System.out.println("Used memory: " + (usedMemory / 1024) / 1024 + " megabytes");
 
-				IncQueryEngine.getDefaultLogger().logError("Found matches:");
+				System.out.println("Found matches:");
 				for (IPatternMatch match : matches) {
-					IncQueryEngine.getDefaultLogger().logError(match.prettyPrint());
+				  System.out.println(match.prettyPrint());
 					results.append(match.prettyPrint());
 				}
 				
@@ -92,7 +91,7 @@ public class IncQueryHeadless {
 					results.append("Empty match set");
 				}
 
-			} catch (IncQueryRuntimeException e) {
+			} catch (IncQueryException e) {
 				e.printStackTrace();
 				results.append(e.getMessage());
 			}
