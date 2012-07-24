@@ -34,19 +34,10 @@ Export-Package: school.classesofschool,
  school.teachesthemostcourses,
  school.theoneswiththebiggestcircle,
  school.theoneswiththebiggestcirclename
-<<<<<<< HEAD
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.viatra2.emf.incquery.runtime,
  org.eclipse.xtext.xbase.lib,
  school;bundle-version="1.0.0";visibility:=reexport
-=======
-Require-Bundle: org.eclipse.pde.core,
- org.eclipse.emf.ecore,
- org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
- org.eclipse.xtext.xbase.lib,
- school;bundle-version="1.0.0"
->>>>>>> regenerate with newest tech
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
