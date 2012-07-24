@@ -288,3 +288,4 @@ import "http://school.ecore"
     	Teacher.name(T, TName);
     	Student.name(S, SName);
     }
+    
