@@ -9,12 +9,18 @@ package school.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import school.*;
+import school.Course;
+import school.School;
+import school.SchoolClass;
+import school.SchoolFactory;
+import school.SchoolPackage;
+import school.SpecialisationCourse;
+import school.Student;
+import school.Teacher;
+import school.Year;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,7 +1,6 @@
 import "http:///school-derived.ecore"
 
 @DerivedFeature(feature = "numberOfTeachers", kind = "counter")
-@Off
 pattern teachers(School : School, Teacher : Teacher) = {
    School.teachers(School,Teacher);
 }
@@ -11,7 +10,6 @@ private pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
 }
 
 @DerivedFeature
-@Off
 pattern teachersWithMostCourses(School : School, Teacher : Teacher) = {
    find teachers(School,Teacher);
    neg find moreCourses(Teacher);
@@ -26,7 +24,6 @@ private pattern moreCourses(Teacher : Teacher) = {
 }
 
 @DerivedFeature
-@Off
 pattern lastYear(School : School, Year : Year) = {
    School.years(School,Year);
    neg find laterYear(Year);
@@ -41,7 +38,6 @@ private pattern laterYear(Year : Year) = {
 }
 
 @DerivedFeature
-@Off
 pattern homeroomCourses(SchC : SchoolClass, C : Course) = {
   SchoolClass.courses(SchC,C);
   Course.teacher(C,T);
@@ -49,7 +45,6 @@ pattern homeroomCourses(SchC : SchoolClass, C : Course) = {
 }
 
 @DerivedFeature(feature = "weightOfRegularCourses", source = Y, kind = "sum")
-@Off
 pattern courseWeights(Sch: School, W, Y : Year) = {
   School.years(Sch,Y);
   Year.schoolClasses.courses(Y,C);

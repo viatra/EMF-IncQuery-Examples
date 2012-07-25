@@ -2,8 +2,15 @@
 <plugin>
 
    <extension
+         id="teachers"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="teachers.TeachersMatcherFactory$Provider"
+            id="teachers">
+      </matcher>
+   </extension>
+   <extension
          id="extension.derived.teachers"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
@@ -12,8 +19,15 @@
       </wellbehaving-derived-feature>
    </extension>
    <extension
+         id="teachersWithMostCourses"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="teacherswithmostcourses.TeachersWithMostCoursesMatcherFactory$Provider"
+            id="teachersWithMostCourses">
+      </matcher>
+   </extension>
+   <extension
          id="extension.derived.teachersWithMostCourses"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
@@ -22,8 +36,15 @@
       </wellbehaving-derived-feature>
    </extension>
    <extension
+         id="lastYear"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="lastyear.LastYearMatcherFactory$Provider"
+            id="lastYear">
+      </matcher>
+   </extension>
+   <extension
          id="extension.derived.lastYear"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
@@ -32,8 +53,15 @@
       </wellbehaving-derived-feature>
    </extension>
    <extension
+         id="homeroomCourses"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="homeroomcourses.HomeroomCoursesMatcherFactory$Provider"
+            id="homeroomCourses">
+      </matcher>
+   </extension>
+   <extension
          id="extension.derived.homeroomCourses"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="SchoolClass"
@@ -42,54 +70,21 @@
       </wellbehaving-derived-feature>
    </extension>
    <extension
+         id="courseWeights"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="courseweights.CourseWeightsMatcherFactory$Provider"
+            id="courseWeights">
+      </matcher>
+   </extension>
+   <extension
          id="extension.derived.courseWeights"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Year"
             feature-name="weightOfRegularCourses"
             package-nsUri="http:///school-derived.ecore">
       </wellbehaving-derived-feature>
-   </extension>
-   <extension
-         id="teachers"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="teachers.TeachersMatcherFactory"
-            id="teachers">
-      </matcher>
-   </extension>
-   <extension
-         id="teachersWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="teacherswithmostcourses.TeachersWithMostCoursesMatcherFactory"
-            id="teachersWithMostCourses">
-      </matcher>
-   </extension>
-   <extension
-         id="lastYear"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="lastyear.LastYearMatcherFactory"
-            id="lastYear">
-      </matcher>
-   </extension>
-   <extension
-         id="homeroomCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="homeroomcourses.HomeroomCoursesMatcherFactory"
-            id="homeroomCourses">
-      </matcher>
-   </extension>
-   <extension
-         id="courseWeights"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factory="courseweights.CourseWeightsMatcherFactory"
-            id="courseWeights">
-      </matcher>
    </extension>
 
 </plugin>

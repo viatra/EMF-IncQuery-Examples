@@ -8,7 +8,12 @@ package operation.util;
 
 import java.util.List;
 
-import operation.*;
+import operation.Checklist;
+import operation.ChecklistEntry;
+import operation.MenuItem;
+import operation.OperationElement;
+import operation.OperationPackage;
+import operation.RuntimeInformation;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;

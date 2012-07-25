@@ -6,13 +6,16 @@
  */
 package operation.util;
 
-import operation.*;
+import operation.Checklist;
+import operation.ChecklistEntry;
+import operation.MenuItem;
+import operation.OperationElement;
+import operation.OperationPackage;
+import operation.RuntimeInformation;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

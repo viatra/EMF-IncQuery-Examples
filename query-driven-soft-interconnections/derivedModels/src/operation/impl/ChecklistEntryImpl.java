@@ -15,20 +15,16 @@ import operation.RuntimeInformation;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import process.Task;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -398,7 +394,7 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature jobs
+	 * @derived getter created by EMF-IncQuery for derived feature jobs
 	 */
 	public EList getJobs() {
 		if (jobsHandler == null) {
@@ -419,21 +415,18 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature task
+	 * @derived getter created by EMF-IncQuery for derived feature task
 	 */
 	public Task basicGetTask() {
-		if (taskHandler != null) {
-			return (process.Task) taskHandler.getSingleReferenceValue();
-		} else {
+		if (taskHandler == null) {
 			taskHandler = IncqueryFeatureHelper.createHandler(this,
 					OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
 					"operation.queries.ChecklistEntryTaskCorrespondence",
 					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true);
-			if (taskHandler != null) {
-				return (process.Task) taskHandler.getSingleReferenceValue();
-			}
 		}
-		return null;
+		return (process.Task) IncqueryFeatureHelper
+				.getSingleReferenceValueForHandler(taskHandler, this,
+						OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK);
 	}
 
 } //ChecklistEntryImpl

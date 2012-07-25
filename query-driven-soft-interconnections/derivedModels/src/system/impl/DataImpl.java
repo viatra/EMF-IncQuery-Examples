@@ -9,16 +9,14 @@ package system.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Data;
 import system.SystemPackage;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -223,7 +221,7 @@ public class DataImpl extends ResourceElementImpl implements Data {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature readingTask
+	 * @derived getter created by EMF-IncQuery for derived feature readingTask
 	 */
 	public EList getReadingTask() {
 		if (readingTaskHandler == null) {
@@ -244,7 +242,7 @@ public class DataImpl extends ResourceElementImpl implements Data {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature writingTask
+	 * @derived getter created by EMF-IncQuery for derived feature writingTask
 	 */
 	public EList getWritingTask() {
 		if (writingTaskHandler == null) {

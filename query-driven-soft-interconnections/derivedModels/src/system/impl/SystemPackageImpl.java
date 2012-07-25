@@ -7,20 +7,16 @@
 package system.impl;
 
 import operation.OperationPackage;
-
 import operation.impl.OperationPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import process.ProcessPackage;
-
 import process.impl.ProcessPackageImpl;
-
 import system.Data;
 import system.Interface;
 import system.Job;

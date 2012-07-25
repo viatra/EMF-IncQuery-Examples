@@ -9,23 +9,19 @@ package system.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Interface;
 import system.Job;
 import system.SystemPackage;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -288,7 +284,7 @@ public class JobImpl extends ResourceElementImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature tasks
+	 * @derived getter created by EMF-IncQuery for derived feature tasks
 	 */
 	public EList getTasks() {
 		if (tasksHandler == null) {
@@ -308,7 +304,7 @@ public class JobImpl extends ResourceElementImpl implements Job {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-InccQuery for derived feature info
+	 * @derived getter created by EMF-IncQuery for derived feature info
 	 */
 	public EList getInfo() {
 		if (infoHandler == null) {

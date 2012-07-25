@@ -8,10 +8,16 @@ package school.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
-import school.*;
+import school.Course;
+import school.School;
+import school.SchoolClass;
+import school.SchoolPackage;
+import school.SpecialisationCourse;
+import school.Student;
+import school.Teacher;
+import school.Year;
 
 /**
  * <!-- begin-user-doc -->

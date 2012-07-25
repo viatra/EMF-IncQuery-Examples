@@ -8,12 +8,17 @@ package school.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
-import school.*;
+import school.Course;
+import school.School;
+import school.SchoolClass;
+import school.SchoolPackage;
+import school.SpecialisationCourse;
+import school.Student;
+import school.Teacher;
+import school.Year;
 
 /**
  * <!-- begin-user-doc -->
