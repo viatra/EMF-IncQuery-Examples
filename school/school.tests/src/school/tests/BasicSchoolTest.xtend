@@ -32,7 +32,7 @@ import static org.junit.Assert.*
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class SchoolTestsBasic extends SchoolTestsBase {
+class BasicSchoolTest extends SchoolTestsBase {
 	
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper

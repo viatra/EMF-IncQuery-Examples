@@ -42,7 +42,7 @@ import school.Student
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class SchoolTestsModelManipulation extends SchoolTestsBase {
+class ModelManipulationSchoolTest extends SchoolTestsBase {
 	
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
