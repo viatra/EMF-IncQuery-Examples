@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import school.Course;
@@ -558,7 +558,7 @@ public class SchoolImpl extends EObjectImpl implements School {
 	/**
 	 * EMF-IncQuery handler for derived feature numberOfTeachers
 	 */
-	private IncqueryFeatureHandler numberOfTeachersHandler;
+	private IncqueryDerivedFeature numberOfTeachersHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -566,19 +566,17 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public int getNumberOfTeachers() {
 		if (numberOfTeachersHandler == null) {
-			numberOfTeachersHandler = IncqueryFeatureHelper.createHandler(this,
-					SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS,
+			numberOfTeachersHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
+			    SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS,
 					"teachers", "School", null, FeatureKind.COUNTER);
 		}
-		return IncqueryFeatureHelper.getIntValueForHandler(
-				numberOfTeachersHandler, this,
-				SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS);
+		return numberOfTeachersHandler.getIntValue(this);
 	}
 
 	/**
 	 * EMF-IncQuery handler for derived feature teachersWithMostCourses
 	 */
-	private IncqueryFeatureHandler teachersWithMostCoursesHandler;
+	private IncqueryDerivedFeature teachersWithMostCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -586,22 +584,19 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public EList<Teacher> getTeachersWithMostCourses() {
 		if (teachersWithMostCoursesHandler == null) {
-			teachersWithMostCoursesHandler = IncqueryFeatureHelper
-					.createHandler(
+			teachersWithMostCoursesHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
 							"teachersWithMostCourses", "School", "Teacher",
-							FeatureKind.MANY_REFERENCE, true);
+							FeatureKind.MANY_REFERENCE);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				teachersWithMostCoursesHandler, this,
-				SchoolPackageImpl.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES);
+		return teachersWithMostCoursesHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
 	 * EMF-IncQuery handler for derived feature lastYear
 	 */
-	private IncqueryFeatureHandler lastYearHandler;
+	private IncqueryDerivedFeature lastYearHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -609,13 +604,11 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public Year basicGetLastYear() {
 		if (lastYearHandler == null) {
-			lastYearHandler = IncqueryFeatureHelper.createHandler(this,
+			lastYearHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR, "lastYear",
-					"School", "Year", FeatureKind.SINGLE_REFERENCE, true);
+					"School", "Year", FeatureKind.SINGLE_REFERENCE);
 		}
-		return (school.Year) IncqueryFeatureHelper
-				.getSingleReferenceValueForHandler(lastYearHandler, this,
-						SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR);
+		return (school.Year) lastYearHandler.getSingleReferenceValue(this);
 	}
 
 } //SchoolImpl
