@@ -20,6 +20,26 @@
 		<module>../school.instancemodel</module>
 		<module>../school.tests</module>
 	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<target>
+						<artifact>
+							<groupId>org.eclipse.viatra2</groupId>
+							<artifactId>org.eclipse.viatra2.emf.incquery.tests.school.parent</artifactId>
+							<classifier>schooltest</classifier>
+						</artifact>
+					</target>
+					<ignoreTychoRepositories>true</ignoreTychoRepositories>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<scm>
 		<connection>scm:git:git://github.com/ujhelyiz/EMF-IncQuery-Examples.git</connection>
 		<url>https://github.com/ujhelyiz/EMF-IncQuery-Examples</url>
