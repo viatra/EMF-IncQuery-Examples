@@ -10,4 +10,4 @@ xtend-gen
 +.keep.txt
 !school/school.incquery/src-gen
 globalEiqModel.xmi
-school/school.incquery/queries/globalEiqModel.xmi
+!school/school.incquery/queries/globalEiqModel.xmi
