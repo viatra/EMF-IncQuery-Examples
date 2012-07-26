@@ -8,4 +8,6 @@ src-gen
 xtend-gen
 +keep.txt
 +.keep.txt
+!school/school.incquery/src-gen
 globalEiqModel.xmi
+school/school.incquery/queries/globalEiqModel.xmi
