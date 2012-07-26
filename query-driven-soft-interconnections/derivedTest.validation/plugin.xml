@@ -46,15 +46,17 @@
       </menuContribution>
    </extension>
    <extension
-         id="validation.constraint.system.queries.UndefinedServiceTasks"
+         id="validation.constraint.operation.queries.IncorrectEntryInChecklist"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
-            name="system.queries.UndefinedServiceTasks"
-            class="system.queries.undefinedservicetasks.UndefinedServiceTasksConstraint">
+            name="operation.queries.IncorrectEntryInChecklist"
+            class="operation.queries.incorrectentryinchecklist.IncorrectEntryInChecklistConstraint">
       </constraint>
    </extension>
    <extension
          id="generated.incquery.validation.menu.process.presentation.ProcessEditorID"
+         name=""
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:process.presentation.ProcessEditorID">
@@ -76,6 +78,7 @@
    </extension>
    <extension
          id="generated.incquery.validation.menu.system.presentation.SystemEditorID"
+         name=""
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:system.presentation.SystemEditorID">
@@ -97,6 +100,7 @@
    </extension>
    <extension
          id="generated.incquery.validation.menu.operation.presentation.OperationEditorID"
+         name=""
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:operation.presentation.OperationEditorID">
@@ -118,6 +122,7 @@
    </extension>
    <extension
          id="generated.incquery.validation.menu.org.eclipse.emf.ecore.presentation.EcoreEditorID"
+         name=""
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:org.eclipse.emf.ecore.presentation.EcoreEditorID">
@@ -138,15 +143,8 @@
       </menuContribution>
    </extension>
    <extension
-         id="validation.constraint.operation.queries.IncorrectEntryInChecklist"
-         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
-      <constraint
-            name="operation.queries.IncorrectEntryInChecklist"
-            class="operation.queries.incorrectentryinchecklist.IncorrectEntryInChecklistConstraint">
-      </constraint>
-   </extension>
-   <extension
          id="validation.constraint.operation.queries.TaskChecklistEntryJobCorrespondence"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
             name="operation.queries.TaskChecklistEntryJobCorrespondence"
@@ -155,10 +153,19 @@
    </extension>
    <extension
          id="validation.constraint.operation.queries.DataReadByChecklistEntry"
+         name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
             name="operation.queries.DataReadByChecklistEntry"
             class="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryConstraint">
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.system.queries.UndefinedServiceTasks"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="system.queries.UndefinedServiceTasks"
+            class="system.queries.undefinedservicetasks.UndefinedServiceTasksConstraint">
       </constraint>
    </extension>
 

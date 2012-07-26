@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -281,7 +282,7 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 	/**
 	 * EMF-IncQuery handler for derived feature process
 	 */
-	private IncqueryFeatureHandler processHandler;
+	private IncqueryDerivedFeature processHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -289,14 +290,12 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 	 */
 	public process.Process basicGetProcess() {
 		if (processHandler == null) {
-			processHandler = IncqueryFeatureHelper.createHandler(this,
-					OperationPackageImpl.Literals.CHECKLIST__PROCESS,
+			processHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
+					this, OperationPackageImpl.Literals.CHECKLIST__PROCESS,
 					"operation.queries.ChecklistProcessCorrespondence",
 					"Checklist", "Process", FeatureKind.SINGLE_REFERENCE, true);
 		}
-		return (process.Process) IncqueryFeatureHelper
-				.getSingleReferenceValueForHandler(processHandler, this,
-						OperationPackageImpl.Literals.CHECKLIST__PROCESS);
+		return (process.Process) processHandler.getSingleReferenceValue(this);
 	}
 
 } //ChecklistImpl

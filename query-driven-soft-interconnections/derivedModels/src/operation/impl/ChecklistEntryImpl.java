@@ -25,6 +25,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
 import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import process.Task;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -390,7 +391,7 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	/**
 	 * EMF-IncQuery handler for derived feature jobs
 	 */
-	private IncqueryFeatureHandler jobsHandler;
+	private IncqueryDerivedFeature jobsHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -398,20 +399,18 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	 */
 	public EList getJobs() {
 		if (jobsHandler == null) {
-			jobsHandler = IncqueryFeatureHelper.createHandler(this,
+			jobsHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS,
 					"operation.queries.ChecklistEntryJobCorrespondence", "CLE",
 					"Job", FeatureKind.MANY_REFERENCE, true);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				jobsHandler, this,
-				OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS);
+		return jobsHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
 	 * EMF-IncQuery handler for derived feature task
 	 */
-	private IncqueryFeatureHandler taskHandler;
+	private IncqueryDerivedFeature taskHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -419,14 +418,12 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	 */
 	public Task basicGetTask() {
 		if (taskHandler == null) {
-			taskHandler = IncqueryFeatureHelper.createHandler(this,
+			taskHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
 					"operation.queries.ChecklistEntryTaskCorrespondence",
 					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true);
 		}
-		return (process.Task) IncqueryFeatureHelper
-				.getSingleReferenceValueForHandler(taskHandler, this,
-						OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK);
+		return (process.Task) taskHandler.getSingleReferenceValue(this);
 	}
 
 } //ChecklistEntryImpl

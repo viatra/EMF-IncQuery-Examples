@@ -17,6 +17,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Data;
 import system.SystemPackage;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -217,7 +218,7 @@ public class DataImpl extends ResourceElementImpl implements Data {
 	/**
 	 * EMF-IncQuery handler for derived feature readingTask
 	 */
-	private IncqueryFeatureHandler readingTaskHandler;
+	private IncqueryDerivedFeature readingTaskHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -225,20 +226,19 @@ public class DataImpl extends ResourceElementImpl implements Data {
 	 */
 	public EList getReadingTask() {
 		if (readingTaskHandler == null) {
-			readingTaskHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackageImpl.Literals.DATA__READING_TASK,
-					"system.queries.DataTaskReadCorrespondence", "Data",
-					"Task", FeatureKind.MANY_REFERENCE, true);
+			readingTaskHandler = IncqueryFeatureHelper
+					.getIncqueryDerivedFeature(this,
+							SystemPackageImpl.Literals.DATA__READING_TASK,
+							"system.queries.DataTaskReadCorrespondence",
+							"Data", "Task", FeatureKind.MANY_REFERENCE, true);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				readingTaskHandler, this,
-				SystemPackageImpl.Literals.DATA__READING_TASK);
+		return readingTaskHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
 	 * EMF-IncQuery handler for derived feature writingTask
 	 */
-	private IncqueryFeatureHandler writingTaskHandler;
+	private IncqueryDerivedFeature writingTaskHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -246,14 +246,13 @@ public class DataImpl extends ResourceElementImpl implements Data {
 	 */
 	public EList getWritingTask() {
 		if (writingTaskHandler == null) {
-			writingTaskHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackageImpl.Literals.DATA__WRITING_TASK,
-					"system.queries.DataTaskWriteCorrespondence", "Data",
-					"Task", FeatureKind.MANY_REFERENCE, true);
+			writingTaskHandler = IncqueryFeatureHelper
+					.getIncqueryDerivedFeature(this,
+							SystemPackageImpl.Literals.DATA__WRITING_TASK,
+							"system.queries.DataTaskWriteCorrespondence",
+							"Data", "Task", FeatureKind.MANY_REFERENCE, true);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				writingTaskHandler, this,
-				SystemPackageImpl.Literals.DATA__WRITING_TASK);
+		return writingTaskHandler.getManyReferenceValueAsEList(this);
 	}
 
 } //DataImpl

@@ -22,6 +22,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 import system.Interface;
 import system.Job;
 import system.SystemPackage;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -280,7 +281,7 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	/**
 	 * EMF-IncQuery handler for derived feature tasks
 	 */
-	private IncqueryFeatureHandler tasksHandler;
+	private IncqueryDerivedFeature tasksHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -288,19 +289,18 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	 */
 	public EList getTasks() {
 		if (tasksHandler == null) {
-			tasksHandler = IncqueryFeatureHelper.createHandler(this,
-					SystemPackageImpl.Literals.JOB__TASKS,
+			tasksHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
+					this, SystemPackageImpl.Literals.JOB__TASKS,
 					"system.queries.JobTaskCorrespondence", "Job", "Task",
 					FeatureKind.MANY_REFERENCE, true);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				tasksHandler, this, SystemPackageImpl.Literals.JOB__TASKS);
+		return tasksHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
 	 * EMF-IncQuery handler for derived feature info
 	 */
-	private IncqueryFeatureHandler infoHandler;
+	private IncqueryDerivedFeature infoHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -308,13 +308,12 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	 */
 	public EList getInfo() {
 		if (infoHandler == null) {
-			infoHandler = IncqueryFeatureHelper.createHandler(this,
+			infoHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					SystemPackageImpl.Literals.JOB__INFO,
 					"system.queries.JobInfoCorrespondence", "Job", "Info",
 					FeatureKind.MANY_REFERENCE, true);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				infoHandler, this, SystemPackageImpl.Literals.JOB__INFO);
+		return infoHandler.getManyReferenceValueAsEList(this);
 	}
 
 } //JobImpl
