@@ -51,7 +51,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def testModelModification(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -73,7 +73,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def changeSchoolName(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -94,7 +94,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	changeNameModelModification(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -120,7 +120,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteTeacher(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -147,7 +147,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteCourse(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -176,7 +176,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	createCourse(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -206,7 +206,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	changeCourseTeacher(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -236,7 +236,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	changeCourseClass(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -271,7 +271,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def createStudent(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -302,7 +302,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def createStudentWithFriend(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -354,7 +354,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteYear(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -381,7 +381,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteSchoolClass(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -411,7 +411,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	createCourseWeight2(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -441,7 +441,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	createCourseWeight43(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -471,7 +471,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		@Test
 	def	deleteTeacher2(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -498,7 +498,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteAllYear(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -516,7 +516,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteAllTeacher(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -534,7 +534,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	deleteAllClass(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -557,7 +557,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Test
 	def	createYearClassStudent(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -620,7 +620,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		@Test
 	def	deleteTeacherCourses(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
