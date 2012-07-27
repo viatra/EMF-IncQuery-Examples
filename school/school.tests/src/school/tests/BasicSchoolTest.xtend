@@ -23,6 +23,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
+import org.junit.Ignore
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -45,7 +46,7 @@ class BasicSchoolTest extends SchoolTestsBase {
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	@Test
+	@Test@Ignore("Not working on the build as eiq files are not packaged into jar.")
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
