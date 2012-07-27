@@ -12,6 +12,9 @@
 		<groupId>org.eclipse.viatra2</groupId>
 	</parent>
 	<packaging>pom</packaging>
+	<properties>
+		<jacoco.targetdir>${project.basedir}/../target</jacoco.targetdir>
+	</properties>
 	<modules>
 		<module>../school</module>
 		<module>../school.edit</module>
