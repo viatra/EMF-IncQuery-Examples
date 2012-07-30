@@ -230,7 +230,8 @@ public class DataImpl extends ResourceElementImpl implements Data {
 					.getIncqueryDerivedFeature(this,
 							SystemPackageImpl.Literals.DATA__READING_TASK,
 							"system.queries.DataTaskReadCorrespondence",
-							"Data", "Task", FeatureKind.MANY_REFERENCE, true);
+							"Data", "Task", FeatureKind.MANY_REFERENCE, true,
+							false);
 		}
 		return readingTaskHandler.getManyReferenceValueAsEList(this);
 	}
@@ -250,7 +251,8 @@ public class DataImpl extends ResourceElementImpl implements Data {
 					.getIncqueryDerivedFeature(this,
 							SystemPackageImpl.Literals.DATA__WRITING_TASK,
 							"system.queries.DataTaskWriteCorrespondence",
-							"Data", "Task", FeatureKind.MANY_REFERENCE, true);
+							"Data", "Task", FeatureKind.MANY_REFERENCE, true,
+							false);
 		}
 		return writingTaskHandler.getManyReferenceValueAsEList(this);
 	}

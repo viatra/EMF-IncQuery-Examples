@@ -566,9 +566,12 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public int getNumberOfTeachers() {
 		if (numberOfTeachersHandler == null) {
-			numberOfTeachersHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
-			    SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS,
-					"teachers", "School", null, FeatureKind.COUNTER);
+			numberOfTeachersHandler = IncqueryFeatureHelper
+					.getIncqueryDerivedFeature(
+							this,
+							SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS,
+							"teachers", "School", null, FeatureKind.COUNTER,
+							true, false);
 		}
 		return numberOfTeachersHandler.getIntValue(this);
 	}
@@ -584,13 +587,15 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public EList<Teacher> getTeachersWithMostCourses() {
 		if (teachersWithMostCoursesHandler == null) {
-			teachersWithMostCoursesHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
+			teachersWithMostCoursesHandler = IncqueryFeatureHelper
+					.getIncqueryDerivedFeature(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
 							"teachersWithMostCourses", "School", "Teacher",
-							FeatureKind.MANY_REFERENCE);
+							FeatureKind.MANY_REFERENCE, true, false);
 		}
-		return teachersWithMostCoursesHandler.getManyReferenceValueAsEList(this);
+		return teachersWithMostCoursesHandler
+				.getManyReferenceValueAsEList(this);
 	}
 
 	/**
@@ -604,9 +609,10 @@ public class SchoolImpl extends EObjectImpl implements School {
 	 */
 	public Year basicGetLastYear() {
 		if (lastYearHandler == null) {
-			lastYearHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
-					SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR, "lastYear",
-					"School", "Year", FeatureKind.SINGLE_REFERENCE);
+			lastYearHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
+					this, SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR,
+					"lastYear", "School", "Year", FeatureKind.SINGLE_REFERENCE,
+					true, false);
 		}
 		return (school.Year) lastYearHandler.getSingleReferenceValue(this);
 	}

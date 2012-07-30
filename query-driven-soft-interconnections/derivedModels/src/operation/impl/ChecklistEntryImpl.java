@@ -402,7 +402,7 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 			jobsHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS,
 					"operation.queries.ChecklistEntryJobCorrespondence", "CLE",
-					"Job", FeatureKind.MANY_REFERENCE, true);
+					"Job", FeatureKind.MANY_REFERENCE, true, false);
 		}
 		return jobsHandler.getManyReferenceValueAsEList(this);
 	}
@@ -421,7 +421,7 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 			taskHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
 					"operation.queries.ChecklistEntryTaskCorrespondence",
-					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true);
+					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true, false);
 		}
 		return (process.Task) taskHandler.getSingleReferenceValue(this);
 	}

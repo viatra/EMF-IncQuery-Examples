@@ -29,6 +29,7 @@ import school.SchoolPackage;
 import school.Student;
 import school.Teacher;
 import school.Year;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -461,7 +462,7 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
 	/**
 	 * EMF-IncQuery handler for derived feature homeroomCourses
 	 */
-	private IncqueryFeatureHandler homeroomCoursesHandler;
+	private IncqueryDerivedFeature homeroomCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -469,14 +470,14 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
 	 */
 	public EList<Course> getHomeroomCourses() {
 		if (homeroomCoursesHandler == null) {
-			homeroomCoursesHandler = IncqueryFeatureHelper.createHandler(this,
-					SchoolPackageImpl.Literals.SCHOOL_CLASS__HOMEROOM_COURSES,
-					"homeroomCourses", "SchC", "C", FeatureKind.MANY_REFERENCE,
-					true);
+			homeroomCoursesHandler = IncqueryFeatureHelper
+					.getIncqueryDerivedFeature(
+							this,
+							SchoolPackageImpl.Literals.SCHOOL_CLASS__HOMEROOM_COURSES,
+							"homeroomCourses", "SchC", "C",
+							FeatureKind.MANY_REFERENCE, true, false);
 		}
-		return IncqueryFeatureHelper.getManyReferenceValueForHandler(
-				homeroomCoursesHandler, this,
-				SchoolPackageImpl.Literals.SCHOOL_CLASS__HOMEROOM_COURSES);
+		return homeroomCoursesHandler.getManyReferenceValueAsEList(this);
 	}
 
 } //SchoolClassImpl
