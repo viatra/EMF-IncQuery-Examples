@@ -293,7 +293,8 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 			processHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
 					this, OperationPackageImpl.Literals.CHECKLIST__PROCESS,
 					"operation.queries.ChecklistProcessCorrespondence",
-					"Checklist", "Process", FeatureKind.SINGLE_REFERENCE, true);
+					"Checklist", "Process", FeatureKind.SINGLE_REFERENCE, true,
+					false);
 		}
 		return (process.Process) processHandler.getSingleReferenceValue(this);
 	}
