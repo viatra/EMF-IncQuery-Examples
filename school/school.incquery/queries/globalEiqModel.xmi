@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/viatra2/patternlanguage/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/viatra2/patternlanguage/core/PatternLanguage" xmlns:types="http://www.eclipse.org/xtext/common/JavaVMTypes" xmlns:xbase="http://www.eclipse.org/xtext/xbase/Xbase">
+  <patterns name="school.CourseWithTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
+    <annotations name="QueryExplorer">
+      <parameters name="display">
+        <value xsi:type="patternLanguage:BoolValue"/>
+      </parameters>
+    </annotations>
+    <parameters name="C">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/teacher"/>
+            </type>
+          </tail>
+          <src var="C"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="_T"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.CourseWithoutTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
+    <annotations name="Constraint">
+      <parameters name="location">
+        <value xsi:type="patternLanguage:StringValue" value="C"/>
+      </parameters>
+      <parameters name="message">
+        <value xsi:type="patternLanguage:StringValue" value="$C.name$ does not have a teacher"/>
+      </parameters>
+      <parameters name="severity">
+        <value xsi:type="patternLanguage:StringValue" value="warning"/>
+      </parameters>
+    </annotations>
+    <parameters name="C">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
+        <call patternRef="//@patterns.0">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="C"/>
+          </parameters>
+        </call>
+      </constraints>
+    </bodies>
+  </patterns>
   <patterns name="school.schools" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="Sch"/>
     <bodies>
@@ -245,7 +302,7 @@
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.6">
+        <call patternRef="//@patterns.8">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -288,7 +345,7 @@
     <parameters name="SCName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.6">
+        <call patternRef="//@patterns.8">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -355,7 +412,7 @@
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.8">
+        <call patternRef="//@patterns.10">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -370,7 +427,7 @@
     <parameters name="TNames"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.8">
+        <call patternRef="//@patterns.10">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -572,14 +629,14 @@
               <type xsi:type="types:JvmParameterizedTypeReference">
                 <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.String#java.lang.String"/>
               </type>
-              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.1"/>
+              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
             </memberCallTarget>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.0"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.0"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -629,14 +686,14 @@
               <type xsi:type="types:JvmParameterizedTypeReference">
                 <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.String#java.lang.String"/>
               </type>
-              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.0"/>
+              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.0"/>
             </memberCallTarget>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@parameters.0"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@parameters.0"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -675,7 +732,7 @@
               <type xsi:type="types:JvmParameterizedTypeReference">
                 <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
               </type>
-              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.0"/>
+              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@variables.0"/>
             </right>
           </expressions>
           <expressions xsi:type="xbase:XIfExpression">
@@ -683,7 +740,7 @@
               <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_equals(int,int)"/>
               <leftOperand xsi:type="xbase:XBinaryOperation">
                 <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_modulo(int,int)"/>
-                <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0"/>
+                <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0"/>
                 <rightOperand xsi:type="xbase:XNumberLiteral" value="2"/>
               </leftOperand>
               <rightOperand xsi:type="xbase:XNumberLiteral" value="0"/>
@@ -702,7 +759,7 @@
                 <constructor href="java:/Objects/java.lang.Float#java.lang.Float.Float(double)"/>
                 <arguments xsi:type="xbase:XFeatureCall" explicitOperationCall="true">
                   <feature xsi:type="types:JvmOperation" href="java:/Objects/java.lang.Math#java.lang.Math.sqrt(double)"/>
-                  <featureCallArguments xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0"/>
+                  <featureCallArguments xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0"/>
                   <declaringType xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Math#java.lang.Math"/>
                 </arguments>
               </featureCallArguments>
@@ -718,8 +775,8 @@
           <expressions xsi:type="xbase:XWhileExpression">
             <predicate xsi:type="xbase:XBinaryOperation">
               <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessEqualsThan(java.lang.Comparable,C)"/>
-              <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.3"/>
-              <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.2"/>
+              <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.3"/>
+              <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.2"/>
             </predicate>
             <body xsi:type="xbase:XBlockExpression">
               <expressions xsi:type="xbase:XIfExpression">
@@ -727,18 +784,18 @@
                   <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_equals(int,int)"/>
                   <leftOperand xsi:type="xbase:XBinaryOperation">
                     <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_modulo(int,int)"/>
-                    <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0"/>
-                    <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.3"/>
+                    <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0"/>
+                    <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.3"/>
                   </leftOperand>
                   <rightOperand xsi:type="xbase:XNumberLiteral" value="0"/>
                 </if>
                 <then xsi:type="xbase:XReturnExpression">
                   <expression xsi:type="xbase:XBooleanLiteral"/>
                 </then>
-                <else xsi:type="xbase:XAssignment" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.3">
+                <else xsi:type="xbase:XAssignment" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.3">
                   <value xsi:type="xbase:XBinaryOperation">
                     <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_plus(int,int)"/>
-                    <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.3"/>
+                    <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.3"/>
                     <rightOperand xsi:type="xbase:XNumberLiteral" value="2"/>
                   </value>
                 </else>
@@ -775,7 +832,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.8">
+          <call patternRef="//@patterns.10">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="T1"/>
             </parameters>
@@ -791,7 +848,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.8">
+          <call patternRef="//@patterns.10">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="T2"/>
             </parameters>
@@ -808,13 +865,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.3"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.21/@bodies.0/@variables.3"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.21/@bodies.0/@variables.2"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -828,7 +885,7 @@
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.19">
+        <call patternRef="//@patterns.21">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Tx"/>
           </parameters>
@@ -905,7 +962,7 @@
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.21" transitive="true">
+        <call patternRef="//@patterns.23" transitive="true">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S1"/>
           </parameters>
@@ -929,7 +986,7 @@
     <parameters name="SomeoneName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.21" transitive="true">
+        <call patternRef="//@patterns.23" transitive="true">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S1"/>
           </parameters>
@@ -1003,7 +1060,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.22">
+          <call patternRef="//@patterns.24">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="S1"/>
             </parameters>
@@ -1019,7 +1076,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.22">
+          <call patternRef="//@patterns.24">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="S2"/>
             </parameters>
@@ -1036,13 +1093,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.3"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.26/@bodies.0/@variables.3"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.26/@bodies.0/@variables.2"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -1056,7 +1113,7 @@
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.24">
+        <call patternRef="//@patterns.26">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Sx"/>
           </parameters>
@@ -1071,7 +1128,7 @@
     <parameters name="SName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.24">
+        <call patternRef="//@patterns.26">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Sx"/>
           </parameters>
@@ -1213,14 +1270,14 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.25">
+        <call patternRef="//@patterns.27">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S"/>
           </parameters>
         </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.20">
+        <call patternRef="//@patterns.22">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -1327,14 +1384,14 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.25">
+        <call patternRef="//@patterns.27">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S"/>
           </parameters>
         </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.20">
+        <call patternRef="//@patterns.22">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -1403,63 +1460,6 @@
             <value var="SName"/>
           </dst>
         </head>
-      </constraints>
-    </bodies>
-  </patterns>
-  <patterns name="school.CourseWithTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
-    <annotations name="QueryExplorer">
-      <parameters name="display">
-        <value xsi:type="patternLanguage:BoolValue"/>
-      </parameters>
-    </annotations>
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
-    <bodies>
-      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
-        <head>
-          <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-          </type>
-          <tail>
-            <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/teacher"/>
-            </type>
-          </tail>
-          <src var="C"/>
-          <dst xsi:type="patternLanguage:VariableValue">
-            <value var="_T"/>
-          </dst>
-        </head>
-      </constraints>
-    </bodies>
-  </patterns>
-  <patterns name="school.CourseWithoutTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
-    <annotations name="Constraint">
-      <parameters name="location">
-        <value xsi:type="patternLanguage:StringValue" value="C"/>
-      </parameters>
-      <parameters name="message">
-        <value xsi:type="patternLanguage:StringValue" value="$C.name$ does not have a teacher"/>
-      </parameters>
-      <parameters name="severity">
-        <value xsi:type="patternLanguage:StringValue" value="warning"/>
-      </parameters>
-    </annotations>
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
-    <bodies>
-      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.29">
-          <parameters xsi:type="patternLanguage:VariableValue">
-            <value var="C"/>
-          </parameters>
-        </call>
       </constraints>
     </bodies>
   </patterns>
