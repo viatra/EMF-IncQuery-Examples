@@ -46,6 +46,28 @@
       </menuContribution>
    </extension>
    <extension
+         id="generated.incquery.validation.menu.org.eclipse.emf.ecore.presentation.EcoreEditorID"
+         name=""
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.emf.ecore.presentation.EcoreEditorID">
+         <menu
+               label="EMF-IncQuery">
+            <command
+                  commandId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.initValidatorsOnEditor"
+                  label="Initialize EMF-IncQuery Validators"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.notifierdef">
+                  </reference>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
          id="validation.constraint.operation.queries.IncorrectEntryInChecklist"
          name=""
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
@@ -104,28 +126,6 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="popup:operation.presentation.OperationEditorID">
-         <menu
-               label="EMF-IncQuery">
-            <command
-                  commandId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.initValidatorsOnEditor"
-                  label="Initialize EMF-IncQuery Validators"
-                  style="push">
-               <visibleWhen
-                     checkEnabled="false">
-                  <reference
-                        definitionId="org.eclipse.viatra2.emf.incquery.validation.runtime.ui.notifierdef">
-                  </reference>
-               </visibleWhen>
-            </command>
-         </menu>
-      </menuContribution>
-   </extension>
-   <extension
-         id="generated.incquery.validation.menu.org.eclipse.emf.ecore.presentation.EcoreEditorID"
-         name=""
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="popup:org.eclipse.emf.ecore.presentation.EcoreEditorID">
          <menu
                label="EMF-IncQuery">
             <command

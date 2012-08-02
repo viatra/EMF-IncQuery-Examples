@@ -26,6 +26,7 @@ import school.School;
 import school.SchoolClass;
 import school.SchoolPackage;
 import school.Year;
+import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -340,7 +341,7 @@ public class YearImpl extends EObjectImpl implements Year {
 	/**
 	 * EMF-IncQuery handler for derived feature weightOfRegularCourses
 	 */
-	private IncqueryFeatureHandler weightOfRegularCoursesHandler;
+	private IncqueryDerivedFeature weightOfRegularCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -349,14 +350,13 @@ public class YearImpl extends EObjectImpl implements Year {
 	public int getWeightOfRegularCourses() {
 		if (weightOfRegularCoursesHandler == null) {
 			weightOfRegularCoursesHandler = IncqueryFeatureHelper
-					.createHandler(
+					.getIncqueryDerivedFeature(
 							this,
 							SchoolPackageImpl.Literals.YEAR__WEIGHT_OF_REGULAR_COURSES,
-							"courseWeights", "Y", "W", FeatureKind.SUM);
+							"courseWeights", "Y", "W", FeatureKind.SUM, true,
+							false);
 		}
-		return IncqueryFeatureHelper.getIntValueForHandler(
-				weightOfRegularCoursesHandler, this,
-				SchoolPackageImpl.Literals.YEAR__WEIGHT_OF_REGULAR_COURSES);
+		return weightOfRegularCoursesHandler.getIntValue(this);
 	}
 
 } //YearImpl

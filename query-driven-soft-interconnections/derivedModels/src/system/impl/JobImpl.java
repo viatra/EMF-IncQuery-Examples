@@ -292,7 +292,7 @@ public class JobImpl extends ResourceElementImpl implements Job {
 			tasksHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
 					this, SystemPackageImpl.Literals.JOB__TASKS,
 					"system.queries.JobTaskCorrespondence", "Job", "Task",
-					FeatureKind.MANY_REFERENCE, true);
+					FeatureKind.MANY_REFERENCE, true, false);
 		}
 		return tasksHandler.getManyReferenceValueAsEList(this);
 	}
@@ -311,7 +311,7 @@ public class JobImpl extends ResourceElementImpl implements Job {
 			infoHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
 					SystemPackageImpl.Literals.JOB__INFO,
 					"system.queries.JobInfoCorrespondence", "Job", "Info",
-					FeatureKind.MANY_REFERENCE, true);
+					FeatureKind.MANY_REFERENCE, true, false);
 		}
 		return infoHandler.getManyReferenceValueAsEList(this);
 	}
