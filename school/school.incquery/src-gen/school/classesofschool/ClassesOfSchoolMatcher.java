@@ -21,11 +21,12 @@ import school.classesofschool.ClassesOfSchoolMatcherFactory;
  * Generated pattern matcher API of the classesOfSchool pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  pattern classesOfSchool(SC)= {
+ * <p>Original source:
+ * <code><pre>
+ * pattern classesOfSchool(SC)= {
  *  	SchoolClass(SC);
  *  }
+ * </pre></code>
  * 
  * @see ClassesOfSchoolMatch
  * @see ClassesOfSchoolMatcherFactory

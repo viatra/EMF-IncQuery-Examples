@@ -20,14 +20,15 @@ import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory;
  * Generated pattern matcher API of the inTheCircleOfFriendsNames pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *    pattern inTheCircleOfFriendsNames(S1Name,SomeoneName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern inTheCircleOfFriendsNames(S1Name,SomeoneName) = {
  *    	find friendlyTo+(S1,Someone);
  *    	S1!=Someone; // we do not allow self loops
  *    	Student.name(S1, S1Name);
  *    	Student.name(Someone, SomeoneName);
  *    }
+ * </pre></code>
  * 
  * @see InTheCircleOfFriendsNamesMatch
  * @see InTheCircleOfFriendsNamesMatcherFactory

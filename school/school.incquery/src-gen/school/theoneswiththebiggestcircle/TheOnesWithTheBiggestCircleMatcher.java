@@ -21,12 +21,12 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFact
  * Generated pattern matcher API of the theOnesWithTheBiggestCircle pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *     
- *    pattern theOnesWithTheBiggestCircle(S:Student) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern theOnesWithTheBiggestCircle(S:Student) = {
  *    	neg find moreFriendsThan(_Sx,S);
  *    }
+ * </pre></code>
  * 
  * @see TheOnesWithTheBiggestCircleMatch
  * @see TheOnesWithTheBiggestCircleMatcherFactory

@@ -21,12 +21,12 @@ import school.teachers.TeachersMatcherFactory;
  * Generated pattern matcher API of the teachers pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *   
- *  pattern teachers(T) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern teachers(T) = {
  *  	Teacher(T);
  *  }
+ * </pre></code>
  * 
  * @see TeachersMatch
  * @see TeachersMatcherFactory

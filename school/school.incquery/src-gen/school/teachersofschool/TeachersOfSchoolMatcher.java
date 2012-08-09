@@ -22,15 +22,14 @@ import school.teachersofschool.TeachersOfSchoolMatcherFactory;
  * Generated pattern matcher API of the teachersOfSchool pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  
- *   
- *  pattern teachersOfSchool(T:Teacher,Sch:School) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern teachersOfSchool(T:Teacher,Sch:School) = {
  *  	School.teachers(Sch,T); 
  *  	// note that there is no restriction on the direction of navigation:
- *  	// all \"Sch\"s can be queried from Ts and vice-versa
+ *  	// all "Sch"s can be queried from Ts and vice-versa
  *  }
+ * </pre></code>
  * 
  * @see TeachersOfSchoolMatch
  * @see TeachersOfSchoolMatcherFactory

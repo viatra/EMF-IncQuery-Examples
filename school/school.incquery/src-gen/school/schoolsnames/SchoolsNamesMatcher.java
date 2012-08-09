@@ -20,11 +20,12 @@ import school.schoolsnames.SchoolsNamesMatcherFactory;
  * Generated pattern matcher API of the schoolsNames pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  pattern schoolsNames(SchName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern schoolsNames(SchName) = {
  *  	School.name(_Sch, SchName);
  *  }
+ * </pre></code>
  * 
  * @see SchoolsNamesMatch
  * @see SchoolsNamesMatcherFactory

@@ -20,12 +20,13 @@ import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory;
  * Generated pattern matcher API of the teacherWithoutClassNames pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  pattern teacherWithoutClassNames(TNames) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern teacherWithoutClassNames(TNames) = {
  * 	neg find classesOfTeacher(T,_SC); 	
  * 	Teacher.name(T, TNames);
  *  }
+ * </pre></code>
  * 
  * @see TeacherWithoutClassNamesMatch
  * @see TeacherWithoutClassNamesMatcherFactory

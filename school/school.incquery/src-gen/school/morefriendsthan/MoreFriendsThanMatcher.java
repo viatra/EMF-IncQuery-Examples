@@ -21,15 +21,15 @@ import school.morefriendsthan.MoreFriendsThanMatcherFactory;
  * Generated pattern matcher API of the moreFriendsThan pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *     
- *    @QueryExplorer(display = false)
+ * <p>Original source:
+ * <code><pre>
+ * {@literal @}QueryExplorer(display = false)
  *    pattern moreFriendsThan(S1:Student,S2:Student) = {
  *    	N == count find inTheCircleOfFriends(S1,_Sx1);
  *    	M == count find inTheCircleOfFriends(S2,_Sx2);
- *    	check ((N as Integer) > (M as Integer));
+ *    	check ((N as Integer) {@literal >} (M as Integer));
  *    }
+ * </pre></code>
  * 
  * @see MoreFriendsThanMatch
  * @see MoreFriendsThanMatcherFactory

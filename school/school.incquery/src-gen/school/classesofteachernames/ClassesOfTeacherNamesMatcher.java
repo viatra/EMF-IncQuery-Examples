@@ -20,14 +20,15 @@ import school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory;
  * Generated pattern matcher API of the classesOfTeacherNames pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- * 
- *  pattern classesOfTeacherNames(TName, SCName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern classesOfTeacherNames(TName, SCName) = {
  *  	find coursesOfTeacher(T,C);
  *  	Teacher.name(T, TName);
  *  	Course.schoolClass(C,SC);
  *  	SchoolClass.code(SC, SCName); 	
  *  }
+ * </pre></code>
  * 
  * @see ClassesOfTeacherNamesMatch
  * @see ClassesOfTeacherNamesMatcherFactory

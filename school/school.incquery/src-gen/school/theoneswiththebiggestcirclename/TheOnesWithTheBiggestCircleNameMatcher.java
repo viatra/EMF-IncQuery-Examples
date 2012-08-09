@@ -20,12 +20,13 @@ import school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMat
  * Generated pattern matcher API of the theOnesWithTheBiggestCircleName pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *    pattern theOnesWithTheBiggestCircleName(SName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern theOnesWithTheBiggestCircleName(SName) = {
  *    	neg find moreFriendsThan(_Sx,S);
  *    	Student.name(S, SName);
  *    }
+ * </pre></code>
  * 
  * @see TheOnesWithTheBiggestCircleNameMatch
  * @see TheOnesWithTheBiggestCircleNameMatcherFactory

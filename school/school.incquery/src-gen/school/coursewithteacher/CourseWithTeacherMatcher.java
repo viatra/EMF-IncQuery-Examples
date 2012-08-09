@@ -21,11 +21,11 @@ import school.coursewithteacher.CourseWithTeacherMatcherFactory;
  * Generated pattern matcher API of the CourseWithTeacher pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- * 
- * 
- * @QueryExplorer(display = false)
+ * <p>Original source:
+ * <code><pre>
+ * {@literal @}QueryExplorer(display = false)
  * pattern CourseWithTeacher(C : Course) = {Course.teacher(C,_T);}
+ * </pre></code>
  * 
  * @see CourseWithTeacherMatch
  * @see CourseWithTeacherMatcherFactory

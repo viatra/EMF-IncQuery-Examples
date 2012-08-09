@@ -21,12 +21,12 @@ import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory;
  * Generated pattern matcher API of the teachesTheMostCourses pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *   
- *    
- *   pattern teachesTheMostCourses(T:Teacher) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern teachesTheMostCourses(T:Teacher) = {
  *   	neg find teachesMoreClasses(_Tx,T); // there is noone who would teach more courses
  *   }
+ * </pre></code>
  * 
  * @see TeachesTheMostCoursesMatch
  * @see TeachesTheMostCoursesMatcherFactory

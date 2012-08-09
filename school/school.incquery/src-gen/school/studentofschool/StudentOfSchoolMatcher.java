@@ -22,15 +22,16 @@ import school.studentofschool.StudentOfSchoolMatcherFactory;
  * Generated pattern matcher API of the studentOfSchool pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- * 
- *  // Step 3: path expressions
+ * <p>Original source:
+ * <code><pre>
+ * // Step 3: path expressions
  *  
  *   
  *  pattern studentOfSchool(S:Student,Sch:School) = {
  *  	Student.schoolClass.courses.school(S,Sch);
  *  	// logically equivalent: School.courses.schoolClass.students(Sch,S);
  *  }
+ * </pre></code>
  * 
  * @see StudentOfSchoolMatch
  * @see StudentOfSchoolMatcherFactory

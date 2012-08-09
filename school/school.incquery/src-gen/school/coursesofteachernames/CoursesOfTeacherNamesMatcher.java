@@ -20,13 +20,14 @@ import school.coursesofteachernames.CoursesOfTeacherNamesMatcherFactory;
  * Generated pattern matcher API of the coursesOfTeacherNames pattern, 
  * providing pattern-specific query methods.
  * 
- *  
- *  
- *  pattern coursesOfTeacherNames(TName, CName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern coursesOfTeacherNames(TName, CName) = {
  *  	Teacher.courses(T,C);
  *  	Teacher.name(T, TName); 
  *  	Course.subject(C, CName);
  *  }
+ * </pre></code>
  * 
  * @see CoursesOfTeacherNamesMatch
  * @see CoursesOfTeacherNamesMatcherFactory

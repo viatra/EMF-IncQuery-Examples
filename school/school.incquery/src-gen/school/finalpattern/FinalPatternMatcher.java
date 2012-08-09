@@ -24,17 +24,16 @@ import school.finalpattern.FinalPatternMatcherFactory;
  * Generated pattern matcher API of the finalPattern pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *    
- * // Step 7: combine everything, @PatternUI, @ObservableValue, @Handler
+ * <p>Original source:
+ * <code><pre>
+ * // Step 7: combine everything, {@literal @}PatternUI, {@literal @}ObservableValue, {@literal @}Handler
  * 
  *     
- *     @PatternUI(message=\"The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$\")
- *     @ObservableValue(name = \"Year\", expression=\"Y.startingDate\")
- *     @ObservableValue(name = \"Teacher\", expression=\"T.name\")
- *     @ObservableValue(name = \"Student\", expression=\"S.name\")
- *     @Handler(fileExtension = \"school\")
+ *     {@literal @}PatternUI(message="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
+ *     {@literal @}ObservableValue(name = "Year", expression="Y.startingDate")
+ *     {@literal @}ObservableValue(name = "Teacher", expression="T.name")
+ *     {@literal @}ObservableValue(name = "Student", expression="S.name")
+ *     {@literal @}Handler(fileExtension = "school")
  *     pattern finalPattern(Y:Year,C:Course,T:Teacher,S:Student) = {
  *     	Year.schoolClasses.courses(Y,C);
  *     	Course.teacher(C,T);
@@ -43,6 +42,7 @@ import school.finalpattern.FinalPatternMatcherFactory;
  *     	find theOnesWithTheBiggestCircle(S);
  *     	find teachesTheMostCourses(T);
  *     }
+ * </pre></code>
  * 
  * @see FinalPatternMatch
  * @see FinalPatternMatcherFactory

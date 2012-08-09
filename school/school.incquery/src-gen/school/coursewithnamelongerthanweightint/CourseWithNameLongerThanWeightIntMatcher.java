@@ -20,14 +20,15 @@ import school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIn
  * Generated pattern matcher API of the courseWithNameLongerThanWeightInt pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  pattern courseWithNameLongerThanWeightInt(W) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern courseWithNameLongerThanWeightInt(W) = {
  *  	Course.subject(C,CName);
  *  	Course.weight(C,W);
- *  	check((CName as String).length > (W as Integer));
+ *  	check((CName as String).length {@literal >} (W as Integer));
  *  	// casts will not be necessary once IncQuery has full type inference (v.0.7)
  *  }
+ * </pre></code>
  * 
  * @see CourseWithNameLongerThanWeightIntMatch
  * @see CourseWithNameLongerThanWeightIntMatcherFactory

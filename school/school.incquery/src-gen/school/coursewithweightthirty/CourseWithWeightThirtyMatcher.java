@@ -21,14 +21,15 @@ import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory;
  * Generated pattern matcher API of the courseWithWeightThirty pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *   
+ * <p>Original source:
+ * <code><pre>
  * // Step 4: check conditions
  *   
  *   
  *  pattern courseWithWeightThirty(C:Course) = {
  *  	Course.weight(C,30);
  *  }
+ * </pre></code>
  * 
  * @see CourseWithWeightThirtyMatch
  * @see CourseWithWeightThirtyMatcherFactory

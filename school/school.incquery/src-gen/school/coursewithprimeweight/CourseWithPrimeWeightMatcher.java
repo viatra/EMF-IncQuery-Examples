@@ -21,17 +21,16 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory;
  * Generated pattern matcher API of the courseWithPrimeWeight pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *    
- *  pattern courseWithPrimeWeight(C:Course) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern courseWithPrimeWeight(C:Course) = {
  *  	Course.weight(C,W);
  *  	check({ // make sure the check() expression returns a boolean value on all execution paths
  *  		var Integer weight = (W as Integer) 
  *  		if (weight%2==0) return false
  *  		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
  *  		var Integer divisor = 3
- *  		while (divisor<=maxValue) {
+ *  		while (divisor{@literal <}=maxValue) {
  *  			if (weight%divisor==0) return false // we have found a divisor
  *  			else divisor = divisor + 2;
  *  			}
@@ -39,6 +38,7 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory;
  *  		}
  *  	);
  *  }
+ * </pre></code>
  * 
  * @see CourseWithPrimeWeightMatch
  * @see CourseWithPrimeWeightMatcherFactory

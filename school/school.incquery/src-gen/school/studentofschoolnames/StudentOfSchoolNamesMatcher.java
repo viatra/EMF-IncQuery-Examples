@@ -20,14 +20,15 @@ import school.studentofschoolnames.StudentOfSchoolNamesMatcherFactory;
  * Generated pattern matcher API of the studentOfSchoolNames pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  pattern studentOfSchoolNames(SName, SchName) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern studentOfSchoolNames(SName, SchName) = {
  *  	Student.schoolClass.courses.school(S,Sch);
  *  	Student.name(S, SName);
  *  	School.name(Sch, SchName);
  *  	// logically equivalent: School.courses.schoolClass.students(Sch,S);
  *  }
+ * </pre></code>
  * 
  * @see StudentOfSchoolNamesMatch
  * @see StudentOfSchoolNamesMatcherFactory

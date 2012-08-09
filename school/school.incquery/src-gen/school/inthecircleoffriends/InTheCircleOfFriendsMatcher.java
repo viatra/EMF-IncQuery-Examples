@@ -21,15 +21,15 @@ import school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory;
  * Generated pattern matcher API of the inTheCircleOfFriends pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *    
- *     
- *    pattern inTheCircleOfFriends(S1:Student,Someone:Student) = {
+ * <p>Original source:
+ * <code><pre>
+ * pattern inTheCircleOfFriends(S1:Student,Someone:Student) = {
  *    	find friendlyTo+(S1,Someone);
  *    	S1!=Someone; // we do not allow self loops
  *    	// this is not only a short-hand notation, but also much more efficient!
  *    	// use it whenever possible
  *    }
+ * </pre></code>
  * 
  * @see InTheCircleOfFriendsMatch
  * @see InTheCircleOfFriendsMatcherFactory

@@ -21,16 +21,17 @@ import school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory;
  * Generated pattern matcher API of the CourseWithoutTeacher pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- * 
- * @Constraint(
- * 	location = \"C\", 
- * 	message = \"$C.name$ does not have a teacher\",
- * 	severity = \"warning\"
+ * <p>Original source:
+ * <code><pre>
+ * {@literal @}Constraint(
+ * 	location = "C", 
+ * 	message = "$C.name$ does not have a teacher",
+ * 	severity = "warning"
  * )
  * pattern CourseWithoutTeacher(C : Course) = {
  * 	neg find CourseWithTeacher(C);
  * }
+ * </pre></code>
  * 
  * @see CourseWithoutTeacherMatch
  * @see CourseWithoutTeacherMatcherFactory

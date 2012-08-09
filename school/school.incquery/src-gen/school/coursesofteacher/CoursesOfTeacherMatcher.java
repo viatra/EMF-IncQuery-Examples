@@ -22,15 +22,15 @@ import school.coursesofteacher.CoursesOfTeacherMatcherFactory;
  * Generated pattern matcher API of the coursesOfTeacher pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  
+ * <p>Original source:
+ * <code><pre>
  * // Step 2: pattern calls, negative application conditions
  * 
  *  
  *  pattern coursesOfTeacher(T:Teacher, C:Course) = {
  *  	Teacher.courses(T,C);
  *  }
+ * </pre></code>
  * 
  * @see CoursesOfTeacherMatch
  * @see CoursesOfTeacherMatcherFactory

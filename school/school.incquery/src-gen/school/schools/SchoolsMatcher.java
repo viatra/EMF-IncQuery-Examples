@@ -21,15 +21,15 @@ import school.schools.SchoolsMatcherFactory;
  * Generated pattern matcher API of the schools pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- * 
- *  
- *  // Step 1: simple queries
+ * <p>Original source:
+ * <code><pre>
+ * // Step 1: simple queries
  *  
  *   
  *  pattern schools(Sch) = {
  *  	School(Sch);
  *  }
+ * </pre></code>
  * 
  * @see SchoolsMatch
  * @see SchoolsMatcherFactory

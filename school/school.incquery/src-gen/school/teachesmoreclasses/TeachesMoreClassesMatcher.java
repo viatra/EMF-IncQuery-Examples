@@ -21,20 +21,21 @@ import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory;
  * Generated pattern matcher API of the teachesMoreClasses pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *  
- *  // for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
+ * <p>Original source:
+ * <code><pre>
+ * // for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
  *  // for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
  *  
  *  // Step 5: counting (match cardinalities)
  *   
  *    
- *   @QueryExplorer(display = false)
+ *   {@literal @}QueryExplorer(display = false)
  *   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) = {
  *   	N == count find classesOfTeacher(T1,_SC1);
  *   	M == count find classesOfTeacher(T2,_SC2);
- *   	check((N as Integer) > (M as Integer));
+ *   	check((N as Integer) {@literal >} (M as Integer));
  *   }
+ * </pre></code>
  * 
  * @see TeachesMoreClassesMatch
  * @see TeachesMoreClassesMatcherFactory

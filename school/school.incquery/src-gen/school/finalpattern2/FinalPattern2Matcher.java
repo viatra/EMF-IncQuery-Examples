@@ -20,13 +20,13 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  * Generated pattern matcher API of the finalPattern2 pattern, 
  * providing pattern-specific query methods.
  * 
- * 
- *     
- *     @PatternUI(message=\"The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$\")
- *     @ObservableValue(name = \"Year\", expression=\"YDate\")
- *     @ObservableValue(name = \"Teacher\", expression=\"TName\")
- *     @ObservableValue(name = \"Student\", expression=\"SName\")
- *     @Handler(fileExtension = \"school\")
+ * <p>Original source:
+ * <code><pre>
+ * {@literal @}PatternUI(message="The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+ *     {@literal @}ObservableValue(name = "Year", expression="YDate")
+ *     {@literal @}ObservableValue(name = "Teacher", expression="TName")
+ *     {@literal @}ObservableValue(name = "Student", expression="SName")
+ *     {@literal @}Handler(fileExtension = "school")
  *     pattern finalPattern2(YDate, CSub, TName, SName) = {
  *     	Year.schoolClasses.courses(Y,C);
  *     	Course.teacher(C,T);
@@ -40,6 +40,7 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  *     	Teacher.name(T, TName);
  *     	Student.name(S, SName);
  *     }
+ * </pre></code>
  * 
  * @see FinalPattern2Match
  * @see FinalPattern2MatcherFactory
