@@ -16,6 +16,7 @@ import com.google.inject.Inject
 import org.eclipse.viatra2.emf.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
 import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
 import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra2.emf.incquery.testing.core.base.CommonStaticQueryTester
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -23,23 +24,23 @@ import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
  * @author Istvan Rath
  */
 
-class SchoolTestsBase {
+class SchoolTestsBase extends CommonStaticQueryTester {
 	
 	@Inject extension ModelLoadHelper
 	
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	def queryInputXMI() { // Creates new resource set
-		return "school.incquery/queries/globalEiqModel.xmi".loadPatternModelFromUri as PatternModel
+	override queryInputXMIURI() { // Creates new resource set
+		"school.incquery/queries/globalEiqModel.xmi"
 	}
 	
 	def queryInputEIQ() { // Creates new resource set
 		return "school.incquery/src/school/schoolqueries.eiq".loadPatternModelFromUri as PatternModel
 	}
 		
-	def snapshot() { // Creates new resource set
-		return "school.tests/model/tests.eiqsnapshot".loadExpectedResultsFromUri as IncQuerySnapshot
+	override snapshotURI() { 
+		return "school.tests/model/tests.eiqsnapshot"
 	}
 
 		

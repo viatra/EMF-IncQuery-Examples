@@ -13,8 +13,6 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
-import org.eclipse.viatra2.emf.incquery.testing.core.SnapshotHelper
 import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
 import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
@@ -24,6 +22,23 @@ import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
 import org.junit.Ignore
+import school.schools.SchoolsMatcherFactory
+import school.teachers.TeachersMatcherFactory
+import school.teachersofschool.TeachersOfSchoolMatcherFactory
+import school.coursesofteacher.CoursesOfTeacherMatcherFactory
+import school.classesofteacher.ClassesOfTeacherMatcherFactory
+import school.teacherwithoutclass.TeacherWithoutClassMatcherFactory
+import school.studentofschool.StudentOfSchoolMatcherFactory
+import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory
+import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatcherFactory
+import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory
+import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory
+import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory
+import school.friendlyto.FriendlyToMatcherFactory
+import school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory
+import school.morefriendsthan.MoreFriendsThanMatcherFactory
+import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory
+import school.finalpattern.FinalPatternMatcherFactory
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -36,8 +51,6 @@ import org.junit.Ignore
 class BasicSchoolTest extends SchoolTestsBase {
 	
 	@Inject extension TestExecutor
-	@Inject extension ModelLoadHelper
-	@Inject extension SnapshotHelper
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
@@ -50,14 +63,7 @@ class BasicSchoolTest extends SchoolTestsBase {
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
-		
-	def testQuery(String queryFQN){
-		val sns = snapshot
-		val matcher = queryInputXMI.initializeMatcherFromModel(sns.EMFRootForSnapshot, queryFQN)
-		val results = matcher.compareResultSets(sns.getMatchSetRecordForPattern(queryFQN))
-		assertArrayEquals(newHashSet,results)
-	}
-	
+			
 	// simple test cases, for each query of the school example
 	 
 	@Test def testSchools() { testQuery("school.schools") }
@@ -77,5 +83,23 @@ class BasicSchoolTest extends SchoolTestsBase {
 	@Test def testMoreFriendsThan() { testQuery("school.moreFriendsThan") }
 	@Test def testTheOnesWithTheBiggestCircle() { testQuery("school.theOnesWithTheBiggestCircle") }
 	@Test def testFinalPattern() { testQuery("school.finalPattern") }	
+	
+	@Test def mfTestSchools() { testQuery(SchoolsMatcherFactory::instance) }
+	@Test def mfTestTeachers() { testQuery(TeachersMatcherFactory::instance) }
+	@Test def mfTestTeachersOfSchool() { testQuery(TeachersOfSchoolMatcherFactory::instance) }
+	@Test def mfTestCoursesOfTeacher() { testQuery(CoursesOfTeacherMatcherFactory::instance) }
+	@Test def mfTestClassesOfTeacher() { testQuery(ClassesOfTeacherMatcherFactory::instance) }
+	@Test def mfTestTeacherWithoutClass() { testQuery(TeacherWithoutClassMatcherFactory::instance) }
+	@Test def mfTestStudentOfSchool() { testQuery(StudentOfSchoolMatcherFactory::instance) }
+	@Test def mfTestCourseWithWeightThirty() { testQuery(CourseWithWeightThirtyMatcherFactory::instance) }
+	@Test def mfTestCourseWithNameLongerThanWeight() { testQuery(CourseWithNameLongerThanWeightMatcherFactory::instance) }
+	@Test def mfTestCourseWithPrimeWeight() { testQuery(CourseWithPrimeWeightMatcherFactory::instance) }
+	@Test def mfTestTeachesMoreClasses() { testQuery(TeachesMoreClassesMatcherFactory::instance) }
+	@Test def mfTestTeachesTheMostCourses() { testQuery(TeachesTheMostCoursesMatcherFactory::instance) }
+	@Test def mfTestFriendlyTo() { testQuery(FriendlyToMatcherFactory::instance) }
+	@Test def mfTestInTheCircleOfFriends() { testQuery(InTheCircleOfFriendsMatcherFactory::instance) }
+	@Test def mfTestMoreFriendsThan() { testQuery(MoreFriendsThanMatcherFactory::instance) }
+	@Test def mfTestTheOnesWithTheBiggestCircle() { testQuery(TheOnesWithTheBiggestCircleMatcherFactory::instance) }
+	@Test def mfTestFinalPattern() { testQuery(FinalPatternMatcherFactory::instance) }	
 	
 }

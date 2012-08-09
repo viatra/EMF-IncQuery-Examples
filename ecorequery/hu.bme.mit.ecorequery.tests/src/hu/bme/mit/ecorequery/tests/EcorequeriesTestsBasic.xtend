@@ -13,6 +13,19 @@ import org.junit.runner.RunWith
 import static org.junit.Assert.*
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eclass.EClassMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactory
 
 /**
  * Basic test set for testing IncQuery with the ECore Queries example.
@@ -43,13 +56,6 @@ class EcorequeriesTestsBasic extends EcorequeryTestsBase {
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
 		
-	def testQuery(String queryFQN){
-		val sns = snapshot
-		val matcher = queryInputXMI.initializeMatcherFromModel(sns.EMFRootForSnapshot, queryFQN)
-		val results = matcher.compareResultSets(sns.getMatchSetRecordForPattern(queryFQN))
-		assertArrayEquals(newHashSet,results)
-	}
-	
 	// simple test cases, for each query of the school example
 	 
 	@Test def testEObject() { testQuery("hu.bme.mit.incquery.ecorequeries.example.EObject") }
@@ -65,6 +71,18 @@ class EcorequeriesTestsBasic extends EcorequeryTestsBase {
 	@Test def testECoreNamedElement() { testQuery("hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement") }
 	@Test def testIsInECore() { testQuery("hu.bme.mit.incquery.ecorequeries.example.IsInECore") }
 
+	@Test def mfTestEObject() { testQuery(EObjectMatcherFactory::instance) }
+	@Test def mfTestEClass() { testQuery(EClassMatcherFactory::instance) }
+	@Test def mfTestSuperTypeOf() { testQuery(SuperTypeOfMatcherFactory::instance) }
+	@Test def mfTestEClassAttribute() { testQuery(EClassAttributeMatcherFactory::instance) }
+	@Test def mfTestEClassWithEStringAttribute() { testQuery(EClassWithEStringAttributeMatcherFactory::instance) }
+	@Test def mfTestEReferenceWithStarMultiplicity() { testQuery(EReferenceWithStarMultiplicityMatcherFactory::instance) }
+	@Test def mfTestEReferenceWithOneMultiplicity() { testQuery(EReferenceWithOneMultiplicityMatcherFactory::instance) }
+	@Test def mfTestSampleQuery() { testQuery(SampleQueryMatcherFactory::instance) }
+	@Test def mfTestSampleQuery2() { testQuery(SampleQuery2MatcherFactory::instance) }
+	@Test def mfTestIsEString() { testQuery(IsEStringMatcherFactory::instance) }
+	@Test def mfTestECoreNamedElement() { testQuery(ECoreNamedElementMatcherFactory::instance) }
+	@Test def mfTestIsInECore() { testQuery(IsInECoreMatcherFactory::instance) }
 	
 	
 	@Test
