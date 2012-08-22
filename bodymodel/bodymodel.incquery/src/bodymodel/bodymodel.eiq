@@ -1,0 +1,83 @@
+package bodymodel
+
+import "http://org/jnect/bodymodel"
+
+pattern firstPattern(B : Body) = {
+	Body(B);
+}
+/*
+ * P1, P2 are directly connected body parts.
+ */
+pattern connectedBodyParts(P1:PositionedElement,P2:PositionedElement) {
+	HumanLink.source(HL,P1);
+	HumanLink.target(HL,P2); 
+	} or {
+	HumanLink.source(HL,P2);
+	HumanLink.target(HL,P1);
+}
+/*
+ * P is a part of body B
+ */
+pattern partsOfABody(B:Body, P:PositionedElement) {
+	Body.links(B,HL);
+	HumanLink.source(HL,P); 
+	} or {
+	Body.links(B,HL);
+	HumanLink.target(HL,P); 		
+}
+
+pattern RightHandAboveHead(RH:RightHand,H:Head) {
+	find partsOfABody(B,RH);
+	find partsOfABody(B,H); // just to ensure that they are part of the same body
+	RightHand.y(RH,RHy);
+	Head.y(H,Hy);
+	check( (Hy as Float) < (RHy as Float) );
+}
+
+pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
+	find partsOfABody(B,RH);
+	find partsOfABody(B,H); // just to ensure that they are part of the same body
+	RightHand.y(RH,RHy);
+	Head.y(H,Hy);
+	check({
+		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator rhy_mac = org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("RH_Y")
+		rhy_mac.addValue(RHy as Float)
+		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator hy_mac = org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
+		hy_mac.addValue(Hy as Float)
+		return hy_mac.movingAvg < rhy_mac.movingAvg
+	});
+}
+
+/*
+ * This pattern detects a jump of the user. For doing so it checks whether the current value
+ * of both feet and the head is higher then the average position plus a
+ * threshold.
+ */
+pattern Jump(B:Body) {
+	find partsOfABody(B,LF);
+	find partsOfABody(B,RF);
+	find partsOfABody(B,H);
+	
+	LeftFoot.y(LF,LFy);
+	RightFoot.y(RF,RFy);
+	Head.y(H,Hy);
+	
+	check({
+		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator lfy_mac 
+			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("LF_Y")
+		lfy_mac.addValue(RFy as Float)
+		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator rfy_mac 
+			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("RF_Y")
+		rfy_mac.addValue(RFy as Float)
+		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator hy_mac 
+			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
+		hy_mac.addValue(Hy as Float)
+		
+		return ( 
+			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
+			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
+			rfy_mac.movingAvg + 0.1 < (RFy as Float)
+			)
+	});
+	
+}
