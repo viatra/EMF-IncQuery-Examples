@@ -7,6 +7,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 import org.jnect.core.KinectManager;
 
+import bodymodel.jump.JumpMatcher;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatch;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatcher;
 
@@ -25,7 +26,8 @@ public class StartIncQueryDemoHandler extends AbstractHandler {
 			KinectManager.INSTANCE.getSkeletonModel().getHead().setY(0);
 			
 			try {
-				RightHandAboveHeadMatcher matcher = RightHandAboveHeadMatcher.factory().getMatcher(KinectManager.INSTANCE.getSkeletonModel());
+				RightHandAboveHeadMatcher matcher = RightHandAboveHeadMatcher.factory()
+						.getMatcher(KinectManager.INSTANCE.getSkeletonModel());
 				final DeltaMonitor<RightHandAboveHeadMatch> dm = matcher.newDeltaMonitor(true);
 				
 				matcher.addCallbackAfterUpdates(new Runnable() {
