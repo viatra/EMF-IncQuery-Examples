@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jnect EMF-IncQuery Demo
+Bundle-SymbolicName: org.jnect.demo.incquery;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.jnect.demo.incquery.Activator
+Bundle-Vendor: Istvan Rath / BUTE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ bodymodel.incquery;bundle-version="0.0.1",
+ org.jnect.bodymodel;bundle-version="0.2.1",
+ org.jnect.core;bundle-version="0.2.1",
+ org.eclipse.viatra2.patternlanguage.emf;bundle-version="0.6.5",
+ org.eclipse.viatra2.emf.incquery.runtime;bundle-version="0.6.5"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
