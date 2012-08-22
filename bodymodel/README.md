@@ -31,3 +31,7 @@ Commands
  - "Start Kinect IncQuery demo": this will initialize the live queries on the live body model
  - "Save Kinect Bodymodel": for debugging purposes, this will save a demomodel.xmi file into the bodymodel.incquery project in your workspace (overriding anything that may be there already)
  - "Stop Kinect GEF demo": stop the simulation loop  
+ 
+## How it works
+
+Coming soon. 
