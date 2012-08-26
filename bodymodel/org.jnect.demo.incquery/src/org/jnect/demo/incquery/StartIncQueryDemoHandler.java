@@ -36,9 +36,15 @@ public class StartIncQueryDemoHandler extends AbstractHandler {
 					public void run() {
 						for (RightHandAboveHeadMatch m : dm.matchFoundEvents) {
 							System.out.println("New match found:" + m.toString());
+							// colorize head and right hand
+							m.getH().setColor_r(255);
+							m.getRH().setColor_r(255);
 						}
 						for (RightHandAboveHeadMatch m : dm.matchLostEvents) {
 							System.out.println("Lost match found:" + m.toString());
+							// decolorize
+							m.getH().setColor_r(0);
+							m.getRH().setColor_r(0);
 						}
 						dm.clear();
 					}
