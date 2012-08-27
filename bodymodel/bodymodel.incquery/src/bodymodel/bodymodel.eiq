@@ -44,7 +44,8 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
 		rhy_mac.addValue(RHy as Float)
 		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator hy_mac = org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
 		hy_mac.addValue(Hy as Float)
-		return hy_mac.movingAvg < rhy_mac.movingAvg
+		//return
+			hy_mac.movingAvg < rhy_mac.movingAvg
 	});
 }
 
@@ -73,11 +74,11 @@ pattern Jump(B:Body) {
 			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
 		hy_mac.addValue(Hy as Float)
 		
-		return ( 
+		//return ( 
 			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
 			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
 			rfy_mac.movingAvg + 0.1 < (RFy as Float)
-			)
+		//	)
 	});
 	
 }
