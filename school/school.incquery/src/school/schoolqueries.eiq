@@ -151,14 +151,22 @@ import "http://school.ecore"
  	Course.weight(C,W);
  	check({ // make sure the check() expression returns a boolean value on all execution paths
  		var Integer weight = (W as Integer) 
- 		if (weight%2==0) return false
- 		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
- 		var Integer divisor = 3
- 		while (divisor<=maxValue) {
- 			if (weight%divisor==0) return false // we have found a divisor
- 			else divisor = divisor + 2;
- 			}
- 		return true // we have found a prime number	
+ 		if (weight%2==0) false
+ 		else {
+	 		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
+	 		var Integer divisor = 3
+	 		var divisorFound = false
+	 		while (divisor<=maxValue) {
+	 			if (weight%divisor==0) {
+	 			// we have found a divisor
+	 				divisorFound = true
+	 				//break // TODO why is this not allowed here?
+	 			}
+	 			else divisor = divisor + 2;
+	 			}
+	 		!divisorFound	
+	 	//	true // we have found a prime number	
+	 		}
  		}
  	);
  }

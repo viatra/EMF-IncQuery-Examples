@@ -27,14 +27,22 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory;
  *  	Course.weight(C,W);
  *  	check({ // make sure the check() expression returns a boolean value on all execution paths
  *  		var Integer weight = (W as Integer) 
- *  		if (weight%2==0) return false
- *  		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
- *  		var Integer divisor = 3
- *  		while (divisor{@literal <}=maxValue) {
- *  			if (weight%divisor==0) return false // we have found a divisor
- *  			else divisor = divisor + 2;
- *  			}
- *  		return true // we have found a prime number	
+ *  		if (weight%2==0) false
+ *  		else {
+ * 	 		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
+ * 	 		var Integer divisor = 3
+ * 	 		var divisorFound = false
+ * 	 		while (divisor{@literal <}=maxValue) {
+ * 	 			if (weight%divisor==0) {
+ * 	 			// we have found a divisor
+ * 	 				divisorFound = true
+ * 	 				//break // TODO why is this not allowed here?
+ * 	 			}
+ * 	 			else divisor = divisor + 2;
+ * 	 			}
+ * 	 		!divisorFound	
+ * 	 	//	true // we have found a prime number	
+ * 	 		}
  *  		}
  *  	);
  *  }
@@ -53,6 +61,8 @@ public class CourseWithPrimeWeightMatcher extends BaseGeneratedMatcher<CourseWit
    * If a pattern matcher is already constructed with the same root, only a lightweight reference is created.
    * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
    * The match set will be incrementally refreshed upon updates from this scope.
+   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so 
+   * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
