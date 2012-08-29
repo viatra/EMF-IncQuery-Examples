@@ -14,5 +14,21 @@
             name="Save Kinect Body model">
       </command>
    </extension>
-
+ <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="org.jnect.demo.incquery">
+            <command
+                  commandId="org.jnect.demo.incquery.start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.savebodymodel"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
 </plugin>
