@@ -3,7 +3,6 @@
 
    <extension
          id="school.CourseWithTeacher"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
@@ -12,7 +11,6 @@
    </extension>
    <extension
          id="school.CourseWithoutTeacher"
-         name=""
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
@@ -156,12 +154,28 @@
       </matcher>
    </extension>
    <extension
+         id="school.courseWithNameLongerThanWeight"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightEvaluator1_1"
+            id="school.courseWithNameLongerThanWeight_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="school.courseWithNameLongerThanWeightInt"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factoryProvider="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntMatcherFactory$Provider"
             id="school.courseWithNameLongerThanWeightInt">
       </matcher>
+   </extension>
+   <extension
+         id="school.courseWithNameLongerThanWeightInt"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntEvaluator1_1"
+            id="school.courseWithNameLongerThanWeightInt_1_1">
+      </evaluator>
    </extension>
    <extension
          id="school.courseWithPrimeWeight"
@@ -172,12 +186,28 @@
       </matcher>
    </extension>
    <extension
+         id="school.courseWithPrimeWeight"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="school.coursewithprimeweight.CourseWithPrimeWeightEvaluator1_1"
+            id="school.courseWithPrimeWeight_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="school.teachesMoreClasses"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factoryProvider="school.teachesmoreclasses.TeachesMoreClassesMatcherFactory$Provider"
             id="school.teachesMoreClasses">
       </matcher>
+   </extension>
+   <extension
+         id="school.teachesMoreClasses"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="school.teachesmoreclasses.TeachesMoreClassesEvaluator1_1"
+            id="school.teachesMoreClasses_1_1">
+      </evaluator>
    </extension>
    <extension
          id="school.teachesTheMostCourses"
@@ -218,6 +248,14 @@
             factoryProvider="school.morefriendsthan.MoreFriendsThanMatcherFactory$Provider"
             id="school.moreFriendsThan">
       </matcher>
+   </extension>
+   <extension
+         id="school.moreFriendsThan"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="school.morefriendsthan.MoreFriendsThanEvaluator1_1"
+            id="school.moreFriendsThan_1_1">
+      </evaluator>
    </extension>
    <extension
          id="school.theOnesWithTheBiggestCircle"

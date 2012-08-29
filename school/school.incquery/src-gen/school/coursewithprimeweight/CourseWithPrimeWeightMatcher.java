@@ -27,24 +27,18 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory;
  *  	Course.weight(C,W);
  *  	check({ // make sure the check() expression returns a boolean value on all execution paths
  *  		var Integer weight = (W as Integer) 
+ *  		
  *  		if (weight%2==0) false
  *  		else {
  * 	 		var Integer maxValue = Math::round(new Float(Math::sqrt( weight )))
  * 	 		var Integer divisor = 3
- * 	 		var divisorFound = false
  * 	 		while (divisor{@literal <}=maxValue) {
- * 	 			if (weight%divisor==0) {
- * 	 			// we have found a divisor
- * 	 				divisorFound = true
- * 	 				//break // TODO why is this not allowed here?
- * 	 			}
+ * 	 			if (weight%divisor==0) return false 
  * 	 			else divisor = divisor + 2;
- * 	 			}
- * 	 		!divisorFound	
- * 	 	//	true // we have found a prime number	
  * 	 		}
- *  		}
- *  	);
+ * 	 		true // we have found a prime number	
+ * 	 	}
+ *  	});
  *  }
  * </pre></code>
  * 

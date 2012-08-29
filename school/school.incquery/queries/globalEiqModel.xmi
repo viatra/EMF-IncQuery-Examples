@@ -713,9 +713,6 @@
                 </type>
                 <right xsi:type="xbase:XNumberLiteral" value="3"/>
               </expressions>
-              <expressions xsi:type="xbase:XVariableDeclaration" name="divisorFound" writeable="true">
-                <right xsi:type="xbase:XBooleanLiteral"/>
-              </expressions>
               <expressions xsi:type="xbase:XWhileExpression">
                 <predicate xsi:type="xbase:XBinaryOperation">
                   <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessEqualsThan(java.lang.Comparable,C)"/>
@@ -733,10 +730,8 @@
                       </leftOperand>
                       <rightOperand xsi:type="xbase:XNumberLiteral" value="0"/>
                     </if>
-                    <then xsi:type="xbase:XBlockExpression">
-                      <expressions xsi:type="xbase:XAssignment" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.1/@else/@expressions.2">
-                        <value xsi:type="xbase:XBooleanLiteral" isTrue="true"/>
-                      </expressions>
+                    <then xsi:type="xbase:XReturnExpression">
+                      <expression xsi:type="xbase:XBooleanLiteral"/>
                     </then>
                     <else xsi:type="xbase:XAssignment" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.1/@else/@expressions.1">
                       <value xsi:type="xbase:XBinaryOperation">
@@ -748,10 +743,7 @@
                   </expressions>
                 </body>
               </expressions>
-              <expressions xsi:type="xbase:XUnaryOperation">
-                <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.BooleanExtensions#org.eclipse.xtext.xbase.lib.BooleanExtensions.operator_not(boolean)"/>
-                <operand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.1/@else/@expressions.2"/>
-              </expressions>
+              <expressions xsi:type="xbase:XBooleanLiteral" isTrue="true"/>
             </else>
           </expressions>
         </expression>
