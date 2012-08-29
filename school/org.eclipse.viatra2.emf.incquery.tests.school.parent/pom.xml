@@ -36,6 +36,7 @@
 						<artifact>
 							<groupId>org.eclipse.viatra2</groupId>
 							<artifactId>org.eclipse.viatra2.emf.incquery.tests.school.parent</artifactId>
+							<version>0.6.5-SNAPSHOT</version>
 							<classifier>schooltest</classifier>
 						</artifact>
 					</target>
