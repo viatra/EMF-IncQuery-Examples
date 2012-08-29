@@ -40,9 +40,9 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
 	RightHand.y(RH,RHy);
 	Head.y(H,Hy);
 	check({
-		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator rhy_mac = org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("RH_Y")
+		var bodymodel.MovingAverageCalculator rhy_mac = bodymodel::MovingAverageCalculator::getCalculator("RH_Y")
 		rhy_mac.addValue(RHy as Float)
-		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator hy_mac = org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
+		var bodymodel.MovingAverageCalculator hy_mac = bodymodel::MovingAverageCalculator::getCalculator("H_Y")
 		hy_mac.addValue(Hy as Float)
 		//return
 			hy_mac.movingAvg < rhy_mac.movingAvg
@@ -64,14 +64,14 @@ pattern Jump(B:Body) {
 	Head.y(H,Hy);
 	
 	check({
-		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator lfy_mac 
-			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("LF_Y")
+		var bodymodel.MovingAverageCalculator lfy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("LF_Y")
 		lfy_mac.addValue(RFy as Float)
-		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator rfy_mac 
-			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("RF_Y")
+		var bodymodel.MovingAverageCalculator rfy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("RF_Y")
 		rfy_mac.addValue(RFy as Float)
-		var org.eclipse.viatra2.emf.incquery.runtime.util.MovingAverageCalculator hy_mac 
-			= org::eclipse::viatra2::emf::incquery::runtime::util::MovingAverageCalculator::getCalculator("H_Y")
+		var bodymodel.MovingAverageCalculator hy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("H_Y")
 		hy_mac.addValue(Hy as Float)
 		
 		//return ( 

@@ -34,6 +34,14 @@
       </matcher>
    </extension>
    <extension
+         id="bodymodel.RightHandAboveHead"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.righthandabovehead.RightHandAboveHeadEvaluator1_1"
+            id="bodymodel.RightHandAboveHead_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="bodymodel.RightHandAboveHead_MovingAverage"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -42,12 +50,28 @@
       </matcher>
    </extension>
    <extension
+         id="bodymodel.RightHandAboveHead_MovingAverage"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.righthandabovehead_movingaverage.RightHandAboveHead_MovingAverageEvaluator1_1"
+            id="bodymodel.RightHandAboveHead_MovingAverage_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="bodymodel.Jump"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
             factoryProvider="bodymodel.jump.JumpMatcherFactory$Provider"
             id="bodymodel.Jump">
       </matcher>
+   </extension>
+   <extension
+         id="bodymodel.Jump"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.jump.JumpEvaluator1_1"
+            id="bodymodel.Jump_1_1">
+      </evaluator>
    </extension>
 
 </plugin>
