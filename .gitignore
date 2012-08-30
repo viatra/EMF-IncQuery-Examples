@@ -9,5 +9,7 @@ xtend-gen
 +keep.txt
 +.keep.txt
 !school/school.incquery/src-gen
+!ecorequery/hu.bme.mit.ecorequery/src-gen
 globalEiqModel.xmi
 !school/school.incquery/queries/globalEiqModel.xmi
+!ecorequery/hu.bme.mit.ecorequery/queries/globalEiqModel.xmi
