@@ -21,6 +21,7 @@ import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.Ignore
 
 /**
  * Basic test set for testing IncQuery with the ECore Queries example.
@@ -44,7 +45,7 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	}
 	
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	@Test
+	@Test@Ignore("Not working on the build as eiq files are not packaged into jar.")
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
