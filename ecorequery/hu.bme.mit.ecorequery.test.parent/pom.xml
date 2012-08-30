@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>org.eclipse.viatra2.emf.incquery.tests.school.parent</artifactId>
+	<artifactId>hu.bme.mit.ecorequery.test.parent</artifactId>
 	<name>EMF-IncQuery EMF Example</name>
 	<version>0.6.5-SNAPSHOT</version>
 	<url>http://viatra.inf.mit.bme.hu/incquery</url>
