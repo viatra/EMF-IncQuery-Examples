@@ -5,7 +5,7 @@ import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
 import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
 import org.eclipse.viatra2.emf.incquery.testing.core.base.CommonStaticQueryTester
 
-class EcorequeryTestsBase extends CommonStaticQueryTester {
+class EcorequeryBaseTest extends CommonStaticQueryTester {
 	
 	@Inject extension ModelLoadHelper
 	

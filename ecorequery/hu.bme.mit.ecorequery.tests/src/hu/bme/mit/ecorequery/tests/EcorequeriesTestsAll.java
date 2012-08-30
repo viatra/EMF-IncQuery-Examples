@@ -7,8 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(value = Suite.class)
 @SuiteClasses({
-	EcorequeriesTestsBasic.class,
-	EcorequeriesTestsModelManipulation.class
+	EcorequeriesBasicTest.class,
+	ModelManipulationEcorequeriesTest.class
 })
 
 public class EcorequeriesTestsAll {

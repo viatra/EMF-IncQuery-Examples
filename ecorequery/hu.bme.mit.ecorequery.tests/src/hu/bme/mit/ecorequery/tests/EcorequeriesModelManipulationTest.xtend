@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class EcorequeriesTestsModelManipulation extends EcorequeryTestsBase {
+class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
 		
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper

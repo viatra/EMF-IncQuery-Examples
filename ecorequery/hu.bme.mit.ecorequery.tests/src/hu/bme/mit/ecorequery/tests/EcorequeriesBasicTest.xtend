@@ -1,31 +1,26 @@
 package hu.bme.mit.ecorequery.tests
 
 import com.google.inject.Inject
-import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
-import org.eclipse.viatra2.emf.incquery.testing.core.SnapshotHelper
-import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
-import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.Test
-import org.junit.runner.RunWith
-
-import static org.junit.Assert.*
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.eclass.EClassMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory
+import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
+import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.junit.Test
+import org.junit.runner.RunWith
 
 /**
  * Basic test set for testing IncQuery with the ECore Queries example.
@@ -34,11 +29,9 @@ import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactor
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class EcorequeriesTestsBasic extends EcorequeryTestsBase {
+class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	
 	@Inject extension TestExecutor
-	@Inject extension ModelLoadHelper
-	@Inject extension SnapshotHelper
 	
 	@Inject
 	ParseHelper parseHelper
