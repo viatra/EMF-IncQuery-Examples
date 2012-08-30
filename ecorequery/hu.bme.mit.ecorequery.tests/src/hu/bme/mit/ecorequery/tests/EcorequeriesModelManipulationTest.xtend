@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
+class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 		
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
@@ -26,7 +26,7 @@ class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
 	@Test
 	def testsChangeEClassName(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -52,7 +52,7 @@ class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
 	@Test
 	def testsCreateEAttribute(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -83,7 +83,7 @@ class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
 	@Test
 	def testsDeleteEReference(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -122,7 +122,7 @@ class ModelManipulationEcorequeriesTest extends EcorequeryBaseTest {
 	@Test
 	def testsChangeMultiplicity(){
 		val sns = snapshot
-		val pm = queryInputEIQ
+		val pm = queryInputXMI
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
