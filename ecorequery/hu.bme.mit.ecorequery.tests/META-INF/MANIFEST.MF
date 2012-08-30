@@ -14,5 +14,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.viatra2.emf.incquery.snapshot;bundle-version="0.6.0",
  hu.bme.mit.ecorequery;bundle-version="0.0.1"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
