@@ -43,7 +43,9 @@ public final class SchoolsNamesMatch extends BasePatternMatch implements IPatter
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SchName".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("SchName".equals(parameterName) 
+    ) {
     	this.fSchName = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +118,6 @@ public final class SchoolsNamesMatch extends BasePatternMatch implements IPatter
     	return SchoolsNamesMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

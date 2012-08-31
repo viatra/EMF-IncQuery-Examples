@@ -44,7 +44,9 @@ public final class TeacherWithoutClassMatch extends BasePatternMatch implements 
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T".equals(parameterName) && newValue instanceof school.Teacher) {
+    
+    if ("T".equals(parameterName) 
+    ) {
     	this.fT = (school.Teacher) newValue;
     	return true;
     }
@@ -117,7 +119,6 @@ public final class TeacherWithoutClassMatch extends BasePatternMatch implements 
     	return TeacherWithoutClassMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

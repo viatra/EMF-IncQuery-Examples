@@ -54,11 +54,15 @@ public final class StudentOfSchoolMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S".equals(parameterName) && newValue instanceof school.Student) {
+    
+    if ("S".equals(parameterName) 
+    ) {
     	this.fS = (school.Student) newValue;
     	return true;
     }
-    if ("Sch".equals(parameterName) && newValue instanceof school.School) {
+    
+    if ("Sch".equals(parameterName) 
+    ) {
     	this.fSch = (school.School) newValue;
     	return true;
     }
@@ -140,7 +144,6 @@ public final class StudentOfSchoolMatch extends BasePatternMatch implements IPat
     	return StudentOfSchoolMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

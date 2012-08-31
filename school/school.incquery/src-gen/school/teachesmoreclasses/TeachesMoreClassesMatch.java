@@ -53,11 +53,15 @@ public final class TeachesMoreClassesMatch extends BasePatternMatch implements I
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T1".equals(parameterName) && newValue instanceof school.Teacher) {
+    
+    if ("T1".equals(parameterName) 
+    ) {
     	this.fT1 = (school.Teacher) newValue;
     	return true;
     }
-    if ("T2".equals(parameterName) && newValue instanceof school.Teacher) {
+    
+    if ("T2".equals(parameterName) 
+    ) {
     	this.fT2 = (school.Teacher) newValue;
     	return true;
     }
@@ -139,7 +143,6 @@ public final class TeachesMoreClassesMatch extends BasePatternMatch implements I
     	return TeachesMoreClassesMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

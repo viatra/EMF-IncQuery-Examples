@@ -44,7 +44,9 @@ public final class CourseWithWeightThirtyMatch extends BasePatternMatch implemen
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("C".equals(parameterName) && newValue instanceof school.Course) {
+    
+    if ("C".equals(parameterName) 
+    ) {
     	this.fC = (school.Course) newValue;
     	return true;
     }
@@ -117,7 +119,6 @@ public final class CourseWithWeightThirtyMatch extends BasePatternMatch implemen
     	return CourseWithWeightThirtyMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

@@ -70,19 +70,27 @@ public final class FinalPattern2Match extends BasePatternMatch implements IPatte
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("YDate".equals(parameterName) && newValue instanceof java.lang.Integer) {
+    
+    if ("YDate".equals(parameterName) 
+    ) {
     	this.fYDate = (java.lang.Integer) newValue;
     	return true;
     }
-    if ("CSub".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("CSub".equals(parameterName) 
+    ) {
     	this.fCSub = (java.lang.String) newValue;
     	return true;
     }
-    if ("TName".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("TName".equals(parameterName) 
+    ) {
     	this.fTName = (java.lang.String) newValue;
     	return true;
     }
-    if ("SName".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("SName".equals(parameterName) 
+    ) {
     	this.fSName = (java.lang.String) newValue;
     	return true;
     }
@@ -182,7 +190,6 @@ public final class FinalPattern2Match extends BasePatternMatch implements IPatte
     	return FinalPattern2Matcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

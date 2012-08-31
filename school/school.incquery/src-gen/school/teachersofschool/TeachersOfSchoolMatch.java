@@ -54,11 +54,15 @@ public final class TeachersOfSchoolMatch extends BasePatternMatch implements IPa
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T".equals(parameterName) && newValue instanceof school.Teacher) {
+    
+    if ("T".equals(parameterName) 
+    ) {
     	this.fT = (school.Teacher) newValue;
     	return true;
     }
-    if ("Sch".equals(parameterName) && newValue instanceof school.School) {
+    
+    if ("Sch".equals(parameterName) 
+    ) {
     	this.fSch = (school.School) newValue;
     	return true;
     }
@@ -140,7 +144,6 @@ public final class TeachersOfSchoolMatch extends BasePatternMatch implements IPa
     	return TeachersOfSchoolMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

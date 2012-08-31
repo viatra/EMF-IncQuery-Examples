@@ -43,7 +43,9 @@ public final class TeacherWithoutClassNamesMatch extends BasePatternMatch implem
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("TNames".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("TNames".equals(parameterName) 
+    ) {
     	this.fTNames = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +118,6 @@ public final class TeacherWithoutClassNamesMatch extends BasePatternMatch implem
     	return TeacherWithoutClassNamesMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

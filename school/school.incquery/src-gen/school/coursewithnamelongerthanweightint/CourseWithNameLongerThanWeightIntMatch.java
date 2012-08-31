@@ -43,7 +43,9 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("W".equals(parameterName) && newValue instanceof java.lang.Integer) {
+    
+    if ("W".equals(parameterName) 
+    ) {
     	this.fW = (java.lang.Integer) newValue;
     	return true;
     }
@@ -116,7 +118,6 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
     	return CourseWithNameLongerThanWeightIntMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

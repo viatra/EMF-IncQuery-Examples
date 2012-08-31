@@ -53,11 +53,15 @@ public final class MoreFriendsThanMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1".equals(parameterName) && newValue instanceof school.Student) {
+    
+    if ("S1".equals(parameterName) 
+    ) {
     	this.fS1 = (school.Student) newValue;
     	return true;
     }
-    if ("S2".equals(parameterName) && newValue instanceof school.Student) {
+    
+    if ("S2".equals(parameterName) 
+    ) {
     	this.fS2 = (school.Student) newValue;
     	return true;
     }
@@ -139,7 +143,6 @@ public final class MoreFriendsThanMatch extends BasePatternMatch implements IPat
     	return MoreFriendsThanMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

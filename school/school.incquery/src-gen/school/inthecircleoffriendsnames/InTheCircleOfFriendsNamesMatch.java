@@ -52,11 +52,15 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch imple
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1Name".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("S1Name".equals(parameterName) 
+    ) {
     	this.fS1Name = (java.lang.String) newValue;
     	return true;
     }
-    if ("SomeoneName".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("SomeoneName".equals(parameterName) 
+    ) {
     	this.fSomeoneName = (java.lang.String) newValue;
     	return true;
     }
@@ -138,7 +142,6 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch imple
     	return InTheCircleOfFriendsNamesMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

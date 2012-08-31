@@ -44,7 +44,9 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch imp
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S".equals(parameterName) && newValue instanceof school.Student) {
+    
+    if ("S".equals(parameterName) 
+    ) {
     	this.fS = (school.Student) newValue;
     	return true;
     }
@@ -117,7 +119,6 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch imp
     	return TheOnesWithTheBiggestCircleMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

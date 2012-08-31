@@ -43,7 +43,9 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SName".equals(parameterName) && newValue instanceof java.lang.String) {
+    
+    if ("SName".equals(parameterName) 
+    ) {
     	this.fSName = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +118,6 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
     	return TheOnesWithTheBiggestCircleNameMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     
