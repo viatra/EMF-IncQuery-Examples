@@ -116,7 +116,6 @@ public final class IsEStringMatch extends BasePatternMatch implements IPatternMa
     	return IsEStringMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

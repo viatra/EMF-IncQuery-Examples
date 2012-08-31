@@ -53,11 +53,11 @@ public final class SuperTypeOfMatch extends BasePatternMatch implements IPattern
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Super".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("Super".equals(parameterName) ) {
     	this.fSuper = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
-    if ("Sub".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("Sub".equals(parameterName) ) {
     	this.fSub = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
@@ -139,7 +139,6 @@ public final class SuperTypeOfMatch extends BasePatternMatch implements IPattern
     	return SuperTypeOfMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

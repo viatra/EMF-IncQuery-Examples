@@ -43,7 +43,7 @@ public final class EClassNameMatch extends BasePatternMatch implements IPatternM
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("EName".equals(parameterName) && newValue instanceof java.lang.String) {
+    if ("EName".equals(parameterName) ) {
     	this.fEName = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +116,6 @@ public final class EClassNameMatch extends BasePatternMatch implements IPatternM
     	return EClassNameMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

@@ -43,7 +43,7 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch implement
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Name".equals(parameterName) && newValue instanceof java.lang.String) {
+    if ("Name".equals(parameterName) ) {
     	this.fName = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +116,6 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch implement
     	return ECoreNamedElementNameMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

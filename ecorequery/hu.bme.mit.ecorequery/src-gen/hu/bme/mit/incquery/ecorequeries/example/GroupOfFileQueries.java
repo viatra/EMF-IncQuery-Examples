@@ -22,23 +22,23 @@ import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 
 public final class GroupOfFileQueries extends BaseGeneratedPatternGroup {
   public GroupOfFileQueries() throws IncQueryException {
-    matcherFactories.add(ECoreNamedElementMatcher.factory());
-    matcherFactories.add(EReferenceWithOneMultiplicityNameMatcher.factory());
-    matcherFactories.add(EClassNameMatcher.factory());
-    matcherFactories.add(EReferenceWithStarMultiplicityMatcher.factory());
-    matcherFactories.add(SuperTypeOfNameMatcher.factory());
-    matcherFactories.add(SampleQueryMatcher.factory());
-    matcherFactories.add(EClassMatcher.factory());
-    matcherFactories.add(EObjectMatcher.factory());
-    matcherFactories.add(EReferenceWithOneMultiplicityMatcher.factory());
-    matcherFactories.add(ECoreNamedElementNameMatcher.factory());
-    matcherFactories.add(IsInECoreMatcher.factory());
     matcherFactories.add(SuperTypeOfMatcher.factory());
-    matcherFactories.add(EClassWithEStringAttributeMatcher.factory());
-    matcherFactories.add(IsEStringMatcher.factory());
+    matcherFactories.add(SuperTypeOfNameMatcher.factory());
     matcherFactories.add(SampleQuery2Matcher.factory());
+    matcherFactories.add(ECoreNamedElementMatcher.factory());
+    matcherFactories.add(EClassNameMatcher.factory());
     matcherFactories.add(EClassAttributeMatcher.factory());
+    matcherFactories.add(EObjectMatcher.factory());
+    matcherFactories.add(ECoreNamedElementNameMatcher.factory());
+    matcherFactories.add(EReferenceWithStarMultiplicityMatcher.factory());
+    matcherFactories.add(EClassMatcher.factory());
+    matcherFactories.add(SampleQueryMatcher.factory());
+    matcherFactories.add(EReferenceWithOneMultiplicityNameMatcher.factory());
     matcherFactories.add(EReferenceWithStarMultiplicityNameMatcher.factory());
+    matcherFactories.add(IsEStringMatcher.factory());
+    matcherFactories.add(IsInECoreMatcher.factory());
+    matcherFactories.add(EClassWithEStringAttributeMatcher.factory());
+    matcherFactories.add(EReferenceWithOneMultiplicityMatcher.factory());
     
   }
 }

@@ -64,15 +64,15 @@ public final class EClassAttributeMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("E".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
-    if ("Attr".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EStructuralFeature) {
+    if ("Attr".equals(parameterName) ) {
     	this.fAttr = (org.eclipse.emf.ecore.EStructuralFeature) newValue;
     	return true;
     }
-    if ("Type".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClassifier) {
+    if ("Type".equals(parameterName) ) {
     	this.fType = (org.eclipse.emf.ecore.EClassifier) newValue;
     	return true;
     }
@@ -163,7 +163,6 @@ public final class EClassAttributeMatch extends BasePatternMatch implements IPat
     	return EClassAttributeMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

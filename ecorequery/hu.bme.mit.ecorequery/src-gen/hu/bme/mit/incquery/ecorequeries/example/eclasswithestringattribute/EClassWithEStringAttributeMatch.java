@@ -53,7 +53,7 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch impl
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("E".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
@@ -139,7 +139,6 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch impl
     	return EClassWithEStringAttributeMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

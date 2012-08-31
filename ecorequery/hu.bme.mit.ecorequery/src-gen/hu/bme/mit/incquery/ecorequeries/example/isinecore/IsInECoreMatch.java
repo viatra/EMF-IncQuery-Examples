@@ -44,7 +44,7 @@ public final class IsInECoreMatch extends BasePatternMatch implements IPatternMa
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Element".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClassifier) {
+    if ("Element".equals(parameterName) ) {
     	this.fElement = (org.eclipse.emf.ecore.EClassifier) newValue;
     	return true;
     }
@@ -117,7 +117,6 @@ public final class IsInECoreMatch extends BasePatternMatch implements IPatternMa
     	return IsInECoreMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

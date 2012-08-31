@@ -44,7 +44,7 @@ public final class EObjectMatch extends BasePatternMatch implements IPatternMatc
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("E".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EObject) {
+    if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EObject) newValue;
     	return true;
     }
@@ -117,7 +117,6 @@ public final class EObjectMatch extends BasePatternMatch implements IPatternMatc
     	return EObjectMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

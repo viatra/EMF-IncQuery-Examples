@@ -91,19 +91,19 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("XElement".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("XElement".equals(parameterName) ) {
     	this.fXElement = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
-    if ("YElement".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EClass) {
+    if ("YElement".equals(parameterName) ) {
     	this.fYElement = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
-    if ("Relates1".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EStructuralFeature) {
+    if ("Relates1".equals(parameterName) ) {
     	this.fRelates1 = (org.eclipse.emf.ecore.EStructuralFeature) newValue;
     	return true;
     }
-    if ("Relates2".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EReference) {
+    if ("Relates2".equals(parameterName) ) {
     	this.fRelates2 = (org.eclipse.emf.ecore.EReference) newValue;
     	return true;
     }
@@ -229,7 +229,6 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     	return SampleQuery2Matcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

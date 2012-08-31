@@ -43,7 +43,7 @@ public final class EReferenceWithStarMultiplicityNameMatch extends BasePatternMa
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("ERefName".equals(parameterName) && newValue instanceof java.lang.String) {
+    if ("ERefName".equals(parameterName) ) {
     	this.fERefName = (java.lang.String) newValue;
     	return true;
     }
@@ -116,7 +116,6 @@ public final class EReferenceWithStarMultiplicityNameMatch extends BasePatternMa
     	return EReferenceWithStarMultiplicityNameMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

@@ -44,7 +44,7 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("ERef".equals(parameterName) && newValue instanceof org.eclipse.emf.ecore.EReference) {
+    if ("ERef".equals(parameterName) ) {
     	this.fERef = (org.eclipse.emf.ecore.EReference) newValue;
     	return true;
     }
@@ -117,7 +117,6 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
     	return EReferenceWithStarMultiplicityMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     

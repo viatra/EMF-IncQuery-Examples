@@ -52,11 +52,11 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SuperName".equals(parameterName) && newValue instanceof java.lang.String) {
+    if ("SuperName".equals(parameterName) ) {
     	this.fSuperName = (java.lang.String) newValue;
     	return true;
     }
-    if ("SubName".equals(parameterName) && newValue instanceof java.lang.String) {
+    if ("SubName".equals(parameterName) ) {
     	this.fSubName = (java.lang.String) newValue;
     	return true;
     }
@@ -138,7 +138,6 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch implements IPat
     	return SuperTypeOfNameMatcher.factory().getPattern();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
-     	ex.printStackTrace();
      	throw new IllegalStateException	(ex);
     }
     
