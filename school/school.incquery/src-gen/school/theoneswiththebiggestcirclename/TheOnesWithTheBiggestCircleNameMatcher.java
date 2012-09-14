@@ -69,7 +69,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return matches represented as a TheOnesWithTheBiggestCircleNameMatch object.
    * 
    */
-  public Collection<TheOnesWithTheBiggestCircleNameMatch> getAllMatches(final String pSName) {
+  public Collection<TheOnesWithTheBiggestCircleNameMatch> getAllMatches(final Object pSName) {
     return rawGetAllMatches(new Object[]{pSName});
   }
   
@@ -80,7 +80,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return a match represented as a TheOnesWithTheBiggestCircleNameMatch object, or null if no match is found.
    * 
    */
-  public TheOnesWithTheBiggestCircleNameMatch getOneArbitraryMatch(final String pSName) {
+  public TheOnesWithTheBiggestCircleNameMatch getOneArbitraryMatch(final Object pSName) {
     return rawGetOneArbitraryMatch(new Object[]{pSName});
   }
   
@@ -91,7 +91,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final String pSName) {
+  public boolean hasMatch(final Object pSName) {
     return rawHasMatch(new Object[]{pSName});
   }
   
@@ -101,7 +101,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final String pSName) {
+  public int countMatches(final Object pSName) {
     return rawCountMatches(new Object[]{pSName});
   }
   
@@ -111,7 +111,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final String pSName, final IMatchProcessor<? super TheOnesWithTheBiggestCircleNameMatch> processor) {
+  public void forEachMatch(final Object pSName, final IMatchProcessor<? super TheOnesWithTheBiggestCircleNameMatch> processor) {
     rawForEachMatch(new Object[]{pSName}, processor);
   }
   
@@ -123,7 +123,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final String pSName, final IMatchProcessor<? super TheOnesWithTheBiggestCircleNameMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pSName, final IMatchProcessor<? super TheOnesWithTheBiggestCircleNameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSName}, processor);
   }
   
@@ -138,7 +138,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<TheOnesWithTheBiggestCircleNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pSName) {
+  public DeltaMonitor<TheOnesWithTheBiggestCircleNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pSName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSName});
   }
   
@@ -149,7 +149,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the (partial) match object.
    * 
    */
-  public TheOnesWithTheBiggestCircleNameMatch newMatch(final String pSName) {
+  public TheOnesWithTheBiggestCircleNameMatch newMatch(final Object pSName) {
     return new TheOnesWithTheBiggestCircleNameMatch(pSName);
     
   }
@@ -159,8 +159,8 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
   }
@@ -170,14 +170,14 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSName() {
+  public Set<Object> getAllValuesOfSName() {
     return rawAccumulateAllValuesOfSName(emptyArray());
   }
   
   @Override
   public TheOnesWithTheBiggestCircleNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.String) t.get(POSITION_SNAME));	
+    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.Object) t.get(POSITION_SNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -187,7 +187,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
   @Override
   public TheOnesWithTheBiggestCircleNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.String) match[POSITION_SNAME]);
+    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.Object) match[POSITION_SNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

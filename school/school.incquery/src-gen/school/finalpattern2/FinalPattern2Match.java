@@ -19,18 +19,18 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see FinalPattern2Processor
  * 
  */
-public final class FinalPattern2Match extends BasePatternMatch implements IPatternMatch {
-  private Integer fYDate;
+public final class FinalPattern2Match extends BasePatternMatch {
+  private Object fYDate;
   
-  private String fCSub;
+  private Object fCSub;
   
-  private String fTName;
+  private Object fTName;
   
-  private String fSName;
+  private Object fSName;
   
   private static String[] parameterNames = {"YDate", "CSub", "TName", "SName"};
   
-  FinalPattern2Match(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  FinalPattern2Match(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     this.fYDate = pYDate;
     this.fCSub = pCSub;
     this.fTName = pTName;
@@ -48,72 +48,64 @@ public final class FinalPattern2Match extends BasePatternMatch implements IPatte
     
   }
   
-  public Integer getYDate() {
+  public Object getYDate() {
     return this.fYDate;
     
   }
   
-  public String getCSub() {
+  public Object getCSub() {
     return this.fCSub;
     
   }
   
-  public String getTName() {
+  public Object getTName() {
     return this.fTName;
     
   }
   
-  public String getSName() {
+  public Object getSName() {
     return this.fSName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("YDate".equals(parameterName) 
-    ) {
-    	this.fYDate = (java.lang.Integer) newValue;
+    if ("YDate".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fYDate = (java.lang.Object) newValue;
     	return true;
     }
-    
-    if ("CSub".equals(parameterName) 
-    ) {
-    	this.fCSub = (java.lang.String) newValue;
+    if ("CSub".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fCSub = (java.lang.Object) newValue;
     	return true;
     }
-    
-    if ("TName".equals(parameterName) 
-    ) {
-    	this.fTName = (java.lang.String) newValue;
+    if ("TName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fTName = (java.lang.Object) newValue;
     	return true;
     }
-    
-    if ("SName".equals(parameterName) 
-    ) {
-    	this.fSName = (java.lang.String) newValue;
+    if ("SName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fSName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setYDate(final Integer pYDate) {
+  public void setYDate(final Object pYDate) {
     this.fYDate = pYDate;
     
   }
   
-  public void setCSub(final String pCSub) {
+  public void setCSub(final Object pCSub) {
     this.fCSub = pCSub;
     
   }
   
-  public void setTName(final String pTName) {
+  public void setTName(final Object pTName) {
     this.fTName = pTName;
     
   }
   
-  public void setSName(final String pSName) {
+  public void setSName(final Object pSName) {
     this.fSName = pSName;
     
   }

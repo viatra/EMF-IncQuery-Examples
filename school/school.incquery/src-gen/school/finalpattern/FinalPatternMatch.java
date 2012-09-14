@@ -23,7 +23,7 @@ import school.Year;
  * @see FinalPatternProcessor
  * 
  */
-public final class FinalPatternMatch extends BasePatternMatch implements IPatternMatch {
+public final class FinalPatternMatch extends BasePatternMatch {
   private Year fY;
   
   private Course fC;
@@ -74,27 +74,19 @@ public final class FinalPatternMatch extends BasePatternMatch implements IPatter
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("Y".equals(parameterName) 
-    ) {
+    if ("Y".equals(parameterName) ) {
     	this.fY = (school.Year) newValue;
     	return true;
     }
-    
-    if ("C".equals(parameterName) 
-    ) {
+    if ("C".equals(parameterName) ) {
     	this.fC = (school.Course) newValue;
     	return true;
     }
-    
-    if ("T".equals(parameterName) 
-    ) {
+    if ("T".equals(parameterName) ) {
     	this.fT = (school.Teacher) newValue;
     	return true;
     }
-    
-    if ("S".equals(parameterName) 
-    ) {
+    if ("S".equals(parameterName) ) {
     	this.fS = (school.Student) newValue;
     	return true;
     }

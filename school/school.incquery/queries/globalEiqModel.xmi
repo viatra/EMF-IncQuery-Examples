@@ -579,7 +579,7 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.0"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.2"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -629,14 +629,14 @@
               <type xsi:type="types:JvmParameterizedTypeReference">
                 <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.String#java.lang.String"/>
               </type>
-              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.0"/>
+              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.2"/>
             </memberCallTarget>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@parameters.0"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.0"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -675,7 +675,7 @@
               <type xsi:type="types:JvmParameterizedTypeReference">
                 <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
               </type>
-              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.0"/>
+              <target xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
             </right>
           </expressions>
           <expressions xsi:type="xbase:XIfExpression">
@@ -806,13 +806,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.3"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.4"/>
           </rightOperand>
         </expression>
       </constraints>
@@ -1034,13 +1034,13 @@
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.3"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
           </leftOperand>
           <rightOperand xsi:type="xbase:XCastedExpression">
             <type xsi:type="types:JvmParameterizedTypeReference">
               <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
             </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
+            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.4"/>
           </rightOperand>
         </expression>
       </constraints>

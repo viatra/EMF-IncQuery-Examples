@@ -92,7 +92,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return matches represented as a FinalPattern2Match object.
    * 
    */
-  public Collection<FinalPattern2Match> getAllMatches(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public Collection<FinalPattern2Match> getAllMatches(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return rawGetAllMatches(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -106,7 +106,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return a match represented as a FinalPattern2Match object, or null if no match is found.
    * 
    */
-  public FinalPattern2Match getOneArbitraryMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public FinalPattern2Match getOneArbitraryMatch(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return rawGetOneArbitraryMatch(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -120,7 +120,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public boolean hasMatch(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return rawHasMatch(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -133,7 +133,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public int countMatches(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return rawCountMatches(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -146,7 +146,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName, final IMatchProcessor<? super FinalPattern2Match> processor) {
+  public void forEachMatch(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName, final IMatchProcessor<? super FinalPattern2Match> processor) {
     rawForEachMatch(new Object[]{pYDate, pCSub, pTName, pSName}, processor);
   }
   
@@ -161,7 +161,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName, final IMatchProcessor<? super FinalPattern2Match> processor) {
+  public boolean forOneArbitraryMatch(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName, final IMatchProcessor<? super FinalPattern2Match> processor) {
     return rawForOneArbitraryMatch(new Object[]{pYDate, pCSub, pTName, pSName}, processor);
   }
   
@@ -179,7 +179,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<FinalPattern2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public DeltaMonitor<FinalPattern2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -193,7 +193,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the (partial) match object.
    * 
    */
-  public FinalPattern2Match newMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  public FinalPattern2Match newMatch(final Object pYDate, final Object pCSub, final Object pTName, final Object pSName) {
     return new FinalPattern2Match(pYDate, pCSub, pTName, pSName);
     
   }
@@ -203,8 +203,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Integer> rawAccumulateAllValuesOfYDate(final Object[] parameters) {
-    Set<Integer> results = new HashSet<Integer>();
+  public Set<Object> rawAccumulateAllValuesOfYDate(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_YDATE, parameters, results);
     return results;
   }
@@ -214,7 +214,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Integer> getAllValuesOfYDate() {
+  public Set<Object> getAllValuesOfYDate() {
     return rawAccumulateAllValuesOfYDate(emptyArray());
   }
   
@@ -223,7 +223,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Integer> getAllValuesOfYDate(final FinalPattern2Match partialMatch) {
+  public Set<Object> getAllValuesOfYDate(final FinalPattern2Match partialMatch) {
     return rawAccumulateAllValuesOfYDate(partialMatch.toArray());
   }
   
@@ -232,8 +232,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Integer> getAllValuesOfYDate(final String pCSub, final String pTName, final String pSName) {
-    Integer pYDate = null;
+  public Set<Object> getAllValuesOfYDate(final Object pCSub, final Object pTName, final Object pSName) {
+    Object pYDate = null;
     return rawAccumulateAllValuesOfYDate(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -242,8 +242,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfCSub(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfCSub(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_CSUB, parameters, results);
     return results;
   }
@@ -253,7 +253,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfCSub() {
+  public Set<Object> getAllValuesOfCSub() {
     return rawAccumulateAllValuesOfCSub(emptyArray());
   }
   
@@ -262,7 +262,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfCSub(final FinalPattern2Match partialMatch) {
+  public Set<Object> getAllValuesOfCSub(final FinalPattern2Match partialMatch) {
     return rawAccumulateAllValuesOfCSub(partialMatch.toArray());
   }
   
@@ -271,8 +271,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfCSub(final Integer pYDate, final String pTName, final String pSName) {
-    String pCSub = null;
+  public Set<Object> getAllValuesOfCSub(final Object pYDate, final Object pTName, final Object pSName) {
+    Object pCSub = null;
     return rawAccumulateAllValuesOfCSub(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -281,8 +281,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfTName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfTName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_TNAME, parameters, results);
     return results;
   }
@@ -292,7 +292,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfTName() {
+  public Set<Object> getAllValuesOfTName() {
     return rawAccumulateAllValuesOfTName(emptyArray());
   }
   
@@ -301,7 +301,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfTName(final FinalPattern2Match partialMatch) {
+  public Set<Object> getAllValuesOfTName(final FinalPattern2Match partialMatch) {
     return rawAccumulateAllValuesOfTName(partialMatch.toArray());
   }
   
@@ -310,8 +310,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfTName(final Integer pYDate, final String pCSub, final String pSName) {
-    String pTName = null;
+  public Set<Object> getAllValuesOfTName(final Object pYDate, final Object pCSub, final Object pSName) {
+    Object pTName = null;
     return rawAccumulateAllValuesOfTName(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
@@ -320,8 +320,8 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
   }
@@ -331,7 +331,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSName() {
+  public Set<Object> getAllValuesOfSName() {
     return rawAccumulateAllValuesOfSName(emptyArray());
   }
   
@@ -340,7 +340,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSName(final FinalPattern2Match partialMatch) {
+  public Set<Object> getAllValuesOfSName(final FinalPattern2Match partialMatch) {
     return rawAccumulateAllValuesOfSName(partialMatch.toArray());
   }
   
@@ -349,15 +349,15 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSName(final Integer pYDate, final String pCSub, final String pTName) {
-    String pSName = null;
+  public Set<Object> getAllValuesOfSName(final Object pYDate, final Object pCSub, final Object pTName) {
+    Object pSName = null;
     return rawAccumulateAllValuesOfSName(new Object[]{pYDate, pCSub, pTName, pSName});
   }
   
   @Override
   public FinalPattern2Match tupleToMatch(final Tuple t) {
     try {
-    	return new FinalPattern2Match((java.lang.Integer) t.get(POSITION_YDATE), (java.lang.String) t.get(POSITION_CSUB), (java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_SNAME));	
+    	return new FinalPattern2Match((java.lang.Object) t.get(POSITION_YDATE), (java.lang.Object) t.get(POSITION_CSUB), (java.lang.Object) t.get(POSITION_TNAME), (java.lang.Object) t.get(POSITION_SNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -367,7 +367,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
   @Override
   public FinalPattern2Match arrayToMatch(final Object[] match) {
     try {
-    	return new FinalPattern2Match((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
+    	return new FinalPattern2Match((java.lang.Object) match[POSITION_YDATE], (java.lang.Object) match[POSITION_CSUB], (java.lang.Object) match[POSITION_TNAME], (java.lang.Object) match[POSITION_SNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

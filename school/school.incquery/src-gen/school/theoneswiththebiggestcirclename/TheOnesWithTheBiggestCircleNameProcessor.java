@@ -15,7 +15,7 @@ public abstract class TheOnesWithTheBiggestCircleNameProcessor implements IMatch
    * @param pSName the value of pattern parameter SName in the currently processed match 
    * 
    */
-  public abstract void process(final String SName);
+  public abstract void process(final Object SName);
   
   @Override
   public void process(final TheOnesWithTheBiggestCircleNameMatch match) {

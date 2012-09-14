@@ -20,7 +20,7 @@ import school.Course;
  * @see CourseWithPrimeWeightProcessor
  * 
  */
-public final class CourseWithPrimeWeightMatch extends BasePatternMatch implements IPatternMatch {
+public final class CourseWithPrimeWeightMatch extends BasePatternMatch {
   private Course fC;
   
   private static String[] parameterNames = {"C"};
@@ -44,9 +44,7 @@ public final class CourseWithPrimeWeightMatch extends BasePatternMatch implement
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("C".equals(parameterName) 
-    ) {
+    if ("C".equals(parameterName) ) {
     	this.fC = (school.Course) newValue;
     	return true;
     }

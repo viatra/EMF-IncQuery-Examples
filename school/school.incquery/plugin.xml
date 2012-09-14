@@ -2,6 +2,22 @@
 <plugin>
 
    <extension
+         id="school.CourseWithTeacher"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
+            id="school.CourseWithoutTeacher">
+      </matcher>
+   </extension>
+   <extension
          id="school.schools"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
@@ -271,22 +287,6 @@
       <matcher
             factoryProvider="school.finalpattern2.FinalPattern2MatcherFactory$Provider"
             id="school.finalPattern2">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithTeacher"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
-            id="school.CourseWithTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithoutTeacher"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
-            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 

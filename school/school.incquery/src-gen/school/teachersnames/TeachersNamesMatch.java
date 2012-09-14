@@ -19,12 +19,12 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see TeachersNamesProcessor
  * 
  */
-public final class TeachersNamesMatch extends BasePatternMatch implements IPatternMatch {
-  private String fTN;
+public final class TeachersNamesMatch extends BasePatternMatch {
+  private Object fTN;
   
   private static String[] parameterNames = {"TN"};
   
-  TeachersNamesMatch(final String pTN) {
+  TeachersNamesMatch(final Object pTN) {
     this.fTN = pTN;
     
   }
@@ -36,24 +36,22 @@ public final class TeachersNamesMatch extends BasePatternMatch implements IPatte
     
   }
   
-  public String getTN() {
+  public Object getTN() {
     return this.fTN;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("TN".equals(parameterName) 
-    ) {
-    	this.fTN = (java.lang.String) newValue;
+    if ("TN".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fTN = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setTN(final String pTN) {
+  public void setTN(final Object pTN) {
     this.fTN = pTN;
     
   }

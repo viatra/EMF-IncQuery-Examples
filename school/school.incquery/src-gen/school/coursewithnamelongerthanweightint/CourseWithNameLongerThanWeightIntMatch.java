@@ -19,12 +19,12 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see CourseWithNameLongerThanWeightIntProcessor
  * 
  */
-public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch implements IPatternMatch {
-  private Integer fW;
+public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
+  private Object fW;
   
   private static String[] parameterNames = {"W"};
   
-  CourseWithNameLongerThanWeightIntMatch(final Integer pW) {
+  CourseWithNameLongerThanWeightIntMatch(final Object pW) {
     this.fW = pW;
     
   }
@@ -36,24 +36,22 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
     
   }
   
-  public Integer getW() {
+  public Object getW() {
     return this.fW;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("W".equals(parameterName) 
-    ) {
-    	this.fW = (java.lang.Integer) newValue;
+    if ("W".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fW = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setW(final Integer pW) {
+  public void setW(final Object pW) {
     this.fW = pW;
     
   }

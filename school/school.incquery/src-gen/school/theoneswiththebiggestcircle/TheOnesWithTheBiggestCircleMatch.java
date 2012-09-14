@@ -20,7 +20,7 @@ import school.Student;
  * @see TheOnesWithTheBiggestCircleProcessor
  * 
  */
-public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch implements IPatternMatch {
+public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
   private Student fS;
   
   private static String[] parameterNames = {"S"};
@@ -44,9 +44,7 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch imp
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("S".equals(parameterName) 
-    ) {
+    if ("S".equals(parameterName) ) {
     	this.fS = (school.Student) newValue;
     	return true;
     }

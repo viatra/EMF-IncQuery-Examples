@@ -21,7 +21,7 @@ import school.Student;
  * @see StudentOfSchoolProcessor
  * 
  */
-public final class StudentOfSchoolMatch extends BasePatternMatch implements IPatternMatch {
+public final class StudentOfSchoolMatch extends BasePatternMatch {
   private Student fS;
   
   private School fSch;
@@ -54,15 +54,11 @@ public final class StudentOfSchoolMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("S".equals(parameterName) 
-    ) {
+    if ("S".equals(parameterName) ) {
     	this.fS = (school.Student) newValue;
     	return true;
     }
-    
-    if ("Sch".equals(parameterName) 
-    ) {
+    if ("Sch".equals(parameterName) ) {
     	this.fSch = (school.School) newValue;
     	return true;
     }

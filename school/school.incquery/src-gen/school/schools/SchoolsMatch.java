@@ -20,7 +20,7 @@ import school.School;
  * @see SchoolsProcessor
  * 
  */
-public final class SchoolsMatch extends BasePatternMatch implements IPatternMatch {
+public final class SchoolsMatch extends BasePatternMatch {
   private School fSch;
   
   private static String[] parameterNames = {"Sch"};
@@ -44,9 +44,7 @@ public final class SchoolsMatch extends BasePatternMatch implements IPatternMatc
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("Sch".equals(parameterName) 
-    ) {
+    if ("Sch".equals(parameterName) ) {
     	this.fSch = (school.School) newValue;
     	return true;
     }

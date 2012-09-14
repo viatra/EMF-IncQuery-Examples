@@ -20,7 +20,7 @@ import school.Student;
  * @see MoreFriendsThanProcessor
  * 
  */
-public final class MoreFriendsThanMatch extends BasePatternMatch implements IPatternMatch {
+public final class MoreFriendsThanMatch extends BasePatternMatch {
   private Student fS1;
   
   private Student fS2;
@@ -53,15 +53,11 @@ public final class MoreFriendsThanMatch extends BasePatternMatch implements IPat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("S1".equals(parameterName) 
-    ) {
+    if ("S1".equals(parameterName) ) {
     	this.fS1 = (school.Student) newValue;
     	return true;
     }
-    
-    if ("S2".equals(parameterName) 
-    ) {
+    if ("S2".equals(parameterName) ) {
     	this.fS2 = (school.Student) newValue;
     	return true;
     }

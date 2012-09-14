@@ -19,14 +19,14 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see InTheCircleOfFriendsNamesProcessor
  * 
  */
-public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch implements IPatternMatch {
-  private String fS1Name;
+public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
+  private Object fS1Name;
   
-  private String fSomeoneName;
+  private Object fSomeoneName;
   
   private static String[] parameterNames = {"S1Name", "SomeoneName"};
   
-  InTheCircleOfFriendsNamesMatch(final String pS1Name, final String pSomeoneName) {
+  InTheCircleOfFriendsNamesMatch(final Object pS1Name, final Object pSomeoneName) {
     this.fS1Name = pS1Name;
     this.fSomeoneName = pSomeoneName;
     
@@ -40,40 +40,36 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch imple
     
   }
   
-  public String getS1Name() {
+  public Object getS1Name() {
     return this.fS1Name;
     
   }
   
-  public String getSomeoneName() {
+  public Object getSomeoneName() {
     return this.fSomeoneName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("S1Name".equals(parameterName) 
-    ) {
-    	this.fS1Name = (java.lang.String) newValue;
+    if ("S1Name".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS1Name = (java.lang.Object) newValue;
     	return true;
     }
-    
-    if ("SomeoneName".equals(parameterName) 
-    ) {
-    	this.fSomeoneName = (java.lang.String) newValue;
+    if ("SomeoneName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fSomeoneName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1Name(final String pS1Name) {
+  public void setS1Name(final Object pS1Name) {
     this.fS1Name = pS1Name;
     
   }
   
-  public void setSomeoneName(final String pSomeoneName) {
+  public void setSomeoneName(final Object pSomeoneName) {
     this.fSomeoneName = pSomeoneName;
     
   }

@@ -18,7 +18,7 @@ public abstract class FinalPattern2Processor implements IMatchProcessor<FinalPat
    * @param pSName the value of pattern parameter SName in the currently processed match 
    * 
    */
-  public abstract void process(final Integer YDate, final String CSub, final String TName, final String SName);
+  public abstract void process(final Object YDate, final Object CSub, final Object TName, final Object SName);
   
   @Override
   public void process(final FinalPattern2Match match) {

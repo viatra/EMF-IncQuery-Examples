@@ -54,6 +54,7 @@ public class CourseWithPrimeWeightEvaluator1_1 implements IMatchChecker {
   /**
    * A wrapper method for calling the generated java method with the correct attributes.
    */
+  @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
     int WPosition = tupleNameMap.get("W");
     java.lang.Integer W = (java.lang.Integer) tuple.get(WPosition);

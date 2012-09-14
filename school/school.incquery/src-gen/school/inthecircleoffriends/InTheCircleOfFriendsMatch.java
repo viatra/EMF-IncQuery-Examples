@@ -20,7 +20,7 @@ import school.Student;
  * @see InTheCircleOfFriendsProcessor
  * 
  */
-public final class InTheCircleOfFriendsMatch extends BasePatternMatch implements IPatternMatch {
+public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
   private Student fS1;
   
   private Student fSomeone;
@@ -53,15 +53,11 @@ public final class InTheCircleOfFriendsMatch extends BasePatternMatch implements
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("S1".equals(parameterName) 
-    ) {
+    if ("S1".equals(parameterName) ) {
     	this.fS1 = (school.Student) newValue;
     	return true;
     }
-    
-    if ("Someone".equals(parameterName) 
-    ) {
+    if ("Someone".equals(parameterName) ) {
     	this.fSomeone = (school.Student) newValue;
     	return true;
     }

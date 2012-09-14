@@ -69,7 +69,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return matches represented as a TeacherWithoutClassNamesMatch object.
    * 
    */
-  public Collection<TeacherWithoutClassNamesMatch> getAllMatches(final String pTNames) {
+  public Collection<TeacherWithoutClassNamesMatch> getAllMatches(final Object pTNames) {
     return rawGetAllMatches(new Object[]{pTNames});
   }
   
@@ -80,7 +80,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return a match represented as a TeacherWithoutClassNamesMatch object, or null if no match is found.
    * 
    */
-  public TeacherWithoutClassNamesMatch getOneArbitraryMatch(final String pTNames) {
+  public TeacherWithoutClassNamesMatch getOneArbitraryMatch(final Object pTNames) {
     return rawGetOneArbitraryMatch(new Object[]{pTNames});
   }
   
@@ -91,7 +91,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final String pTNames) {
+  public boolean hasMatch(final Object pTNames) {
     return rawHasMatch(new Object[]{pTNames});
   }
   
@@ -101,7 +101,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final String pTNames) {
+  public int countMatches(final Object pTNames) {
     return rawCountMatches(new Object[]{pTNames});
   }
   
@@ -111,7 +111,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final String pTNames, final IMatchProcessor<? super TeacherWithoutClassNamesMatch> processor) {
+  public void forEachMatch(final Object pTNames, final IMatchProcessor<? super TeacherWithoutClassNamesMatch> processor) {
     rawForEachMatch(new Object[]{pTNames}, processor);
   }
   
@@ -123,7 +123,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final String pTNames, final IMatchProcessor<? super TeacherWithoutClassNamesMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pTNames, final IMatchProcessor<? super TeacherWithoutClassNamesMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pTNames}, processor);
   }
   
@@ -138,7 +138,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<TeacherWithoutClassNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pTNames) {
+  public DeltaMonitor<TeacherWithoutClassNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pTNames) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTNames});
   }
   
@@ -149,7 +149,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return the (partial) match object.
    * 
    */
-  public TeacherWithoutClassNamesMatch newMatch(final String pTNames) {
+  public TeacherWithoutClassNamesMatch newMatch(final Object pTNames) {
     return new TeacherWithoutClassNamesMatch(pTNames);
     
   }
@@ -159,8 +159,8 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfTNames(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfTNames(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_TNAMES, parameters, results);
     return results;
   }
@@ -170,14 +170,14 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfTNames() {
+  public Set<Object> getAllValuesOfTNames() {
     return rawAccumulateAllValuesOfTNames(emptyArray());
   }
   
   @Override
   public TeacherWithoutClassNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TeacherWithoutClassNamesMatch((java.lang.String) t.get(POSITION_TNAMES));	
+    	return new TeacherWithoutClassNamesMatch((java.lang.Object) t.get(POSITION_TNAMES));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -187,7 +187,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
   @Override
   public TeacherWithoutClassNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TeacherWithoutClassNamesMatch((java.lang.String) match[POSITION_TNAMES]);
+    	return new TeacherWithoutClassNamesMatch((java.lang.Object) match[POSITION_TNAMES]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

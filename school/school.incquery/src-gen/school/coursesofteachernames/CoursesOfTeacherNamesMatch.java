@@ -19,14 +19,14 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see CoursesOfTeacherNamesProcessor
  * 
  */
-public final class CoursesOfTeacherNamesMatch extends BasePatternMatch implements IPatternMatch {
-  private String fTName;
+public final class CoursesOfTeacherNamesMatch extends BasePatternMatch {
+  private Object fTName;
   
-  private String fCName;
+  private Object fCName;
   
   private static String[] parameterNames = {"TName", "CName"};
   
-  CoursesOfTeacherNamesMatch(final String pTName, final String pCName) {
+  CoursesOfTeacherNamesMatch(final Object pTName, final Object pCName) {
     this.fTName = pTName;
     this.fCName = pCName;
     
@@ -40,40 +40,36 @@ public final class CoursesOfTeacherNamesMatch extends BasePatternMatch implement
     
   }
   
-  public String getTName() {
+  public Object getTName() {
     return this.fTName;
     
   }
   
-  public String getCName() {
+  public Object getCName() {
     return this.fCName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    
-    if ("TName".equals(parameterName) 
-    ) {
-    	this.fTName = (java.lang.String) newValue;
+    if ("TName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fTName = (java.lang.Object) newValue;
     	return true;
     }
-    
-    if ("CName".equals(parameterName) 
-    ) {
-    	this.fCName = (java.lang.String) newValue;
+    if ("CName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fCName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setTName(final String pTName) {
+  public void setTName(final Object pTName) {
     this.fTName = pTName;
     
   }
   
-  public void setCName(final String pCName) {
+  public void setCName(final Object pCName) {
     this.fCName = pCName;
     
   }
