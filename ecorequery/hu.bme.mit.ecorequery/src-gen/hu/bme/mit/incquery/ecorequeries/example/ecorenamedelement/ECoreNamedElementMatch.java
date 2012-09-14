@@ -20,14 +20,14 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see ECoreNamedElementProcessor
  * 
  */
-public final class ECoreNamedElementMatch extends BasePatternMatch implements IPatternMatch {
+public final class ECoreNamedElementMatch extends BasePatternMatch {
   private ENamedElement fElement;
   
-  private String fName;
+  private Object fName;
   
   private static String[] parameterNames = {"Element", "Name"};
   
-  ECoreNamedElementMatch(final ENamedElement pElement, final String pName) {
+  ECoreNamedElementMatch(final ENamedElement pElement, final Object pName) {
     this.fElement = pElement;
     this.fName = pName;
     
@@ -46,7 +46,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch implements IP
     
   }
   
-  public String getName() {
+  public Object getName() {
     return this.fName;
     
   }
@@ -57,8 +57,8 @@ public final class ECoreNamedElementMatch extends BasePatternMatch implements IP
     	this.fElement = (org.eclipse.emf.ecore.ENamedElement) newValue;
     	return true;
     }
-    if ("Name".equals(parameterName) ) {
-    	this.fName = (java.lang.String) newValue;
+    if ("Name".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
@@ -70,7 +70,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch implements IP
     
   }
   
-  public void setName(final String pName) {
+  public void setName(final Object pName) {
     this.fName = pName;
     
   }

@@ -68,7 +68,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return matches represented as a EClassNameMatch object.
    * 
    */
-  public Collection<EClassNameMatch> getAllMatches(final String pEName) {
+  public Collection<EClassNameMatch> getAllMatches(final Object pEName) {
     return rawGetAllMatches(new Object[]{pEName});
   }
   
@@ -79,7 +79,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return a match represented as a EClassNameMatch object, or null if no match is found.
    * 
    */
-  public EClassNameMatch getOneArbitraryMatch(final String pEName) {
+  public EClassNameMatch getOneArbitraryMatch(final Object pEName) {
     return rawGetOneArbitraryMatch(new Object[]{pEName});
   }
   
@@ -90,7 +90,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final String pEName) {
+  public boolean hasMatch(final Object pEName) {
     return rawHasMatch(new Object[]{pEName});
   }
   
@@ -100,7 +100,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final String pEName) {
+  public int countMatches(final Object pEName) {
     return rawCountMatches(new Object[]{pEName});
   }
   
@@ -110,7 +110,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final String pEName, final IMatchProcessor<? super EClassNameMatch> processor) {
+  public void forEachMatch(final Object pEName, final IMatchProcessor<? super EClassNameMatch> processor) {
     rawForEachMatch(new Object[]{pEName}, processor);
   }
   
@@ -122,7 +122,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final String pEName, final IMatchProcessor<? super EClassNameMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pEName, final IMatchProcessor<? super EClassNameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pEName}, processor);
   }
   
@@ -137,7 +137,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EClassNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pEName) {
+  public DeltaMonitor<EClassNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pEName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pEName});
   }
   
@@ -148,7 +148,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return the (partial) match object.
    * 
    */
-  public EClassNameMatch newMatch(final String pEName) {
+  public EClassNameMatch newMatch(final Object pEName) {
     return new EClassNameMatch(pEName);
     
   }
@@ -158,8 +158,8 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfEName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfEName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_ENAME, parameters, results);
     return results;
   }
@@ -169,14 +169,14 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfEName() {
+  public Set<Object> getAllValuesOfEName() {
     return rawAccumulateAllValuesOfEName(emptyArray());
   }
   
   @Override
   public EClassNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassNameMatch((java.lang.String) t.get(POSITION_ENAME));	
+    	return new EClassNameMatch((java.lang.Object) t.get(POSITION_ENAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,7 +186,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> imp
   @Override
   public EClassNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassNameMatch((java.lang.String) match[POSITION_ENAME]);
+    	return new EClassNameMatch((java.lang.Object) match[POSITION_ENAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

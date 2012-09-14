@@ -15,7 +15,7 @@ public abstract class EClassNameProcessor implements IMatchProcessor<EClassNameM
    * @param pEName the value of pattern parameter EName in the currently processed match 
    * 
    */
-  public abstract void process(final String EName);
+  public abstract void process(final Object EName);
   
   @Override
   public void process(final EClassNameMatch match) {

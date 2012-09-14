@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.ecorequeries.example.samplequery2;
 
 import java.util.Arrays;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
@@ -22,22 +22,22 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see SampleQuery2Processor
  * 
  */
-public final class SampleQuery2Match extends BasePatternMatch implements IPatternMatch {
+public final class SampleQuery2Match extends BasePatternMatch {
   private EClass fXElement;
   
   private EClass fYElement;
   
-  private EStructuralFeature fRelates1;
+  private EReference fRelates1;
   
   private EReference fRelates2;
   
-  private Object fLabel1;
+  private EAttribute fLabel1;
   
-  private Object fLabel2;
+  private EAttribute fLabel2;
   
   private static String[] parameterNames = {"XElement", "YElement", "Relates1", "Relates2", "Label1", "Label2"};
   
-  SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     this.fXElement = pXElement;
     this.fYElement = pYElement;
     this.fRelates1 = pRelates1;
@@ -69,7 +69,7 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     
   }
   
-  public EStructuralFeature getRelates1() {
+  public EReference getRelates1() {
     return this.fRelates1;
     
   }
@@ -79,12 +79,12 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     
   }
   
-  public Object getLabel1() {
+  public EAttribute getLabel1() {
     return this.fLabel1;
     
   }
   
-  public Object getLabel2() {
+  public EAttribute getLabel2() {
     return this.fLabel2;
     
   }
@@ -100,19 +100,19 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     	return true;
     }
     if ("Relates1".equals(parameterName) ) {
-    	this.fRelates1 = (org.eclipse.emf.ecore.EStructuralFeature) newValue;
+    	this.fRelates1 = (org.eclipse.emf.ecore.EReference) newValue;
     	return true;
     }
     if ("Relates2".equals(parameterName) ) {
     	this.fRelates2 = (org.eclipse.emf.ecore.EReference) newValue;
     	return true;
     }
-    if ("Label1".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fLabel1 = (java.lang.Object) newValue;
+    if ("Label1".equals(parameterName) ) {
+    	this.fLabel1 = (org.eclipse.emf.ecore.EAttribute) newValue;
     	return true;
     }
-    if ("Label2".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fLabel2 = (java.lang.Object) newValue;
+    if ("Label2".equals(parameterName) ) {
+    	this.fLabel2 = (org.eclipse.emf.ecore.EAttribute) newValue;
     	return true;
     }
     return false;
@@ -129,7 +129,7 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     
   }
   
-  public void setRelates1(final EStructuralFeature pRelates1) {
+  public void setRelates1(final EReference pRelates1) {
     this.fRelates1 = pRelates1;
     
   }
@@ -139,12 +139,12 @@ public final class SampleQuery2Match extends BasePatternMatch implements IPatter
     
   }
   
-  public void setLabel1(final Object pLabel1) {
+  public void setLabel1(final EAttribute pLabel1) {
     this.fLabel1 = pLabel1;
     
   }
   
-  public void setLabel2(final Object pLabel2) {
+  public void setLabel2(final EAttribute pLabel2) {
     this.fLabel2 = pLabel2;
     
   }

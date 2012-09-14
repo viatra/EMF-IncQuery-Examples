@@ -6,9 +6,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.viatra2.emf.incquery.runtime.api.EngineManager;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory;
@@ -107,7 +107,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return matches represented as a SampleQuery2Match object.
    * 
    */
-  public Collection<SampleQuery2Match> getAllMatches(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public Collection<SampleQuery2Match> getAllMatches(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawGetAllMatches(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -123,7 +123,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return a match represented as a SampleQuery2Match object, or null if no match is found.
    * 
    */
-  public SampleQuery2Match getOneArbitraryMatch(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public SampleQuery2Match getOneArbitraryMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawGetOneArbitraryMatch(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -139,7 +139,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public boolean hasMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawHasMatch(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -154,7 +154,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public int countMatches(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawCountMatches(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -169,7 +169,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2, final IMatchProcessor<? super SampleQuery2Match> processor) {
+  public void forEachMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2, final IMatchProcessor<? super SampleQuery2Match> processor) {
     rawForEachMatch(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2}, processor);
   }
   
@@ -186,7 +186,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2, final IMatchProcessor<? super SampleQuery2Match> processor) {
+  public boolean forOneArbitraryMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2, final IMatchProcessor<? super SampleQuery2Match> processor) {
     return rawForOneArbitraryMatch(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2}, processor);
   }
   
@@ -206,7 +206,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<SampleQuery2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public DeltaMonitor<SampleQuery2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -222,7 +222,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the (partial) match object.
    * 
    */
-  public SampleQuery2Match newMatch(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public SampleQuery2Match newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return new SampleQuery2Match(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
     
   }
@@ -261,7 +261,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfXElement(final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public Set<EClass> getAllValuesOfXElement(final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     EClass pXElement = null;
     return rawAccumulateAllValuesOfXElement(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
@@ -300,7 +300,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfYElement(final EClass pXElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
+  public Set<EClass> getAllValuesOfYElement(final EClass pXElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     EClass pYElement = null;
     return rawAccumulateAllValuesOfYElement(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
@@ -310,8 +310,8 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> rawAccumulateAllValuesOfRelates1(final Object[] parameters) {
-    Set<EStructuralFeature> results = new HashSet<EStructuralFeature>();
+  public Set<EReference> rawAccumulateAllValuesOfRelates1(final Object[] parameters) {
+    Set<EReference> results = new HashSet<EReference>();
     rawAccumulateAllValues(POSITION_RELATES1, parameters, results);
     return results;
   }
@@ -321,7 +321,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfRelates1() {
+  public Set<EReference> getAllValuesOfRelates1() {
     return rawAccumulateAllValuesOfRelates1(emptyArray());
   }
   
@@ -330,7 +330,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfRelates1(final SampleQuery2Match partialMatch) {
+  public Set<EReference> getAllValuesOfRelates1(final SampleQuery2Match partialMatch) {
     return rawAccumulateAllValuesOfRelates1(partialMatch.toArray());
   }
   
@@ -339,8 +339,8 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfRelates1(final EClass pXElement, final EClass pYElement, final EReference pRelates2, final Object pLabel1, final Object pLabel2) {
-    EStructuralFeature pRelates1 = null;
+  public Set<EReference> getAllValuesOfRelates1(final EClass pXElement, final EClass pYElement, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+    EReference pRelates1 = null;
     return rawAccumulateAllValuesOfRelates1(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -378,7 +378,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EReference> getAllValuesOfRelates2(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final Object pLabel1, final Object pLabel2) {
+  public Set<EReference> getAllValuesOfRelates2(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EAttribute pLabel1, final EAttribute pLabel2) {
     EReference pRelates2 = null;
     return rawAccumulateAllValuesOfRelates2(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
@@ -388,8 +388,8 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfLabel1(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<EAttribute> rawAccumulateAllValuesOfLabel1(final Object[] parameters) {
+    Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_LABEL1, parameters, results);
     return results;
   }
@@ -399,7 +399,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel1() {
+  public Set<EAttribute> getAllValuesOfLabel1() {
     return rawAccumulateAllValuesOfLabel1(emptyArray());
   }
   
@@ -408,7 +408,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel1(final SampleQuery2Match partialMatch) {
+  public Set<EAttribute> getAllValuesOfLabel1(final SampleQuery2Match partialMatch) {
     return rawAccumulateAllValuesOfLabel1(partialMatch.toArray());
   }
   
@@ -417,8 +417,8 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel1(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel2) {
-    Object pLabel1 = null;
+  public Set<EAttribute> getAllValuesOfLabel1(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel2) {
+    EAttribute pLabel1 = null;
     return rawAccumulateAllValuesOfLabel1(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
@@ -427,8 +427,8 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfLabel2(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<EAttribute> rawAccumulateAllValuesOfLabel2(final Object[] parameters) {
+    Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_LABEL2, parameters, results);
     return results;
   }
@@ -438,7 +438,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel2() {
+  public Set<EAttribute> getAllValuesOfLabel2() {
     return rawAccumulateAllValuesOfLabel2(emptyArray());
   }
   
@@ -447,7 +447,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel2(final SampleQuery2Match partialMatch) {
+  public Set<EAttribute> getAllValuesOfLabel2(final SampleQuery2Match partialMatch) {
     return rawAccumulateAllValuesOfLabel2(partialMatch.toArray());
   }
   
@@ -456,15 +456,15 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfLabel2(final EClass pXElement, final EClass pYElement, final EStructuralFeature pRelates1, final EReference pRelates2, final Object pLabel1) {
-    Object pLabel2 = null;
+  public Set<EAttribute> getAllValuesOfLabel2(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1) {
+    EAttribute pLabel2 = null;
     return rawAccumulateAllValuesOfLabel2(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }
   
   @Override
   public SampleQuery2Match tupleToMatch(final Tuple t) {
     try {
-    	return new SampleQuery2Match((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EStructuralFeature) t.get(POSITION_RELATES1), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES2), (java.lang.Object) t.get(POSITION_LABEL1), (java.lang.Object) t.get(POSITION_LABEL2));	
+    	return new SampleQuery2Match((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES1), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES2), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -474,7 +474,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
   @Override
   public SampleQuery2Match arrayToMatch(final Object[] match) {
     try {
-    	return new SampleQuery2Match((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EStructuralFeature) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (java.lang.Object) match[POSITION_LABEL1], (java.lang.Object) match[POSITION_LABEL2]);
+    	return new SampleQuery2Match((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

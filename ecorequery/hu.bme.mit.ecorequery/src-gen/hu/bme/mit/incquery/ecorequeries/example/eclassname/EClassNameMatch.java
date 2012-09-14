@@ -19,12 +19,12 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EClassNameProcessor
  * 
  */
-public final class EClassNameMatch extends BasePatternMatch implements IPatternMatch {
-  private String fEName;
+public final class EClassNameMatch extends BasePatternMatch {
+  private Object fEName;
   
   private static String[] parameterNames = {"EName"};
   
-  EClassNameMatch(final String pEName) {
+  EClassNameMatch(final Object pEName) {
     this.fEName = pEName;
     
   }
@@ -36,22 +36,22 @@ public final class EClassNameMatch extends BasePatternMatch implements IPatternM
     
   }
   
-  public String getEName() {
+  public Object getEName() {
     return this.fEName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("EName".equals(parameterName) ) {
-    	this.fEName = (java.lang.String) newValue;
+    if ("EName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fEName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setEName(final String pEName) {
+  public void setEName(final Object pEName) {
     this.fEName = pEName;
     
   }

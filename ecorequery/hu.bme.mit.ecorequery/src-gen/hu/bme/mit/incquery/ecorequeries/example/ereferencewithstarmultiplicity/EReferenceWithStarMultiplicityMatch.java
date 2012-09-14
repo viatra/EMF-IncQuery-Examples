@@ -20,7 +20,7 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EReferenceWithStarMultiplicityProcessor
  * 
  */
-public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch implements IPatternMatch {
+public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch {
   private EReference fERef;
   
   private static String[] parameterNames = {"ERef"};

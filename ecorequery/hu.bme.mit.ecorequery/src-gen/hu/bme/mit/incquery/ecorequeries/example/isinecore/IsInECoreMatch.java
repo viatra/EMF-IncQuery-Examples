@@ -20,7 +20,7 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see IsInECoreProcessor
  * 
  */
-public final class IsInECoreMatch extends BasePatternMatch implements IPatternMatch {
+public final class IsInECoreMatch extends BasePatternMatch {
   private EClassifier fElement;
   
   private static String[] parameterNames = {"Element"};

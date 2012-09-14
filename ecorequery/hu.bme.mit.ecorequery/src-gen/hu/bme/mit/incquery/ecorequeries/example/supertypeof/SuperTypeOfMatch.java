@@ -20,7 +20,7 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see SuperTypeOfProcessor
  * 
  */
-public final class SuperTypeOfMatch extends BasePatternMatch implements IPatternMatch {
+public final class SuperTypeOfMatch extends BasePatternMatch {
   private EClass fSuper;
   
   private EClass fSub;

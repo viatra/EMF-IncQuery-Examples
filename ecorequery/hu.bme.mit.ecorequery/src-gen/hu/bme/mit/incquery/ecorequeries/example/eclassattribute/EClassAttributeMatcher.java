@@ -6,9 +6,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.viatra2.emf.incquery.runtime.api.EngineManager;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory;
@@ -80,7 +80,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return matches represented as a EClassAttributeMatch object.
    * 
    */
-  public Collection<EClassAttributeMatch> getAllMatches(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public Collection<EClassAttributeMatch> getAllMatches(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawGetAllMatches(new Object[]{pE, pAttr, pType});
   }
   
@@ -93,7 +93,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return a match represented as a EClassAttributeMatch object, or null if no match is found.
    * 
    */
-  public EClassAttributeMatch getOneArbitraryMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public EClassAttributeMatch getOneArbitraryMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawGetOneArbitraryMatch(new Object[]{pE, pAttr, pType});
   }
   
@@ -106,7 +106,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public boolean hasMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawHasMatch(new Object[]{pE, pAttr, pType});
   }
   
@@ -118,7 +118,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public int countMatches(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawCountMatches(new Object[]{pE, pAttr, pType});
   }
   
@@ -130,7 +130,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType, final IMatchProcessor<? super EClassAttributeMatch> processor) {
+  public void forEachMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType, final IMatchProcessor<? super EClassAttributeMatch> processor) {
     rawForEachMatch(new Object[]{pE, pAttr, pType}, processor);
   }
   
@@ -144,7 +144,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType, final IMatchProcessor<? super EClassAttributeMatch> processor) {
+  public boolean forOneArbitraryMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType, final IMatchProcessor<? super EClassAttributeMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pE, pAttr, pType}, processor);
   }
   
@@ -161,7 +161,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EClassAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public DeltaMonitor<EClassAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pAttr, pType});
   }
   
@@ -174,7 +174,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the (partial) match object.
    * 
    */
-  public EClassAttributeMatch newMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  public EClassAttributeMatch newMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return new EClassAttributeMatch(pE, pAttr, pType);
     
   }
@@ -213,7 +213,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfE(final EStructuralFeature pAttr, final EClassifier pType) {
+  public Set<EClass> getAllValuesOfE(final EAttribute pAttr, final EClassifier pType) {
     EClass pE = null;
     return rawAccumulateAllValuesOfE(new Object[]{pE, pAttr, pType});
   }
@@ -223,8 +223,8 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
-    Set<EStructuralFeature> results = new HashSet<EStructuralFeature>();
+  public Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
+    Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_ATTR, parameters, results);
     return results;
   }
@@ -234,7 +234,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfAttr() {
+  public Set<EAttribute> getAllValuesOfAttr() {
     return rawAccumulateAllValuesOfAttr(emptyArray());
   }
   
@@ -243,7 +243,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfAttr(final EClassAttributeMatch partialMatch) {
+  public Set<EAttribute> getAllValuesOfAttr(final EClassAttributeMatch partialMatch) {
     return rawAccumulateAllValuesOfAttr(partialMatch.toArray());
   }
   
@@ -252,8 +252,8 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EStructuralFeature> getAllValuesOfAttr(final EClass pE, final EClassifier pType) {
-    EStructuralFeature pAttr = null;
+  public Set<EAttribute> getAllValuesOfAttr(final EClass pE, final EClassifier pType) {
+    EAttribute pAttr = null;
     return rawAccumulateAllValuesOfAttr(new Object[]{pE, pAttr, pType});
   }
   
@@ -291,7 +291,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClassifier> getAllValuesOfType(final EClass pE, final EStructuralFeature pAttr) {
+  public Set<EClassifier> getAllValuesOfType(final EClass pE, final EAttribute pAttr) {
     EClassifier pType = null;
     return rawAccumulateAllValuesOfType(new Object[]{pE, pAttr, pType});
   }
@@ -299,7 +299,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   @Override
   public EClassAttributeMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EStructuralFeature) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));	
+    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -309,7 +309,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   @Override
   public EClassAttributeMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EStructuralFeature) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
+    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

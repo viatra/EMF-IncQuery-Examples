@@ -19,12 +19,12 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EReferenceWithOneMultiplicityNameProcessor
  * 
  */
-public final class EReferenceWithOneMultiplicityNameMatch extends BasePatternMatch implements IPatternMatch {
-  private String fERefName;
+public final class EReferenceWithOneMultiplicityNameMatch extends BasePatternMatch {
+  private Object fERefName;
   
   private static String[] parameterNames = {"ERefName"};
   
-  EReferenceWithOneMultiplicityNameMatch(final String pERefName) {
+  EReferenceWithOneMultiplicityNameMatch(final Object pERefName) {
     this.fERefName = pERefName;
     
   }
@@ -36,22 +36,22 @@ public final class EReferenceWithOneMultiplicityNameMatch extends BasePatternMat
     
   }
   
-  public String getERefName() {
+  public Object getERefName() {
     return this.fERefName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("ERefName".equals(parameterName) ) {
-    	this.fERefName = (java.lang.String) newValue;
+    if ("ERefName".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fERefName = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setERefName(final String pERefName) {
+  public void setERefName(final Object pERefName) {
     this.fERefName = pERefName;
     
   }

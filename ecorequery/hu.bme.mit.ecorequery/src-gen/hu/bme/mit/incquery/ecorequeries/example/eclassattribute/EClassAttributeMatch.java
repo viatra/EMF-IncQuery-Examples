@@ -1,9 +1,9 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclassattribute;
 
 import java.util.Arrays;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
@@ -22,16 +22,16 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EClassAttributeProcessor
  * 
  */
-public final class EClassAttributeMatch extends BasePatternMatch implements IPatternMatch {
+public final class EClassAttributeMatch extends BasePatternMatch {
   private EClass fE;
   
-  private EStructuralFeature fAttr;
+  private EAttribute fAttr;
   
   private EClassifier fType;
   
   private static String[] parameterNames = {"E", "Attr", "Type"};
   
-  EClassAttributeMatch(final EClass pE, final EStructuralFeature pAttr, final EClassifier pType) {
+  EClassAttributeMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     this.fE = pE;
     this.fAttr = pAttr;
     this.fType = pType;
@@ -52,7 +52,7 @@ public final class EClassAttributeMatch extends BasePatternMatch implements IPat
     
   }
   
-  public EStructuralFeature getAttr() {
+  public EAttribute getAttr() {
     return this.fAttr;
     
   }
@@ -69,7 +69,7 @@ public final class EClassAttributeMatch extends BasePatternMatch implements IPat
     	return true;
     }
     if ("Attr".equals(parameterName) ) {
-    	this.fAttr = (org.eclipse.emf.ecore.EStructuralFeature) newValue;
+    	this.fAttr = (org.eclipse.emf.ecore.EAttribute) newValue;
     	return true;
     }
     if ("Type".equals(parameterName) ) {
@@ -85,7 +85,7 @@ public final class EClassAttributeMatch extends BasePatternMatch implements IPat
     
   }
   
-  public void setAttr(final EStructuralFeature pAttr) {
+  public void setAttr(final EAttribute pAttr) {
     this.fAttr = pAttr;
     
   }

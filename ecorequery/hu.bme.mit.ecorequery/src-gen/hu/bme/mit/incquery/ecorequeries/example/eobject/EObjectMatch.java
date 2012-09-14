@@ -20,7 +20,7 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EObjectProcessor
  * 
  */
-public final class EObjectMatch extends BasePatternMatch implements IPatternMatch {
+public final class EObjectMatch extends BasePatternMatch {
   private EObject fE;
   
   private static String[] parameterNames = {"E"};

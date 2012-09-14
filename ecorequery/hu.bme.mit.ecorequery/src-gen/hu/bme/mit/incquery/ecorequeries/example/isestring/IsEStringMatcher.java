@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.viatra2.emf.incquery.runtime.api.EngineManager;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatcherFactory;
@@ -69,7 +70,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return matches represented as a IsEStringMatch object.
    * 
    */
-  public Collection<IsEStringMatch> getAllMatches(final Object pElement) {
+  public Collection<IsEStringMatch> getAllMatches(final EClassifier pElement) {
     return rawGetAllMatches(new Object[]{pElement});
   }
   
@@ -80,7 +81,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return a match represented as a IsEStringMatch object, or null if no match is found.
    * 
    */
-  public IsEStringMatch getOneArbitraryMatch(final Object pElement) {
+  public IsEStringMatch getOneArbitraryMatch(final EClassifier pElement) {
     return rawGetOneArbitraryMatch(new Object[]{pElement});
   }
   
@@ -91,7 +92,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pElement) {
+  public boolean hasMatch(final EClassifier pElement) {
     return rawHasMatch(new Object[]{pElement});
   }
   
@@ -101,7 +102,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pElement) {
+  public int countMatches(final EClassifier pElement) {
     return rawCountMatches(new Object[]{pElement});
   }
   
@@ -111,7 +112,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pElement, final IMatchProcessor<? super IsEStringMatch> processor) {
+  public void forEachMatch(final EClassifier pElement, final IMatchProcessor<? super IsEStringMatch> processor) {
     rawForEachMatch(new Object[]{pElement}, processor);
   }
   
@@ -123,7 +124,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pElement, final IMatchProcessor<? super IsEStringMatch> processor) {
+  public boolean forOneArbitraryMatch(final EClassifier pElement, final IMatchProcessor<? super IsEStringMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pElement}, processor);
   }
   
@@ -138,7 +139,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<IsEStringMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pElement) {
+  public DeltaMonitor<IsEStringMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClassifier pElement) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pElement});
   }
   
@@ -149,7 +150,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return the (partial) match object.
    * 
    */
-  public IsEStringMatch newMatch(final Object pElement) {
+  public IsEStringMatch newMatch(final EClassifier pElement) {
     return new IsEStringMatch(pElement);
     
   }
@@ -159,8 +160,8 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfElement(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<EClassifier> rawAccumulateAllValuesOfElement(final Object[] parameters) {
+    Set<EClassifier> results = new HashSet<EClassifier>();
     rawAccumulateAllValues(POSITION_ELEMENT, parameters, results);
     return results;
   }
@@ -170,14 +171,14 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfElement() {
+  public Set<EClassifier> getAllValuesOfElement() {
     return rawAccumulateAllValuesOfElement(emptyArray());
   }
   
   @Override
   public IsEStringMatch tupleToMatch(final Tuple t) {
     try {
-    	return new IsEStringMatch((java.lang.Object) t.get(POSITION_ELEMENT));	
+    	return new IsEStringMatch((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -187,7 +188,7 @@ public class IsEStringMatcher extends BaseGeneratedMatcher<IsEStringMatch> imple
   @Override
   public IsEStringMatch arrayToMatch(final Object[] match) {
     try {
-    	return new IsEStringMatch((java.lang.Object) match[POSITION_ELEMENT]);
+    	return new IsEStringMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

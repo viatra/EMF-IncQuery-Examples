@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute;
 
 import java.util.Arrays;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BasePatternMatch;
@@ -20,14 +21,14 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see EClassWithEStringAttributeProcessor
  * 
  */
-public final class EClassWithEStringAttributeMatch extends BasePatternMatch implements IPatternMatch {
+public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
   private EClass fE;
   
-  private Object fAttr;
+  private EAttribute fAttr;
   
   private static String[] parameterNames = {"E", "Attr"};
   
-  EClassWithEStringAttributeMatch(final EClass pE, final Object pAttr) {
+  EClassWithEStringAttributeMatch(final EClass pE, final EAttribute pAttr) {
     this.fE = pE;
     this.fAttr = pAttr;
     
@@ -46,7 +47,7 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch impl
     
   }
   
-  public Object getAttr() {
+  public EAttribute getAttr() {
     return this.fAttr;
     
   }
@@ -57,8 +58,8 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch impl
     	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
     }
-    if ("Attr".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fAttr = (java.lang.Object) newValue;
+    if ("Attr".equals(parameterName) ) {
+    	this.fAttr = (org.eclipse.emf.ecore.EAttribute) newValue;
     	return true;
     }
     return false;
@@ -70,7 +71,7 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch impl
     
   }
   
-  public void setAttr(final Object pAttr) {
+  public void setAttr(final EAttribute pAttr) {
     this.fAttr = pAttr;
     
   }

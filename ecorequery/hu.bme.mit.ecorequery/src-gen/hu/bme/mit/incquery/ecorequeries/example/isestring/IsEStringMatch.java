@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.isestring;
 
 import java.util.Arrays;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
@@ -19,12 +20,12 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * @see IsEStringProcessor
  * 
  */
-public final class IsEStringMatch extends BasePatternMatch implements IPatternMatch {
-  private Object fElement;
+public final class IsEStringMatch extends BasePatternMatch {
+  private EClassifier fElement;
   
   private static String[] parameterNames = {"Element"};
   
-  IsEStringMatch(final Object pElement) {
+  IsEStringMatch(final EClassifier pElement) {
     this.fElement = pElement;
     
   }
@@ -36,22 +37,22 @@ public final class IsEStringMatch extends BasePatternMatch implements IPatternMa
     
   }
   
-  public Object getElement() {
+  public EClassifier getElement() {
     return this.fElement;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Element".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fElement = (java.lang.Object) newValue;
+    if ("Element".equals(parameterName) ) {
+    	this.fElement = (org.eclipse.emf.ecore.EClassifier) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setElement(final Object pElement) {
+  public void setElement(final EClassifier pElement) {
     this.fElement = pElement;
     
   }

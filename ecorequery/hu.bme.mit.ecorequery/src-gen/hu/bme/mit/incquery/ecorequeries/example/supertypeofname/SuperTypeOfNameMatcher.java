@@ -73,7 +73,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return matches represented as a SuperTypeOfNameMatch object.
    * 
    */
-  public Collection<SuperTypeOfNameMatch> getAllMatches(final String pSuperName, final String pSubName) {
+  public Collection<SuperTypeOfNameMatch> getAllMatches(final Object pSuperName, final Object pSubName) {
     return rawGetAllMatches(new Object[]{pSuperName, pSubName});
   }
   
@@ -85,7 +85,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return a match represented as a SuperTypeOfNameMatch object, or null if no match is found.
    * 
    */
-  public SuperTypeOfNameMatch getOneArbitraryMatch(final String pSuperName, final String pSubName) {
+  public SuperTypeOfNameMatch getOneArbitraryMatch(final Object pSuperName, final Object pSubName) {
     return rawGetOneArbitraryMatch(new Object[]{pSuperName, pSubName});
   }
   
@@ -97,7 +97,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final String pSuperName, final String pSubName) {
+  public boolean hasMatch(final Object pSuperName, final Object pSubName) {
     return rawHasMatch(new Object[]{pSuperName, pSubName});
   }
   
@@ -108,7 +108,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final String pSuperName, final String pSubName) {
+  public int countMatches(final Object pSuperName, final Object pSubName) {
     return rawCountMatches(new Object[]{pSuperName, pSubName});
   }
   
@@ -119,7 +119,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final String pSuperName, final String pSubName, final IMatchProcessor<? super SuperTypeOfNameMatch> processor) {
+  public void forEachMatch(final Object pSuperName, final Object pSubName, final IMatchProcessor<? super SuperTypeOfNameMatch> processor) {
     rawForEachMatch(new Object[]{pSuperName, pSubName}, processor);
   }
   
@@ -132,7 +132,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final String pSuperName, final String pSubName, final IMatchProcessor<? super SuperTypeOfNameMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pSuperName, final Object pSubName, final IMatchProcessor<? super SuperTypeOfNameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSuperName, pSubName}, processor);
   }
   
@@ -148,7 +148,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<SuperTypeOfNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pSuperName, final String pSubName) {
+  public DeltaMonitor<SuperTypeOfNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pSuperName, final Object pSubName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSuperName, pSubName});
   }
   
@@ -160,7 +160,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the (partial) match object.
    * 
    */
-  public SuperTypeOfNameMatch newMatch(final String pSuperName, final String pSubName) {
+  public SuperTypeOfNameMatch newMatch(final Object pSuperName, final Object pSubName) {
     return new SuperTypeOfNameMatch(pSuperName, pSubName);
     
   }
@@ -170,8 +170,8 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSuperName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfSuperName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SUPERNAME, parameters, results);
     return results;
   }
@@ -181,7 +181,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSuperName() {
+  public Set<Object> getAllValuesOfSuperName() {
     return rawAccumulateAllValuesOfSuperName(emptyArray());
   }
   
@@ -190,7 +190,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSuperName(final SuperTypeOfNameMatch partialMatch) {
+  public Set<Object> getAllValuesOfSuperName(final SuperTypeOfNameMatch partialMatch) {
     return rawAccumulateAllValuesOfSuperName(partialMatch.toArray());
   }
   
@@ -199,8 +199,8 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSuperName(final String pSubName) {
-    String pSuperName = null;
+  public Set<Object> getAllValuesOfSuperName(final Object pSubName) {
+    Object pSuperName = null;
     return rawAccumulateAllValuesOfSuperName(new Object[]{pSuperName, pSubName});
   }
   
@@ -209,8 +209,8 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSubName(final Object[] parameters) {
-    Set<String> results = new HashSet<String>();
+  public Set<Object> rawAccumulateAllValuesOfSubName(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SUBNAME, parameters, results);
     return results;
   }
@@ -220,7 +220,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSubName() {
+  public Set<Object> getAllValuesOfSubName() {
     return rawAccumulateAllValuesOfSubName(emptyArray());
   }
   
@@ -229,7 +229,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSubName(final SuperTypeOfNameMatch partialMatch) {
+  public Set<Object> getAllValuesOfSubName(final SuperTypeOfNameMatch partialMatch) {
     return rawAccumulateAllValuesOfSubName(partialMatch.toArray());
   }
   
@@ -238,15 +238,15 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> getAllValuesOfSubName(final String pSuperName) {
-    String pSubName = null;
+  public Set<Object> getAllValuesOfSubName(final Object pSuperName) {
+    Object pSubName = null;
     return rawAccumulateAllValuesOfSubName(new Object[]{pSuperName, pSubName});
   }
   
   @Override
   public SuperTypeOfNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SuperTypeOfNameMatch((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));	
+    	return new SuperTypeOfNameMatch((java.lang.Object) t.get(POSITION_SUPERNAME), (java.lang.Object) t.get(POSITION_SUBNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -256,7 +256,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
   @Override
   public SuperTypeOfNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SuperTypeOfNameMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+    	return new SuperTypeOfNameMatch((java.lang.Object) match[POSITION_SUPERNAME], (java.lang.Object) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

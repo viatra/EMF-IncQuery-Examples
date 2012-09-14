@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.viatra2.emf.incquery.runtime.api.EngineManager;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
@@ -74,7 +75,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return matches represented as a EClassWithEStringAttributeMatch object.
    * 
    */
-  public Collection<EClassWithEStringAttributeMatch> getAllMatches(final EClass pE, final Object pAttr) {
+  public Collection<EClassWithEStringAttributeMatch> getAllMatches(final EClass pE, final EAttribute pAttr) {
     return rawGetAllMatches(new Object[]{pE, pAttr});
   }
   
@@ -86,7 +87,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return a match represented as a EClassWithEStringAttributeMatch object, or null if no match is found.
    * 
    */
-  public EClassWithEStringAttributeMatch getOneArbitraryMatch(final EClass pE, final Object pAttr) {
+  public EClassWithEStringAttributeMatch getOneArbitraryMatch(final EClass pE, final EAttribute pAttr) {
     return rawGetOneArbitraryMatch(new Object[]{pE, pAttr});
   }
   
@@ -98,7 +99,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClass pE, final Object pAttr) {
+  public boolean hasMatch(final EClass pE, final EAttribute pAttr) {
     return rawHasMatch(new Object[]{pE, pAttr});
   }
   
@@ -109,7 +110,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClass pE, final Object pAttr) {
+  public int countMatches(final EClass pE, final EAttribute pAttr) {
     return rawCountMatches(new Object[]{pE, pAttr});
   }
   
@@ -120,7 +121,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClass pE, final Object pAttr, final IMatchProcessor<? super EClassWithEStringAttributeMatch> processor) {
+  public void forEachMatch(final EClass pE, final EAttribute pAttr, final IMatchProcessor<? super EClassWithEStringAttributeMatch> processor) {
     rawForEachMatch(new Object[]{pE, pAttr}, processor);
   }
   
@@ -133,7 +134,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClass pE, final Object pAttr, final IMatchProcessor<? super EClassWithEStringAttributeMatch> processor) {
+  public boolean forOneArbitraryMatch(final EClass pE, final EAttribute pAttr, final IMatchProcessor<? super EClassWithEStringAttributeMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pE, pAttr}, processor);
   }
   
@@ -149,7 +150,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EClassWithEStringAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final Object pAttr) {
+  public DeltaMonitor<EClassWithEStringAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EAttribute pAttr) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pAttr});
   }
   
@@ -161,7 +162,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the (partial) match object.
    * 
    */
-  public EClassWithEStringAttributeMatch newMatch(final EClass pE, final Object pAttr) {
+  public EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
     return new EClassWithEStringAttributeMatch(pE, pAttr);
     
   }
@@ -200,7 +201,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfE(final Object pAttr) {
+  public Set<EClass> getAllValuesOfE(final EAttribute pAttr) {
     EClass pE = null;
     return rawAccumulateAllValuesOfE(new Object[]{pE, pAttr});
   }
@@ -210,8 +211,8 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
+    Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_ATTR, parameters, results);
     return results;
   }
@@ -221,7 +222,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfAttr() {
+  public Set<EAttribute> getAllValuesOfAttr() {
     return rawAccumulateAllValuesOfAttr(emptyArray());
   }
   
@@ -230,7 +231,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfAttr(final EClassWithEStringAttributeMatch partialMatch) {
+  public Set<EAttribute> getAllValuesOfAttr(final EClassWithEStringAttributeMatch partialMatch) {
     return rawAccumulateAllValuesOfAttr(partialMatch.toArray());
   }
   
@@ -239,15 +240,15 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfAttr(final EClass pE) {
-    Object pAttr = null;
+  public Set<EAttribute> getAllValuesOfAttr(final EClass pE) {
+    EAttribute pAttr = null;
     return rawAccumulateAllValuesOfAttr(new Object[]{pE, pAttr});
   }
   
   @Override
   public EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (java.lang.Object) t.get(POSITION_ATTR));	
+    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -257,7 +258,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
   @Override
   public EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (java.lang.Object) match[POSITION_ATTR]);
+    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
