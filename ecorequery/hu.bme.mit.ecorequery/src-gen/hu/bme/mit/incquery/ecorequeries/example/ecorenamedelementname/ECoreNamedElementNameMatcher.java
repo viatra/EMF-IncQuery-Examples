@@ -69,7 +69,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return matches represented as a ECoreNamedElementNameMatch object.
    * 
    */
-  public Collection<ECoreNamedElementNameMatch> getAllMatches(final Object pName) {
+  public Collection<ECoreNamedElementNameMatch> getAllMatches(final String pName) {
     return rawGetAllMatches(new Object[]{pName});
   }
   
@@ -80,7 +80,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return a match represented as a ECoreNamedElementNameMatch object, or null if no match is found.
    * 
    */
-  public ECoreNamedElementNameMatch getOneArbitraryMatch(final Object pName) {
+  public ECoreNamedElementNameMatch getOneArbitraryMatch(final String pName) {
     return rawGetOneArbitraryMatch(new Object[]{pName});
   }
   
@@ -91,7 +91,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pName) {
+  public boolean hasMatch(final String pName) {
     return rawHasMatch(new Object[]{pName});
   }
   
@@ -101,7 +101,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pName) {
+  public int countMatches(final String pName) {
     return rawCountMatches(new Object[]{pName});
   }
   
@@ -111,7 +111,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pName, final IMatchProcessor<? super ECoreNamedElementNameMatch> processor) {
+  public void forEachMatch(final String pName, final IMatchProcessor<? super ECoreNamedElementNameMatch> processor) {
     rawForEachMatch(new Object[]{pName}, processor);
   }
   
@@ -123,7 +123,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pName, final IMatchProcessor<? super ECoreNamedElementNameMatch> processor) {
+  public boolean forOneArbitraryMatch(final String pName, final IMatchProcessor<? super ECoreNamedElementNameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pName}, processor);
   }
   
@@ -138,7 +138,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<ECoreNamedElementNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pName) {
+  public DeltaMonitor<ECoreNamedElementNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pName});
   }
   
@@ -149,7 +149,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the (partial) match object.
    * 
    */
-  public ECoreNamedElementNameMatch newMatch(final Object pName) {
+  public ECoreNamedElementNameMatch newMatch(final String pName) {
     return new ECoreNamedElementNameMatch(pName);
     
   }
@@ -159,8 +159,8 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfName(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfName(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_NAME, parameters, results);
     return results;
   }
@@ -170,14 +170,14 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfName() {
+  public Set<String> getAllValuesOfName() {
     return rawAccumulateAllValuesOfName(emptyArray());
   }
   
   @Override
   public ECoreNamedElementNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ECoreNamedElementNameMatch((java.lang.Object) t.get(POSITION_NAME));	
+    	return new ECoreNamedElementNameMatch((java.lang.String) t.get(POSITION_NAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -187,7 +187,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
   @Override
   public ECoreNamedElementNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ECoreNamedElementNameMatch((java.lang.Object) match[POSITION_NAME]);
+    	return new ECoreNamedElementNameMatch((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

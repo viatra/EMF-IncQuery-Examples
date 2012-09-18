@@ -20,11 +20,11 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class ECoreNamedElementNameMatch extends BasePatternMatch {
-  private Object fName;
+  private String fName;
   
   private static String[] parameterNames = {"Name"};
   
-  ECoreNamedElementNameMatch(final Object pName) {
+  ECoreNamedElementNameMatch(final String pName) {
     this.fName = pName;
     
   }
@@ -36,22 +36,22 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch {
     
   }
   
-  public Object getName() {
+  public String getName() {
     return this.fName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Name".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fName = (java.lang.Object) newValue;
+    if ("Name".equals(parameterName) ) {
+    	this.fName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setName(final Object pName) {
+  public void setName(final String pName) {
     this.fName = pName;
     
   }

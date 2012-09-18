@@ -15,7 +15,7 @@ public abstract class EReferenceWithOneMultiplicityNameProcessor implements IMat
    * @param pERefName the value of pattern parameter ERefName in the currently processed match 
    * 
    */
-  public abstract void process(final Object ERefName);
+  public abstract void process(final String ERefName);
   
   @Override
   public void process(final EReferenceWithOneMultiplicityNameMatch match) {

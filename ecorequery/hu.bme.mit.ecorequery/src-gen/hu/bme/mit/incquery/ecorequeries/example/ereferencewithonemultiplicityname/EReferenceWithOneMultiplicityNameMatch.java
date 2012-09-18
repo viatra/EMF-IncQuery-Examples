@@ -20,11 +20,11 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class EReferenceWithOneMultiplicityNameMatch extends BasePatternMatch {
-  private Object fERefName;
+  private String fERefName;
   
   private static String[] parameterNames = {"ERefName"};
   
-  EReferenceWithOneMultiplicityNameMatch(final Object pERefName) {
+  EReferenceWithOneMultiplicityNameMatch(final String pERefName) {
     this.fERefName = pERefName;
     
   }
@@ -36,22 +36,22 @@ public final class EReferenceWithOneMultiplicityNameMatch extends BasePatternMat
     
   }
   
-  public Object getERefName() {
+  public String getERefName() {
     return this.fERefName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("ERefName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fERefName = (java.lang.Object) newValue;
+    if ("ERefName".equals(parameterName) ) {
+    	this.fERefName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setERefName(final Object pERefName) {
+  public void setERefName(final String pERefName) {
     this.fERefName = pERefName;
     
   }

@@ -70,7 +70,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return matches represented as a EReferenceWithStarMultiplicityNameMatch object.
    * 
    */
-  public Collection<EReferenceWithStarMultiplicityNameMatch> getAllMatches(final Object pERefName) {
+  public Collection<EReferenceWithStarMultiplicityNameMatch> getAllMatches(final String pERefName) {
     return rawGetAllMatches(new Object[]{pERefName});
   }
   
@@ -81,7 +81,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return a match represented as a EReferenceWithStarMultiplicityNameMatch object, or null if no match is found.
    * 
    */
-  public EReferenceWithStarMultiplicityNameMatch getOneArbitraryMatch(final Object pERefName) {
+  public EReferenceWithStarMultiplicityNameMatch getOneArbitraryMatch(final String pERefName) {
     return rawGetOneArbitraryMatch(new Object[]{pERefName});
   }
   
@@ -92,7 +92,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pERefName) {
+  public boolean hasMatch(final String pERefName) {
     return rawHasMatch(new Object[]{pERefName});
   }
   
@@ -102,7 +102,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pERefName) {
+  public int countMatches(final String pERefName) {
     return rawCountMatches(new Object[]{pERefName});
   }
   
@@ -112,7 +112,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pERefName, final IMatchProcessor<? super EReferenceWithStarMultiplicityNameMatch> processor) {
+  public void forEachMatch(final String pERefName, final IMatchProcessor<? super EReferenceWithStarMultiplicityNameMatch> processor) {
     rawForEachMatch(new Object[]{pERefName}, processor);
   }
   
@@ -124,7 +124,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pERefName, final IMatchProcessor<? super EReferenceWithStarMultiplicityNameMatch> processor) {
+  public boolean forOneArbitraryMatch(final String pERefName, final IMatchProcessor<? super EReferenceWithStarMultiplicityNameMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pERefName}, processor);
   }
   
@@ -139,7 +139,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EReferenceWithStarMultiplicityNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pERefName) {
+  public DeltaMonitor<EReferenceWithStarMultiplicityNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pERefName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pERefName});
   }
   
@@ -150,7 +150,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return the (partial) match object.
    * 
    */
-  public EReferenceWithStarMultiplicityNameMatch newMatch(final Object pERefName) {
+  public EReferenceWithStarMultiplicityNameMatch newMatch(final String pERefName) {
     return new EReferenceWithStarMultiplicityNameMatch(pERefName);
     
   }
@@ -160,8 +160,8 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfERefName(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfERefName(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_EREFNAME, parameters, results);
     return results;
   }
@@ -171,14 +171,14 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfERefName() {
+  public Set<String> getAllValuesOfERefName() {
     return rawAccumulateAllValuesOfERefName(emptyArray());
   }
   
   @Override
   public EReferenceWithStarMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EReferenceWithStarMultiplicityNameMatch((java.lang.Object) t.get(POSITION_EREFNAME));	
+    	return new EReferenceWithStarMultiplicityNameMatch((java.lang.String) t.get(POSITION_EREFNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -188,7 +188,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
   @Override
   public EReferenceWithStarMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EReferenceWithStarMultiplicityNameMatch((java.lang.Object) match[POSITION_EREFNAME]);
+    	return new EReferenceWithStarMultiplicityNameMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

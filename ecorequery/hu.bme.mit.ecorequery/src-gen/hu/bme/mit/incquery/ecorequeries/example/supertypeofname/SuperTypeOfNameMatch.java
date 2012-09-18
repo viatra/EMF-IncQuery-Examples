@@ -20,13 +20,13 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class SuperTypeOfNameMatch extends BasePatternMatch {
-  private Object fSuperName;
+  private String fSuperName;
   
-  private Object fSubName;
+  private String fSubName;
   
   private static String[] parameterNames = {"SuperName", "SubName"};
   
-  SuperTypeOfNameMatch(final Object pSuperName, final Object pSubName) {
+  SuperTypeOfNameMatch(final String pSuperName, final String pSubName) {
     this.fSuperName = pSuperName;
     this.fSubName = pSubName;
     
@@ -40,36 +40,36 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch {
     
   }
   
-  public Object getSuperName() {
+  public String getSuperName() {
     return this.fSuperName;
     
   }
   
-  public Object getSubName() {
+  public String getSubName() {
     return this.fSubName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SuperName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSuperName = (java.lang.Object) newValue;
+    if ("SuperName".equals(parameterName) ) {
+    	this.fSuperName = (java.lang.String) newValue;
     	return true;
     }
-    if ("SubName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSubName = (java.lang.Object) newValue;
+    if ("SubName".equals(parameterName) ) {
+    	this.fSubName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setSuperName(final Object pSuperName) {
+  public void setSuperName(final String pSuperName) {
     this.fSuperName = pSuperName;
     
   }
   
-  public void setSubName(final Object pSubName) {
+  public void setSubName(final String pSubName) {
     this.fSubName = pSubName;
     
   }
