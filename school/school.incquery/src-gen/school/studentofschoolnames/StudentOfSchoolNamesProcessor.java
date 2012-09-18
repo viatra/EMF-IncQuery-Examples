@@ -16,7 +16,7 @@ public abstract class StudentOfSchoolNamesProcessor implements IMatchProcessor<S
    * @param pSchName the value of pattern parameter SchName in the currently processed match 
    * 
    */
-  public abstract void process(final Object SName, final Object SchName);
+  public abstract void process(final String SName, final String SchName);
   
   @Override
   public void process(final StudentOfSchoolNamesMatch match) {

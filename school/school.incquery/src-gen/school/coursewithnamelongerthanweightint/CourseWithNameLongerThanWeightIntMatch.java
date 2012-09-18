@@ -20,11 +20,11 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
-  private Object fW;
+  private Integer fW;
   
   private static String[] parameterNames = {"W"};
   
-  CourseWithNameLongerThanWeightIntMatch(final Object pW) {
+  CourseWithNameLongerThanWeightIntMatch(final Integer pW) {
     this.fW = pW;
     
   }
@@ -36,22 +36,22 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
     
   }
   
-  public Object getW() {
+  public Integer getW() {
     return this.fW;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("W".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fW = (java.lang.Object) newValue;
+    if ("W".equals(parameterName) ) {
+    	this.fW = (java.lang.Integer) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setW(final Object pW) {
+  public void setW(final Integer pW) {
     this.fW = pW;
     
   }

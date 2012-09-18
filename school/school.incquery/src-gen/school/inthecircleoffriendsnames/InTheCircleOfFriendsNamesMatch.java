@@ -20,13 +20,13 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
-  private Object fS1Name;
+  private String fS1Name;
   
-  private Object fSomeoneName;
+  private String fSomeoneName;
   
   private static String[] parameterNames = {"S1Name", "SomeoneName"};
   
-  InTheCircleOfFriendsNamesMatch(final Object pS1Name, final Object pSomeoneName) {
+  InTheCircleOfFriendsNamesMatch(final String pS1Name, final String pSomeoneName) {
     this.fS1Name = pS1Name;
     this.fSomeoneName = pSomeoneName;
     
@@ -40,36 +40,36 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
     
   }
   
-  public Object getS1Name() {
+  public String getS1Name() {
     return this.fS1Name;
     
   }
   
-  public Object getSomeoneName() {
+  public String getSomeoneName() {
     return this.fSomeoneName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1Name".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS1Name = (java.lang.Object) newValue;
+    if ("S1Name".equals(parameterName) ) {
+    	this.fS1Name = (java.lang.String) newValue;
     	return true;
     }
-    if ("SomeoneName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSomeoneName = (java.lang.Object) newValue;
+    if ("SomeoneName".equals(parameterName) ) {
+    	this.fSomeoneName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1Name(final Object pS1Name) {
+  public void setS1Name(final String pS1Name) {
     this.fS1Name = pS1Name;
     
   }
   
-  public void setSomeoneName(final Object pSomeoneName) {
+  public void setSomeoneName(final String pSomeoneName) {
     this.fSomeoneName = pSomeoneName;
     
   }

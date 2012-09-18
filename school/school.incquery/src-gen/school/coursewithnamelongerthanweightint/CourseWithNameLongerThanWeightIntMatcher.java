@@ -71,7 +71,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return matches represented as a CourseWithNameLongerThanWeightIntMatch object.
    * 
    */
-  public Collection<CourseWithNameLongerThanWeightIntMatch> getAllMatches(final Object pW) {
+  public Collection<CourseWithNameLongerThanWeightIntMatch> getAllMatches(final Integer pW) {
     return rawGetAllMatches(new Object[]{pW});
   }
   
@@ -82,7 +82,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return a match represented as a CourseWithNameLongerThanWeightIntMatch object, or null if no match is found.
    * 
    */
-  public CourseWithNameLongerThanWeightIntMatch getOneArbitraryMatch(final Object pW) {
+  public CourseWithNameLongerThanWeightIntMatch getOneArbitraryMatch(final Integer pW) {
     return rawGetOneArbitraryMatch(new Object[]{pW});
   }
   
@@ -93,7 +93,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pW) {
+  public boolean hasMatch(final Integer pW) {
     return rawHasMatch(new Object[]{pW});
   }
   
@@ -103,7 +103,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pW) {
+  public int countMatches(final Integer pW) {
     return rawCountMatches(new Object[]{pW});
   }
   
@@ -113,7 +113,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pW, final IMatchProcessor<? super CourseWithNameLongerThanWeightIntMatch> processor) {
+  public void forEachMatch(final Integer pW, final IMatchProcessor<? super CourseWithNameLongerThanWeightIntMatch> processor) {
     rawForEachMatch(new Object[]{pW}, processor);
   }
   
@@ -125,7 +125,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pW, final IMatchProcessor<? super CourseWithNameLongerThanWeightIntMatch> processor) {
+  public boolean forOneArbitraryMatch(final Integer pW, final IMatchProcessor<? super CourseWithNameLongerThanWeightIntMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pW}, processor);
   }
   
@@ -140,7 +140,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<CourseWithNameLongerThanWeightIntMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pW) {
+  public DeltaMonitor<CourseWithNameLongerThanWeightIntMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Integer pW) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pW});
   }
   
@@ -151,7 +151,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return the (partial) match object.
    * 
    */
-  public CourseWithNameLongerThanWeightIntMatch newMatch(final Object pW) {
+  public CourseWithNameLongerThanWeightIntMatch newMatch(final Integer pW) {
     return new CourseWithNameLongerThanWeightIntMatch(pW);
     
   }
@@ -161,8 +161,8 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfW(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<Integer> rawAccumulateAllValuesOfW(final Object[] parameters) {
+    Set<Integer> results = new HashSet<Integer>();
     rawAccumulateAllValues(POSITION_W, parameters, results);
     return results;
   }
@@ -172,14 +172,14 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfW() {
+  public Set<Integer> getAllValuesOfW() {
     return rawAccumulateAllValuesOfW(emptyArray());
   }
   
   @Override
   public CourseWithNameLongerThanWeightIntMatch tupleToMatch(final Tuple t) {
     try {
-    	return new CourseWithNameLongerThanWeightIntMatch((java.lang.Object) t.get(POSITION_W));	
+    	return new CourseWithNameLongerThanWeightIntMatch((java.lang.Integer) t.get(POSITION_W));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -189,7 +189,7 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseGeneratedMatch
   @Override
   public CourseWithNameLongerThanWeightIntMatch arrayToMatch(final Object[] match) {
     try {
-    	return new CourseWithNameLongerThanWeightIntMatch((java.lang.Object) match[POSITION_W]);
+    	return new CourseWithNameLongerThanWeightIntMatch((java.lang.Integer) match[POSITION_W]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

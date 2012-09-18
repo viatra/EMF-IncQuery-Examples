@@ -74,7 +74,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return matches represented as a StudentOfSchoolNamesMatch object.
    * 
    */
-  public Collection<StudentOfSchoolNamesMatch> getAllMatches(final Object pSName, final Object pSchName) {
+  public Collection<StudentOfSchoolNamesMatch> getAllMatches(final String pSName, final String pSchName) {
     return rawGetAllMatches(new Object[]{pSName, pSchName});
   }
   
@@ -86,7 +86,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return a match represented as a StudentOfSchoolNamesMatch object, or null if no match is found.
    * 
    */
-  public StudentOfSchoolNamesMatch getOneArbitraryMatch(final Object pSName, final Object pSchName) {
+  public StudentOfSchoolNamesMatch getOneArbitraryMatch(final String pSName, final String pSchName) {
     return rawGetOneArbitraryMatch(new Object[]{pSName, pSchName});
   }
   
@@ -98,7 +98,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pSName, final Object pSchName) {
+  public boolean hasMatch(final String pSName, final String pSchName) {
     return rawHasMatch(new Object[]{pSName, pSchName});
   }
   
@@ -109,7 +109,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pSName, final Object pSchName) {
+  public int countMatches(final String pSName, final String pSchName) {
     return rawCountMatches(new Object[]{pSName, pSchName});
   }
   
@@ -120,7 +120,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pSName, final Object pSchName, final IMatchProcessor<? super StudentOfSchoolNamesMatch> processor) {
+  public void forEachMatch(final String pSName, final String pSchName, final IMatchProcessor<? super StudentOfSchoolNamesMatch> processor) {
     rawForEachMatch(new Object[]{pSName, pSchName}, processor);
   }
   
@@ -133,7 +133,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pSName, final Object pSchName, final IMatchProcessor<? super StudentOfSchoolNamesMatch> processor) {
+  public boolean forOneArbitraryMatch(final String pSName, final String pSchName, final IMatchProcessor<? super StudentOfSchoolNamesMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSName, pSchName}, processor);
   }
   
@@ -149,7 +149,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<StudentOfSchoolNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pSName, final Object pSchName) {
+  public DeltaMonitor<StudentOfSchoolNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pSName, final String pSchName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSName, pSchName});
   }
   
@@ -161,7 +161,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the (partial) match object.
    * 
    */
-  public StudentOfSchoolNamesMatch newMatch(final Object pSName, final Object pSchName) {
+  public StudentOfSchoolNamesMatch newMatch(final String pSName, final String pSchName) {
     return new StudentOfSchoolNamesMatch(pSName, pSchName);
     
   }
@@ -171,8 +171,8 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfSName(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
   }
@@ -182,7 +182,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSName() {
+  public Set<String> getAllValuesOfSName() {
     return rawAccumulateAllValuesOfSName(emptyArray());
   }
   
@@ -191,7 +191,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSName(final StudentOfSchoolNamesMatch partialMatch) {
+  public Set<String> getAllValuesOfSName(final StudentOfSchoolNamesMatch partialMatch) {
     return rawAccumulateAllValuesOfSName(partialMatch.toArray());
   }
   
@@ -200,8 +200,8 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSName(final Object pSchName) {
-    Object pSName = null;
+  public Set<String> getAllValuesOfSName(final String pSchName) {
+    String pSName = null;
     return rawAccumulateAllValuesOfSName(new Object[]{pSName, pSchName});
   }
   
@@ -210,8 +210,8 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SCHNAME, parameters, results);
     return results;
   }
@@ -221,7 +221,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSchName() {
+  public Set<String> getAllValuesOfSchName() {
     return rawAccumulateAllValuesOfSchName(emptyArray());
   }
   
@@ -230,7 +230,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSchName(final StudentOfSchoolNamesMatch partialMatch) {
+  public Set<String> getAllValuesOfSchName(final StudentOfSchoolNamesMatch partialMatch) {
     return rawAccumulateAllValuesOfSchName(partialMatch.toArray());
   }
   
@@ -239,15 +239,15 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSchName(final Object pSName) {
-    Object pSchName = null;
+  public Set<String> getAllValuesOfSchName(final String pSName) {
+    String pSchName = null;
     return rawAccumulateAllValuesOfSchName(new Object[]{pSName, pSchName});
   }
   
   @Override
   public StudentOfSchoolNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new StudentOfSchoolNamesMatch((java.lang.Object) t.get(POSITION_SNAME), (java.lang.Object) t.get(POSITION_SCHNAME));	
+    	return new StudentOfSchoolNamesMatch((java.lang.String) t.get(POSITION_SNAME), (java.lang.String) t.get(POSITION_SCHNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -257,7 +257,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
   @Override
   public StudentOfSchoolNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new StudentOfSchoolNamesMatch((java.lang.Object) match[POSITION_SNAME], (java.lang.Object) match[POSITION_SCHNAME]);
+    	return new StudentOfSchoolNamesMatch((java.lang.String) match[POSITION_SNAME], (java.lang.String) match[POSITION_SCHNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

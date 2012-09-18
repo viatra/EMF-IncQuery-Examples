@@ -74,7 +74,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return matches represented as a InTheCircleOfFriendsNamesMatch object.
    * 
    */
-  public Collection<InTheCircleOfFriendsNamesMatch> getAllMatches(final Object pS1Name, final Object pSomeoneName) {
+  public Collection<InTheCircleOfFriendsNamesMatch> getAllMatches(final String pS1Name, final String pSomeoneName) {
     return rawGetAllMatches(new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -86,7 +86,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return a match represented as a InTheCircleOfFriendsNamesMatch object, or null if no match is found.
    * 
    */
-  public InTheCircleOfFriendsNamesMatch getOneArbitraryMatch(final Object pS1Name, final Object pSomeoneName) {
+  public InTheCircleOfFriendsNamesMatch getOneArbitraryMatch(final String pS1Name, final String pSomeoneName) {
     return rawGetOneArbitraryMatch(new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -98,7 +98,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pS1Name, final Object pSomeoneName) {
+  public boolean hasMatch(final String pS1Name, final String pSomeoneName) {
     return rawHasMatch(new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -109,7 +109,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pS1Name, final Object pSomeoneName) {
+  public int countMatches(final String pS1Name, final String pSomeoneName) {
     return rawCountMatches(new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -120,7 +120,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pS1Name, final Object pSomeoneName, final IMatchProcessor<? super InTheCircleOfFriendsNamesMatch> processor) {
+  public void forEachMatch(final String pS1Name, final String pSomeoneName, final IMatchProcessor<? super InTheCircleOfFriendsNamesMatch> processor) {
     rawForEachMatch(new Object[]{pS1Name, pSomeoneName}, processor);
   }
   
@@ -133,7 +133,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pS1Name, final Object pSomeoneName, final IMatchProcessor<? super InTheCircleOfFriendsNamesMatch> processor) {
+  public boolean forOneArbitraryMatch(final String pS1Name, final String pSomeoneName, final IMatchProcessor<? super InTheCircleOfFriendsNamesMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pS1Name, pSomeoneName}, processor);
   }
   
@@ -149,7 +149,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<InTheCircleOfFriendsNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pS1Name, final Object pSomeoneName) {
+  public DeltaMonitor<InTheCircleOfFriendsNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pS1Name, final String pSomeoneName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -161,7 +161,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the (partial) match object.
    * 
    */
-  public InTheCircleOfFriendsNamesMatch newMatch(final Object pS1Name, final Object pSomeoneName) {
+  public InTheCircleOfFriendsNamesMatch newMatch(final String pS1Name, final String pSomeoneName) {
     return new InTheCircleOfFriendsNamesMatch(pS1Name, pSomeoneName);
     
   }
@@ -171,8 +171,8 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfS1Name(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfS1Name(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_S1NAME, parameters, results);
     return results;
   }
@@ -182,7 +182,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS1Name() {
+  public Set<String> getAllValuesOfS1Name() {
     return rawAccumulateAllValuesOfS1Name(emptyArray());
   }
   
@@ -191,7 +191,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS1Name(final InTheCircleOfFriendsNamesMatch partialMatch) {
+  public Set<String> getAllValuesOfS1Name(final InTheCircleOfFriendsNamesMatch partialMatch) {
     return rawAccumulateAllValuesOfS1Name(partialMatch.toArray());
   }
   
@@ -200,8 +200,8 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS1Name(final Object pSomeoneName) {
-    Object pS1Name = null;
+  public Set<String> getAllValuesOfS1Name(final String pSomeoneName) {
+    String pS1Name = null;
     return rawAccumulateAllValuesOfS1Name(new Object[]{pS1Name, pSomeoneName});
   }
   
@@ -210,8 +210,8 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfSomeoneName(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  public Set<String> rawAccumulateAllValuesOfSomeoneName(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SOMEONENAME, parameters, results);
     return results;
   }
@@ -221,7 +221,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSomeoneName() {
+  public Set<String> getAllValuesOfSomeoneName() {
     return rawAccumulateAllValuesOfSomeoneName(emptyArray());
   }
   
@@ -230,7 +230,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSomeoneName(final InTheCircleOfFriendsNamesMatch partialMatch) {
+  public Set<String> getAllValuesOfSomeoneName(final InTheCircleOfFriendsNamesMatch partialMatch) {
     return rawAccumulateAllValuesOfSomeoneName(partialMatch.toArray());
   }
   
@@ -239,15 +239,15 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfSomeoneName(final Object pS1Name) {
-    Object pSomeoneName = null;
+  public Set<String> getAllValuesOfSomeoneName(final String pS1Name) {
+    String pSomeoneName = null;
     return rawAccumulateAllValuesOfSomeoneName(new Object[]{pS1Name, pSomeoneName});
   }
   
   @Override
   public InTheCircleOfFriendsNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new InTheCircleOfFriendsNamesMatch((java.lang.Object) t.get(POSITION_S1NAME), (java.lang.Object) t.get(POSITION_SOMEONENAME));	
+    	return new InTheCircleOfFriendsNamesMatch((java.lang.String) t.get(POSITION_S1NAME), (java.lang.String) t.get(POSITION_SOMEONENAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -257,7 +257,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
   @Override
   public InTheCircleOfFriendsNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new InTheCircleOfFriendsNamesMatch((java.lang.Object) match[POSITION_S1NAME], (java.lang.Object) match[POSITION_SOMEONENAME]);
+    	return new InTheCircleOfFriendsNamesMatch((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

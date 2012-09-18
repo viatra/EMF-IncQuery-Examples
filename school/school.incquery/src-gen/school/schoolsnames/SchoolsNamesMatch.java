@@ -20,11 +20,11 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class SchoolsNamesMatch extends BasePatternMatch {
-  private Object fSchName;
+  private String fSchName;
   
   private static String[] parameterNames = {"SchName"};
   
-  SchoolsNamesMatch(final Object pSchName) {
+  SchoolsNamesMatch(final String pSchName) {
     this.fSchName = pSchName;
     
   }
@@ -36,22 +36,22 @@ public final class SchoolsNamesMatch extends BasePatternMatch {
     
   }
   
-  public Object getSchName() {
+  public String getSchName() {
     return this.fSchName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SchName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSchName = (java.lang.Object) newValue;
+    if ("SchName".equals(parameterName) ) {
+    	this.fSchName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setSchName(final Object pSchName) {
+  public void setSchName(final String pSchName) {
     this.fSchName = pSchName;
     
   }

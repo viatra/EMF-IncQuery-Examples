@@ -20,11 +20,11 @@ import org.eclipse.viatra2.patternlanguage.core.patternLanguage.Pattern;
  * 
  */
 public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch {
-  private Object fSName;
+  private String fSName;
   
   private static String[] parameterNames = {"SName"};
   
-  TheOnesWithTheBiggestCircleNameMatch(final Object pSName) {
+  TheOnesWithTheBiggestCircleNameMatch(final String pSName) {
     this.fSName = pSName;
     
   }
@@ -36,22 +36,22 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
     
   }
   
-  public Object getSName() {
+  public String getSName() {
     return this.fSName;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SName".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSName = (java.lang.Object) newValue;
+    if ("SName".equals(parameterName) ) {
+    	this.fSName = (java.lang.String) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setSName(final Object pSName) {
+  public void setSName(final String pSName) {
     this.fSName = pSName;
     
   }
