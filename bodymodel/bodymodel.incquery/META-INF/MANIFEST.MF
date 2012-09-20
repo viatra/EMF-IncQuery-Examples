@@ -3,9 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: bodymodel.incquery
 Bundle-SymbolicName: bodymodel.incquery;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: bodymodel.connectedbodyparts,
- bodymodel.firstpattern,
- bodymodel.jump,
+Export-Package: bodymodel.body,
+ bodymodel.bodylinks,
+ bodymodel.connectedbodyparts,
  bodymodel.partsofabody,
  bodymodel.righthandabovehead,
  bodymodel.righthandabovehead_movingaverage

@@ -2,12 +2,22 @@ package bodymodel
 
 import "http://org/jnect/bodymodel"
 
-pattern firstPattern(B : Body) = {
+@QueryExplorer(display = true)
+pattern body(B : Body) = {
 	Body(B);
 }
+
+@QueryExplorer(display = true)
+pattern bodyLinks(B,HL) = {
+	Body(B);
+	HumanLink(HL);
+	Body.links(B,HL);
+}
+
 /*
  * P1, P2 are directly connected body parts.
  */
+ @QueryExplorer(display = true)
 pattern connectedBodyParts(P1:PositionedElement,P2:PositionedElement) {
 	HumanLink.source(HL,P1);
 	HumanLink.target(HL,P2); 
@@ -18,6 +28,7 @@ pattern connectedBodyParts(P1:PositionedElement,P2:PositionedElement) {
 /*
  * P is a part of body B
  */
+  @QueryExplorer(display = true)
 pattern partsOfABody(B:Body, P:PositionedElement) {
 	Body.links(B,HL);
 	HumanLink.source(HL,P); 
@@ -25,7 +36,7 @@ pattern partsOfABody(B:Body, P:PositionedElement) {
 	Body.links(B,HL);
 	HumanLink.target(HL,P); 		
 }
-
+ @QueryExplorer(display = true)
 pattern RightHandAboveHead(RH:RightHand,H:Head) {
 	find partsOfABody(B,RH);
 	find partsOfABody(B,H); // just to ensure that they are part of the same body
@@ -33,7 +44,7 @@ pattern RightHandAboveHead(RH:RightHand,H:Head) {
 	Head.y(H,Hy);
 	check( (Hy as Float) < (RHy as Float) );
 }
-
+ @QueryExplorer(display = true)
 pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
 	find partsOfABody(B,RH);
 	find partsOfABody(B,H); // just to ensure that they are part of the same body
@@ -54,31 +65,31 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
  * of both feet and the head is higher then the average position plus a
  * threshold.
  */
-pattern Jump(B:Body) {
-	find partsOfABody(B,LF);
-	find partsOfABody(B,RF);
-	find partsOfABody(B,H);
-	
-	LeftFoot.y(LF,LFy);
-	RightFoot.y(RF,RFy);
-	Head.y(H,Hy);
-	
-	check({
-		var bodymodel.MovingAverageCalculator lfy_mac 
-			= bodymodel::MovingAverageCalculator::getCalculator("LF_Y")
-		lfy_mac.addValue(RFy as Float)
-		var bodymodel.MovingAverageCalculator rfy_mac 
-			= bodymodel::MovingAverageCalculator::getCalculator("RF_Y")
-		rfy_mac.addValue(RFy as Float)
-		var bodymodel.MovingAverageCalculator hy_mac 
-			= bodymodel::MovingAverageCalculator::getCalculator("H_Y")
-		hy_mac.addValue(Hy as Float)
-		
-		//return ( 
-			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
-			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
-			rfy_mac.movingAvg + 0.1 < (RFy as Float)
-		//	)
-	});
-	
-}
+//pattern Jump(B:Body) {
+//	find partsOfABody(B,LF);
+//	find partsOfABody(B,RF);
+//	find partsOfABody(B,H);
+//	
+//	LeftFoot.y(LF,LFy);
+//	RightFoot.y(RF,RFy);
+//	Head.y(H,Hy);
+//	
+//	check({
+//		var bodymodel.MovingAverageCalculator lfy_mac 
+//			= bodymodel::MovingAverageCalculator::getCalculator("LF_Y")
+//		lfy_mac.addValue(RFy as Float)
+//		var bodymodel.MovingAverageCalculator rfy_mac 
+//			= bodymodel::MovingAverageCalculator::getCalculator("RF_Y")
+//		rfy_mac.addValue(RFy as Float)
+//		var bodymodel.MovingAverageCalculator hy_mac 
+//			= bodymodel::MovingAverageCalculator::getCalculator("H_Y")
+//		hy_mac.addValue(Hy as Float)
+//		
+//		//return ( 
+//			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
+//			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
+//			rfy_mac.movingAvg + 0.1 < (RFy as Float)
+//		//	)
+//	});
+//	
+//}

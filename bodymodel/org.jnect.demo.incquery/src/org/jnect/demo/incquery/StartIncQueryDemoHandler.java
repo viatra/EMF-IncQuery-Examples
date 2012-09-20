@@ -7,7 +7,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 import org.jnect.core.KinectManager;
 
-import bodymodel.jump.JumpMatcher;
+//import bodymodel.jump.JumpMatcher;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatch;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatcher;
 
