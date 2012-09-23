@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jnect core
+Bundle-SymbolicName: org.jnect.core;singleton:=true
+Bundle-Version: 0.2.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.jnect.bodymodel;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.core.runtime;bundle-version="3.7.0"
+Export-Package: org.jnect.core;uses:="org.jnect.bodymodel"
+Bundle-ClassPath: lib/jni4net.j-0.8.6.0.jar,
+ lib/MicrosoftKinectWrapper.j4n.jar,
+ .
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: jnect.org

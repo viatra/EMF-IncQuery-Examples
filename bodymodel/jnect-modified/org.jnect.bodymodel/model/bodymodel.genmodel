@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.jnect.bodymodel/src"
+    editDirectory="/org.jnect.bodymodel.edit/src" editorDirectory="/org.jnect.bodymodel.editor/src"
+    modelPluginID="org.jnect.bodymodel" modelName="bodymodel" runtimeCompatibility="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editorPluginID="org.jnect.bodymodel.editor" runtimePlatform="RCP">
+  <foreignModel>bodymodel.ecore</foreignModel>
+  <genPackages prefix="Bodymodel" basePackage="org.jnect" disposableProviderFactory="true"
+      ecorePackage="bodymodel.ecore#/">
+    <genClasses image="false" ecoreClass="bodymodel.ecore#//PositionedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/z"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bodymodel.ecore#//PositionedElement/incomingLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bodymodel.ecore#//PositionedElement/outgoingLinks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/color_r"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/color_g"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bodymodel.ecore#//PositionedElement/color_b"/>
+    </genClasses>
+    <genClasses ecoreClass="bodymodel.ecore#//HumanLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bodymodel.ecore#//HumanLink/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bodymodel.ecore#//HumanLink/target"/>
+    </genClasses>
+    <genClasses ecoreClass="bodymodel.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/Head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/CenterShoulder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftShoulder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightShoulder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftElbow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightElbow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftWrist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightWrist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftHand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightHand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/Spine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/CenterHip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftHip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightHip"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftKnee"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightKnee"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftFoot"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightFoot"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/LeftAnkle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bodymodel.ecore#//Body/RightAnkle"/>
+    </genClasses>
+    <genClasses ecoreClass="bodymodel.ecore#//Head"/>
+    <genClasses ecoreClass="bodymodel.ecore#//CenterShoulder"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftShoulder"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightShoulder"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftElbow"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightElbow"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftWrist"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightWrist"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftHand"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightHand"/>
+    <genClasses ecoreClass="bodymodel.ecore#//Spine"/>
+    <genClasses ecoreClass="bodymodel.ecore#//CenterHip"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftHip"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightHip"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftKnee"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightKnee"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftAnkle"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightAnkle"/>
+    <genClasses ecoreClass="bodymodel.ecore#//LeftFoot"/>
+    <genClasses ecoreClass="bodymodel.ecore#//RightFoot"/>
+  </genPackages>
+</genmodel:GenModel>
