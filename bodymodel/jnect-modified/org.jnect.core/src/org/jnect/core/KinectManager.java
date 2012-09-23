@@ -27,8 +27,8 @@ public interface KinectManager {
 	 * Instance of this interface
 	 */
 	KinectManager INSTANCE = 
-		//KinectManagerImpl.getInstance();
-		DemoKinectManagerImpl.getInstance();
+		KinectManagerImpl.getInstance();
+		//DemoKinectManagerImpl.getInstance();
 	/**
 	 * starts the kinect connection
 	 */
