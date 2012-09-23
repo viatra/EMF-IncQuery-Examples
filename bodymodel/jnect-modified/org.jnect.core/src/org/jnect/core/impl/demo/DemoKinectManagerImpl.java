@@ -11,7 +11,6 @@
 package org.jnect.core.impl.demo;
 
 import org.jnect.bodymodel.Body;
-import org.jnect.bodymodel.HumanLink;
 import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.IBodyProvider;
 import org.jnect.core.KinectManager;
@@ -174,6 +173,11 @@ public class DemoKinectManagerImpl implements KinectManager {
 	@Override
 	public boolean isSpeechRecognitionStarted() {
 		return false; // we do not need speech recognition for the demo
+	}
+
+	@Override
+	public void setSkeletonModel(Body b) {
+		this.body = b;
 	}
 
 }

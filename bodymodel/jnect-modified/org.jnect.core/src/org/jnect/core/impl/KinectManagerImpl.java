@@ -190,4 +190,9 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 		return this.connectionManager.isSpeechRecognitionStarted();
 	}
 
+	@Override
+	public void setSkeletonModel(Body b) {
+		this.body = b;
+	}
+
 }

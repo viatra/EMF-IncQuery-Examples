@@ -13,6 +13,11 @@
             id="org.jnect.demo.incquery.savebodymodel"
             name="Save Kinect Body model">
       </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.LoadBodymodelHandler"
+            id="org.jnect.demo.incquery.loadbodymodel"
+            name="Load Kinect Body model">
+      </command>
    </extension>
  <extension
          point="org.eclipse.ui.menus">
@@ -38,6 +43,12 @@
           contextId="org.eclipse.ui.contexts.window"
           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
           sequence="CTRL+SHIFT+Q">
+    </key>
+    <key
+          commandId="org.jnect.demo.incquery.loadbodymodel"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="CTRL+SHIFT+L">
     </key>
  </extension>
 </plugin>

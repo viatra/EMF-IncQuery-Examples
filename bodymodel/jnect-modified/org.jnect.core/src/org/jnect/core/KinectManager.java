@@ -52,6 +52,12 @@ public interface KinectManager {
 	 * @return {@link Body} - the skeleton model
 	 */
 	Body getSkeletonModel();
+	
+	/**
+	 * Set the skeleton model.
+	 * @param b
+	 */
+	void setSkeletonModel(Body b);
 
 	/**
 	 * starts the skeleton tracking
