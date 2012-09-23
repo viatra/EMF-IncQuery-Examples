@@ -31,4 +31,13 @@
          </toolbar>
       </menuContribution>
    </extension>
+ <extension
+       point="org.eclipse.ui.bindings">
+    <key
+          commandId="org.jnect.demo.incquery.savebodymodel"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+          sequence="CTRL+SHIFT+Q">
+    </key>
+ </extension>
 </plugin>

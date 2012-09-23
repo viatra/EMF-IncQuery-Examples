@@ -18,10 +18,12 @@ import org.jnect.core.KinectManager;
  */
 public class SaveBodymodelHandler extends AbstractHandler {
 
+	static int serialNo = 0;
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ResourceSet rs = new ResourceSetImpl();
-		URI fileURI = URI.createPlatformResourceURI("/bodymodel.incquery/demomodel.xmi", false);
+		URI fileURI = URI.createPlatformResourceURI("/bodymodel.incquery/savedbodymodel"+(serialNo++)+".xmi", false);
 		Resource resource = rs.createResource( fileURI );
 		resource.getContents().add( KinectManager.INSTANCE.getSkeletonModel() );
 		try {
