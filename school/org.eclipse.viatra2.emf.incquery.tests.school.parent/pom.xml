@@ -25,6 +25,8 @@
 		<module>../school.instancemodel</module>
 		<module>../school.tests</module>
 		<module>../org.eclipse.viatra2.emf.incquery.base.test</module>
+		<module>../school.feature</module>
+		<module>../school.update</module>
 	</modules>
 	<build>
 		<plugins>
