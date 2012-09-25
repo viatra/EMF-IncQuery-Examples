@@ -26,7 +26,7 @@ import school.schools.SchoolsMatcherFactory;
  * // Step 1: simple queries
  *  
  *   
- *  pattern schools(Sch) = {
+ *  pattern schools(Sch) {
  *  	School(Sch);
  *  }
  * </pre></code>

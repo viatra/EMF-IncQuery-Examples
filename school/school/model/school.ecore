@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="school"
-    nsURI="http://school.ecore" nsPrefix="school">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="school" nsURI="http://school.ecore" nsPrefix="school">
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -59,5 +57,8 @@
         transient="true" eOpposite="#//School/years"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="schoolClasses" upperBound="-1"
         eType="#//SchoolClass" containment="true" resolveProxies="false" eOpposite="#//SchoolClass/year"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LimitedCapacityCourse" eSuperTypes="#//Course">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

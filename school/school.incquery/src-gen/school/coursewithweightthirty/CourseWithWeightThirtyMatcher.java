@@ -26,7 +26,7 @@ import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory;
  * // Step 4: check conditions
  *   
  *   
- *  pattern courseWithWeightThirty(C:Course) = {
+ *  pattern courseWithWeightThirty(C)  {
  *  	Course.weight(C,30);
  *  }
  * </pre></code>

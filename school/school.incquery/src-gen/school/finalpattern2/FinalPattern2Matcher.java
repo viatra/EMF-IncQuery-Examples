@@ -27,7 +27,7 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  *     {@literal @}ObservableValue(name = "Teacher", expression="TName")
  *     {@literal @}ObservableValue(name = "Student", expression="SName")
  *     {@literal @}Handler(fileExtension = "school")
- *     pattern finalPattern2(YDate, CSub, TName, SName) = {
+ *     pattern finalPattern2(YDate, CSub, TName, SName) {
  *     	Year.schoolClasses.courses(Y,C);
  *     	Course.teacher(C,T);
  *     	Student.schoolClass.courses(S,C);

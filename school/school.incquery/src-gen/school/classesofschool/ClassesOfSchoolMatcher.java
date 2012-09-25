@@ -23,7 +23,7 @@ import school.classesofschool.ClassesOfSchoolMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern classesOfSchool(SC)= {
+ * pattern classesOfSchool(SC){
  *  	SchoolClass(SC);
  *  }
  * </pre></code>

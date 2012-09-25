@@ -22,7 +22,7 @@ import school.teachersofschoolnames.TeachersOfSchoolNamesMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teachersOfSchoolNames(TName,SName) = {
+ * pattern teachersOfSchoolNames(TName,SName) {
  *  	School.teachers(Sch,T);
  *  	School.name(Sch, SName);
  *  	Teacher.name(T, TName); 

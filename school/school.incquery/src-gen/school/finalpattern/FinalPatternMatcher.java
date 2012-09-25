@@ -34,7 +34,7 @@ import school.finalpattern.FinalPatternMatcherFactory;
  *     {@literal @}ObservableValue(name = "Teacher", expression="T.name")
  *     {@literal @}ObservableValue(name = "Student", expression="S.name")
  *     {@literal @}Handler(fileExtension = "school")
- *     pattern finalPattern(Y:Year,C:Course,T:Teacher,S:Student) = {
+ *     pattern finalPattern(Y:Year,C:Course,T:Teacher,S:Student) {
  *     	Year.schoolClasses.courses(Y,C);
  *     	Course.teacher(C,T);
  *     	Student.schoolClass.courses(S,C);

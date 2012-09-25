@@ -27,7 +27,7 @@ import school.studentofschool.StudentOfSchoolMatcherFactory;
  * // Step 3: path expressions
  *  
  *   
- *  pattern studentOfSchool(S:Student,Sch:School) = {
+ *  pattern studentOfSchool(S,Sch) {
  *  	Student.schoolClass.courses.school(S,Sch);
  *  	// logically equivalent: School.courses.schoolClass.students(Sch,S);
  *  }

@@ -24,7 +24,7 @@ import school.morefriendsthan.MoreFriendsThanMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * {@literal @}QueryExplorer(display = false)
- *    pattern moreFriendsThan(S1:Student,S2:Student) = {
+ *    pattern moreFriendsThan(S1:Student,S2:Student) {
  *    	N == count find inTheCircleOfFriends(S1,_Sx1);
  *    	M == count find inTheCircleOfFriends(S2,_Sx2);
  *    	check ((N as Integer) {@literal >} (M as Integer));

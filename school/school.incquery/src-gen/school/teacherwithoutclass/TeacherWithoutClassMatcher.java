@@ -23,7 +23,7 @@ import school.teacherwithoutclass.TeacherWithoutClassMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teacherWithoutClass(T:Teacher) = {
+ * pattern teacherWithoutClass(T:Teacher) {
  * 	neg find classesOfTeacher(T,_SC); 	
  *  }
  * </pre></code>

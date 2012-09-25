@@ -24,7 +24,7 @@ import school.classesofteacher.ClassesOfTeacherMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern classesOfTeacher(T:Teacher, SC:SchoolClass) = {
+ * pattern classesOfTeacher(T, SC) {
  *  	find coursesOfTeacher(T,C);
  *  	Course.schoolClass(C,SC);
  *  }

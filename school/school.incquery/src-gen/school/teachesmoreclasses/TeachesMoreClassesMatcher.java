@@ -30,7 +30,7 @@ import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory;
  *   
  *    
  *   {@literal @}QueryExplorer(display = false)
- *   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) = {
+ *   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) {
  *   	N == count find classesOfTeacher(T1,_SC1);
  *   	M == count find classesOfTeacher(T2,_SC2);
  *   	check((N as Integer) {@literal >} (M as Integer));

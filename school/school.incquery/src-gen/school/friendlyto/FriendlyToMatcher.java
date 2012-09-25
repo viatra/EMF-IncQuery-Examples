@@ -27,7 +27,7 @@ import school.friendlyto.FriendlyToMatcherFactory;
  *  
  *     
  *    {@literal @}QueryExplorer(display = false)
- *    pattern friendlyTo(S1:Student, S2:Student) = {
+ *    pattern friendlyTo(S1:Student, S2:Student) {
  *    	Student.friendsWith(S1,S2);
  *    } or {
  *    	Student.friendsWith(S2,S1);

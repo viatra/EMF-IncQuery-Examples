@@ -23,7 +23,7 @@ import school.teachers.TeachersMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teachers(T) = {
+ * pattern teachers(T) {
  *  	Teacher(T);
  *  }
  * </pre></code>

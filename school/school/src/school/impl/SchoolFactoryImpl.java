@@ -24,142 +24,153 @@ import school.*;
  */
 public class SchoolFactoryImpl extends EFactoryImpl implements SchoolFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public static SchoolFactory init() {
-		try {
-			SchoolFactory theSchoolFactory = (SchoolFactory)EPackage.Registry.INSTANCE.getEFactory("http://school.ecore"); 
-			if (theSchoolFactory != null) {
-				return theSchoolFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new SchoolFactoryImpl();
-	}
+        try {
+            SchoolFactory theSchoolFactory = (SchoolFactory)EPackage.Registry.INSTANCE.getEFactory("http://school.ecore"); 
+            if (theSchoolFactory != null) {
+                return theSchoolFactory;
+            }
+        }
+        catch (Exception exception) {
+            EcorePlugin.INSTANCE.log(exception);
+        }
+        return new SchoolFactoryImpl();
+    }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public SchoolFactoryImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case SchoolPackage.COURSE: return createCourse();
-			case SchoolPackage.SCHOOL: return createSchool();
-			case SchoolPackage.SCHOOL_CLASS: return createSchoolClass();
-			case SchoolPackage.SPECIALISATION_COURSE: return createSpecialisationCourse();
-			case SchoolPackage.STUDENT: return createStudent();
-			case SchoolPackage.TEACHER: return createTeacher();
-			case SchoolPackage.YEAR: return createYear();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+        switch (eClass.getClassifierID()) {
+            case SchoolPackage.COURSE: return createCourse();
+            case SchoolPackage.SCHOOL: return createSchool();
+            case SchoolPackage.SCHOOL_CLASS: return createSchoolClass();
+            case SchoolPackage.SPECIALISATION_COURSE: return createSpecialisationCourse();
+            case SchoolPackage.STUDENT: return createStudent();
+            case SchoolPackage.TEACHER: return createTeacher();
+            case SchoolPackage.YEAR: return createYear();
+            case SchoolPackage.LIMITED_CAPACITY_COURSE: return createLimitedCapacityCourse();
+            default:
+                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        }
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Course createCourse() {
-		CourseImpl course = new CourseImpl();
-		return course;
-	}
+        CourseImpl course = new CourseImpl();
+        return course;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public School createSchool() {
-		SchoolImpl school = new SchoolImpl();
-		return school;
-	}
+        SchoolImpl school = new SchoolImpl();
+        return school;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public SchoolClass createSchoolClass() {
-		SchoolClassImpl schoolClass = new SchoolClassImpl();
-		return schoolClass;
-	}
+        SchoolClassImpl schoolClass = new SchoolClassImpl();
+        return schoolClass;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public SpecialisationCourse createSpecialisationCourse() {
-		SpecialisationCourseImpl specialisationCourse = new SpecialisationCourseImpl();
-		return specialisationCourse;
-	}
+        SpecialisationCourseImpl specialisationCourse = new SpecialisationCourseImpl();
+        return specialisationCourse;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Student createStudent() {
-		StudentImpl student = new StudentImpl();
-		return student;
-	}
+        StudentImpl student = new StudentImpl();
+        return student;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Teacher createTeacher() {
-		TeacherImpl teacher = new TeacherImpl();
-		return teacher;
-	}
+        TeacherImpl teacher = new TeacherImpl();
+        return teacher;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Year createYear() {
-		YearImpl year = new YearImpl();
-		return year;
-	}
+        YearImpl year = new YearImpl();
+        return year;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public LimitedCapacityCourse createLimitedCapacityCourse() {
+        LimitedCapacityCourseImpl limitedCapacityCourse = new LimitedCapacityCourseImpl();
+        return limitedCapacityCourse;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public SchoolPackage getSchoolPackage() {
-		return (SchoolPackage)getEPackage();
-	}
+        return (SchoolPackage)getEPackage();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+     * @deprecated
+     * @generated
+     */
 	@Deprecated
 	public static SchoolPackage getPackage() {
-		return SchoolPackage.eINSTANCE;
-	}
+        return SchoolPackage.eINSTANCE;
+    }
 
 } //SchoolFactoryImpl

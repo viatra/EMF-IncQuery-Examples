@@ -22,11 +22,10 @@ import school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIn
  * 
  * <p>Original source:
  * <code><pre>
- * pattern courseWithNameLongerThanWeightInt(W) = {
+ * pattern courseWithNameLongerThanWeightInt(W) {
  *  	Course.subject(C,CName);
  *  	Course.weight(C,W);
- *  	check((CName as String).length {@literal >} (W as Integer));
- *  	// casts will not be necessary once IncQuery has full type inference (v.0.7)
+ *  	check(CName.length {@literal >} W);
  *  }
  * </pre></code>
  * 

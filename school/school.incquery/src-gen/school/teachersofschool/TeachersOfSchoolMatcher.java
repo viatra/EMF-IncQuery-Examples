@@ -24,7 +24,7 @@ import school.teachersofschool.TeachersOfSchoolMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teachersOfSchool(T:Teacher,Sch:School) = {
+ * pattern teachersOfSchool(T:Teacher,Sch:School) {
  *  	School.teachers(Sch,T); 
  *  	// note that there is no restriction on the direction of navigation:
  *  	// all "Sch"s can be queried from Ts and vice-versa

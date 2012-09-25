@@ -23,7 +23,7 @@ import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teachesTheMostCourses(T:Teacher) = {
+ * pattern teachesTheMostCourses(T:Teacher) {
  *   	neg find teachesMoreClasses(_Tx,T); // there is noone who would teach more courses
  *   }
  * </pre></code>

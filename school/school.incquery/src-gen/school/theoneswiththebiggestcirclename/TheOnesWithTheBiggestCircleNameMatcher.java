@@ -22,7 +22,7 @@ import school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMat
  * 
  * <p>Original source:
  * <code><pre>
- * pattern theOnesWithTheBiggestCircleName(SName) = {
+ * pattern theOnesWithTheBiggestCircleName(SName) {
  *    	neg find moreFriendsThan(_Sx,S);
  *    	Student.name(S, SName);
  *    }

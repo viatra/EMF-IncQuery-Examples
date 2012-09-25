@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/school/src"
-    modelPluginID="school" modelName="School" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/school/src" modelPluginID="school" modelName="School"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
   <foreignModel>school.ecore</foreignModel>
   <genPackages prefix="School" disposableProviderFactory="true" ecorePackage="school.ecore#/">
     <genClasses ecoreClass="school.ecore#//Course">
@@ -45,6 +43,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute school.ecore#//Year/startingDate"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference school.ecore#//Year/school"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference school.ecore#//Year/schoolClasses"/>
+    </genClasses>
+    <genClasses ecoreClass="school.ecore#//LimitedCapacityCourse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute school.ecore#//LimitedCapacityCourse/capacity"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

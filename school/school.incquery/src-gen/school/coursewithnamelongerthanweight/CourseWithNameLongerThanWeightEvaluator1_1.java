@@ -11,11 +11,11 @@ public class CourseWithNameLongerThanWeightEvaluator1_1 implements IMatchChecker
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final String CName, final Integer W) {
+  private Boolean evaluateXExpressionGenerated(final Integer W, final String CName) {
     String _CName = CName;
-    int _length = ((String) _CName).length();
+    int _length = _CName.length();
     Integer _W = W;
-    boolean _greaterThan = (_length > (((Integer) _W)).intValue());
+    boolean _greaterThan = (_length > (_W).intValue());
     return Boolean.valueOf(_greaterThan);
   }
   
@@ -24,10 +24,10 @@ public class CourseWithNameLongerThanWeightEvaluator1_1 implements IMatchChecker
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int CNamePosition = tupleNameMap.get("CName");
-    java.lang.String CName = (java.lang.String) tuple.get(CNamePosition);
     int WPosition = tupleNameMap.get("W");
     java.lang.Integer W = (java.lang.Integer) tuple.get(WPosition);
-    return evaluateXExpressionGenerated(CName, W);
+    int CNamePosition = tupleNameMap.get("CName");
+    java.lang.String CName = (java.lang.String) tuple.get(CNamePosition);
+    return evaluateXExpressionGenerated(W, CName);
   }
 }
