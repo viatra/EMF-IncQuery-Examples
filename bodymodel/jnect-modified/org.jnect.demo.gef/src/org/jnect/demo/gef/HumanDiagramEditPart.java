@@ -4,9 +4,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- *
+ * 
  * Contributors:
- *     Eugen Neufeld - initial API and implementation
+ * Eugen Neufeld - initial API and implementation
  *******************************************************************************/
 package org.jnect.demo.gef;
 
@@ -54,32 +54,35 @@ public class HumanDiagramEditPart extends AbstractGraphicalEditPart {
 		return model.getIncomingLinks();
 	}
 
+	static int width = 10;
+	static int height = 10;
+	
 	@Override
 	protected void refreshVisuals() {
 		final HumanPolylineConnectionAnchorFigure figure = (HumanPolylineConnectionAnchorFigure) getFigure();
 		PositionedElement model = (PositionedElement) getModel();
-		final HumanContainerEditPart parent = (HumanContainerEditPart) this
-				.getParent();
+		final HumanContainerEditPart parent = (HumanContainerEditPart) this.getParent();
 
-		figure.getLable().setText(
-				model.getClass().getInterfaces()[0].getSimpleName());
+		figure.getLable().setText(model.getClass().getInterfaces()[0].getSimpleName());
 		// figure.getLable().setFont(new Font(Display.getCurrent(), "Arial", 5,
 		// 1));
-		figure.setForegroundColor(new Color(Display.getCurrent(), model
-				.getColor_r(), model.getColor_g(), model.getColor_b()));
+		//figure.setForegroundColor(new Color(Display.getCurrent(), model.getColor_r(), model.getColor_g(), model
+		//	.getColor_b()));
+		figure.setForegroundColor(ColorFactory.getColor(model.getColor_r(), model.getColor_g(), model.getColor_b()));
+		
 
 		if (getViewer() == null || getViewer().getControl() == null)
 			return;
 
 		Point size = getViewer().getControl().getSize();
-		float xRamp = (size.x - 80) / 2;
-		float yRamp = (size.y - 80) / 2;
+		float xRamp = (size.x - (width*2)) / 2;
+		float yRamp = (size.y - (height*2)) / 2;
 		float ramp = Math.min(xRamp, yRamp);
 		float xOffset = (size.x) / 2;
 		float yOffset = (size.y) / 2;
 
-		Rectangle layout = new Rectangle(Math.round(xOffset + model.getX()
-				* ramp), Math.round(yOffset - model.getY() * ramp), 40, 40);
+		Rectangle layout = new Rectangle(Math.round(xOffset + model.getX() * ramp), Math.round(yOffset - model.getY()
+			* ramp), width, height);
 		parent.setLayoutConstraint(this, figure, layout);
 	}
 
@@ -118,26 +121,20 @@ public class HumanDiagramEditPart extends AbstractGraphicalEditPart {
 		});
 	}
 
-	public ConnectionAnchor getSourceConnectionAnchor(
-			ConnectionEditPart connection) {
-		return ((HumanPolylineConnectionAnchorFigure) getFigure())
-				.getConnectionAnchor();
+	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connection) {
+		return ((HumanPolylineConnectionAnchorFigure) getFigure()).getConnectionAnchor();
 	}
 
-	public ConnectionAnchor getTargetConnectionAnchor(
-			ConnectionEditPart connection) {
-		return ((HumanPolylineConnectionAnchorFigure) getFigure())
-				.getConnectionAnchor();
+	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connection) {
+		return ((HumanPolylineConnectionAnchorFigure) getFigure()).getConnectionAnchor();
 	}
 
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
-		return ((HumanPolylineConnectionAnchorFigure) getFigure())
-				.getConnectionAnchor();
+		return ((HumanPolylineConnectionAnchorFigure) getFigure()).getConnectionAnchor();
 	}
 
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
-		return ((HumanPolylineConnectionAnchorFigure) getFigure())
-				.getConnectionAnchor();
+		return ((HumanPolylineConnectionAnchorFigure) getFigure()).getConnectionAnchor();
 	}
 
 }
