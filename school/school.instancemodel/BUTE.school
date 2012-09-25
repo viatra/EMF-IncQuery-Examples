@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:school="http://school.ecore" name="Budapest University of Technology and Economics" address="1117 Budapest, Magyar Tudosok krt 2.">
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http://school.ecore" name="Budapest University of Technology and Economics" address="1117 Budapest, Magyar Tudosok krt 2.">
   <years startingDate="2011">
     <schoolClasses code="65" courses="//@courses.0" homeroomTeacher="//@teachers.1">
       <students name="Zoltan Ujhelyi" friendsWith="//@years.0/@schoolClasses.1/@students.0"/>
@@ -26,6 +26,4 @@
   <courses subject="Fault-tolerant safety-critical computing" weight="37"/>
   <courses subject="Prolog programming" weight="23"/>
   <courses subject="Graph transformations" weight="20"/>
-  <courses xsi:type="school:SpecialisationCourse"/>
-  <courses xsi:type="school:LimitedCapacityCourse"/>
 </school:School>
