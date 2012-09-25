@@ -65,5 +65,21 @@
             id="bodymodel.RightHandAboveHead_MovingAverage_1_1">
       </evaluator>
    </extension>
+   <extension
+         id="bodymodel.Jump"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.jump.JumpMatcherFactory$Provider"
+            id="bodymodel.Jump">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.Jump"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.jump.JumpEvaluator1_1"
+            id="bodymodel.Jump_1_1">
+      </evaluator>
+   </extension>
 
 </plugin>

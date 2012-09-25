@@ -6,6 +6,7 @@ Bundle-Version: 0.0.1.qualifier
 Export-Package: bodymodel.body,
  bodymodel.bodylinks,
  bodymodel.connectedbodyparts,
+ bodymodel.jump,
  bodymodel.partsofabody,
  bodymodel.righthandabovehead,
  bodymodel.righthandabovehead_movingaverage

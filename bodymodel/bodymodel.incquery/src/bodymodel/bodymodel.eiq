@@ -65,31 +65,31 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
  * of both feet and the head is higher then the average position plus a
  * threshold.
  */
-//pattern Jump(B:Body) {
-//	find partsOfABody(B,LF);
-//	find partsOfABody(B,RF);
-//	find partsOfABody(B,H);
-//	
-//	LeftFoot.y(LF,LFy);
-//	RightFoot.y(RF,RFy);
-//	Head.y(H,Hy);
-//	
-//	check({
-//		var bodymodel.MovingAverageCalculator lfy_mac 
-//			= bodymodel::MovingAverageCalculator::getCalculator("LF_Y")
-//		lfy_mac.addValue(RFy as Float)
-//		var bodymodel.MovingAverageCalculator rfy_mac 
-//			= bodymodel::MovingAverageCalculator::getCalculator("RF_Y")
-//		rfy_mac.addValue(RFy as Float)
-//		var bodymodel.MovingAverageCalculator hy_mac 
-//			= bodymodel::MovingAverageCalculator::getCalculator("H_Y")
-//		hy_mac.addValue(Hy as Float)
-//		
-//		//return ( 
-//			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
-//			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
-//			rfy_mac.movingAvg + 0.1 < (RFy as Float)
-//		//	)
-//	});
-//	
-//}
+pattern Jump(B:Body) {
+	find partsOfABody(B,LF);
+	find partsOfABody(B,RF);
+	find partsOfABody(B,H);
+	
+	LeftFoot.y(LF,LFy);
+	RightFoot.y(RF,RFy);
+	Head.y(H,Hy);
+	
+	check({
+		var bodymodel.MovingAverageCalculator lfy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("LF_Y")
+		lfy_mac.addValue(RFy as Float)
+		var bodymodel.MovingAverageCalculator rfy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("RF_Y")
+		rfy_mac.addValue(RFy as Float)
+		var bodymodel.MovingAverageCalculator hy_mac 
+			= bodymodel::MovingAverageCalculator::getCalculator("H_Y")
+		hy_mac.addValue(Hy as Float)
+		
+		//return ( 
+			hy_mac.movingAvg  + 0.1 < (Hy as Float) &&
+			lfy_mac.movingAvg + 0.1 < (LFy as Float) &&
+			rfy_mac.movingAvg + 0.1 < (RFy as Float)
+		//	)
+	});
+	
+}
