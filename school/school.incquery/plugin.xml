@@ -5,16 +5,16 @@
          id="school.CourseWithTeacher"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="school.CourseWithTeacher"
-            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider">
+            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
+            id="school.CourseWithTeacher">
       </matcher>
    </extension>
    <extension
          id="school.CourseWithoutTeacher"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="school.CourseWithoutTeacher"
-            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider">
+            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
+            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
    <extension

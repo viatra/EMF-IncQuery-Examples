@@ -33,7 +33,7 @@ import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory;
  *   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) {
  *   	N == count find classesOfTeacher(T1,_SC1);
  *   	M == count find classesOfTeacher(T2,_SC2);
- *   	check((N as Integer) {@literal >} (M as Integer));
+ *   	check(N {@literal >} M);
  *   }
  * </pre></code>
  * 

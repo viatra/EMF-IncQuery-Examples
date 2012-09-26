@@ -175,7 +175,7 @@ import "http://school.ecore"
   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) {
   	N == count find classesOfTeacher(T1,_SC1);
   	M == count find classesOfTeacher(T2,_SC2);
-  	check((N as Integer) > (M as Integer));
+  	check(N > M);
   }
   
   /*
@@ -229,7 +229,7 @@ import "http://school.ecore"
    pattern moreFriendsThan(S1:Student,S2:Student) {
    	N == count find inTheCircleOfFriends(S1,_Sx1);
    	M == count find inTheCircleOfFriends(S2,_Sx2);
-   	check ((N as Integer) > (M as Integer));
+   	check (N > M);
    }
    
    /*

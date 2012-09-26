@@ -739,18 +739,8 @@
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_greaterThan(java.lang.Comparable,C)"/>
-          <leftOperand xsi:type="xbase:XCastedExpression">
-            <type xsi:type="types:JvmParameterizedTypeReference">
-              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
-            </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
-          </leftOperand>
-          <rightOperand xsi:type="xbase:XCastedExpression">
-            <type xsi:type="types:JvmParameterizedTypeReference">
-              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
-            </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.4"/>
-          </rightOperand>
+          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.4"/>
         </expression>
       </constraints>
     </bodies>
@@ -967,18 +957,8 @@
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_greaterThan(java.lang.Comparable,C)"/>
-          <leftOperand xsi:type="xbase:XCastedExpression">
-            <type xsi:type="types:JvmParameterizedTypeReference">
-              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
-            </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
-          </leftOperand>
-          <rightOperand xsi:type="xbase:XCastedExpression">
-            <type xsi:type="types:JvmParameterizedTypeReference">
-              <type xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Integer#java.lang.Integer"/>
-            </type>
-            <target xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.4"/>
-          </rightOperand>
+          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.4"/>
         </expression>
       </constraints>
     </bodies>
