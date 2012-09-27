@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.viatra2.emf.incquery.base.example
+Bundle-SymbolicName: org.eclipse.viatra2.emf.incquery.base.example;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.viatra2.emf.incquery.base.example.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.viatra2.emf.incquery.base,
+ org.eclipse.viatra2.emf.incquery.base.itc,
+ org.eclipse.emf,
+ org.eclipse.emf.edit,
+ org.apache.log4j;bundle-version="1.2.15",
+ org.eclipse.viatra2.emf.incquery.base.example.library;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

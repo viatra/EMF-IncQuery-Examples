@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.viatra2.emf.incquery.base.example.library/src"
+    modelPluginID="org.eclipse.viatra2.emf.incquery.base.example.library" modelName="Library"
+    importerID="org.eclipse.emf.importer.ecore" copyrightFields="false">
+  <foreignModel>library.ecore</foreignModel>
+  <genPackages prefix="Library" disposableProviderFactory="true" ecorePackage="library.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="library.ecore#//BookCategory">
+      <genEnumLiterals ecoreEnumLiteral="library.ecore#//BookCategory/Mystery"/>
+      <genEnumLiterals ecoreEnumLiteral="library.ecore#//BookCategory/ScienceFiction"/>
+      <genEnumLiterals ecoreEnumLiteral="library.ecore#//BookCategory/Biography"/>
+    </genEnums>
+    <genClasses ecoreClass="library.ecore#//Library">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference library.ecore#//Library/writers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference library.ecore#//Library/books"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Library/name"/>
+    </genClasses>
+    <genClasses ecoreClass="library.ecore#//Writer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference library.ecore#//Writer/books"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Writer/name"/>
+    </genClasses>
+    <genClasses ecoreClass="library.ecore#//Book">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference library.ecore#//Book/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference library.ecore#//Book/citation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Book/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Book/pages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Book/category"/>
+    </genClasses>
+    <genClasses ecoreClass="library.ecore#//Manuscript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//Manuscript/state"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
