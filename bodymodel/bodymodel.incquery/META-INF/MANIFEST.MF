@@ -9,7 +9,9 @@ Export-Package: bodymodel.body,
  bodymodel.jump,
  bodymodel.partsofabody,
  bodymodel.righthandabovehead,
- bodymodel.righthandabovehead_movingaverage
+ bodymodel.righthandabovehead_movingaverage,
+ bodymodel.ymca.partsofabody,
+ bodymodel.ymca.stretchedarm
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

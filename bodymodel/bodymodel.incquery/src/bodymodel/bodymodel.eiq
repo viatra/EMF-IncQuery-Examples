@@ -60,6 +60,7 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
 	});
 }
 
+
 /*
  * This pattern detects a jump of the user. For doing so it checks whether the current value
  * of both feet and the head is higher then the average position plus a

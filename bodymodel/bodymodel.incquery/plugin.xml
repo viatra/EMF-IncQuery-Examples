@@ -81,5 +81,29 @@
             id="bodymodel.Jump_1_1">
       </evaluator>
    </extension>
+   <extension
+         id="bodymodel.ymca.partsOfABody"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.partsofabody.PartsOfABodyMatcherFactory$Provider"
+            id="bodymodel.ymca.partsOfABody">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedArm"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.stretchedarm.StretchedArmMatcherFactory$Provider"
+            id="bodymodel.ymca.stretchedArm">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedArm"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.stretchedarm.StretchedArmEvaluator1_1"
+            id="bodymodel.ymca.stretchedArm_1_1">
+      </evaluator>
+   </extension>
 
 </plugin>

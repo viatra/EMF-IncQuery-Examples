@@ -1,0 +1,89 @@
+package bodymodel.ymca
+
+import "http://org/jnect/bodymodel"
+
+pattern partsOfABody(B:Body, P:PositionedElement) {
+	Body.links(B,HL);
+	HumanLink.source(HL,P); 
+	} or {
+	Body.links(B,HL);
+	HumanLink.target(HL,P); 		
+}
+
+/**
+ * Right arm is stretched straight.
+ */
+ @QueryExplorer(display = true)
+pattern stretchedArm(H:RightHand, // hand 
+					 E:RightElbow, // elbow
+					 S:RightShoulder//, // shoulder
+//					 HX,HY,HZ,
+//					 EX,EY,EZ,
+//					 SX,SY,SZ
+) {
+	// ensure they are all connected to the same body
+	find partsOfABody(B,H);
+	find partsOfABody(B,E);
+	find partsOfABody(B,S);
+	// indicate coordinates to be used for check calculation
+	PositionedElement.x(H,HX);
+	PositionedElement.y(H,HY);
+	PositionedElement.z(H,HZ);
+	
+	PositionedElement.x(E,EX);
+	PositionedElement.y(E,EY);
+	PositionedElement.z(E,EZ);
+	
+	PositionedElement.x(S,SX);
+	PositionedElement.y(S,SY);
+	PositionedElement.z(S,SZ);
+
+
+	// check that the angle between the lower arm (H-E)
+	// and upper arm (E-S) is around +-PI (180')
+	check({
+		// we need to "wire" attribute values into the check expression, even if they are not used later
+		val float hx = HX
+		val float hy = HY
+		val float hz = HZ
+		val float ex = EX
+		val float ey = EY
+		val float ez = EZ
+		val float sx = SX
+		val float sy = SY
+		val float sz = SZ
+		
+		
+		
+		var float angleBetween = bodymodel::ymca::VectorMaths::angleBetween(
+			bodymodel::ymca::VectorMaths::createVector(H,E),
+			bodymodel::ymca::VectorMaths::createVector(S,E)
+		)
+		
+		// System::out.println(angleBetween)
+		
+		(Math::PI - angleBetween) < 0.1
+		
+	});
+}
+
+/**
+ * The body is in the "Y" position.
+ */
+/* 
+pattern Y(RH:RightHand, 
+		  RE:RightElbow, 
+		  RS:RightShoulder, 
+		  LH:LeftHand, 
+		  LE:LeftElbow, 
+		  LS:LeftShoulder
+) {
+	// both arms are stretched
+	find stretchedArm(RH,RE,RS);
+	find stretchedArm(LH,LE,LS);
+	// both hands are above the head
+	
+	// angle between upper arms is around PI/3
+	
+	
+} */
