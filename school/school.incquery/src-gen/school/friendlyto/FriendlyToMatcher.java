@@ -24,14 +24,14 @@ import school.friendlyto.FriendlyToMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * // Step 6: disjunction, recursion, transitive closure
- *  
- *     
- *    {@literal @}QueryExplorer(display = false)
- *    pattern friendlyTo(S1:Student, S2:Student) {
- *    	Student.friendsWith(S1,S2);
- *    } or {
- *    	Student.friendsWith(S2,S1);
- *    }
+ * 
+ * 	 
+ * 	{@literal @}QueryExplorer(display = false)
+ * 	pattern friendlyTo(S1 : Student, S2 : Student) {
+ * 		Student.friendsWith(S1, S2);
+ * 	} or {
+ * 		Student.friendsWith(S2, S1);
+ * 	}
  * </pre></code>
  * 
  * @see FriendlyToMatch

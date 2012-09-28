@@ -591,11 +591,7 @@
     </bodies>
   </patterns>
   <patterns name="school.courseWithPrimeWeight" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
+    <parameters name="C"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>

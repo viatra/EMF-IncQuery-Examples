@@ -23,11 +23,11 @@ import school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * pattern classesOfTeacherNames(TName, SCName) {
- *  	find coursesOfTeacher(T,C);
- *  	Teacher.name(T, TName);
- *  	Course.schoolClass(C,SC);
- *  	SchoolClass.code(SC, SCName); 	
- *  }
+ * 	find coursesOfTeacher(T, C);
+ * 	Teacher.name(T, TName);
+ * 	Course.schoolClass(C, SC);
+ * 	SchoolClass.code(SC, SCName);
+ * }
  * </pre></code>
  * 
  * @see ClassesOfTeacherNamesMatch

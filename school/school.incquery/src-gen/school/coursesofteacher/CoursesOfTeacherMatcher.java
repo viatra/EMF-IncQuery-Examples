@@ -27,9 +27,9 @@ import school.coursesofteacher.CoursesOfTeacherMatcherFactory;
  * // Step 2: pattern calls, negative application conditions
  * 
  *  
- *  pattern coursesOfTeacher(T, C) {
- *  	Teacher.courses(T,C);
- *  }
+ * pattern coursesOfTeacher(T, C) {
+ * 	Teacher.courses(T, C);
+ * }
  * </pre></code>
  * 
  * @see CoursesOfTeacherMatch

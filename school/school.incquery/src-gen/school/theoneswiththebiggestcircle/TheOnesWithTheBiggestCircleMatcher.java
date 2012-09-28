@@ -23,9 +23,9 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFact
  * 
  * <p>Original source:
  * <code><pre>
- * pattern theOnesWithTheBiggestCircle(S:Student) {
- *    	neg find moreFriendsThan(_Sx,S);
- *    }
+ * pattern theOnesWithTheBiggestCircle(S : Student) {
+ * 		neg find moreFriendsThan(_Sx, S);
+ * 	}
  * </pre></code>
  * 
  * @see TheOnesWithTheBiggestCircleMatch

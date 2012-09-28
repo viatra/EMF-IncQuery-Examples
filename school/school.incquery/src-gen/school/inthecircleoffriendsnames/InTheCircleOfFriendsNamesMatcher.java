@@ -22,12 +22,12 @@ import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern inTheCircleOfFriendsNames(S1Name,SomeoneName) {
- *    	find friendlyTo+(S1,Someone);
- *    	S1!=Someone; // we do not allow self loops
- *    	Student.name(S1, S1Name);
- *    	Student.name(Someone, SomeoneName);
- *    }
+ * pattern inTheCircleOfFriendsNames(S1Name, SomeoneName) {
+ * 		find friendlyTo +(S1, Someone);
+ * 		S1 != Someone; // we do not allow self loops
+ * 		Student.name(S1, S1Name);
+ * 		Student.name(Someone, SomeoneName);
+ * 	}
  * </pre></code>
  * 
  * @see InTheCircleOfFriendsNamesMatch

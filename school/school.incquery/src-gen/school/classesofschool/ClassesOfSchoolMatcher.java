@@ -23,9 +23,9 @@ import school.classesofschool.ClassesOfSchoolMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern classesOfSchool(SC){
- *  	SchoolClass(SC);
- *  }
+ * pattern classesOfSchool(SC) {
+ * 	SchoolClass(SC);
+ * }
  * </pre></code>
  * 
  * @see ClassesOfSchoolMatch

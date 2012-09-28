@@ -24,8 +24,8 @@ import school.teachers.TeachersMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * pattern teachers(T) {
- *  	Teacher(T);
- *  }
+ * 	Teacher(T);
+ * }
  * </pre></code>
  * 
  * @see TeachersMatch

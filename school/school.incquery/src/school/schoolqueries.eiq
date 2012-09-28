@@ -2,50 +2,47 @@ package school
 
 import "http://school.ecore"
 
- 
- // Step 1: simple queries
- 
- /* 
+// Step 1: simple queries
+
+/* 
   * all schools
   */
- pattern schools(Sch) {
- 	School(Sch);
- }
- 
- pattern schoolsNames(SchName) {
- 	School.name(_Sch, SchName);
- }
- 
- /*
+pattern schools(Sch) {
+	School(Sch);
+}
+
+pattern schoolsNames(SchName) {
+	School.name(_Sch, SchName);
+}
+
+/*
   *  all teachers
   */
- pattern teachers(T) {
- 	Teacher(T);
- }
- 
- pattern teachersNames(TN) {
- 	Teacher.name(_T,TN);
- }
- 
- 
- /* 
+pattern teachers(T) {
+	Teacher(T);
+}
+
+pattern teachersNames(TN) {
+	Teacher.name(_T, TN);
+}
+
+/* 
   * a sample query along a reference
   * 
   * Teacher T teaches in school Sch.
   */
- pattern teachersOfSchool(T:Teacher,Sch:School) {
- 	School.teachers(Sch,T); 
- 	// note that there is no restriction on the direction of navigation:
- 	// all "Sch"s can be queried from Ts and vice-versa
- }
- 
-  pattern teachersOfSchoolNames(TName,SName) {
- 	School.teachers(Sch,T);
- 	School.name(Sch, SName);
- 	Teacher.name(T, TName); 
- }
- 
- 
+pattern teachersOfSchool(T : Teacher, Sch : School) {
+	School.teachers(Sch, T);
+	// note that there is no restriction on the direction of navigation:
+	// all "Sch"s can be queried from Ts and vice-versa
+}
+
+pattern teachersOfSchoolNames(TName, SName) {
+	School.teachers(Sch, T);
+	School.name(Sch, SName);
+	Teacher.name(T, TName);
+}
+
 // Step 2: pattern calls, negative application conditions
 
 /* 
@@ -53,249 +50,247 @@ import "http://school.ecore"
  * 
  * Teacher T teaches in Course C
  */
- pattern coursesOfTeacher(T, C) {
- 	Teacher.courses(T,C);
- } 
- 
- pattern coursesOfTeacherNames(TName, CName) {
- 	Teacher.courses(T,C);
- 	Teacher.name(T, TName); 
- 	Course.subject(C, CName);
- } 
- 
+pattern coursesOfTeacher(T, C) {
+	Teacher.courses(T, C);
+}
+
+pattern coursesOfTeacherNames(TName, CName) {
+	Teacher.courses(T, C);
+	Teacher.name(T, TName);
+	Course.subject(C, CName);
+}
+
 /*
  * Teacher T teaches a course which is being taught to SchoolClass SC 
  */
- pattern classesOfTeacher(T, SC) {
- 	find coursesOfTeacher(T,C);
- 	Course.schoolClass(C,SC);
- }
- 
- pattern classesOfSchool(SC){
- 	SchoolClass(SC);
- }
+pattern classesOfTeacher(T, SC) {
+	find coursesOfTeacher(T, C);
+	Course.schoolClass(C, SC);
+}
 
- pattern classesOfTeacherNames(TName, SCName) {
- 	find coursesOfTeacher(T,C);
- 	Teacher.name(T, TName);
- 	Course.schoolClass(C,SC);
- 	SchoolClass.code(SC, SCName); 	
- }
-  
- /*
+pattern classesOfSchool(SC) {
+	SchoolClass(SC);
+}
+
+pattern classesOfTeacherNames(TName, SCName) {
+	find coursesOfTeacher(T, C);
+	Teacher.name(T, TName);
+	Course.schoolClass(C, SC);
+	SchoolClass.code(SC, SCName);
+}
+
+/*
   * Teacher T is a teacher who doesn't teach any schoolclass.
   * 
   * Note: Teacher type declaration is necesary as type information is not propagated out of neg find calls (by design).
   */
- pattern teacherWithoutClass(T:Teacher) {
-	neg find classesOfTeacher(T,_SC); 	
- }
- 
- pattern teacherWithoutClassNames(TNames) {
-	neg find classesOfTeacher(T,_SC); 	
-	Teacher.name(T, TNames);
- }
+pattern teacherWithoutClass(T : Teacher) {
+	neg find classesOfTeacher(T, _SC);
+}
 
- // Step 3: path expressions
- 
- /*
+pattern teacherWithoutClassNames(TNames) {
+	neg find classesOfTeacher(T, _SC);
+	Teacher.name(T, TNames);
+}
+
+// Step 3: path expressions
+
+/*
   * Student S attends school Sch
   */
- pattern studentOfSchool(S,Sch) {
- 	Student.schoolClass.courses.school(S,Sch);
- 	// logically equivalent: School.courses.schoolClass.students(Sch,S);
- }
- 
- pattern studentOfSchoolNames(SName, SchName) {
- 	Student.schoolClass.courses.school(S,Sch);
- 	Student.name(S, SName);
- 	School.name(Sch, SchName);
- 	// logically equivalent: School.courses.schoolClass.students(Sch,S);
- }
-  
+pattern studentOfSchool(S, Sch) {
+	Student.schoolClass.courses.school(S, Sch);
+	// logically equivalent: School.courses.schoolClass.students(Sch,S);
+}
+
+pattern studentOfSchoolNames(SName, SchName) {
+	Student.schoolClass.courses.school(S, Sch);
+	Student.name(S, SName);
+	School.name(Sch, SchName);
+	// logically equivalent: School.courses.schoolClass.students(Sch,S);
+}
+
 // Step 4: check conditions
-  
- /*
+
+/*
   * Attribute value constraint with a constant:
   * 
   * Course C has weight 30
   */
- pattern courseWithWeightThirty(C)  {
- 	Course.weight(C,30);
- }
- 
- /*
+pattern courseWithWeightThirty(C) {
+	Course.weight(C, 30);
+}
+
+/*
   *  a bit more complicated check expression:
   * 
   * Course C has a subject name which is longer than C's weight.
   */
- pattern courseWithNameLongerThanWeight(C) {
- 	Course.subject(C,CName);
- 	Course.weight(C,W);
- 	check(CName.length > W);
- }
- 
- pattern courseWithNameLongerThanWeightInt(W) {
- 	Course.subject(C,CName);
- 	Course.weight(C,W);
- 	check(CName.length > W);
- }
- 
-  /*
+pattern courseWithNameLongerThanWeight(C) {
+	Course.subject(C, CName);
+	Course.weight(C, W);
+	check(CName.length > W);
+}
+
+pattern courseWithNameLongerThanWeightInt(W) {
+	Course.subject(C, CName);
+	Course.weight(C, W);
+	check(CName.length > W);
+}
+
+/*
    * A check condition with some Xbase magic:
    * (this must be the most primitive prime tester ever :-)
    * 
    * Course C has a weight which is a prime number
    */
- pattern courseWithPrimeWeight(C:Course) {
- 	Course.weight(C,W);
- 	check({ // make sure the check() expression returns a boolean value on all execution paths
- 		if (W%2==0) false
- 		else {
-	 		var Integer maxValue = Math::round(new Float(Math::sqrt( W )))
-	 		var Integer divisor = 3
-	 		while (divisor<=maxValue) {
-	 			if (W%divisor==0) return false 
-	 			else divisor = divisor + 2;
-	 		}
-	 		true // we have found a prime number	
-	 	}
- 	});
- }
- 
- // for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
- // for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
- 
- // Step 5: counting (match cardinalities)
-  
-  /*
+pattern courseWithPrimeWeight(C) {
+	Course.weight(C, W);
+	check( { // make sure the check() expression returns a boolean value on all execution paths
+		if(W % 2 == 0)
+		false else {
+			var Integer maxValue = Math:: round(new Float(Math:: sqrt(W)))
+			var Integer divisor = 3 while(divisor <= maxValue) {
+				if(W % divisor == 0)
+				return false else divisor = divisor + 2;
+			}
+
+			true // we have found a prime number	
+		}
+
+	});
+}
+
+// for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
+// for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
+
+// Step 5: counting (match cardinalities)
+
+/*
    * Teacher T1 teaches more classes than teacher T2
    */
-  @QueryExplorer(display = false)
-  pattern teachesMoreClasses(T1:Teacher, T2:Teacher) {
-  	N == count find classesOfTeacher(T1,_SC1);
-  	M == count find classesOfTeacher(T2,_SC2);
-  	check(N > M);
-  }
-  
-  /*
+@QueryExplorer(display = false)
+pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
+	N == count find classesOfTeacher(T1, _SC1);
+	M == count find classesOfTeacher(T2, _SC2);
+	check(N > M);
+}
+
+
+	/*
    * Teacher T teaches the most courses.
    * 
    * Note: there can be multiple matches to T as there might be cases
    * where multiple teachers teach the same and maximum amount of courses.
    */
-  pattern teachesTheMostCourses(T:Teacher) {
-  	neg find teachesMoreClasses(_Tx,T); // there is noone who would teach more courses
-  }
-  
- // Step 6: disjunction, recursion, transitive closure
- 
-   /*
+	pattern teachesTheMostCourses(T : Teacher) {
+		neg find teachesMoreClasses(_Tx, T); // there is noone who would teach more courses
+	}
+
+	// Step 6: disjunction, recursion, transitive closure
+
+	/*
     * Student S1 is friendly to student S2, i.e. they are friends in either direction
     * 
     */
-   @QueryExplorer(display = false)
-   pattern friendlyTo(S1:Student, S2:Student) {
-   	Student.friendsWith(S1,S2);
-   } or {
-   	Student.friendsWith(S2,S1);
-   }
-   
-   /*
+	@QueryExplorer(display = false)
+	pattern friendlyTo(S1 : Student, S2 : Student) {
+		Student.friendsWith(S1, S2);
+	} or {
+		Student.friendsWith(S2, S1);
+	}
+
+	/*
     * Student Someone is in the circle of student S1's friends:
     *  - they are either friendly directly
     *  - or there is a common friend who is in both student's circle of friends
     * 
     * Student S1 is transitively friendly to student Someone
     */
-   pattern inTheCircleOfFriends(S1:Student,Someone:Student) {
-   	find friendlyTo+(S1,Someone);
-   	S1!=Someone; // we do not allow self loops
-   	// this is not only a short-hand notation, but also much more efficient!
-   	// use it whenever possible
-   }
-   
-   pattern inTheCircleOfFriendsNames(S1Name,SomeoneName) {
-   	find friendlyTo+(S1,Someone);
-   	S1!=Someone; // we do not allow self loops
-   	Student.name(S1, S1Name);
-   	Student.name(Someone, SomeoneName);
-   }
-   
-   /*
+	pattern inTheCircleOfFriends(S1 : Student, Someone : Student) {
+		find friendlyTo +(S1, Someone);
+		S1 != Someone; // we do not allow self loops
+		// this is not only a short-hand notation, but also much more efficient!
+		// use it whenever possible
+	}
+
+	pattern inTheCircleOfFriendsNames(S1Name, SomeoneName) {
+		find friendlyTo +(S1, Someone);
+		S1 != Someone; // we do not allow self loops
+		Student.name(S1, S1Name);
+		Student.name(Someone, SomeoneName);
+	}
+
+	/*
     * Student S1 has more transitive friends than student S2
     */
-   @QueryExplorer(display = false)
-   pattern moreFriendsThan(S1:Student,S2:Student) {
-   	N == count find inTheCircleOfFriends(S1,_Sx1);
-   	M == count find inTheCircleOfFriends(S2,_Sx2);
-   	check (N > M);
-   }
-   
-   /*
+	@QueryExplorer(display = false)
+	pattern moreFriendsThan(S1 : Student, S2 : Student) {
+		N == count find inTheCircleOfFriends(S1, _Sx1);
+		M == count find inTheCircleOfFriends(S2, _Sx2);
+		check(N > M);
+	}
+
+	/*
     * Student S has the largest circle of friends.
     * 
     * Note: again, there can be multiple matches in case there are
     * equally large friend circles.
     */
-   pattern theOnesWithTheBiggestCircle(S:Student) {
-   	neg find moreFriendsThan(_Sx,S);
-   }
-   
-   pattern theOnesWithTheBiggestCircleName(SName) {
-   	neg find moreFriendsThan(_Sx,S);
-   	Student.name(S, SName);
-   }
-   
-   
-// Step 7: combine everything, @PatternUI, @ObservableValue, @Handler
+	pattern theOnesWithTheBiggestCircle(S : Student) {
+		neg find moreFriendsThan(_Sx, S);
+	}
 
-   /*
+	pattern theOnesWithTheBiggestCircleName(SName) {
+		neg find moreFriendsThan(_Sx, S);
+		Student.name(S, SName);
+	}
+
+	// Step 7: combine everything, @PatternUI, @ObservableValue, @Handler
+
+	/*
     * 
     * We want to find those years, which had courses taught by the busiest teacher
     * and included the most sociable students
     * 
     */
-    @PatternUI(message="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
-    @ObservableValue(name = "Year", expression="Y.startingDate")
-    @ObservableValue(name = "Teacher", expression="T.name")
-    @ObservableValue(name = "Student", expression="S.name")
-    @Handler(fileExtension = "school")
-    pattern finalPattern(Y:Year,C:Course,T:Teacher,S:Student) {
-    	Year.schoolClasses.courses(Y,C);
-    	Course.teacher(C,T);
-    	Student.schoolClass.courses(S,C);
-    	
-    	find theOnesWithTheBiggestCircle(S);
-    	find teachesTheMostCourses(T);
-    }
-    
-    @PatternUI(message="The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
-    @ObservableValue(name = "Year", expression="YDate")
-    @ObservableValue(name = "Teacher", expression="TName")
-    @ObservableValue(name = "Student", expression="SName")
-    @Handler(fileExtension = "school")
-    pattern finalPattern2(YDate, CSub, TName, SName) {
-    	Year.schoolClasses.courses(Y,C);
-    	Course.teacher(C,T);
-    	Student.schoolClass.courses(S,C);
-    	
-    	find theOnesWithTheBiggestCircle(S);
-    	find teachesTheMostCourses(T);
-    	
-    	Year.startingDate(Y, YDate);
-    	Course.subject(C, CSub);
-    	Teacher.name(T, TName);
-    	Student.name(S, SName);
-    }
-    
-    
-    // Step 8: advanced type inference features
-    
-    
-    pattern SomeCourse(C) {
-    	SpecialisationCourse(C);
-    } or {
-    	LimitedCapacityCourse(C);
-    }
+	@PatternUI(message = "The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
+	@ObservableValue(name = "Year", expression = "Y.startingDate")
+	@ObservableValue(name = "Teacher", expression = "T.name")
+	@ObservableValue(name = "Student", expression = "S.name")
+	@Handler(fileExtension = "school")
+	pattern finalPattern(Y : Year, C : Course, T : Teacher, S : Student) {
+		Year.schoolClasses.courses(Y, C);
+		Course.teacher(C, T);
+		Student.schoolClass.courses(S, C);
+
+		find theOnesWithTheBiggestCircle(S);
+		find teachesTheMostCourses(T);
+	}
+
+	@PatternUI(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+	@ObservableValue(name = "Year", expression = "YDate")
+	@ObservableValue(name = "Teacher", expression = "TName")
+	@ObservableValue(name = "Student", expression = "SName")
+	@Handler(fileExtension = "school")
+	pattern finalPattern2(YDate, CSub, TName, SName) {
+		Year.schoolClasses.courses(Y, C);
+		Course.teacher(C, T);
+		Student.schoolClass.courses(S, C);
+
+		find theOnesWithTheBiggestCircle(S);
+		find teachesTheMostCourses(T);
+
+		Year.startingDate(Y, YDate);
+		Course.subject(C, CSub);
+		Teacher.name(T, TName);
+		Student.name(S, SName);
+	}
+
+	// Step 8: advanced type inference features
+	pattern SomeCourse(C) {
+		SpecialisationCourse(C);
+	} or {
+		LimitedCapacityCourse(C);
+	}
     
