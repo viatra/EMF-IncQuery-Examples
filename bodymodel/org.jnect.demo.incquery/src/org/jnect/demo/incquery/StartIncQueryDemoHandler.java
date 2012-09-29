@@ -22,8 +22,8 @@ public class StartIncQueryDemoHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if (KinectManager.INSTANCE.isSkeletonTrackingStarted()) {
 			// move head to 0,0
-			KinectManager.INSTANCE.getSkeletonModel().getHead().setX(0);
-			KinectManager.INSTANCE.getSkeletonModel().getHead().setY(0);
+			// KinectManager.INSTANCE.getSkeletonModel().getHead().setX(0);
+			// KinectManager.INSTANCE.getSkeletonModel().getHead().setY(0);
 			
 			try {
 				RightHandAboveHeadMatcher matcher = RightHandAboveHeadMatcher.factory()

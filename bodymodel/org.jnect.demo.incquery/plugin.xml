@@ -9,6 +9,11 @@
             name="Start Kinect IncQuery Demo">
       </command>
       <command
+            defaultHandler="org.jnect.demo.incquery.views.StartYMCADemoHandler"
+            id="org.jnect.demo.incquery.ymca.start"
+            name="Start Kinect YMCA Demo">
+      </command>
+      <command
             defaultHandler="org.jnect.demo.incquery.SaveBodymodelHandler"
             id="org.jnect.demo.incquery.savebodymodel"
             name="Save Kinect Body model">
@@ -26,7 +31,7 @@
          <toolbar
                id="org.jnect.demo.incquery">
             <command
-                  commandId="org.jnect.demo.incquery.start"
+                  commandId="org.jnect.demo.incquery.ymca.start"
                   style="push">
             </command>
             <command
@@ -50,5 +55,31 @@
           schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
           sequence="CTRL+SHIFT+L">
     </key>
+ </extension>
+ <extension
+       point="org.eclipse.ui.views">
+    <category
+          id="org.jnect.demo.incquery"
+          name="Jnect/IncQuery Demos">
+    </category>
+    <view
+          category="org.jnect.demo.incquery"
+          class="org.jnect.demo.incquery.views.YMCADemoView"
+          icon="icons/sample.gif"
+          id="org.jnect.demo.incquery.views.YMCADemoView"
+          name="Jnect/IncQuery YMCA Demo">
+    </view>
+ </extension>
+ <extension
+       point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension
+          targetID="org.eclipse.jdt.ui.JavaPerspective">
+       <view
+             id="org.jnect.demo.incquery.views.YMCADemoView"
+             ratio="0.5"
+             relationship="right"
+             relative="org.eclipse.ui.views.ProblemView">
+       </view>
+    </perspectiveExtension>
  </extension>
 </plugin>

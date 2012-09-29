@@ -31,6 +31,18 @@ public class VectorMaths {
 		return r;
 	}
 	
+	public static Vector<Float> createVector(
+			float startX, float startY, float startZ,
+			float endX, float endY, float endZ) {
+		Vector<Float> r = new Vector<Float>();
+		r.add(endX-startX); // X 
+		r.add(endY-startY); // Y 
+		r.add(endZ-startZ); // Z 
+		return r;
+	}
+	
+
+	
 	/**
 	 * Calculate the dot product of two Float vectors (of equal length).
 	 * Note: dumb method, does not check for equal dimensions, nulls etc.
