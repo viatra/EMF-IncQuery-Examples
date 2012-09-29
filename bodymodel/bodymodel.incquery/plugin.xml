@@ -5,8 +5,8 @@
          id="bodymodel.RightHandAboveHead"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="bodymodel.RightHandAboveHead"
-            factoryProvider="bodymodel.righthandabovehead.RightHandAboveHeadMatcherFactory$Provider">
+            factoryProvider="bodymodel.righthandabovehead.RightHandAboveHeadMatcherFactory$Provider"
+            id="bodymodel.RightHandAboveHead">
       </matcher>
    </extension>
    <extension
@@ -21,8 +21,8 @@
          id="bodymodel.RightHandAboveHead_MovingAverage"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="bodymodel.RightHandAboveHead_MovingAverage"
-            factoryProvider="bodymodel.righthandabovehead_movingaverage.RightHandAboveHead_MovingAverageMatcherFactory$Provider">
+            factoryProvider="bodymodel.righthandabovehead_movingaverage.RightHandAboveHead_MovingAverageMatcherFactory$Provider"
+            id="bodymodel.RightHandAboveHead_MovingAverage">
       </matcher>
    </extension>
    <extension

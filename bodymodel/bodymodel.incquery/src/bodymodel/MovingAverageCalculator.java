@@ -43,12 +43,13 @@ public class MovingAverageCalculator {
 	 * add a value to the moving average, if the number of periods is exceeded, then the oldest value is removed.  
 	 * @param num - the value to add to the moving average
 	 */
-	public void addValue(float num) {
+	public MovingAverageCalculator addValue(float num) {
 		sum += num;
 		window.add(num);
 		if (window.size() > numPeriods) {
 			sum -= window.remove();
 		}
+		return this;
 	}
 	/**
 	 * get the current moving average
