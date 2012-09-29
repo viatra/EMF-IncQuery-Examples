@@ -2,18 +2,10 @@ package bodymodel.ymca
 
 import "http://org/jnect/bodymodel"
 
-pattern partsOfABody(B:Body, P:PositionedElement) {
-	Body.links(B,HL);
-	HumanLink.source(HL,P); 
-	} or {
-	Body.links(B,HL);
-	HumanLink.target(HL,P); 		
-}
-
 @QueryExplorer(display = true)
 pattern rightHandAboveHead(RH:RightHand,H:Head) {
-	find partsOfABody(B,RH);
-	find partsOfABody(B,H); // just to ensure that they are part of the same body
+//	find partsOfABody(B,RH);
+//	find partsOfABody(B,H); // just to ensure that they are part of the same body
 	RightHand.y(RH,RHy);
 	Head.y(H,Hy);
 	check( Hy < RHy );
@@ -21,8 +13,8 @@ pattern rightHandAboveHead(RH:RightHand,H:Head) {
 
 @QueryExplorer(display = true)
 pattern leftHandAboveHead(LH:LeftHand,H:Head) {
-	find partsOfABody(B,LH);
-	find partsOfABody(B,H); // just to ensure that they are part of the same body
+//	find partsOfABody(B,LH);
+//	find partsOfABody(B,H); // just to ensure that they are part of the same body
 	LeftHand.y(LH,LHy);
 	Head.y(H,Hy);
 	check( Hy < LHy );
@@ -30,8 +22,8 @@ pattern leftHandAboveHead(LH:LeftHand,H:Head) {
 
 @QueryExplorer(display = true)
 pattern handsAreClose(LH:LeftHand,RH:RightHand) {
-	find partsOfABody(B,LH);
-	find partsOfABody(B,RH); // just to ensure that they are part of the same body
+//	find partsOfABody(B,LH);
+//	find partsOfABody(B,RH); // just to ensure that they are part of the same body
 	LeftHand.x(LH,LHX);
 	LeftHand.y(LH,LHY);
 	LeftHand.z(LH,LHZ);
@@ -39,13 +31,28 @@ pattern handsAreClose(LH:LeftHand,RH:RightHand) {
 	RightHand.y(RH,RHY);
 	RightHand.z(RH,RHZ);
 	check( bodymodel::ymca::VectorMaths::lengthOf(
-		bodymodel::ymca::VectorMaths::createVector(LHX,LHY,LHZ, RHX,RHY,RHZ)) < 0.3 );
+		bodymodel::ymca::VectorMaths::createVector(LHX,LHY,LHZ, RHX,RHY,RHZ)) < 0.1 );
 }
 
 @QueryExplorer(display = true)
+pattern handsAreApart(LH:LeftHand,RH:RightHand) {
+//	find partsOfABody(B,LH);
+//	find partsOfABody(B,RH); // just to ensure that they are part of the same body
+	LeftHand.x(LH,LHX);
+	LeftHand.y(LH,LHY);
+	LeftHand.z(LH,LHZ);
+	RightHand.x(RH,RHX);
+	RightHand.y(RH,RHY);
+	RightHand.z(RH,RHZ);
+	check( bodymodel::ymca::VectorMaths::lengthOf(
+		bodymodel::ymca::VectorMaths::createVector(LHX,LHY,LHZ, RHX,RHY,RHZ)) > 0.5 );
+}
+
+
+@QueryExplorer(display = true)
 pattern feetAreClose(LF:LeftFoot,RF:RightFoot) {
-	find partsOfABody(B,LF);
-	find partsOfABody(B,RF); // just to ensure that they are part of the same body
+//	find partsOfABody(B,LF);
+//	find partsOfABody(B,RF); // just to ensure that they are part of the same body
 	LeftFoot.x(LF,LFX);
 	LeftFoot.y(LF,LFY);
 	LeftFoot.z(LF,LFZ);
@@ -66,9 +73,9 @@ pattern stretchedRightArm(H:RightHand, // hand
 					 S:RightShoulder // shoulder
 ) {
 	// ensure they are all connected to the same body
-	find partsOfABody(B,H);
-	find partsOfABody(B,E);
-	find partsOfABody(B,S);
+//	find partsOfABody(B,H);
+//	find partsOfABody(B,E);
+//	find partsOfABody(B,S);
 	// indicate coordinates to be used for check calculation
 	PositionedElement.x(H,HX);
 	PositionedElement.y(H,HY);
@@ -101,9 +108,9 @@ pattern bentRightArm(H:RightHand, // hand
 					 S:RightShoulder // shoulder
 ) {
 	// ensure they are all connected to the same body
-	find partsOfABody(B,H);
-	find partsOfABody(B,E);
-	find partsOfABody(B,S);
+//	find partsOfABody(B,H);
+//	find partsOfABody(B,E);
+//	find partsOfABody(B,S);
 	// indicate coordinates to be used for check calculation
 	PositionedElement.x(H,HX);
 	PositionedElement.y(H,HY);
@@ -136,9 +143,9 @@ pattern stretchedLeftArm(H:LeftHand, // hand
 					 S:LeftShoulder // shoulder
 ) {
 	// ensure they are all connected to the same body
-	find partsOfABody(B,H);
-	find partsOfABody(B,E);
-	find partsOfABody(B,S);
+//	find partsOfABody(B,H);
+//	find partsOfABody(B,E);
+//	find partsOfABody(B,S);
 	// indicate coordinates to be used for check calculation
 	PositionedElement.x(H,HX);
 	PositionedElement.y(H,HY);
@@ -171,9 +178,9 @@ pattern bentLeftArm(H:LeftHand, // hand
 					 S:LeftShoulder // shoulder
 ) {
 	// ensure they are all connected to the same body
-	find partsOfABody(B,H);
-	find partsOfABody(B,E);
-	find partsOfABody(B,S);
+//	find partsOfABody(B,H);
+//	find partsOfABody(B,E);
+//	find partsOfABody(B,S);
 	// indicate coordinates to be used for check calculation
 	PositionedElement.x(H,HX);
 	PositionedElement.y(H,HY);
@@ -205,10 +212,10 @@ pattern upperArmsInY(LE:LeftElbow,
 					 RS:RightShoulder
 ) {
 	// ensure they are all connected to the same body
-	find partsOfABody(B,LE);
-	find partsOfABody(B,LS);
-	find partsOfABody(B,RE);
-	find partsOfABody(B,RS);
+//	find partsOfABody(B,LE);
+//	find partsOfABody(B,LS);
+//	find partsOfABody(B,RE);
+//	find partsOfABody(B,RS);
 	// indicate coordinates to be used for check calculation
 	PositionedElement.x(LE,LEX);
 	PositionedElement.y(LE,LEY);
@@ -309,8 +316,15 @@ pattern M(RH:RightHand,
 	// both hands below the head
 	neg find rightHandAboveHead(RH,H);
 	neg find leftHandAboveHead(LH,H);
-	// hands are not close
-	neg find handsAreClose(LH,RH);
+	// elbows are around shoulder height
+	LeftElbow.y(LE,LEY);
+	LeftShoulder.y(LS,LSY);
+	check(Math::abs(LEY-LSY) < 0.05);
+	RightElbow.y(RE,REY);
+	RightShoulder.y(RS,RSY);
+	check(Math::abs(REY-RSY) < 0.05);	
+	// hands are Apart
+	find handsAreApart(LH,RH);
 }
 
 /**

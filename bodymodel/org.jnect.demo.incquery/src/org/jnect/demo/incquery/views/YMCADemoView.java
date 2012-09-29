@@ -45,14 +45,14 @@ public class YMCADemoView extends ViewPart {
 	    parent.setLayout(new FillLayout());
 	    ymcalabel = new Text(parent, SWT.BORDER | SWT.H_SCROLL);
 	    // set colors
-	    ymcalabel.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
-	    ymcalabel.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_BLACK));
+	    ymcalabel.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WHITE));
+	    ymcalabel.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_BLACK));
 	    // set large font
 	    FontData[] fontData = ymcalabel.getFont().getFontData();
 	    for(int i = 0; i < fontData.length; ++i) {
 	        fontData[i].setHeight(font_height);
 	    }
-	    final Font newFont = new Font(Display.getCurrent(), fontData);
+	    final Font newFont = new Font(Display.getDefault(), fontData);
 	    ymcalabel.setFont(newFont);
 	    ymcalabel.addDisposeListener(new DisposeListener() {
 	        public void widgetDisposed(DisposeEvent e) {
@@ -70,8 +70,13 @@ public class YMCADemoView extends ViewPart {
 		ymcalabel.setFocus();
 	}
 	
-	public void appendString(String s) {
-	    ymcalabel.setText(ymcalabel.getText() + s);
+	public void appendString(final String s) {
+		Display.getDefault().asyncExec(new Runnable(){
+			@Override
+			public void run() {
+			    ymcalabel.setText(ymcalabel.getText() + s);
+			}
+		});
 	}
 	
 }
