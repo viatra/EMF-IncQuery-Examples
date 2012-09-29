@@ -64,13 +64,13 @@ public class BodyProviderDefaultImpl implements IBodyProvider {
 		RightFoot footRight = factory.createRightFoot();
 
 		// set color
-		footLeft.setColor_g(255);
-		footRight.setColor_g(255);
-		handLeft.setColor_r(255);
-		handLeft.setColor_g(0);
-		handLeft.setColor_b(0);
-		handRight.setColor_r(255);
-		head.setColor_b(255);
+//		footLeft.setColor_g(255);
+//		footRight.setColor_g(255);
+//		handLeft.setColor_r(255);
+//		handLeft.setColor_g(0);
+//		handLeft.setColor_b(0);
+//		handRight.setColor_r(255);
+//		head.setColor_b(255);
 		Body createdBody = factory.createBody();
 		// add elements to body
 		createdBody.setHead(head);
