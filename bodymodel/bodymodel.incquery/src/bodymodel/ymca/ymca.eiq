@@ -100,7 +100,7 @@ pattern stretchedRightArm(RH:RightHand, // hand
 	PositionedElement.y(RS,RSY);
 	PositionedElement.z(RS,RSZ);
 	// check that the angle between the lower arm (H-E)
-	// and upper arm (E-S) is around PI (180')
+	// and upper arm (S-E) is around PI (180')
 	check({
 		// we need to "wire" attribute values into the check expression
 		var float angleBetween = bodymodel::ymca::VectorMaths::angleBetween(
@@ -113,12 +113,12 @@ pattern stretchedRightArm(RH:RightHand, // hand
 				bodymodel::MovingAverageCalculator::getCalculator("REZ").addValue(REZ).movingAvg
 			),
 			bodymodel::ymca::VectorMaths::createVector(
-				bodymodel::MovingAverageCalculator::getCalculator("REX").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("REY").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("REZ").movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("RSX").addValue(RSX).movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("RSZ").addValue(RSZ).movingAvg
+				bodymodel::MovingAverageCalculator::getCalculator("RSZ").addValue(RSZ).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REX").addValue(REX).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REY").addValue(REY).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REZ").addValue(REZ).movingAvg
 			)
 		)
 		// System::out.println(angleBetween)
@@ -145,7 +145,7 @@ pattern bentRightArm(RH:RightHand, // hand
 	PositionedElement.y(RS,RSY);
 	PositionedElement.z(RS,RSZ);
 	// check that the angle between the lower arm (H-E)
-	// and upper arm (E-S) is around PI/2 (90')
+	// and upper arm (S-E) is around PI/2 (90')
 	check({
 		// we need to "wire" attribute values into the check expression
 		var float angleBetween = bodymodel::ymca::VectorMaths::angleBetween(
@@ -158,12 +158,12 @@ pattern bentRightArm(RH:RightHand, // hand
 				bodymodel::MovingAverageCalculator::getCalculator("REZ").addValue(REZ).movingAvg
 			),
 			bodymodel::ymca::VectorMaths::createVector(
-				bodymodel::MovingAverageCalculator::getCalculator("REX").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("REY").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("REZ").movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("RSX").addValue(RSX).movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("RSZ").addValue(RSZ).movingAvg
+				bodymodel::MovingAverageCalculator::getCalculator("RSZ").addValue(RSZ).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REX").addValue(REX).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REY").addValue(REY).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("REZ").addValue(REZ).movingAvg
 			)
 		)
 		// System::out.println(angleBetween)
@@ -190,7 +190,7 @@ pattern stretchedLeftArm(LH:LeftHand, // hand
 	PositionedElement.y(LS,LSY);
 	PositionedElement.z(LS,LSZ);
 	// check that the angle between the lower arm (H-E)
-	// and upper arm (E-S) is around PI (180')
+	// and upper arm (S-E) is around PI (180')
 	check({
 		// we need to "wire" attribute values into the check expression
 		var float angleBetween = bodymodel::ymca::VectorMaths::angleBetween(
@@ -203,12 +203,12 @@ pattern stretchedLeftArm(LH:LeftHand, // hand
 				bodymodel::MovingAverageCalculator::getCalculator("LEZ").addValue(LEZ).movingAvg
 			),
 			bodymodel::ymca::VectorMaths::createVector(
-				bodymodel::MovingAverageCalculator::getCalculator("LEX").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LEY").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LEZ").movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("LSX").addValue(LSX).movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LSZ").addValue(LSZ).movingAvg
+				bodymodel::MovingAverageCalculator::getCalculator("LSZ").addValue(LSZ).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEX").addValue(LEX).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEY").addValue(LEY).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEZ").addValue(LEZ).movingAvg
 			)
 		)
 		// System::out.println(angleBetween)
@@ -235,7 +235,7 @@ pattern bentLeftArm(LH:LeftHand, // hand
 	PositionedElement.y(LS,LSY);
 	PositionedElement.z(LS,LSZ);
 	// check that the angle between the lower arm (H-E)
-	// and upper arm (E-S) is around PI/2 (90')
+	// and upper arm (S-E) is around PI/2 (90')
 	check({
 		// we need to "wire" attribute values into the check expression
 		var float angleBetween = bodymodel::ymca::VectorMaths::angleBetween(
@@ -248,12 +248,12 @@ pattern bentLeftArm(LH:LeftHand, // hand
 				bodymodel::MovingAverageCalculator::getCalculator("LEZ").addValue(LEZ).movingAvg
 			),
 			bodymodel::ymca::VectorMaths::createVector(
-				bodymodel::MovingAverageCalculator::getCalculator("LEX").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LEY").movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LEZ").movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("LSX").addValue(LSX).movingAvg, 
 				bodymodel::MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg, 
-				bodymodel::MovingAverageCalculator::getCalculator("LSZ").addValue(LSZ).movingAvg
+				bodymodel::MovingAverageCalculator::getCalculator("LSZ").addValue(LSZ).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEX").addValue(LEX).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEY").addValue(LEY).movingAvg, 
+				bodymodel::MovingAverageCalculator::getCalculator("LEZ").addValue(LEZ).movingAvg
 			)
 		)
 		// System::out.println(angleBetween)
