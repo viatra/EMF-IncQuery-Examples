@@ -10,6 +10,7 @@ import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
+import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.KinectManager;
 
 import bodymodel.ymca.a.AMatcher;
@@ -43,10 +44,16 @@ public class StartYMCADemoHandler extends AbstractHandler {
                     for (IPatternMatch pm : dm.matchFoundEvents) {
                         System.out.println("New match found:" + pm.toString());
                         v.appendString(pm.patternName());
+                        for (Object _pe: pm.toArray()) {
+                        	((PositionedElement)_pe).setColor_r(255);
+                        }
                     }
                     for (IPatternMatch pm : dm.matchLostEvents) {
                         System.out.println("Lost match found:" + pm.toString());
                         // v.appendString(pm.patternName());
+                        for (Object _pe: pm.toArray()) {
+                        	((PositionedElement)_pe).setColor_r(0);
+                        }
                     }
                     dm.clear();
                 } 

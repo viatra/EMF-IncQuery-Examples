@@ -57,7 +57,7 @@ pattern handsAreApart(LH:LeftHand,RH:RightHand) {
 			bodymodel::MovingAverageCalculator::getCalculator("RHX").addValue(RHX).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHY).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHZ").addValue(RHZ).movingAvg
-		)) > 0.5 );
+		)) > 1.0 );
 }
 
 
@@ -316,7 +316,8 @@ pattern Y(RH:RightHand,
 		  RS:RightShoulder, 
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder
+		  LS:LeftShoulder,
+		  H:Head
 ) {
 	// both arms are stretched
 	find stretchedRightArm(RH,RE,RS);
@@ -333,7 +334,8 @@ pattern Y(RH:RightHand,
  */
 pattern I(RH:RightHand, 
 		  RE:RightElbow, 
-		  RS:RightShoulder 
+		  RS:RightShoulder,
+		  H:Head 
 ) {
 	// both arms are stretched
 	find stretchedRightArm(RH,RE,RS);
@@ -353,14 +355,16 @@ pattern A(RH:RightHand,
 		  RS:RightShoulder,
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder
+		  LS:LeftShoulder,
+		  H:Head
 ) {
-	// both arms are not stretched
-	neg find stretchedRightArm(RH,RE,RS);
-	neg find stretchedLeftArm(LH,LE,LS);
-	// both hands above the head
+	// both arms are bent
+	find bentRightArm(RH,RE,RS);
+	find bentLeftArm(LH,LE,LS);
+	// both hands above the head and close
 	find rightHandAboveHead(RH,H);
 	find leftHandAboveHead(LH,H);
+	// find handsAreClose(LH,RH);
 	// angle between upper arms is around PI/3
 	find upperArmsInY(LE,LS,RE,RS);
 }
@@ -373,7 +377,8 @@ pattern M(RH:RightHand,
 		  RS:RightShoulder,
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder
+		  LS:LeftShoulder,
+		  H:Head
 ) {
 	Head(H);
 	// both arms are bent
@@ -403,20 +408,23 @@ pattern Q(RH:RightHand,
 		  RS:RightShoulder,
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder
+		  LS:LeftShoulder,
+		  LF:LeftFoot,
+		  RF:RightFoot,
+		  H:Head
 ) {
 	// both arms are bent
 	find bentRightArm(RH,RE,RS);
 	find bentLeftArm(LH,LE,LS);
 	// both hands below the head
-	neg find rightHandAboveHead(RH,_H1);
-	neg find leftHandAboveHead(LH,_H2);
+	neg find rightHandAboveHead(RH,H);
+	neg find leftHandAboveHead(LH,H);
 	// hands are close
 	find handsAreClose(LH,RH);
 	// right leg is straight 
 	// TODO
 	// right foot is far away from left foot
-	neg find feetAreClose(_LF,_RF);
+	neg find feetAreClose(LF,RF);
 }
 
 /**
@@ -427,14 +435,15 @@ pattern C(RH:RightHand,
 		  RS:RightShoulder,
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder
+		  LS:LeftShoulder,
+		  H:Head
 ) {
 	// both arms are bent
 	find bentRightArm(RH,RE,RS);
 	find bentLeftArm(LH,LE,LS);
 	// right hand below, left hand above the head
 	neg find rightHandAboveHead(RH,H);
-	find leftHandAboveHead(LH,_H);
+	find leftHandAboveHead(LH,H);
 	// hands are not close
 	neg find handsAreClose(LH,RH);
 	// left hand is to the right of the head
