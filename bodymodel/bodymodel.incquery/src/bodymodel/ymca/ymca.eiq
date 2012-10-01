@@ -22,6 +22,29 @@ pattern leftHandAboveHead(LH:LeftHand,H:Head) {
 	);
 }
 
+/*
+ * See https://github.com/ujhelyiz/EMF-IncQuery/issues/312
+ */
+@QueryExplorer(display = true)
+pattern handsAreClose_buggy(LH:LeftHand,RH:RightHand) {
+	LeftHand.x(LH,LHX);
+	LeftHand.y(LH,LHY);
+	LeftHand.z(LH,LHZ);
+	RightHand.x(RH,RHX);
+	RightHand.y(RH,RHY);
+	RightHand.z(RH,RHZ);
+	check({
+		var float lhx = LHX
+		var float lhy = LHY
+		var float lhz = LHZ
+		var float rhx = RHX
+		var float rhy = RHY
+		var float rhz = RHZ
+		// I suspect the issue stems from the fact that EMF domain objects are wired into Java code
+		bodymodel::ymca::VectorMaths::lengthOf(bodymodel::ymca::VectorMaths::createVector(LH,RH)) < 0.1
+		});
+}
+
 @QueryExplorer(display = true)
 pattern handsAreClose(LH:LeftHand,RH:RightHand) {
 	LeftHand.x(LH,LHX);

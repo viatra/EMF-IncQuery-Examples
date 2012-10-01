@@ -66,6 +66,22 @@
       </evaluator>
    </extension>
    <extension
+         id="bodymodel.ymca.handsAreClose_buggy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.handsareclose_buggy.HandsAreClose_buggyMatcherFactory$Provider"
+            id="bodymodel.ymca.handsAreClose_buggy">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreClose_buggy"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.handsareclose_buggy.HandsAreClose_buggyEvaluator1_1"
+            id="bodymodel.ymca.handsAreClose_buggy_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="bodymodel.ymca.handsAreClose"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
