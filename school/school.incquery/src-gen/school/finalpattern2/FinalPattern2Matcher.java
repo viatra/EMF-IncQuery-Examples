@@ -22,7 +22,7 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * {@literal @}PatternUI(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+ * {@literal @}QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
  * 	{@literal @}ObservableValue(name = "Year", expression = "YDate")
  * 	{@literal @}ObservableValue(name = "Teacher", expression = "TName")
  * 	{@literal @}ObservableValue(name = "Student", expression = "SName")

@@ -29,7 +29,7 @@ import school.finalpattern.FinalPatternMatcherFactory;
  * // Step 7: combine everything, {@literal @}PatternUI, {@literal @}ObservableValue, {@literal @}Handler
  * 
  * 	 
- * 	{@literal @}PatternUI(message = "The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
+ * 	{@literal @}QueryExplorer(message = "The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
  * 	{@literal @}ObservableValue(name = "Year", expression = "Y.startingDate")
  * 	{@literal @}ObservableValue(name = "Teacher", expression = "T.name")
  * 	{@literal @}ObservableValue(name = "Student", expression = "S.name")
