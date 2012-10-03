@@ -23,9 +23,9 @@ import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * pattern teacherWithoutClassNames(TNames) {
- * 	neg find classesOfTeacher(T,_SC); 	
+ * 	neg find classesOfTeacher(T, _SC);
  * 	Teacher.name(T, TNames);
- *  }
+ * }
  * </pre></code>
  * 
  * @see TeacherWithoutClassNamesMatch

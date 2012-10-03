@@ -3,13 +3,25 @@ Bundle-ManifestVersion: 2
 Bundle-Name: bodymodel.incquery
 Bundle-SymbolicName: bodymodel.incquery;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: bodymodel.body,
- bodymodel.bodylinks,
- bodymodel.connectedbodyparts,
- bodymodel.jump,
- bodymodel.partsofabody,
- bodymodel.righthandabovehead,
- bodymodel.righthandabovehead_movingaverage
+Export-Package: bodymodel.righthandabovehead,
+ bodymodel.righthandabovehead_movingaverage,
+ bodymodel.ymca.a,
+ bodymodel.ymca.bentleftarm,
+ bodymodel.ymca.bentrightarm,
+ bodymodel.ymca.c,
+ bodymodel.ymca.feetareclose,
+ bodymodel.ymca.handsareapart,
+ bodymodel.ymca.handsareclose,
+ bodymodel.ymca.handsareclose_buggy,
+ bodymodel.ymca.i,
+ bodymodel.ymca.lefthandabovehead,
+ bodymodel.ymca.m,
+ bodymodel.ymca.q,
+ bodymodel.ymca.righthandabovehead,
+ bodymodel.ymca.stretchedleftarm,
+ bodymodel.ymca.stretchedrightarm,
+ bodymodel.ymca.upperarmsiny,
+ bodymodel.ymca.y
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

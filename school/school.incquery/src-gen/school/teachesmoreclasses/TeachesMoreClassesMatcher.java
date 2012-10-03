@@ -24,17 +24,17 @@ import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * // for the limitations on check() expressions, see https://viatra.inf.mit.bme.hu/incquery/language#Limitations
- *  // for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
+ * // for details on Xbase expressions, see http://www.eclipse.org/Xtext/documentation/2_1_0/199h-xbase-language-reference-expressions.php
+ * 
+ * // Step 5: counting (match cardinalities)
+ * 
  *  
- *  // Step 5: counting (match cardinalities)
- *   
- *    
- *   {@literal @}QueryExplorer(display = false)
- *   pattern teachesMoreClasses(T1:Teacher, T2:Teacher) {
- *   	N == count find classesOfTeacher(T1,_SC1);
- *   	M == count find classesOfTeacher(T2,_SC2);
- *   	check(N {@literal >} M);
- *   }
+ * {@literal @}QueryExplorer(display = false)
+ * pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
+ * 	N == count find classesOfTeacher(T1, _SC1);
+ * 	M == count find classesOfTeacher(T2, _SC2);
+ * 	check(N {@literal >} M);
+ * }
  * </pre></code>
  * 
  * @see TeachesMoreClassesMatch

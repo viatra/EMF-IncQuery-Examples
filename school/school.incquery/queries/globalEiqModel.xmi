@@ -591,11 +591,7 @@
     </bodies>
   </patterns>
   <patterns name="school.courseWithPrimeWeight" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
+    <parameters name="C"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
@@ -1014,7 +1010,7 @@
     </bodies>
   </patterns>
   <patterns name="school.finalPattern" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
-    <annotations name="PatternUI">
+    <annotations name="QueryExplorer">
       <parameters name="message">
         <value xsi:type="patternLanguage:StringValue" value="The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$"/>
       </parameters>
@@ -1144,7 +1140,7 @@
     </bodies>
   </patterns>
   <patterns name="school.finalPattern2" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
-    <annotations name="PatternUI">
+    <annotations name="QueryExplorer">
       <parameters name="message">
         <value xsi:type="patternLanguage:StringValue" value="The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$"/>
       </parameters>

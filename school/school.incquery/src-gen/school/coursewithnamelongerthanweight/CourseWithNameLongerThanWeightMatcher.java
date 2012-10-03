@@ -24,10 +24,10 @@ import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatch
  * <p>Original source:
  * <code><pre>
  * pattern courseWithNameLongerThanWeight(C) {
- *  	Course.subject(C,CName);
- *  	Course.weight(C,W);
- *  	check(CName.length {@literal >} W);
- *  }
+ * 	Course.subject(C, CName);
+ * 	Course.weight(C, W);
+ * 	check(CName.length {@literal >} W);
+ * }
  * </pre></code>
  * 
  * @see CourseWithNameLongerThanWeightMatch

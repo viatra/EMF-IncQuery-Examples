@@ -24,13 +24,11 @@ import school.somecourse.SomeCourseMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * // Step 8: advanced type inference features
- *     
- *     
- *     pattern SomeCourse(C) {
- *     	SpecialisationCourse(C);
- *     } or {
- *     	LimitedCapacityCourse(C);
- *     }
+ * 	pattern SomeCourse(C) {
+ * 		SpecialisationCourse(C);
+ * 	} or {
+ * 		LimitedCapacityCourse(C);
+ * 	}
  * </pre></code>
  * 
  * @see SomeCourseMatch

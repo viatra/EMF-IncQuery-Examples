@@ -23,21 +23,22 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern courseWithPrimeWeight(C:Course) {
- *  	Course.weight(C,W);
- *  	check({ // make sure the check() expression returns a boolean value on all execution paths
- *  		if (W%2==0) false
- *  		else {
- * 	 		var Integer maxValue = Math::round(new Float(Math::sqrt( W )))
- * 	 		var Integer divisor = 3
- * 	 		while (divisor{@literal <}=maxValue) {
- * 	 			if (W%divisor==0) return false 
- * 	 			else divisor = divisor + 2;
- * 	 		}
- * 	 		true // we have found a prime number	
- * 	 	}
- *  	});
- *  }
+ * pattern courseWithPrimeWeight(C) {
+ * 	Course.weight(C, W);
+ * 	check( { // make sure the check() expression returns a boolean value on all execution paths
+ * 		if(W % 2 == 0)
+ * 		false else {
+ * 			var Integer maxValue = Math:: round(new Float(Math:: sqrt(W)))
+ * 			var Integer divisor = 3 while(divisor {@literal <}= maxValue) {
+ * 				if(W % divisor == 0)
+ * 				return false else divisor = divisor + 2;
+ * 			}
+ * 
+ * 			true // we have found a prime number	
+ * 		}
+ * 
+ * 	});
+ * }
  * </pre></code>
  * 
  * @see CourseWithPrimeWeightMatch

@@ -22,24 +22,24 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  * 
  * <p>Original source:
  * <code><pre>
- * {@literal @}PatternUI(message="The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
- *     {@literal @}ObservableValue(name = "Year", expression="YDate")
- *     {@literal @}ObservableValue(name = "Teacher", expression="TName")
- *     {@literal @}ObservableValue(name = "Student", expression="SName")
- *     {@literal @}Handler(fileExtension = "school")
- *     pattern finalPattern2(YDate, CSub, TName, SName) {
- *     	Year.schoolClasses.courses(Y,C);
- *     	Course.teacher(C,T);
- *     	Student.schoolClass.courses(S,C);
- *     	
- *     	find theOnesWithTheBiggestCircle(S);
- *     	find teachesTheMostCourses(T);
- *     	
- *     	Year.startingDate(Y, YDate);
- *     	Course.subject(C, CSub);
- *     	Teacher.name(T, TName);
- *     	Student.name(S, SName);
- *     }
+ * {@literal @}QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+ * 	{@literal @}ObservableValue(name = "Year", expression = "YDate")
+ * 	{@literal @}ObservableValue(name = "Teacher", expression = "TName")
+ * 	{@literal @}ObservableValue(name = "Student", expression = "SName")
+ * 	{@literal @}Handler(fileExtension = "school")
+ * 	pattern finalPattern2(YDate, CSub, TName, SName) {
+ * 		Year.schoolClasses.courses(Y, C);
+ * 		Course.teacher(C, T);
+ * 		Student.schoolClass.courses(S, C);
+ * 
+ * 		find theOnesWithTheBiggestCircle(S);
+ * 		find teachesTheMostCourses(T);
+ * 
+ * 		Year.startingDate(Y, YDate);
+ * 		Course.subject(C, CSub);
+ * 		Teacher.name(T, TName);
+ * 		Student.name(S, SName);
+ * 	}
  * </pre></code>
  * 
  * @see FinalPattern2Match

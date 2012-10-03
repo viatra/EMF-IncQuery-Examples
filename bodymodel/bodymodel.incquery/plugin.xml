@@ -2,43 +2,11 @@
 <plugin>
 
    <extension
-         id="bodymodel.body"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="bodymodel.body.BodyMatcherFactory$Provider"
-            id="bodymodel.body">
-      </matcher>
-   </extension>
-   <extension
-         id="bodymodel.bodyLinks"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="bodymodel.bodylinks.BodyLinksMatcherFactory$Provider"
-            id="bodymodel.bodyLinks">
-      </matcher>
-   </extension>
-   <extension
-         id="bodymodel.connectedBodyParts"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="bodymodel.connectedbodyparts.ConnectedBodyPartsMatcherFactory$Provider"
-            id="bodymodel.connectedBodyParts">
-      </matcher>
-   </extension>
-   <extension
-         id="bodymodel.partsOfABody"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="bodymodel.partsofabody.PartsOfABodyMatcherFactory$Provider"
-            id="bodymodel.partsOfABody">
-      </matcher>
-   </extension>
-   <extension
          id="bodymodel.RightHandAboveHead"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="bodymodel.righthandabovehead.RightHandAboveHeadMatcherFactory$Provider"
-            id="bodymodel.RightHandAboveHead">
+            id="bodymodel.RightHandAboveHead"
+            factoryProvider="bodymodel.righthandabovehead.RightHandAboveHeadMatcherFactory$Provider">
       </matcher>
    </extension>
    <extension
@@ -53,8 +21,8 @@
          id="bodymodel.RightHandAboveHead_MovingAverage"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="bodymodel.righthandabovehead_movingaverage.RightHandAboveHead_MovingAverageMatcherFactory$Provider"
-            id="bodymodel.RightHandAboveHead_MovingAverage">
+            id="bodymodel.RightHandAboveHead_MovingAverage"
+            factoryProvider="bodymodel.righthandabovehead_movingaverage.RightHandAboveHead_MovingAverageMatcherFactory$Provider">
       </matcher>
    </extension>
    <extension
@@ -66,19 +34,251 @@
       </evaluator>
    </extension>
    <extension
-         id="bodymodel.Jump"
+         id="bodymodel.ymca.rightHandAboveHead"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="bodymodel.jump.JumpMatcherFactory$Provider"
-            id="bodymodel.Jump">
+            factoryProvider="bodymodel.ymca.righthandabovehead.RightHandAboveHeadMatcherFactory$Provider"
+            id="bodymodel.ymca.rightHandAboveHead">
       </matcher>
    </extension>
    <extension
-         id="bodymodel.Jump"
+         id="bodymodel.ymca.rightHandAboveHead"
          point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
       <evaluator
-            evaluatorClass="bodymodel.jump.JumpEvaluator1_1"
-            id="bodymodel.Jump_1_1">
+            evaluatorClass="bodymodel.ymca.righthandabovehead.RightHandAboveHeadEvaluator1_1"
+            id="bodymodel.ymca.rightHandAboveHead_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.leftHandAboveHead"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.lefthandabovehead.LeftHandAboveHeadMatcherFactory$Provider"
+            id="bodymodel.ymca.leftHandAboveHead">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.leftHandAboveHead"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.lefthandabovehead.LeftHandAboveHeadEvaluator1_1"
+            id="bodymodel.ymca.leftHandAboveHead_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreClose_buggy"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.handsareclose_buggy.HandsAreClose_buggyMatcherFactory$Provider"
+            id="bodymodel.ymca.handsAreClose_buggy">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreClose_buggy"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.handsareclose_buggy.HandsAreClose_buggyEvaluator1_1"
+            id="bodymodel.ymca.handsAreClose_buggy_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreClose"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.handsareclose.HandsAreCloseMatcherFactory$Provider"
+            id="bodymodel.ymca.handsAreClose">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreClose"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.handsareclose.HandsAreCloseEvaluator1_1"
+            id="bodymodel.ymca.handsAreClose_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreApart"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.handsareapart.HandsAreApartMatcherFactory$Provider"
+            id="bodymodel.ymca.handsAreApart">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.handsAreApart"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.handsareapart.HandsAreApartEvaluator1_1"
+            id="bodymodel.ymca.handsAreApart_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.feetAreClose"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.feetareclose.FeetAreCloseMatcherFactory$Provider"
+            id="bodymodel.ymca.feetAreClose">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.feetAreClose"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.feetareclose.FeetAreCloseEvaluator1_1"
+            id="bodymodel.ymca.feetAreClose_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedRightArm"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.stretchedrightarm.StretchedRightArmMatcherFactory$Provider"
+            id="bodymodel.ymca.stretchedRightArm">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedRightArm"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.stretchedrightarm.StretchedRightArmEvaluator1_1"
+            id="bodymodel.ymca.stretchedRightArm_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.bentRightArm"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.bentrightarm.BentRightArmMatcherFactory$Provider"
+            id="bodymodel.ymca.bentRightArm">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.bentRightArm"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.bentrightarm.BentRightArmEvaluator1_1"
+            id="bodymodel.ymca.bentRightArm_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedLeftArm"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.stretchedleftarm.StretchedLeftArmMatcherFactory$Provider"
+            id="bodymodel.ymca.stretchedLeftArm">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.stretchedLeftArm"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.stretchedleftarm.StretchedLeftArmEvaluator1_1"
+            id="bodymodel.ymca.stretchedLeftArm_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.bentLeftArm"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.bentleftarm.BentLeftArmMatcherFactory$Provider"
+            id="bodymodel.ymca.bentLeftArm">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.bentLeftArm"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.bentleftarm.BentLeftArmEvaluator1_1"
+            id="bodymodel.ymca.bentLeftArm_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.upperArmsInY"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.upperarmsiny.UpperArmsInYMatcherFactory$Provider"
+            id="bodymodel.ymca.upperArmsInY">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.upperArmsInY"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.upperarmsiny.UpperArmsInYEvaluator1_1"
+            id="bodymodel.ymca.upperArmsInY_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.Y"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.y.YMatcherFactory$Provider"
+            id="bodymodel.ymca.Y">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.I"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.i.IMatcherFactory$Provider"
+            id="bodymodel.ymca.I">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.A"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.a.AMatcherFactory$Provider"
+            id="bodymodel.ymca.A">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.M"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.m.MMatcherFactory$Provider"
+            id="bodymodel.ymca.M">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.M"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.m.MEvaluator1_1"
+            id="bodymodel.ymca.M_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.M"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.m.MEvaluator1_2"
+            id="bodymodel.ymca.M_1_2">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.ymca.Q"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.q.QMatcherFactory$Provider"
+            id="bodymodel.ymca.Q">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.C"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            factoryProvider="bodymodel.ymca.c.CMatcherFactory$Provider"
+            id="bodymodel.ymca.C">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.ymca.C"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.c.CEvaluator1_1"
+            id="bodymodel.ymca.C_1_1">
       </evaluator>
    </extension>
 

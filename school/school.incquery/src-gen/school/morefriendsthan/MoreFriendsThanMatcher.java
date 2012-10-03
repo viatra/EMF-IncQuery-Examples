@@ -24,11 +24,11 @@ import school.morefriendsthan.MoreFriendsThanMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * {@literal @}QueryExplorer(display = false)
- *    pattern moreFriendsThan(S1:Student,S2:Student) {
- *    	N == count find inTheCircleOfFriends(S1,_Sx1);
- *    	M == count find inTheCircleOfFriends(S2,_Sx2);
- *    	check (N {@literal >} M);
- *    }
+ * 	pattern moreFriendsThan(S1 : Student, S2 : Student) {
+ * 		N == count find inTheCircleOfFriends(S1, _Sx1);
+ * 		M == count find inTheCircleOfFriends(S2, _Sx2);
+ * 		check(N {@literal >} M);
+ * 	}
  * </pre></code>
  * 
  * @see MoreFriendsThanMatch

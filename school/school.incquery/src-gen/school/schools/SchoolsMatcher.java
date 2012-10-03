@@ -24,11 +24,11 @@ import school.schools.SchoolsMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * // Step 1: simple queries
+ * 
  *  
- *   
- *  pattern schools(Sch) {
- *  	School(Sch);
- *  }
+ * pattern schools(Sch) {
+ * 	School(Sch);
+ * }
  * </pre></code>
  * 
  * @see SchoolsMatch

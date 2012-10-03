@@ -25,9 +25,9 @@ import school.classesofteacher.ClassesOfTeacherMatcherFactory;
  * <p>Original source:
  * <code><pre>
  * pattern classesOfTeacher(T, SC) {
- *  	find coursesOfTeacher(T,C);
- *  	Course.schoolClass(C,SC);
- *  }
+ * 	find coursesOfTeacher(T, C);
+ * 	Course.schoolClass(C, SC);
+ * }
  * </pre></code>
  * 
  * @see ClassesOfTeacherMatch

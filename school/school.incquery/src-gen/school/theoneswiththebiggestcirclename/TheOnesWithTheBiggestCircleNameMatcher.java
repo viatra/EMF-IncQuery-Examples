@@ -23,9 +23,9 @@ import school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMat
  * <p>Original source:
  * <code><pre>
  * pattern theOnesWithTheBiggestCircleName(SName) {
- *    	neg find moreFriendsThan(_Sx,S);
- *    	Student.name(S, SName);
- *    }
+ * 		neg find moreFriendsThan(_Sx, S);
+ * 		Student.name(S, SName);
+ * 	}
  * </pre></code>
  * 
  * @see TheOnesWithTheBiggestCircleNameMatch
