@@ -35,7 +35,6 @@ Commands
  
 ### YMCA Gestures
  
-<img width="700px" src="https://raw.github.com/ujhelyiz/EMF-IncQuery-Examples/master/bodymodel/YMCA_Gestures.png" alt="YMCA Gestures overview'/>
 
 The YMCA Example is about detecting some letters of the alphabet as gestures. The following letters are supported:
 - Y: both arms stretched above the head, the upper arms enclosing an angle of about 60 degrees
@@ -45,6 +44,9 @@ The YMCA Example is about detecting some letters of the alphabet as gestures. Th
 - I: right arm streched straight above the head
 - Q: both arms bent below the head with the hands touching, the feet at a considerable distance from each other   
  
+<img width="700px" src="https://raw.github.com/ujhelyiz/EMF-IncQuery-Examples/master/bodymodel/YMCA_Gestures.png" alt="YMCA Gestures overview'/>
+
+
 ## How it works
 
 Coming soon. 
