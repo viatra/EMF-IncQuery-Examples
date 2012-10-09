@@ -14,6 +14,11 @@
             name="Start Kinect YMCA Demo">
       </command>
       <command
+            defaultHandler="org.jnect.demo.incquery.esper.StartEsperDebugHandler"
+            id="org.jnect.demo.incquery.esper.debug"
+            name="Start Kinect Esper Debug">
+      </command>
+       <command
             defaultHandler="org.jnect.demo.incquery.esper.StartEsperDemoHandler"
             id="org.jnect.demo.incquery.esper.start"
             name="Start Kinect Esper Demo">
