@@ -3,7 +3,8 @@ package org.jnect.demo.incquery.esper;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
-import org.jnect.demo.incquery.esper.PatternMatchEvent.EventType;
+import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
+import org.jnect.demo.incquery.esper.events.PatternMatchEvent.EventType;
 
 /**
  * Utility class to adapt IncQuery DeltaMonitor events to Esper events.
