@@ -42,14 +42,14 @@ public class StartYMCADemoHandler extends AbstractHandler {
                @Override
                 public void run() {
                     for (IPatternMatch pm : dm.matchFoundEvents) {
-                        System.out.println("New match found:" + pm.toString());
+                        //System.out.println("New match found:" + pm.toString());
                         v.appendString(pm.patternName());
                         for (Object _pe: pm.toArray()) {
                         	((PositionedElement)_pe).setColor_r(255);
                         }
                     }
                     for (IPatternMatch pm : dm.matchLostEvents) {
-                        System.out.println("Lost match found:" + pm.toString());
+                       // System.out.println("Lost match found:" + pm.toString());
                         // v.appendString(pm.patternName());
                         for (Object _pe: pm.toArray()) {
                         	((PositionedElement)_pe).setColor_r(0);
