@@ -28,12 +28,6 @@ public class StartEsperDemoHandler extends AbstractHandler {
 			
 			try {
 			    Notifier km = KinectManager.INSTANCE.getSkeletonModel();
-			    /*
-			    PlatformUI.getWorkbench().getActiveWorkbenchWindow().
-			    		getActivePage().showView(YMCADemoView.ID);
-			    YMCADemoView v = (YMCADemoView)PlatformUI.getWorkbench().getActiveWorkbenchWindow().
-			    		getActivePage().getActivePart();
-			    */
 			    
 				new EsperAdapter(YMatcher.factory().getMatcher(km));
 				new EsperAdapter(MMatcher.factory().getMatcher(km));

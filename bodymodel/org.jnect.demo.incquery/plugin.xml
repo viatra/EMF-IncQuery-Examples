@@ -48,6 +48,10 @@
                   commandId="org.jnect.demo.incquery.esper.start"
                   style="push">
             </command>
+ 			<command
+                  commandId="org.jnect.demo.incquery.esper.debug"
+                  style="push">
+            </command>            
             <command
                   commandId="org.jnect.demo.incquery.savebodymodel"
                   style="push">

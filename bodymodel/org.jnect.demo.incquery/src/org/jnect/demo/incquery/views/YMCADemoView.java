@@ -58,14 +58,15 @@ public class YMCADemoView extends ViewPart {
      * This is a callback that will allow us to create the viewer and initialize it.
      */
     public void createPartControl(Composite parent) {
-        parent.setLayout(new FillLayout());
-        incqueryLabel = new Text(parent, SWT.BORDER | SWT.H_SCROLL);
+        //FillLayout fl = new
+        parent.setLayout(new FillLayout(SWT.VERTICAL));
         esperLabel = new Text(parent, SWT.BORDER | SWT.H_SCROLL);
+        incqueryLabel = new Text(parent, SWT.BORDER | SWT.H_SCROLL);
         // set colors
         incqueryLabel.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WHITE));
         incqueryLabel.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_BLACK));
         esperLabel.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WHITE));
-        esperLabel.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_BLACK));
+        esperLabel.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_DARK_RED));
         // set large font
         FontData[] fontData = incqueryLabel.getFont().getFontData();
         for (int i = 0; i < fontData.length; ++i) {
