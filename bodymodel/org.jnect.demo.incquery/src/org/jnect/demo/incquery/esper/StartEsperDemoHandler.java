@@ -14,21 +14,20 @@ import bodymodel.ymca.m.MMatcher;
 import bodymodel.ymca.q.QMatcher;
 import bodymodel.ymca.y.YMatcher;
 
-
 /**
  * 
  * @author istvanrath
- *
+ * 
  */
 public class StartEsperDemoHandler extends AbstractHandler {
 
-    @Override
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		if (KinectManager.INSTANCE.isSkeletonTrackingStarted()) {
-			
+
 			try {
-			    Notifier km = KinectManager.INSTANCE.getSkeletonModel();
-			    
+				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
+
 				new EsperAdapter(YMatcher.factory().getMatcher(km));
 				new EsperAdapter(MMatcher.factory().getMatcher(km));
 				new EsperAdapter(CMatcher.factory().getMatcher(km));
@@ -37,15 +36,14 @@ public class StartEsperDemoHandler extends AbstractHandler {
 				new EsperAdapter(QMatcher.factory().getMatcher(km));
 			} catch (IncQueryException e) {
 				e.printStackTrace();
-			} 
-			//catch (PartInitException e) {
-			//	e.printStackTrace();
-			//}
+			}
+			// catch (PartInitException e) {
+			// e.printStackTrace();
+			// }
 		} else {
 			System.out.println("Start skeleton simulator first!");
 		}
 		return null;
 	}
 
-	
 }
