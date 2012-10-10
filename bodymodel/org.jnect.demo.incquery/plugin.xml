@@ -81,7 +81,7 @@
           class="org.jnect.demo.incquery.views.YMCADemoView"
           icon="icons/sample.gif"
           id="org.jnect.demo.incquery.views.YMCADemoView"
-          name="Jnect/IncQuery YMCA Demo">
+          name="Jnect/IncQuery/Esper YMCA Demo">
     </view>
  </extension>
  <extension

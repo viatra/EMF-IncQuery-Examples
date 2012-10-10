@@ -32,25 +32,22 @@ public class StartYMCADemoHandler extends AbstractHandler {
         
         IncQueryMatcher<? extends IPatternMatch> matcher;
         DeltaMonitor<? extends IPatternMatch> dm;
-        YMCADemoView v;
         
-        public YMCAMatcherHelper(IncQueryMatcher<? extends IPatternMatch> m, YMCADemoView view) {
-        	v = view;
-            matcher = m;
+        public YMCAMatcherHelper(IncQueryMatcher<? extends IPatternMatch> m) {
+        	matcher = m;
             dm = matcher.newDeltaMonitor(true);
             matcher.addCallbackAfterUpdates(new Runnable(){
                @Override
                 public void run() {
                     for (IPatternMatch pm : dm.matchFoundEvents) {
                         //System.out.println("New match found:" + pm.toString());
-                        v.appendString(pm.patternName());
+                        YMCADemoView.appendStringIncQuery(pm.patternName());
                         for (Object _pe: pm.toArray()) {
                         	((PositionedElement)_pe).setColor_r(255);
                         }
                     }
                     for (IPatternMatch pm : dm.matchLostEvents) {
                        // System.out.println("Lost match found:" + pm.toString());
-                        // v.appendString(pm.patternName());
                         for (Object _pe: pm.toArray()) {
                         	((PositionedElement)_pe).setColor_r(0);
                         }
@@ -71,22 +68,16 @@ public class StartYMCADemoHandler extends AbstractHandler {
 			try {
 			    Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 			    
-			    PlatformUI.getWorkbench().getActiveWorkbenchWindow().
-			    		getActivePage().showView(YMCADemoView.ID);
-			    YMCADemoView v = (YMCADemoView)PlatformUI.getWorkbench().getActiveWorkbenchWindow().
-			    		getActivePage().getActivePart();
-			    
-				new YMCAMatcherHelper(YMatcher.factory().getMatcher(km),v);
-				new YMCAMatcherHelper(MMatcher.factory().getMatcher(km),v);
-				new YMCAMatcherHelper(CMatcher.factory().getMatcher(km),v);
-				new YMCAMatcherHelper(AMatcher.factory().getMatcher(km),v);
-				new YMCAMatcherHelper(IMatcher.factory().getMatcher(km),v);
-				new YMCAMatcherHelper(QMatcher.factory().getMatcher(km),v);
+				new YMCAMatcherHelper(YMatcher.factory().getMatcher(km));
+				new YMCAMatcherHelper(MMatcher.factory().getMatcher(km));
+				new YMCAMatcherHelper(CMatcher.factory().getMatcher(km));
+				new YMCAMatcherHelper(AMatcher.factory().getMatcher(km));
+				new YMCAMatcherHelper(IMatcher.factory().getMatcher(km));
+				new YMCAMatcherHelper(QMatcher.factory().getMatcher(km));
 			} catch (IncQueryException e) {
 				e.printStackTrace();
-			} catch (PartInitException e) {
-				e.printStackTrace();
 			}
+
 		} else {
 			System.out.println("Start skeleton simulator first!");
 		}
