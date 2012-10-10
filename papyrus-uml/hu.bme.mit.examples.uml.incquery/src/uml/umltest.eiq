@@ -1,0 +1,107 @@
+package uml
+
+import "http://www.eclipse.org/uml2/4.0.0/UML"
+
+pattern inheritanceDiamond(A, B, C, D) {
+	find transitiveSuperClass(A, B);
+	find transitiveSuperClass(A, C);
+	neg find transitiveSuperClass(B, C);
+	neg find transitiveSuperClass(C, B);
+	find transitiveSuperClass(B, D);
+	find transitiveSuperClass(C, D);
+	B != C;
+	Class.name(B, BName);
+	Class.name(C, CName);
+	check (BName < CName);
+}
+
+pattern messageWithoutAssociation(Message, SourceType, TargetType) {
+	find messageEvents(Message, SourceEvent, TargetEvent);
+	find messageEndType(SourceEvent, SourceType);
+	find messageEndType(TargetEvent, TargetType);
+	neg find potentialAssociationBetween(SourceType, TargetType);
+}
+
+pattern unreferencedClass(C : Class) {
+	// Not referenced by Parameter, Variable Property (incl. Association End), etc.
+	neg find hasType(_Typed, C);
+}
+
+pattern classWithID(C) {
+	find hasProperty(C, IDProperty);
+	find hasName(IDProperty, "ID");
+}
+
+//Helper patterns
+pattern directSuperClass(Sub : Class, Super : Class) {
+	Generalization.specific(Gen, Sub);
+	Generalization(Gen);
+	Generalization.general(Gen, Super);
+}
+
+pattern transitiveSuperClass(Sub, Super) {
+	find directSuperClass+(Sub, Super);
+}/* or {
+	find transitiveSuperClass(Sub, MiddleMan);
+	find directSuperClass(MiddleMan, Super);
+}*/
+
+pattern superOrEqualClass(Sub : Class, Super) {
+	Sub == Super;
+} or {
+	find transitiveSuperClass(Sub, Super);
+}
+
+pattern ownsOperation(C : Class, O : Operation) {
+	Class.ownedOperation(C, O);
+}
+
+pattern ownsProperty(C : Class, P : Property) {
+	StructuredClassifier.ownedAttribute(C, P);
+}
+
+pattern hasOperation(C, Operation) {
+	find superOrEqualClass(C, OwnerClass);
+	find ownsOperation(OwnerClass, Operation);
+}
+
+pattern hasProperty(C, P) {
+	find superOrEqualClass(C, OwnerClass);
+	find ownsProperty(OwnerClass, P);
+}
+
+pattern hasType(Typed : TypedElement, Type : Type) {
+	TypedElement.type(Typed, Type);
+}
+
+pattern hasName(Named : NamedElement, Name) {
+	NamedElement.name(Named, Name);
+}
+
+pattern messageEndType(MessageEndEvent : MessageOccurrenceSpecification, EndType) {
+	Lifeline.coveredBy(Line, MessageEndEvent);
+	Lifeline(Line);
+	Lifeline.represents(Line, Param);
+	Parameter(Param);
+	find hasType(Param, EndType);
+}
+
+pattern associationEndType(Assoc : Association, MemberEnd : Property, EndType : Type) {
+	Association.memberEnd(Assoc, MemberEnd);
+	TypedElement.type(MemberEnd, EndType);
+}
+
+pattern potentialAssociationBetween(SourceType, TargetType) {
+	find superOrEqualClass(SourceType, SourceEndType);
+	find superOrEqualClass(TargetType, TargetEndType);
+	find associationEndType(Assoc, SourceMemberEnd, SourceEndType);
+	find associationEndType(Assoc, TargetMemberEnd, TargetEndType);
+	SourceMemberEnd != TargetMemberEnd;
+}
+
+pattern messageEvents(Message : Message, 
+	SourceEvent : MessageOccurrenceSpecification,
+	TargetEvent : MessageOccurrenceSpecification) {
+	Message.sendEvent(Message, SourceEvent);
+	Message.receiveEvent(Message, TargetEvent);
+}

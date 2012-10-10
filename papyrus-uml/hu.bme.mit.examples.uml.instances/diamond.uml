@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_pQ7qUGkWEeCIa6c7ahMmFw" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_qAmzwGkWEeCIa6c7ahMmFw" name="Sup"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rCuYEGkWEeCIa6c7ahMmFw" name="A">
+    <generalization xmi:id="_JfbyIGkXEeCIa6c7ahMmFw" general="_qAmzwGkWEeCIa6c7ahMmFw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_r1OzEGkWEeCIa6c7ahMmFw" name="B">
+    <generalization xmi:id="_t9_2YGkWEeCIa6c7ahMmFw" general="_qAmzwGkWEeCIa6c7ahMmFw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sYyMEGkWEeCIa6c7ahMmFw" name="C">
+    <generalization xmi:id="_uWrcIGkWEeCIa6c7ahMmFw" general="_rCuYEGkWEeCIa6c7ahMmFw"/>
+    <generalization xmi:id="_9XV-8GkWEeCIa6c7ahMmFw" general="_7oFn0GkWEeCIa6c7ahMmFw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7oFn0GkWEeCIa6c7ahMmFw" name="D">
+    <generalization xmi:id="_87izwGkWEeCIa6c7ahMmFw" general="_r1OzEGkWEeCIa6c7ahMmFw"/>
+  </packagedElement>
+</uml:Model>

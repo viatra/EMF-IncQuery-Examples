@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.examples.uml.incquery.validation
+Bundle-SymbolicName: hu.bme.mit.examples.uml.incquery.validation;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: hu.bme.mit.examples.uml.incquery,
+ org.eclipse.uml2.uml,
+ org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.viatra2.emf.incquery.validation.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
