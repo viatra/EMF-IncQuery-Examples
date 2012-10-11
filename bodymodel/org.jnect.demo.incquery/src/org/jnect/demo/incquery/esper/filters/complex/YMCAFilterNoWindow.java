@@ -1,4 +1,4 @@
-package org.jnect.demo.incquery.esper.filters.continuous;
+package org.jnect.demo.incquery.esper.filters.complex;
 
 import org.jnect.demo.incquery.esper.IEventFilter;
 
@@ -17,10 +17,10 @@ public class YMCAFilterNoWindow implements IEventFilter {
 
 	public YMCAFilterNoWindow(EPAdministrator admin) {
 		String stmt = "SELECT * FROM pattern[" +
-					  "PatternMatchEvent(patternName='Y' AND type='NEW') -> " +
-					  "PatternMatchEvent(patternName='M' AND type='NEW') -> " +
-					  "PatternMatchEvent(patternName='C' AND type='NEW') -> " +
-					  "PatternMatchEvent(patternName='A' AND type='NEW')]";
+					  "every(PatternMatchEvent(patternName='Y' AND type='NEW') -> " +
+					  		"PatternMatchEvent(patternName='M' AND type='NEW') -> " +
+					  		"PatternMatchEvent(patternName='C' AND type='NEW') -> " +
+					  		"PatternMatchEvent(patternName='A' AND type='NEW'))]";
 		statement = admin.createEPL(stmt);
 	}
 

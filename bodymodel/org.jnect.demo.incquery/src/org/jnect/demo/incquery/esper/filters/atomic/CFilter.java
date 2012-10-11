@@ -1,4 +1,4 @@
-package org.jnect.demo.incquery.esper.filters.sampled;
+package org.jnect.demo.incquery.esper.filters.atomic;
 
 import org.jnect.demo.incquery.esper.IEventFilter;
 
@@ -7,16 +7,16 @@ import com.espertech.esper.client.EPStatement;
 import com.espertech.esper.client.UpdateListener;
 
 /**
- * EPL filter for the atomic pattern "Y".
+ * EPL filter for the atomic pattern "C".
  * 
  * @author idavid
  */
-public class YFilter implements IEventFilter {
+public class CFilter implements IEventFilter {
 
 	private EPStatement statement;
 
-	public YFilter(EPAdministrator admin) {
-		String stmt = "SELECT DISTINCT * FROM PatternMatchEvent(patternName='Y' AND type='NEW') output every 1 seconds";
+	public CFilter(EPAdministrator admin) {
+		String stmt = "SELECT * FROM pattern[every-distinct(p.patternName, 1 seconds) p=PatternMatchEvent(patternName='C' AND type='NEW')]";
 		statement = admin.createEPL(stmt);
 	}
 

@@ -1,4 +1,4 @@
-package org.jnect.demo.incquery.esper.filters.sampled;
+package org.jnect.demo.incquery.esper.filters.atomic;
 
 import org.jnect.demo.incquery.esper.IEventFilter;
 
@@ -11,16 +11,15 @@ import com.espertech.esper.client.UpdateListener;
  * 
  * @author idavid
  */
+@Deprecated
 public class IQFilterNoWindow implements IEventFilter {
 
 	private EPStatement statement;
 
 	public IQFilterNoWindow(EPAdministrator admin) {
 		String stmt = "SELECT * FROM pattern[" + 
-					  "every-distinct(i.patternName) i=PatternMatchEvent(patternName='I' AND type='NEW') " +
-					  		"WHERE timer:within(1 sec) -> " + 
-					  "every-distinct(q.patternName) q=PatternMatchEvent(patternName='Q' AND type='NEW') " +
-					  		"WHERE timer:within(1 sec)]";
+					  "every((every-distinct(i.patternName, 1 seconds) i=PatternMatchEvent(patternName='I' AND type='NEW')) -> " + 
+					  	   "(every-distinct(q.patternName, 1 seconds) q=PatternMatchEvent(patternName='Q' AND type='NEW')))]";
 		statement = admin.createEPL(stmt);
 	}
 

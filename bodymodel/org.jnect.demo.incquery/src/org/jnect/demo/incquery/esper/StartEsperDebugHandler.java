@@ -112,7 +112,7 @@ public class StartEsperDebugHandler extends AbstractHandler {
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		//Thread.sleep(3000l);
+		Thread.sleep(5500l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));

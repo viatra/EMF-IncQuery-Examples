@@ -2,12 +2,14 @@ package org.jnect.demo.incquery.esper;
 
 import static org.jnect.demo.incquery.esper.utils.Logger.log;
 
-import org.jnect.demo.incquery.esper.filters.continuous.IQFilterNoWindow;
-import org.jnect.demo.incquery.esper.filters.continuous.YMCAFilterNoWindow;
-import org.jnect.demo.incquery.esper.filters.sampled.IQFilterWithWindow;
-import org.jnect.demo.incquery.esper.listeners.continuous.IQListenerNoWindow;
-import org.jnect.demo.incquery.esper.listeners.continuous.YMCAListenerNoWindow;
-import org.jnect.demo.incquery.esper.listeners.sampled.IQListenerWithWindow;
+import org.jnect.demo.incquery.esper.filters.atomic.IFilter;
+import org.jnect.demo.incquery.esper.filters.atomic.QFilter;
+import org.jnect.demo.incquery.esper.filters.complex.IQFilterNoWindow;
+import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
+import org.jnect.demo.incquery.esper.listeners.atomic.IListener;
+import org.jnect.demo.incquery.esper.listeners.atomic.QListener;
+import org.jnect.demo.incquery.esper.listeners.complex.IQListenerNoWindow;
+import org.jnect.demo.incquery.esper.listeners.complex.IQListenerWithWindow;
 
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPServiceProvider;
@@ -56,14 +58,17 @@ public class EsperManager {
 	}
 
 	private void registerFiltersAndListeners() {
-		//IQFilterWithWindow iqFilterSampled = new IQFilterWithWindow(epService.getEPAdministrator());
-		//iqFilterSampled.addListener(new IQListenerWithWindow());
-
-		YMCAFilterNoWindow yfnw = new YMCAFilterNoWindow(epService.getEPAdministrator());
-		yfnw.addListener(new YMCAListenerNoWindow());
-		
 		IQFilterNoWindow iqFilter = new IQFilterNoWindow(epService.getEPAdministrator());
 		iqFilter.addListener(new IQListenerNoWindow());
+		
+		IQFilterWithWindow iqFilterW = new IQFilterWithWindow(epService.getEPAdministrator());
+		iqFilterW.addListener(new IQListenerWithWindow());
+		
+		IFilter iFilter = new IFilter(epService.getEPAdministrator());
+		iFilter.addListener(new IListener());
+		
+		QFilter qFilter = new QFilter(epService.getEPAdministrator());
+		qFilter.addListener(new QListener());
 	}
 
 	public void sendEvent(Object event) {
