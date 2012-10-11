@@ -5,6 +5,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
+import org.jnect.demo.incquery.views.YMCADemoView;
 
 /**
  * Esper debugging handler to aid Esper debugging without IncQuery.
@@ -52,31 +53,38 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 */
 	private void samplingTest() throws InterruptedException {
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		YMCADemoView.appendStringIncQuery("Y");
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(1000l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Y");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 	}
 
 	/**
@@ -86,46 +94,56 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 */
 	private void samplingTestComplex() throws InterruptedException {
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(1000l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("I");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(5500l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Q");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Q");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
+		YMCADemoView.appendStringIncQuery("Q");
+        EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 	}
 
