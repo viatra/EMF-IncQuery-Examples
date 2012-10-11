@@ -3,7 +3,7 @@ package org.jnect.demo.incquery.esper;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
 import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
-import org.jnect.demo.incquery.esper.events.EventType;
+import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
 
 /**
@@ -31,7 +31,7 @@ public class EsperAdapter {
                    // 	((PositionedElement)_pe).setColor_r(255);
                    //}
                 	EsperManager.getInstance().sendEvent(
-                			new PatternMatchEvent(pm, pm.patternName(), EventType.NEW));
+                			new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.NEW));
                 }
                 for (IPatternMatch pm : dm.matchLostEvents) {
                    // System.out.println("Lost match found:" + pm.toString());
@@ -40,7 +40,7 @@ public class EsperAdapter {
                     //	((PositionedElement)_pe).setColor_r(0);
                     //}
                 	EsperManager.getInstance().sendEvent(
-                			new PatternMatchEvent(pm, pm.patternName(), EventType.LOST));
+                			new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.LOST));
                 }
                 dm.clear();
             } 

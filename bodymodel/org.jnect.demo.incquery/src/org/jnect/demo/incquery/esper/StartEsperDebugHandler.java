@@ -3,7 +3,7 @@ package org.jnect.demo.incquery.esper;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.jnect.demo.incquery.esper.events.EventType;
+import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
 
 /**
@@ -35,32 +35,32 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 * @throws InterruptedException
 	 */
 	private void samplingTest() throws InterruptedException {
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(1000l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 	}
 
 	/**
@@ -69,47 +69,47 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 * @throws InterruptedException
 	 */
 	private void samplingTestComplex() throws InterruptedException {
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(1000l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
 		Thread.sleep(3000l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 		Thread.sleep(700l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 		Thread.sleep(400l);
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 
 	}
 
@@ -119,17 +119,17 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 * @throws InterruptedException
 	 */
 	private void ymcaTest() throws InterruptedException {
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Y", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "M", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "M", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "M", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "M", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "C", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "C", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "C", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "C", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "A", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "A", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "A", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "A", PatternMatchEventType.LOST));
 	}
 
 	/**
@@ -138,10 +138,10 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	 * @throws InterruptedException
 	 */
 	private void iqTest() throws InterruptedException {
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.NEW));
-		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", EventType.LOST));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
+		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
 	}
 }

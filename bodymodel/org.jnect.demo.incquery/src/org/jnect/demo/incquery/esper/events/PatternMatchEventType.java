@@ -5,6 +5,6 @@ package org.jnect.demo.incquery.esper.events;
  * 
  * @author idavid
  */
-public enum EventType {
+public enum PatternMatchEventType {
 	NEW, LOST;
 }

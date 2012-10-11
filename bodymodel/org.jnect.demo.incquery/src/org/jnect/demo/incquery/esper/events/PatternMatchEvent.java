@@ -1,7 +1,7 @@
 package org.jnect.demo.incquery.esper.events;
 
 import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
-import org.jnect.demo.incquery.esper.events.EventType;
+import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 
 /**
  * DTO to pass IncQuery pattern matching deltas to Esper.
@@ -11,9 +11,9 @@ import org.jnect.demo.incquery.esper.events.EventType;
 public class PatternMatchEvent {
 	private IPatternMatch match;
 	private String patternName;
-	private EventType type;
+	private PatternMatchEventType type;
 	
-	public PatternMatchEvent(IPatternMatch _pm, String _pname, EventType _type) {
+	public PatternMatchEvent(IPatternMatch _pm, String _pname, PatternMatchEventType _type) {
 		this.patternName = _pname;
 		this.match = _pm;
 		this.type = _type;
