@@ -7,16 +7,16 @@ import com.espertech.esper.client.EPStatement;
 import com.espertech.esper.client.UpdateListener;
 
 /**
- * EPL filter for the atomic pattern "C".
+ * Abstract EPL filter class for the atomic IncQuery patterns.
  * 
- * @author idavid
+ * @author istvanrath
  */
-public class CFilter implements IEventFilter {
+public class AtomicPatternFilter implements IEventFilter {
 
-	private EPStatement statement;
+	protected EPStatement statement;
 
-	public CFilter(EPAdministrator admin) {
-		String stmt = "SELECT * FROM pattern[every-distinct(p.patternName, 1 seconds) p=PatternMatchEvent(patternName='C' AND type='NEW')]";
+	public AtomicPatternFilter(EPAdministrator admin, String pName) {
+		String stmt = "SELECT * FROM pattern[every-distinct(p.patternName, 1 seconds) p=PatternMatchEvent(patternName='"+pName+"' AND type='NEW')]";
 		statement = admin.createEPL(stmt);
 	}
 

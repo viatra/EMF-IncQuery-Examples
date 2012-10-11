@@ -14,7 +14,7 @@
             name="Start Kinect YMCA Demo">
       </command>
       <command
-            defaultHandler="org.jnect.demo.incquery.robot.StartRobotDemoHandler"
+            defaultHandler="org.jnect.demo.incquery.esper.robot.StartRobotDemoHandler"
             id="org.jnect.demo.incquery.robot.start"
             name="Start Kinect Robot Demo">
       </command><command
