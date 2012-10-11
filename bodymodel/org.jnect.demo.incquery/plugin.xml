@@ -14,6 +14,10 @@
             name="Start Kinect YMCA Demo">
       </command>
       <command
+            defaultHandler="org.jnect.demo.incquery.robot.StartRobotDemoHandler"
+            id="org.jnect.demo.incquery.robot.start"
+            name="Start Kinect Robot Demo">
+      </command><command
             defaultHandler="org.jnect.demo.incquery.esper.StartEsperDebugHandler"
             id="org.jnect.demo.incquery.esper.debug"
             name="Start Kinect Esper Debug">
@@ -45,6 +49,9 @@
                   style="push">
             </command>
             <command
+                  commandId="org.jnect.demo.incquery.robot.start"
+                  style="push">
+            </command><command
                   commandId="org.jnect.demo.incquery.esper.start"
                   style="push">
             </command>
