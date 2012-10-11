@@ -3,8 +3,10 @@ package org.jnect.demo.incquery.esper;
 import static org.jnect.demo.incquery.esper.utils.Logger.log;
 
 import org.jnect.demo.incquery.esper.filters.continuous.IQFilterNoWindow;
+import org.jnect.demo.incquery.esper.filters.continuous.YMCAFilterNoWindow;
 import org.jnect.demo.incquery.esper.filters.sampled.IQFilterWithWindow;
 import org.jnect.demo.incquery.esper.listeners.continuous.IQListenerNoWindow;
+import org.jnect.demo.incquery.esper.listeners.continuous.YMCAListenerNoWindow;
 import org.jnect.demo.incquery.esper.listeners.sampled.IQListenerWithWindow;
 
 import com.espertech.esper.client.Configuration;
@@ -54,9 +56,12 @@ public class EsperManager {
 	}
 
 	private void registerFiltersAndListeners() {
-		IQFilterWithWindow iqFilterSampled = new IQFilterWithWindow(epService.getEPAdministrator());
-		iqFilterSampled.addListener(new IQListenerWithWindow());
+		//IQFilterWithWindow iqFilterSampled = new IQFilterWithWindow(epService.getEPAdministrator());
+		//iqFilterSampled.addListener(new IQListenerWithWindow());
 
+		YMCAFilterNoWindow yfnw = new YMCAFilterNoWindow(epService.getEPAdministrator());
+		yfnw.addListener(new YMCAListenerNoWindow());
+		
 		IQFilterNoWindow iqFilter = new IQFilterNoWindow(epService.getEPAdministrator());
 		iqFilter.addListener(new IQListenerNoWindow());
 	}
