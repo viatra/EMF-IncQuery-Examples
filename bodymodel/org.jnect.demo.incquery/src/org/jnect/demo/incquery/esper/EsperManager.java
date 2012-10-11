@@ -2,9 +2,12 @@ package org.jnect.demo.incquery.esper;
 
 import static org.jnect.demo.incquery.esper.utils.Logger.log;
 
+import java.awt.event.KeyEvent;
+
 import org.jnect.demo.incquery.esper.filters.atomic.AtomicPatternFilter;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterNoWindow;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
+import org.jnect.demo.incquery.esper.robot.RobotPatternListener;
 
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPAdministrator;
@@ -88,10 +91,10 @@ public class EsperManager {
         
         // robot example
         AtomicPatternFilter uFilter = new AtomicPatternFilter(admin, "U");
-        uFilter.addListener(new EsperPatternListener("U"));
+        uFilter.addListener(new RobotPatternListener("U", KeyEvent.VK_UP));
         
         AtomicPatternFilter dFilter = new AtomicPatternFilter(admin, "D");
-        dFilter.addListener(new EsperPatternListener("D"));
+        dFilter.addListener(new RobotPatternListener("D", KeyEvent.VK_DOWN));
         
         
         

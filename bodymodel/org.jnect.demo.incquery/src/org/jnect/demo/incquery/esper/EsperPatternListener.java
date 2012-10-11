@@ -13,8 +13,8 @@ import static org.jnect.demo.incquery.esper.utils.Logger.*;
  * @author idavid
  */
 public class EsperPatternListener implements UpdateListener {
-	private String consolMessage;
-	private String guiMessage;
+	protected String consolMessage;
+	protected String guiMessage;
 
 	public EsperPatternListener(String pName) {
 	    this("ESPER: "+pName+" atomic pattern recognized.","["+pName+"]");

@@ -1,30 +1,12 @@
 package org.jnect.demo.incquery.esper.robot;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IPatternMatch;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryMatcher;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
-import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
-import org.jnect.bodymodel.PositionedElement;
-import org.jnect.core.KinectManager;
 import org.jnect.demo.incquery.esper.EsperManager;
 import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
 import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 import org.jnect.demo.incquery.views.YMCADemoView;
-
-import bodymodel.ymca.a.AMatcher;
-import bodymodel.ymca.c.CMatcher;
-import bodymodel.ymca.i.IMatcher;
-import bodymodel.ymca.m.MMatcher;
-import bodymodel.ymca.q.QMatcher;
-import bodymodel.ymca.y.YMatcher;
 
 //import bodymodel.jump.JumpMatcher;
 
