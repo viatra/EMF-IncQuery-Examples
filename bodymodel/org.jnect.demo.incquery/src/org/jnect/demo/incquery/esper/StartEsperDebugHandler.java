@@ -18,10 +18,26 @@ public class StartEsperDebugHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		try {
-			samplingTestComplex();
-			// samplingTest();
-			// ymcaTest();
-			// iqTest();
+		    
+		    Thread t = new Thread(new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        samplingTestComplex();
+                        // samplingTest();
+                        // ymcaTest();
+                        // iqTest();
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                   
+                }
+		        
+		    }, "Esper Debug");
+		    t.start();
+			
 		} catch (Exception e) {
 			throw new ExecutionException(e.getLocalizedMessage(), e);
 		}
@@ -96,7 +112,7 @@ public class StartEsperDebugHandler extends AbstractHandler {
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.NEW));
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "I", PatternMatchEventType.LOST));
 
-		Thread.sleep(3000l);
+		//Thread.sleep(3000l);
 
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.NEW));
 		EsperManager.getInstance().sendEvent(new PatternMatchEvent(null, "Q", PatternMatchEventType.LOST));
