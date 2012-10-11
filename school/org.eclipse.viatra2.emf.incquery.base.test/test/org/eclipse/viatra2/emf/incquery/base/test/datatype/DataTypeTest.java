@@ -42,17 +42,17 @@ public class DataTypeTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				
-				List<Course> courses = new ArrayList<Course>(ResourceAccess.getResource().getCourses());
+				List<Course> courses = new ArrayList<Course>(ResourceAccess.getSchool().getCourses());
 				for (Course c : courses) {
 					c.setSchool(null);
 				}
 				
-				List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getResource().getTeachers());
+				List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getSchool().getTeachers());
 				for (Teacher t : teachers) {
 					t.setSchool(null);
 				}
 				
-				List<Year> years = new ArrayList<Year>(ResourceAccess.getResource().getYears());
+				List<Year> years = new ArrayList<Year>(ResourceAccess.getSchool().getYears());
 				for (Year y : years) {
 					y.setSchool(null);
 				}

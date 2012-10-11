@@ -82,7 +82,7 @@ public class InverseReferenceTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				
-				for (Course c : ResourceAccess.getResource().getCourses()) {
+				for (Course c : ResourceAccess.getSchool().getCourses()) {
 					if (c.getSchoolClass() != null) {
 						List<Student> students = new ArrayList<Student>(c.getSchoolClass().getStudents());
 						for (Student s : students) {

@@ -19,7 +19,7 @@ public abstract class IncQueryBaseTest {
 	@Before
 	public void init() {
 		try {
-			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getResource(), true, null);
+			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getSchool(), true, null);
 		} 
 		catch (IncQueryBaseException e) {
 			e.printStackTrace();

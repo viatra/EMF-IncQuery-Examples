@@ -31,8 +31,8 @@ public class FeatureTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				//years and courses have references to students
-				ResourceAccess.getResource().getCourses().clear();
-				ResourceAccess.getResource().getYears().clear();
+				ResourceAccess.getSchool().getCourses().clear();
+				ResourceAccess.getSchool().getYears().clear();
 			}
 		};
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);

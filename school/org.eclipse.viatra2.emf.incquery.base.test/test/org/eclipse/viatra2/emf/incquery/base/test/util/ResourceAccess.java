@@ -23,7 +23,7 @@ public class ResourceAccess {
 	private static Resource resource = null;
 	private static TransactionalEditingDomain transactionalEditingDomain;
 	
-	public static School getResource() {
+	public static School getSchool() {
 		if (resource == null) {			
 		    SchoolPackage.eINSTANCE.eClass();
 		    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -39,7 +39,7 @@ public class ResourceAccess {
 	
 	public static  List<EObject> getAllContents() {
 		List<EObject> contents = new ArrayList<EObject>();
-		TreeIterator<EObject> iterator = getResource().eAllContents();
+		TreeIterator<EObject> iterator = getSchool().eAllContents();
 		
 		while (iterator.hasNext()) {
 			contents.add(iterator.next());
