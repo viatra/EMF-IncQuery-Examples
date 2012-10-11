@@ -41,7 +41,7 @@ pattern handsAreClose_buggy(LH:LeftHand,RH:RightHand) {
 		var float rhy = RHY
 		var float rhz = RHZ
 		// I suspect the issue stems from the fact that EMF domain objects are wired into Java code
-		bodymodel::ymca::VectorMaths::lengthOf(bodymodel::ymca::VectorMaths::createVector(LH,RH)) < 0.1
+		bodymodel::ymca::VectorMaths::lengthOf(bodymodel::ymca::VectorMaths::createVector(LH,RH)) < bodymodel::ymca::YMCAConstants::closeDistance
 		});
 }
 
@@ -61,7 +61,7 @@ pattern handsAreClose(LH:LeftHand,RH:RightHand) {
 			bodymodel::MovingAverageCalculator::getCalculator("RHX").addValue(RHX).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHY).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHZ").addValue(RHZ).movingAvg
-		)) < 0.1 );
+		)) < bodymodel::ymca::YMCAConstants::closeDistance );
 }
 
 @QueryExplorer(display = true)
@@ -80,7 +80,7 @@ pattern handsAreApart(LH:LeftHand,RH:RightHand) {
 			bodymodel::MovingAverageCalculator::getCalculator("RHX").addValue(RHX).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHY).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RHZ").addValue(RHZ).movingAvg
-		)) > 1.0 );
+		)) > bodymodel::ymca::YMCAConstants::apartDistance );
 }
 
 
@@ -100,7 +100,7 @@ pattern feetAreClose(LF:LeftFoot,RF:RightFoot) {
 			bodymodel::MovingAverageCalculator::getCalculator("RFX").addValue(RFX).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
-		)) < 0.3 );
+		)) < bodymodel::ymca::YMCAConstants::closeDistance );
 }
 
 
@@ -145,7 +145,7 @@ pattern stretchedRightArm(RH:RightHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		(Math::PI - angleBetween) < 0.3
+		(Math::PI - angleBetween) < bodymodel::ymca::YMCAConstants::angleTolerance
 	});
 }
 
@@ -190,7 +190,7 @@ pattern bentRightArm(RH:RightHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/2 - angleBetween) < 0.5
+		Math::abs(Math::PI/2 - angleBetween) < bodymodel::ymca::YMCAConstants::angleTolerance
 	});
 }
 
@@ -235,7 +235,7 @@ pattern stretchedLeftArm(LH:LeftHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		(Math::PI - angleBetween) < 0.3
+		(Math::PI - angleBetween) < bodymodel::ymca::YMCAConstants::angleTolerance
 	});
 }
 
@@ -280,7 +280,7 @@ pattern bentLeftArm(LH:LeftHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/2 - angleBetween) < 0.5
+		Math::abs(Math::PI/2 - angleBetween) < bodymodel::ymca::YMCAConstants::angleTolerance
 	});
 }
 
@@ -327,7 +327,7 @@ pattern upperArmsInY(LE:LeftElbow,
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/3 - angleBetween) < 0.2
+		Math::abs(Math::PI/3 - angleBetween) < bodymodel::ymca::YMCAConstants::angleTolerance
 	});
 }
 
@@ -414,11 +414,11 @@ pattern M(RH:RightHand,
 	LeftElbow.y(LE,LEY);
 	LeftShoulder.y(LS,LSY);
 	check(Math::abs(bodymodel::MovingAverageCalculator::getCalculator("LEY").addValue(LEY).movingAvg
-		- bodymodel::MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg) < 0.05);
+		- bodymodel::MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg) < bodymodel::ymca::YMCAConstants::veryCloseDistance);
 	RightElbow.y(RE,REY);
 	RightShoulder.y(RS,RSY);
 	check(Math::abs(bodymodel::MovingAverageCalculator::getCalculator("REY").addValue(REY).movingAvg
-		- bodymodel::MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg) < 0.05);	
+		- bodymodel::MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg) < bodymodel::ymca::YMCAConstants::veryCloseDistance);	
 	// hands are apart
 	find handsAreApart(LH,RH);
 }
