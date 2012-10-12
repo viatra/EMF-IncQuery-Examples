@@ -475,3 +475,53 @@ pattern C(RH:RightHand,
 	check(bodymodel::MovingAverageCalculator::getCalculator("LHX").addValue(LHX).movingAvg > 
 		bodymodel::MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
 }
+
+// "control powerpoint with awt.Robot" demo
+
+/*
+ * Forward start position.
+ */
+pattern FS(RH: RightHand,
+					  RE: RightElbow,
+					  RS: RightShoulder,
+					   H: Head) 
+{
+	find stretchedRightArm(RH,RE,RS);
+	neg find rightHandAboveHead(RH,H);
+}
+
+/*
+ * Forward end position.
+ */
+pattern FE(RH: RightHand,
+					RE: RightElbow,
+					RS: RightShoulder,
+					 H: Head) 
+{
+	find bentRightArm(RH,RE,RS);
+	neg find rightHandAboveHead(RH,H);
+}
+
+/*
+ * Backward start position.
+ */
+pattern BS(LH: LeftHand,
+					   LE: LeftElbow,
+					   LS: LeftShoulder,
+					   H: Head) 
+{
+	find stretchedLeftArm(LH,LE,LS);
+	neg find leftHandAboveHead(LH,H);
+}
+
+/*
+ * Backward end position.
+ */
+pattern BE(LH: LeftHand,
+					 LE: LeftElbow,
+					 LS: LeftShoulder,
+					  H: Head) 
+{
+	find bentLeftArm(LH,LE,LS);
+	neg find leftHandAboveHead(LH,H);
+}

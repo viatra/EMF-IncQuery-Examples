@@ -1,19 +1,15 @@
 package org.jnect.demo.incquery.esper.filters.complex;
 
-import org.jnect.demo.incquery.esper.IEventFilter;
+import org.jnect.demo.incquery.esper.filters.AbstractFilter;
 
 import com.espertech.esper.client.EPAdministrator;
-import com.espertech.esper.client.EPStatement;
-import com.espertech.esper.client.UpdateListener;
 
 /**
  * EPL filter for the pattern "YMCA" without time window.
  * 
  * @author idavid
  */
-public class YMCAFilterNoWindow implements IEventFilter {
-
-	private EPStatement statement;
+public class YMCAFilterNoWindow extends AbstractFilter {
 
 	public YMCAFilterNoWindow(EPAdministrator admin) {
 		String stmt = "SELECT * FROM pattern[" +
@@ -24,8 +20,4 @@ public class YMCAFilterNoWindow implements IEventFilter {
 		statement = admin.createEPL(stmt);
 	}
 
-	@Override
-	public void addListener(Object listener) {
-		statement.addListener((UpdateListener)listener);
-	}
 }

@@ -8,6 +8,7 @@ import org.jnect.demo.incquery.esper.filters.atomic.AtomicPatternFilter;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterNoWindow;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
 import org.jnect.demo.incquery.esper.robot.RobotPatternListener;
+import org.jnect.demo.incquery.esper.robot.StartEndEventPatternWithWindow;
 
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPAdministrator;
@@ -29,7 +30,7 @@ public class EsperManager {
 
 	private final String engineURI;
 	private EPServiceProvider epService;
-
+	
 	private EsperManager(String engineURI) {
 		this.engineURI = engineURI;
 		try {
@@ -53,16 +54,17 @@ public class EsperManager {
 
 		log("ESPERMANAGER: Got the Provider and successfully connected to the Runtime");
 
-		registerFiltersAndListeners();
+		//registerFiltersAndListeners();
 	}
 
-	private void registerFiltersAndListeners() {
+	
+	public void registerYMCAListeners() {
 	    EPAdministrator admin = epService.getEPAdministrator();
 	    
 	    // complex event filters
 	    
-		IQFilterNoWindow iqFilter = new IQFilterNoWindow(admin);
-		iqFilter.addListener(new EsperPatternListener("IQ_NW"));
+		//IQFilterNoWindow iqFilter = new IQFilterNoWindow(admin);
+		//iqFilter.addListener(new EsperPatternListener("IQ_NW"));
 		
 		IQFilterWithWindow iqFilterW = new IQFilterWithWindow(admin);
 		iqFilterW.addListener(new EsperPatternListener("IQ_W"));
@@ -89,15 +91,36 @@ public class EsperManager {
         AtomicPatternFilter aFilter = new AtomicPatternFilter(admin, "A");
         aFilter.addListener(new EsperPatternListener("A"));
         
-        // robot example
-        AtomicPatternFilter uFilter = new AtomicPatternFilter(admin, "U");
-        uFilter.addListener(new RobotPatternListener("U", KeyEvent.VK_UP));
-        
-        AtomicPatternFilter dFilter = new AtomicPatternFilter(admin, "D");
-        dFilter.addListener(new RobotPatternListener("D", KeyEvent.VK_DOWN));
-        
-        
-        
+          
+	}
+	
+	private StartEndEventPatternWithWindow forwardFilter;
+	private RobotPatternListener forwardListener;
+	private StartEndEventPatternWithWindow backwardFilter;
+	private RobotPatternListener backwardListener;
+	
+	
+	public void registerRobotListeners() {
+		 EPAdministrator admin = epService.getEPAdministrator();
+		if (admin!=null) {
+			// powerpoint robot example
+	        forwardFilter = new StartEndEventPatternWithWindow(admin, "FS", "FE", "1 sec");
+	        forwardListener = new RobotPatternListener("F", KeyEvent.VK_RIGHT);
+	        forwardFilter.addListener(forwardListener);
+	        
+	        backwardFilter = new StartEndEventPatternWithWindow(admin, "BS", "BE", "1 sec");
+	        backwardListener = new RobotPatternListener("B", KeyEvent.VK_LEFT);
+	        backwardFilter.addListener(backwardListener);
+		}
+	}
+	
+	public void unregisterRobotListeners() {
+		if (forwardFilter!=null) {
+			forwardFilter.removeListener(forwardListener);
+		}
+		if (backwardFilter!=null) {
+			backwardFilter.removeListener(backwardListener);
+		}
 	}
 
 	public void sendEvent(Object event) {

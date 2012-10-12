@@ -1,19 +1,15 @@
 package org.jnect.demo.incquery.esper.filters.complex;
 
-import org.jnect.demo.incquery.esper.IEventFilter;
+import org.jnect.demo.incquery.esper.filters.AbstractFilter;
 
 import com.espertech.esper.client.EPAdministrator;
-import com.espertech.esper.client.EPStatement;
-import com.espertech.esper.client.UpdateListener;
 
 /**
  * EPL filter for the pattern "IQ" without time window.
  * 
  * @author idavid
  */
-public class IQFilterNoWindow implements IEventFilter {
-
-	private EPStatement statement;
+public class IQFilterNoWindow extends AbstractFilter {
 
 	public IQFilterNoWindow(EPAdministrator admin) {
 		String stmt = "SELECT * FROM pattern[" +
@@ -22,8 +18,5 @@ public class IQFilterNoWindow implements IEventFilter {
 		statement = admin.createEPL(stmt);
 	}
 
-	@Override
-	public void addListener(Object listener) {
-		statement.addListener((UpdateListener)listener);
-	}
+
 }

@@ -12,7 +12,11 @@ import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.KinectManager;
 
 import bodymodel.ymca.a.AMatcher;
+import bodymodel.ymca.be.BEMatcher;
+import bodymodel.ymca.bs.BSMatcher;
 import bodymodel.ymca.c.CMatcher;
+import bodymodel.ymca.fe.FEMatcher;
+import bodymodel.ymca.fs.FSMatcher;
 import bodymodel.ymca.i.IMatcher;
 import bodymodel.ymca.m.MMatcher;
 import bodymodel.ymca.q.QMatcher;
@@ -40,7 +44,7 @@ public class StartYMCADemoHandler extends AbstractHandler {
 				public void run() {
 					for (IPatternMatch pm : dm.matchFoundEvents) {
 						// System.out.println("New match found:" + pm.toString());
-						YMCADemoView.appendStringIncQuery(pm.patternName());
+						YMCADemoView.appendStringIncQuery(pm.patternName()+";");
 						for (Object _pe : pm.toArray()) {
 							((PositionedElement) _pe).setColor_r(255);
 						}
@@ -65,12 +69,20 @@ public class StartYMCADemoHandler extends AbstractHandler {
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 
+				// ymca demo
 				new YMCAMatcherHelper(YMatcher.factory().getMatcher(km));
 				new YMCAMatcherHelper(MMatcher.factory().getMatcher(km));
 				new YMCAMatcherHelper(CMatcher.factory().getMatcher(km));
 				new YMCAMatcherHelper(AMatcher.factory().getMatcher(km));
 				new YMCAMatcherHelper(IMatcher.factory().getMatcher(km));
 				new YMCAMatcherHelper(QMatcher.factory().getMatcher(km));
+				// robot demo
+				//new YMCAMatcherHelper(FSMatcher.factory().getMatcher(km));
+				//new YMCAMatcherHelper(FEMatcher.factory().getMatcher(km));
+				//new YMCAMatcherHelper(BSMatcher.factory().getMatcher(km));
+				//new YMCAMatcherHelper(BEMatcher.factory().getMatcher(km));
+				
+				
 			} catch (IncQueryException e) {
 				e.printStackTrace();
 			}

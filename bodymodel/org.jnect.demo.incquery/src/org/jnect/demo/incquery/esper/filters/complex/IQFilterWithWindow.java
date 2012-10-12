@@ -1,10 +1,8 @@
 package org.jnect.demo.incquery.esper.filters.complex;
 
-import org.jnect.demo.incquery.esper.IEventFilter;
+import org.jnect.demo.incquery.esper.filters.AbstractFilter;
 
 import com.espertech.esper.client.EPAdministrator;
-import com.espertech.esper.client.EPStatement;
-import com.espertech.esper.client.UpdateListener;
 
 /**
  * EPL filter for the pattern "IQ" with a time window of continuous time. (I.e. no discretization is applied,
@@ -12,9 +10,8 @@ import com.espertech.esper.client.UpdateListener;
  * 
  * @author idavid
  */
-public class IQFilterWithWindow implements IEventFilter {
+public class IQFilterWithWindow extends AbstractFilter {
 
-	private EPStatement statement;
 
 	public IQFilterWithWindow(EPAdministrator admin) {
 		String stmt = "SELECT * FROM pattern[" +
@@ -23,8 +20,4 @@ public class IQFilterWithWindow implements IEventFilter {
 		statement = admin.createEPL(stmt);
 	}
 
-	@Override
-	public void addListener(Object listener) {
-		statement.addListener((UpdateListener) listener);
-	}
 }

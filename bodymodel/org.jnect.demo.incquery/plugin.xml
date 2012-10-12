@@ -3,29 +3,40 @@
 <plugin>
    <extension
          point="org.eclipse.ui.commands">
-      <command
+     <!-- <command
             defaultHandler="org.jnect.demo.incquery.StartIncQueryDemoHandler"
             id="org.jnect.demo.incquery.start"
             name="Start Kinect IncQuery Demo">
-      </command>
+      </command> -->
       <command
             defaultHandler="org.jnect.demo.incquery.views.StartYMCADemoHandler"
             id="org.jnect.demo.incquery.ymca.start"
-            name="Start Kinect YMCA Demo">
+            name="Start Kinect IncQuery Raw Output">
+      </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.esper.StartYMCADemoHandler"
+            id="org.jnect.demo.incquery.esperymca.start"
+            name="Start Kinect IncQuery Esper YMCA Demo">
       </command>
       <command
             defaultHandler="org.jnect.demo.incquery.esper.robot.StartRobotDemoHandler"
             id="org.jnect.demo.incquery.robot.start"
-            name="Start Kinect Robot Demo">
-      </command><command
+            name="Start Kinect IncQuery Esper Robot Demo">
+      </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.esper.robot.StopRobotDemoHandler"
+            id="org.jnect.demo.incquery.robot.stop"
+            name="Stop Kinect IncQuery Esper Robot Demo">
+      </command>
+      <command
             defaultHandler="org.jnect.demo.incquery.esper.StartEsperDebugHandler"
             id="org.jnect.demo.incquery.esper.debug"
-            name="Start Kinect Esper Debug">
+            name="Start Kinect IncQuery Esper Debug">
       </command>
        <command
             defaultHandler="org.jnect.demo.incquery.esper.StartEsperDemoHandler"
             id="org.jnect.demo.incquery.esper.start"
-            name="Start Kinect Esper Demo">
+            name="Start Kinect IncQuery Esper Output">
       </command>
       <command
             defaultHandler="org.jnect.demo.incquery.SaveBodymodelHandler"
