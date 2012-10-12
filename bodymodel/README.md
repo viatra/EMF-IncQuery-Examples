@@ -30,7 +30,8 @@ Commands
   - this command will load the default body into the system, as well as start the simulation loop
  - "Start Kinect IncQuery Raw Output": this will initialize the live queries of the YMCA example on the live body model, showing the raw output from the IncQuery engine 
   - (e.g. a "Y;" means that the body has reached the state defined by the Y pattern)
- - "Start Kinect IncQuery Esper Output": 
+ - "Start Kinect IncQuery Esper Output": this will initialize Esper temporal complex event queries on the IncQuery raw output. The resulting complex patterns will be shown in the Esper text area.
+  - (e.g. a "[Y]" means that a timewindow-constrained Y has been detected. "[YMCA]" means that the user has performed the complete Y-M-C-A sequence in the good order.)
 
  - "Start Kinect IncQuery Esper YMCA Demo": to start the YMCA demo, enhanced with Esper CEP technology.
  - "Stop Kinect IncQuery Esper YMCA Demo": to stop the Esper-enhanced YMCA demo.
