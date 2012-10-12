@@ -51,7 +51,9 @@ public class YMCADemoView extends ViewPart {
 	public YMCADemoView() {
 	}
 
-	static int font_height = 48;
+	static int font_height_large = 48;
+	static int font_height_small = 24;
+	
 
 	/**
 	 * This is a callback that will allow us to create the viewer and initialize it.
@@ -67,18 +69,30 @@ public class YMCADemoView extends ViewPart {
 		esperLabel.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WHITE));
 		esperLabel.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_DARK_RED));
 		// set large font
-		FontData[] fontData = incqueryLabel.getFont().getFontData();
-		for (int i = 0; i < fontData.length; ++i) {
-			fontData[i].setHeight(font_height);
+		FontData[] fontData_iq = incqueryLabel.getFont().getFontData();
+		for (int i = 0; i < fontData_iq.length; ++i) {
+			fontData_iq[i].setHeight(font_height_small);
 		}
-		final Font newFont = new Font(Display.getDefault(), fontData);
+		final Font newFont = new Font(Display.getDefault(), fontData_iq);
 		incqueryLabel.setFont(newFont);
-		esperLabel.setFont(newFont);
 		incqueryLabel.addDisposeListener(new DisposeListener() {
 			public void widgetDisposed(DisposeEvent e) {
 				newFont.dispose();
 			}
 		});
+		
+		FontData[] fontData_e = esperLabel.getFont().getFontData();
+		for (int i = 0; i < fontData_e.length; ++i) {
+			fontData_e[i].setHeight(font_height_large);
+		}
+		final Font newFont_e = new Font(Display.getDefault(), fontData_e);
+		esperLabel.setFont(newFont_e);
+		esperLabel.addDisposeListener(new DisposeListener() {
+			public void widgetDisposed(DisposeEvent e) {
+				newFont_e.dispose();
+			}
+		});
+		
 		incqueryLabel.setText("IQ: ");
 		esperLabel.setText("E: ");
 		// ymcalabel.setText("YMCA!");

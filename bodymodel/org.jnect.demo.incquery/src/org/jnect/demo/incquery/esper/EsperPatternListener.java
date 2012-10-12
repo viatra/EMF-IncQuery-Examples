@@ -12,11 +12,15 @@ import static org.jnect.demo.incquery.esper.utils.Logger.*;
  * 
  * @author idavid
  */
-public abstract class AbstractListener implements UpdateListener {
-	private String consolMessage;
-	private String guiMessage;
+public class EsperPatternListener implements UpdateListener {
+	protected String consolMessage;
+	protected String guiMessage;
 
-	public AbstractListener(String consolMessage, String guiMessage) {
+	public EsperPatternListener(String pName) {
+	    this("ESPER: "+pName+" atomic pattern recognized.","["+pName+"]");
+	}
+	
+	public EsperPatternListener(String consolMessage, String guiMessage) {
 		this.consolMessage = consolMessage;
 		this.guiMessage = guiMessage;
 	}
