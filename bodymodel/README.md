@@ -15,7 +15,7 @@ A quick summary of necessary changes:
  - fix GEF demo: HumanContainerEditpart
 
 My additions:
- - new commands to stop GEF demo
+ - new commands to stop GEF demo, save body model snapshot
  - a new Body Provider that sets up coordinates properly
  - a demo Kinect Manager impl class
   - provides dummy implementations for Kinectless development
@@ -26,13 +26,39 @@ My additions:
 General advice: use the Quick Access bar in Eclipse, as all user actions are to be invoked through Eclipse Commands.
 
 Commands
- - "Start Kinect GEF demo": be sure to have opened a(n empty) .humanbodymodel file beforehand (this will open the Kinect GEF Demo Editor)
+ - the first command to issue is "Start Kinect GEF demo": be sure to have opened a(n empty) .humanbodymodel file beforehand (this will open the Kinect GEF Demo Editor)
   - this command will load the default body into the system, as well as start the simulation loop
- - "Start Kinect IncQuery demo": this will initialize the simple live queries on the live body model
- - "Start Kinect YMCA Demo": this will initialize the live queries of the YMCA example on the live body model
- - "Save Kinect Bodymodel": for debugging purposes, this will save a demomodel.xmi file into the bodymodel.incquery project in your workspace (overriding anything that may be there already)
+ - "Start Kinect IncQuery Raw Output": this will initialize the live queries of the YMCA example on the live body model, showing the raw output from the IncQuery engine 
+  - (e.g. a "Y;" means that the body has reached the state defined by the Y pattern)
+ - "Start Kinect IncQuery Esper Output": 
+
+ - "Start Kinect IncQuery Esper YMCA Demo": to start the YMCA demo, enhanced with Esper CEP technology.
+ - "Stop Kinect IncQuery Esper YMCA Demo": to stop the Esper-enhanced YMCA demo.
+
+ - "Start Kinect IncQuery Esper Robot Demo": to start the Robot demo which will allow you to inject Keyboard.LEFTARROW and Keyboard.RIGHTARROW events into your operating system
+ - "Stop Kinect IncQuery Esper Robot Demo": to stop the Robot demo.
+
+ - "IDDQD Start Kinect IncQuery Esper YMCA Demo (Combined)": same as "Start ... Esper Output" + "Start ... Esper YMCA Demo"
+ - "IDKFA Start Kinect IncQuery Robot YMCA Demo (Combined)": same as "Start ... Esper Output" + "Start ... Esper Robot Demo"
+
+ - "Save Kinect Body model" (CTRL-SHIFT-Q): for debugging purposes, this will save a demomodel.xmi file into the bodymodel.incquery project in your workspace (overriding anything that may be there already)
+ - "Load Kinect Body model" (CTRL-SHIFT-L): make sure to have an open GEF editor first. After model has been loaded, issue an "Refresh Kinect GEF Demo" command to see changes.
  - "Stop Kinect GEF demo": stop the simulation loop
  
+Useful command sequences
+ - to try the raw IncQuery YMCA demo: "Start Kinect GEF demo", "Start Kinect IncQuery Raw Output"
+ - to try the Esper YMCA demo: "Start Kinect GEF demo", "IDDQD ..."
+ - to try the Esper Robot demo: "Start Kinect GEF demo", "IDKFA ..."
+
+
+### Robot Gestures
+
+- Forward: start with straight right arm, and bend it to at least 90' (in a timewindow of 2 seconds)
+ - important to start with a straight arm!
+- Backward: start with straight left arm, and bend it to at least 90' (in a timewindow of 2 seconds)
+ - important to start with a straight arm!
+
+
 ### YMCA Gestures
  
 
