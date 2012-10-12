@@ -60,7 +60,7 @@ public class DataTypeTest extends IncQueryBaseTest {
 		};
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
 		Collection<Object> result = navigationHelper.getDataTypeInstances(SchoolPackage.Literals.SCHOOL_CLASS__CODE.getEAttributeType());
-		ResourceAccess.undo(command);
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
 		assertTrue(result.isEmpty());
 	}
 }

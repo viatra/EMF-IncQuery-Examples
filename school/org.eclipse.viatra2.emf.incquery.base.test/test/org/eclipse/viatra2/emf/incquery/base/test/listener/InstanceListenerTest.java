@@ -19,6 +19,10 @@ import school.SchoolPackage;
 
 public class InstanceListenerTest extends IncQueryBaseTest {
 
+	public InstanceListenerTest() {
+		super(false);
+	}
+	
 	@Test
 	public void featureListenerTest() {
 		final Course newCourse = SchoolFactory.eINSTANCE.createCourse();
@@ -43,6 +47,7 @@ public class InstanceListenerTest extends IncQueryBaseTest {
 			}
 		};
 		
+		navigationHelper.registerEClasses(classes);
 		navigationHelper.registerInstanceListener(classes, instanceListener);
 		
 		final RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
@@ -51,9 +56,15 @@ public class InstanceListenerTest extends IncQueryBaseTest {
 				ResourceAccess.getSchool().getCourses().add(newCourse);
 			}
 		};
-		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
-		ResourceAccess.undo(command);
-		navigationHelper.unregisterInstanceListener(classes, instanceListener);
+		
+		try {
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		}
+		finally {
+			navigationHelper.unregisterEClasses(classes);
+			navigationHelper.unregisterInstanceListener(classes, instanceListener);
+		}
 	}
 	
 }

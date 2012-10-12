@@ -19,44 +19,55 @@ import school.SchoolPackage;
 
 public class FeatureListenerTest extends IncQueryBaseTest {
 
+	public FeatureListenerTest() {
+		super(false);
+	}
+	
 	@Test
 	public void featureListenerTest() {
 		final Course newCourse = SchoolFactory.eINSTANCE.createCourse();
 		final String newCourseSubject = "NewCourse";
 		newCourse.setSubject(newCourseSubject);
-		
+
 		Set<EStructuralFeature> features = new HashSet<EStructuralFeature>();
 		features.add(SchoolPackage.eINSTANCE.getCourse_Subject());
-		
+
 		FeatureListener featureListener = new FeatureListener() {
-			
+
 			@Override
 			public void featureInserted(EObject host, EStructuralFeature feature, Object value) {
 				assertTrue(
-						host == newCourse && 
-						feature == SchoolPackage.eINSTANCE.getSchool_Name() && 
-						((String)value).matches(newCourseSubject));
+						host.equals(newCourse) && 
+						feature.equals(SchoolPackage.eINSTANCE.getCourse_Subject()) && 
+						((String)value).equals(newCourseSubject));
 			}
-			
+
 			@Override
 			public void featureDeleted(EObject host, EStructuralFeature feature, Object value) {
 				assertTrue(
-						host == newCourse && 
-						feature == SchoolPackage.eINSTANCE.getSchool_Name() && 
-						((String)value).matches(newCourseSubject));				
+						host.equals(newCourse) && 
+						feature.equals(SchoolPackage.eINSTANCE.getCourse_Subject()) && 
+						((String)value).equals(newCourseSubject));				
 			}
 		};
-		navigationHelper.registerFeatureListener(features, featureListener);
 		
+		navigationHelper.registerEStructuralFeatures(features);
+		navigationHelper.registerFeatureListener(features, featureListener);
+
 		final RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				ResourceAccess.getSchool().getCourses().add(newCourse);
 			}
 		};
-		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
-		ResourceAccess.undo(command);
-		navigationHelper.unregisterFeatureListener(features, featureListener);
+		try {
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		}
+		finally {
+			navigationHelper.unregisterEStructuralFeatures(features);
+			navigationHelper.unregisterFeatureListener(features, featureListener);
+		}
 	}
 	
 }

@@ -80,7 +80,7 @@ public class InverseReferenceTest extends IncQueryBaseTest {
 		references.add(SchoolFactory.eINSTANCE.getSchoolPackage().getSchoolClass_Students());
 		
 		Collection<Setting> result = navigationHelper.getInverseReferences(student, references);
-		ResourceAccess.undo(command);
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
 		assertTrue(result.size() == 1);
 	}
 }

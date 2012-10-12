@@ -10,6 +10,15 @@ import org.junit.Before;
 public abstract class IncQueryBaseTest {
 
 	protected NavigationHelper navigationHelper;
+	protected boolean isInWildcardMode;
+	
+	public IncQueryBaseTest() {
+		this(true);
+	}
+	
+	public IncQueryBaseTest(boolean isInWildcardMode) {
+		this.isInWildcardMode = isInWildcardMode;
+	}
 	
 	@After
 	public void dispose() {
@@ -19,7 +28,7 @@ public abstract class IncQueryBaseTest {
 	@Before
 	public void init() {
 		try {
-			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getSchool(), true, null);
+			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getSchool(), isInWildcardMode, null);
 		} 
 		catch (IncQueryBaseException e) {
 			e.printStackTrace();

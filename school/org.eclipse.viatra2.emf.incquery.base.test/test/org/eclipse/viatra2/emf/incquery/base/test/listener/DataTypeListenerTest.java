@@ -18,6 +18,10 @@ import school.SchoolPackage;
 
 public class DataTypeListenerTest extends IncQueryBaseTest {
 	
+	public DataTypeListenerTest() {
+		super(false);
+	}
+	
 	@Test
 	public void dataTypeListenerTest() {
 		final Course newCourse = SchoolFactory.eINSTANCE.createCourse();
@@ -41,6 +45,7 @@ public class DataTypeListenerTest extends IncQueryBaseTest {
 						type.equals(SchoolPackage.eINSTANCE.getCourse_Subject().getEAttributeType()));
 			}
 		};
+		navigationHelper.registerEDataTypes(dataTypes);
 		navigationHelper.registerDataTypeListener(dataTypes, dataTypeListener);
 		
 		final RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
@@ -49,9 +54,14 @@ public class DataTypeListenerTest extends IncQueryBaseTest {
 				ResourceAccess.getSchool().getCourses().add(newCourse);
 			}
 		};
-		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
-		ResourceAccess.undo(command);
-		navigationHelper.unregisterDataTypeListener(dataTypes, dataTypeListener);
+		try {
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		}
+		finally {
+			navigationHelper.unregisterEDataTypes(dataTypes);
+			navigationHelper.unregisterDataTypeListener(dataTypes, dataTypeListener);
+		}
 	}
 	
 }

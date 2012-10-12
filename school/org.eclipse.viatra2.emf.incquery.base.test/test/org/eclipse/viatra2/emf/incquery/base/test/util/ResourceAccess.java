@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -12,7 +11,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 import school.School;
@@ -50,17 +48,5 @@ public class ResourceAccess {
 		
 	public static TransactionalEditingDomain getTransactionalEditingDomain() {
 		return transactionalEditingDomain;
-	}
-	
-	public static void undo(final Command command) {
-		assert command != null;
-		if (transactionalEditingDomain != null) {
-			transactionalEditingDomain.getCommandStack().execute(new RecordingCommand(transactionalEditingDomain) {
-				@Override
-				protected void doExecute() {
-					command.undo();
-				}
-			});
-		}
 	}
 }

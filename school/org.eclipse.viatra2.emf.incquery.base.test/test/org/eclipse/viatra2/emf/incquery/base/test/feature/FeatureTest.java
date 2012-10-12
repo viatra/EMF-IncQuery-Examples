@@ -38,7 +38,7 @@ public class FeatureTest extends IncQueryBaseTest {
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
 		
 		Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
-		ResourceAccess.undo(command);	
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();	
 		assertTrue(result.isEmpty());
 	}
 	
