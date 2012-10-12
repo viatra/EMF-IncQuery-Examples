@@ -5,8 +5,8 @@ import static org.jnect.demo.incquery.esper.utils.Logger.log;
 import java.awt.event.KeyEvent;
 
 import org.jnect.demo.incquery.esper.filters.atomic.AtomicPatternFilter;
-import org.jnect.demo.incquery.esper.filters.complex.IQFilterNoWindow;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
+import org.jnect.demo.incquery.esper.filters.complex.YMCAFilterWithWindow;
 import org.jnect.demo.incquery.esper.robot.RobotPatternListener;
 import org.jnect.demo.incquery.esper.robot.StartEndEventPatternWithWindow;
 
@@ -57,58 +57,102 @@ public class EsperManager {
 		//registerFiltersAndListeners();
 	}
 
+	private IQFilterWithWindow iqFilterW;
+	private YMCAFilterWithWindow ymcaFilterW;
+	private AtomicPatternFilter iFilter;
+	private AtomicPatternFilter qFilter;
+	private AtomicPatternFilter yFilter;
+	private AtomicPatternFilter mFilter;
+	private AtomicPatternFilter cFilter;
+	private AtomicPatternFilter aFilter;
+	private EsperPatternListener iqListener;
+	private EsperPatternListener ymcaListener;
+	private EsperPatternListener iListener;
+	private EsperPatternListener qListener;
+	private EsperPatternListener yListener;
+	private EsperPatternListener mListener;
+	private EsperPatternListener cListener;
+	private EsperPatternListener aListener;
+	
+	
 	
 	public void registerYMCAListeners() {
 	    EPAdministrator admin = epService.getEPAdministrator();
 	    
 	    // complex event filters
-	    
 		//IQFilterNoWindow iqFilter = new IQFilterNoWindow(admin);
 		//iqFilter.addListener(new EsperPatternListener("IQ_NW"));
-		
-		IQFilterWithWindow iqFilterW = new IQFilterWithWindow(admin);
-		iqFilterW.addListener(new EsperPatternListener("IQ_W"));
+		iqFilterW = new IQFilterWithWindow(admin);
+		iqListener = new EsperPatternListener("IQ");
+		iqFilterW.addListener(iqListener);
+		ymcaFilterW = new YMCAFilterWithWindow(admin);
+		ymcaListener = new EsperPatternListener("YMCA");
+		ymcaFilterW.addListener(ymcaListener);
 		
 		// atomic event filters
-		
-		// ymca example
-		
-		AtomicPatternFilter iFilter = new AtomicPatternFilter(admin, "I");
-		iFilter.addListener(new EsperPatternListener("I"));
-		
-		AtomicPatternFilter qFilter = new AtomicPatternFilter(admin, "Q");
-        qFilter.addListener(new EsperPatternListener("Q"));
-        
-        AtomicPatternFilter yFilter = new AtomicPatternFilter(admin, "Y");
-        yFilter.addListener(new EsperPatternListener("Y"));
-        
-        AtomicPatternFilter mFilter = new AtomicPatternFilter(admin, "M");
-        mFilter.addListener(new EsperPatternListener("M"));
-        
-        AtomicPatternFilter cFilter = new AtomicPatternFilter(admin, "C");
-        cFilter.addListener(new EsperPatternListener("C"));
-        
-        AtomicPatternFilter aFilter = new AtomicPatternFilter(admin, "A");
-        aFilter.addListener(new EsperPatternListener("A"));
-        
-          
+		iFilter = new AtomicPatternFilter(admin, "I");
+		iListener = new EsperPatternListener("I");
+		iFilter.addListener(iListener);
+		qFilter = new AtomicPatternFilter(admin, "Q");
+		qListener = new EsperPatternListener("Q");
+		qFilter.addListener(qListener);
+        yFilter = new AtomicPatternFilter(admin, "Y");
+        yListener = new EsperPatternListener("Y");
+		yFilter.addListener(yListener);
+        mFilter = new AtomicPatternFilter(admin, "M");
+        mListener = new EsperPatternListener("M");
+		mFilter.addListener(mListener);
+        cFilter = new AtomicPatternFilter(admin, "C");
+        cListener = new EsperPatternListener("C");
+		cFilter.addListener(cListener);
+        aFilter = new AtomicPatternFilter(admin, "A");
+        aListener = new EsperPatternListener("A");
+		aFilter.addListener(aListener);
+	}
+	
+	public void unregisterYMCAListeners() {
+		if (iqFilterW!=null) {
+			iqFilterW.removeListener(iqListener);
+		}
+		if (ymcaFilterW!=null) {
+			ymcaFilterW.removeListener(ymcaListener);
+		}
+		if (iFilter!=null) {
+			iFilter.removeListener(iListener);
+		}
+		if (qFilter!=null) {
+			qFilter.removeListener(qListener);
+		}
+		if (yFilter!=null) {
+			yFilter.removeListener(yListener);
+		}
+		if (mFilter!=null) {
+			mFilter.removeListener(mListener);
+		}
+		if (cFilter!=null) {
+			cFilter.removeListener(cListener);
+		}
+		if (aFilter!=null) {
+			aFilter.removeListener(aListener);
+		}
 	}
 	
 	private StartEndEventPatternWithWindow forwardFilter;
 	private RobotPatternListener forwardListener;
 	private StartEndEventPatternWithWindow backwardFilter;
 	private RobotPatternListener backwardListener;
+
 	
 	
 	public void registerRobotListeners() {
-		 EPAdministrator admin = epService.getEPAdministrator();
+		EPAdministrator admin = epService.getEPAdministrator();
 		if (admin!=null) {
 			// powerpoint robot example
-	        forwardFilter = new StartEndEventPatternWithWindow(admin, "FS", "FE", "1 sec");
+	        forwardFilter = new StartEndEventPatternWithWindow(admin, "FS", "FE", "2 sec");
 	        forwardListener = new RobotPatternListener("F", KeyEvent.VK_RIGHT);
 	        forwardFilter.addListener(forwardListener);
 	        
-	        backwardFilter = new StartEndEventPatternWithWindow(admin, "BS", "BE", "1 sec");
+	        backwardFilter = new StartEndEventPatternWithWindow(admin, "BS", "BE", "2 sec");
 	        backwardListener = new RobotPatternListener("B", KeyEvent.VK_LEFT);
 	        backwardFilter.addListener(backwardListener);
 		}

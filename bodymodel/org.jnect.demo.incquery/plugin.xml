@@ -19,6 +19,11 @@
             name="Start Kinect IncQuery Esper YMCA Demo">
       </command>
       <command
+            defaultHandler="org.jnect.demo.incquery.esper.StopYMCADemoHandler"
+            id="org.jnect.demo.incquery.esperymca.stop"
+            name="Stop Kinect IncQuery Esper YMCA Demo">
+      </command>
+      <command
             defaultHandler="org.jnect.demo.incquery.esper.robot.StartRobotDemoHandler"
             id="org.jnect.demo.incquery.robot.start"
             name="Start Kinect IncQuery Esper Robot Demo">
@@ -37,6 +42,16 @@
             defaultHandler="org.jnect.demo.incquery.esper.StartEsperDemoHandler"
             id="org.jnect.demo.incquery.esper.start"
             name="Start Kinect IncQuery Esper Output">
+      </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.esper.StartCombinedYMCADemoHandler"
+            id="org.jnect.demo.incquery.esperymca.start.combined"
+            name="IDDQD Start Kinect IncQuery Esper YMCA Demo (Combined)">
+      </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.esper.robot.StartCombinedRobotDemoHandler"
+            id="org.jnect.demo.incquery.robot.start.combined"
+            name="IDKFA Start Kinect IncQuery Robot YMCA Demo (Combined)">
       </command>
       <command
             defaultHandler="org.jnect.demo.incquery.SaveBodymodelHandler"
@@ -60,10 +75,11 @@
                   style="push">
             </command>
             <command
-                  commandId="org.jnect.demo.incquery.robot.start"
+                  commandId="org.jnect.demo.incquery.robot.start.combined"
                   style="push">
-            </command><command
-                  commandId="org.jnect.demo.incquery.esper.start"
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.esperymca.start.combined"
                   style="push">
             </command>
  			<command

@@ -3,18 +3,8 @@ package org.jnect.demo.incquery.esper;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 
-import bodymodel.ymca.a.AMatcher;
-import bodymodel.ymca.c.CMatcher;
-import bodymodel.ymca.i.IMatcher;
-import bodymodel.ymca.m.MMatcher;
-import bodymodel.ymca.q.QMatcher;
-import bodymodel.ymca.y.YMatcher;
-
-//import bodymodel.jump.JumpMatcher;
 
 /**
  * Handler class for the Jnect/IncQuery awt.Robot demo.

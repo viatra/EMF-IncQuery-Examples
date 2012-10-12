@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Jnect EMF-IncQuery Demo
+Bundle-Name: Jnect EMF-IncQuery Esper Demo
 Bundle-SymbolicName: org.jnect.demo.incquery;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 0.0.2.qualifier
 Bundle-Activator: org.jnect.demo.incquery.Activator
 Bundle-Vendor: Istvan Rath / BUTE
 Require-Bundle: org.eclipse.ui,
