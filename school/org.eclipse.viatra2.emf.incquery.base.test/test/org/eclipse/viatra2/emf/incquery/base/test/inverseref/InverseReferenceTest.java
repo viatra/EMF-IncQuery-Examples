@@ -21,9 +21,6 @@ import school.SchoolPackage;
 import school.Student;
 import school.Year;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-
 public class InverseReferenceTest extends IncQueryBaseTest {
 
 	private Year year2012;
@@ -32,26 +29,8 @@ public class InverseReferenceTest extends IncQueryBaseTest {
 	@Before
 	public void init() {
 		super.init();
-		
-		Iterable<EObject> years = Iterables.filter(ResourceAccess.getAllContents(), new Predicate<EObject>() {
-			public boolean apply(EObject input) {
-				if (input instanceof Year && ((Year) input).getStartingDate() == 2012) {
-					return true;
-				}
-				return false;
-			};
-		});
-		year2012 = (Year) years.iterator().next();
-		
-		Iterable<EObject> students = Iterables.filter(ResourceAccess.getAllContents(), new Predicate<EObject>() {
-			public boolean apply(EObject input) {
-				if (input instanceof Student && ((Student) input).getName().matches("Abel Hegedus")) {
-					return true;
-				}
-				return false;
-			};
-		});
-		student = (Student) students.iterator().next();
+		year2012 = (Year) navigationHelper.findByAttributeValue(2012).iterator().next().getEObject();
+		student = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
 	}
 	
 	@Test

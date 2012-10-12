@@ -47,7 +47,7 @@ public class ResourceAccess {
 		
 		return contents;
 	}
-	
+		
 	public static TransactionalEditingDomain getTransactionalEditingDomain() {
 		return transactionalEditingDomain;
 	}
