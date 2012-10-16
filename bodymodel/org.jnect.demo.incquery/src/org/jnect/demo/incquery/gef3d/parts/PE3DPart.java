@@ -11,6 +11,7 @@ import org.eclipse.gef3d.factories.IConnectionAnchorFactory;
 import org.eclipse.gef3d.factories.SingleAnchorConnectionAnchorFactory;
 import org.eclipse.swt.widgets.Display;
 import org.jnect.bodymodel.PositionedElement;
+import org.jnect.demo.incquery.gef3d.JnectGeometryConstants;
 import org.jnect.demo.incquery.gef3d.figures.PE3DFigure;
 
 /**
@@ -28,8 +29,7 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
      */
     @Override
     protected IConnectionAnchorFactory createConnectionAnchorFactory() {
-        return new SingleAnchorConnectionAnchorFactory.ChopboxAnchor3DFactory(
-            this);
+        return new SingleAnchorConnectionAnchorFactory.ChopboxAnchor3DFactory(this);
     }
     
 
@@ -64,11 +64,10 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
         PE3DFigure pefigure = (PE3DFigure) getFigure();
         // set location
         Vector3f loc = new Vector3fImpl();
-        loc.setX(pe.getX()*100);
-        loc.setY(pe.getY()*100);
-        loc.setZ(pe.getZ()*100);
+        loc.setX(JnectGeometryConstants.sceneCenterX+pe.getX()*JnectGeometryConstants.kinectMultiplier); 
+        loc.setY(JnectGeometryConstants.sceneCenterY+pe.getY()*JnectGeometryConstants.kinectMultiplier); 
+        loc.setZ(JnectGeometryConstants.sceneCenterZ+pe.getZ()*JnectGeometryConstants.kinectMultiplier); 
         pefigure.getPosition3D().setLocation3D(loc);
-       
     }
     
     @Override
