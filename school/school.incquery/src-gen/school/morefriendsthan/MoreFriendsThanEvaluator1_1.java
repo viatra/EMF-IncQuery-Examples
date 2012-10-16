@@ -1,7 +1,7 @@
 package school.morefriendsthan;
 
 import java.util.Map;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchChecker;
+import org.eclipse.viatra2.emf.incquery.runtime.extensibility.IMatchChecker;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
 
 /**
@@ -11,7 +11,7 @@ public class MoreFriendsThanEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Integer M, final Integer N) {
+  private Boolean evaluateXExpressionGenerated(final Integer N, final Integer M) {
     Integer _N = N;
     Integer _M = M;
     boolean _greaterThan = (_N.compareTo(_M) > 0);
@@ -23,10 +23,10 @@ public class MoreFriendsThanEvaluator1_1 implements IMatchChecker {
    */
   @Override
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
-    int MPosition = tupleNameMap.get("M");
-    java.lang.Integer M = (java.lang.Integer) tuple.get(MPosition);
     int NPosition = tupleNameMap.get("N");
     java.lang.Integer N = (java.lang.Integer) tuple.get(NPosition);
-    return evaluateXExpressionGenerated(M, N);
+    int MPosition = tupleNameMap.get("M");
+    java.lang.Integer M = (java.lang.Integer) tuple.get(MPosition);
+    return evaluateXExpressionGenerated(N, M);
   }
 }

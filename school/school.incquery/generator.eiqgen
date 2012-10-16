@@ -1,1 +1,1 @@
-//genmodel "platform:/resource/school/model/school.genmodel" // uncomment only if you have school and school.incquery in the same workspace
+genmodel "platform:/resource/school/model/school.genmodel" // uncomment only if you have school and school.incquery in the same workspace
