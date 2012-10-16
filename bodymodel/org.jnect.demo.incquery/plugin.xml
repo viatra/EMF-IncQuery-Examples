@@ -63,6 +63,11 @@
             id="org.jnect.demo.incquery.loadbodymodel"
             name="Load Kinect Body model">
       </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.gef3d.RefreshGef3DHandler"
+            id="org.jnect.demo.incquery.refreshgef3d"
+            name="Refresh GEF3D">
+      </command>
    </extension>
  <extension
          point="org.eclipse.ui.menus">
@@ -70,10 +75,10 @@
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
                id="org.jnect.demo.incquery">
-            <command
+            <!-- <command
                   commandId="org.jnect.demo.incquery.ymca.start"
                   style="push">
-            </command>
+            </command> -->
             <command
                   commandId="org.jnect.demo.incquery.robot.start.combined"
                   style="push">
@@ -82,12 +87,16 @@
                   commandId="org.jnect.demo.incquery.esperymca.start.combined"
                   style="push">
             </command>
- 			<command
+ 			<!-- <command
                   commandId="org.jnect.demo.incquery.esper.debug"
                   style="push">
-            </command>            
+            </command> -->            
             <command
                   commandId="org.jnect.demo.incquery.savebodymodel"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.refreshgef3d"
                   style="push">
             </command>
          </toolbar>
@@ -121,6 +130,13 @@
           id="org.jnect.demo.incquery.views.YMCADemoView"
           name="Jnect/IncQuery/Esper YMCA Demo">
     </view>
+    <!-- <view
+          category="org.jnect.demo.incquery"
+          class="org.jnect.demo.incquery.gef3d.Jnect3DView"
+          icon="icons/sample.gif"
+          id="org.jnect.demo.incquery.views.GEF3DView"
+          name="Jnect GEF3D View">
+    </view> -->
  </extension>
  <extension
        point="org.eclipse.ui.perspectiveExtensions">
@@ -134,4 +150,14 @@
        </view>
     </perspectiveExtension>
  </extension>
+ <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.jnect.demo.incquery.gef3d.Jnect3DEditor"
+            default="true"
+            extensions="humanbodymodel"
+            id="HumanDiagramGEF3D.editorID"
+            name="Human Diagram GEF3D">
+      </editor>
+   </extension>
 </plugin>
