@@ -5,10 +5,7 @@ import org.eclipse.draw3d.geometry.Vector3f;
 import org.eclipse.draw3d.geometry.Vector3fImpl;
 import org.eclipse.draw3d.shapes.CuboidFigureShape;
 import org.eclipse.draw3d.shapes.Shape;
-import org.eclipse.draw3d.shapes.SphereFigureShape;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.Display;
+import org.jnect.demo.incquery.gef3d.Jnect3dVisualizationConstants;
 
 /**
  * Figure class for 3D PositionedElements.
@@ -19,20 +16,19 @@ public class PE3DFigure extends ShapeFigure3D {
 
     @Override
     protected Shape createShape() {
-        //return new SphereFigureShape(this, 10);
         return new CuboidFigureShape(this, false);
     }
     
     
-    public PE3DFigure() {
-        Color c = Display.getCurrent().getSystemColor(SWT.COLOR_RED);
-        this.setBackgroundColor(c);
+    public PE3DFigure(boolean isHead) {
+        this.setBackgroundColor(Jnect3dVisualizationConstants.peColor);
         this.setAlpha(0xBB);
         // set initial size
         Vector3f size3d = new Vector3fImpl();
-        size3d.setX(5.0f);
-        size3d.setY(5.0f);
-        size3d.setZ(5.0f);
+        float dim = isHead?Jnect3dVisualizationConstants.peHeadDim:Jnect3dVisualizationConstants.peDim;
+        size3d.setX(dim);
+        size3d.setY(dim);
+        size3d.setZ(dim);
         this.getPosition3D().setSize3D(size3d);
     }
 

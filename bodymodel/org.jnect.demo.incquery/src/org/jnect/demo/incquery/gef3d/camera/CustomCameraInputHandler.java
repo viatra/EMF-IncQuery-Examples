@@ -25,7 +25,7 @@ import org.eclipse.jface.bindings.keys.SWTKeySupport;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.widgets.Event;
-import org.jnect.demo.incquery.gef3d.JnectGeometryConstants;
+import org.jnect.demo.incquery.gef3d.Jnect3dVisualizationConstants;
 
 /**
  * Override default GEF3D camera input handler:
@@ -145,9 +145,9 @@ public class CustomCameraInputHandler {
      * The current orbit center.
      */
     private IVector3f m_orbitCenter = new Vector3fImpl(
-            JnectGeometryConstants.sceneCenterX,
-            JnectGeometryConstants.sceneCenterY,
-            JnectGeometryConstants.sceneCenterZ);
+            Jnect3dVisualizationConstants.sceneCenterX,
+            Jnect3dVisualizationConstants.sceneCenterY,
+            Jnect3dVisualizationConstants.sceneCenterZ);
 
     /**
      * The modifier keys that trigger a camera orbit.

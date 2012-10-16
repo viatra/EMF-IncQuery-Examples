@@ -5,7 +5,7 @@ import org.eclipse.draw3d.FreeformLayer3D;
 import org.eclipse.draw3d.geometry.Vector3fImpl;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
-import org.jnect.demo.incquery.gef3d.JnectGeometryConstants;
+import org.jnect.demo.incquery.gef3d.Jnect3dVisualizationConstants;
 
 public class Body3DFigure extends FreeformLayer3D {
 
@@ -13,9 +13,9 @@ public class Body3DFigure extends FreeformLayer3D {
     public Body3DFigure() {
         Vector3fImpl size = new Vector3fImpl(getPosition3D().getSize3D());
         size.set(
-                JnectGeometryConstants.sceneWidth, 
-                JnectGeometryConstants.sceneHeight, 
-                JnectGeometryConstants.sceneDepth);
+                Jnect3dVisualizationConstants.sceneWidth, 
+                Jnect3dVisualizationConstants.sceneHeight, 
+                Jnect3dVisualizationConstants.sceneDepth);
         getPosition3D().setSize3D(size);
         
         //Color bgColor = Display.getCurrent().getSystemColor(SWT.COLOR_WHITE);

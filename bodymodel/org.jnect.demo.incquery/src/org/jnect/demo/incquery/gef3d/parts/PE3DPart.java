@@ -1,5 +1,7 @@
 package org.jnect.demo.incquery.gef3d.parts;
 
+import java.util.List;
+
 import org.eclipse.draw3d.geometry.Vector3f;
 import org.eclipse.draw3d.geometry.Vector3fImpl;
 import org.eclipse.emf.common.notify.Adapter;
@@ -11,7 +13,7 @@ import org.eclipse.gef3d.factories.IConnectionAnchorFactory;
 import org.eclipse.gef3d.factories.SingleAnchorConnectionAnchorFactory;
 import org.eclipse.swt.widgets.Display;
 import org.jnect.bodymodel.PositionedElement;
-import org.jnect.demo.incquery.gef3d.JnectGeometryConstants;
+import org.jnect.demo.incquery.gef3d.Jnect3dVisualizationConstants;
 import org.jnect.demo.incquery.gef3d.figures.PE3DFigure;
 
 /**
@@ -36,37 +38,32 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
     @Override
     protected void createEditPolicies() {
         // TODO empty for now
-
+//        installEditPolicy(ShowSourceFeedback3DEditPolicy.ROLE,
+//                new ShowSourceFeedback3DEditPolicy());
     }
     
     
-//    @Override
-//    protected List getModelSourceConnections() {
-//        PositionedElement model = (PositionedElement) getModel();
-//        return model.getOutgoingLinks();
-//    }
-//    
-//    @Override
-//    protected List getModelTargetConnections() {
-//        PositionedElement model = (PositionedElement) getModel();
-//        return model.getIncomingLinks();
-//    }
+    @Override
+    protected List getModelSourceConnections() {
+        PositionedElement model = (PositionedElement) getModel();
+        return model.getOutgoingLinks();
+    }
+    
+    @Override
+    protected List getModelTargetConnections() {
+        PositionedElement model = (PositionedElement) getModel();
+        return model.getIncomingLinks();
+    }
     
     @Override
     protected void refreshVisuals() {
-        // TODO
         PositionedElement pe = (PositionedElement) getModel();
-//        Point p = new Point(pe.getX(), pe.getY());
-//        IFigure fig = getFigure();
-//        fig.setLocation(p);
-//        fig.setSize(10, 10);
-        
         PE3DFigure pefigure = (PE3DFigure) getFigure();
         // set location
         Vector3f loc = new Vector3fImpl();
-        loc.setX(JnectGeometryConstants.sceneCenterX+pe.getX()*JnectGeometryConstants.kinectMultiplier); 
-        loc.setY(JnectGeometryConstants.sceneCenterY+pe.getY()*JnectGeometryConstants.kinectMultiplier); 
-        loc.setZ(JnectGeometryConstants.sceneCenterZ+pe.getZ()*JnectGeometryConstants.kinectMultiplier); 
+        loc.setX(Jnect3dVisualizationConstants.sceneCenterX+pe.getX()*Jnect3dVisualizationConstants.kinectMultiplierX); 
+        loc.setY(Jnect3dVisualizationConstants.sceneCenterY+pe.getY()*Jnect3dVisualizationConstants.kinectMultiplierY); 
+        loc.setZ(Jnect3dVisualizationConstants.sceneCenterZ+pe.getZ()*Jnect3dVisualizationConstants.kinectMultiplierZ); 
         pefigure.getPosition3D().setLocation3D(loc);
     }
     

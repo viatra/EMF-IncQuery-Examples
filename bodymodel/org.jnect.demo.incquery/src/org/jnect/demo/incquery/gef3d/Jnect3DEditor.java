@@ -1,6 +1,7 @@
 package org.jnect.demo.incquery.gef3d;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.palette.PaletteGroup;
@@ -38,9 +39,14 @@ public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette {
         bodyViewer.setFigureFactory(new Jnect3DFigureFactory());
         
         //bodyViewer.getControl().setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
-        bodyViewer.getLightweightSystem3D().setBackgroundColor(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
-        bodyViewer.getLightweightSystem3D().setDrawAxes(false);
-       
+        //bodyViewer.getLightweightSystem3D().setBackgroundColor(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
+        //bodyViewer.getLightweightSystem3D().setDrawAxes(false);
+        //bodyViewer.getLightweightSystem3D().getRootFigure().setBackgroundColor(ColorConstants.white);
+        
+        //the following lines make connections appear :)
+        ScalableFreeformRootEditPart root =
+                new ScalableFreeformRootEditPart3D();
+        bodyViewer.setRootEditPart(root);
     }
 
 
@@ -50,13 +56,10 @@ public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette {
         PaletteGroup controls = new PaletteGroup("Controls");
         root.add(controls);
         //controls.add(new SelectionToolEntry());
-        controls.add(new ToolEntry("Camera", "Camera Tool", null, null,
-            CustomCameraTool.class) {
-        });
-//        controls.add(new CreationToolEntry("Vertex", "Create Vertex",
-//            new SimpleFactory(Vertex.class), null, null));
-//        controls.add(new ConnectionCreationToolEntry("Edge", "Create Edge",
-//            new SimpleFactory(Edge.class), null, null));
+        ToolEntry cameraToolEntry = new ToolEntry("Camera", "Camera Tool", null, null,
+                CustomCameraTool.class) { };
+        controls.add(cameraToolEntry);
+        root.setDefaultEntry(cameraToolEntry);
         return root;
     }
 
