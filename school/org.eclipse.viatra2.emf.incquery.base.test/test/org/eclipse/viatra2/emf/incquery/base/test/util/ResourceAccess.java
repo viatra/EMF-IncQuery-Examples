@@ -18,26 +18,33 @@ import school.SchoolPackage;
 
 public class ResourceAccess {
 
-	private static Resource resource = null;
 	private static TransactionalEditingDomain transactionalEditingDomain;
+	private static ResourceSet resourceSet = null;
 	
-	public static School getSchool() {
-		if (resource == null) {			
+	public static School getEObject() {
+		return (School) getResource().getContents().get(0);
+	}
+	
+	public static Resource getResource() {
+		return getResourceSet().getResources().get(0);
+	}
+	
+	public static ResourceSet getResourceSet() {
+		if (resourceSet == null) {			
 		    SchoolPackage.eINSTANCE.eClass();
 		    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		    Map<String, Object> m = reg.getExtensionToFactoryMap();
 		    m.put("school", new XMIResourceFactoryImpl());
-		    ResourceSet resSet = new ResourceSetImpl();
-		    transactionalEditingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resSet);
-		    Resource parsedResource = resSet.getResource(URI.createURI("model/BUTE.school"), true);
-		    resource = parsedResource;
+		    resourceSet = new ResourceSetImpl();
+		    transactionalEditingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
+		    resourceSet.getResource(URI.createURI("model/BUTE.school"), true);
 		}
-		return (School) resource.getContents().get(0);
+		return resourceSet;
 	}
 	
 	public static  List<EObject> getAllContents() {
 		List<EObject> contents = new ArrayList<EObject>();
-		TreeIterator<EObject> iterator = getSchool().eAllContents();
+		TreeIterator<EObject> iterator = getEObject().eAllContents();
 		
 		while (iterator.hasNext()) {
 			contents.add(iterator.next());

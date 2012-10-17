@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
@@ -16,6 +17,10 @@ import school.SchoolFactory;
 
 public class AttributeValueTest extends IncQueryBaseTest {
 	
+	public AttributeValueTest(Notifier notifier) {
+		super(notifier);
+	}
+
 	@Test
 	public void attributeTestPatternNameByValue() {
 		Collection<Setting> result = navigationHelper.findByAttributeValue("Budapest University of Technology and Economics");

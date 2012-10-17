@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.viatra2.emf.incquery.base.test.IncQueryBaseTest;
 import org.eclipse.viatra2.emf.incquery.base.test.util.ResourceAccess;
@@ -15,6 +16,10 @@ import school.SpecialisationCourse;
 import school.Student;
 
 public class InstanceTest extends IncQueryBaseTest {
+
+	public InstanceTest(Notifier notifier) {
+		super(notifier);
+	}
 
 	@Test
 	public void allInstancesTest() {		

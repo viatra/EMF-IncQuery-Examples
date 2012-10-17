@@ -34,8 +34,8 @@ public class TransitiveClosureHelperTest {
 		try {
 			Set<EReference> refs = new HashSet<EReference>();
 			refs.add(SchoolPackage.eINSTANCE.getStudent_FriendsWith());
-			transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(ResourceAccess.getSchool(), refs);
-			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getSchool(), true, null);
+			transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(ResourceAccess.getEObject(), refs);
+			navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(ResourceAccess.getEObject(), true, null);
 			aStudent = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
 			bStudent = (Student) navigationHelper.findByAttributeValue("Gabor Bergmann").iterator().next().getEObject();
 			cStudent = (Student) navigationHelper.findByAttributeValue("Zoltan Ujhelyi").iterator().next().getEObject();

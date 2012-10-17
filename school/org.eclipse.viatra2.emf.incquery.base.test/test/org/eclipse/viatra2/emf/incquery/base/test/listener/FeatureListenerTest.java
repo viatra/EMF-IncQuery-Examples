@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -19,10 +20,10 @@ import school.SchoolPackage;
 
 public class FeatureListenerTest extends IncQueryBaseTest {
 
-	public FeatureListenerTest() {
-		super(false);
+	public FeatureListenerTest(Notifier notifier) {
+		super(notifier, false);
 	}
-	
+
 	@Test
 	public void featureListenerTest() {
 		final Course newCourse = SchoolFactory.eINSTANCE.createCourse();
@@ -57,7 +58,7 @@ public class FeatureListenerTest extends IncQueryBaseTest {
 		final RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
-				ResourceAccess.getSchool().getCourses().add(newCourse);
+				ResourceAccess.getEObject().getCourses().add(newCourse);
 			}
 		};
 		try {

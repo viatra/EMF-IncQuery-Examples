@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.viatra2.emf.incquery.base.api.DataTypeListener;
@@ -17,11 +18,11 @@ import school.SchoolFactory;
 import school.SchoolPackage;
 
 public class DataTypeListenerTest extends IncQueryBaseTest {
-	
-	public DataTypeListenerTest() {
-		super(false);
+		
+	public DataTypeListenerTest(Notifier notifier) {
+		super(notifier, false);
 	}
-	
+
 	@Test
 	public void dataTypeListenerTest() {
 		final Course newCourse = SchoolFactory.eINSTANCE.createCourse();
@@ -51,7 +52,7 @@ public class DataTypeListenerTest extends IncQueryBaseTest {
 		final RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
-				ResourceAccess.getSchool().getCourses().add(newCourse);
+				ResourceAccess.getEObject().getCourses().add(newCourse);
 			}
 		};
 		try {

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.viatra2.emf.incquery.base.test.IncQueryBaseTest;
@@ -14,6 +15,10 @@ import school.SchoolPackage;
 import school.Student;
 
 public class FeatureTest extends IncQueryBaseTest {
+
+	public FeatureTest(Notifier notifier) {
+		super(notifier);
+	}
 
 	@Test
 	public void holdersOfFeatureTest() {		
@@ -31,8 +36,8 @@ public class FeatureTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				//years and courses have references to students
-				ResourceAccess.getSchool().getCourses().clear();
-				ResourceAccess.getSchool().getYears().clear();
+				ResourceAccess.getEObject().getCourses().clear();
+				ResourceAccess.getEObject().getYears().clear();
 			}
 		};
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);

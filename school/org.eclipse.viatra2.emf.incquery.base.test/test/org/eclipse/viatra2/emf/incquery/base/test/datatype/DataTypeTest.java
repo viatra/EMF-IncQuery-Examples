@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.viatra2.emf.incquery.base.test.IncQueryBaseTest;
 import org.eclipse.viatra2.emf.incquery.base.test.util.ResourceAccess;
@@ -17,6 +18,10 @@ import school.Teacher;
 import school.Year;
 
 public class DataTypeTest extends IncQueryBaseTest {
+
+	public DataTypeTest(Notifier notifier) {
+		super(notifier);
+	}
 
 	@Test
 	public void dataTypeTestInteger() {
@@ -42,17 +47,17 @@ public class DataTypeTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				
-				List<Course> courses = new ArrayList<Course>(ResourceAccess.getSchool().getCourses());
+				List<Course> courses = new ArrayList<Course>(ResourceAccess.getEObject().getCourses());
 				for (Course c : courses) {
 					c.setSchool(null);
 				}
 				
-				List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getSchool().getTeachers());
+				List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getEObject().getTeachers());
 				for (Teacher t : teachers) {
 					t.setSchool(null);
 				}
 				
-				List<Year> years = new ArrayList<Year>(ResourceAccess.getSchool().getYears());
+				List<Year> years = new ArrayList<Year>(ResourceAccess.getEObject().getYears());
 				for (Year y : years) {
 					y.setSchool(null);
 				}

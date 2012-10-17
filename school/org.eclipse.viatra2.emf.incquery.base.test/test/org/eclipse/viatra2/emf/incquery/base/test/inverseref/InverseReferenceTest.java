@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
@@ -22,6 +23,10 @@ import school.Student;
 import school.Year;
 
 public class InverseReferenceTest extends IncQueryBaseTest {
+
+	public InverseReferenceTest(Notifier notifier) {
+		super(notifier);
+	}
 
 	private Year year2012;
 	private Student student;
@@ -61,7 +66,7 @@ public class InverseReferenceTest extends IncQueryBaseTest {
 			@Override
 			protected void doExecute() {
 				
-				for (Course c : ResourceAccess.getSchool().getCourses()) {
+				for (Course c : ResourceAccess.getEObject().getCourses()) {
 					if (c.getSchoolClass() != null) {
 						List<Student> students = new ArrayList<Student>(c.getSchoolClass().getStudents());
 						for (Student s : students) {
