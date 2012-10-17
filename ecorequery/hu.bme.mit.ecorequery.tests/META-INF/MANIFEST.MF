@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tests
 Bundle-SymbolicName: hu.bme.mit.ecorequery.tests
-Bundle-Version: 0.6.6.qualifier
+Bundle-Version: 0.6.7.qualifier
 Require-Bundle: org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
