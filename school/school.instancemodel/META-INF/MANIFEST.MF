@@ -2,4 +2,4 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Instancemodel
 Bundle-SymbolicName: school.instancemodel
-Bundle-Version: 0.6.5.qualifier
+Bundle-Version: 0.6.6.qualifier
