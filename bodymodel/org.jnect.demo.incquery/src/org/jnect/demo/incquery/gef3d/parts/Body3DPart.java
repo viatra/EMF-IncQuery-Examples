@@ -3,8 +3,16 @@ package org.jnect.demo.incquery.gef3d.parts;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef3d.editparts.AbstractGraphicalEditPartEx;
+import org.eclipse.gef3d.editpolicies.XY3DLayoutPolicy;
+import org.eclipse.gef3d.tools.DragEditPartsTracker3D;
 import org.jnect.bodymodel.Body;
 
 /**
@@ -17,8 +25,14 @@ public class Body3DPart extends AbstractGraphicalEditPartEx {
 
     @Override
     protected void createEditPolicies() {
-        // empty
-        // installEditPolicy(EditPolicy.LAYOUT_ROLE, new Graph3DLayoutPolicy());
+        installEditPolicy(EditPolicy.LAYOUT_ROLE, new XY3DLayoutPolicy() {
+            
+            @Override
+            protected Command getCreateCommand(CreateRequest request) {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        });
     }
 
     @Override
@@ -48,11 +62,6 @@ public class Body3DPart extends AbstractGraphicalEditPartEx {
         ret.add(opd.getRightShoulder());
         ret.add(opd.getRightWrist());
         return ret;
-    }
-
-    @Override
-    protected void refreshVisuals() {
-        // getFigure().setSize(new Dimension(100, 100));
-    }
+    }    
 
 }

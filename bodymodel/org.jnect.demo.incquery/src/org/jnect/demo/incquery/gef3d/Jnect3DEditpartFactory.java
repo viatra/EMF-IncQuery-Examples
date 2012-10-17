@@ -6,6 +6,7 @@ import org.jnect.bodymodel.Body;
 import org.jnect.bodymodel.HumanLink;
 import org.jnect.bodymodel.PositionedElement;
 import org.jnect.demo.incquery.gef3d.parts.Body3DPart;
+import org.jnect.demo.incquery.gef3d.parts.HL3DPart;
 import org.jnect.demo.incquery.gef3d.parts.PE3DPart;
 
 /**
@@ -25,7 +26,7 @@ public class Jnect3DEditpartFactory implements EditPartFactory {
             part = new PE3DPart();
         }
         else if (model instanceof HumanLink) {
-            // TODO
+            part = new HL3DPart();
         }
         if (part!=null) {
             part.setModel(model);

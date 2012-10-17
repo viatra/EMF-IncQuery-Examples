@@ -1,6 +1,7 @@
 package org.jnect.demo.incquery.gef3d;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.editparts.ScalableFreeformRootEditPart;
 import org.eclipse.gef.palette.PaletteGroup;
@@ -10,16 +11,20 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gef3d.editparts.ScalableFreeformRootEditPart3D;
 import org.eclipse.gef3d.editpolicies.Handles3DEditPolicy;
 import org.eclipse.gef3d.tools.CameraTool;
+import org.eclipse.gef3d.ui.parts.GraphicalEditor3DWithFlyoutPalette;
 import org.eclipse.gef3d.ui.parts.GraphicalEditor3DWithPalette;
 import org.eclipse.gef3d.ui.parts.GraphicalViewer3DImpl;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Display;
 import org.jnect.core.KinectManager;
+import org.jnect.demo.incquery.gef3d.camera.CustomCameraTool;
 
 /**
  * GEF3D Editor for the Jnect demo.
  * @author istvanrath
  *
  */
-public class Jnect3DEditor extends GraphicalEditor3DWithPalette {
+public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette {
     
     public Jnect3DEditor() {
         setEditDomain(new DefaultEditDomain(this));
@@ -33,18 +38,15 @@ public class Jnect3DEditor extends GraphicalEditor3DWithPalette {
         bodyViewer.setEditPartFactory(new Jnect3DEditpartFactory());
         bodyViewer.setFigureFactory(new Jnect3DFigureFactory());
         
+        //bodyViewer.getControl().setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
+        //bodyViewer.getLightweightSystem3D().setBackgroundColor(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
+        //bodyViewer.getLightweightSystem3D().setDrawAxes(false);
+        //bodyViewer.getLightweightSystem3D().getRootFigure().setBackgroundColor(ColorConstants.white);
         
+        //the following lines make connections appear :)
         ScalableFreeformRootEditPart root =
-            new ScalableFreeformRootEditPart3D();
-        
-        // handles and feedback when moving or resizing a node
-        root.installEditPolicy(
-            Handles3DEditPolicy.CHILD_DECORATOR,
-            new Handles3DEditPolicy(true));
-        
+                new ScalableFreeformRootEditPart3D();
         bodyViewer.setRootEditPart(root);
-        
-        
     }
 
 
@@ -53,14 +55,11 @@ public class Jnect3DEditor extends GraphicalEditor3DWithPalette {
         PaletteRoot root = new PaletteRoot();
         PaletteGroup controls = new PaletteGroup("Controls");
         root.add(controls);
-        controls.add(new SelectionToolEntry());
-        controls.add(new ToolEntry("Camera", "Camera Tool", null, null,
-            CameraTool.class) {
-        });
-//        controls.add(new CreationToolEntry("Vertex", "Create Vertex",
-//            new SimpleFactory(Vertex.class), null, null));
-//        controls.add(new ConnectionCreationToolEntry("Edge", "Create Edge",
-//            new SimpleFactory(Edge.class), null, null));
+        //controls.add(new SelectionToolEntry());
+        ToolEntry cameraToolEntry = new ToolEntry("Camera", "Camera Tool", null, null,
+                CustomCameraTool.class) { };
+        controls.add(cameraToolEntry);
+        root.setDefaultEntry(cameraToolEntry);
         return root;
     }
 
