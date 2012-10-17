@@ -13,6 +13,7 @@ package org.jnect.core.impl.demo;
 import org.jnect.bodymodel.Body;
 import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.IBodyProvider;
+import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
 
@@ -178,6 +179,12 @@ public class DemoKinectManagerImpl implements KinectManager {
 	@Override
 	public void setSkeletonModel(Body b) {
 		this.body = b;
+	}
+
+	@Override
+	public void addKinectUpdateListener(IKinectUpdateListener l) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -70,18 +70,18 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
     @Override
     public void setModel(Object model) {
         super.setModel(model);
-
+/*
         ((PositionedElement) model).eAdapters().add(new Adapter() {
             @Override
             public void notifyChanged(Notification notification) {
-                Display.getDefault().syncExec(new Runnable() {
+               Display.getDefault().syncExec(new Runnable() {
                     @Override
                     public void run() {
                         refreshVisuals();
                         refreshSourceConnections();
                         refreshTargetConnections();
                     }
-                });
+               });
             }
 
             @Override
@@ -98,6 +98,7 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
                 return false;
             }
         });
+        */
     }
 
 }

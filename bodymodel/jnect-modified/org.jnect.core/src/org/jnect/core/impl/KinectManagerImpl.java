@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.jnect.bodymodel.Body;
 import org.jnect.core.IBodyProvider;
+import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
 import org.jnect.core.impl.connection.jni.ProxyConnectionManager;
@@ -155,6 +156,9 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	public void handleSkeletonData(Document doc) {
 		this.skeletonParser.parseSkeleton(doc);
 		// emfStorage.updateBody();
+		this.notifyKinectUpdatelisteners();
+		
+		
 	}
 
 	@Override
@@ -193,6 +197,18 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	@Override
 	public void setSkeletonModel(Body b) {
 		this.body = b;
+	}
+	
+	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
+	
+	public void addKinectUpdateListener(IKinectUpdateListener l) {
+		kuListeners.add(l);
+	}
+	
+	private void notifyKinectUpdatelisteners() {
+		for (IKinectUpdateListener l : kuListeners) {
+			l.kinectReveivedFrame();
+		}
 	}
 
 }

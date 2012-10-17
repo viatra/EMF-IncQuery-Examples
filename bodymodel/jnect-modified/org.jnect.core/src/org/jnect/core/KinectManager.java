@@ -106,4 +106,6 @@ public interface KinectManager {
 	 * @return true if speech recognition is running, false otherwise
 	 */
 	boolean isSpeechRecognitionStarted();
+	
+	void addKinectUpdateListener(IKinectUpdateListener l);
 }
