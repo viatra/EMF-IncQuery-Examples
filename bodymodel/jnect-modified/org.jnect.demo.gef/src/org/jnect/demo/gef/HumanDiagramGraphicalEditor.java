@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.ui.parts.GraphicalEditor;
 import org.jnect.bodymodel.Body;
+import org.jnect.core.KinectManager;
 
 public class HumanDiagramGraphicalEditor extends GraphicalEditor {
 
@@ -37,7 +38,7 @@ public class HumanDiagramGraphicalEditor extends GraphicalEditor {
 
 	@Override
 	protected void initializeGraphicalViewer() {
-		// TODO Auto-generated method stub
+		setContent( KinectManager.INSTANCE.getSkeletonModel() );
 	}
 
 }
