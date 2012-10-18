@@ -34,7 +34,7 @@
 						<artifact>
 							<groupId>org.eclipse.viatra2</groupId>
 							<artifactId>hu.bme.mit.ecorequery.test.parent</artifactId>
-							<version>0.6.7-SNAPSHOT</version>
+							<version>0.6.8-SNAPSHOT</version>
 							<classifier>ecoretest</classifier>
 						</artifact>
 					</target>
