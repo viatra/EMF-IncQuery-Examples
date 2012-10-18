@@ -89,7 +89,7 @@ public class HumanDiagramEditPart extends AbstractGraphicalEditPart {
 	@Override
 	public void setModel(Object model) {
 		super.setModel(model);
-
+		/*
 		((PositionedElement) model).eAdapters().add(new Adapter() {
 			@Override
 			public void notifyChanged(Notification notification) {
@@ -119,6 +119,7 @@ public class HumanDiagramEditPart extends AbstractGraphicalEditPart {
 				return false;
 			}
 		});
+		*/
 	}
 
 	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connection) {
