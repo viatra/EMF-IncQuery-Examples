@@ -6,7 +6,9 @@ import java.awt.event.KeyEvent;
 
 import org.jnect.demo.incquery.esper.filters.atomic.AtomicPatternFilter;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
+import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindowFeedback;
 import org.jnect.demo.incquery.esper.filters.complex.YMCAFilterWithWindow;
+import org.jnect.demo.incquery.esper.filters.complex.YMCAFilterWithWindowFeedback;
 import org.jnect.demo.incquery.esper.robot.RobotPatternListener;
 import org.jnect.demo.incquery.esper.robot.StartEndEventPatternWithWindow;
 
@@ -58,7 +60,10 @@ public class EsperManager {
 	}
 
 	private IQFilterWithWindow iqFilterW;
+	private IQFilterWithWindowFeedback iqFilterWFB;
 	private YMCAFilterWithWindow ymcaFilterW;
+	private YMCAFilterWithWindowFeedback ymcaFilterWFB;
+	
 	private AtomicPatternFilter iFilter;
 	private AtomicPatternFilter qFilter;
 	private AtomicPatternFilter yFilter;
@@ -67,12 +72,20 @@ public class EsperManager {
 	private AtomicPatternFilter aFilter;
 	private EsperPatternListener iqListener;
 	private EsperPatternListener ymcaListener;
+	
 	private EsperPatternListener iListener;
 	private EsperPatternListener qListener;
+	private EsperPatternListener iListenerFB;
+	private EsperPatternListener qListenerFB;
+	
 	private EsperPatternListener yListener;
 	private EsperPatternListener mListener;
 	private EsperPatternListener cListener;
 	private EsperPatternListener aListener;
+	private EsperPatternListener yListenerFB;
+	private EsperPatternListener mListenerFB;
+	private EsperPatternListener cListenerFB;
+	private EsperPatternListener aListenerFB;
 	
 	
 	
@@ -80,34 +93,53 @@ public class EsperManager {
 	    EPAdministrator admin = epService.getEPAdministrator();
 	    
 	    // complex event filters
-		//IQFilterNoWindow iqFilter = new IQFilterNoWindow(admin);
-		//iqFilter.addListener(new EsperPatternListener("IQ_NW"));
-		iqFilterW = new IQFilterWithWindow(admin);
-		iqListener = new EsperPatternListener("IQ");
-		iqFilterW.addListener(iqListener);
-		ymcaFilterW = new YMCAFilterWithWindow(admin);
-		ymcaListener = new EsperPatternListener("YMCA");
-		ymcaFilterW.addListener(ymcaListener);
+		//iqFilterW = new IQFilterWithWindow(admin);
+		//iqListener = new EsperPatternListener("IQ");
+		//iqFilterW.addListener(iqListener);
+		iqFilterWFB = new IQFilterWithWindowFeedback(admin);
+		iqListener = new EsperPatternListener("  IQ  ");
+		iqFilterWFB.addListener(iqListener);
+		
+		
+//		ymcaFilterW = new YMCAFilterWithWindow(admin);
+//		ymcaListener = new EsperPatternListener("YMCA");
+//		ymcaFilterW.addListener(ymcaListener);
+		ymcaFilterWFB = new YMCAFilterWithWindowFeedback(admin);
+		ymcaListener = new EsperPatternListener("  YMCA  ");
+		ymcaFilterWFB.addListener(ymcaListener);
 		
 		// atomic event filters
 		iFilter = new AtomicPatternFilter(admin, "I");
 		iListener = new EsperPatternListener("I");
-		iFilter.addListener(iListener);
+		iListenerFB = new EsperPatternListenerFeedback("I");
+		//iFilter.addListener(iListener);
+		iFilter.addListener(iListenerFB);
 		qFilter = new AtomicPatternFilter(admin, "Q");
 		qListener = new EsperPatternListener("Q");
-		qFilter.addListener(qListener);
-        yFilter = new AtomicPatternFilter(admin, "Y");
+		qListenerFB = new EsperPatternListenerFeedback("Q");
+		//qFilter.addListener(qListener);
+		qFilter.addListener(qListenerFB);
+        
+		yFilter = new AtomicPatternFilter(admin, "Y");
         yListener = new EsperPatternListener("Y");
-		yFilter.addListener(yListener);
+        yListenerFB = new EsperPatternListenerFeedback("Y");
+		//yFilter.addListener(yListener);
+		yFilter.addListener(yListenerFB);
         mFilter = new AtomicPatternFilter(admin, "M");
         mListener = new EsperPatternListener("M");
-		mFilter.addListener(mListener);
+        mListenerFB = new EsperPatternListenerFeedback("M");
+		//mFilter.addListener(mListener);
+		mFilter.addListener(mListenerFB);
         cFilter = new AtomicPatternFilter(admin, "C");
         cListener = new EsperPatternListener("C");
-		cFilter.addListener(cListener);
+        cListenerFB = new EsperPatternListenerFeedback("C");
+		//cFilter.addListener(cListener);
+		cFilter.addListener(cListenerFB);
         aFilter = new AtomicPatternFilter(admin, "A");
         aListener = new EsperPatternListener("A");
-		aFilter.addListener(aListener);
+        aListenerFB = new EsperPatternListenerFeedback("A");
+		//aFilter.addListener(aListener);
+		aFilter.addListener(aListenerFB);
 	}
 	
 	public void unregisterYMCAListeners() {
