@@ -103,6 +103,25 @@ pattern feetAreClose(LF:LeftFoot,RF:RightFoot) {
 		)) < bodymodel::ymca::YMCAConstants::closeDistance );
 }
 
+@QueryExplorer(display = true)
+pattern feetAreApart(LF:LeftFoot,RF:RightFoot) {
+	LeftFoot.x(LF,LFX);
+	LeftFoot.y(LF,LFY);
+	LeftFoot.z(LF,LFZ);
+	RightFoot.x(RF,RFX);
+	RightFoot.y(RF,RFY);
+	RightFoot.z(RF,RFZ);
+	check( bodymodel::ymca::VectorMaths::lengthOf(
+		bodymodel::ymca::VectorMaths::createVector(
+			bodymodel::MovingAverageCalculator::getCalculator("LFX").addValue(LFX).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("LFY").addValue(LFY).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("LFZ").addValue(LFZ).movingAvg, 
+			bodymodel::MovingAverageCalculator::getCalculator("RFX").addValue(RFX).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
+		)) > bodymodel::ymca::YMCAConstants::apartDistance );
+}
+
 
 /**
  * Right arm is stretched straight.
@@ -447,7 +466,7 @@ pattern Q(RH:RightHand,
 	// right leg is straight 
 	// TODO
 	// right foot is far away from left foot
-	neg find feetAreClose(LF,RF);
+	find feetAreApart(LF,RF);
 }
 
 /**
