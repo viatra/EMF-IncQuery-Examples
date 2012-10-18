@@ -160,7 +160,7 @@
       <editor
             class="org.jnect.demo.incquery.gef3d.Jnect3DEditor"
             default="true"
-            extensions="humanbodymodel"
+            extensions="humanbodymodel3d"
             id="HumanDiagramGEF3D.editorID"
             name="Human Diagram GEF3D">
       </editor>

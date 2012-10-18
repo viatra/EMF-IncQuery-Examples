@@ -28,7 +28,8 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	public void preWindowOpen() {
 		IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
 		configurer.setInitialSize(new Point(400, 300));
-		configurer.setShowCoolBar(false);
+		//configurer.setShowMenuBar(false);
+		configurer.setShowCoolBar(true);
 		configurer.setShowStatusLine(false);
 		configurer.setTitle("Jnect/IncQuery RCP Demo Application");
 	}
@@ -44,6 +45,14 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 		page.closeAllEditors(false);
 		try {
 			IDE.openEditorOnFileStore(page, fileStore);
+		} catch (PartInitException e) {
+			e.printStackTrace();
+		}
+		
+		File fileToOpen3d = new File("test.humanbodymodel3d");
+		IFileStore fileStore3d = EFS.getLocalFileSystem().getStore(fileToOpen3d.toURI());
+		try {
+			IDE.openEditorOnFileStore(page, fileStore3d);
 		} catch (PartInitException e) {
 			e.printStackTrace();
 		}
