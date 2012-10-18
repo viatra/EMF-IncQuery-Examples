@@ -298,6 +298,14 @@
       </evaluator>
    </extension>
    <extension
+         id="bodymodel.ymca.C"
+         point="org.eclipse.viatra2.emf.incquery.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.ymca.c.CEvaluator1_2"
+            id="bodymodel.ymca.C_1_2">
+      </evaluator>
+   </extension>
+   <extension
          id="bodymodel.ymca.FS"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher

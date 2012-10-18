@@ -482,17 +482,22 @@ pattern C(RH:RightHand,
 ) {
 	// both arms are bent
 	find bentRightArm(RH,RE,RS);
-	find bentLeftArm(LH,LE,LS);
+	// find bentLeftArm(LH,LE,LS);
 	// right hand below, left hand above the head
 	neg find rightHandAboveHead(RH,H);
-	find leftHandAboveHead(LH,H);
+	neg find leftHandAboveHead(LH,H);
 	// hands are not close
-	neg find handsAreClose(LH,RH);
+	// neg find handsAreClose(LH,RH);
 	// left hand is to the right of the head
 	Head.x(H,HX);
 	LeftHand.x(LH,LHX);
 	check(bodymodel::MovingAverageCalculator::getCalculator("LHX").addValue(LHX).movingAvg > 
 		bodymodel::MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+	// left elbow is to the right of the head
+	LeftElbow.x(LE,LEX);
+	check(bodymodel::MovingAverageCalculator::getCalculator("LEX").addValue(LEX).movingAvg > 
+		bodymodel::MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+		
 }
 
 // "control powerpoint with awt.Robot" demo
