@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: school.incquery
 Bundle-SymbolicName: school.incquery;singleton:=true
-Bundle-Version: 0.6.7.qualifier
+Bundle-Version: 0.6.8.qualifier
 Export-Package: school.classesofschool,
  school.classesofteacher,
  school.classesofteachernames,
