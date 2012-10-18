@@ -105,11 +105,18 @@ public class YMCADemoView extends ViewPart {
 		incqueryLabel.setFocus();
 	}
 
+	static final int iqL_maxlength = 20;
+	static final int eL_maxlength = 10;
+	
+	
 	public static void appendStringIncQuery(final String s) {
 		Display.getDefault().asyncExec(new Runnable() {
 			@Override
 			public void run() {
 				Text iqL = getActiveView().getIncqueryLabel();
+				if (iqL.getText().length()>iqL_maxlength) {
+					iqL.setText("");
+				}
 				iqL.setText(iqL.getText() + s);
 			}
 		});
@@ -120,6 +127,9 @@ public class YMCADemoView extends ViewPart {
 			@Override
 			public void run() {
 				Text eL = getActiveView().getEsperLabel();
+				if (eL.getText().length()>eL_maxlength) {
+					eL.setText("");
+				}
 				eL.setText(eL.getText() + s);
 			}
 		});
@@ -129,7 +139,6 @@ public class YMCADemoView extends ViewPart {
 		try {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(YMCADemoView.ID);
 		} catch (PartInitException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		YMCADemoView v = (YMCADemoView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
