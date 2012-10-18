@@ -65,6 +65,13 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
         loc.setY(Jnect3dVisualizationConstants.sceneCenterY+pe.getY()*Jnect3dVisualizationConstants.kinectMultiplierY); 
         loc.setZ(Jnect3dVisualizationConstants.sceneCenterZ+pe.getZ()*Jnect3dVisualizationConstants.kinectMultiplierZ); 
         pefigure.getPosition3D().setLocation3D(loc);
+        // set color if highlighted
+        if (pe.getColor_b()!=0 || pe.getColor_g()!=0 || pe.getColor_r()!=0) {
+        	pefigure.setBackgroundColor(Jnect3dVisualizationConstants.hiliteColor);
+        }
+        else {
+        	pefigure.setBackgroundColor(Jnect3dVisualizationConstants.peColor);
+        }
     }
     
     @Override
