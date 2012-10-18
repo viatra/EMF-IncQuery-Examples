@@ -105,8 +105,8 @@ public class YMCADemoView extends ViewPart {
 		incqueryLabel.setFocus();
 	}
 
-	static final int iqL_maxlength = 20;
-	static final int eL_maxlength = 10;
+	static final int iqL_maxlength = 30;
+	static final int eL_maxlength = 20;
 	
 	
 	public static void appendStringIncQuery(final String s) {

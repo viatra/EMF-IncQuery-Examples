@@ -68,6 +68,11 @@
             id="org.jnect.demo.incquery.refreshgef3d"
             name="Refresh GEF3D">
       </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.sheldon.SendSheldonMessageHandler"
+            id="org.jnect.demo.incquery.sheldon"
+            name="Send Sheldon Message">
+      </command>
    </extension>
  <extension
          point="org.eclipse.ui.menus">
