@@ -105,8 +105,8 @@ public class YMCADemoView extends ViewPart {
 		incqueryLabel.setFocus();
 	}
 
-	static final int iqL_maxlength = 30;
-	static final int eL_maxlength = 20;
+	static final int iqL_maxlength = 60;
+	static final int eL_maxlength = 40;
 	
 	
 	public static void appendStringIncQuery(final String s) {
@@ -114,7 +114,7 @@ public class YMCADemoView extends ViewPart {
 			@Override
 			public void run() {
 				Text iqL = getActiveView().getIncqueryLabel();
-				if (iqL.getText().length()>iqL_maxlength) {
+				if ((iqL.getText().length()+s.length())>iqL_maxlength) {
 					iqL.setText("");
 				}
 				iqL.setText(iqL.getText() + s);
@@ -127,7 +127,7 @@ public class YMCADemoView extends ViewPart {
 			@Override
 			public void run() {
 				Text eL = getActiveView().getEsperLabel();
-				if (eL.getText().length()>eL_maxlength) {
+				if ((eL.getText().length()+s.length())>eL_maxlength) {
 					eL.setText("");
 				}
 				eL.setText(eL.getText() + s);
