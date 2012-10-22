@@ -211,7 +211,7 @@ public class EsperManager {
         EPAdministrator admin = epService.getEPAdministrator();
         if (admin!=null) {
             // sheldon control example
-            String wLen = "0.4 seconds";
+            String wLen = "0.4 seconds"; // adjust this for more precision
             ssFilter = new ParameterizedAtomicPatternFilter(admin, "SS", wLen);
             ssListener = new EsperPatternListenerFeedback("SS");
             ssFilter.addListener(ssListener);
@@ -225,7 +225,7 @@ public class EsperManager {
             seFilter.addListener(seListener);
             
             
-            sheldonFilter = new SheldonEventPatternWithWindowFeedback(admin, "4 sec");
+            sheldonFilter = new SheldonEventPatternWithWindowFeedback(admin, "4 sec"); // adjust this for gesture sequence speed tolerance
             sheldonListener = new SheldonPatternListener("S");
             sheldonFilter.addListener(sheldonListener);
         }
