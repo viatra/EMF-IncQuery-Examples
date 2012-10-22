@@ -74,16 +74,13 @@
             name="Send Sheldon Message">
       </command>
    </extension>
+   <!--
  <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
                id="org.jnect.demo.incquery">
-            <!-- <command
-                  commandId="org.jnect.demo.incquery.ymca.start"
-                  style="push">
-            </command> -->
             <command
                   commandId="org.jnect.demo.incquery.robot.start.combined"
                   style="push">
@@ -92,10 +89,6 @@
                   commandId="org.jnect.demo.incquery.esperymca.start.combined"
                   style="push">
             </command>
- 			<!-- <command
-                  commandId="org.jnect.demo.incquery.esper.debug"
-                  style="push">
-            </command> -->            
             <command
                   commandId="org.jnect.demo.incquery.savebodymodel"
                   style="push">
@@ -107,6 +100,7 @@
          </toolbar>
       </menuContribution>
    </extension>
+   -->
  <extension
        point="org.eclipse.ui.bindings">
     <key

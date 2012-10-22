@@ -11,6 +11,7 @@
             name="Human Diagram ">
       </editor>
    </extension>
+   <!--
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
@@ -31,7 +32,7 @@
             </command>
          </toolbar>
       </menuContribution>
-   </extension>
+   </extension> -->
    <extension
          point="org.eclipse.ui.commands">
       <command
