@@ -73,6 +73,11 @@
             id="org.jnect.demo.incquery.sheldon"
             name="Send Sheldon Message">
       </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.sheldon.StartCombinedSheldonDemoHandler"
+            id="org.jnect.demo.incquery.sheldon.start.combined"
+            name="IDBEHOLD Start Kinect IncQuery Sheldon Demo (Combined)">
+      </command>
    </extension>
    <!--
  <extension

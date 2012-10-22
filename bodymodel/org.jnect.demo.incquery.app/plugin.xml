@@ -63,6 +63,11 @@
                   style="push">
             </command>
             <command
+                  commandId="org.jnect.demo.incquery.sheldon.start.combined"
+                  label="Sheldon Combined Start"
+                  style="push">
+            </command>
+            <command
                   commandId="org.jnect.demo.incquery.ymca.start"
                   label="IncQuery Raw Output"
                   style="push">

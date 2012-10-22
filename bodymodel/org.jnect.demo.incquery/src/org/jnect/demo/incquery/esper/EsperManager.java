@@ -5,12 +5,15 @@ import static org.jnect.demo.incquery.esper.utils.Logger.log;
 import java.awt.event.KeyEvent;
 
 import org.jnect.demo.incquery.esper.filters.atomic.AtomicPatternFilter;
+import org.jnect.demo.incquery.esper.filters.atomic.ParameterizedAtomicPatternFilter;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindow;
 import org.jnect.demo.incquery.esper.filters.complex.IQFilterWithWindowFeedback;
 import org.jnect.demo.incquery.esper.filters.complex.YMCAFilterWithWindow;
 import org.jnect.demo.incquery.esper.filters.complex.YMCAFilterWithWindowFeedback;
 import org.jnect.demo.incquery.esper.robot.RobotPatternListener;
 import org.jnect.demo.incquery.esper.robot.StartEndEventPatternWithWindow;
+import org.jnect.demo.incquery.sheldon.SheldonEventPatternWithWindowFeedback;
+import org.jnect.demo.incquery.sheldon.SheldonPatternListener;
 
 import com.espertech.esper.client.Configuration;
 import com.espertech.esper.client.EPAdministrator;
@@ -198,6 +201,50 @@ public class EsperManager {
 			backwardFilter.removeListener(backwardListener);
 		}
 	}
+	
+	private ParameterizedAtomicPatternFilter ssFilter, smFilter, seFilter;
+	private EsperPatternListenerFeedback ssListener, smListener, seListener;
+	private SheldonEventPatternWithWindowFeedback sheldonFilter;
+    private SheldonPatternListener sheldonListener;
+    
+	public void registerSheldonListeners() {
+        EPAdministrator admin = epService.getEPAdministrator();
+        if (admin!=null) {
+            // sheldon control example
+            String wLen = "0.4 seconds";
+            ssFilter = new ParameterizedAtomicPatternFilter(admin, "SS", wLen);
+            ssListener = new EsperPatternListenerFeedback("SS");
+            ssFilter.addListener(ssListener);
+            
+            smFilter = new ParameterizedAtomicPatternFilter(admin, "SM", wLen);
+            smListener = new EsperPatternListenerFeedback("SM");
+            smFilter.addListener(smListener);
+            
+            seFilter = new ParameterizedAtomicPatternFilter(admin, "SE", wLen);
+            seListener = new EsperPatternListenerFeedback("SE");
+            seFilter.addListener(seListener);
+            
+            
+            sheldonFilter = new SheldonEventPatternWithWindowFeedback(admin, "4 sec");
+            sheldonListener = new SheldonPatternListener("S");
+            sheldonFilter.addListener(sheldonListener);
+        }
+    }
+    
+    public void unregisterSheldonListeners() {
+        if (sheldonFilter!=null) {
+            sheldonFilter.removeListener(sheldonListener);
+        }
+        if (ssFilter!=null) {
+            ssFilter.removeListener(ssListener);
+        }
+        if (smFilter!=null) {
+            smFilter.removeListener(smListener);
+        }
+        if (seFilter!=null) {
+            seFilter.removeListener(seListener);
+        }
+    }
 
 	public void sendEvent(Object event) {
 		log("ESPERMANAGER: Sending event [" + event.toString() + "]");
