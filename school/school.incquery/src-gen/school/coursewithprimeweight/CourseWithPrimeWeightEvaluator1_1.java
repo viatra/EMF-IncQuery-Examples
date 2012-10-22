@@ -1,7 +1,7 @@
 package school.coursewithprimeweight;
 
 import java.util.Map;
-import org.eclipse.viatra2.emf.incquery.runtime.extensibility.IMatchChecker;
+import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchChecker;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
 
 /**
