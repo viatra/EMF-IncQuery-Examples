@@ -226,7 +226,7 @@ public class EsperManager {
             
             
             sheldonFilter = new SheldonEventPatternWithWindowFeedback(admin, "4 sec"); // adjust this for gesture sequence speed tolerance
-            sheldonListener = new SheldonPatternListener("S");
+            sheldonListener = new SheldonPatternListener("  SHELDON  ");
             sheldonFilter.addListener(sheldonListener);
         }
     }
