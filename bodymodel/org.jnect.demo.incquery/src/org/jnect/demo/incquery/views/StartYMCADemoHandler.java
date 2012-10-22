@@ -20,6 +20,8 @@ import bodymodel.ymca.fs.FSMatcher;
 import bodymodel.ymca.i.IMatcher;
 import bodymodel.ymca.m.MMatcher;
 import bodymodel.ymca.q.QMatcher;
+import bodymodel.ymca.se.SEMatcher;
+import bodymodel.ymca.sm.SMMatcher;
 import bodymodel.ymca.y.YMatcher;
 
 //import bodymodel.jump.JumpMatcher;
@@ -31,12 +33,12 @@ import bodymodel.ymca.y.YMatcher;
  */
 public class StartYMCADemoHandler extends AbstractHandler {
 
-	class YMCAMatcherHelper {
+	class IncQueryMatcherHelper {
 
 		IncQueryMatcher<? extends IPatternMatch> matcher;
 		DeltaMonitor<? extends IPatternMatch> dm;
 
-		public YMCAMatcherHelper(IncQueryMatcher<? extends IPatternMatch> m) {
+		public IncQueryMatcherHelper(IncQueryMatcher<? extends IPatternMatch> m) {
 			matcher = m;
 			dm = matcher.newDeltaMonitor(true);
 			matcher.addCallbackAfterUpdates(new Runnable() {
@@ -70,17 +72,22 @@ public class StartYMCADemoHandler extends AbstractHandler {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 
 				// ymca demo
-				new YMCAMatcherHelper(YMatcher.factory().getMatcher(km));
-				new YMCAMatcherHelper(MMatcher.factory().getMatcher(km));
-				new YMCAMatcherHelper(CMatcher.factory().getMatcher(km));
-				new YMCAMatcherHelper(AMatcher.factory().getMatcher(km));
-				new YMCAMatcherHelper(IMatcher.factory().getMatcher(km));
-				new YMCAMatcherHelper(QMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(YMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(MMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(CMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(AMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(IMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(QMatcher.factory().getMatcher(km));
 				// robot demo
-				//new YMCAMatcherHelper(FSMatcher.factory().getMatcher(km));
-				//new YMCAMatcherHelper(FEMatcher.factory().getMatcher(km));
-				//new YMCAMatcherHelper(BSMatcher.factory().getMatcher(km));
-				//new YMCAMatcherHelper(BEMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(FSMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(FEMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(BSMatcher.factory().getMatcher(km));
+				new IncQueryMatcherHelper(BEMatcher.factory().getMatcher(km));
+				// sheldon demo
+				new IncQueryMatcherHelper(SEMatcher.factory().getMatcher(km));
+                new IncQueryMatcherHelper(SMMatcher.factory().getMatcher(km));
+                new IncQueryMatcherHelper(SEMatcher.factory().getMatcher(km));
+                
 				
 				
 			} catch (IncQueryException e) {
