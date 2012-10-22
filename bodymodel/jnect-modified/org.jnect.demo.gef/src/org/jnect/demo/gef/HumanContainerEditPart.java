@@ -94,4 +94,15 @@ public class HumanContainerEditPart extends AbstractGraphicalEditPart implements
 		});
 	}
 
+	@Override
+	public void kinectChangedModel() {
+		// we do not react to this
+	}
+	
+	@Override
+	public void deactivate() {
+		KinectManager.INSTANCE.removeKinectUpdateListener(this);
+		super.deactivate();
+	}
+
 }

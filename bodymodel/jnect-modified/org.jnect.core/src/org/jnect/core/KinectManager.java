@@ -107,5 +107,16 @@ public interface KinectManager {
 	 */
 	boolean isSpeechRecognitionStarted();
 	
+	/**
+	 * Registers a Kinect update listener.
+	 * @param l
+	 */
 	void addKinectUpdateListener(IKinectUpdateListener l);
+	
+	/**
+	 * Deregisters a Kinect update listener.
+	 * @param l
+	 */
+	void removeKinectUpdateListener(IKinectUpdateListener l);
+	
 }

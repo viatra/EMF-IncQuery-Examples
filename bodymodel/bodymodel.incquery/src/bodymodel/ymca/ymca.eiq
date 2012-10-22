@@ -549,3 +549,15 @@ pattern BE(LH: LeftHand,
 	find bentLeftArm(LH,LE,LS);
 	neg find leftHandAboveHead(LH,H);
 }
+
+
+// control model train through Sheldon demo
+
+pattern SS(RH: RightHand,
+		   RE: RightElbow,
+		   RS: RightShoulder,
+		   H : Head)
+{
+	find stretchedRightArm(RH,RE,RS);
+	neg find rightHandAboveHead(RH,H);		   	
+}

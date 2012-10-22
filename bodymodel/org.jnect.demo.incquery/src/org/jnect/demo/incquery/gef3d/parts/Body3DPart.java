@@ -93,4 +93,16 @@ public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectUp
 		
 	}
 
+    @Override
+    public void kinectChangedModel() {
+        // we do not react to this
+        
+    }
+    
+    @Override
+    public void deactivate() {
+        KinectManager.INSTANCE.removeKinectUpdateListener(this);
+        super.deactivate();
+    }
+
 }

@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.jnect.core.impl.demo;
 
+import java.util.HashSet;
+
 import org.jnect.bodymodel.Body;
 import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.IBodyProvider;
@@ -67,6 +69,7 @@ public class DemoKinectManagerImpl implements KinectManager {
 					try {
 						Thread.sleep(1000l);
 						manipulateModel();
+						notifyKinectUpdatelistenersNewFrame();
 					} catch (InterruptedException e) {
 						System.out.println("Kinect simulator interrupted.");
 					}
@@ -179,12 +182,33 @@ public class DemoKinectManagerImpl implements KinectManager {
 	@Override
 	public void setSkeletonModel(Body b) {
 		this.body = b;
+		notifyKinectUpdatelistenersNewModel();
+	}
+
+	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
+	
+	
+	@Override
+	public void addKinectUpdateListener(IKinectUpdateListener l) {
+		kuListeners.add(l);	
 	}
 
 	@Override
-	public void addKinectUpdateListener(IKinectUpdateListener l) {
-		// TODO Auto-generated method stub
-		
+	public void removeKinectUpdateListener(IKinectUpdateListener l) {
+		if (l!=null) {
+			kuListeners.remove(l);
+		}
 	}
-
+	
+	private void notifyKinectUpdatelistenersNewFrame() {
+		for (IKinectUpdateListener l : kuListeners) {
+			l.kinectReveivedFrame();
+		}
+	}
+	
+	private void notifyKinectUpdatelistenersNewModel() {
+		for (IKinectUpdateListener l : kuListeners) {
+			l.kinectChangedModel();
+		}
+	}
 }

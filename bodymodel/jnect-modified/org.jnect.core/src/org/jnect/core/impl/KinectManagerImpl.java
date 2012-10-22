@@ -156,7 +156,7 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	public void handleSkeletonData(Document doc) {
 		this.skeletonParser.parseSkeleton(doc);
 		// emfStorage.updateBody();
-		this.notifyKinectUpdatelisteners();
+		this.notifyKinectUpdatelistenersNewFrame();
 		
 		
 	}
@@ -197,6 +197,7 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	@Override
 	public void setSkeletonModel(Body b) {
 		this.body = b;
+		notifyKinectUpdatelistenersNewModel();
 	}
 	
 	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
@@ -205,10 +206,25 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 		kuListeners.add(l);
 	}
 	
-	private void notifyKinectUpdatelisteners() {
+	@Override
+	public void removeKinectUpdateListener(IKinectUpdateListener l) {
+		if (l!=null) {
+			kuListeners.remove(l);
+		}
+		
+	}
+	
+	private void notifyKinectUpdatelistenersNewFrame() {
 		for (IKinectUpdateListener l : kuListeners) {
 			l.kinectReveivedFrame();
 		}
 	}
+	
+	private void notifyKinectUpdatelistenersNewModel() {
+		for (IKinectUpdateListener l : kuListeners) {
+			l.kinectChangedModel();
+		}
+	}
+	
 
 }
