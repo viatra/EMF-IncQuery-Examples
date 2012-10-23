@@ -45,11 +45,6 @@
             id="org.jnect.demo.gef.stop"
             name="Stop Kinect GEF Demo">
       </command>
-      <command
-            defaultHandler="org.jnect.demo.gef.handler.RefreshGefHandler"
-            id="org.jnect.demo.gef.refresh"
-            name="Refresh Kinect GEF Demo">
-      </command>
    </extension>
 
 </plugin>

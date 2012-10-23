@@ -76,11 +76,7 @@ public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette implements
         
     }
 
-    @Override
-    public void kinectReveivedFrame() {
-        // no reaction, these are better handler by editparts
-        
-    }
+
 
     @Override
     public void kinectChangedModel() {

@@ -119,4 +119,17 @@ public interface KinectManager {
 	 */
 	void removeKinectUpdateListener(IKinectUpdateListener l);
 	
+	/**
+	 * Registers a Kinect frame listener.
+	 * @param l
+	 */
+	void addKinectFrameListener(IKinectFrameListener l);
+	
+	/**
+	 * Deregisters a Kinect frame listener.
+	 * @param l
+	 */
+	void removeKinectFrameListener(IKinectFrameListener l);
+	
+	
 }

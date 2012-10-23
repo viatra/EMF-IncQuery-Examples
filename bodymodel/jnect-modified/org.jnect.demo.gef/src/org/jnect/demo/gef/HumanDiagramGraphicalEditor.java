@@ -34,20 +34,12 @@ public class HumanDiagramGraphicalEditor extends GraphicalEditor implements IKin
 		//
 	}
 
-	public void setContent(Body container) {
-		getGraphicalViewer().setContents(container);
-	}
 
 	@Override
 	protected void initializeGraphicalViewer() {
-		setContent( KinectManager.INSTANCE.getSkeletonModel() );
+		getGraphicalViewer().setContents( KinectManager.INSTANCE.getSkeletonModel() );
 	}
 
-	@Override
-	public void kinectReveivedFrame() {
-		// do nothing, better handled by editparts
-		
-	}
 
 	@Override
 	public void kinectChangedModel() {

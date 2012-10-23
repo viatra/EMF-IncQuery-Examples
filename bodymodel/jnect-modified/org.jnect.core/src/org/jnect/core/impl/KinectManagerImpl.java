@@ -23,6 +23,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.jnect.bodymodel.Body;
 import org.jnect.core.IBodyProvider;
+import org.jnect.core.IKinectFrameListener;
 import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
@@ -201,6 +202,7 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	}
 	
 	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
+	private HashSet<IKinectFrameListener> kfListeners = new HashSet<IKinectFrameListener>();
 	
 	public void addKinectUpdateListener(IKinectUpdateListener l) {
 		kuListeners.add(l);
@@ -214,8 +216,20 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 		
 	}
 	
+	public void addKinectFrameListener(IKinectFrameListener l) {
+		kfListeners.add(l);
+	}
+	
+	@Override
+	public void removeKinectFrameListener(IKinectFrameListener l) {
+		if (l!=null) {
+			kfListeners.remove(l);
+		}
+		
+	}
+	
 	private void notifyKinectUpdatelistenersNewFrame() {
-		for (IKinectUpdateListener l : kuListeners) {
+		for (IKinectFrameListener l : kfListeners) {
 			l.kinectReveivedFrame();
 		}
 	}

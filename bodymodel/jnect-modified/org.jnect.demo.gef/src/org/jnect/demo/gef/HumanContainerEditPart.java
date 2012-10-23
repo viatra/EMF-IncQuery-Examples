@@ -22,10 +22,10 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.swt.widgets.Display;
 import org.jnect.bodymodel.Body;
-import org.jnect.core.IKinectUpdateListener;
+import org.jnect.core.IKinectFrameListener;
 import org.jnect.core.KinectManager;
 
-public class HumanContainerEditPart extends AbstractGraphicalEditPart implements IKinectUpdateListener {
+public class HumanContainerEditPart extends AbstractGraphicalEditPart implements IKinectFrameListener {
 	@Override
 	protected IFigure createFigure() {
 		FreeformLayer layer = new FreeformLayer();
@@ -75,7 +75,7 @@ public class HumanContainerEditPart extends AbstractGraphicalEditPart implements
 	public void setModel(Object model) {
 		super.setModel(model);
     	// register this as a kinect update listener
-    	KinectManager.INSTANCE.addKinectUpdateListener(this);
+    	KinectManager.INSTANCE.addKinectFrameListener(this);
 	}
 
 	@Override
@@ -94,14 +94,11 @@ public class HumanContainerEditPart extends AbstractGraphicalEditPart implements
 		});
 	}
 
-	@Override
-	public void kinectChangedModel() {
-		// we do not react to this
-	}
+
 	
 	@Override
 	public void deactivate() {
-		KinectManager.INSTANCE.removeKinectUpdateListener(this);
+		KinectManager.INSTANCE.removeKinectFrameListener(this);
 		super.deactivate();
 	}
 

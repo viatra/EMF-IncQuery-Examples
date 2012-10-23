@@ -3,21 +3,16 @@ package org.jnect.demo.incquery.gef3d.parts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef3d.editparts.AbstractGraphicalEditPartEx;
 import org.eclipse.gef3d.editpolicies.XY3DLayoutPolicy;
-import org.eclipse.gef3d.tools.DragEditPartsTracker3D;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.part.EditorPart;
 import org.jnect.bodymodel.Body;
-import org.jnect.core.IKinectUpdateListener;
+import org.jnect.core.IKinectFrameListener;
 import org.jnect.core.KinectManager;
 
 /**
@@ -26,7 +21,7 @@ import org.jnect.core.KinectManager;
  * @author istvanrath
  * 
  */
-public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectUpdateListener {
+public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectFrameListener {
 
     @Override
     protected void createEditPolicies() {
@@ -73,7 +68,7 @@ public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectUp
     public void setModel(Object model) {
     	super.setModel(model);
     	// register this as a kinect update listener
-    	KinectManager.INSTANCE.addKinectUpdateListener(this);
+    	KinectManager.INSTANCE.addKinectFrameListener(this);
     }
 
 	@Override
@@ -93,15 +88,10 @@ public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectUp
 		
 	}
 
-    @Override
-    public void kinectChangedModel() {
-        // we do not react to this
-        
-    }
     
     @Override
     public void deactivate() {
-        KinectManager.INSTANCE.removeKinectUpdateListener(this);
+        KinectManager.INSTANCE.removeKinectFrameListener(this);
         super.deactivate();
     }
 

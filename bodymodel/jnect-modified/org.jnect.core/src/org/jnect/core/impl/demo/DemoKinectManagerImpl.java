@@ -15,6 +15,7 @@ import java.util.HashSet;
 import org.jnect.bodymodel.Body;
 import org.jnect.bodymodel.PositionedElement;
 import org.jnect.core.IBodyProvider;
+import org.jnect.core.IKinectFrameListener;
 import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
@@ -186,22 +187,34 @@ public class DemoKinectManagerImpl implements KinectManager {
 	}
 
 	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
+	private HashSet<IKinectFrameListener> kfListeners = new HashSet<IKinectFrameListener>();
 	
-	
-	@Override
 	public void addKinectUpdateListener(IKinectUpdateListener l) {
-		kuListeners.add(l);	
+		kuListeners.add(l);
 	}
-
+	
 	@Override
 	public void removeKinectUpdateListener(IKinectUpdateListener l) {
 		if (l!=null) {
 			kuListeners.remove(l);
 		}
+		
+	}
+	
+	public void addKinectFrameListener(IKinectFrameListener l) {
+		kfListeners.add(l);
+	}
+	
+	@Override
+	public void removeKinectFrameListener(IKinectFrameListener l) {
+		if (l!=null) {
+			kfListeners.remove(l);
+		}
+		
 	}
 	
 	private void notifyKinectUpdatelistenersNewFrame() {
-		for (IKinectUpdateListener l : kuListeners) {
+		for (IKinectFrameListener l : kfListeners) {
 			l.kinectReveivedFrame();
 		}
 	}
