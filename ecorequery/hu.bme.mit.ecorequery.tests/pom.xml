@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>hu.bme.mit.ecorequery.test.parent</artifactId>
 		<groupId>org.eclipse.viatra2</groupId>
-		<version>0.6.6-SNAPSHOT</version>
+		<version>0.6.9-SNAPSHOT</version>
 		<relativePath>../hu.bme.mit.ecorequery.test.parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>hu.bme.mit.ecorequery.tests</artifactId>

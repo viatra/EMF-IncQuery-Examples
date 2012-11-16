@@ -16,6 +16,7 @@ import org.eclipse.gef3d.ui.parts.GraphicalEditor3DWithPalette;
 import org.eclipse.gef3d.ui.parts.GraphicalViewer3DImpl;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
+import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.demo.incquery.gef3d.camera.CustomCameraTool;
 
@@ -24,10 +25,11 @@ import org.jnect.demo.incquery.gef3d.camera.CustomCameraTool;
  * @author istvanrath
  *
  */
-public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette {
+public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette implements IKinectUpdateListener {
     
     public Jnect3DEditor() {
         setEditDomain(new DefaultEditDomain(this));
+        KinectManager.INSTANCE.addKinectUpdateListener(this);
     }
     
     @Override
@@ -72,6 +74,20 @@ public class Jnect3DEditor extends GraphicalEditor3DWithFlyoutPalette {
     public void doSave(IProgressMonitor monitor) {
         // intentionally empty
         
+    }
+
+
+
+    @Override
+    public void kinectChangedModel() {
+        // this means we have to do a big refresh
+        initializeGraphicalViewer();
+    }
+    
+    @Override
+    public void dispose() {
+        KinectManager.INSTANCE.removeKinectUpdateListener(this);
+        super.dispose();
     }
 
 }

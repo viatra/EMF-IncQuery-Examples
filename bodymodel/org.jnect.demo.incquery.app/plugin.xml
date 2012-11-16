@@ -14,9 +14,10 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="Perspective"
             class="org.jnect.demo.incquery.app.Perspective"
-            id="org.jnect.demo.incquery.app.perspective">
+            fixed="false"
+            id="org.jnect.demo.incquery.app.perspective"
+            name="Perspective">
       </perspective>
    </extension>
    <extension
@@ -41,6 +42,35 @@
             <command
                   commandId="org.eclipse.ui.file.exit"
                   label="Exit">
+            </command>
+         </menu>
+         <menu
+               id="menu.jnectincqueryesper"
+               label="JnectIncQueryEsper">
+            <command
+                  commandId="org.jnect.demo.gef.start"
+                  label="Start Kinect GEF Demo"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.esperymca.start.combined"
+                  label="YMCA Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.robot.start.combined"
+                  label="Robot Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.sheldon.start.combined"
+                  label="Sheldon Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.ymca.start"
+                  label="IncQuery Raw Output"
+                  style="push">
             </command>
          </menu>
       </menuContribution>

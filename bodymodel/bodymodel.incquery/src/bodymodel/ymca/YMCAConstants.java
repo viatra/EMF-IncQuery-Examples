@@ -20,7 +20,7 @@ public class YMCAConstants {
 	/**
 	 * Distance for "apart" objects (in Kinect coordinates).
 	 */
-	public static final float apartDistance = 1.0f;
+	public static final float apartDistance = 0.5f;
 	
 	/**
 	 * Distance for "very close" objects (in Kinect coordinates).

@@ -65,23 +65,30 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
         loc.setY(Jnect3dVisualizationConstants.sceneCenterY+pe.getY()*Jnect3dVisualizationConstants.kinectMultiplierY); 
         loc.setZ(Jnect3dVisualizationConstants.sceneCenterZ+pe.getZ()*Jnect3dVisualizationConstants.kinectMultiplierZ); 
         pefigure.getPosition3D().setLocation3D(loc);
+        // set color if highlighted
+        if (pe.getColor_b()!=0 || pe.getColor_g()!=0 || pe.getColor_r()!=0) {
+        	pefigure.setBackgroundColor(Jnect3dVisualizationConstants.hiliteColor);
+        }
+        else {
+        	pefigure.setBackgroundColor(Jnect3dVisualizationConstants.peColor);
+        }
     }
     
     @Override
     public void setModel(Object model) {
         super.setModel(model);
-
+/*
         ((PositionedElement) model).eAdapters().add(new Adapter() {
             @Override
             public void notifyChanged(Notification notification) {
-                Display.getDefault().syncExec(new Runnable() {
+               Display.getDefault().syncExec(new Runnable() {
                     @Override
                     public void run() {
                         refreshVisuals();
                         refreshSourceConnections();
                         refreshTargetConnections();
                     }
-                });
+               });
             }
 
             @Override
@@ -98,6 +105,7 @@ public class PE3DPart extends AbstractGraphicalNodeEditPart implements NodeEditP
                 return false;
             }
         });
+        */
     }
 
 }

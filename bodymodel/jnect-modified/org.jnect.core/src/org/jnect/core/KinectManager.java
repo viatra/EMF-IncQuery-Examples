@@ -106,4 +106,30 @@ public interface KinectManager {
 	 * @return true if speech recognition is running, false otherwise
 	 */
 	boolean isSpeechRecognitionStarted();
+	
+	/**
+	 * Registers a Kinect update listener.
+	 * @param l
+	 */
+	void addKinectUpdateListener(IKinectUpdateListener l);
+	
+	/**
+	 * Deregisters a Kinect update listener.
+	 * @param l
+	 */
+	void removeKinectUpdateListener(IKinectUpdateListener l);
+	
+	/**
+	 * Registers a Kinect frame listener.
+	 * @param l
+	 */
+	void addKinectFrameListener(IKinectFrameListener l);
+	
+	/**
+	 * Deregisters a Kinect frame listener.
+	 * @param l
+	 */
+	void removeKinectFrameListener(IKinectFrameListener l);
+	
+	
 }

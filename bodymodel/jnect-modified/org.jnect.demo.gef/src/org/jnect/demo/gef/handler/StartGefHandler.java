@@ -29,10 +29,10 @@ public class StartGefHandler extends AbstractHandler {
 		if (!KinectManager.INSTANCE.isSkeletonTrackingStarted()) {
 			KinectManager.INSTANCE.startSkeletonTracking();
 		}
-		HumanDiagramGraphicalEditor editor = ((HumanDiagramGraphicalEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor());
-		if (editor!=null) {
-			editor.setContent(KinectManager.INSTANCE.getSkeletonModel());
-		}
+		//HumanDiagramGraphicalEditor editor = ((HumanDiagramGraphicalEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor());
+		//if (editor!=null) {
+		//	editor.setContent(KinectManager.INSTANCE.getSkeletonModel());
+		//}
 		return null;
 	}
 

@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>org.eclipse.viatra2.emf.incquery.tests.school.parent</artifactId>
 	<name>EMF-IncQuery School Example</name>
-	<version>0.6.6-SNAPSHOT</version>
+	<version>0.6.9-SNAPSHOT</version>
 	<url>http://viatra.inf.mit.bme.hu/incquery</url>
 	<parent>
 		<artifactId>org.eclipse.viatra2.emf.incquery</artifactId>
-		<version>0.6.6-SNAPSHOT</version>
+		<version>0.6.9-SNAPSHOT</version>
 		<groupId>org.eclipse.viatra2</groupId>
 		<relativePath>../../../core/releng/org.eclipse.viatra2.emf.incquery/pom.xml</relativePath>
 	</parent>
@@ -41,7 +41,7 @@
 						<artifact>
 							<groupId>org.eclipse.viatra2</groupId>
 							<artifactId>org.eclipse.viatra2.emf.incquery.tests.school.parent</artifactId>
-							<version>0.6.6-SNAPSHOT</version>
+							<version>0.6.9-SNAPSHOT</version>
 							<classifier>schooltest</classifier>
 						</artifact>
 					</target>

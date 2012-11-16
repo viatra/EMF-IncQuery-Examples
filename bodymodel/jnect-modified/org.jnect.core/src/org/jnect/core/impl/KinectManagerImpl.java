@@ -23,6 +23,8 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.jnect.bodymodel.Body;
 import org.jnect.core.IBodyProvider;
+import org.jnect.core.IKinectFrameListener;
+import org.jnect.core.IKinectUpdateListener;
 import org.jnect.core.KinectManager;
 import org.jnect.core.SpeechListener;
 import org.jnect.core.impl.connection.jni.ProxyConnectionManager;
@@ -155,6 +157,9 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	public void handleSkeletonData(Document doc) {
 		this.skeletonParser.parseSkeleton(doc);
 		// emfStorage.updateBody();
+		this.notifyKinectUpdatelistenersNewFrame();
+		
+		
 	}
 
 	@Override
@@ -193,6 +198,47 @@ public class KinectManagerImpl implements KinectManager, KinectDataHandler {
 	@Override
 	public void setSkeletonModel(Body b) {
 		this.body = b;
+		notifyKinectUpdatelistenersNewModel();
 	}
+	
+	private HashSet<IKinectUpdateListener> kuListeners = new HashSet<IKinectUpdateListener>();
+	private HashSet<IKinectFrameListener> kfListeners = new HashSet<IKinectFrameListener>();
+	
+	public void addKinectUpdateListener(IKinectUpdateListener l) {
+		kuListeners.add(l);
+	}
+	
+	@Override
+	public void removeKinectUpdateListener(IKinectUpdateListener l) {
+		if (l!=null) {
+			kuListeners.remove(l);
+		}
+		
+	}
+	
+	public void addKinectFrameListener(IKinectFrameListener l) {
+		kfListeners.add(l);
+	}
+	
+	@Override
+	public void removeKinectFrameListener(IKinectFrameListener l) {
+		if (l!=null) {
+			kfListeners.remove(l);
+		}
+		
+	}
+	
+	private void notifyKinectUpdatelistenersNewFrame() {
+		for (IKinectFrameListener l : kfListeners) {
+			l.kinectReveivedFrame();
+		}
+	}
+	
+	private void notifyKinectUpdatelistenersNewModel() {
+		for (IKinectUpdateListener l : kuListeners) {
+			l.kinectChangedModel();
+		}
+	}
+	
 
 }

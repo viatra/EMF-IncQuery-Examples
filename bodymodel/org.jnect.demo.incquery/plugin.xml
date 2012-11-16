@@ -68,17 +68,24 @@
             id="org.jnect.demo.incquery.refreshgef3d"
             name="Refresh GEF3D">
       </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.sheldon.SendSheldonMessageHandler"
+            id="org.jnect.demo.incquery.sheldon"
+            name="Send Sheldon Message">
+      </command>
+      <command
+            defaultHandler="org.jnect.demo.incquery.sheldon.StartCombinedSheldonDemoHandler"
+            id="org.jnect.demo.incquery.sheldon.start.combined"
+            name="IDBEHOLD Start Kinect IncQuery Sheldon Demo (Combined)">
+      </command>
    </extension>
+   <!--
  <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
                id="org.jnect.demo.incquery">
-            <!-- <command
-                  commandId="org.jnect.demo.incquery.ymca.start"
-                  style="push">
-            </command> -->
             <command
                   commandId="org.jnect.demo.incquery.robot.start.combined"
                   style="push">
@@ -87,10 +94,6 @@
                   commandId="org.jnect.demo.incquery.esperymca.start.combined"
                   style="push">
             </command>
- 			<!-- <command
-                  commandId="org.jnect.demo.incquery.esper.debug"
-                  style="push">
-            </command> -->            
             <command
                   commandId="org.jnect.demo.incquery.savebodymodel"
                   style="push">
@@ -102,6 +105,7 @@
          </toolbar>
       </menuContribution>
    </extension>
+   -->
  <extension
        point="org.eclipse.ui.bindings">
     <key
@@ -155,7 +159,7 @@
       <editor
             class="org.jnect.demo.incquery.gef3d.Jnect3DEditor"
             default="true"
-            extensions="humanbodymodel"
+            extensions="humanbodymodel3d"
             id="HumanDiagramGEF3D.editorID"
             name="Human Diagram GEF3D">
       </editor>

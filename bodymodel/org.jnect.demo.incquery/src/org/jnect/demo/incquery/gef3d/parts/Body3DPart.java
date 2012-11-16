@@ -3,17 +3,17 @@ package org.jnect.demo.incquery.gef3d.parts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gef3d.editparts.AbstractGraphicalEditPartEx;
 import org.eclipse.gef3d.editpolicies.XY3DLayoutPolicy;
-import org.eclipse.gef3d.tools.DragEditPartsTracker3D;
+import org.eclipse.swt.widgets.Display;
 import org.jnect.bodymodel.Body;
+import org.jnect.core.IKinectFrameListener;
+import org.jnect.core.KinectManager;
 
 /**
  * 3D editpart for Body ("background").
@@ -21,7 +21,7 @@ import org.jnect.bodymodel.Body;
  * @author istvanrath
  * 
  */
-public class Body3DPart extends AbstractGraphicalEditPartEx {
+public class Body3DPart extends AbstractGraphicalEditPartEx implements IKinectFrameListener {
 
     @Override
     protected void createEditPolicies() {
@@ -63,5 +63,36 @@ public class Body3DPart extends AbstractGraphicalEditPartEx {
         ret.add(opd.getRightWrist());
         return ret;
     }    
+    
+    @Override
+    public void setModel(Object model) {
+    	super.setModel(model);
+    	// register this as a kinect update listener
+    	KinectManager.INSTANCE.addKinectFrameListener(this);
+    }
+
+	@Override
+	public void kinectReveivedFrame() {
+		// update entire editpart hierarchy
+		Display.getDefault().syncExec(new Runnable() {
+
+			@Override
+			public void run() {
+				for (Object o : getChildren()) {
+					((EditPart)o).refresh();
+				}
+						
+			}
+			
+		});
+		
+	}
+
+    
+    @Override
+    public void deactivate() {
+        KinectManager.INSTANCE.removeKinectFrameListener(this);
+        super.deactivate();
+    }
 
 }

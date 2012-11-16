@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_oyFp8A35EeKmRLe33H8xPA" name="Model">
+  <packageImport xmi:id="_RWWQ4A38EeKmRLe33H8xPA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sf7_QA36EeKmRLe33H8xPA" name="TopClass">
+    <ownedAttribute xmi:id="_DcVpkA37EeKmRLe33H8xPA" name="topProp" visibility="public">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FLeE4A37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FLeE4Q37EeKmRLe33H8xPA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_FLfTAA37EeKmRLe33H8xPA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_T04lUA37EeKmRLe33H8xPA" name="componentClass" type="_QU-I4A37EeKmRLe33H8xPA" aggregation="composite" association="_T05zcA37EeKmRLe33H8xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T04lUQ37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T04lUg37EeKmRLe33H8xPA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wP0KUA36EeKmRLe33H8xPA" name="SubClass">
+    <generalization xmi:id="_wQPBEA36EeKmRLe33H8xPA" general="_sf7_QA36EeKmRLe33H8xPA"/>
+    <ownedAttribute xmi:id="_F1UTIA37EeKmRLe33H8xPA" name="subProp" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G8-ewA37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G8_F0A37EeKmRLe33H8xPA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_G8_s4A37EeKmRLe33H8xPA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_N8eAcA37EeKmRLe33H8xPA" name="relatedClass" type="_MSJzsA37EeKmRLe33H8xPA" association="_N8hDwA37EeKmRLe33H8xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N8eAcQ37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N8eAcg37EeKmRLe33H8xPA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zDkrYA36EeKmRLe33H8xPA" name="FinalClass">
+    <generalization xmi:id="_zDw4oA36EeKmRLe33H8xPA" general="_wP0KUA36EeKmRLe33H8xPA"/>
+    <ownedAttribute xmi:id="_HcpdUA37EeKmRLe33H8xPA" name="finalProp" visibility="public">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IkiScA37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Iki5gA37EeKmRLe33H8xPA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_IkkHoA37EeKmRLe33H8xPA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MSJzsA37EeKmRLe33H8xPA" name="RelatedClass"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_N8hDwA37EeKmRLe33H8xPA" name="subRelation" memberEnd="_N8hDwQ37EeKmRLe33H8xPA _N8eAcA37EeKmRLe33H8xPA">
+    <ownedEnd xmi:id="_N8hDwQ37EeKmRLe33H8xPA" name="subClass" type="_wP0KUA36EeKmRLe33H8xPA" association="_N8hDwA37EeKmRLe33H8xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N8hDwg37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N8hDww37EeKmRLe33H8xPA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QU-I4A37EeKmRLe33H8xPA" name="ComponentClass"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_T05zcA37EeKmRLe33H8xPA" name="component" memberEnd="_T05zcQ37EeKmRLe33H8xPA _T04lUA37EeKmRLe33H8xPA">
+    <ownedEnd xmi:id="_T05zcQ37EeKmRLe33H8xPA" name="topClass" type="_sf7_QA36EeKmRLe33H8xPA" association="_T05zcA37EeKmRLe33H8xPA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T05zcg37EeKmRLe33H8xPA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T05zcw37EeKmRLe33H8xPA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

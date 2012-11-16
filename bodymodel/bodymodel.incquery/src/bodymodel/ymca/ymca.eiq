@@ -2,6 +2,9 @@ package bodymodel.ymca
 
 import "http://org/jnect/bodymodel"
 
+/*
+ * This pattern is buggy! Depending on the relative position of (0,0,0) this may yield wrong results.
+ */
 @QueryExplorer(display = true)
 pattern rightHandAboveHead(RH:RightHand,H:Head) {
 	RightHand.y(RH,RHy);
@@ -11,6 +14,8 @@ pattern rightHandAboveHead(RH:RightHand,H:Head) {
 		 bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg
 	);
 }
+
+
 
 @QueryExplorer(display = true)
 pattern leftHandAboveHead(LH:LeftHand,H:Head) {
@@ -101,6 +106,25 @@ pattern feetAreClose(LF:LeftFoot,RF:RightFoot) {
 			bodymodel::MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
 			bodymodel::MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
 		)) < bodymodel::ymca::YMCAConstants::closeDistance );
+}
+
+@QueryExplorer(display = true)
+pattern feetAreApart(LF:LeftFoot,RF:RightFoot) {
+	LeftFoot.x(LF,LFX);
+	LeftFoot.y(LF,LFY);
+	LeftFoot.z(LF,LFZ);
+	RightFoot.x(RF,RFX);
+	RightFoot.y(RF,RFY);
+	RightFoot.z(RF,RFZ);
+	check( bodymodel::ymca::VectorMaths::lengthOf(
+		bodymodel::ymca::VectorMaths::createVector(
+			bodymodel::MovingAverageCalculator::getCalculator("LFX").addValue(LFX).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("LFY").addValue(LFY).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("LFZ").addValue(LFZ).movingAvg, 
+			bodymodel::MovingAverageCalculator::getCalculator("RFX").addValue(RFX).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
+			bodymodel::MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
+		)) > bodymodel::ymca::YMCAConstants::apartDistance );
 }
 
 
@@ -447,7 +471,7 @@ pattern Q(RH:RightHand,
 	// right leg is straight 
 	// TODO
 	// right foot is far away from left foot
-	neg find feetAreClose(LF,RF);
+	find feetAreApart(LF,RF);
 }
 
 /**
@@ -463,17 +487,22 @@ pattern C(RH:RightHand,
 ) {
 	// both arms are bent
 	find bentRightArm(RH,RE,RS);
-	find bentLeftArm(LH,LE,LS);
+	// find bentLeftArm(LH,LE,LS);
 	// right hand below, left hand above the head
 	neg find rightHandAboveHead(RH,H);
-	find leftHandAboveHead(LH,H);
+	neg find leftHandAboveHead(LH,H);
 	// hands are not close
-	neg find handsAreClose(LH,RH);
+	// neg find handsAreClose(LH,RH);
 	// left hand is to the right of the head
 	Head.x(H,HX);
 	LeftHand.x(LH,LHX);
 	check(bodymodel::MovingAverageCalculator::getCalculator("LHX").addValue(LHX).movingAvg > 
 		bodymodel::MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+	// left elbow is to the right of the head
+	LeftElbow.x(LE,LEX);
+	check(bodymodel::MovingAverageCalculator::getCalculator("LEX").addValue(LEX).movingAvg > 
+		bodymodel::MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+		
 }
 
 // "control powerpoint with awt.Robot" demo
@@ -525,3 +554,72 @@ pattern BE(LH: LeftHand,
 	find bentLeftArm(LH,LE,LS);
 	neg find leftHandAboveHead(LH,H);
 }
+
+
+// control model train through Sheldon demo
+
+/*
+ * Sheldon gesture start position:
+ *  - right hand around center hip height
+ */
+@QueryExplorer(display = true) 
+pattern SS(RH: RightHand,
+		   //RE: RightElbow,
+		   //RS: RightShoulder,
+		   CH : CenterHip)
+{
+	//find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	CenterHip.y(CH,CHy);
+	check(
+		Math::abs(
+		 bodymodel::MovingAverageCalculator::getCalculator("CHY").addValue(CHy).movingAvg - 
+		 bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg) 
+		 < bodymodel::ymca::YMCAConstants::closeDistance
+	);				   	
+}
+
+/*
+ * Sheldon gesture middle position:
+ *  - stretched right arm
+ *  - right hand around shoulder's height
+ */
+@QueryExplorer(display = true) 
+pattern SM(RH: RightHand,
+		   RE: RightElbow,
+		   RS: RightShoulder
+		   //H : Head
+		   )
+{
+	find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	RightShoulder.y(RS,RSy);
+	check(
+		Math::abs(
+		 bodymodel::MovingAverageCalculator::getCalculator("RSY").addValue(RSy).movingAvg - 
+		 bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg) 
+		 < bodymodel::ymca::YMCAConstants::closeDistance
+	);		   	
+}
+
+/*
+ * Sheldon gesture end position:
+ *  - stretched right arm
+ *  - right hand significantly above head's height
+ */
+@QueryExplorer(display = true) 
+pattern SE(RH: RightHand,
+		   RE: RightElbow,
+		   RS: RightShoulder,
+		   H : Head)
+{
+	find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	Head.y(H,Hy);
+	check(
+		 bodymodel::MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg -
+		 bodymodel::MovingAverageCalculator::getCalculator("HY").addValue(Hy).movingAvg
+		 > bodymodel::ymca::YMCAConstants::veryCloseDistance
+	);		   	
+}
+ 
