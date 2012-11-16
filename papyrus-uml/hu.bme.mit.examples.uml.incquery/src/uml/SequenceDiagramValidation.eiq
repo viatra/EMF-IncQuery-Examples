@@ -1,4 +1,4 @@
-package uml
+package uml.sequencediagram
 
 import "http://www.eclipse.org/uml2/4.0.0/UML"
 
@@ -27,10 +27,10 @@ pattern unreferencedClass(C : Class) {
 	neg find hasType(_Typed, C);
 }
 
-pattern classWithID(C) {
-	find hasProperty(C, IDProperty);
-	find hasName(IDProperty, "ID");
-}
+//pattern classWithID(C) {
+//	find hasProperty(C, IDProperty);
+//	find hasName(IDProperty, "ID");
+//}
 
 //Helper patterns
 pattern directSuperClass(Sub : Class, Super : Class) {
@@ -40,16 +40,17 @@ pattern directSuperClass(Sub : Class, Super : Class) {
 }
 
 pattern transitiveSuperClass(Sub, Super) {
-	find directSuperClass+(Sub, Super);
-}/* or {
+	find directSuperClass(Sub, Super);
+} or {
 	find transitiveSuperClass(Sub, MiddleMan);
 	find directSuperClass(MiddleMan, Super);
-}*/
+}
 
 pattern superOrEqualClass(Sub : Class, Super) {
 	Sub == Super;
 } or {
-	find transitiveSuperClass(Sub, Super);
+	find directSuperClass+(Sub, Super);
+	//find transitiveSuperClass(Sub, Super);
 }
 
 pattern ownsOperation(C : Class, O : Operation) {
@@ -99,9 +100,17 @@ pattern potentialAssociationBetween(SourceType, TargetType) {
 	SourceMemberEnd != TargetMemberEnd;
 }
 
+@ObservableValue
 pattern messageEvents(Message : Message, 
 	SourceEvent : MessageOccurrenceSpecification,
 	TargetEvent : MessageOccurrenceSpecification) {
 	Message.sendEvent(Message, SourceEvent);
 	Message.receiveEvent(Message, TargetEvent);
+}
+
+@ObservableValue(name = "className", expression = "C.name")
+@ObservableValue(name = "C", expression = "C.name")
+pattern propertyNumberOfClassInPackage(P: Package, C : Class, No) {
+	Package.packagedElement(P, C);
+	No == count find hasProperty(C, _);
 }
