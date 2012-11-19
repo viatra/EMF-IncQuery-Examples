@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -51,43 +52,57 @@ public class TransitiveClosureHelperTest {
 		navigationHelper.dispose();
 	}
 	
+	/**
+	 * A transitive closure test with model manipulations. 
+	 * It operates on the friendsWith relation between the students. 
+	 */
 	@Test
 	public void queryTestWithModification() {
 		assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 2);
 		assertTrue(transitiveClosureHelper.getAllReachableTargets(aStudent).size() == 0);
 		
-		RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+		Command firstCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				aStudent.getFriendsWith().add(aStudent);
 			}
 		};
-		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(firstCommand);
 		
 		assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3 && 
 				transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
 		
-		command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+		Command secondCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				aStudent.getFriendsWith().add(bStudent);
 			}
 		};
-		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(secondCommand);
 		
 		assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3 && 
 				transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
 		
 		assertTrue(!transitiveClosureHelper.isReachable(bStudent, cStudent));
+		
+		//Undo the previously executed commands to restore the original state of the model
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
 	}
 	
+	/**
+	 * A transitive closure test with model manipulations and a test listener. 
+	 * The listener asserts the received notifications too. 
+	 */
 	@Test
 	public void listenerTestWithModification() {
 		ITcObserver<EObject> observer = new ITcObserver<EObject>() {
 
 			@Override
 			public void tupleInserted(EObject source, EObject target) {
-				assertTrue((source.equals(aStudent) && target.equals(aStudent)) || 
+				assertTrue((source.equals(aStudent) && target.equals(aStudent)) ||
+						(source.equals(bStudent) && target.equals(bStudent)) || 
+						(source.equals(cStudent) && target.equals(bStudent)) || 
 						(source.equals(aStudent) && target.equals(bStudent)));
 			}
 
@@ -99,7 +114,7 @@ public class TransitiveClosureHelperTest {
 		
 		transitiveClosureHelper.attachObserver(observer);
 		
-		RecordingCommand command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+		Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
 				aStudent.getFriendsWith().add(aStudent);
@@ -110,5 +125,8 @@ public class TransitiveClosureHelperTest {
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
 			
 		transitiveClosureHelper.detachObserver(observer);
+		
+		//Undo the previously executed commands to restore the original state of the model
+		ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
 	}
 }
