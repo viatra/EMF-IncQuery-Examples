@@ -1,0 +1,65 @@
+package uml.emptyclass
+
+import "http://www.eclipse.org/uml2/4.0.0/UML"
+import "http://hu.bme.mit.uml.trace/1.0"
+
+pattern superClass(Sub : Class, Super : Class) {
+	Generalization.specific(Gen, Sub);
+	Generalization(Gen);
+	Generalization.general(Gen, Super);
+}
+
+pattern superOrEqualClass(Sub : Class, Super) {
+	Sub == Super;
+} or {
+	find superClass+(Sub, Super);
+}
+
+pattern ownsOperation(C : Class, O : Operation) {
+	Class.ownedOperation(C, O);
+}
+
+pattern ownsProperty(C : Class, P : Property) {
+	StructuredClassifier.ownedAttribute(C, P);
+}
+
+pattern hasOperation(C : Class, Operation : Operation) {
+	find superOrEqualClass(C, OwnerClass);
+	find ownsOperation(OwnerClass, Operation);
+}
+
+pattern hasProperty(C, P) {
+	find superOrEqualClass(C, OwnerClass);
+	find ownsProperty(OwnerClass, P);
+}
+
+@ObservableValue(name = "abstract", expression = "C.isAbstract")
+@ObservableValue(name = "leaf", expression = "C.isLeaf")
+@Constraint(severity = "error", location = "C", message="The class $C.name$ is empty", 
+	targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor"
+)
+pattern emptyClass(Cl : Class) {
+	neg find hasOperation(Cl, _Op);
+	neg find hasProperty(Cl, _Prop);
+}
+
+
+/*
+ * The following patterns have issues if the UML metamodel is 
+ * available both through the trace model and in the package registry.
+ * By opening the org.eclipse.uml2.uml project and updating the genmodel
+ * settings in generator.eiqgen the pattern will work as expected.
+ */
+//@QueryBasedFeature(feature = "inheritedSource", source = trace, target = cl)
+//pattern inheritedSource(trace : TraceElement, cl : Class) {
+//	Class(src);
+//	TraceElement.source(trace, src);
+//	find superClass+(cl, src);
+//}
+//
+//@QueryBasedFeature(feature = "inheritedTarget", source = trace, target = cl)
+//pattern inheritedTarget(trace : TraceElement, cl : Class) {
+//	Class(trg);
+//	TraceElement.target(trace, trg);
+//	find superClass+(cl, trg);
+//}

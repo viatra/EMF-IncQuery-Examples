@@ -2,11 +2,11 @@
 <plugin>
 
    <extension
-         id="validation.constraint.uml.operationWithoutBehaviour"
+         id="validation.constraint.uml.emptyClass"
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
-            name="uml.operationWithoutBehaviour"
-            class="uml.operationwithoutbehaviour.OperationWithoutBehaviourConstraint0">
+            name="uml.emptyClass"
+            class="uml.emptyclass.EmptyClassConstraint2">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -16,11 +16,11 @@
       </constraint>
    </extension>
    <extension
-         id="validation.constraint.uml.OpaqueBehaviorWithoutOperation"
+         id="validation.constraint.uml.statemachine.operationWithoutBehaviour"
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
-            name="uml.OpaqueBehaviorWithoutOperation"
-            class="uml.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationConstraint0">
+            name="uml.statemachine.operationWithoutBehaviour"
+            class="uml.statemachine.operationwithoutbehaviour.OperationWithoutBehaviourConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -30,11 +30,11 @@
       </constraint>
    </extension>
    <extension
-         id="validation.constraint.uml.receptionWithoutAction"
+         id="validation.constraint.uml.statemachine.OpaqueBehaviorWithoutOperation"
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
-            name="uml.receptionWithoutAction"
-            class="uml.receptionwithoutaction.ReceptionWithoutActionConstraint0">
+            name="uml.statemachine.OpaqueBehaviorWithoutOperation"
+            class="uml.statemachine.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -44,16 +44,47 @@
       </constraint>
    </extension>
    <extension
-         id="validation.constraint.uml.incompatibleSpecification"
+         id="validation.constraint.uml.statemachine.receptionWithoutAction"
          point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
       <constraint
-            name="uml.incompatibleSpecification"
-            class="uml.incompatiblespecification.IncompatibleSpecificationConstraint0">
+            name="uml.statemachine.receptionWithoutAction"
+            class="uml.statemachine.receptionwithoutaction.ReceptionWithoutActionConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
          <enabledForEditor
                editorId="org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.uml.statemachine.incompatibleSpecification"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="uml.statemachine.incompatibleSpecification"
+            class="uml.statemachine.incompatiblespecification.IncompatibleSpecificationConstraint0">
+         <enabledForEditor
+               editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.uml.emptyclass.emptyClass"
+         point="org.eclipse.viatra2.emf.incquery.validation.runtime.constraint">
+      <constraint
+            name="uml.emptyclass.emptyClass"
+            class="uml.emptyclass.emptyclass.EmptyClassConstraint2">
+         <enabledForEditor
+               editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="UmlTrace.presentation.UmlTraceEditorID">
          </enabledForEditor>
       </constraint>
    </extension>

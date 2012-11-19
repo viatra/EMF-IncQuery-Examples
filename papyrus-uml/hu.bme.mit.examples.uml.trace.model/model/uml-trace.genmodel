@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.examples.uml.trace.model/src" modelPluginID="hu.bme.mit.examples.uml.trace.model"
+    modelName="Uml-trace" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#//types platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml">
+  <foreignModel>uml-trace.ecore</foreignModel>
+  <genPackages prefix="UmlTrace" resource="XML" disposableProviderFactory="true" ecorePackage="uml-trace.ecore#/">
+    <genClasses ecoreClass="uml-trace.ecore#//TraceElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uml-trace.ecore#//TraceElement/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uml-trace.ecore#//TraceElement/target"/>
+      <genFeatures property="Readonly" notify="false" children="true" createChild="false"
+          propertyMultiLine="true" propertySortChoices="true" ecoreFeature="ecore:EReference uml-trace.ecore#//TraceElement/inheritedSource"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyMultiLine="true"
+          propertySortChoices="true" ecoreFeature="ecore:EReference uml-trace.ecore#//TraceElement/inheritedTarget"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

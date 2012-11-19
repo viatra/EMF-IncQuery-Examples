@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="UmlTrace.presentation.UmlTraceModelWizardID"
+            name="%_UI_UmlTraceModelWizard_label"
+            class="UmlTrace.presentation.UmlTraceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UmlTraceModelFile.gif">
+         <description>%_UI_UmlTraceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="UmlTrace.presentation.UmlTraceEditorID"
+            name="%_UI_UmlTraceEditor_label"
+            icon="icons/full/obj16/UmlTraceModelFile.gif"
+            extensions="umltrace"
+            class="UmlTrace.presentation.UmlTraceEditor"
+            contributorClass="UmlTrace.presentation.UmlTraceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_47q5kY0gEeC9zJGwP_DSCw" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_SYAxEI0hEeC9zJGwP_DSCw" name="Class0" classifierBehavior="_duAY8I0hEeC9zJGwP_DSCw">
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_duAY8I0hEeC9zJGwP_DSCw" name="StateMachine0">
+      <region xmi:id="_d8F4QI0hEeC9zJGwP_DSCw" name="Region0">
+        <transition xmi:id="_fDF8kI0hEeC9zJGwP_DSCw" name="Transition0" source="_elQKAI0hEeC9zJGwP_DSCw" target="_eWJXAI0hEeC9zJGwP_DSCw">
+          <trigger xmi:id="_gOKokI0hEeC9zJGwP_DSCw" name="Trigger0" event="_XxW0UI0hEeC9zJGwP_DSCw"/>
+        </transition>
+        <subvertex xmi:type="uml:State" xmi:id="_eWJXAI0hEeC9zJGwP_DSCw" name="State0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_elQKAI0hEeC9zJGwP_DSCw" name="State1"/>
+      </region>
+    </ownedBehavior>
+    <ownedOperation xmi:id="_Ue_EoI0hEeC9zJGwP_DSCw" name="OperationWithoutBehavior"/>
+    <ownedReception xmi:id="_Ys0-EI0hEeC9zJGwP_DSCw" name="ReceptionWithTrigger" signal="_YN7bkI0hEeC9zJGwP_DSCw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:OpaqueBehavior" xmi:id="_WJih8I0hEeC9zJGwP_DSCw" name="OpaqueBehavior0" specification="_tB6A0I0hEeC9zJGwP_DSCw">
+    <ownedParameter xmi:id="_4ExRUI0hEeC9zJGwP_DSCw" name="Parameter0" type="_SYAxEI0hEeC9zJGwP_DSCw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_XxW0UI0hEeC9zJGwP_DSCw" name="SignalEvent0" signal="_YN7bkI0hEeC9zJGwP_DSCw"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_YN7bkI0hEeC9zJGwP_DSCw" name="Signal0"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mC188I0hEeC9zJGwP_DSCw" name="Class1">
+    <ownedReception xmi:id="_nCifYI0hEeC9zJGwP_DSCw" name="ReceptionWithoutTrigger" signal="_n2kkYI0hEeC9zJGwP_DSCw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_n2kkYI0hEeC9zJGwP_DSCw" name="Signal1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sHTZwI0hEeC9zJGwP_DSCw" name="Class2">
+    <ownedOperation xmi:id="_tB6A0I0hEeC9zJGwP_DSCw" name="OperationWithParameters" method="_WJih8I0hEeC9zJGwP_DSCw">
+      <ownedParameter xmi:id="_yPI6sI0hEeC9zJGwP_DSCw" name="Parameter0" type="_mC188I0hEeC9zJGwP_DSCw"/>
+      <ownedParameter xmi:id="_yY-zMI0hEeC9zJGwP_DSCw" name="Parameter1" type="_sHTZwI0hEeC9zJGwP_DSCw"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:OpaqueBehavior" xmi:id="_uw3BcY3bEeCGKohA8_tYsQ" name="OpaqueBehavior1"/>
+</uml:Model>

@@ -1,4 +1,4 @@
-package uml
+package uml.statemachine
 
 import "http://www.eclipse.org/uml2/4.0.0/UML"
 
@@ -11,7 +11,8 @@ pattern usedTriggerSignals(Signal : Signal) {
 }
 
 pattern eventForTrigger(Trigger : Trigger, Event : Event) {
-	//TODO check Statemachine
+	StateMachine(StMach);
+	find triggerInStateMachine(StMach, Trigger);
 	Trigger.event(Trigger, Event);
 }
 
@@ -40,10 +41,15 @@ pattern OpaqueBehaviorWithoutOperation(Behavior : OpaqueBehavior) {
 private pattern usedInStateMachine(Signal: Signal, Class : Class) {
 	StateMachine(StMach);
 	BehavioredClassifier.classifierBehavior(Class, StMach);
-	Trigger(Trigger); //TODO below StMach
+	find triggerInStateMachine(StMach, Trigger);
 	Trigger.event(Trigger, Event);	
 	SignalEvent(Event);
 	SignalEvent.signal(Event, Signal);
+}
+
+private pattern triggerInStateMachine(StMach : StateMachine, Trigger : Trigger) {
+	StateMachine(StMach);
+	StateMachine.region.transition.trigger(StMach, Trigger);
 }
 
 @Constraint(severity = "error",location="Reception",message="The reception $Reception$ lacks triggers.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
