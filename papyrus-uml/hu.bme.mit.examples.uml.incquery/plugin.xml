@@ -2,75 +2,51 @@
 <plugin>
 
    <extension
-         id="uml.statemachine.usedTriggerSignals"
+         id="uml.validation.superClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="uml.statemachine.usedtriggersignals.UsedTriggerSignalsMatcherFactory$Provider"
-            id="uml.statemachine.usedTriggerSignals">
+            factoryProvider="uml.validation.superclass.SuperClassMatcherFactory$Provider"
+            id="uml.validation.superClass">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.eventForTrigger"
+         id="uml.validation.superOrEqualClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="uml.statemachine.eventfortrigger.EventForTriggerMatcherFactory$Provider"
-            id="uml.statemachine.eventForTrigger">
+            factoryProvider="uml.validation.superorequalclass.SuperOrEqualClassMatcherFactory$Provider"
+            id="uml.validation.superOrEqualClass">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.operationWithoutBehaviour"
+         id="uml.validation.ownsOperation"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="uml.statemachine.operationwithoutbehaviour.OperationWithoutBehaviourMatcherFactory$Provider"
-            id="uml.statemachine.operationWithoutBehaviour">
+            factoryProvider="uml.validation.ownsoperation.OwnsOperationMatcherFactory$Provider"
+            id="uml.validation.ownsOperation">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.OpaqueBehaviorWithoutOperation"
+         id="uml.validation.ownsProperty"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="uml.statemachine.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationMatcherFactory$Provider"
-            id="uml.statemachine.OpaqueBehaviorWithoutOperation">
+            factoryProvider="uml.validation.ownsproperty.OwnsPropertyMatcherFactory$Provider"
+            id="uml.validation.ownsProperty">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.receptionWithoutAction"
+         id="uml.validation.hasOperation"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            factoryProvider="uml.statemachine.receptionwithoutaction.ReceptionWithoutActionMatcherFactory$Provider"
-            id="uml.statemachine.receptionWithoutAction">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.incompatibleSpecification"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.incompatiblespecification.IncompatibleSpecificationMatcherFactory$Provider"
-            id="uml.statemachine.incompatibleSpecification">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.parameterOfOperation"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.parameterofoperation.ParameterOfOperationMatcherFactory$Provider"
-            id="uml.statemachine.parameterOfOperation">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.parameterOfBehavior"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.parameterofbehavior.ParameterOfBehaviorMatcherFactory$Provider"
-            id="uml.statemachine.parameterOfBehavior">
+            factoryProvider="uml.validation.hasoperation.HasOperationMatcherFactory$Provider"
+            id="uml.validation.hasOperation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.inheritanceDiamond"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.inheritanceDiamond"
-            factoryProvider="uml.sequencediagram.inheritancediamond.InheritanceDiamondMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.inheritancediamond.InheritanceDiamondMatcherFactory$Provider"
+            id="uml.sequencediagram.inheritanceDiamond">
       </matcher>
    </extension>
    <extension
@@ -85,128 +61,192 @@
          id="uml.sequencediagram.messageWithoutAssociation"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.messageWithoutAssociation"
-            factoryProvider="uml.sequencediagram.messagewithoutassociation.MessageWithoutAssociationMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.messagewithoutassociation.MessageWithoutAssociationMatcherFactory$Provider"
+            id="uml.sequencediagram.messageWithoutAssociation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.unreferencedClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.unreferencedClass"
-            factoryProvider="uml.sequencediagram.unreferencedclass.UnreferencedClassMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.unreferencedclass.UnreferencedClassMatcherFactory$Provider"
+            id="uml.sequencediagram.unreferencedClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.directSuperClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.directSuperClass"
-            factoryProvider="uml.sequencediagram.directsuperclass.DirectSuperClassMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.directsuperclass.DirectSuperClassMatcherFactory$Provider"
+            id="uml.sequencediagram.directSuperClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.transitiveSuperClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.transitiveSuperClass"
-            factoryProvider="uml.sequencediagram.transitivesuperclass.TransitiveSuperClassMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.transitivesuperclass.TransitiveSuperClassMatcherFactory$Provider"
+            id="uml.sequencediagram.transitiveSuperClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.superOrEqualClass"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.superOrEqualClass"
-            factoryProvider="uml.sequencediagram.superorequalclass.SuperOrEqualClassMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.superorequalclass.SuperOrEqualClassMatcherFactory$Provider"
+            id="uml.sequencediagram.superOrEqualClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.ownsOperation"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.ownsOperation"
-            factoryProvider="uml.sequencediagram.ownsoperation.OwnsOperationMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.ownsoperation.OwnsOperationMatcherFactory$Provider"
+            id="uml.sequencediagram.ownsOperation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.ownsProperty"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.ownsProperty"
-            factoryProvider="uml.sequencediagram.ownsproperty.OwnsPropertyMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.ownsproperty.OwnsPropertyMatcherFactory$Provider"
+            id="uml.sequencediagram.ownsProperty">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasOperation"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.hasOperation"
-            factoryProvider="uml.sequencediagram.hasoperation.HasOperationMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.hasoperation.HasOperationMatcherFactory$Provider"
+            id="uml.sequencediagram.hasOperation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasProperty"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.hasProperty"
-            factoryProvider="uml.sequencediagram.hasproperty.HasPropertyMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.hasproperty.HasPropertyMatcherFactory$Provider"
+            id="uml.sequencediagram.hasProperty">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasType"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.hasType"
-            factoryProvider="uml.sequencediagram.hastype.HasTypeMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.hastype.HasTypeMatcherFactory$Provider"
+            id="uml.sequencediagram.hasType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasName"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.hasName"
-            factoryProvider="uml.sequencediagram.hasname.HasNameMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.hasname.HasNameMatcherFactory$Provider"
+            id="uml.sequencediagram.hasName">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.messageEndType"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.messageEndType"
-            factoryProvider="uml.sequencediagram.messageendtype.MessageEndTypeMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.messageendtype.MessageEndTypeMatcherFactory$Provider"
+            id="uml.sequencediagram.messageEndType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.associationEndType"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.associationEndType"
-            factoryProvider="uml.sequencediagram.associationendtype.AssociationEndTypeMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.associationendtype.AssociationEndTypeMatcherFactory$Provider"
+            id="uml.sequencediagram.associationEndType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.potentialAssociationBetween"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.potentialAssociationBetween"
-            factoryProvider="uml.sequencediagram.potentialassociationbetween.PotentialAssociationBetweenMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.potentialassociationbetween.PotentialAssociationBetweenMatcherFactory$Provider"
+            id="uml.sequencediagram.potentialAssociationBetween">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.messageEvents"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.messageEvents"
-            factoryProvider="uml.sequencediagram.messageevents.MessageEventsMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.messageevents.MessageEventsMatcherFactory$Provider"
+            id="uml.sequencediagram.messageEvents">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.propertyNumberOfClassInPackage"
          point="org.eclipse.viatra2.emf.incquery.matcherfactory">
       <matcher
-            id="uml.sequencediagram.propertyNumberOfClassInPackage"
-            factoryProvider="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageMatcherFactory$Provider">
+            factoryProvider="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageMatcherFactory$Provider"
+            id="uml.sequencediagram.propertyNumberOfClassInPackage">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.usedTriggerSignals"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.usedTriggerSignals"
+            factoryProvider="uml.statemachine.usedtriggersignals.UsedTriggerSignalsMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.eventForTrigger"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.eventForTrigger"
+            factoryProvider="uml.statemachine.eventfortrigger.EventForTriggerMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.operationWithoutBehaviour"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.operationWithoutBehaviour"
+            factoryProvider="uml.statemachine.operationwithoutbehaviour.OperationWithoutBehaviourMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.OpaqueBehaviorWithoutOperation"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.OpaqueBehaviorWithoutOperation"
+            factoryProvider="uml.statemachine.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.receptionWithoutAction"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.receptionWithoutAction"
+            factoryProvider="uml.statemachine.receptionwithoutaction.ReceptionWithoutActionMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.incompatibleSpecification"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.incompatibleSpecification"
+            factoryProvider="uml.statemachine.incompatiblespecification.IncompatibleSpecificationMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.parameterOfOperation"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.parameterOfOperation"
+            factoryProvider="uml.statemachine.parameterofoperation.ParameterOfOperationMatcherFactory$Provider">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.parameterOfBehavior"
+         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+      <matcher
+            id="uml.statemachine.parameterOfBehavior"
+            factoryProvider="uml.statemachine.parameterofbehavior.ParameterOfBehaviorMatcherFactory$Provider">
       </matcher>
    </extension>
    <extension

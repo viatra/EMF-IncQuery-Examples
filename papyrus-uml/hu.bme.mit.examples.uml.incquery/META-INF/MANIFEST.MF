@@ -35,7 +35,12 @@ Export-Package: uml.emptyclass,
  uml.statemachine.parameterofbehavior,
  uml.statemachine.parameterofoperation,
  uml.statemachine.receptionwithoutaction,
- uml.statemachine.usedtriggersignals
+ uml.statemachine.usedtriggersignals,
+ uml.validation.hasoperation,
+ uml.validation.ownsoperation,
+ uml.validation.ownsproperty,
+ uml.validation.superclass,
+ uml.validation.superorequalclass
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

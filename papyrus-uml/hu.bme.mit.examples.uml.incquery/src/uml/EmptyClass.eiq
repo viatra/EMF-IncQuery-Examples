@@ -1,7 +1,7 @@
 package uml.emptyclass
 
 import "http://www.eclipse.org/uml2/4.0.0/UML"
-import "http://hu.bme.mit.uml.trace/1.0"
+//import "http://hu.bme.mit.uml.trace/1.0"
 
 pattern superClass(Sub : Class, Super : Class) {
 	Generalization.specific(Gen, Sub);
@@ -33,8 +33,8 @@ pattern hasProperty(C, P) {
 	find ownsProperty(OwnerClass, P);
 }
 
-@ObservableValue(name = "abstract", expression = "C.isAbstract")
-@ObservableValue(name = "leaf", expression = "C.isLeaf")
+@ObservableValue(name = "abstract", expression = "Cl.isAbstract")
+@ObservableValue(name = "leaf", expression = "Cl.isLeaf")
 @Constraint(severity = "error", location = "C", message="The class $C.name$ is empty", 
 	targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor"
 )

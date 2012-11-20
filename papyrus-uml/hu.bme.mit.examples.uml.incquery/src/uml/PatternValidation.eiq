@@ -25,6 +25,7 @@ pattern ownsProperty(C : Class, P : Property) {
 pattern hasOperation(C : Class, Operation : Operation) {
 	find superOrEqualClass(C, OwnerClass);
 	find ownsOperation(OwnerClass, Operation);
+}
 
 //pattern typeError(Cl : Class, Op : Operation) {
 //	find hasOperation(Op, Cl);

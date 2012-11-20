@@ -2,6 +2,49 @@
 <plugin>
 
    <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Class Metric"
+            category="org.eclipse.viatra2.emf.incquery.tooling.gui"
+            class="hu.bme.mit.examples.uml.incquery.databinding.demo.ClassView"
+            id="hu.bme.mit.examples.uml.incquery.databinding.demo.ClassView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="Load UML Model"
+            id="hu.bme.mit.examples.uml.incquery.databinding.loadUMLModel">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:hu.bme.mit.examples.uml.incquery.databinding.demo.ClassView">
+         <command
+               commandId="hu.bme.mit.examples.uml.incquery.databinding.loadUMLModel"
+               label="Load"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="hu.bme.mit.examples.uml.incquery.databinding.loadUMLModel"
+            class="hu.bme.mit.examples.uml.incquery.databinding.demo.handlers.LoadUMLModelHandler">
+         <enabledWhen>
+            <with
+                  variable="activeEditorId">
+               <equals
+                     value=" org.eclipse.papyrus.infra.core.papyrusEditor">
+               </equals>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
          id="extension.databinding.uml.sequencediagram.messageEvents"
          point="org.eclipse.viatra2.emf.incquery.databinding.runtime.databinding">
       <databinding
