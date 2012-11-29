@@ -1,6 +1,6 @@
 package school.finalpattern2;
 
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.finalpattern2.FinalPattern2Match;
 
 /**

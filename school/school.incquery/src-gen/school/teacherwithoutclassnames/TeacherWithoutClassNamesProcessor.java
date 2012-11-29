@@ -1,6 +1,6 @@
 package school.teacherwithoutclassnames;
 
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatch;
 
 /**

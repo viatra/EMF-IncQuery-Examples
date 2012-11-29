@@ -1,8 +1,8 @@
 package school.coursewithprimeweight;
 
 import java.util.Map;
-import org.eclipse.viatra2.emf.incquery.runtime.extensibility.IMatchChecker;
-import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.tuple.Tuple;
+import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
+import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
  * A xbase xexpression evaluator tailored for the courseWithPrimeWeight pattern.

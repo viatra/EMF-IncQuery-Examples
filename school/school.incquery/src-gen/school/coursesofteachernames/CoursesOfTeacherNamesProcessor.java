@@ -1,6 +1,6 @@
 package school.coursesofteachernames;
 
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.coursesofteachernames.CoursesOfTeacherNamesMatch;
 
 /**

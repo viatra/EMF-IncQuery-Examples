@@ -13,8 +13,8 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
-import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.incquery.testing.core.TestExecutor
+import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Test

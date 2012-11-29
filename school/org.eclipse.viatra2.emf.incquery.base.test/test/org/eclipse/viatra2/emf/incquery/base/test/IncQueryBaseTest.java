@@ -1,8 +1,8 @@
 package org.eclipse.viatra2.emf.incquery.base.test;
 
-import org.eclipse.viatra2.emf.incquery.base.api.IncQueryBaseFactory;
-import org.eclipse.viatra2.emf.incquery.base.api.NavigationHelper;
-import org.eclipse.viatra2.emf.incquery.base.exception.IncQueryBaseException;
+import org.eclipse.incquery.runtime.base.api.IncQueryBaseFactory;
+import org.eclipse.incquery.runtime.base.api.NavigationHelper;
+import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.viatra2.emf.incquery.base.test.util.ResourceAccess;
 import org.junit.After;
 import org.junit.Before;

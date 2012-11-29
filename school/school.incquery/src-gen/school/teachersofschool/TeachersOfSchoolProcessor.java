@@ -1,6 +1,6 @@
 package school.teachersofschool;
 
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.School;
 import school.Teacher;
 import school.teachersofschool.TeachersOfSchoolMatch;
