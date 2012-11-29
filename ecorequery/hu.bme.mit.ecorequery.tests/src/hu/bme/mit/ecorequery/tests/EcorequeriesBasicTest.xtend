@@ -13,9 +13,9 @@ import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactor
 import hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryMatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory
 import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory
-import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
-import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
+import org.eclipse.incquery.testing.core.TestExecutor
+import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper

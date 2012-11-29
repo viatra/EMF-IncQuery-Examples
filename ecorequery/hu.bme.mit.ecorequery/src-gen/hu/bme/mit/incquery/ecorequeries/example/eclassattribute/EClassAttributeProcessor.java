@@ -4,7 +4,7 @@ import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeM
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the EClassAttribute pattern.

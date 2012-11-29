@@ -1,15 +1,15 @@
 package hu.bme.mit.ecorequery.tests
 
 import com.google.inject.Inject
-import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
-import org.eclipse.viatra2.emf.incquery.testing.core.SnapshotHelper
-import org.eclipse.viatra2.emf.incquery.testing.core.TestExecutor
-import org.eclipse.viatra2.emf.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.incquery.testing.core.ModelLoadHelper
+import org.eclipse.incquery.testing.core.SnapshotHelper
+import org.eclipse.incquery.testing.core.TestExecutor
+import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.eclipse.viatra2.emf.incquery.runtime.api.GenericPatternMatch
+import org.eclipse.incquery.runtime.api.GenericPatternMatch
 import org.junit.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EcoreFactory

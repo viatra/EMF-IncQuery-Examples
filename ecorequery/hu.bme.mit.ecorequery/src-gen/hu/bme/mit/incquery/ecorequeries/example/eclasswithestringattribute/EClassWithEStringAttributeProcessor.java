@@ -3,7 +3,7 @@ package hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute;
 import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatch;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the EClassWithEStringAttribute pattern.

@@ -2,7 +2,7 @@ package hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity;
 
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatch;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the EReferenceWithOneMultiplicity pattern.

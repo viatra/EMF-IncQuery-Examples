@@ -2,7 +2,7 @@ package hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement;
 
 import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatch;
 import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the ECoreNamedElement pattern.

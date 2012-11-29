@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicityname;
 
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicityname.EReferenceWithOneMultiplicityNameMatch;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the EReferenceWithOneMultiplicityName pattern.

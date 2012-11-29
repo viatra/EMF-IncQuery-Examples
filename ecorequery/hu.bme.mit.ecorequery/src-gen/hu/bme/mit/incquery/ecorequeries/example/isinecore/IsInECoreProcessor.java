@@ -2,7 +2,7 @@ package hu.bme.mit.incquery.ecorequeries.example.isinecore;
 
 import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatch;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the IsInECore pattern.

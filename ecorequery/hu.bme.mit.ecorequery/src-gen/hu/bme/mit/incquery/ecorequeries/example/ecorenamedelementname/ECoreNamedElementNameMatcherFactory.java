@@ -1,10 +1,10 @@
 package hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname;
 
 import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameMatcher;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
-import org.eclipse.viatra2.emf.incquery.runtime.extensibility.IMatcherFactoryProvider;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
 
 /**
  * A pattern-specific matcher factory that can instantiate ECoreNamedElementNameMatcher in a type-safe way.

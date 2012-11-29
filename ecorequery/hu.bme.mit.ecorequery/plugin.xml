@@ -3,7 +3,7 @@
 
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EObject"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EObject">
@@ -11,7 +11,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EClass"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.eclass.EClassMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EClass">
@@ -19,7 +19,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EClassName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.eclassname.EClassNameMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EClassName">
@@ -27,7 +27,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf">
@@ -35,7 +35,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.supertypeofname.SuperTypeOfNameMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName">
@@ -43,7 +43,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EClassAttribute"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EClassAttribute">
@@ -51,7 +51,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute">
@@ -59,7 +59,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity">
@@ -67,7 +67,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname.EReferenceWithStarMultiplicityNameMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName">
@@ -75,7 +75,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity">
@@ -83,7 +83,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicityname.EReferenceWithOneMultiplicityNameMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName">
@@ -91,7 +91,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.SampleQuery"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.SampleQuery">
@@ -99,7 +99,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.SampleQuery2"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.SampleQuery2">
@@ -107,7 +107,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.IsEString"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.IsEString">
@@ -115,7 +115,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement">
@@ -123,7 +123,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName">
@@ -131,7 +131,7 @@
    </extension>
    <extension
          id="hu.bme.mit.incquery.ecorequeries.example.IsInECore"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactory$Provider"
             id="hu.bme.mit.incquery.ecorequeries.example.IsInECore">

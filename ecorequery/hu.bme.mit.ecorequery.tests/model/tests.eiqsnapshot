@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra2/emf/incquery/snapshot" inputSpecification="Resource">
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/incquery/snapshot" inputSpecification="Resource">
   <matchSetRecords patternQualifiedName="hu.bme.mit.incquery.ecorequeries.example.EObject">
     <matches>
       <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="E">

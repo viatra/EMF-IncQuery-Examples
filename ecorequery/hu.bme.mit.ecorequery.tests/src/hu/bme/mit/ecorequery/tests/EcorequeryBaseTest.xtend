@@ -1,9 +1,9 @@
 package hu.bme.mit.ecorequery.tests
 
 import com.google.inject.Inject
-import org.eclipse.viatra2.emf.incquery.testing.core.ModelLoadHelper
-import org.eclipse.viatra2.patternlanguage.eMFPatternLanguage.PatternModel
-import org.eclipse.viatra2.emf.incquery.testing.core.base.CommonStaticQueryTester
+import org.eclipse.incquery.testing.core.ModelLoadHelper
+import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
 
 class EcorequeryBaseTest extends CommonStaticQueryTester {
 	

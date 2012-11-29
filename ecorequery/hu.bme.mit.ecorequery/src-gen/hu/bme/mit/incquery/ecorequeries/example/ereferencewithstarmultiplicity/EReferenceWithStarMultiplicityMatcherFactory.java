@@ -1,10 +1,10 @@
 package hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity;
 
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcher;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.viatra2.emf.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
-import org.eclipse.viatra2.emf.incquery.runtime.extensibility.IMatcherFactoryProvider;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcherFactory;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
 
 /**
  * A pattern-specific matcher factory that can instantiate EReferenceWithStarMultiplicityMatcher in a type-safe way.

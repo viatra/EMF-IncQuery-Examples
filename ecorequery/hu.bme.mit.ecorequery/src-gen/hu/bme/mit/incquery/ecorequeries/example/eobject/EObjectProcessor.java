@@ -2,7 +2,7 @@ package hu.bme.mit.incquery.ecorequeries.example.eobject;
 
 import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatch;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the EObject pattern.

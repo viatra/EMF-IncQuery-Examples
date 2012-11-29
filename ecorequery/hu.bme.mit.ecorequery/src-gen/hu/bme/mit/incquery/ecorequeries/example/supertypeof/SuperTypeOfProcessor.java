@@ -2,7 +2,7 @@ package hu.bme.mit.incquery.ecorequeries.example.supertypeof;
 
 import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatch;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.viatra2.emf.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the SuperTypeOf pattern.
