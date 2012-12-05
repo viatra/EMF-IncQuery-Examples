@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http://school.ecore" name="University">
+  <teachers name="External teacher">
+    <courses href="BUTE.school#//@courses.6"/>
+  </teachers>
+</school:School>

@@ -1,0 +1,86 @@
+package org.eclipse.incquery.runtime.base.test.feature;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.junit.Test;
+
+import school.SchoolPackage;
+import school.Student;
+
+/**
+ * Test cases used to test the {@link EStructuralFeature} related getters of EMF-IncQuery Base.
+ * 
+ * @author Tamas Szabo
+ *
+ */
+public class FeatureTest extends IncQueryBaseTest {
+
+	public FeatureTest(Notifier notifier) {
+		super(notifier);
+	}
+
+	/**
+	 * Finding all students in the model
+	 */
+	@Test
+	public void holderTest() {		
+		Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
+		for (EObject obj : ResourceAccess.getAllContents()) {
+			if (obj instanceof Student) {
+				assertTrue(result.contains(obj));
+			}
+		}
+	}
+	
+	/**
+	 * Removing all students from the model and resolving feature holders after that
+	 */
+	@Test
+	public void holderModTest() {
+		try {
+			final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+				@Override
+				protected void doExecute() {
+					//years and courses have references to students
+					ResourceAccess.getEObject().getCourses().clear();
+					ResourceAccess.getEObject().getYears().clear();
+				}
+			};
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
+			assertTrue(result.isEmpty());
+		}
+		finally {
+			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		}
+	}
+	
+	private static final String SCHOOL_NAME = "Budapest University of Technology and Economics";
+	
+	/**
+	 * Feature holder resolving based on String literal
+	 */
+	@Test
+	public void stringValueTest() {
+		Collection<EObject> result = navigationHelper.findByFeatureValue(SCHOOL_NAME, SchoolPackage.Literals.SCHOOL__NAME);
+		assertTrue(result.size() == 1);
+	}
+	
+	/**
+	 * Feature holder resolving based on Integer value
+	 */
+	@Test
+	public void integerValueTest() {
+		Collection<EObject> result = navigationHelper.findByFeatureValue(2011, SchoolPackage.Literals.YEAR__STARTING_DATE);
+		assertTrue(result.size() == 1);
+	}
+}
