@@ -3,7 +3,7 @@
 
    <extension
          id="teachers"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="teachers.TeachersMatcherFactory$Provider"
             id="teachers">
@@ -11,7 +11,7 @@
    </extension>
    <extension
          id="extension.derived.teachers"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="numberOfTeachers"
@@ -20,7 +20,7 @@
    </extension>
    <extension
          id="teachersWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="teacherswithmostcourses.TeachersWithMostCoursesMatcherFactory$Provider"
             id="teachersWithMostCourses">
@@ -28,7 +28,7 @@
    </extension>
    <extension
          id="extension.derived.teachersWithMostCourses"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="teachersWithMostCourses"
@@ -37,7 +37,7 @@
    </extension>
    <extension
          id="lastYear"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="lastyear.LastYearMatcherFactory$Provider"
             id="lastYear">
@@ -45,7 +45,7 @@
    </extension>
    <extension
          id="extension.derived.lastYear"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="School"
             feature-name="lastYear"
@@ -54,7 +54,7 @@
    </extension>
    <extension
          id="homeroomCourses"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="homeroomcourses.HomeroomCoursesMatcherFactory$Provider"
             id="homeroomCourses">
@@ -62,7 +62,7 @@
    </extension>
    <extension
          id="extension.derived.homeroomCourses"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="SchoolClass"
             feature-name="homeroomCourses"
@@ -71,7 +71,7 @@
    </extension>
    <extension
          id="courseWeights"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="courseweights.CourseWeightsMatcherFactory$Provider"
             id="courseWeights">
@@ -79,7 +79,7 @@
    </extension>
    <extension
          id="extension.derived.courseWeights"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Year"
             feature-name="weightOfRegularCourses"

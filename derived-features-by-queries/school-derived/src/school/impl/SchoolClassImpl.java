@@ -19,9 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import school.Course;
 import school.SchoolClass;
@@ -29,7 +26,9 @@ import school.SchoolPackage;
 import school.Student;
 import school.Teacher;
 import school.Year;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -460,22 +459,22 @@ public class SchoolClassImpl extends EObjectImpl implements SchoolClass {
   }
 
 	/**
-	 * EMF-IncQuery handler for derived feature homeroomCourses
+	 * EMF-IncQuery handler for query-based feature homeroomCourses
 	 */
-	private IncqueryDerivedFeature homeroomCoursesHandler;
+	private IQueryBasedFeatureHandler homeroomCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature homeroomCourses
+	 * @query-based getter created by EMF-IncQuery for query-based feature homeroomCourses
 	 */
 	public EList<Course> getHomeroomCourses() {
 		if (homeroomCoursesHandler == null) {
-			homeroomCoursesHandler = IncqueryFeatureHelper
-					.getIncqueryDerivedFeature(
+			homeroomCoursesHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL_CLASS__HOMEROOM_COURSES,
 							"homeroomCourses", "SchC", "C",
-							FeatureKind.MANY_REFERENCE, true, false);
+							QueryBasedFeatureKind.MANY_REFERENCE, true, false);
 		}
 		return homeroomCoursesHandler.getManyReferenceValueAsEList(this);
 	}

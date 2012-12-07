@@ -1,6 +1,6 @@
 import "http:///school-derived.ecore"
 
-@DerivedFeature(feature = "numberOfTeachers", kind = "counter")
+@QueryBasedFeature(feature = "numberOfTeachers", kind = "counter")
 pattern teachers(School : School, Teacher : Teacher) = {
    School.teachers(School,Teacher);
 }
@@ -9,7 +9,7 @@ private pattern coursesOfTeacher(Teacher : Teacher, Course :  Course) = {
    Teacher.courses(Teacher,Course);
 }
 
-@DerivedFeature
+@QueryBasedFeature
 pattern teachersWithMostCourses(School : School, Teacher : Teacher) = {
    find teachers(School,Teacher);
    neg find moreCourses(Teacher);
@@ -18,12 +18,13 @@ pattern teachersWithMostCourses(School : School, Teacher : Teacher) = {
 private pattern moreCourses(Teacher : Teacher) = {
 	N == count find coursesOfTeacher(Teacher,_Course);
     M == count find coursesOfTeacher(Teacher2,_Course2);
-    Teacher(Teacher2);
+    School.teachers(School, Teacher2);
+    School.teachers(School, Teacher);
     Teacher != Teacher2;
-    check((N as Integer) < (M as Integer));
+    check(N  < M);
 }
 
-@DerivedFeature
+@QueryBasedFeature
 pattern lastYear(School : School, Year : Year) = {
    School.years(School,Year);
    neg find laterYear(Year);
@@ -32,19 +33,20 @@ pattern lastYear(School : School, Year : Year) = {
 private pattern laterYear(Year : Year) = {
 	Year.startingDate(Year, Date);
 	Year.startingDate(Year2, Date2);
-	Year(Year2);
+	School.years(School, Year);
+	School.years(School, Year2);
 	Year != Year2;
-	check((Date as Integer) < (Date2 as Integer));
+	check(Date < Date2);
 }
 
-@DerivedFeature
+@QueryBasedFeature
 pattern homeroomCourses(SchC : SchoolClass, C : Course) = {
   SchoolClass.courses(SchC,C);
   Course.teacher(C,T);
   SchoolClass.homeroomTeacher(SchC,T);
 }
 
-@DerivedFeature(feature = "weightOfRegularCourses", source = Y, kind = "sum")
+@QueryBasedFeature(feature = "weightOfRegularCourses", source = Y, kind = "sum")
 pattern courseWeights(Sch: School, W, Y : Year) = {
   School.years(Sch,Y);
   Year.schoolClasses.courses(Y,C);

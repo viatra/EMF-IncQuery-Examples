@@ -11,6 +11,7 @@ Export-Package: school,
  school.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.viatra2.emf.incquery.runtime;bundle-version="0.6.0"
+ org.eclipse.incquery.runtime;bundle-version="0.6.0",
+ org.eclipse.incquery.querybasedfeatures.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

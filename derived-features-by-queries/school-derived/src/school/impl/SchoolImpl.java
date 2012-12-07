@@ -17,15 +17,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import school.Course;
 import school.School;
 import school.SchoolPackage;
 import school.Teacher;
 import school.Year;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -556,63 +556,64 @@ public class SchoolImpl extends EObjectImpl implements School {
   }
 
 	/**
-	 * EMF-IncQuery handler for derived feature numberOfTeachers
+	 * EMF-IncQuery handler for query-based feature numberOfTeachers
 	 */
-	private IncqueryDerivedFeature numberOfTeachersHandler;
+	private IQueryBasedFeatureHandler numberOfTeachersHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature numberOfTeachers
+	 * @query-based getter created by EMF-IncQuery for query-based feature numberOfTeachers
 	 */
 	public int getNumberOfTeachers() {
 		if (numberOfTeachersHandler == null) {
-			numberOfTeachersHandler = IncqueryFeatureHelper
-					.getIncqueryDerivedFeature(
+			numberOfTeachersHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL__NUMBER_OF_TEACHERS,
-							"teachers", "School", null, FeatureKind.COUNTER,
-							true, false);
+							"teachers", "School", null,
+							QueryBasedFeatureKind.COUNTER, true, false);
 		}
 		return numberOfTeachersHandler.getIntValue(this);
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature teachersWithMostCourses
+	 * EMF-IncQuery handler for query-based feature teachersWithMostCourses
 	 */
-	private IncqueryDerivedFeature teachersWithMostCoursesHandler;
+	private IQueryBasedFeatureHandler teachersWithMostCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature teachersWithMostCourses
+	 * @query-based getter created by EMF-IncQuery for query-based feature teachersWithMostCourses
 	 */
 	public EList<Teacher> getTeachersWithMostCourses() {
 		if (teachersWithMostCoursesHandler == null) {
-			teachersWithMostCoursesHandler = IncqueryFeatureHelper
-					.getIncqueryDerivedFeature(
+			teachersWithMostCoursesHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(
 							this,
 							SchoolPackageImpl.Literals.SCHOOL__TEACHERS_WITH_MOST_COURSES,
 							"teachersWithMostCourses", "School", "Teacher",
-							FeatureKind.MANY_REFERENCE, true, false);
+							QueryBasedFeatureKind.MANY_REFERENCE, true, false);
 		}
 		return teachersWithMostCoursesHandler
 				.getManyReferenceValueAsEList(this);
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature lastYear
+	 * EMF-IncQuery handler for query-based feature lastYear
 	 */
-	private IncqueryDerivedFeature lastYearHandler;
+	private IQueryBasedFeatureHandler lastYearHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature lastYear
+	 * @query-based getter created by EMF-IncQuery for query-based feature lastYear
 	 */
 	public Year basicGetLastYear() {
 		if (lastYearHandler == null) {
-			lastYearHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
-					this, SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR,
-					"lastYear", "School", "Year", FeatureKind.SINGLE_REFERENCE,
-					true, false);
+			lastYearHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(this,
+							SchoolPackageImpl.Literals.SCHOOL__LAST_YEAR,
+							"lastYear", "School", "Year",
+							QueryBasedFeatureKind.SINGLE_REFERENCE, true, false);
 		}
 		return (school.Year) lastYearHandler.getSingleReferenceValue(this);
 	}

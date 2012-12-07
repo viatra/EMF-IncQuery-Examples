@@ -11,7 +11,7 @@ Export-Package: courseweights,
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.incquery.runtime,
  org.eclipse.xtext.xbase.lib,
  school-derived,
  school-derived-base

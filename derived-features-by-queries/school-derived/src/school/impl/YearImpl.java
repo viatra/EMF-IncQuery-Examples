@@ -18,15 +18,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import school.School;
 import school.SchoolClass;
 import school.SchoolPackage;
 import school.Year;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -339,22 +338,22 @@ public class YearImpl extends EObjectImpl implements Year {
   }
 
 	/**
-	 * EMF-IncQuery handler for derived feature weightOfRegularCourses
+	 * EMF-IncQuery handler for query-based feature weightOfRegularCourses
 	 */
-	private IncqueryDerivedFeature weightOfRegularCoursesHandler;
+	private IQueryBasedFeatureHandler weightOfRegularCoursesHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature weightOfRegularCourses
+	 * @query-based getter created by EMF-IncQuery for query-based feature weightOfRegularCourses
 	 */
 	public int getWeightOfRegularCourses() {
 		if (weightOfRegularCoursesHandler == null) {
-			weightOfRegularCoursesHandler = IncqueryFeatureHelper
-					.getIncqueryDerivedFeature(
+			weightOfRegularCoursesHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(
 							this,
 							SchoolPackageImpl.Literals.YEAR__WEIGHT_OF_REGULAR_COURSES,
-							"courseWeights", "Y", "W", FeatureKind.SUM, true,
-							false);
+							"courseWeights", "Y", "W",
+							QueryBasedFeatureKind.SUM, true, false);
 		}
 		return weightOfRegularCoursesHandler.getIntValue(this);
 	}
