@@ -2,92 +2,8 @@
 <plugin>
 
    <extension
-         id="operation.queries.ChecklistEntryJobCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.ChecklistEntryJobCorrespondence"
-            factoryProvider="operation.queries.checklistentryjobcorrespondence.ChecklistEntryJobCorrespondenceMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
-         id="extension.derived.operation.queries.ChecklistEntryJobCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="ChecklistEntry"
-            feature-name="jobs"
-            package-nsUri="http://operation/1.0">
-      </wellbehaving-derived-feature>
-   </extension>
-   <extension
-         id="operation.queries.ChecklistEntryTaskCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.ChecklistEntryTaskCorrespondence"
-            factoryProvider="operation.queries.checklistentrytaskcorrespondence.ChecklistEntryTaskCorrespondenceMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
-         id="extension.derived.operation.queries.ChecklistEntryTaskCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="ChecklistEntry"
-            feature-name="task"
-            package-nsUri="http://operation/1.0">
-      </wellbehaving-derived-feature>
-   </extension>
-   <extension
-         id="operation.queries.ChecklistProcessCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.ChecklistProcessCorrespondence"
-            factoryProvider="operation.queries.checklistprocesscorrespondence.ChecklistProcessCorrespondenceMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
-         id="extension.derived.operation.queries.ChecklistProcessCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
-      <wellbehaving-derived-feature
-            classifier-name="Checklist"
-            feature-name="process"
-            package-nsUri="http://operation/1.0">
-      </wellbehaving-derived-feature>
-   </extension>
-   <extension
-         id="operation.queries.IncorrectEntryInChecklist"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.IncorrectEntryInChecklist"
-            factoryProvider="operation.queries.incorrectentryinchecklist.IncorrectEntryInChecklistMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
-         id="operation.queries.TaskChecklistEntryJobCorrespondence"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.TaskChecklistEntryJobCorrespondence"
-            factoryProvider="operation.queries.taskchecklistentryjobcorrespondence.TaskChecklistEntryJobCorrespondenceMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
-         id="operation.queries.DataReadByChecklistEntry"
-         name=""
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
-      <matcher
-            id="operation.queries.DataReadByChecklistEntry"
-            factoryProvider="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryMatcherFactory$Provider">
-      </matcher>
-   </extension>
-   <extension
          id="system.queries.JobTaskCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.jobtaskcorrespondence.JobTaskCorrespondenceMatcherFactory$Provider"
             id="system.queries.JobTaskCorrespondence">
@@ -95,7 +11,7 @@
    </extension>
    <extension
          id="extension.derived.system.queries.JobTaskCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Job"
             feature-name="tasks"
@@ -104,7 +20,7 @@
    </extension>
    <extension
          id="system.queries.DataTaskReadCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.datataskreadcorrespondence.DataTaskReadCorrespondenceMatcherFactory$Provider"
             id="system.queries.DataTaskReadCorrespondence">
@@ -112,7 +28,7 @@
    </extension>
    <extension
          id="extension.derived.system.queries.DataTaskReadCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Data"
             feature-name="readingTask"
@@ -121,7 +37,7 @@
    </extension>
    <extension
          id="system.queries.DataTaskWriteCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.datataskwritecorrespondence.DataTaskWriteCorrespondenceMatcherFactory$Provider"
             id="system.queries.DataTaskWriteCorrespondence">
@@ -129,7 +45,7 @@
    </extension>
    <extension
          id="extension.derived.system.queries.DataTaskWriteCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Data"
             feature-name="writingTask"
@@ -138,7 +54,7 @@
    </extension>
    <extension
          id="system.queries.JobInfoCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.jobinfocorrespondence.JobInfoCorrespondenceMatcherFactory$Provider"
             id="system.queries.JobInfoCorrespondence">
@@ -146,7 +62,7 @@
    </extension>
    <extension
          id="extension.derived.system.queries.JobInfoCorrespondence"
-         point="org.eclipse.viatra2.emf.incquery.base.wellbehaving.derived.features">
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
       <wellbehaving-derived-feature
             classifier-name="Job"
             feature-name="info"
@@ -155,7 +71,7 @@
    </extension>
    <extension
          id="system.queries.UndefinedServiceTasks"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.undefinedservicetasks.UndefinedServiceTasksMatcherFactory$Provider"
             id="system.queries.UndefinedServiceTasks">
@@ -163,7 +79,7 @@
    </extension>
    <extension
          id="system.queries.TasksAffectedThroughData"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.tasksaffectedthroughdata.TasksAffectedThroughDataMatcherFactory$Provider"
             id="system.queries.TasksAffectedThroughData">
@@ -171,10 +87,93 @@
    </extension>
    <extension
          id="system.queries.TransitiveAffectedTasksThroughData"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="system.queries.transitiveaffectedtasksthroughdata.TransitiveAffectedTasksThroughDataMatcherFactory$Provider"
             id="system.queries.TransitiveAffectedTasksThroughData">
+      </matcher>
+   </extension>
+   <extension
+         id="operation.queries.ChecklistEntryJobCorrespondence"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.checklistentryjobcorrespondence.ChecklistEntryJobCorrespondenceMatcherFactory$Provider"
+            id="operation.queries.ChecklistEntryJobCorrespondence">
+      </matcher>
+   </extension>
+   <extension
+         id="operation.queries.ChecklistEntryJobCorrespondence"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="operation.queries.checklistentryjobcorrespondence.ChecklistEntryJobCorrespondenceEvaluator1_1"
+            id="operation.queries.ChecklistEntryJobCorrespondence_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="extension.derived.operation.queries.ChecklistEntryJobCorrespondence"
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="ChecklistEntry"
+            feature-name="jobs"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="operation.queries.ChecklistEntryTaskCorrespondence"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.checklistentrytaskcorrespondence.ChecklistEntryTaskCorrespondenceMatcherFactory$Provider"
+            id="operation.queries.ChecklistEntryTaskCorrespondence">
+      </matcher>
+   </extension>
+   <extension
+         id="extension.derived.operation.queries.ChecklistEntryTaskCorrespondence"
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="ChecklistEntry"
+            feature-name="task"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="operation.queries.ChecklistProcessCorrespondence"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.checklistprocesscorrespondence.ChecklistProcessCorrespondenceMatcherFactory$Provider"
+            id="operation.queries.ChecklistProcessCorrespondence">
+      </matcher>
+   </extension>
+   <extension
+         id="extension.derived.operation.queries.ChecklistProcessCorrespondence"
+         point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+      <wellbehaving-derived-feature
+            classifier-name="Checklist"
+            feature-name="process"
+            package-nsUri="http://operation/1.0">
+      </wellbehaving-derived-feature>
+   </extension>
+   <extension
+         id="operation.queries.IncorrectEntryInChecklist"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.incorrectentryinchecklist.IncorrectEntryInChecklistMatcherFactory$Provider"
+            id="operation.queries.IncorrectEntryInChecklist">
+      </matcher>
+   </extension>
+   <extension
+         id="operation.queries.TaskChecklistEntryJobCorrespondence"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.taskchecklistentryjobcorrespondence.TaskChecklistEntryJobCorrespondenceMatcherFactory$Provider"
+            id="operation.queries.TaskChecklistEntryJobCorrespondence">
+      </matcher>
+   </extension>
+   <extension
+         id="operation.queries.DataReadByChecklistEntry"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="operation.queries.datareadbychecklistentry.DataReadByChecklistEntryMatcherFactory$Provider"
+            id="operation.queries.DataReadByChecklistEntry">
       </matcher>
    </extension>
 

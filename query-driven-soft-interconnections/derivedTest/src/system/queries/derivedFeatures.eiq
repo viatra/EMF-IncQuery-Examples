@@ -11,7 +11,7 @@ private pattern TaskKind(Task : Task, Kind : TaskKind) = {
 
 // first query n-to-m traceability
 /* Job.tasks relation */
-@DerivedFeature(feature = "tasks")
+@QueryBasedFeature(feature = "tasks")
 pattern JobTaskCorrespondence(Job : Job, Task : Task) = {
 	Job.taskIds(Job,TaskId);
 	Task.id(Task,TaskId);
@@ -22,21 +22,21 @@ private pattern TaskHasJob(Task : Task) = {
 }
 
 /* Data.readingTask relation */
-@DerivedFeature(feature = "readingTask")
+@QueryBasedFeature(feature = "readingTask")
 pattern DataTaskReadCorrespondence(Data : Data, Task : Task) = {
 	Data.readingTaskIds(Data,TaskId);
 	Task.id(Task,TaskId);
 }
 
 /* Data.writingTask relation */
-@DerivedFeature(feature = "writingTask")
+@QueryBasedFeature(feature = "writingTask")
 pattern DataTaskWriteCorrespondence(Data : Data ,Task : Task) = {
 	Data.writingTaskIds(Data,TaskId);
 	Task.id(Task,TaskId);
 }
 
 /* Job.info relation */
-@DerivedFeature(feature = "info")
+@QueryBasedFeature(feature = "info")
 pattern JobInfoCorrespondence(Job : Job, Info : RuntimeInformation) = {
 	ChecklistEntry.info(CLE, Info);
 	ChecklistEntry.jobs(CLE, Job);

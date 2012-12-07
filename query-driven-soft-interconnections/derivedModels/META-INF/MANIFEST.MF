@@ -17,6 +17,8 @@ Export-Package: operation,
  system.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.viatra2.emf.incquery.runtime;bundle-version="0.6.0"
+ org.eclipse.incquery.runtime;bundle-version="0.7.0",
+ org.eclipse.incquery.runtime,
+ org.eclipse.incquery.querybasedfeatures.runtime
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

@@ -20,12 +20,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import process.Task;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -389,39 +388,40 @@ public class ChecklistEntryImpl extends OperationElementImpl implements Checklis
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature jobs
+	 * EMF-IncQuery handler for query-based feature jobs
 	 */
-	private IncqueryDerivedFeature jobsHandler;
+	private IQueryBasedFeatureHandler jobsHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature jobs
+	 * @query-based getter created by EMF-IncQuery for query-based feature jobs
 	 */
 	public EList getJobs() {
 		if (jobsHandler == null) {
-			jobsHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
-					OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS,
+			jobsHandler = QueryBasedFeatureHelper.getQueryBasedFeatureHandler(
+					this, OperationPackageImpl.Literals.CHECKLIST_ENTRY__JOBS,
 					"operation.queries.ChecklistEntryJobCorrespondence", "CLE",
-					"Job", FeatureKind.MANY_REFERENCE, true, false);
+					"Job", QueryBasedFeatureKind.MANY_REFERENCE, true, false);
 		}
 		return jobsHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature task
+	 * EMF-IncQuery handler for query-based feature task
 	 */
-	private IncqueryDerivedFeature taskHandler;
+	private IQueryBasedFeatureHandler taskHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature task
+	 * @query-based getter created by EMF-IncQuery for query-based feature task
 	 */
 	public Task basicGetTask() {
 		if (taskHandler == null) {
-			taskHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
-					OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
+			taskHandler = QueryBasedFeatureHelper.getQueryBasedFeatureHandler(
+					this, OperationPackageImpl.Literals.CHECKLIST_ENTRY__TASK,
 					"operation.queries.ChecklistEntryTaskCorrespondence",
-					"CLE", "Task", FeatureKind.SINGLE_REFERENCE, true, false);
+					"CLE", "Task", QueryBasedFeatureKind.SINGLE_REFERENCE,
+					true, false);
 		}
 		return (process.Task) taskHandler.getSingleReferenceValue(this);
 	}

@@ -21,10 +21,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -280,21 +279,22 @@ public class ChecklistImpl extends OperationElementImpl implements Checklist {
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature process
+	 * EMF-IncQuery handler for query-based feature process
 	 */
-	private IncqueryDerivedFeature processHandler;
+	private IQueryBasedFeatureHandler processHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature process
+	 * @query-based getter created by EMF-IncQuery for query-based feature process
 	 */
 	public process.Process basicGetProcess() {
 		if (processHandler == null) {
-			processHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
-					this, OperationPackageImpl.Literals.CHECKLIST__PROCESS,
-					"operation.queries.ChecklistProcessCorrespondence",
-					"Checklist", "Process", FeatureKind.SINGLE_REFERENCE, true,
-					false);
+			processHandler = QueryBasedFeatureHelper
+					.getQueryBasedFeatureHandler(this,
+							OperationPackageImpl.Literals.CHECKLIST__PROCESS,
+							"operation.queries.ChecklistProcessCorrespondence",
+							"Checklist", "Process",
+							QueryBasedFeatureKind.SINGLE_REFERENCE, true, false);
 		}
 		return (process.Process) processHandler.getSingleReferenceValue(this);
 	}

@@ -15,14 +15,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.FeatureKind;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHandler;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryFeatureHelper;
 
 import system.Interface;
 import system.Job;
 import system.SystemPackage;
-import org.eclipse.viatra2.emf.incquery.runtime.derived.IncqueryDerivedFeature;
+import org.eclipse.incquery.querybasedfeatures.runtime.IQueryBasedFeatureHandler;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureKind;
+import org.eclipse.incquery.querybasedfeatures.runtime.QueryBasedFeatureHelper;
 
 /**
  * <!-- begin-user-doc -->
@@ -279,39 +278,39 @@ public class JobImpl extends ResourceElementImpl implements Job {
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature tasks
+	 * EMF-IncQuery handler for query-based feature tasks
 	 */
-	private IncqueryDerivedFeature tasksHandler;
+	private IQueryBasedFeatureHandler tasksHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature tasks
+	 * @query-based getter created by EMF-IncQuery for query-based feature tasks
 	 */
 	public EList getTasks() {
 		if (tasksHandler == null) {
-			tasksHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(
+			tasksHandler = QueryBasedFeatureHelper.getQueryBasedFeatureHandler(
 					this, SystemPackageImpl.Literals.JOB__TASKS,
 					"system.queries.JobTaskCorrespondence", "Job", "Task",
-					FeatureKind.MANY_REFERENCE, true, false);
+					QueryBasedFeatureKind.MANY_REFERENCE, true, false);
 		}
 		return tasksHandler.getManyReferenceValueAsEList(this);
 	}
 
 	/**
-	 * EMF-IncQuery handler for derived feature info
+	 * EMF-IncQuery handler for query-based feature info
 	 */
-	private IncqueryDerivedFeature infoHandler;
+	private IQueryBasedFeatureHandler infoHandler;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @derived getter created by EMF-IncQuery for derived feature info
+	 * @query-based getter created by EMF-IncQuery for query-based feature info
 	 */
 	public EList getInfo() {
 		if (infoHandler == null) {
-			infoHandler = IncqueryFeatureHelper.getIncqueryDerivedFeature(this,
-					SystemPackageImpl.Literals.JOB__INFO,
+			infoHandler = QueryBasedFeatureHelper.getQueryBasedFeatureHandler(
+					this, SystemPackageImpl.Literals.JOB__INFO,
 					"system.queries.JobInfoCorrespondence", "Job", "Info",
-					FeatureKind.MANY_REFERENCE, true, false);
+					QueryBasedFeatureKind.MANY_REFERENCE, true, false);
 		}
 		return infoHandler.getManyReferenceValueAsEList(this);
 	}

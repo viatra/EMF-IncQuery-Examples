@@ -4,8 +4,8 @@ Bundle-Name: derivedTest.validation
 Bundle-SymbolicName: derivedTest.validation;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: derivedTest,
- org.eclipse.viatra2.emf.incquery.runtime,
- org.eclipse.viatra2.emf.incquery.validation.runtime,
  org.eclipse.emf.ecore,
- derivedModels
+ derivedModels,
+ org.eclipse.incquery.runtime,
+ org.eclipse.incquery.validation.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
