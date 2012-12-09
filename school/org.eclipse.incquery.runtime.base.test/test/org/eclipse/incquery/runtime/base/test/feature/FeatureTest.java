@@ -9,7 +9,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ import school.Student;
  * @author Tamas Szabo
  *
  */
-public class FeatureTest extends IncQueryBaseTest {
+public class FeatureTest extends IncQueryBaseGetterTest {
 
 	public FeatureTest(Notifier notifier) {
 		super(notifier);
@@ -34,7 +34,7 @@ public class FeatureTest extends IncQueryBaseTest {
 	@Test
 	public void holderTest() {		
 		Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
-		for (EObject obj : ResourceAccess.getAllContents()) {
+		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
 			if (obj instanceof Student) {
 				assertTrue(result.contains(obj));
 			}
@@ -51,8 +51,8 @@ public class FeatureTest extends IncQueryBaseTest {
 				@Override
 				protected void doExecute() {
 					//years and courses have references to students
-					ResourceAccess.getEObject().getCourses().clear();
-					ResourceAccess.getEObject().getYears().clear();
+					ResourceAccess.getFirstSchool().getCourses().clear();
+					ResourceAccess.getFirstSchool().getYears().clear();
 				}
 			};
 			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);

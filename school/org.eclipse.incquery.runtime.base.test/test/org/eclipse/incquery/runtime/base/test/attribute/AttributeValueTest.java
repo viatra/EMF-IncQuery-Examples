@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
 import org.junit.Test;
 
 import school.SchoolFactory;
@@ -21,7 +21,7 @@ import school.SchoolFactory;
  * @author Tamas Szabo
  *
  */
-public class AttributeValueTest extends IncQueryBaseTest {
+public class AttributeValueTest extends IncQueryBaseGetterTest {
 	
 	private static final String SCHOOL_NAME = "Budapest University of Technology and Economics";
 

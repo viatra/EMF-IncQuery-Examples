@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.viatra2.emf.incquery.base.test
+Bundle-Name: org.eclipse.incquery.runtime.base.test
 Bundle-SymbolicName: org.eclipse.incquery.runtime.base.test
 Bundle-Version: 0.7.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

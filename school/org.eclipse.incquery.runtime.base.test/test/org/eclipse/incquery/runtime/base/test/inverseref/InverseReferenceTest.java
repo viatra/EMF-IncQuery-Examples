@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +30,7 @@ import school.Year;
  * @author Tamas Szabo
  *
  */
-public class InverseReferenceTest extends IncQueryBaseTest {
+public class InverseReferenceTest extends IncQueryBaseGetterTest {
 
 	public InverseReferenceTest(Notifier notifier) {
 		super(notifier);
@@ -96,7 +96,7 @@ public class InverseReferenceTest extends IncQueryBaseTest {
 				@Override
 				protected void doExecute() {
 					
-					for (Course c : ResourceAccess.getEObject().getCourses()) {
+					for (Course c : ResourceAccess.getFirstSchool().getCourses()) {
 						if (c.getSchoolClass() != null) {
 							List<Student> students = new ArrayList<Student>(c.getSchoolClass().getStudents());
 							for (Student s : students) {

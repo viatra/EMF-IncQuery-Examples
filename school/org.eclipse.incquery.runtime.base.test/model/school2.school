@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http://school.ecore" name="University of Szeged">
+  <teachers name="Teacher1">
+    <courses href="school1.school#//@courses.6"/>
+    <homeroomedClass href="school1.school#//@years.0/@schoolClasses.1"/>
+  </teachers>
+  <teachers name="Teacher2">
+    <homeroomedClass href="school1.school#//@years.0/@schoolClasses.0"/>
+  </teachers>
+</school:School>

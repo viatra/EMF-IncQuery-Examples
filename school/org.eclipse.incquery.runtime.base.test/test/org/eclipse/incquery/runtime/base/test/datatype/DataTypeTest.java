@@ -10,7 +10,7 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ import school.Year;
  * @author Tamas Szabo
  *
  */
-public class DataTypeTest extends IncQueryBaseTest {
+public class DataTypeTest extends IncQueryBaseGetterTest {
 
 	public DataTypeTest(Notifier notifier) {
 		super(notifier);
@@ -68,17 +68,17 @@ public class DataTypeTest extends IncQueryBaseTest {
 				@Override
 				protected void doExecute() {
 					
-					List<Course> courses = new ArrayList<Course>(ResourceAccess.getEObject().getCourses());
+					List<Course> courses = new ArrayList<Course>(ResourceAccess.getFirstSchool().getCourses());
 					for (Course c : courses) {
 						c.setSchool(null);
 					}
 					
-					List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getEObject().getTeachers());
+					List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getFirstSchool().getTeachers());
 					for (Teacher t : teachers) {
 						t.setSchool(null);
 					}
 					
-					List<Year> years = new ArrayList<Year>(ResourceAccess.getEObject().getYears());
+					List<Year> years = new ArrayList<Year>(ResourceAccess.getFirstSchool().getYears());
 					for (Year y : years) {
 						y.setSchool(null);
 					}

@@ -4,7 +4,7 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ import school.SchoolFactory;
  * @author Tamas Szabo
  *
  */
-public abstract class IncQueryBaseListenerTest extends IncQueryBaseTest {
+public abstract class IncQueryBaseListenerTest extends IncQueryBaseGetterTest {
 	
 	protected Course newCourse;
 	protected String newCourseSubject = "NewCourse";
@@ -64,15 +64,15 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseTest {
 		final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
-				ResourceAccess.getEObject().getCourses().add(newCourse);
+				ResourceAccess.getFirstSchool().getCourses().add(newCourse);
 			}
 		};
 		try {
 			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
 		}
 		finally {
-			unregisterListener();
 			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+			unregisterListener();
 		}
 	}
 }

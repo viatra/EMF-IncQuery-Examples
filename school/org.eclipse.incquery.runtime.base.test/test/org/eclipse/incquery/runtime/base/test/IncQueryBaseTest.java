@@ -1,20 +1,20 @@
 package org.eclipse.incquery.runtime.base.test;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.base.api.IncQueryBaseFactory;
 import org.eclipse.incquery.runtime.base.api.NavigationHelper;
 import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
-@RunWith(Parameterized.class)
+/**
+ * This class is the super class of all EMF-IncQuery Base test cases. 
+ * It is used to handle the {@link NavigationHelper} registration 
+ * based on the given {@link Notifier} instance and wildcard mode setting. 
+ * 
+ * @author Tamas Szabo
+ *
+ */
 public abstract class IncQueryBaseTest {
 
 	protected NavigationHelper navigationHelper;
@@ -45,13 +45,5 @@ public abstract class IncQueryBaseTest {
 			e.printStackTrace();
 		}
 	}
-	
-	@Parameters
-	public static Collection<Notifier[]> getNotifiers() {
-		return Arrays.asList(new Notifier[][] {
-		                 { ResourceAccess.getResourceSet() },
-		                 { ResourceAccess.getResource() },
-		                 { ResourceAccess.getEObject() }
-		});
-	}
+
 }

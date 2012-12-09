@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -22,12 +23,20 @@ public class ResourceAccess {
 	private static TransactionalEditingDomain transactionalEditingDomain;
 	private static ResourceSet resourceSet = null;
 	
-	public static School getEObject() {
-		return (School) getResource().getContents().get(0);
+	public static School getFirstSchool() {
+		return (School) getResourceOfFirstSchool().getContents().get(0);
 	}
 	
-	public static Resource getResource() {
+	public static School getSecondSchool() {
+		return (School) getResourceOfSecondSchool().getContents().get(0);
+	}
+	
+	public static Resource getResourceOfFirstSchool() {
 		return getResourceSet().getResources().get(0);
+	}
+	
+	public static Resource getResourceOfSecondSchool() {
+		return getResourceSet().getResources().get(1);
 	}
 	
 	public static ResourceSet getResourceSet() {
@@ -38,22 +47,33 @@ public class ResourceAccess {
 		    m.put("school", new XMIResourceFactoryImpl());
 		    resourceSet = new ResourceSetImpl();
 		    transactionalEditingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
-		    resourceSet.getResource(URI.createFileURI(new File("model/BUTE.school").getAbsolutePath()), true);
-		    resourceSet.getResource(URI.createFileURI(new File("model/Other.school").getAbsolutePath()), true);
+		    resourceSet.getResource(URI.createFileURI(new File("model/school1.school").getAbsolutePath()), true);
+		    resourceSet.getResource(URI.createFileURI(new File("model/school2.school").getAbsolutePath()), true);
 		}
 		return resourceSet;
 	}
 	
-	public static  List<EObject> getAllContents() {
+	public static  List<EObject> getAllContents(Notifier notifier) {
 		List<EObject> contents = new ArrayList<EObject>();
-		for (Resource resource : resourceSet.getResources()) {
-			TreeIterator<EObject> iterator = resource.getAllContents();
-			
-			while (iterator.hasNext()) {
-				contents.add(iterator.next());
+		
+		if (notifier instanceof EObject) {
+			getAllContents(contents, ((EObject) notifier).eAllContents());
+		}
+		else if (notifier instanceof Resource) {
+			getAllContents(contents, ((Resource) notifier).getAllContents());
+		}
+		else {
+			for (Resource resource : ((ResourceSet) notifier).getResources()) {
+				getAllContents(contents, resource.getAllContents());
 			}
 		}
 		return contents;
+	}
+	
+	private static void getAllContents(List<EObject> contents, TreeIterator<EObject> iterator) {
+		while (iterator.hasNext()) {
+			contents.add(iterator.next());
+		}
 	}
 		
 	public static TransactionalEditingDomain getTransactionalEditingDomain() {
