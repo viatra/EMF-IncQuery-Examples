@@ -14,7 +14,7 @@ import org.eclipse.incquery.runtime.base.api.IncQueryBaseFactory;
 import org.eclipse.incquery.runtime.base.api.TransitiveClosureHelper;
 import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.itc.alg.misc.Tuple;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.eclipse.incquery.runtime.base.test.util.TestObserver;
 import org.junit.After;
@@ -26,7 +26,7 @@ import school.SchoolFactory;
 import school.SchoolPackage;
 import school.Student;
 
-public class TransitiveClosureHelperTest extends IncQueryBaseGetterTest {
+public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
 
 	private TransitiveClosureHelper transitiveClosureHelper;
 	private Student aStudent;

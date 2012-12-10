@@ -11,7 +11,7 @@
     </schoolClasses>
   </years>
   <years startingDate="2012">
-    <schoolClasses code="67" courses="//@courses.3 //@courses.6" homeroomTeacher="//@teachers.2">
+    <schoolClasses code="67" courses="//@courses.3" homeroomTeacher="//@teachers.2">
       <students name="Istvan Rath" friendsWith="//@years.1/@schoolClasses.0/@students.1"/>
       <students name="Akos Horvath"/>
     </schoolClasses>

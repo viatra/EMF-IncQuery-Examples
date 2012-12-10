@@ -9,7 +9,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ import school.Student;
  * @author Tamas Szabo
  *
  */
-public class FeatureTest extends IncQueryBaseGetterTest {
+public class FeatureTest extends IncQueryBaseParameterizedTest {
 
 	public FeatureTest(Notifier notifier) {
 		super(notifier);
@@ -51,8 +51,11 @@ public class FeatureTest extends IncQueryBaseGetterTest {
 				@Override
 				protected void doExecute() {
 					//years and courses have references to students
+					//remove all of them from the ResourceSet
 					ResourceAccess.getFirstSchool().getCourses().clear();
 					ResourceAccess.getFirstSchool().getYears().clear();
+					ResourceAccess.getSecondSchool().getCourses().clear();
+					ResourceAccess.getSecondSchool().getYears().clear();
 				}
 			};
 			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);

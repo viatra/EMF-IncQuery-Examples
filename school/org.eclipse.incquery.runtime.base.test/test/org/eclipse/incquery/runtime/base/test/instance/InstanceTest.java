@@ -7,7 +7,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -22,7 +22,7 @@ import school.Student;
  * @author Tamas Szabo
  *
  */
-public class InstanceTest extends IncQueryBaseGetterTest {
+public class InstanceTest extends IncQueryBaseParameterizedTest {
 
 	public InstanceTest(Notifier notifier) {
 		super(notifier);

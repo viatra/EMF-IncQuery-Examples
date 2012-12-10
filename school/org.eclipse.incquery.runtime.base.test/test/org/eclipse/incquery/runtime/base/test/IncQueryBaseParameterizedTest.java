@@ -18,13 +18,13 @@ import org.junit.runners.Parameterized.Parameters;
  *
  */
 @RunWith(Parameterized.class)
-public abstract class IncQueryBaseGetterTest extends IncQueryBaseTest {
+public abstract class IncQueryBaseParameterizedTest extends IncQueryBaseTest {
 	
-	public IncQueryBaseGetterTest(Notifier notifier) {
+	public IncQueryBaseParameterizedTest(Notifier notifier) {
 		super(notifier);
 	}
 
-	public IncQueryBaseGetterTest(Notifier notifier, boolean wildcardMode) {
+	public IncQueryBaseParameterizedTest(Notifier notifier, boolean wildcardMode) {
 		super(notifier, wildcardMode);
 	}
 	

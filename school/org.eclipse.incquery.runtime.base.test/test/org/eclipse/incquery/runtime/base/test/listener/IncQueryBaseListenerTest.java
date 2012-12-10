@@ -4,7 +4,7 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.incquery.runtime.base.test.IncQueryBaseGetterTest;
+import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ import school.SchoolFactory;
  * @author Tamas Szabo
  *
  */
-public abstract class IncQueryBaseListenerTest extends IncQueryBaseGetterTest {
+public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterizedTest {
 	
 	protected Course newCourse;
 	protected String newCourseSubject = "NewCourse";
