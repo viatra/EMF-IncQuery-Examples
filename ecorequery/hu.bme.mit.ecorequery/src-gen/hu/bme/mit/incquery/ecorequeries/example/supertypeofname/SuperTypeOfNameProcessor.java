@@ -4,7 +4,7 @@ import hu.bme.mit.incquery.ecorequeries.example.supertypeofname.SuperTypeOfNameM
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the SuperTypeOfName pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

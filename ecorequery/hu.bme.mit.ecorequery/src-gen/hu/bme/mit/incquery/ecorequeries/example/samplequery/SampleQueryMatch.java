@@ -10,7 +10,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the SampleQuery pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery pattern, 
  * to be used in conjunction with SampleQueryMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -133,7 +133,7 @@ public final class SampleQueryMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "SampleQuery";
+    return "hu.bme.mit.incquery.ecorequeries.example.SampleQuery";
     
   }
   

@@ -4,7 +4,7 @@ import hu.bme.mit.incquery.ecorequeries.example.eclassname.EClassNameMatch;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the EClassName pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.EClassName pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

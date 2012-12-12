@@ -4,7 +4,7 @@ import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityna
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the EReferenceWithStarMultiplicityName pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

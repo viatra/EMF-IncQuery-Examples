@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the ECoreNamedElement pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

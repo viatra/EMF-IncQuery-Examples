@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the IsEString pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.IsEString pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

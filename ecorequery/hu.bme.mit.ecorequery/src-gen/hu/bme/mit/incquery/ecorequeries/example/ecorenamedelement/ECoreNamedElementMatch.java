@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the ECoreNamedElement pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement pattern, 
  * to be used in conjunction with ECoreNamedElementMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -77,7 +77,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "ECoreNamedElement";
+    return "hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement";
     
   }
   

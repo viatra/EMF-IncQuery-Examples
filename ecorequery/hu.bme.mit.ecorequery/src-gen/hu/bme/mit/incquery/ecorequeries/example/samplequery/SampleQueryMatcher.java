@@ -13,14 +13,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the SampleQuery pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -50,7 +49,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see SampleQueryProcessor
  * 
  */
-public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> implements IncQueryMatcher<SampleQueryMatch> {
+public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
   private final static int POSITION_XELEMENT = 0;
   
   private final static int POSITION_YELEMENT = 1;
@@ -246,8 +245,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> i
    * 
    */
   public Set<EClass> getAllValuesOfXElement(final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
-    EClass pXElement = null;
-    return rawAccumulateAllValuesOfXElement(new Object[]{pXElement, pYElement, pRelates, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfXElement(new Object[]{null, pYElement, pRelates, pLabel1, pLabel2});
   }
   
   /**
@@ -285,8 +283,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> i
    * 
    */
   public Set<EClass> getAllValuesOfYElement(final EClass pXElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
-    EClass pYElement = null;
-    return rawAccumulateAllValuesOfYElement(new Object[]{pXElement, pYElement, pRelates, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfYElement(new Object[]{pXElement, null, pRelates, pLabel1, pLabel2});
   }
   
   /**
@@ -324,8 +321,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> i
    * 
    */
   public Set<EReference> getAllValuesOfRelates(final EClass pXElement, final EClass pYElement, final EAttribute pLabel1, final EAttribute pLabel2) {
-    EReference pRelates = null;
-    return rawAccumulateAllValuesOfRelates(new Object[]{pXElement, pYElement, pRelates, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfRelates(new Object[]{pXElement, pYElement, null, pLabel1, pLabel2});
   }
   
   /**
@@ -363,8 +359,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> i
    * 
    */
   public Set<EAttribute> getAllValuesOfLabel1(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel2) {
-    EAttribute pLabel1 = null;
-    return rawAccumulateAllValuesOfLabel1(new Object[]{pXElement, pYElement, pRelates, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfLabel1(new Object[]{pXElement, pYElement, pRelates, null, pLabel2});
   }
   
   /**
@@ -402,8 +397,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> i
    * 
    */
   public Set<EAttribute> getAllValuesOfLabel2(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1) {
-    EAttribute pLabel2 = null;
-    return rawAccumulateAllValuesOfLabel2(new Object[]{pXElement, pYElement, pRelates, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfLabel2(new Object[]{pXElement, pYElement, pRelates, pLabel1, null});
   }
   
   @Override

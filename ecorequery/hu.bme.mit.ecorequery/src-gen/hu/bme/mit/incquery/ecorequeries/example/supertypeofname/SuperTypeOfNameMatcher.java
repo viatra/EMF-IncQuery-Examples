@@ -10,14 +10,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the SuperTypeOfName pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -34,7 +33,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see SuperTypeOfNameProcessor
  * 
  */
-public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfNameMatch> implements IncQueryMatcher<SuperTypeOfNameMatch> {
+public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfNameMatch> {
   private final static int POSITION_SUPERNAME = 0;
   
   private final static int POSITION_SUBNAME = 1;
@@ -200,8 +199,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * 
    */
   public Set<String> getAllValuesOfSuperName(final String pSubName) {
-    String pSuperName = null;
-    return rawAccumulateAllValuesOfSuperName(new Object[]{pSuperName, pSubName});
+    return rawAccumulateAllValuesOfSuperName(new Object[]{null, pSubName});
   }
   
   /**
@@ -239,8 +237,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * 
    */
   public Set<String> getAllValuesOfSubName(final String pSuperName) {
-    String pSubName = null;
-    return rawAccumulateAllValuesOfSubName(new Object[]{pSuperName, pSubName});
+    return rawAccumulateAllValuesOfSubName(new Object[]{pSuperName, null});
   }
   
   @Override

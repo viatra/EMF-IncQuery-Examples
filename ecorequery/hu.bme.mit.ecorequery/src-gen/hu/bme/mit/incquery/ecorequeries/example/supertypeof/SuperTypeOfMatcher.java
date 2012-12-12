@@ -11,14 +11,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the SuperTypeOf pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -35,7 +34,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see SuperTypeOfProcessor
  * 
  */
-public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> implements IncQueryMatcher<SuperTypeOfMatch> {
+public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
   private final static int POSITION_SUPER = 0;
   
   private final static int POSITION_SUB = 1;
@@ -201,8 +200,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> i
    * 
    */
   public Set<EClass> getAllValuesOfSuper(final EClass pSub) {
-    EClass pSuper = null;
-    return rawAccumulateAllValuesOfSuper(new Object[]{pSuper, pSub});
+    return rawAccumulateAllValuesOfSuper(new Object[]{null, pSub});
   }
   
   /**
@@ -240,8 +238,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> i
    * 
    */
   public Set<EClass> getAllValuesOfSub(final EClass pSuper) {
-    EClass pSub = null;
-    return rawAccumulateAllValuesOfSub(new Object[]{pSuper, pSub});
+    return rawAccumulateAllValuesOfSub(new Object[]{pSuper, null});
   }
   
   @Override

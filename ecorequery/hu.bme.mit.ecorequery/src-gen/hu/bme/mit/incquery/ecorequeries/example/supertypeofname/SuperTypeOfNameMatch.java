@@ -7,7 +7,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the SuperTypeOfName pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName pattern, 
  * to be used in conjunction with SuperTypeOfNameMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -76,7 +76,7 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "SuperTypeOfName";
+    return "hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName";
     
   }
   

@@ -10,14 +10,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the EReferenceWithStarMultiplicityName pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -34,7 +33,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EReferenceWithStarMultiplicityNameProcessor
  * 
  */
-public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatcher<EReferenceWithStarMultiplicityNameMatch> implements IncQueryMatcher<EReferenceWithStarMultiplicityNameMatch> {
+public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatcher<EReferenceWithStarMultiplicityNameMatch> {
   private final static int POSITION_EREFNAME = 0;
   
   /**

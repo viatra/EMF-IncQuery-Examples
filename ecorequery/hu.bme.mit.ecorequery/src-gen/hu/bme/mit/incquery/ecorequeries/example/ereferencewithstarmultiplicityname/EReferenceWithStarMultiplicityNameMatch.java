@@ -7,7 +7,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the EReferenceWithStarMultiplicityName pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName pattern, 
  * to be used in conjunction with EReferenceWithStarMultiplicityNameMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -58,7 +58,7 @@ public final class EReferenceWithStarMultiplicityNameMatch extends BasePatternMa
   
   @Override
   public String patternName() {
-    return "EReferenceWithStarMultiplicityName";
+    return "hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName";
     
   }
   

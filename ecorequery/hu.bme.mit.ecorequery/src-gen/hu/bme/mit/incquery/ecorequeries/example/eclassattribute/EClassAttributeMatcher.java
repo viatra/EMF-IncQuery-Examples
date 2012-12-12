@@ -13,14 +13,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the EClassAttribute pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EClassAttribute pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -38,7 +37,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EClassAttributeProcessor
  * 
  */
-public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttributeMatch> implements IncQueryMatcher<EClassAttributeMatch> {
+public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttributeMatch> {
   private final static int POSITION_E = 0;
   
   private final static int POSITION_ATTR = 1;
@@ -214,8 +213,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public Set<EClass> getAllValuesOfE(final EAttribute pAttr, final EClassifier pType) {
-    EClass pE = null;
-    return rawAccumulateAllValuesOfE(new Object[]{pE, pAttr, pType});
+    return rawAccumulateAllValuesOfE(new Object[]{null, pAttr, pType});
   }
   
   /**
@@ -253,8 +251,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public Set<EAttribute> getAllValuesOfAttr(final EClass pE, final EClassifier pType) {
-    EAttribute pAttr = null;
-    return rawAccumulateAllValuesOfAttr(new Object[]{pE, pAttr, pType});
+    return rawAccumulateAllValuesOfAttr(new Object[]{pE, null, pType});
   }
   
   /**
@@ -292,8 +289,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public Set<EClassifier> getAllValuesOfType(final EClass pE, final EAttribute pAttr) {
-    EClassifier pType = null;
-    return rawAccumulateAllValuesOfType(new Object[]{pE, pAttr, pType});
+    return rawAccumulateAllValuesOfType(new Object[]{pE, pAttr, null});
   }
   
   @Override

@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the EClassWithEStringAttribute pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute pattern, 
  * to be used in conjunction with EClassWithEStringAttributeMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -78,7 +78,7 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "EClassWithEStringAttribute";
+    return "hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute";
     
   }
   

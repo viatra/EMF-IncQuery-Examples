@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the EReferenceWithOneMultiplicity pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

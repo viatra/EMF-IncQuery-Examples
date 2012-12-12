@@ -11,14 +11,13 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * Generated pattern matcher API of the ECoreNamedElement pattern, 
+ * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -34,7 +33,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see ECoreNamedElementProcessor
  * 
  */
-public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedElementMatch> implements IncQueryMatcher<ECoreNamedElementMatch> {
+public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedElementMatch> {
   private final static int POSITION_ELEMENT = 0;
   
   private final static int POSITION_NAME = 1;
@@ -200,8 +199,7 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
    * 
    */
   public Set<ENamedElement> getAllValuesOfElement(final String pName) {
-    ENamedElement pElement = null;
-    return rawAccumulateAllValuesOfElement(new Object[]{pElement, pName});
+    return rawAccumulateAllValuesOfElement(new Object[]{null, pName});
   }
   
   /**
@@ -239,8 +237,7 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
    * 
    */
   public Set<String> getAllValuesOfName(final ENamedElement pElement) {
-    String pName = null;
-    return rawAccumulateAllValuesOfName(new Object[]{pElement, pName});
+    return rawAccumulateAllValuesOfName(new Object[]{pElement, null});
   }
   
   @Override

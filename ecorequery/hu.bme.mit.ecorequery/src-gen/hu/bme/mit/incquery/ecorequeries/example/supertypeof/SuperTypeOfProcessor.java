@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
- * A match processor tailored for the SuperTypeOf pattern.
+ * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
