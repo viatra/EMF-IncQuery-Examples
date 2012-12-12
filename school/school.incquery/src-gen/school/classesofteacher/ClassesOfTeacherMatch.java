@@ -9,7 +9,7 @@ import school.SchoolClass;
 import school.Teacher;
 
 /**
- * Pattern-specific match representation of the classesOfTeacher pattern, 
+ * Pattern-specific match representation of the school.classesOfTeacher pattern, 
  * to be used in conjunction with ClassesOfTeacherMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -78,7 +78,7 @@ public final class ClassesOfTeacherMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "classesOfTeacher";
+    return "school.classesOfTeacher";
     
   }
   

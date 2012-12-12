@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -18,7 +17,7 @@ import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatch
 import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatcherFactory;
 
 /**
- * Generated pattern matcher API of the courseWithNameLongerThanWeight pattern, 
+ * Generated pattern matcher API of the school.courseWithNameLongerThanWeight pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -35,7 +34,7 @@ import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatch
  * @see CourseWithNameLongerThanWeightProcessor
  * 
  */
-public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<CourseWithNameLongerThanWeightMatch> implements IncQueryMatcher<CourseWithNameLongerThanWeightMatch> {
+public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<CourseWithNameLongerThanWeightMatch> {
   private final static int POSITION_C = 0;
   
   /**

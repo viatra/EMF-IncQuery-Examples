@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -17,7 +16,7 @@ import school.studentofschoolnames.StudentOfSchoolNamesMatch;
 import school.studentofschoolnames.StudentOfSchoolNamesMatcherFactory;
 
 /**
- * Generated pattern matcher API of the studentOfSchoolNames pattern, 
+ * Generated pattern matcher API of the school.studentOfSchoolNames pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -35,7 +34,7 @@ import school.studentofschoolnames.StudentOfSchoolNamesMatcherFactory;
  * @see StudentOfSchoolNamesProcessor
  * 
  */
-public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfSchoolNamesMatch> implements IncQueryMatcher<StudentOfSchoolNamesMatch> {
+public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfSchoolNamesMatch> {
   private final static int POSITION_SNAME = 0;
   
   private final static int POSITION_SCHNAME = 1;
@@ -201,8 +200,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * 
    */
   public Set<String> getAllValuesOfSName(final String pSchName) {
-    String pSName = null;
-    return rawAccumulateAllValuesOfSName(new Object[]{pSName, pSchName});
+    return rawAccumulateAllValuesOfSName(new Object[]{null, pSchName});
   }
   
   /**
@@ -240,8 +238,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * 
    */
   public Set<String> getAllValuesOfSchName(final String pSName) {
-    String pSchName = null;
-    return rawAccumulateAllValuesOfSchName(new Object[]{pSName, pSchName});
+    return rawAccumulateAllValuesOfSchName(new Object[]{pSName, null});
   }
   
   @Override

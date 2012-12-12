@@ -5,7 +5,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * A xbase xexpression evaluator tailored for the teachesMoreClasses pattern.
+ * A xbase xexpression evaluator tailored for the school.teachesMoreClasses pattern.
  */
 public class TeachesMoreClassesEvaluator1_1 implements IMatchChecker {
   /**

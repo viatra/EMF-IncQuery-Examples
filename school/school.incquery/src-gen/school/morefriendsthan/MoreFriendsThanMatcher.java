@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -18,7 +17,7 @@ import school.morefriendsthan.MoreFriendsThanMatch;
 import school.morefriendsthan.MoreFriendsThanMatcherFactory;
 
 /**
- * Generated pattern matcher API of the moreFriendsThan pattern, 
+ * Generated pattern matcher API of the school.moreFriendsThan pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -36,7 +35,7 @@ import school.morefriendsthan.MoreFriendsThanMatcherFactory;
  * @see MoreFriendsThanProcessor
  * 
  */
-public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThanMatch> implements IncQueryMatcher<MoreFriendsThanMatch> {
+public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThanMatch> {
   private final static int POSITION_S1 = 0;
   
   private final static int POSITION_S2 = 1;
@@ -202,8 +201,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * 
    */
   public Set<Student> getAllValuesOfS1(final Student pS2) {
-    Student pS1 = null;
-    return rawAccumulateAllValuesOfS1(new Object[]{pS1, pS2});
+    return rawAccumulateAllValuesOfS1(new Object[]{null, pS2});
   }
   
   /**
@@ -241,8 +239,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * 
    */
   public Set<Student> getAllValuesOfS2(final Student pS1) {
-    Student pS2 = null;
-    return rawAccumulateAllValuesOfS2(new Object[]{pS1, pS2});
+    return rawAccumulateAllValuesOfS2(new Object[]{pS1, null});
   }
   
   @Override

@@ -4,7 +4,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.finalpattern2.FinalPattern2Match;
 
 /**
- * A match processor tailored for the finalPattern2 pattern.
+ * A match processor tailored for the school.finalPattern2 pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

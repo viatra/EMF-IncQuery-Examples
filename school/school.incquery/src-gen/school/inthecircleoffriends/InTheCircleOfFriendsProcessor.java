@@ -5,7 +5,7 @@ import school.Student;
 import school.inthecircleoffriends.InTheCircleOfFriendsMatch;
 
 /**
- * A match processor tailored for the inTheCircleOfFriends pattern.
+ * A match processor tailored for the school.inTheCircleOfFriends pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

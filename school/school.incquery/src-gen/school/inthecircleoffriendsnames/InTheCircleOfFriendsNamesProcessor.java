@@ -4,7 +4,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatch;
 
 /**
- * A match processor tailored for the inTheCircleOfFriendsNames pattern.
+ * A match processor tailored for the school.inTheCircleOfFriendsNames pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

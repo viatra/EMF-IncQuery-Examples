@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -17,7 +16,7 @@ import school.classesofteachernames.ClassesOfTeacherNamesMatch;
 import school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory;
 
 /**
- * Generated pattern matcher API of the classesOfTeacherNames pattern, 
+ * Generated pattern matcher API of the school.classesOfTeacherNames pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -35,7 +34,7 @@ import school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory;
  * @see ClassesOfTeacherNamesProcessor
  * 
  */
-public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOfTeacherNamesMatch> implements IncQueryMatcher<ClassesOfTeacherNamesMatch> {
+public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOfTeacherNamesMatch> {
   private final static int POSITION_TNAME = 0;
   
   private final static int POSITION_SCNAME = 1;
@@ -201,8 +200,7 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
    * 
    */
   public Set<String> getAllValuesOfTName(final Character pSCName) {
-    String pTName = null;
-    return rawAccumulateAllValuesOfTName(new Object[]{pTName, pSCName});
+    return rawAccumulateAllValuesOfTName(new Object[]{null, pSCName});
   }
   
   /**
@@ -240,8 +238,7 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
    * 
    */
   public Set<Character> getAllValuesOfSCName(final String pTName) {
-    Character pSCName = null;
-    return rawAccumulateAllValuesOfSCName(new Object[]{pTName, pSCName});
+    return rawAccumulateAllValuesOfSCName(new Object[]{pTName, null});
   }
   
   @Override

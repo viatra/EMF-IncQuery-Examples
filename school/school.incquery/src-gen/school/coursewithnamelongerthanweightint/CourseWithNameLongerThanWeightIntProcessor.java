@@ -4,7 +4,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntMatch;
 
 /**
- * A match processor tailored for the courseWithNameLongerThanWeightInt pattern.
+ * A match processor tailored for the school.courseWithNameLongerThanWeightInt pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

@@ -18,7 +18,7 @@ import school.coursewithteacher.CourseWithTeacherMatch;
 import school.coursewithteacher.CourseWithTeacherMatcherFactory;
 
 /**
- * Generated pattern matcher API of the CourseWithTeacher pattern, 
+ * Generated pattern matcher API of the school.CourseWithTeacher pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:

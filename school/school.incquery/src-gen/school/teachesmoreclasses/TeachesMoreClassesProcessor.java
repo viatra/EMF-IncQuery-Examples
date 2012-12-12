@@ -5,7 +5,7 @@ import school.Teacher;
 import school.teachesmoreclasses.TeachesMoreClassesMatch;
 
 /**
- * A match processor tailored for the teachesMoreClasses pattern.
+ * A match processor tailored for the school.teachesMoreClasses pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

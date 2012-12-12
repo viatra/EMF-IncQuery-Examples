@@ -5,7 +5,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * A xbase xexpression evaluator tailored for the courseWithNameLongerThanWeight pattern.
+ * A xbase xexpression evaluator tailored for the school.courseWithNameLongerThanWeight pattern.
  */
 public class CourseWithNameLongerThanWeightEvaluator1_1 implements IMatchChecker {
   /**

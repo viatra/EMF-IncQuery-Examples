@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -19,7 +18,7 @@ import school.studentofschool.StudentOfSchoolMatch;
 import school.studentofschool.StudentOfSchoolMatcherFactory;
 
 /**
- * Generated pattern matcher API of the studentOfSchool pattern, 
+ * Generated pattern matcher API of the school.studentOfSchool pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -38,7 +37,7 @@ import school.studentofschool.StudentOfSchoolMatcherFactory;
  * @see StudentOfSchoolProcessor
  * 
  */
-public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchoolMatch> implements IncQueryMatcher<StudentOfSchoolMatch> {
+public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchoolMatch> {
   private final static int POSITION_S = 0;
   
   private final static int POSITION_SCH = 1;
@@ -204,8 +203,7 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
    * 
    */
   public Set<Student> getAllValuesOfS(final School pSch) {
-    Student pS = null;
-    return rawAccumulateAllValuesOfS(new Object[]{pS, pSch});
+    return rawAccumulateAllValuesOfS(new Object[]{null, pSch});
   }
   
   /**
@@ -243,8 +241,7 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
    * 
    */
   public Set<School> getAllValuesOfSch(final Student pS) {
-    School pSch = null;
-    return rawAccumulateAllValuesOfSch(new Object[]{pS, pSch});
+    return rawAccumulateAllValuesOfSch(new Object[]{pS, null});
   }
   
   @Override

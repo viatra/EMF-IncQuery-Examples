@@ -5,7 +5,7 @@ import school.Student;
 import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatch;
 
 /**
- * A match processor tailored for the theOnesWithTheBiggestCircle pattern.
+ * A match processor tailored for the school.theOnesWithTheBiggestCircle pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

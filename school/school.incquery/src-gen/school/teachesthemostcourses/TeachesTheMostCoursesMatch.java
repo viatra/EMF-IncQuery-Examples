@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.Teacher;
 
 /**
- * Pattern-specific match representation of the teachesTheMostCourses pattern, 
+ * Pattern-specific match representation of the school.teachesTheMostCourses pattern, 
  * to be used in conjunction with TeachesTheMostCoursesMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -59,7 +59,7 @@ public final class TeachesTheMostCoursesMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "teachesTheMostCourses";
+    return "school.teachesTheMostCourses";
     
   }
   

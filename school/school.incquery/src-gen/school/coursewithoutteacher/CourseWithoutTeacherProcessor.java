@@ -5,7 +5,7 @@ import school.Course;
 import school.coursewithoutteacher.CourseWithoutTeacherMatch;
 
 /**
- * A match processor tailored for the CourseWithoutTeacher pattern.
+ * A match processor tailored for the school.CourseWithoutTeacher pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

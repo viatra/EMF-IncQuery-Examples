@@ -5,7 +5,7 @@ import school.Course;
 import school.coursewithweightthirty.CourseWithWeightThirtyMatch;
 
 /**
- * A match processor tailored for the courseWithWeightThirty pattern.
+ * A match processor tailored for the school.courseWithWeightThirty pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

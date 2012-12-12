@@ -18,7 +18,7 @@ import school.coursewithoutteacher.CourseWithoutTeacherMatch;
 import school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory;
 
 /**
- * Generated pattern matcher API of the CourseWithoutTeacher pattern, 
+ * Generated pattern matcher API of the school.CourseWithoutTeacher pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:

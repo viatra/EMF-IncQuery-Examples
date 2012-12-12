@@ -5,7 +5,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
- * A xbase xexpression evaluator tailored for the moreFriendsThan pattern.
+ * A xbase xexpression evaluator tailored for the school.moreFriendsThan pattern.
  */
 public class MoreFriendsThanEvaluator1_1 implements IMatchChecker {
   /**

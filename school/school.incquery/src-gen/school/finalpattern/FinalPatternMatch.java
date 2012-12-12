@@ -11,7 +11,7 @@ import school.Teacher;
 import school.Year;
 
 /**
- * Pattern-specific match representation of the finalPattern pattern, 
+ * Pattern-specific match representation of the school.finalPattern pattern, 
  * to be used in conjunction with FinalPatternMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -116,7 +116,7 @@ public final class FinalPatternMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "finalPattern";
+    return "school.finalPattern";
     
   }
   

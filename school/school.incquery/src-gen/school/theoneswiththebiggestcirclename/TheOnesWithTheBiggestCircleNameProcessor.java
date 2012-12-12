@@ -4,7 +4,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMatch;
 
 /**
- * A match processor tailored for the theOnesWithTheBiggestCircleName pattern.
+ * A match processor tailored for the school.theOnesWithTheBiggestCircleName pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

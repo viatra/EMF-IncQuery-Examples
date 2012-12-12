@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -21,7 +20,7 @@ import school.finalpattern.FinalPatternMatch;
 import school.finalpattern.FinalPatternMatcherFactory;
 
 /**
- * Generated pattern matcher API of the finalPattern pattern, 
+ * Generated pattern matcher API of the school.finalPattern pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -49,7 +48,7 @@ import school.finalpattern.FinalPatternMatcherFactory;
  * @see FinalPatternProcessor
  * 
  */
-public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch> implements IncQueryMatcher<FinalPatternMatch> {
+public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch> {
   private final static int POSITION_Y = 0;
   
   private final static int POSITION_C = 1;
@@ -235,8 +234,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * 
    */
   public Set<Year> getAllValuesOfY(final Course pC, final Teacher pT, final Student pS) {
-    Year pY = null;
-    return rawAccumulateAllValuesOfY(new Object[]{pY, pC, pT, pS});
+    return rawAccumulateAllValuesOfY(new Object[]{null, pC, pT, pS});
   }
   
   /**
@@ -274,8 +272,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * 
    */
   public Set<Course> getAllValuesOfC(final Year pY, final Teacher pT, final Student pS) {
-    Course pC = null;
-    return rawAccumulateAllValuesOfC(new Object[]{pY, pC, pT, pS});
+    return rawAccumulateAllValuesOfC(new Object[]{pY, null, pT, pS});
   }
   
   /**
@@ -313,8 +310,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * 
    */
   public Set<Teacher> getAllValuesOfT(final Year pY, final Course pC, final Student pS) {
-    Teacher pT = null;
-    return rawAccumulateAllValuesOfT(new Object[]{pY, pC, pT, pS});
+    return rawAccumulateAllValuesOfT(new Object[]{pY, pC, null, pS});
   }
   
   /**
@@ -352,8 +348,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * 
    */
   public Set<Student> getAllValuesOfS(final Year pY, final Course pC, final Teacher pT) {
-    Student pS = null;
-    return rawAccumulateAllValuesOfS(new Object[]{pY, pC, pT, pS});
+    return rawAccumulateAllValuesOfS(new Object[]{pY, pC, pT, null});
   }
   
   @Override

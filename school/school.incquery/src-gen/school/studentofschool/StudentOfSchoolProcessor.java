@@ -6,7 +6,7 @@ import school.Student;
 import school.studentofschool.StudentOfSchoolMatch;
 
 /**
- * A match processor tailored for the studentOfSchool pattern.
+ * A match processor tailored for the school.studentOfSchool pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

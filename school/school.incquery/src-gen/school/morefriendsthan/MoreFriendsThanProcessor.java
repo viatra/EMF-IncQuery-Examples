@@ -5,7 +5,7 @@ import school.Student;
 import school.morefriendsthan.MoreFriendsThanMatch;
 
 /**
- * A match processor tailored for the moreFriendsThan pattern.
+ * A match processor tailored for the school.moreFriendsThan pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

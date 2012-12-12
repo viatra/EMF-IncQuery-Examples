@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.Student;
 
 /**
- * Pattern-specific match representation of the moreFriendsThan pattern, 
+ * Pattern-specific match representation of the school.moreFriendsThan pattern, 
  * to be used in conjunction with MoreFriendsThanMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -77,7 +77,7 @@ public final class MoreFriendsThanMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "moreFriendsThan";
+    return "school.moreFriendsThan";
     
   }
   

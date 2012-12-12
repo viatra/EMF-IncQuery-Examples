@@ -5,7 +5,7 @@ import school.Student;
 import school.friendlyto.FriendlyToMatch;
 
 /**
- * A match processor tailored for the friendlyTo pattern.
+ * A match processor tailored for the school.friendlyTo pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.Course;
 
 /**
- * Pattern-specific match representation of the CourseWithoutTeacher pattern, 
+ * Pattern-specific match representation of the school.CourseWithoutTeacher pattern, 
  * to be used in conjunction with CourseWithoutTeacherMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -59,7 +59,7 @@ public final class CourseWithoutTeacherMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "CourseWithoutTeacher";
+    return "school.CourseWithoutTeacher";
     
   }
   

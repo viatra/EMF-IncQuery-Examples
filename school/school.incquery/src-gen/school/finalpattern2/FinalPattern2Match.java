@@ -7,7 +7,7 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the finalPattern2 pattern, 
+ * Pattern-specific match representation of the school.finalPattern2 pattern, 
  * to be used in conjunction with FinalPattern2Matcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -112,7 +112,7 @@ public final class FinalPattern2Match extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "finalPattern2";
+    return "school.finalPattern2";
     
   }
   

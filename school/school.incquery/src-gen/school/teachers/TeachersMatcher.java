@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -18,7 +17,7 @@ import school.teachers.TeachersMatch;
 import school.teachers.TeachersMatcherFactory;
 
 /**
- * Generated pattern matcher API of the teachers pattern, 
+ * Generated pattern matcher API of the school.teachers pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -33,7 +32,7 @@ import school.teachers.TeachersMatcherFactory;
  * @see TeachersProcessor
  * 
  */
-public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> implements IncQueryMatcher<TeachersMatch> {
+public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
   private final static int POSITION_T = 0;
   
   /**

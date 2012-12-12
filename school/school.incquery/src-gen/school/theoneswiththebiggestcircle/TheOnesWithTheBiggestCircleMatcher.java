@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -18,7 +17,7 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatch;
 import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory;
 
 /**
- * Generated pattern matcher API of the theOnesWithTheBiggestCircle pattern, 
+ * Generated pattern matcher API of the school.theOnesWithTheBiggestCircle pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -33,7 +32,7 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFact
  * @see TheOnesWithTheBiggestCircleProcessor
  * 
  */
-public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<TheOnesWithTheBiggestCircleMatch> implements IncQueryMatcher<TheOnesWithTheBiggestCircleMatch> {
+public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<TheOnesWithTheBiggestCircleMatch> {
   private final static int POSITION_S = 0;
   
   /**

@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -17,7 +16,7 @@ import school.finalpattern2.FinalPattern2Match;
 import school.finalpattern2.FinalPattern2MatcherFactory;
 
 /**
- * Generated pattern matcher API of the finalPattern2 pattern, 
+ * Generated pattern matcher API of the school.finalPattern2 pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -47,7 +46,7 @@ import school.finalpattern2.FinalPattern2MatcherFactory;
  * @see FinalPattern2Processor
  * 
  */
-public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Match> implements IncQueryMatcher<FinalPattern2Match> {
+public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Match> {
   private final static int POSITION_YDATE = 0;
   
   private final static int POSITION_CSUB = 1;
@@ -233,8 +232,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * 
    */
   public Set<Integer> getAllValuesOfYDate(final String pCSub, final String pTName, final String pSName) {
-    Integer pYDate = null;
-    return rawAccumulateAllValuesOfYDate(new Object[]{pYDate, pCSub, pTName, pSName});
+    return rawAccumulateAllValuesOfYDate(new Object[]{null, pCSub, pTName, pSName});
   }
   
   /**
@@ -272,8 +270,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * 
    */
   public Set<String> getAllValuesOfCSub(final Integer pYDate, final String pTName, final String pSName) {
-    String pCSub = null;
-    return rawAccumulateAllValuesOfCSub(new Object[]{pYDate, pCSub, pTName, pSName});
+    return rawAccumulateAllValuesOfCSub(new Object[]{pYDate, null, pTName, pSName});
   }
   
   /**
@@ -311,8 +308,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * 
    */
   public Set<String> getAllValuesOfTName(final Integer pYDate, final String pCSub, final String pSName) {
-    String pTName = null;
-    return rawAccumulateAllValuesOfTName(new Object[]{pYDate, pCSub, pTName, pSName});
+    return rawAccumulateAllValuesOfTName(new Object[]{pYDate, pCSub, null, pSName});
   }
   
   /**
@@ -350,8 +346,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * 
    */
   public Set<String> getAllValuesOfSName(final Integer pYDate, final String pCSub, final String pTName) {
-    String pSName = null;
-    return rawAccumulateAllValuesOfSName(new Object[]{pYDate, pCSub, pTName, pSName});
+    return rawAccumulateAllValuesOfSName(new Object[]{pYDate, pCSub, pTName, null});
   }
   
   @Override

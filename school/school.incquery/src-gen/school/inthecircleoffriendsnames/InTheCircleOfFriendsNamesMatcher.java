@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -17,7 +16,7 @@ import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatch;
 import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory;
 
 /**
- * Generated pattern matcher API of the inTheCircleOfFriendsNames pattern, 
+ * Generated pattern matcher API of the school.inTheCircleOfFriendsNames pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -35,7 +34,7 @@ import school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory;
  * @see InTheCircleOfFriendsNamesProcessor
  * 
  */
-public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InTheCircleOfFriendsNamesMatch> implements IncQueryMatcher<InTheCircleOfFriendsNamesMatch> {
+public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InTheCircleOfFriendsNamesMatch> {
   private final static int POSITION_S1NAME = 0;
   
   private final static int POSITION_SOMEONENAME = 1;
@@ -201,8 +200,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * 
    */
   public Set<String> getAllValuesOfS1Name(final String pSomeoneName) {
-    String pS1Name = null;
-    return rawAccumulateAllValuesOfS1Name(new Object[]{pS1Name, pSomeoneName});
+    return rawAccumulateAllValuesOfS1Name(new Object[]{null, pSomeoneName});
   }
   
   /**
@@ -240,8 +238,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * 
    */
   public Set<String> getAllValuesOfSomeoneName(final String pS1Name) {
-    String pSomeoneName = null;
-    return rawAccumulateAllValuesOfSomeoneName(new Object[]{pS1Name, pSomeoneName});
+    return rawAccumulateAllValuesOfSomeoneName(new Object[]{pS1Name, null});
   }
   
   @Override

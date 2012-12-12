@@ -8,7 +8,7 @@ import school.Year;
 import school.finalpattern.FinalPatternMatch;
 
 /**
- * A match processor tailored for the finalPattern pattern.
+ * A match processor tailored for the school.finalPattern pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

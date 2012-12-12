@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.Course;
 
 /**
- * Pattern-specific match representation of the courseWithNameLongerThanWeight pattern, 
+ * Pattern-specific match representation of the school.courseWithNameLongerThanWeight pattern, 
  * to be used in conjunction with CourseWithNameLongerThanWeightMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -59,7 +59,7 @@ public final class CourseWithNameLongerThanWeightMatch extends BasePatternMatch 
   
   @Override
   public String patternName() {
-    return "courseWithNameLongerThanWeight";
+    return "school.courseWithNameLongerThanWeight";
     
   }
   

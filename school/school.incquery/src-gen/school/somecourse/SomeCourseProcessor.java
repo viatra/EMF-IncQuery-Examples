@@ -5,7 +5,7 @@ import school.Course;
 import school.somecourse.SomeCourseMatch;
 
 /**
- * A match processor tailored for the SomeCourse pattern.
+ * A match processor tailored for the school.SomeCourse pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

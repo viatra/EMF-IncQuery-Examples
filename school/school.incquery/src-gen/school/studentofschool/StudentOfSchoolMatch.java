@@ -9,7 +9,7 @@ import school.School;
 import school.Student;
 
 /**
- * Pattern-specific match representation of the studentOfSchool pattern, 
+ * Pattern-specific match representation of the school.studentOfSchool pattern, 
  * to be used in conjunction with StudentOfSchoolMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -78,7 +78,7 @@ public final class StudentOfSchoolMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "studentOfSchool";
+    return "school.studentOfSchool";
     
   }
   

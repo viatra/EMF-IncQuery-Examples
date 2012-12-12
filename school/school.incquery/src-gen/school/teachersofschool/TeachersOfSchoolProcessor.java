@@ -6,7 +6,7 @@ import school.Teacher;
 import school.teachersofschool.TeachersOfSchoolMatch;
 
 /**
- * A match processor tailored for the teachersOfSchool pattern.
+ * A match processor tailored for the school.teachersOfSchool pattern.
  * 
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 

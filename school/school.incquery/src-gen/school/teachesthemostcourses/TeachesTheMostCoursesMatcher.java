@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -18,7 +17,7 @@ import school.teachesthemostcourses.TeachesTheMostCoursesMatch;
 import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory;
 
 /**
- * Generated pattern matcher API of the teachesTheMostCourses pattern, 
+ * Generated pattern matcher API of the school.teachesTheMostCourses pattern, 
  * providing pattern-specific query methods.
  * 
  * <p>Original source:
@@ -33,7 +32,7 @@ import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory;
  * @see TeachesTheMostCoursesProcessor
  * 
  */
-public class TeachesTheMostCoursesMatcher extends BaseGeneratedMatcher<TeachesTheMostCoursesMatch> implements IncQueryMatcher<TeachesTheMostCoursesMatch> {
+public class TeachesTheMostCoursesMatcher extends BaseGeneratedMatcher<TeachesTheMostCoursesMatch> {
   private final static int POSITION_T = 0;
   
   /**

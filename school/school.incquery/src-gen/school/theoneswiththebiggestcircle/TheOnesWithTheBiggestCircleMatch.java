@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.Student;
 
 /**
- * Pattern-specific match representation of the theOnesWithTheBiggestCircle pattern, 
+ * Pattern-specific match representation of the school.theOnesWithTheBiggestCircle pattern, 
  * to be used in conjunction with TheOnesWithTheBiggestCircleMatcher.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
@@ -59,7 +59,7 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "theOnesWithTheBiggestCircle";
+    return "school.theOnesWithTheBiggestCircle";
     
   }
   
