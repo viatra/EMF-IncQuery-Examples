@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <school:School xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:school="http://school.ecore" name="Budapest University of Technology and Economics" address="1117 Budapest, Magyar Tudosok krt 2.">
   <years startingDate="2011">
-    <schoolClasses code="65" courses="//@courses.0">
+    <schoolClasses code="65" courses="//@courses.0" homeroomTeacher="//@teachers.0">
       <students name="Zoltan Ujhelyi" friendsWith="//@years.0/@schoolClasses.1/@students.0"/>
-      <homeroomTeacher href="school2.school#//@teachers.1"/>
     </schoolClasses>
-    <schoolClasses code="66" courses="//@courses.4">
+    <schoolClasses code="66" courses="//@courses.4" homeroomTeacher="//@teachers.1">
       <students name="Abel Hegedus"/>
-      <homeroomTeacher href="school2.school#//@teachers.0"/>
     </schoolClasses>
   </years>
   <years startingDate="2012">
@@ -19,15 +17,18 @@
       <students name="Gabor Bergmann" friendsWith="//@years.0/@schoolClasses.1/@students.0"/>
     </schoolClasses>
   </years>
-  <teachers name="Andras Pataricza" courses="//@courses.1"/>
-  <teachers name="Istvan Majzik" courses="//@courses.2"/>
+  <teachers name="Andras Pataricza" courses="//@courses.1" homeroomedClass="//@years.0/@schoolClasses.0"/>
+  <teachers name="Istvan Majzik" courses="//@courses.2" homeroomedClass="//@years.0/@schoolClasses.1"/>
   <teachers name="Peter Szeredi" courses="//@courses.3" homeroomedClass="//@years.1/@schoolClasses.0"/>
   <teachers name="Daniel Varro" courses="//@courses.0 //@courses.4" homeroomedClass="//@years.1/@schoolClasses.1"/>
+  <teachers name="Teacher2">
+    <homeroomedClass href="school2.school#//@years.0/@schoolClasses.0"/>
+  </teachers>
   <courses subject="Model-driven software development" weight="30"/>
   <courses subject="Formal methods" weight="17"/>
   <courses subject="Fault-tolerant safety-critical computing" weight="37"/>
   <courses subject="Prolog programming" weight="23"/>
   <courses subject="Graph transformations" weight="20"/>
   <courses xsi:type="school:SpecialisationCourse" subject="Introduction to programming theory" specialisation=""/>
-  <courses subject="Calculus"/>
+  <courses subject="Eclipse based development and integration"/>
 </school:School>

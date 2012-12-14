@@ -17,6 +17,7 @@ import school.Course;
 import school.SchoolClass;
 import school.SchoolPackage;
 import school.Student;
+import school.Teacher;
 
 public class ParameterizedScopeTest extends IncQueryBaseParameterizedTest {
 
@@ -30,7 +31,7 @@ public class ParameterizedScopeTest extends IncQueryBaseParameterizedTest {
 		
 		//there are 6 teachers in the two school models together
 		if (notifier instanceof EObject || notifier instanceof Resource) {
-			assertTrue(teachers.size() == 4);
+			assertTrue(teachers.size() == 5);
 		}
 		else {
 			assertTrue(teachers.size() == 6);
@@ -59,6 +60,27 @@ public class ParameterizedScopeTest extends IncQueryBaseParameterizedTest {
 		}
 		else {
 			assertTrue(courseCount == 6);
+		}
+	}
+	
+	@Test
+	public void schoolClassTest() {
+		Collection<EObject> schoolClasses = navigationHelper.getDirectInstances(SchoolPackage.Literals.SCHOOL_CLASS);
+		int teacherCount = 0;
+		
+		for (EObject schoolClass : schoolClasses) {
+			for (Setting setting : navigationHelper.getInverseReferences(schoolClass)) {
+				if (setting.getEObject() instanceof Teacher) {
+					teacherCount++;
+				}
+			}
+		}
+		
+		if (notifier instanceof EObject || notifier instanceof Resource) {
+			assertTrue(teacherCount == 4);
+		}
+		else {
+			assertTrue(teacherCount == 5);
 		}
 	}
 	

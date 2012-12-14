@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.base.test.inverseref.InverseReferenceTest;
 import org.eclipse.incquery.runtime.base.test.listener.DataTypeListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.FeatureListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.InstanceListenerTest;
-import org.eclipse.incquery.runtime.base.test.scope.EObjectScopeTest;
 import org.eclipse.incquery.runtime.base.test.scope.ParameterizedScopeTest;
 import org.eclipse.incquery.runtime.base.test.scope.ResourceSetScopeTest;
 import org.eclipse.incquery.runtime.base.test.tc.TransitiveClosureHelperTest;
@@ -27,7 +26,6 @@ import org.junit.runners.Suite.SuiteClasses;
 	DataTypeListenerTest.class,
 	InstanceListenerTest.class,
 	TransitiveClosureHelperTest.class,
-	EObjectScopeTest.class,
 	ParameterizedScopeTest.class,
 	ResourceSetScopeTest.class
 })
