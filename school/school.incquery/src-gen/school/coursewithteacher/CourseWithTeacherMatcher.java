@@ -8,7 +8,6 @@ import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -32,7 +31,7 @@ import school.coursewithteacher.CourseWithTeacherMatcherFactory;
  * @see CourseWithTeacherProcessor
  * 
  */
-public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTeacherMatch> implements IncQueryMatcher<CourseWithTeacherMatch> {
+public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTeacherMatch> {
   private final static int POSITION_C = 0;
   
   /**
