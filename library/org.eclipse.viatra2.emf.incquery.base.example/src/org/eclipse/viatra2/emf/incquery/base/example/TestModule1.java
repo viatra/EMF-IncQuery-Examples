@@ -10,10 +10,10 @@ import library.LibraryPackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
-import org.eclipse.viatra2.emf.incquery.base.api.IncQueryBaseFactory;
-import org.eclipse.viatra2.emf.incquery.base.api.NavigationHelper;
-import org.eclipse.viatra2.emf.incquery.base.api.TransitiveClosureHelper;
-import org.eclipse.viatra2.emf.incquery.base.exception.IncQueryBaseException;
+import org.eclipse.incquery.runtime.base.api.IncQueryBaseFactory;
+import org.eclipse.incquery.runtime.base.api.NavigationHelper;
+import org.eclipse.incquery.runtime.base.api.TransitiveClosureHelper;
+import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 
 public class TestModule1 {
 
