@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010-2012, Abel Hegedus, Istvan Rath and Daniel Varro
+ * Copyright (c) 2010-2013, Abel Hegedus, Istvan Rath and Daniel Varro
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -28,24 +27,22 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
 
 /**
  * @author Abel Hegedus
  *
  */
-public class QueryResultMultimapTest {
+public class QueryResultMapTest {
 
     
     
     private Map<String, String> testMap;
-    private TestQRM qrm;
+    private TestQRMap qrm;
     
     @Before
     public void setup() {
-        qrm = new TestQRM();
+        qrm = new TestQRMap();
         qrm.testInternalPut(testMap());
     }
     
@@ -59,29 +56,19 @@ public class QueryResultMultimapTest {
         
         assertFalse(qrm.isEmpty());
         assertEquals(qrm.size(), testMap.size());
-        Collection<String> expected = qrm.get("1");
-        assertTrue(expected.size() == 1);
-        assertTrue(expected.iterator().next().equals(testMap.get("1")));
-        assertTrue(qrm.containsEntry("2", "k2"));
+        String expected = qrm.get("1");
+        assertTrue(expected.equals(testMap.get("1")));
         assertTrue(qrm.containsKey("5"));
         assertTrue(qrm.containsValue("k6"));
         assertArrayEquals(qrm.keySet().toArray(), testMap.keySet().toArray());
-        assertArrayEquals(qrm.keys().toArray(), testMap.keySet().toArray());
         assertArrayEquals(qrm.values().toArray(), testMap.values().toArray());
         
         Set<Entry<String,String>> set = new HashSet<Map.Entry<String,String>>(testMap.entrySet());
-        for(Entry<String, String> e :  qrm.entries()) {
+        for(Entry<String, String> e :  qrm.entrySet()) {
             assertTrue("Doesn't contain " + e.getKey() + " : " + e.getValue(), set.contains(e));
             set.remove(e);
         }
         assertTrue(set.isEmpty());
-        
-        Map<String, Collection<String>> asMap = qrm.asMap();
-        for (String key : asMap.keySet()) {
-            assertTrue(testMap.containsKey(key));
-            assertTrue(asMap.get(key).size() == 1);
-            assertTrue(asMap.get(key).iterator().next().equals(testMap.get(key)));
-        }
         
     }
     
@@ -91,13 +78,8 @@ public class QueryResultMultimapTest {
     }
     
     @Test(expected=UnsupportedOperationException.class)
-    public void QRMPutAllTest() {
-        qrm.putAll("t", Lists.newArrayList("k1", "k2"));
-    }
-    
-    @Test(expected=UnsupportedOperationException.class)
     public void QRMPutAllMapTest() {
-        Multimap<String, String> map = HashMultimap.create();
+        Map<String, String> map = new HashMap<String, String>();
         map.put("t", "g");
         map.put("1", "k2");
         
@@ -106,24 +88,14 @@ public class QueryResultMultimapTest {
     
     @Test(expected=UnsupportedOperationException.class)
     public void QRMRemoveTest() {
-        qrm.remove("1", "k1");
+        qrm.remove("1");
     }
     
-    @Test(expected=UnsupportedOperationException.class)
-    public void QRMRemoveAllTest() {
-        qrm.removeAll("k2");
-    }
-
     @Test(expected=UnsupportedOperationException.class)
     public void QRMClearTest() {
         qrm.clear();
     }
 
-    @Test(expected=UnsupportedOperationException.class)
-    public void QRMReplaceValuesTest() {
-        qrm.replaceValues("1", Lists.newArrayList("k1", "k2"));
-    }
-    
     @Test
     public void listenerTest() {
         QRMTestListener listener = new QRMTestListener(false);
@@ -197,42 +169,41 @@ public class QueryResultMultimapTest {
         
         qrm.put("test", "set");
         
-        Collection<String> results = qrm.get("test");
-        assertTrue(results.size() == 1);
-        assertTrue(results.iterator().next().equals("set"));
+        String results = qrm.get("test");
+        assertTrue(results.equals("set"));
         
-        qrm.remove("test", "set");
+        qrm.remove("test");
         results = qrm.get("test");
-        assertTrue(results.isEmpty());
+        assertTrue(results == null);
         
         qrm.put("errorValidate", "no");
         
-        assertTrue(qrm.get("errorValidate").isEmpty());
+        assertTrue(qrm.get("errorValidate") == null);
         
         qrm.put("errorPut", "no");
         qrm.put("errorRemove", "x");
         
-        assertTrue(qrm.get("errorPut").isEmpty());
+        assertTrue(qrm.get("errorPut") == null);
         
-        qrm.remove("errorRemove", "x");
+        qrm.remove("errorRemove");
         
-        assertFalse(qrm.get("errorRemove").isEmpty());
+        assertFalse(qrm.get("errorRemove") == null);
         
-        qrm.put("putMultiple", "v");
+//        qrm.put("putMultiple", "v");
+//        
+//        assertTrue(qrm.get("putMultiple").size() == 2);
+//        
+//        qrm.put("putMultipleFalse", "v");
+//        
+//        assertTrue(qrm.get("putMultipleFalse").size() == 2);
+//        
+//        assertFalse(qrm.put("putLie", "s"));
+//        assertFalse(qrm.containsEntry("putLie", "s"));
+//        
         
-        assertTrue(qrm.get("putMultiple").size() == 2);
-        
-        qrm.put("putMultipleFalse", "v");
-        
-        assertTrue(qrm.get("putMultipleFalse").size() == 2);
-        
-        assertFalse(qrm.put("putLie", "s"));
-        assertFalse(qrm.containsEntry("putLie", "s"));
-        
-        
-        assertTrue(qrm.put("removeLie", "s"));
-        assertFalse(qrm.remove("removeLie", "s"));
-        assertTrue(qrm.containsEntry("removeLie", "s"));
+        qrm.put("removeLie", "s");
+        assertFalse(qrm.remove("removeLie") == null);
+        assertTrue(qrm.get("removeLie").equals("s"));
         
         
     }
@@ -244,75 +215,45 @@ public class QueryResultMultimapTest {
         
         qrm.put("exceptionValidate", "no");
         
-        assertTrue(qrm.get("exceptionValidate").isEmpty());
+        assertTrue(qrm.get("exceptionValidate") == null);
         
         qrm.put("exceptionPut", "no");
         qrm.put("exceptionRemove", "x");
         
-        assertTrue(qrm.get("exceptionPut").isEmpty());
+        assertTrue(qrm.get("exceptionPut") == null);
         
-        qrm.remove("exceptionRemove", "x");
+        qrm.remove("exceptionRemove");
         
-        assertFalse(qrm.get("exceptionRemove").isEmpty());
+        assertFalse(qrm.get("exceptionRemove") == null);
         
     }
-    
-    @Test
-    public void QRMPutAllSetterTest() {
-        qrm.setQueryResultSetter(new QRMTestSetter(qrm));
-        
-        ArrayList<String> list = Lists.newArrayList("k1", "k2");
-        assertTrue(qrm.putAll("t", list));
-        
-        Collection<String> results = qrm.get("t");
-        assertTrue(results.size() == 2);
-        
-        for (String s : results) {
-            assertTrue("Unexpected notification: "+ s, list.remove(s));
-        }
-        assertTrue("Cannot find notifications: " + list.toString(),list.isEmpty());
-    }
-    
+     
     @Test
     public void QRMPutAllMapSetterTest() {
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));
         
-        Multimap<String, String> map = HashMultimap.create();
+        Map<String, String> map = new HashMap<String, String>();
         map.put("t", "g");
         map.put("1", "k2");
         
-        assertTrue(qrm.putAll(map));
+        qrm.putAll(map);
         
-        assertTrue(qrm.containsEntry("t", "g"));
-        assertTrue(qrm.containsEntry("1", "k2"));
+        assertTrue(qrm.get("t").equals("g"));
+        assertTrue(qrm.get("1").equals("k2"));
     }
     
     @Test
     public void QRMRemoveSetterTest() {
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));
         
-        assertTrue(qrm.remove("1", "k1"));
+        assertTrue(qrm.remove("1").equals("k1"));
         
-        assertFalse(qrm.containsEntry("1", "k1"));
+        assertFalse(qrm.get("1") == "k1");
         
-        assertFalse(qrm.remove("nonExistentKey", "v"));
+        assertFalse(qrm.remove("nonExistentKey") != null);
         
     }
     
-    @Test
-    public void QRMRemoveAllSetterTest() {
-        qrm.setQueryResultSetter(new QRMTestSetter(qrm));
-        
-        Collection<String> all = qrm.removeAll("2");
-        assertTrue(all.size() == 1);
-        assertTrue(all.iterator().next().equals("k2"));
-        
-        assertTrue(qrm.get("2").isEmpty());
-        
-        qrm.put("errorRemove", "v");
-        assertTrue(qrm.removeAll("errorRemove").size() == 1);
-    }
-
     @Test
     public void QRMClearSetterTest() {
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));
@@ -326,18 +267,6 @@ public class QueryResultMultimapTest {
         qrm.clear();
         
         assertFalse(qrm.isEmpty());
-        
-    }
-
-    @Test
-    public void QRMReplaceValuesSetterTest() {
-        qrm.setQueryResultSetter(new QRMTestSetter(qrm));
-        
-        Collection<String> values = qrm.replaceValues("1", Lists.newArrayList("k2", "k3"));
-        assertTrue(values.size() == 1);
-        assertTrue(values.iterator().next().equals("k1"));
-        
-        assertTrue(qrm.replaceValues("errorPut", Lists.newArrayList("v1", "v2")).isEmpty());
         
     }
     
