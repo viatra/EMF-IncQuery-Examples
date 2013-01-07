@@ -103,7 +103,7 @@ public class QueryResultMapTest {
         
         internalListenerTest(listener, false);
 
-        assertArrayEquals(Lists.newArrayList("[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g").toArray(),
+        assertArrayEquals(Lists.newArrayList("[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g2").toArray(),
                 listener.getUpdates().toArray());
         
         qrm.removeCallbackOnQueryResultUpdate(listener);
@@ -129,7 +129,7 @@ public class QueryResultMapTest {
         qrm.testInternalPut(map);
         
         map.clear();
-        map.put("t", "g");
+        map.put("t", "g2");
         map.put("x", "x");
         qrm.testInternalRemove(map);
         
@@ -141,7 +141,7 @@ public class QueryResultMapTest {
         
         internalListenerTest(listener, false);
 
-        assertArrayEquals(Lists.newArrayList("[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g").toArray(),
+        assertArrayEquals(Lists.newArrayList("[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g2").toArray(),
                 listener.getUpdates().toArray());
     }
     
@@ -153,7 +153,7 @@ public class QueryResultMapTest {
         
         ArrayList<String> list = Lists.newArrayList("[PUT]1:k1","[PUT]2:k2","[PUT]3:k3",
                 "[PUT]4:k4","[PUT]5:k5","[PUT]6:k6","[PUT]7:k7","[PUT]8:k8",
-                "[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g");
+                "[PUT]t:g","[PUT]t:g2","[PUT]1:k2","[REMOVE]t:g2");
         
         for (String s : listener.getUpdates()) {
             assertTrue("Unexpected notification: "+ s, list.remove(s));
