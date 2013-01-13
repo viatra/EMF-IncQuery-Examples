@@ -36,7 +36,7 @@
         <value xsi:type="patternLanguage:StringValue" value="C"/>
       </parameters>
       <parameters name="message">
-        <value xsi:type="patternLanguage:StringValue" value="$C.name$ does not have a teacher"/>
+        <value xsi:type="patternLanguage:StringValue" value="$C.subject$ does not have a teacher"/>
       </parameters>
       <parameters name="severity">
         <value xsi:type="patternLanguage:StringValue" value="warning"/>
