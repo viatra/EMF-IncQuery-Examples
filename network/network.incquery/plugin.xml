@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="network.MutualFriends"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="network.mutualfriends.MutualFriendsMatcherFactory$Provider"
+            id="network.MutualFriends">
+      </matcher>
+   </extension>
+
+</plugin>

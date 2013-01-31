@@ -1,0 +1,79 @@
+/*
+ * Author: Istvan Rath
+ * Based on the work of Bali Janos Daniel, AX9UV0
+ */
+package network
+
+import "http://network/1.0"
+
+pattern MutualFriends(person: Person, friend: Person) = {
+	person != friend;
+	Person.circles.members(person, friend);
+	Person.circles.members(friend, person);
+}
+
+//pattern PersonFriends(person: Person, friend: Person) = {
+//	//person != friend;
+//	Person.circles.members(person, friend);
+//}
+
+//pattern PersonFriends2(person: Person, C:Circle, friend: Person) = {
+//	person != friend;
+//	Person.circles(person,C);
+//	Circle.members(C,friend);
+//}
+
+
+/*
+ * Type constarint
+ */
+//pattern IsPerson(person: Person) = {
+//	Person(person);
+//}
+
+/*
+ * Path expression
+ */
+//pattern PersonCircles(person: Person, circle: Circle) = {
+//	Person.circles(person, circle);
+//}
+
+/*
+ * Inequality
+ */
+//pattern PersonPair(person1: Person, person2: Person) = {
+//	person1 != person2; 
+//}
+
+/*
+ * Find
+ */
+//pattern FriendWithSelf(person: Person) = {
+//	find PersonFriends(person, person);
+//}
+
+/*
+ * Neg find
+ */
+//pattern NotFriends(person: Person, friend: Person) = {
+//	neg find PersonFriends2(person, _C, friend);
+//}
+
+/*
+ * Complex example
+ * 
+ * (Circle, Post) pairs, where the post is also visible
+ * to a different circle owned by someone in the original
+ */
+//pattern CircleDoublePosts(circle: Circle, post: Post) = {
+//	Circle(circle2);
+//	Circle.members.circles(circle, circle2);
+//	circle != circle2;
+//	Post.visibleTo(post, circle);
+//	Post.visibleTo(post, circle2);
+//}
+
+//pattern SelfInCircle(person: Person, circle: Circle) = {
+//	Person.circles(person, circle); 
+//	Circle.members(circle, person);
+//}

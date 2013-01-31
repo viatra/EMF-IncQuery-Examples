@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/network/src" editDirectory="/network.edit/src"
+    editorDirectory="/network.editor/src" modelPluginID="network" modelName="Network"
+    modelPluginClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="network.edit" editorPluginID="network.editor">
+  <foreignModel>network.ecore</foreignModel>
+  <genPackages prefix="Network" disposableProviderFactory="true" ecorePackage="network.ecore#/">
+    <genClasses ecoreClass="network.ecore#//Network">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Network/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Network/people"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Network/posts"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Person/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Person/age"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference network.ecore#//Person/circles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Person/personalPosts"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Post">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Post/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Post/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Post/visibleTo"/>
+    </genClasses>
+    <genClasses ecoreClass="network.ecore#//Circle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute network.ecore#//Circle/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Circle/members"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Circle/circlePosts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference network.ecore#//Circle/owner"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
