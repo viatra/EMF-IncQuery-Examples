@@ -24,7 +24,7 @@ import school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory;
  * <code><pre>
  * {@literal @}Constraint(
  * 	location = "C", 
- * 	message = "$C.name$ does not have a teacher",
+ * 	message = "$C.subject$ does not have a teacher",
  * 	severity = "warning"
  * )
  * pattern CourseWithoutTeacher(C : Course) = {

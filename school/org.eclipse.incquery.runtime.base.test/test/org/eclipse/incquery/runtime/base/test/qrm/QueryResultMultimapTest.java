@@ -19,12 +19,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.eclipse.incquery.runtime.base.api.IQueryResultSetter;
 import org.eclipse.incquery.runtime.base.api.IQueryResultUpdateListener;
 import org.junit.After;
 import org.junit.Before;
@@ -42,128 +40,6 @@ public class QueryResultMultimapTest {
 
     
     
-    /**
-     * @author Abel Hegedus
-     *
-     */
-    private final class QRMTestSetter implements IQueryResultSetter<String, String> {
-        
-        TestQRM testQrm;
-        
-        /**
-         * 
-         */
-        public QRMTestSetter(TestQRM tqrm) {
-            testQrm = tqrm;
-        }
-        
-        @Override
-        public boolean validate(String key, String value) {
-            if(key.isEmpty() || value.isEmpty()) {
-                return false;
-            }
-            if(key.equals("errorValidate")) {
-                return false;
-            }
-            if(key.equals("exceptionValidate")) {
-                throw new UnsupportedOperationException();
-            }
-            return true;
-        }
-
-        @Override
-        public boolean remove(String key, String value) {
-            if(key.equals("errorRemove")) {
-                return false;
-            }
-            if(key.equals("removeLie")) {
-                return true;
-            }
-            if(key.equals("exceptionRemove")) {
-                throw new UnsupportedOperationException();
-            }
-            Map<String, String> map = new HashMap<String, String>();
-            map.put(key, value);
-            testQrm.testInternalRemove(map);
-            if(testQrm.containsEntry(key, value)) {
-                return false;
-            }
-            return true;
-        }
-
-        @Override
-        public boolean put(String key, String value) {
-            if(key.equals("errorPut")) {
-                return false;
-            }
-            if(key.equals("putLie")) {
-                return true;
-            }
-            if(key.equals("exceptionPut")) {
-                throw new UnsupportedOperationException();
-            }
-            Map<String, String> map = new HashMap<String, String>();
-            map.put(key, value);
-            testQrm.testInternalPut(map);
-            if(key.equals("putMultiple")) {
-                map.put(key, value+".");
-                testQrm.testInternalPut(map);
-                return true;
-            }
-            if(key.equals("putMultipleFalse")) {
-                map.put(key, value+".");
-                testQrm.testInternalPut(map);
-                return false;
-            }
-            if(!testQrm.containsEntry(key, value)) {
-                return false;
-            }
-            return true;
-        }
-    }
-
-    /**
-     * @author Abel Hegedus
-     *
-     */
-    private final class QRMTestListener implements IQueryResultUpdateListener<String, String> {
-        
-        private boolean throwErrors;
-
-        /**
-         * 
-         */
-        public QRMTestListener(boolean throwErrors) {
-            this.throwErrors = throwErrors;
-        }
-        
-        private List<String> updates = new ArrayList<String>();
-
-        @Override
-        public void notifyRemove(String key, String value) {
-            updates.add("[REMOVE]"+key + ":" + value);
-            if(throwErrors) {
-                throw new UnsupportedOperationException();
-            }
-        }
-
-        @Override
-        public void notifyPut(String key, String value) {
-            updates.add("[PUT]"+key + ":" + value);
-            if(throwErrors) {
-                throw new UnsupportedOperationException();
-            }
-        }
-
-        /**
-         * @return the updates
-         */
-        public List<String> getUpdates() {
-            return updates;
-        }
-    }
-    
-
     private Map<String, String> testMap;
     private TestQRM qrm;
     
