@@ -1,0 +1,41 @@
+package uml.validation
+
+import "http://www.eclipse.org/uml2/4.0.0/UML"
+
+pattern superClass(Sub : Class, Super : Class) {
+	Generalization.specific(Gen, Sub);
+	Generalization(Gen);
+	Generalization.general(Gen, Super);
+}
+
+pattern superOrEqualClass(Sub : Class, Super) {
+	Sub == Super;
+} or {
+	find superClass+(Sub, Super);
+}
+
+pattern ownsOperation(C : Class, O : Operation) {
+	Class.ownedOperation(C, O);
+}
+
+pattern ownsProperty(C : Class, P : Property) {
+	StructuredClassifier.ownedAttribute(C, P);
+}
+
+pattern hasOperation(C : Class, Operation : Operation) {
+	find superOrEqualClass(C, OwnerClass);
+	find ownsOperation(OwnerClass, Operation);
+}
+
+//pattern typeError(Cl : Class, Op : Operation) {
+//	find hasOperation(Op, Cl);
+//}
+//
+//pattern counterWarning(Cl : Class, Op : Operation) {
+//	find hasOperation(C1, Op);
+//}
+//
+//pattern connectednessWarning(C1 : Class, C2 : Class, Op1 : Operation, Op2 : Operation) {
+//	find hasOperation(C1, Op1);
+//	find hasOperation(C2, Op2);
+//}

@@ -1,0 +1,75 @@
+package uml.emptyclass
+
+import "http://www.eclipse.org/uml2/4.0.0/UML"
+//import "http://hu.bme.mit.uml.trace/1.0"
+
+@Edge(source = sub, target = sup, label = "direct")
+pattern superClass(sub : Class, sup : Class) {
+	Generalization.specific(Gen, sub);
+	Generalization(Gen);
+	Generalization.general(Gen, sup);
+}
+
+@Edge(source = sub, target = sup)
+pattern transitiveSuperClass(sub : Class, sup : Class) {
+	find superClass+(sub, sup);
+}
+
+pattern superOrEqualClass(sub : Class, sup) {
+	sub == sup;
+} or {
+	find superClass+(sub, sup);
+}
+
+pattern ownsOperation(cl : Class, op : Operation) {
+	Class.ownedOperation(cl, op);
+}
+
+pattern ownsProperty(cl : Class, pr : Property) {
+	StructuredClassifier.ownedAttribute(cl, pr);
+}
+
+pattern hasOperation(cl : Class, op : Operation) {
+	find superOrEqualClass(cl, owner);
+	find ownsOperation(owner, op);
+}
+
+pattern hasProperty(cl, pr) {
+	find superOrEqualClass(cl, owner);
+	find ownsProperty(owner, pr);
+}
+
+@ObservableValue(name = "abstract", expression = "cl.isAbstract")
+@ObservableValue(name = "leaf", expression = "cl.isLeaf")
+@Constraint(severity = "error", location = "cl", message="The class $cl$ is empty", 
+	targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor"
+)
+@Item(item = cl, label = "Empty Class $cl$")
+pattern emptyClass(cl : Class) {
+	neg find hasOperation(cl, _op);
+	neg find hasProperty(cl, _prop);
+}
+
+@Item(item = cl, label = "Class $cl$")
+pattern nonEmptyClass(cl : Class) {
+	neg find emptyClass(cl);
+}
+/*
+ * The following patterns have issues if the UML metamodel is 
+ * available both through the trace model and in the package registry.
+ * By opening the org.eclipse.uml2.uml project and updating the genmodel
+ * settings in generator.eiqgen the pattern will work as expected.
+ */
+//@QueryBasedFeature(feature = "inheritedSource", source = trace, target = cl)
+//pattern inheritedSource(trace : TraceElement, cl : Class) {
+//	Class(src);
+//	TraceElement.source(trace, src);
+//	find superClass+(cl, src);
+//}
+//
+//@QueryBasedFeature(feature = "inheritedTarget", source = trace, target = cl)
+//pattern inheritedTarget(trace : TraceElement, cl : Class) {
+//	Class(trg);
+//	TraceElement.target(trace, trg);
+//	find superClass+(cl, trg);
+//}

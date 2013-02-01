@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_TxiR0M2MEd-G-MS6BvIQ-g" name="myUMLModel">
+  <packageImport xmi:id="_TxiR0c2MEd-G-MS6BvIQ-g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_BFCJgM_IEd-5zaBcFg3kTA" name="Package_0">
+    <packagedElement xmi:type="uml:Class" xmi:id="_DhDgAM_IEd-5zaBcFg3kTA" name="SubClass1">
+      <generalization xmi:id="_zcKDkM_IEd-5zaBcFg3kTA" general="_D0wfIM_IEd-5zaBcFg3kTA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_D0wfIM_IEd-5zaBcFg3kTA" name="Class_A">
+      <generalization xmi:id="_z9kukM_IEd-5zaBcFg3kTA" general="_EIghkM_IEd-5zaBcFg3kTA"/>
+      <ownedAttribute xmi:id="_aGiaANP4Ed-Rw5i96BkLNw" name="class_Q" type="_Exd_AM_IEd-5zaBcFg3kTA" isUnique="false" association="_aGYpANP4Ed-Rw5i96BkLNw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aGwccNP4Ed-Rw5i96BkLNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aGxDgNP4Ed-Rw5i96BkLNw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EIghkM_IEd-5zaBcFg3kTA" name="CommonSuperClass"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EdfTEM_IEd-5zaBcFg3kTA" name="Class_P">
+      <generalization xmi:id="_0hqTEM_IEd-5zaBcFg3kTA" general="_EIghkM_IEd-5zaBcFg3kTA"/>
+      <ownedAttribute xmi:id="_rzyfwNMEEd-CiK2048Th2w" name="ID" isUnique="false"/>
+      <ownedOperation xmi:id="_FfiAEM_iEd-hc9KzPl8hxg" name="Operation_0"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Exd_AM_IEd-5zaBcFg3kTA" name="Class_Q">
+      <generalization xmi:id="_yAAOoM_IEd-5zaBcFg3kTA" general="_EdfTEM_IEd-5zaBcFg3kTA"/>
+      <generalization xmi:id="_WwtEUNMAEd-GNIi2KnZFbQ" general="_WMm4wNMAEd-GNIi2KnZFbQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JbBkEM_IEd-5zaBcFg3kTA" name="SubClass2">
+      <generalization xmi:id="_1r54oM_IEd-5zaBcFg3kTA" general="_Exd_AM_IEd-5zaBcFg3kTA"/>
+      <generalization xmi:id="_3sXeINPyEd-Rw5i96BkLNw" general="_D0wfIM_IEd-5zaBcFg3kTA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_WMm4wNMAEd-GNIi2KnZFbQ" name="Class_0">
+      <ownedAttribute xmi:id="_U4pSUNMHEd-9tJzqJb6Btw" name="Property_0" type="_DhDgAM_IEd-5zaBcFg3kTA" isUnique="false"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_aGYpANP4Ed-Rw5i96BkLNw" name="A_Class_A_Class_Q" memberEnd="_aGiaANP4Ed-Rw5i96BkLNw _aGxqkNP4Ed-Rw5i96BkLNw">
+      <ownedEnd xmi:id="_aGxqkNP4Ed-Rw5i96BkLNw" name="class_A" type="_D0wfIM_IEd-5zaBcFg3kTA" isUnique="false" association="_aGYpANP4Ed-Rw5i96BkLNw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aG0t4NP4Ed-Rw5i96BkLNw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aG0G0NP4Ed-Rw5i96BkLNw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Collaboration" xmi:id="_bUf0MNPzEd-Rw5i96BkLNw" name="Collaboration1" classifierBehavior="_5IO5kEc9EeCmau--fZR0UQ">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_bUwS4NPzEd-Rw5i96BkLNw" name="Interaction1">
+      <ownedParameter xmi:id="_i4VZENPzEd-Rw5i96BkLNw" name="param_0" type="_D0wfIM_IEd-5zaBcFg3kTA"/>
+      <ownedParameter xmi:id="_i_slUNPzEd-Rw5i96BkLNw" name="param_1" type="_EdfTEM_IEd-5zaBcFg3kTA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_etLAMNPzEd-Rw5i96BkLNw" name="Send1" covered="_cjUXwNPzEd-Rw5i96BkLNw" message="_evD2kNPzEd-Rw5i96BkLNw" event="_ettywNPzEd-Rw5i96BkLNw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_etV_UNPzEd-Rw5i96BkLNw" name="Receive1" covered="_dKAkUNPzEd-Rw5i96BkLNw" message="_evD2kNPzEd-Rw5i96BkLNw" event="_euGNQNPzEd-Rw5i96BkLNw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fi8KkNPzEd-Rw5i96BkLNw" name="Send2" covered="_dKAkUNPzEd-Rw5i96BkLNw" message="_fjmR4NPzEd-Rw5i96BkLNw" event="_fjLbINPzEd-Rw5i96BkLNw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fjDfUNPzEd-Rw5i96BkLNw" name="Receive2" covered="_cjUXwNPzEd-Rw5i96BkLNw" message="_fjmR4NPzEd-Rw5i96BkLNw" event="_fjdvANPzEd-Rw5i96BkLNw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_OhxWUNP4Ed-Rw5i96BkLNw" name="Send3" covered="_cjUXwNPzEd-Rw5i96BkLNw" message="_OihkQNP4Ed-Rw5i96BkLNw" event="_OiJw0NP4Ed-Rw5i96BkLNw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_OiBN8NP4Ed-Rw5i96BkLNw" name="Receive3" covered="_dKAkUNPzEd-Rw5i96BkLNw" message="_OihkQNP4Ed-Rw5i96BkLNw" event="_OiWlINP4Ed-Rw5i96BkLNw"/>
+      <lifeline xmi:id="_cjUXwNPzEd-Rw5i96BkLNw" name="Lifeline1" represents="_i4VZENPzEd-Rw5i96BkLNw" coveredBy="_etLAMNPzEd-Rw5i96BkLNw _fjDfUNPzEd-Rw5i96BkLNw _OhxWUNP4Ed-Rw5i96BkLNw"/>
+      <lifeline xmi:id="_dKAkUNPzEd-Rw5i96BkLNw" name="Lifeline2" represents="_i_slUNPzEd-Rw5i96BkLNw" coveredBy="_etV_UNPzEd-Rw5i96BkLNw _fi8KkNPzEd-Rw5i96BkLNw _OiBN8NP4Ed-Rw5i96BkLNw"/>
+      <message xmi:id="_evD2kNPzEd-Rw5i96BkLNw" name="Message1" receiveEvent="_etV_UNPzEd-Rw5i96BkLNw" sendEvent="_etLAMNPzEd-Rw5i96BkLNw"/>
+      <message xmi:id="_fjmR4NPzEd-Rw5i96BkLNw" name="Message2" receiveEvent="_fjDfUNPzEd-Rw5i96BkLNw" sendEvent="_fi8KkNPzEd-Rw5i96BkLNw"/>
+      <message xmi:id="_OihkQNP4Ed-Rw5i96BkLNw" name="Message3" receiveEvent="_OiBN8NP4Ed-Rw5i96BkLNw" sendEvent="_OhxWUNP4Ed-Rw5i96BkLNw"/>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_5IO5kEc9EeCmau--fZR0UQ" name="interaction0"/>
+  </packagedElement>
+  <profileApplication xmi:id="_TxiR0s2MEd-G-MS6BvIQ-g">
+    <eAnnotations xmi:id="_TxiR082MEd-G-MS6BvIQ-g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_ettywNPzEd-Rw5i96BkLNw" name="SendEvt1"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_euGNQNPzEd-Rw5i96BkLNw" name="RecvEvt1"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_fjLbINPzEd-Rw5i96BkLNw" name="SendEvt2"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_fjdvANPzEd-Rw5i96BkLNw" name="RecvEvt2"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_OiJw0NP4Ed-Rw5i96BkLNw" name="SendEvt3"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_OiWlINP4Ed-Rw5i96BkLNw" name="RecvEvt3"/>
+</uml:Model>

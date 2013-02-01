@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="extension.databinding.uml.sequencediagram.messageEvents"
+         point="org.eclipse.incquery.databinding.runtime.databinding">
+      <databinding
+            message=""
+            class="uml.sequencediagram.messageevents.MessageEventsDatabindingAdapter"
+            patternName="uml.sequencediagram.messageEvents"
+            matcherFactoryClass="uml.sequencediagram.messageevents.MessageEventsMatcherFactory">
+      </databinding>
+   </extension>
+   <extension
+         id="extension.databinding.uml.sequencediagram.propertyNumberOfClassInPackage"
+         point="org.eclipse.incquery.databinding.runtime.databinding">
+      <databinding
+            message=""
+            class="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageDatabindingAdapter"
+            patternName="uml.sequencediagram.propertyNumberOfClassInPackage"
+            matcherFactoryClass="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageMatcherFactory">
+      </databinding>
+   </extension>
+   <extension
+         id="extension.databinding.uml.emptyclass.emptyClass"
+         point="org.eclipse.incquery.databinding.runtime.databinding">
+      <databinding
+            message=""
+            class="uml.emptyclass.emptyclass.EmptyClassDatabindingAdapter"
+            patternName="uml.emptyclass.emptyClass"
+            matcherFactoryClass="uml.emptyclass.emptyclass.EmptyClassMatcherFactory">
+      </databinding>
+   </extension>
+
+</plugin>

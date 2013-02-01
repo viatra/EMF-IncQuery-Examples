@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_lsChECprEeKmVPGuHsmTbg" type="EcoreTools" name="uml-trace" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_4dw6sCprEeKmVPGuHsmTbg" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4qtxkCprEeKmVPGuHsmTbg" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4qtxkSprEeKmVPGuHsmTbg" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_4gamECprEeKmVPGuHsmTbg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_4g8KgCprEeKmVPGuHsmTbg" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_4g8KgSprEeKmVPGuHsmTbg" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_4g8KgiprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_4g8KgyprEeKmVPGuHsmTbg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_4g9YoCprEeKmVPGuHsmTbg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_4g9YoSprEeKmVPGuHsmTbg" collapsed="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_4g9YoiprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_4g9YoyprEeKmVPGuHsmTbg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_4dw6sSprEeKmVPGuHsmTbg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4dw6siprEeKmVPGuHsmTbg" x="423" y="126"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_7xkNwCprEeKmVPGuHsmTbg" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_7xk00CprEeKmVPGuHsmTbg" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_7xk00SprEeKmVPGuHsmTbg" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7xk00iprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7xk00yprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7xk01CprEeKmVPGuHsmTbg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_7xlb4CprEeKmVPGuHsmTbg" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7xlb4SprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7xlb4iprEeKmVPGuHsmTbg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7xlb4yprEeKmVPGuHsmTbg"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_7xkNwSprEeKmVPGuHsmTbg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="uml-trace.ecore#//TraceElement"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7xkNwiprEeKmVPGuHsmTbg" x="162" y="135"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_lsChESprEeKmVPGuHsmTbg"/>
+  <element xmi:type="ecore:EPackage" href="uml-trace.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_4o5zsCprEeKmVPGuHsmTbg" type="3002" source="_4dw6sCprEeKmVPGuHsmTbg" target="_4dw6sCprEeKmVPGuHsmTbg">
+    <children xmi:type="notation:Node" xmi:id="_4o_6UCprEeKmVPGuHsmTbg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4o_6USprEeKmVPGuHsmTbg" x="-49" y="63"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_4pAhYCprEeKmVPGuHsmTbg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4pAhYSprEeKmVPGuHsmTbg" x="-32" y="3"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_4o5zsSprEeKmVPGuHsmTbg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4o5zsiprEeKmVPGuHsmTbg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/org.eclipse.uml2.uml/model/UML.ecore#//Class/superClass"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4o5zsyprEeKmVPGuHsmTbg" points="[50, 5, 50, 5]$[112, 13, 112, 13]$[112, 88, 112, 88]$[67, 88, 67, 88]$[25, 88, 25, 88]$[7, 26, 7, 26]"/>
+  </edges>
+</notation:Diagram>
