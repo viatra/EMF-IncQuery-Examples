@@ -3,14 +3,16 @@ package uml.emptyclass
 import "http://www.eclipse.org/uml2/4.0.0/UML"
 //import "http://hu.bme.mit.uml.trace/1.0"
 
-@Edge(source = sub, target = sup, label = "direct")
+@Edge(source = sup, target = sub, label = "direct")
+@ContainsItem(container = sup, item = sub)
+@Format(color = "#7f004b", lineWidth = 2)
 pattern superClass(sub : Class, sup : Class) {
 	Generalization.specific(Gen, sub);
 	Generalization(Gen);
 	Generalization.general(Gen, sup);
 }
 
-@Edge(source = sub, target = sup)
+@Edge(source = sup, target = sub)
 pattern transitiveSuperClass(sub : Class, sup : Class) {
 	find superClass+(sub, sup);
 }
@@ -45,6 +47,7 @@ pattern hasProperty(cl, pr) {
 	targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor"
 )
 @Item(item = cl, label = "Empty Class $cl$")
+@Format(color="#3770d7", textColor = "#ffffff")
 pattern emptyClass(cl : Class) {
 	neg find hasOperation(cl, _op);
 	neg find hasProperty(cl, _prop);
