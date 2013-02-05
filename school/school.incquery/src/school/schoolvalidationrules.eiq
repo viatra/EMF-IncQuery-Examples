@@ -7,7 +7,7 @@ import "http://school.ecore"
 pattern CourseWithTeacher(C : Course) = {Course.teacher(C,_T);}
 
 @Constraint(
-	location = "C", 
+	location = C, 
 	message = "$C.subject$ does not have a teacher",
 	severity = "warning"
 )
