@@ -22,7 +22,7 @@ private pattern noMethodDefined(Operation : Operation) {
 	Behavior.specification(Behavior, Operation);
 }
 
-@Constraint(severity="error",location="Operation",message="The operation $Operation$ has no defined behavior.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
+@Constraint(severity="error",location=Operation,message="The operation $Operation$ has no defined behavior.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
 pattern operationWithoutBehaviour(Operation : Operation) {
 	neg find noMethodDefined(Operation);
 }
@@ -33,7 +33,7 @@ private pattern behaviorHasSpecification(Behavior : Behavior) {
 	Operation(Specification);
 }
 
-@Constraint(severity = "error", location = "Behavior", message = "The behavior $Behavior$ has no specification operation.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
+@Constraint(severity = "error", location = Behavior, message = "The behavior $Behavior$ has no specification operation.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
 pattern OpaqueBehaviorWithoutOperation(Behavior : OpaqueBehavior) {
 	neg find behaviorHasSpecification(Behavior);
 }
@@ -52,7 +52,7 @@ private pattern triggerInStateMachine(StMach : StateMachine, Trigger : Trigger) 
 	StateMachine.region.transition.trigger(StMach, Trigger);
 }
 
-@Constraint(severity = "error",location="Reception",message="The reception $Reception$ lacks triggers.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
+@Constraint(severity = "error",location=Reception,message="The reception $Reception$ lacks triggers.", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
 pattern receptionWithoutAction(Reception : Reception) {
 	Class(Class);
 	Class.ownedReception(Class, Reception);
@@ -61,7 +61,7 @@ pattern receptionWithoutAction(Reception : Reception) {
 	neg find usedInStateMachine(Signal, Class);
 }
 
-@Constraint(severity = "error",location="Behavior",message="The number of parameters of $Behavior$ are different from its specification $Operation$", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
+@Constraint(severity = "error",location=Behavior,message="The number of parameters of $Behavior$ are different from its specification $Operation$", targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor")
 pattern incompatibleSpecification(Behavior : OpaqueBehavior, Operation : Operation) {
 	Behavior.specification(Behavior, Operation);
 	

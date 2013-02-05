@@ -2,20 +2,6 @@
 <plugin>
 
    <extension
-         id="validation.constraint.uml.emptyclass.emptyClass"
-         point="org.eclipse.incquery.validation.runtime.constraint">
-      <constraint
-            name="uml.emptyclass.emptyClass"
-            class="uml.emptyclass.emptyclass.EmptyClassConstraint2">
-         <enabledForEditor
-               editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
-         </enabledForEditor>
-         <enabledForEditor
-               editorId="org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
-         </enabledForEditor>
-      </constraint>
-   </extension>
-   <extension
          id="validation.constraint.uml.statemachine.operationWithoutBehaviour"
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
@@ -63,6 +49,20 @@
       <constraint
             name="uml.statemachine.incompatibleSpecification"
             class="uml.statemachine.incompatiblespecification.IncompatibleSpecificationConstraint0">
+         <enabledForEditor
+               editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.uml.emptyclass.emptyClass"
+         point="org.eclipse.incquery.validation.runtime.constraint">
+      <constraint
+            name="uml.emptyclass.emptyClass"
+            class="uml.emptyclass.emptyclass.EmptyClassConstraint2">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>

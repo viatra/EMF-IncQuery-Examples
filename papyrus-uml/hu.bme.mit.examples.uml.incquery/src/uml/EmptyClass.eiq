@@ -43,7 +43,7 @@ pattern hasProperty(cl, pr) {
 
 @ObservableValue(name = "abstract", expression = "cl.isAbstract")
 @ObservableValue(name = "leaf", expression = "cl.isLeaf")
-@Constraint(severity = "error", location = "cl", message="The class $cl$ is empty", 
+@Constraint(severity = "error", location = cl, message="The class $cl$ is empty", 
 	targetEditorId = "org.eclipse.papyrus.infra.core.papyrusEditor"
 )
 @Item(item = cl, label = "Empty Class $cl$")
