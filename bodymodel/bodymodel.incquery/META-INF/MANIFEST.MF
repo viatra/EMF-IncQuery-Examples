@@ -12,7 +12,6 @@ Export-Package: bodymodel.righthandabovehead,
  bodymodel.ymca.feetareclose,
  bodymodel.ymca.handsareapart,
  bodymodel.ymca.handsareclose,
- bodymodel.ymca.handsareclose_buggy,
  bodymodel.ymca.i,
  bodymodel.ymca.lefthandabovehead,
  bodymodel.ymca.m,
@@ -25,7 +24,7 @@ Export-Package: bodymodel.righthandabovehead,
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
  org.eclipse.xtext.xbase.lib,
- org.jnect.bodymodel
+ org.jnect.bodymodel,
+ org.eclipse.incquery.runtime;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
