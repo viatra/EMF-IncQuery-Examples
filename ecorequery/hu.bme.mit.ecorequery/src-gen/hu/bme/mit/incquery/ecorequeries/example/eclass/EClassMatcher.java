@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
@@ -68,7 +67,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return matches represented as a EClassMatch object.
    * 
    */
-  public Collection<EClassMatch> getAllMatches(final EClass pEClass) {
+  public Collection<EClassMatch> getAllMatches(final Object pEClass) {
     return rawGetAllMatches(new Object[]{pEClass});
   }
   
@@ -79,7 +78,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return a match represented as a EClassMatch object, or null if no match is found.
    * 
    */
-  public EClassMatch getOneArbitraryMatch(final EClass pEClass) {
+  public EClassMatch getOneArbitraryMatch(final Object pEClass) {
     return rawGetOneArbitraryMatch(new Object[]{pEClass});
   }
   
@@ -90,7 +89,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClass pEClass) {
+  public boolean hasMatch(final Object pEClass) {
     return rawHasMatch(new Object[]{pEClass});
   }
   
@@ -100,7 +99,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClass pEClass) {
+  public int countMatches(final Object pEClass) {
     return rawCountMatches(new Object[]{pEClass});
   }
   
@@ -110,7 +109,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClass pEClass, final IMatchProcessor<? super EClassMatch> processor) {
+  public void forEachMatch(final Object pEClass, final IMatchProcessor<? super EClassMatch> processor) {
     rawForEachMatch(new Object[]{pEClass}, processor);
   }
   
@@ -122,7 +121,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClass pEClass, final IMatchProcessor<? super EClassMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pEClass, final IMatchProcessor<? super EClassMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pEClass}, processor);
   }
   
@@ -137,7 +136,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EClassMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pEClass) {
+  public DeltaMonitor<EClassMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pEClass) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pEClass});
   }
   
@@ -148,7 +147,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return the (partial) match object.
    * 
    */
-  public EClassMatch newMatch(final EClass pEClass) {
+  public EClassMatch newMatch(final Object pEClass) {
     return new EClassMatch(pEClass);
     
   }
@@ -158,8 +157,8 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfEClass(final Object[] parameters) {
-    Set<EClass> results = new HashSet<EClass>();
+  public Set<Object> rawAccumulateAllValuesOfEClass(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_ECLASS, parameters, results);
     return results;
   }
@@ -169,14 +168,14 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfEClass() {
+  public Set<Object> getAllValuesOfEClass() {
     return rawAccumulateAllValuesOfEClass(emptyArray());
   }
   
   @Override
   public EClassMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_ECLASS));	
+    	return new EClassMatch((java.lang.Object) t.get(POSITION_ECLASS));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,7 +185,7 @@ public class EClassMatcher extends BaseGeneratedMatcher<EClassMatch> {
   @Override
   public EClassMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassMatch((org.eclipse.emf.ecore.EClass) match[POSITION_ECLASS]);
+    	return new EClassMatch((java.lang.Object) match[POSITION_ECLASS]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

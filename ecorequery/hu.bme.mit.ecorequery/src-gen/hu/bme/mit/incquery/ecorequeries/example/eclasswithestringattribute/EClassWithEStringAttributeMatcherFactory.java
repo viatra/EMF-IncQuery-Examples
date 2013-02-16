@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see EClassWithEStringAttributeMatch
  * 
  */
-public class EClassWithEStringAttributeMatcherFactory extends BaseGeneratedMatcherFactory<EClassWithEStringAttributeMatcher> {
+public final class EClassWithEStringAttributeMatcherFactory extends BaseGeneratedMatcherFactory<EClassWithEStringAttributeMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

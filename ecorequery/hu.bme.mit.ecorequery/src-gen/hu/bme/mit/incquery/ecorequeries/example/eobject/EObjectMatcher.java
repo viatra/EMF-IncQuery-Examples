@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
@@ -68,7 +67,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return matches represented as a EObjectMatch object.
    * 
    */
-  public Collection<EObjectMatch> getAllMatches(final EObject pE) {
+  public Collection<EObjectMatch> getAllMatches(final Object pE) {
     return rawGetAllMatches(new Object[]{pE});
   }
   
@@ -79,7 +78,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return a match represented as a EObjectMatch object, or null if no match is found.
    * 
    */
-  public EObjectMatch getOneArbitraryMatch(final EObject pE) {
+  public EObjectMatch getOneArbitraryMatch(final Object pE) {
     return rawGetOneArbitraryMatch(new Object[]{pE});
   }
   
@@ -90,7 +89,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EObject pE) {
+  public boolean hasMatch(final Object pE) {
     return rawHasMatch(new Object[]{pE});
   }
   
@@ -100,7 +99,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EObject pE) {
+  public int countMatches(final Object pE) {
     return rawCountMatches(new Object[]{pE});
   }
   
@@ -110,7 +109,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EObject pE, final IMatchProcessor<? super EObjectMatch> processor) {
+  public void forEachMatch(final Object pE, final IMatchProcessor<? super EObjectMatch> processor) {
     rawForEachMatch(new Object[]{pE}, processor);
   }
   
@@ -122,7 +121,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EObject pE, final IMatchProcessor<? super EObjectMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pE, final IMatchProcessor<? super EObjectMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pE}, processor);
   }
   
@@ -137,7 +136,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EObjectMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EObject pE) {
+  public DeltaMonitor<EObjectMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pE) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE});
   }
   
@@ -148,7 +147,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the (partial) match object.
    * 
    */
-  public EObjectMatch newMatch(final EObject pE) {
+  public EObjectMatch newMatch(final Object pE) {
     return new EObjectMatch(pE);
     
   }
@@ -158,8 +157,8 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EObject> rawAccumulateAllValuesOfE(final Object[] parameters) {
-    Set<EObject> results = new HashSet<EObject>();
+  public Set<Object> rawAccumulateAllValuesOfE(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_E, parameters, results);
     return results;
   }
@@ -169,14 +168,14 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EObject> getAllValuesOfE() {
+  public Set<Object> getAllValuesOfE() {
     return rawAccumulateAllValuesOfE(emptyArray());
   }
   
   @Override
   public EObjectMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EObjectMatch((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));	
+    	return new EObjectMatch((java.lang.Object) t.get(POSITION_E));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,7 +185,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
   @Override
   public EObjectMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EObjectMatch((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
+    	return new EObjectMatch((java.lang.Object) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

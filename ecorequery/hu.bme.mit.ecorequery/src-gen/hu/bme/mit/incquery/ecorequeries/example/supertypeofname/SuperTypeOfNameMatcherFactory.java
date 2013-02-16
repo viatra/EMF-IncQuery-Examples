@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see SuperTypeOfNameMatch
  * 
  */
-public class SuperTypeOfNameMatcherFactory extends BaseGeneratedMatcherFactory<SuperTypeOfNameMatcher> {
+public final class SuperTypeOfNameMatcherFactory extends BaseGeneratedMatcherFactory<SuperTypeOfNameMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement;
 
 import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatch;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -17,7 +16,7 @@ public abstract class ECoreNamedElementProcessor implements IMatchProcessor<ECor
    * @param pName the value of pattern parameter Name in the currently processed match 
    * 
    */
-  public abstract void process(final ENamedElement Element, final String Name);
+  public abstract void process(final Object Element, final String Name);
   
   @Override
   public void process(final ECoreNamedElementMatch match) {

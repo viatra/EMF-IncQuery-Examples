@@ -5,7 +5,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EObject"/>
         </type>
         <var var="E"/>
       </constraints>
@@ -16,7 +16,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="EClass"/>
       </constraints>
@@ -28,11 +28,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="_EClass"/>
@@ -50,11 +50,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eSuperTypes"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass/eSuperTypes"/>
             </type>
           </tail>
           <src var="Sub"/>
@@ -65,13 +65,13 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="Super"/>
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="Sub"/>
       </constraints>
@@ -84,11 +84,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eSuperTypes"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass/eSuperTypes"/>
             </type>
           </tail>
           <src var="Sub"/>
@@ -100,11 +100,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="Super"/>
@@ -116,11 +116,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="Sub"/>
@@ -138,18 +138,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="E"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass/eStructuralFeatures"/>
             </type>
           </tail>
           <src var="E"/>
@@ -160,18 +160,18 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EAttribute"/>
         </type>
         <var var="Attr"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/eType"/>
             </type>
           </tail>
           <src var="Attr"/>
@@ -188,7 +188,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="E"/>
       </constraints>
@@ -219,18 +219,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
         </type>
         <var var="ERef"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/lowerBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -240,11 +240,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/upperBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -259,11 +259,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -275,11 +275,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/lowerBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -289,11 +289,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/upperBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -307,18 +307,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
         </type>
         <var var="ERef"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/lowerBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -328,11 +328,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/upperBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -347,11 +347,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -363,11 +363,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/lowerBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/lowerBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -377,11 +377,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/upperBound"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/upperBound"/>
             </type>
           </tail>
           <src var="ERef"/>
@@ -399,18 +399,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="XElement"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass/eStructuralFeatures"/>
             </type>
           </tail>
           <src var="XElement"/>
@@ -421,24 +421,24 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
         </type>
         <var var="Relates"/>
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="YElement"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/eType"/>
             </type>
           </tail>
           <src var="Relates"/>
@@ -500,18 +500,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="XElement"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass/eStructuralFeatures"/>
             </type>
           </tail>
           <src var="XElement"/>
@@ -522,18 +522,18 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
         </type>
         <var var="Relates1"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eOpposite"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference/eOpposite"/>
             </type>
           </tail>
           <src var="Relates1"/>
@@ -544,24 +544,24 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EReference"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EReference"/>
         </type>
         <var var="Relates2"/>
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClass"/>
         </type>
         <var var="YElement"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//ETypedElement/eType"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ETypedElement/eType"/>
             </type>
           </tail>
           <src var="Relates1"/>
@@ -646,18 +646,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement"/>
         </type>
         <var var="Element"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="Element"/>
@@ -673,18 +673,18 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement"/>
         </type>
         <var var="Element"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//ENamedElement/name"/>
             </type>
           </tail>
           <src var="Element"/>
@@ -701,11 +701,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClassifier"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier/ePackage"/>
+              <refname xsi:type="ecore:EReference" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EClassifier/ePackage"/>
             </type>
           </tail>
           <src var="Element"/>
@@ -716,18 +716,18 @@
       </constraints>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+          <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EPackage"/>
         </type>
         <var var="EP"/>
       </constraints>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
+            <classname xsi:type="ecore:EClass" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EPackage"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+              <refname xsi:type="ecore:EAttribute" href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#//EPackage/nsURI"/>
             </type>
           </tail>
           <src var="EP"/>
@@ -737,6 +737,6 @@
     </bodies>
   </patterns>
   <importPackages xsi:type="eMFPatternLanguage:PackageImport">
-    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    <ePackage href="jar:file:/Applications/Juno.app/Contents/Resources/Java/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar!/model/Ecore.ecore#/"/>
   </importPackages>
 </eMFPatternLanguage:PatternModel>

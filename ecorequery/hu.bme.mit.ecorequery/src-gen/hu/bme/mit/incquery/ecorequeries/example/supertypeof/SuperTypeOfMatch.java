@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.supertypeof;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -21,13 +20,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class SuperTypeOfMatch extends BasePatternMatch {
-  private EClass fSuper;
+  private Object fSuper;
   
-  private EClass fSub;
+  private Object fSub;
   
   private static String[] parameterNames = {"Super", "Sub"};
   
-  SuperTypeOfMatch(final EClass pSuper, final EClass pSub) {
+  SuperTypeOfMatch(final Object pSuper, final Object pSub) {
     this.fSuper = pSuper;
     this.fSub = pSub;
     
@@ -41,36 +40,36 @@ public final class SuperTypeOfMatch extends BasePatternMatch {
     
   }
   
-  public EClass getSuper() {
+  public Object getSuper() {
     return this.fSuper;
     
   }
   
-  public EClass getSub() {
+  public Object getSub() {
     return this.fSub;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Super".equals(parameterName) ) {
-    	this.fSuper = (org.eclipse.emf.ecore.EClass) newValue;
+    if ("Super".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fSuper = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Sub".equals(parameterName) ) {
-    	this.fSub = (org.eclipse.emf.ecore.EClass) newValue;
+    if ("Sub".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fSub = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setSuper(final EClass pSuper) {
+  public void setSuper(final Object pSuper) {
     this.fSuper = pSuper;
     
   }
   
-  public void setSub(final EClass pSub) {
+  public void setSub(final Object pSub) {
     this.fSub = pSub;
     
   }

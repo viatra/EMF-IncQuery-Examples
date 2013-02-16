@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see EObjectMatch
  * 
  */
-public class EObjectMatcherFactory extends BaseGeneratedMatcherFactory<EObjectMatcher> {
+public final class EObjectMatcherFactory extends BaseGeneratedMatcherFactory<EObjectMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

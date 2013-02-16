@@ -1,9 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclassattribute;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -23,15 +20,15 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class EClassAttributeMatch extends BasePatternMatch {
-  private EClass fE;
+  private Object fE;
   
-  private EAttribute fAttr;
+  private Object fAttr;
   
-  private EClassifier fType;
+  private Object fType;
   
   private static String[] parameterNames = {"E", "Attr", "Type"};
   
-  EClassAttributeMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
+  EClassAttributeMatch(final Object pE, final Object pAttr, final Object pType) {
     this.fE = pE;
     this.fAttr = pAttr;
     this.fType = pType;
@@ -47,50 +44,50 @@ public final class EClassAttributeMatch extends BasePatternMatch {
     
   }
   
-  public EClass getE() {
+  public Object getE() {
     return this.fE;
     
   }
   
-  public EAttribute getAttr() {
+  public Object getAttr() {
     return this.fAttr;
     
   }
   
-  public EClassifier getType() {
+  public Object getType() {
     return this.fType;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("E".equals(parameterName) ) {
-    	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
+    if ("E".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fE = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Attr".equals(parameterName) ) {
-    	this.fAttr = (org.eclipse.emf.ecore.EAttribute) newValue;
+    if ("Attr".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fAttr = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Type".equals(parameterName) ) {
-    	this.fType = (org.eclipse.emf.ecore.EClassifier) newValue;
+    if ("Type".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fType = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setE(final EClass pE) {
+  public void setE(final Object pE) {
     this.fE = pE;
     
   }
   
-  public void setAttr(final EAttribute pAttr) {
+  public void setAttr(final Object pAttr) {
     this.fAttr = pAttr;
     
   }
   
-  public void setType(final EClassifier pType) {
+  public void setType(final Object pType) {
     this.fType = pType;
     
   }

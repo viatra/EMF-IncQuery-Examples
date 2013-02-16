@@ -1,8 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute;
 
 import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatch;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -18,7 +16,7 @@ public abstract class EClassWithEStringAttributeProcessor implements IMatchProce
    * @param pAttr the value of pattern parameter Attr in the currently processed match 
    * 
    */
-  public abstract void process(final EClass E, final EAttribute Attr);
+  public abstract void process(final Object E, final Object Attr);
   
   @Override
   public void process(final EClassWithEStringAttributeMatch match) {

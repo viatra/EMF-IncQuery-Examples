@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.isestring;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -21,11 +20,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class IsEStringMatch extends BasePatternMatch {
-  private EClassifier fElement;
+  private Object fElement;
   
   private static String[] parameterNames = {"Element"};
   
-  IsEStringMatch(final EClassifier pElement) {
+  IsEStringMatch(final Object pElement) {
     this.fElement = pElement;
     
   }
@@ -37,22 +36,22 @@ public final class IsEStringMatch extends BasePatternMatch {
     
   }
   
-  public EClassifier getElement() {
+  public Object getElement() {
     return this.fElement;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Element".equals(parameterName) ) {
-    	this.fElement = (org.eclipse.emf.ecore.EClassifier) newValue;
+    if ("Element".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fElement = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setElement(final EClassifier pElement) {
+  public void setElement(final Object pElement) {
     this.fElement = pElement;
     
   }

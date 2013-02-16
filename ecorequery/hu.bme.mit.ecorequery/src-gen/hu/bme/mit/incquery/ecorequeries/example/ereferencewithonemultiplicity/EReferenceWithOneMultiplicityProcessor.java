@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity;
 
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatch;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +15,7 @@ public abstract class EReferenceWithOneMultiplicityProcessor implements IMatchPr
    * @param pERef the value of pattern parameter ERef in the currently processed match 
    * 
    */
-  public abstract void process(final EReference ERef);
+  public abstract void process(final Object ERef);
   
   @Override
   public void process(final EReferenceWithOneMultiplicityMatch match) {

@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -21,11 +20,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch {
-  private EReference fERef;
+  private Object fERef;
   
   private static String[] parameterNames = {"ERef"};
   
-  EReferenceWithStarMultiplicityMatch(final EReference pERef) {
+  EReferenceWithStarMultiplicityMatch(final Object pERef) {
     this.fERef = pERef;
     
   }
@@ -37,22 +36,22 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
     
   }
   
-  public EReference getERef() {
+  public Object getERef() {
     return this.fERef;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("ERef".equals(parameterName) ) {
-    	this.fERef = (org.eclipse.emf.ecore.EReference) newValue;
+    if ("ERef".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fERef = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setERef(final EReference pERef) {
+  public void setERef(final Object pERef) {
     this.fERef = pERef;
     
   }

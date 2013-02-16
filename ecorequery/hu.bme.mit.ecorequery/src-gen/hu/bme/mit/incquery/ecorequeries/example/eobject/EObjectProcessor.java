@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.eobject;
 
 import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatch;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +15,7 @@ public abstract class EObjectProcessor implements IMatchProcessor<EObjectMatch> 
    * @param pE the value of pattern parameter E in the currently processed match 
    * 
    */
-  public abstract void process(final EObject E);
+  public abstract void process(final Object E);
   
   @Override
   public void process(final EObjectMatch match) {

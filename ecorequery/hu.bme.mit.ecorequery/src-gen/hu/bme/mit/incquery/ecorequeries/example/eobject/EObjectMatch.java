@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.eobject;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -21,11 +20,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class EObjectMatch extends BasePatternMatch {
-  private EObject fE;
+  private Object fE;
   
   private static String[] parameterNames = {"E"};
   
-  EObjectMatch(final EObject pE) {
+  EObjectMatch(final Object pE) {
     this.fE = pE;
     
   }
@@ -37,22 +36,22 @@ public final class EObjectMatch extends BasePatternMatch {
     
   }
   
-  public EObject getE() {
+  public Object getE() {
     return this.fE;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("E".equals(parameterName) ) {
-    	this.fE = (org.eclipse.emf.ecore.EObject) newValue;
+    if ("E".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fE = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setE(final EObject pE) {
+  public void setE(final Object pE) {
     this.fE = pE;
     
   }

@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
@@ -73,7 +72,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return matches represented as a SuperTypeOfMatch object.
    * 
    */
-  public Collection<SuperTypeOfMatch> getAllMatches(final EClass pSuper, final EClass pSub) {
+  public Collection<SuperTypeOfMatch> getAllMatches(final Object pSuper, final Object pSub) {
     return rawGetAllMatches(new Object[]{pSuper, pSub});
   }
   
@@ -85,7 +84,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return a match represented as a SuperTypeOfMatch object, or null if no match is found.
    * 
    */
-  public SuperTypeOfMatch getOneArbitraryMatch(final EClass pSuper, final EClass pSub) {
+  public SuperTypeOfMatch getOneArbitraryMatch(final Object pSuper, final Object pSub) {
     return rawGetOneArbitraryMatch(new Object[]{pSuper, pSub});
   }
   
@@ -97,7 +96,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClass pSuper, final EClass pSub) {
+  public boolean hasMatch(final Object pSuper, final Object pSub) {
     return rawHasMatch(new Object[]{pSuper, pSub});
   }
   
@@ -108,7 +107,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClass pSuper, final EClass pSub) {
+  public int countMatches(final Object pSuper, final Object pSub) {
     return rawCountMatches(new Object[]{pSuper, pSub});
   }
   
@@ -119,7 +118,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClass pSuper, final EClass pSub, final IMatchProcessor<? super SuperTypeOfMatch> processor) {
+  public void forEachMatch(final Object pSuper, final Object pSub, final IMatchProcessor<? super SuperTypeOfMatch> processor) {
     rawForEachMatch(new Object[]{pSuper, pSub}, processor);
   }
   
@@ -132,7 +131,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClass pSuper, final EClass pSub, final IMatchProcessor<? super SuperTypeOfMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pSuper, final Object pSub, final IMatchProcessor<? super SuperTypeOfMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSuper, pSub}, processor);
   }
   
@@ -148,7 +147,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<SuperTypeOfMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pSuper, final EClass pSub) {
+  public DeltaMonitor<SuperTypeOfMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pSuper, final Object pSub) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSuper, pSub});
   }
   
@@ -160,7 +159,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the (partial) match object.
    * 
    */
-  public SuperTypeOfMatch newMatch(final EClass pSuper, final EClass pSub) {
+  public SuperTypeOfMatch newMatch(final Object pSuper, final Object pSub) {
     return new SuperTypeOfMatch(pSuper, pSub);
     
   }
@@ -170,8 +169,8 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfSuper(final Object[] parameters) {
-    Set<EClass> results = new HashSet<EClass>();
+  public Set<Object> rawAccumulateAllValuesOfSuper(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SUPER, parameters, results);
     return results;
   }
@@ -181,7 +180,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSuper() {
+  public Set<Object> getAllValuesOfSuper() {
     return rawAccumulateAllValuesOfSuper(emptyArray());
   }
   
@@ -190,7 +189,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSuper(final SuperTypeOfMatch partialMatch) {
+  public Set<Object> getAllValuesOfSuper(final SuperTypeOfMatch partialMatch) {
     return rawAccumulateAllValuesOfSuper(partialMatch.toArray());
   }
   
@@ -199,7 +198,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSuper(final EClass pSub) {
+  public Set<Object> getAllValuesOfSuper(final Object pSub) {
     return rawAccumulateAllValuesOfSuper(new Object[]{null, pSub});
   }
   
@@ -208,8 +207,8 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfSub(final Object[] parameters) {
-    Set<EClass> results = new HashSet<EClass>();
+  public Set<Object> rawAccumulateAllValuesOfSub(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SUB, parameters, results);
     return results;
   }
@@ -219,7 +218,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSub() {
+  public Set<Object> getAllValuesOfSub() {
     return rawAccumulateAllValuesOfSub(emptyArray());
   }
   
@@ -228,7 +227,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSub(final SuperTypeOfMatch partialMatch) {
+  public Set<Object> getAllValuesOfSub(final SuperTypeOfMatch partialMatch) {
     return rawAccumulateAllValuesOfSub(partialMatch.toArray());
   }
   
@@ -237,14 +236,14 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> getAllValuesOfSub(final EClass pSuper) {
+  public Set<Object> getAllValuesOfSub(final Object pSuper) {
     return rawAccumulateAllValuesOfSub(new Object[]{pSuper, null});
   }
   
   @Override
   public SuperTypeOfMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SuperTypeOfMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));	
+    	return new SuperTypeOfMatch((java.lang.Object) t.get(POSITION_SUPER), (java.lang.Object) t.get(POSITION_SUB));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -254,7 +253,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
   @Override
   public SuperTypeOfMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SuperTypeOfMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+    	return new SuperTypeOfMatch((java.lang.Object) match[POSITION_SUPER], (java.lang.Object) match[POSITION_SUB]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

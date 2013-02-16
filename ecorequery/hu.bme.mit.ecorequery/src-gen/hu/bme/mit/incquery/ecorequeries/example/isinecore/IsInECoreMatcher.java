@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
@@ -70,7 +69,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return matches represented as a IsInECoreMatch object.
    * 
    */
-  public Collection<IsInECoreMatch> getAllMatches(final EClassifier pElement) {
+  public Collection<IsInECoreMatch> getAllMatches(final Object pElement) {
     return rawGetAllMatches(new Object[]{pElement});
   }
   
@@ -81,7 +80,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return a match represented as a IsInECoreMatch object, or null if no match is found.
    * 
    */
-  public IsInECoreMatch getOneArbitraryMatch(final EClassifier pElement) {
+  public IsInECoreMatch getOneArbitraryMatch(final Object pElement) {
     return rawGetOneArbitraryMatch(new Object[]{pElement});
   }
   
@@ -92,7 +91,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EClassifier pElement) {
+  public boolean hasMatch(final Object pElement) {
     return rawHasMatch(new Object[]{pElement});
   }
   
@@ -102,7 +101,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EClassifier pElement) {
+  public int countMatches(final Object pElement) {
     return rawCountMatches(new Object[]{pElement});
   }
   
@@ -112,7 +111,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EClassifier pElement, final IMatchProcessor<? super IsInECoreMatch> processor) {
+  public void forEachMatch(final Object pElement, final IMatchProcessor<? super IsInECoreMatch> processor) {
     rawForEachMatch(new Object[]{pElement}, processor);
   }
   
@@ -124,7 +123,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EClassifier pElement, final IMatchProcessor<? super IsInECoreMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pElement, final IMatchProcessor<? super IsInECoreMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pElement}, processor);
   }
   
@@ -139,7 +138,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<IsInECoreMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClassifier pElement) {
+  public DeltaMonitor<IsInECoreMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pElement) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pElement});
   }
   
@@ -150,7 +149,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the (partial) match object.
    * 
    */
-  public IsInECoreMatch newMatch(final EClassifier pElement) {
+  public IsInECoreMatch newMatch(final Object pElement) {
     return new IsInECoreMatch(pElement);
     
   }
@@ -160,8 +159,8 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClassifier> rawAccumulateAllValuesOfElement(final Object[] parameters) {
-    Set<EClassifier> results = new HashSet<EClassifier>();
+  public Set<Object> rawAccumulateAllValuesOfElement(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_ELEMENT, parameters, results);
     return results;
   }
@@ -171,14 +170,14 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClassifier> getAllValuesOfElement() {
+  public Set<Object> getAllValuesOfElement() {
     return rawAccumulateAllValuesOfElement(emptyArray());
   }
   
   @Override
   public IsInECoreMatch tupleToMatch(final Tuple t) {
     try {
-    	return new IsInECoreMatch((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));	
+    	return new IsInECoreMatch((java.lang.Object) t.get(POSITION_ELEMENT));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -188,7 +187,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
   @Override
   public IsInECoreMatch arrayToMatch(final Object[] match) {
     try {
-    	return new IsInECoreMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+    	return new IsInECoreMatch((java.lang.Object) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

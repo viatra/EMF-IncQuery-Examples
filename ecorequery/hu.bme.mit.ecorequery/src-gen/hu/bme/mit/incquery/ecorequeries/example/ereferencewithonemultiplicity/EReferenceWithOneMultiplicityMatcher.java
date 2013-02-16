@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IMatcherFactory;
@@ -70,7 +69,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return matches represented as a EReferenceWithOneMultiplicityMatch object.
    * 
    */
-  public Collection<EReferenceWithOneMultiplicityMatch> getAllMatches(final EReference pERef) {
+  public Collection<EReferenceWithOneMultiplicityMatch> getAllMatches(final Object pERef) {
     return rawGetAllMatches(new Object[]{pERef});
   }
   
@@ -81,7 +80,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return a match represented as a EReferenceWithOneMultiplicityMatch object, or null if no match is found.
    * 
    */
-  public EReferenceWithOneMultiplicityMatch getOneArbitraryMatch(final EReference pERef) {
+  public EReferenceWithOneMultiplicityMatch getOneArbitraryMatch(final Object pERef) {
     return rawGetOneArbitraryMatch(new Object[]{pERef});
   }
   
@@ -92,7 +91,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final EReference pERef) {
+  public boolean hasMatch(final Object pERef) {
     return rawHasMatch(new Object[]{pERef});
   }
   
@@ -102,7 +101,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final EReference pERef) {
+  public int countMatches(final Object pERef) {
     return rawCountMatches(new Object[]{pERef});
   }
   
@@ -112,7 +111,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final EReference pERef, final IMatchProcessor<? super EReferenceWithOneMultiplicityMatch> processor) {
+  public void forEachMatch(final Object pERef, final IMatchProcessor<? super EReferenceWithOneMultiplicityMatch> processor) {
     rawForEachMatch(new Object[]{pERef}, processor);
   }
   
@@ -124,7 +123,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final EReference pERef, final IMatchProcessor<? super EReferenceWithOneMultiplicityMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pERef, final IMatchProcessor<? super EReferenceWithOneMultiplicityMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pERef}, processor);
   }
   
@@ -139,7 +138,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<EReferenceWithOneMultiplicityMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EReference pERef) {
+  public DeltaMonitor<EReferenceWithOneMultiplicityMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pERef) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pERef});
   }
   
@@ -150,7 +149,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return the (partial) match object.
    * 
    */
-  public EReferenceWithOneMultiplicityMatch newMatch(final EReference pERef) {
+  public EReferenceWithOneMultiplicityMatch newMatch(final Object pERef) {
     return new EReferenceWithOneMultiplicityMatch(pERef);
     
   }
@@ -160,8 +159,8 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EReference> rawAccumulateAllValuesOfERef(final Object[] parameters) {
-    Set<EReference> results = new HashSet<EReference>();
+  public Set<Object> rawAccumulateAllValuesOfERef(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_EREF, parameters, results);
     return results;
   }
@@ -171,14 +170,14 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EReference> getAllValuesOfERef() {
+  public Set<Object> getAllValuesOfERef() {
     return rawAccumulateAllValuesOfERef(emptyArray());
   }
   
   @Override
   public EReferenceWithOneMultiplicityMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EReferenceWithOneMultiplicityMatch((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));	
+    	return new EReferenceWithOneMultiplicityMatch((java.lang.Object) t.get(POSITION_EREF));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -188,7 +187,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseGeneratedMatcher<E
   @Override
   public EReferenceWithOneMultiplicityMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EReferenceWithOneMultiplicityMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+    	return new EReferenceWithOneMultiplicityMatch((java.lang.Object) match[POSITION_EREF]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

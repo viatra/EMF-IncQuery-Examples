@@ -1,9 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.samplequery2;
 
 import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2Match;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -23,7 +20,7 @@ public abstract class SampleQuery2Processor implements IMatchProcessor<SampleQue
    * @param pLabel2 the value of pattern parameter Label2 in the currently processed match 
    * 
    */
-  public abstract void process(final EClass XElement, final EClass YElement, final EReference Relates1, final EReference Relates2, final EAttribute Label1, final EAttribute Label2);
+  public abstract void process(final Object XElement, final Object YElement, final Object Relates1, final Object Relates2, final Object Label1, final Object Label2);
   
   @Override
   public void process(final SampleQuery2Match match) {

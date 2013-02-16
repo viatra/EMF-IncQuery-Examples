@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.isestring;
 
 import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatch;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 
 /**
@@ -16,7 +15,7 @@ public abstract class IsEStringProcessor implements IMatchProcessor<IsEStringMat
    * @param pElement the value of pattern parameter Element in the currently processed match 
    * 
    */
-  public abstract void process(final EClassifier Element);
+  public abstract void process(final Object Element);
   
   @Override
   public void process(final IsEStringMatch match) {

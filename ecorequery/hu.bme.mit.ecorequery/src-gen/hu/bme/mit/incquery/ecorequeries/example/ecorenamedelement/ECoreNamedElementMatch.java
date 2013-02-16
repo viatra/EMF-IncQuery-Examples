@@ -1,7 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -21,13 +20,13 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class ECoreNamedElementMatch extends BasePatternMatch {
-  private ENamedElement fElement;
+  private Object fElement;
   
   private String fName;
   
   private static String[] parameterNames = {"Element", "Name"};
   
-  ECoreNamedElementMatch(final ENamedElement pElement, final String pName) {
+  ECoreNamedElementMatch(final Object pElement, final String pName) {
     this.fElement = pElement;
     this.fName = pName;
     
@@ -41,7 +40,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
     
   }
   
-  public ENamedElement getElement() {
+  public Object getElement() {
     return this.fElement;
     
   }
@@ -53,8 +52,8 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Element".equals(parameterName) ) {
-    	this.fElement = (org.eclipse.emf.ecore.ENamedElement) newValue;
+    if ("Element".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fElement = (java.lang.Object) newValue;
     	return true;
     }
     if ("Name".equals(parameterName) ) {
@@ -65,7 +64,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
     
   }
   
-  public void setElement(final ENamedElement pElement) {
+  public void setElement(final Object pElement) {
     this.fElement = pElement;
     
   }

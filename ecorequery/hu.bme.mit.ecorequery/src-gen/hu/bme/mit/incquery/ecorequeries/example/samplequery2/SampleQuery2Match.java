@@ -1,9 +1,6 @@
 package hu.bme.mit.incquery.ecorequeries.example.samplequery2;
 
 import java.util.Arrays;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -23,21 +20,21 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 public final class SampleQuery2Match extends BasePatternMatch {
-  private EClass fXElement;
+  private Object fXElement;
   
-  private EClass fYElement;
+  private Object fYElement;
   
-  private EReference fRelates1;
+  private Object fRelates1;
   
-  private EReference fRelates2;
+  private Object fRelates2;
   
-  private EAttribute fLabel1;
+  private Object fLabel1;
   
-  private EAttribute fLabel2;
+  private Object fLabel2;
   
   private static String[] parameterNames = {"XElement", "YElement", "Relates1", "Relates2", "Label1", "Label2"};
   
-  SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+  SampleQuery2Match(final Object pXElement, final Object pYElement, final Object pRelates1, final Object pRelates2, final Object pLabel1, final Object pLabel2) {
     this.fXElement = pXElement;
     this.fYElement = pYElement;
     this.fRelates1 = pRelates1;
@@ -59,92 +56,92 @@ public final class SampleQuery2Match extends BasePatternMatch {
     
   }
   
-  public EClass getXElement() {
+  public Object getXElement() {
     return this.fXElement;
     
   }
   
-  public EClass getYElement() {
+  public Object getYElement() {
     return this.fYElement;
     
   }
   
-  public EReference getRelates1() {
+  public Object getRelates1() {
     return this.fRelates1;
     
   }
   
-  public EReference getRelates2() {
+  public Object getRelates2() {
     return this.fRelates2;
     
   }
   
-  public EAttribute getLabel1() {
+  public Object getLabel1() {
     return this.fLabel1;
     
   }
   
-  public EAttribute getLabel2() {
+  public Object getLabel2() {
     return this.fLabel2;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("XElement".equals(parameterName) ) {
-    	this.fXElement = (org.eclipse.emf.ecore.EClass) newValue;
+    if ("XElement".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fXElement = (java.lang.Object) newValue;
     	return true;
     }
-    if ("YElement".equals(parameterName) ) {
-    	this.fYElement = (org.eclipse.emf.ecore.EClass) newValue;
+    if ("YElement".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fYElement = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Relates1".equals(parameterName) ) {
-    	this.fRelates1 = (org.eclipse.emf.ecore.EReference) newValue;
+    if ("Relates1".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fRelates1 = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Relates2".equals(parameterName) ) {
-    	this.fRelates2 = (org.eclipse.emf.ecore.EReference) newValue;
+    if ("Relates2".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fRelates2 = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Label1".equals(parameterName) ) {
-    	this.fLabel1 = (org.eclipse.emf.ecore.EAttribute) newValue;
+    if ("Label1".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fLabel1 = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Label2".equals(parameterName) ) {
-    	this.fLabel2 = (org.eclipse.emf.ecore.EAttribute) newValue;
+    if ("Label2".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fLabel2 = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setXElement(final EClass pXElement) {
+  public void setXElement(final Object pXElement) {
     this.fXElement = pXElement;
     
   }
   
-  public void setYElement(final EClass pYElement) {
+  public void setYElement(final Object pYElement) {
     this.fYElement = pYElement;
     
   }
   
-  public void setRelates1(final EReference pRelates1) {
+  public void setRelates1(final Object pRelates1) {
     this.fRelates1 = pRelates1;
     
   }
   
-  public void setRelates2(final EReference pRelates2) {
+  public void setRelates2(final Object pRelates2) {
     this.fRelates2 = pRelates2;
     
   }
   
-  public void setLabel1(final EAttribute pLabel1) {
+  public void setLabel1(final Object pLabel1) {
     this.fLabel1 = pLabel1;
     
   }
   
-  public void setLabel2(final EAttribute pLabel2) {
+  public void setLabel2(final Object pLabel2) {
     this.fLabel2 = pLabel2;
     
   }
