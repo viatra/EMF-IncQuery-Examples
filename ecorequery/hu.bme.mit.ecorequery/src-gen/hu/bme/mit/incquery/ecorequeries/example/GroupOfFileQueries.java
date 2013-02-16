@@ -22,23 +22,23 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public final class GroupOfFileQueries extends BaseGeneratedPatternGroup {
   public GroupOfFileQueries() throws IncQueryException {
-    matcherFactories.add(IsInECoreMatcher.factory());
-    matcherFactories.add(EReferenceWithStarMultiplicityNameMatcher.factory());
-    matcherFactories.add(ECoreNamedElementMatcher.factory());
-    matcherFactories.add(IsEStringMatcher.factory());
-    matcherFactories.add(EObjectMatcher.factory());
-    matcherFactories.add(SuperTypeOfMatcher.factory());
-    matcherFactories.add(EClassMatcher.factory());
-    matcherFactories.add(EReferenceWithOneMultiplicityNameMatcher.factory());
-    matcherFactories.add(SampleQuery2Matcher.factory());
-    matcherFactories.add(EClassWithEStringAttributeMatcher.factory());
     matcherFactories.add(ECoreNamedElementNameMatcher.factory());
-    matcherFactories.add(EClassNameMatcher.factory());
-    matcherFactories.add(EReferenceWithOneMultiplicityMatcher.factory());
-    matcherFactories.add(EReferenceWithStarMultiplicityMatcher.factory());
+    matcherFactories.add(EReferenceWithOneMultiplicityNameMatcher.factory());
     matcherFactories.add(SampleQueryMatcher.factory());
+    matcherFactories.add(SuperTypeOfMatcher.factory());
+    matcherFactories.add(EReferenceWithStarMultiplicityMatcher.factory());
+    matcherFactories.add(IsEStringMatcher.factory());
     matcherFactories.add(SuperTypeOfNameMatcher.factory());
     matcherFactories.add(EClassAttributeMatcher.factory());
+    matcherFactories.add(EReferenceWithStarMultiplicityNameMatcher.factory());
+    matcherFactories.add(EReferenceWithOneMultiplicityMatcher.factory());
+    matcherFactories.add(EClassWithEStringAttributeMatcher.factory());
+    matcherFactories.add(SampleQuery2Matcher.factory());
+    matcherFactories.add(EClassNameMatcher.factory());
+    matcherFactories.add(EClassMatcher.factory());
+    matcherFactories.add(ECoreNamedElementMatcher.factory());
+    matcherFactories.add(IsInECoreMatcher.factory());
+    matcherFactories.add(EObjectMatcher.factory());
     
   }
 }
