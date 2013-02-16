@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see ECoreNamedElementMatch
  * 
  */
-public class ECoreNamedElementMatcherFactory extends BaseGeneratedMatcherFactory<ECoreNamedElementMatcher> {
+public final class ECoreNamedElementMatcherFactory extends BaseGeneratedMatcherFactory<ECoreNamedElementMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

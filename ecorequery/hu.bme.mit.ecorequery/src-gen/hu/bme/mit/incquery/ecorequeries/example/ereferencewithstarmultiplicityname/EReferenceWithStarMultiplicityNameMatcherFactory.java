@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see EReferenceWithStarMultiplicityNameMatch
  * 
  */
-public class EReferenceWithStarMultiplicityNameMatcherFactory extends BaseGeneratedMatcherFactory<EReferenceWithStarMultiplicityNameMatcher> {
+public final class EReferenceWithStarMultiplicityNameMatcherFactory extends BaseGeneratedMatcherFactory<EReferenceWithStarMultiplicityNameMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

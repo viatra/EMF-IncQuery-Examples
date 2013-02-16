@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IMatcherFactoryProvider;
  * @see EClassMatch
  * 
  */
-public class EClassMatcherFactory extends BaseGeneratedMatcherFactory<EClassMatcher> {
+public final class EClassMatcherFactory extends BaseGeneratedMatcherFactory<EClassMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded
