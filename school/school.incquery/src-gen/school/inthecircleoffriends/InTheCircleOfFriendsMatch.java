@@ -5,7 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Student;
 
 /**
  * Pattern-specific match representation of the school.inTheCircleOfFriends pattern, 
@@ -21,13 +20,13 @@ import school.Student;
  * 
  */
 public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
-  private Student fS1;
+  private Object fS1;
   
-  private Student fSomeone;
+  private Object fSomeone;
   
   private static String[] parameterNames = {"S1", "Someone"};
   
-  InTheCircleOfFriendsMatch(final Student pS1, final Student pSomeone) {
+  InTheCircleOfFriendsMatch(final Object pS1, final Object pSomeone) {
     this.fS1 = pS1;
     this.fSomeone = pSomeone;
     
@@ -41,36 +40,36 @@ public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
     
   }
   
-  public Student getS1() {
+  public Object getS1() {
     return this.fS1;
     
   }
   
-  public Student getSomeone() {
+  public Object getSomeone() {
     return this.fSomeone;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1".equals(parameterName) ) {
-    	this.fS1 = (school.Student) newValue;
+    if ("S1".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS1 = (java.lang.Object) newValue;
     	return true;
     }
-    if ("Someone".equals(parameterName) ) {
-    	this.fSomeone = (school.Student) newValue;
+    if ("Someone".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fSomeone = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1(final Student pS1) {
+  public void setS1(final Object pS1) {
     this.fS1 = pS1;
     
   }
   
-  public void setSomeone(final Student pSomeone) {
+  public void setSomeone(final Object pSomeone) {
     this.fSomeone = pSomeone;
     
   }

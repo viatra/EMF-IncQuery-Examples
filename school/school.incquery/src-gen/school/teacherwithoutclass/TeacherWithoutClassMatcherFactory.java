@@ -13,7 +13,7 @@ import school.teacherwithoutclass.TeacherWithoutClassMatcher;
  * @see TeacherWithoutClassMatch
  * 
  */
-public class TeacherWithoutClassMatcherFactory extends BaseGeneratedMatcherFactory<TeacherWithoutClassMatcher> {
+public final class TeacherWithoutClassMatcherFactory extends BaseGeneratedMatcherFactory<TeacherWithoutClassMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

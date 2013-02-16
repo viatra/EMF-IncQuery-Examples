@@ -13,7 +13,7 @@ import school.coursewithprimeweight.CourseWithPrimeWeightMatcher;
  * @see CourseWithPrimeWeightMatch
  * 
  */
-public class CourseWithPrimeWeightMatcherFactory extends BaseGeneratedMatcherFactory<CourseWithPrimeWeightMatcher> {
+public final class CourseWithPrimeWeightMatcherFactory extends BaseGeneratedMatcherFactory<CourseWithPrimeWeightMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

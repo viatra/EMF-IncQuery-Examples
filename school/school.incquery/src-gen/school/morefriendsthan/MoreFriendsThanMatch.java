@@ -5,7 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Student;
 
 /**
  * Pattern-specific match representation of the school.moreFriendsThan pattern, 
@@ -21,13 +20,13 @@ import school.Student;
  * 
  */
 public final class MoreFriendsThanMatch extends BasePatternMatch {
-  private Student fS1;
+  private Object fS1;
   
-  private Student fS2;
+  private Object fS2;
   
   private static String[] parameterNames = {"S1", "S2"};
   
-  MoreFriendsThanMatch(final Student pS1, final Student pS2) {
+  MoreFriendsThanMatch(final Object pS1, final Object pS2) {
     this.fS1 = pS1;
     this.fS2 = pS2;
     
@@ -41,36 +40,36 @@ public final class MoreFriendsThanMatch extends BasePatternMatch {
     
   }
   
-  public Student getS1() {
+  public Object getS1() {
     return this.fS1;
     
   }
   
-  public Student getS2() {
+  public Object getS2() {
     return this.fS2;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1".equals(parameterName) ) {
-    	this.fS1 = (school.Student) newValue;
+    if ("S1".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS1 = (java.lang.Object) newValue;
     	return true;
     }
-    if ("S2".equals(parameterName) ) {
-    	this.fS2 = (school.Student) newValue;
+    if ("S2".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS2 = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1(final Student pS1) {
+  public void setS1(final Object pS1) {
     this.fS1 = pS1;
     
   }
   
-  public void setS2(final Student pS2) {
+  public void setS2(final Object pS2) {
     this.fS2 = pS2;
     
   }

@@ -12,7 +12,6 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
-import school.Student;
 import school.friendlyto.FriendlyToMatch;
 import school.friendlyto.FriendlyToMatcherFactory;
 
@@ -77,7 +76,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return matches represented as a FriendlyToMatch object.
    * 
    */
-  public Collection<FriendlyToMatch> getAllMatches(final Student pS1, final Student pS2) {
+  public Collection<FriendlyToMatch> getAllMatches(final Object pS1, final Object pS2) {
     return rawGetAllMatches(new Object[]{pS1, pS2});
   }
   
@@ -89,7 +88,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return a match represented as a FriendlyToMatch object, or null if no match is found.
    * 
    */
-  public FriendlyToMatch getOneArbitraryMatch(final Student pS1, final Student pS2) {
+  public FriendlyToMatch getOneArbitraryMatch(final Object pS1, final Object pS2) {
     return rawGetOneArbitraryMatch(new Object[]{pS1, pS2});
   }
   
@@ -101,7 +100,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Student pS1, final Student pS2) {
+  public boolean hasMatch(final Object pS1, final Object pS2) {
     return rawHasMatch(new Object[]{pS1, pS2});
   }
   
@@ -112,7 +111,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Student pS1, final Student pS2) {
+  public int countMatches(final Object pS1, final Object pS2) {
     return rawCountMatches(new Object[]{pS1, pS2});
   }
   
@@ -123,7 +122,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
+  public void forEachMatch(final Object pS1, final Object pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
     rawForEachMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -136,7 +135,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pS1, final Object pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -152,7 +151,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<FriendlyToMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
+  public DeltaMonitor<FriendlyToMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pS1, final Object pS2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1, pS2});
   }
   
@@ -164,7 +163,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the (partial) match object.
    * 
    */
-  public FriendlyToMatch newMatch(final Student pS1, final Student pS2) {
+  public FriendlyToMatch newMatch(final Object pS1, final Object pS2) {
     return new FriendlyToMatch(pS1, pS2);
     
   }
@@ -174,8 +173,8 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> rawAccumulateAllValuesOfS1(final Object[] parameters) {
-    Set<Student> results = new HashSet<Student>();
+  public Set<Object> rawAccumulateAllValuesOfS1(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_S1, parameters, results);
     return results;
   }
@@ -185,7 +184,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1() {
+  public Set<Object> getAllValuesOfS1() {
     return rawAccumulateAllValuesOfS1(emptyArray());
   }
   
@@ -194,7 +193,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final FriendlyToMatch partialMatch) {
+  public Set<Object> getAllValuesOfS1(final FriendlyToMatch partialMatch) {
     return rawAccumulateAllValuesOfS1(partialMatch.toArray());
   }
   
@@ -203,7 +202,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final Student pS2) {
+  public Set<Object> getAllValuesOfS1(final Object pS2) {
     return rawAccumulateAllValuesOfS1(new Object[]{null, pS2});
   }
   
@@ -212,8 +211,8 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> rawAccumulateAllValuesOfS2(final Object[] parameters) {
-    Set<Student> results = new HashSet<Student>();
+  public Set<Object> rawAccumulateAllValuesOfS2(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_S2, parameters, results);
     return results;
   }
@@ -223,7 +222,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2() {
+  public Set<Object> getAllValuesOfS2() {
     return rawAccumulateAllValuesOfS2(emptyArray());
   }
   
@@ -232,7 +231,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final FriendlyToMatch partialMatch) {
+  public Set<Object> getAllValuesOfS2(final FriendlyToMatch partialMatch) {
     return rawAccumulateAllValuesOfS2(partialMatch.toArray());
   }
   
@@ -241,14 +240,14 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final Student pS1) {
+  public Set<Object> getAllValuesOfS2(final Object pS1) {
     return rawAccumulateAllValuesOfS2(new Object[]{pS1, null});
   }
   
   @Override
   public FriendlyToMatch tupleToMatch(final Tuple t) {
     try {
-    	return new FriendlyToMatch((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));	
+    	return new FriendlyToMatch((java.lang.Object) t.get(POSITION_S1), (java.lang.Object) t.get(POSITION_S2));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -258,7 +257,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
   @Override
   public FriendlyToMatch arrayToMatch(final Object[] match) {
     try {
-    	return new FriendlyToMatch((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+    	return new FriendlyToMatch((java.lang.Object) match[POSITION_S1], (java.lang.Object) match[POSITION_S2]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

@@ -13,7 +13,7 @@ import school.finalpattern2.FinalPattern2Matcher;
  * @see FinalPattern2Match
  * 
  */
-public class FinalPattern2MatcherFactory extends BaseGeneratedMatcherFactory<FinalPattern2Matcher> {
+public final class FinalPattern2MatcherFactory extends BaseGeneratedMatcherFactory<FinalPattern2Matcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

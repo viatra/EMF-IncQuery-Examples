@@ -13,7 +13,7 @@ import school.inthecircleoffriends.InTheCircleOfFriendsMatcher;
  * @see InTheCircleOfFriendsMatch
  * 
  */
-public class InTheCircleOfFriendsMatcherFactory extends BaseGeneratedMatcherFactory<InTheCircleOfFriendsMatcher> {
+public final class InTheCircleOfFriendsMatcherFactory extends BaseGeneratedMatcherFactory<InTheCircleOfFriendsMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

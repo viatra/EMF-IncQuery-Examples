@@ -13,7 +13,7 @@ import school.somecourse.SomeCourseMatcher;
  * @see SomeCourseMatch
  * 
  */
-public class SomeCourseMatcherFactory extends BaseGeneratedMatcherFactory<SomeCourseMatcher> {
+public final class SomeCourseMatcherFactory extends BaseGeneratedMatcherFactory<SomeCourseMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

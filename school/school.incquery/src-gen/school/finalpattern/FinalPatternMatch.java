@@ -5,10 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Course;
-import school.Student;
-import school.Teacher;
-import school.Year;
 
 /**
  * Pattern-specific match representation of the school.finalPattern pattern, 
@@ -24,17 +20,17 @@ import school.Year;
  * 
  */
 public final class FinalPatternMatch extends BasePatternMatch {
-  private Year fY;
+  private Object fY;
   
-  private Course fC;
+  private Object fC;
   
-  private Teacher fT;
+  private Object fT;
   
-  private Student fS;
+  private Object fS;
   
   private static String[] parameterNames = {"Y", "C", "T", "S"};
   
-  FinalPatternMatch(final Year pY, final Course pC, final Teacher pT, final Student pS) {
+  FinalPatternMatch(final Object pY, final Object pC, final Object pT, final Object pS) {
     this.fY = pY;
     this.fC = pC;
     this.fT = pT;
@@ -52,64 +48,64 @@ public final class FinalPatternMatch extends BasePatternMatch {
     
   }
   
-  public Year getY() {
+  public Object getY() {
     return this.fY;
     
   }
   
-  public Course getC() {
+  public Object getC() {
     return this.fC;
     
   }
   
-  public Teacher getT() {
+  public Object getT() {
     return this.fT;
     
   }
   
-  public Student getS() {
+  public Object getS() {
     return this.fS;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Y".equals(parameterName) ) {
-    	this.fY = (school.Year) newValue;
+    if ("Y".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fY = (java.lang.Object) newValue;
     	return true;
     }
-    if ("C".equals(parameterName) ) {
-    	this.fC = (school.Course) newValue;
+    if ("C".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fC = (java.lang.Object) newValue;
     	return true;
     }
-    if ("T".equals(parameterName) ) {
-    	this.fT = (school.Teacher) newValue;
+    if ("T".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fT = (java.lang.Object) newValue;
     	return true;
     }
-    if ("S".equals(parameterName) ) {
-    	this.fS = (school.Student) newValue;
+    if ("S".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setY(final Year pY) {
+  public void setY(final Object pY) {
     this.fY = pY;
     
   }
   
-  public void setC(final Course pC) {
+  public void setC(final Object pC) {
     this.fC = pC;
     
   }
   
-  public void setT(final Teacher pT) {
+  public void setT(final Object pT) {
     this.fT = pT;
     
   }
   
-  public void setS(final Student pS) {
+  public void setS(final Object pS) {
     this.fS = pS;
     
   }

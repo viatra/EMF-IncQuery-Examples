@@ -5,7 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Course;
 
 /**
  * Pattern-specific match representation of the school.SomeCourse pattern, 
@@ -21,11 +20,11 @@ import school.Course;
  * 
  */
 public final class SomeCourseMatch extends BasePatternMatch {
-  private Course fC;
+  private Object fC;
   
   private static String[] parameterNames = {"C"};
   
-  SomeCourseMatch(final Course pC) {
+  SomeCourseMatch(final Object pC) {
     this.fC = pC;
     
   }
@@ -37,22 +36,22 @@ public final class SomeCourseMatch extends BasePatternMatch {
     
   }
   
-  public Course getC() {
+  public Object getC() {
     return this.fC;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("C".equals(parameterName) ) {
-    	this.fC = (school.Course) newValue;
+    if ("C".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fC = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setC(final Course pC) {
+  public void setC(final Object pC) {
     this.fC = pC;
     
   }

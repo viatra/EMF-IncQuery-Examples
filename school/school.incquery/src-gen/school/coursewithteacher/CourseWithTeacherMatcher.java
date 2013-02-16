@@ -12,7 +12,6 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
-import school.Course;
 import school.coursewithteacher.CourseWithTeacherMatch;
 import school.coursewithteacher.CourseWithTeacherMatcherFactory;
 
@@ -67,7 +66,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return matches represented as a CourseWithTeacherMatch object.
    * 
    */
-  public Collection<CourseWithTeacherMatch> getAllMatches(final Course pC) {
+  public Collection<CourseWithTeacherMatch> getAllMatches(final Object pC) {
     return rawGetAllMatches(new Object[]{pC});
   }
   
@@ -78,7 +77,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return a match represented as a CourseWithTeacherMatch object, or null if no match is found.
    * 
    */
-  public CourseWithTeacherMatch getOneArbitraryMatch(final Course pC) {
+  public CourseWithTeacherMatch getOneArbitraryMatch(final Object pC) {
     return rawGetOneArbitraryMatch(new Object[]{pC});
   }
   
@@ -89,7 +88,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Course pC) {
+  public boolean hasMatch(final Object pC) {
     return rawHasMatch(new Object[]{pC});
   }
   
@@ -99,7 +98,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Course pC) {
+  public int countMatches(final Object pC) {
     return rawCountMatches(new Object[]{pC});
   }
   
@@ -109,7 +108,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Course pC, final IMatchProcessor<? super CourseWithTeacherMatch> processor) {
+  public void forEachMatch(final Object pC, final IMatchProcessor<? super CourseWithTeacherMatch> processor) {
     rawForEachMatch(new Object[]{pC}, processor);
   }
   
@@ -121,7 +120,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Course pC, final IMatchProcessor<? super CourseWithTeacherMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pC, final IMatchProcessor<? super CourseWithTeacherMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pC}, processor);
   }
   
@@ -136,7 +135,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<CourseWithTeacherMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Course pC) {
+  public DeltaMonitor<CourseWithTeacherMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pC) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pC});
   }
   
@@ -147,7 +146,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return the (partial) match object.
    * 
    */
-  public CourseWithTeacherMatch newMatch(final Course pC) {
+  public CourseWithTeacherMatch newMatch(final Object pC) {
     return new CourseWithTeacherMatch(pC);
     
   }
@@ -157,8 +156,8 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Course> rawAccumulateAllValuesOfC(final Object[] parameters) {
-    Set<Course> results = new HashSet<Course>();
+  public Set<Object> rawAccumulateAllValuesOfC(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_C, parameters, results);
     return results;
   }
@@ -168,14 +167,14 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Course> getAllValuesOfC() {
+  public Set<Object> getAllValuesOfC() {
     return rawAccumulateAllValuesOfC(emptyArray());
   }
   
   @Override
   public CourseWithTeacherMatch tupleToMatch(final Tuple t) {
     try {
-    	return new CourseWithTeacherMatch((school.Course) t.get(POSITION_C));	
+    	return new CourseWithTeacherMatch((java.lang.Object) t.get(POSITION_C));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -185,7 +184,7 @@ public class CourseWithTeacherMatcher extends BaseGeneratedMatcher<CourseWithTea
   @Override
   public CourseWithTeacherMatch arrayToMatch(final Object[] match) {
     try {
-    	return new CourseWithTeacherMatch((school.Course) match[POSITION_C]);
+    	return new CourseWithTeacherMatch((java.lang.Object) match[POSITION_C]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

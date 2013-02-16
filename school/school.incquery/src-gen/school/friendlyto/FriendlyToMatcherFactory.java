@@ -13,7 +13,7 @@ import school.friendlyto.FriendlyToMatcher;
  * @see FriendlyToMatch
  * 
  */
-public class FriendlyToMatcherFactory extends BaseGeneratedMatcherFactory<FriendlyToMatcher> {
+public final class FriendlyToMatcherFactory extends BaseGeneratedMatcherFactory<FriendlyToMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

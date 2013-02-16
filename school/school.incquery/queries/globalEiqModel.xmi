@@ -1,68 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/incquery/patternlanguage/emf/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/incquery/patternlanguage/PatternLanguage" xmlns:types="http://www.eclipse.org/xtext/common/JavaVMTypes" xmlns:xbase="http://www.eclipse.org/xtext/xbase/Xbase">
-  <patterns name="school.CourseWithTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
-    <annotations name="QueryExplorer">
-      <parameters name="display">
-        <value xsi:type="patternLanguage:BoolValue"/>
-      </parameters>
-    </annotations>
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
-    <bodies>
-      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
-        <head>
-          <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-          </type>
-          <tail>
-            <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/teacher"/>
-            </type>
-          </tail>
-          <src var="C"/>
-          <dst xsi:type="patternLanguage:VariableValue">
-            <value var="_T"/>
-          </dst>
-        </head>
-      </constraints>
-    </bodies>
-  </patterns>
-  <patterns name="school.CourseWithoutTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
-    <annotations name="Constraint">
-      <parameters name="location">
-        <value xsi:type="patternLanguage:StringValue" value="C"/>
-      </parameters>
-      <parameters name="message">
-        <value xsi:type="patternLanguage:StringValue" value="$C.subject$ does not have a teacher"/>
-      </parameters>
-      <parameters name="severity">
-        <value xsi:type="patternLanguage:StringValue" value="warning"/>
-      </parameters>
-    </annotations>
-    <parameters name="C">
-      <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
-      </type>
-    </parameters>
-    <bodies>
-      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.0">
-          <parameters xsi:type="patternLanguage:VariableValue">
-            <value var="C"/>
-          </parameters>
-        </call>
-      </constraints>
-    </bodies>
-  </patterns>
   <patterns name="school.schools" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="Sch"/>
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+          <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
         </type>
         <var var="Sch"/>
       </constraints>
@@ -74,11 +17,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//School/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School/name"/>
             </type>
           </tail>
           <src var="_Sch"/>
@@ -94,7 +37,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+          <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
         </type>
         <var var="T"/>
       </constraints>
@@ -106,11 +49,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="_T"/>
@@ -124,23 +67,23 @@
   <patterns name="school.teachersOfSchool" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="T">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <parameters name="Sch">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//School/teachers"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School/teachers"/>
             </type>
           </tail>
           <src var="Sch"/>
@@ -158,11 +101,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//School/teachers"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School/teachers"/>
             </type>
           </tail>
           <src var="Sch"/>
@@ -174,11 +117,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//School/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School/name"/>
             </type>
           </tail>
           <src var="Sch"/>
@@ -190,11 +133,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="T"/>
@@ -212,11 +155,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Teacher/courses"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/courses"/>
             </type>
           </tail>
           <src var="T"/>
@@ -234,11 +177,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Teacher/courses"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/courses"/>
             </type>
           </tail>
           <src var="T"/>
@@ -250,11 +193,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="T"/>
@@ -266,11 +209,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/subject"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/subject"/>
             </type>
           </tail>
           <src var="C"/>
@@ -286,7 +229,7 @@
     <parameters name="SC"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.8">
+        <call patternRef="//@patterns.6">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -298,11 +241,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/schoolClass"/>
             </type>
           </tail>
           <src var="C"/>
@@ -318,7 +261,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://school.ecore#//SchoolClass"/>
+          <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass"/>
         </type>
         <var var="SC"/>
       </constraints>
@@ -329,7 +272,7 @@
     <parameters name="SCName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.8">
+        <call patternRef="//@patterns.6">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -341,11 +284,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="T"/>
@@ -357,11 +300,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/schoolClass"/>
             </type>
           </tail>
           <src var="C"/>
@@ -373,11 +316,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//SchoolClass"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//SchoolClass/code"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/code"/>
             </type>
           </tail>
           <src var="SC"/>
@@ -391,12 +334,12 @@
   <patterns name="school.teacherWithoutClass" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="T">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.10">
+        <call patternRef="//@patterns.8">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -411,7 +354,7 @@
     <parameters name="TNames"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.10">
+        <call patternRef="//@patterns.8">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -423,11 +366,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="T"/>
@@ -445,19 +388,19 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/schoolClass"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
               <tail>
                 <type xsi:type="eMFPatternLanguage:ReferenceType">
-                  <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/school"/>
+                  <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/school"/>
                 </type>
               </tail>
             </tail>
@@ -477,19 +420,19 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/schoolClass"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
               <tail>
                 <type xsi:type="eMFPatternLanguage:ReferenceType">
-                  <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/school"/>
+                  <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/school"/>
                 </type>
               </tail>
             </tail>
@@ -503,11 +446,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Student/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/name"/>
             </type>
           </tail>
           <src var="S"/>
@@ -519,11 +462,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//School"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//School/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//School/name"/>
             </type>
           </tail>
           <src var="Sch"/>
@@ -540,11 +483,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/weight"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/weight"/>
             </type>
           </tail>
           <src var="C"/>
@@ -559,11 +502,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/subject"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/subject"/>
             </type>
           </tail>
           <src var="C"/>
@@ -575,11 +518,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/weight"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/weight"/>
             </type>
           </tail>
           <src var="C"/>
@@ -593,9 +536,9 @@
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_greaterThan(int,int)"/>
           <leftOperand xsi:type="xbase:XMemberFeatureCall">
             <feature xsi:type="types:JvmOperation" href="java:/Objects/java.lang.String#java.lang.String.length()"/>
-            <memberCallTarget xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
+            <memberCallTarget xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.1"/>
           </leftOperand>
-          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.2"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.16/@bodies.0/@variables.2"/>
         </expression>
       </constraints>
     </bodies>
@@ -606,11 +549,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/subject"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/subject"/>
             </type>
           </tail>
           <src var="C"/>
@@ -622,11 +565,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/weight"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/weight"/>
             </type>
           </tail>
           <src var="C"/>
@@ -640,9 +583,9 @@
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_greaterThan(int,int)"/>
           <leftOperand xsi:type="xbase:XMemberFeatureCall">
             <feature xsi:type="types:JvmOperation" href="java:/Objects/java.lang.String#java.lang.String.length()"/>
-            <memberCallTarget xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
+            <memberCallTarget xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.2"/>
           </leftOperand>
-          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.0"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.17/@bodies.0/@variables.0"/>
         </expression>
       </constraints>
     </bodies>
@@ -653,11 +596,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/weight"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/weight"/>
             </type>
           </tail>
           <src var="C"/>
@@ -673,7 +616,7 @@
               <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_equals(int,int)"/>
               <leftOperand xsi:type="xbase:XBinaryOperation">
                 <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_modulo(int,int)"/>
-                <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@variables.1"/>
+                <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
                 <rightOperand xsi:type="xbase:XNumberLiteral" value="2"/>
               </leftOperand>
               <rightOperand xsi:type="xbase:XNumberLiteral" value="0"/>
@@ -690,7 +633,7 @@
                     <constructor href="java:/Objects/java.lang.Float#java.lang.Float.Float(double)"/>
                     <arguments xsi:type="xbase:XFeatureCall" explicitOperationCall="true">
                       <feature xsi:type="types:JvmOperation" href="java:/Objects/java.lang.Math#java.lang.Math.sqrt(double)"/>
-                      <featureCallArguments xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@variables.1"/>
+                      <featureCallArguments xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
                       <declaringType xsi:type="types:JvmGenericType" href="java:/Objects/java.lang.Math#java.lang.Math"/>
                     </arguments>
                   </featureCallArguments>
@@ -706,8 +649,8 @@
               <expressions xsi:type="xbase:XWhileExpression">
                 <predicate xsi:type="xbase:XBinaryOperation">
                   <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_lessEqualsThan(java.lang.Comparable,C)"/>
-                  <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
-                  <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.0"/>
+                  <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
+                  <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.0"/>
                 </predicate>
                 <body xsi:type="xbase:XBlockExpression">
                   <expressions xsi:type="xbase:XIfExpression">
@@ -715,18 +658,18 @@
                       <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_equals(int,int)"/>
                       <leftOperand xsi:type="xbase:XBinaryOperation">
                         <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_modulo(int,int)"/>
-                        <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@variables.1"/>
-                        <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
+                        <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@variables.1"/>
+                        <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
                       </leftOperand>
                       <rightOperand xsi:type="xbase:XNumberLiteral" value="0"/>
                     </if>
                     <then xsi:type="xbase:XReturnExpression">
                       <expression xsi:type="xbase:XBooleanLiteral"/>
                     </then>
-                    <else xsi:type="xbase:XAssignment" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1">
+                    <else xsi:type="xbase:XAssignment" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1">
                       <value xsi:type="xbase:XBinaryOperation">
                         <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.IntegerExtensions#org.eclipse.xtext.xbase.lib.IntegerExtensions.operator_plus(int,int)"/>
-                        <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.20/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
+                        <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.18/@bodies.0/@constraints.1/@expression/@expressions.0/@else/@expressions.1"/>
                         <rightOperand xsi:type="xbase:XNumberLiteral" value="2"/>
                       </value>
                     </else>
@@ -748,12 +691,12 @@
     </annotations>
     <parameters name="T1">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <parameters name="T2">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <bodies>
@@ -763,7 +706,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.10">
+          <call patternRef="//@patterns.8">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="T1"/>
             </parameters>
@@ -779,7 +722,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.10">
+          <call patternRef="//@patterns.8">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="T2"/>
             </parameters>
@@ -792,8 +735,8 @@
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_greaterThan(java.lang.Comparable,C)"/>
-          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.21/@bodies.0/@variables.2"/>
-          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.21/@bodies.0/@variables.4"/>
+          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.2"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.19/@bodies.0/@variables.4"/>
         </expression>
       </constraints>
     </bodies>
@@ -801,12 +744,12 @@
   <patterns name="school.teachesTheMostCourses" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="T">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.21">
+        <call patternRef="//@patterns.19">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Tx"/>
           </parameters>
@@ -825,23 +768,23 @@
     </annotations>
     <parameters name="S1">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <parameters name="S2">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/friendsWith"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/friendsWith"/>
             </type>
           </tail>
           <src var="S1"/>
@@ -855,11 +798,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/friendsWith"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/friendsWith"/>
             </type>
           </tail>
           <src var="S2"/>
@@ -873,17 +816,17 @@
   <patterns name="school.inTheCircleOfFriends" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="S1">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <parameters name="Someone">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.23" transitive="true">
+        <call patternRef="//@patterns.21" transitive="true">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S1"/>
           </parameters>
@@ -907,7 +850,7 @@
     <parameters name="SomeoneName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.23" transitive="true">
+        <call patternRef="//@patterns.21" transitive="true">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S1"/>
           </parameters>
@@ -927,11 +870,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Student/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/name"/>
             </type>
           </tail>
           <src var="S1"/>
@@ -943,11 +886,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Student/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/name"/>
             </type>
           </tail>
           <src var="Someone"/>
@@ -966,12 +909,12 @@
     </annotations>
     <parameters name="S1">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <parameters name="S2">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <bodies>
@@ -981,7 +924,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.24">
+          <call patternRef="//@patterns.22">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="S1"/>
             </parameters>
@@ -997,7 +940,7 @@
         </leftOperand>
         <rightOperand xsi:type="patternLanguage:AggregatedValue">
           <aggregator xsi:type="patternLanguage:CountAggregator"/>
-          <call patternRef="//@patterns.24">
+          <call patternRef="//@patterns.22">
             <parameters xsi:type="patternLanguage:VariableValue">
               <value var="S2"/>
             </parameters>
@@ -1010,8 +953,8 @@
       <constraints xsi:type="patternLanguage:CheckConstraint">
         <expression xsi:type="xbase:XBinaryOperation">
           <feature xsi:type="types:JvmOperation" href="java:/Objects/org.eclipse.xtext.xbase.lib.ComparableExtensions#org.eclipse.xtext.xbase.lib.ComparableExtensions.operator_greaterThan(java.lang.Comparable,C)"/>
-          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.26/@bodies.0/@variables.2"/>
-          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.26/@bodies.0/@variables.4"/>
+          <leftOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.2"/>
+          <rightOperand xsi:type="xbase:XFeatureCall" feature="//@patterns.24/@bodies.0/@variables.4"/>
         </expression>
       </constraints>
     </bodies>
@@ -1019,12 +962,12 @@
   <patterns name="school.theOnesWithTheBiggestCircle" fileName="platform:/resource/school.incquery/src/school/schoolqueries.eiq">
     <parameters name="S">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.26">
+        <call patternRef="//@patterns.24">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Sx"/>
           </parameters>
@@ -1039,7 +982,7 @@
     <parameters name="SName"/>
     <bodies>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
-        <call patternRef="//@patterns.26">
+        <call patternRef="//@patterns.24">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="_Sx"/>
           </parameters>
@@ -1051,11 +994,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Student/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/name"/>
             </type>
           </tail>
           <src var="S"/>
@@ -1103,37 +1046,37 @@
     </annotations>
     <parameters name="Y">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Year"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year"/>
       </type>
     </parameters>
     <parameters name="C">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
       </type>
     </parameters>
     <parameters name="T">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
       </type>
     </parameters>
     <parameters name="S">
       <type xsi:type="eMFPatternLanguage:ClassType">
-        <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
       </type>
     </parameters>
     <bodies>
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Year"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Year/schoolClasses"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year/schoolClasses"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
             </tail>
           </tail>
@@ -1146,11 +1089,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/teacher"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/teacher"/>
             </type>
           </tail>
           <src var="C"/>
@@ -1162,15 +1105,15 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/schoolClass"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
             </tail>
           </tail>
@@ -1181,14 +1124,14 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.27">
+        <call patternRef="//@patterns.25">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S"/>
           </parameters>
         </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.22">
+        <call patternRef="//@patterns.20">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -1239,15 +1182,15 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Year"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Year/schoolClasses"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year/schoolClasses"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
             </tail>
           </tail>
@@ -1260,11 +1203,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Course/teacher"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/teacher"/>
             </type>
           </tail>
           <src var="C"/>
@@ -1276,15 +1219,15 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EReference" href="http://school.ecore#//Student/schoolClass"/>
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/schoolClass"/>
             </type>
             <tail>
               <type xsi:type="eMFPatternLanguage:ReferenceType">
-                <refname xsi:type="ecore:EReference" href="http://school.ecore#//SchoolClass/courses"/>
+                <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SchoolClass/courses"/>
               </type>
             </tail>
           </tail>
@@ -1295,14 +1238,14 @@
         </head>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.27">
+        <call patternRef="//@patterns.25">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="S"/>
           </parameters>
         </call>
       </constraints>
       <constraints xsi:type="patternLanguage:PatternCompositionConstraint">
-        <call patternRef="//@patterns.22">
+        <call patternRef="//@patterns.20">
           <parameters xsi:type="patternLanguage:VariableValue">
             <value var="T"/>
           </parameters>
@@ -1311,11 +1254,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Year"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Year/startingDate"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Year/startingDate"/>
             </type>
           </tail>
           <src var="Y"/>
@@ -1327,11 +1270,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Course"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Course/subject"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/subject"/>
             </type>
           </tail>
           <src var="C"/>
@@ -1343,11 +1286,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Teacher"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Teacher/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Teacher/name"/>
             </type>
           </tail>
           <src var="T"/>
@@ -1359,11 +1302,11 @@
       <constraints xsi:type="patternLanguage:PathExpressionConstraint">
         <head>
           <type xsi:type="eMFPatternLanguage:ClassType">
-            <classname xsi:type="ecore:EClass" href="http://school.ecore#//Student"/>
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student"/>
           </type>
           <tail>
             <type xsi:type="eMFPatternLanguage:ReferenceType">
-              <refname xsi:type="ecore:EAttribute" href="http://school.ecore#//Student/name"/>
+              <refname xsi:type="ecore:EAttribute" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Student/name"/>
             </type>
           </tail>
           <src var="S"/>
@@ -1379,7 +1322,7 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://school.ecore#//SpecialisationCourse"/>
+          <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//SpecialisationCourse"/>
         </type>
         <var var="C"/>
       </constraints>
@@ -1387,13 +1330,72 @@
     <bodies>
       <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
         <type xsi:type="eMFPatternLanguage:ClassType">
-          <classname xsi:type="ecore:EClass" href="http://school.ecore#//LimitedCapacityCourse"/>
+          <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//LimitedCapacityCourse"/>
         </type>
         <var var="C"/>
       </constraints>
     </bodies>
   </patterns>
+  <patterns name="school.CourseWithTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
+    <annotations name="QueryExplorer">
+      <parameters name="display">
+        <value xsi:type="patternLanguage:BoolValue"/>
+      </parameters>
+    </annotations>
+    <parameters name="C">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course/teacher"/>
+            </type>
+          </tail>
+          <src var="C"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="_T"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="school.CourseWithoutTeacher" fileName="platform:/resource/school.incquery/src/school/schoolvalidationrules.eiq">
+    <annotations name="Constraint">
+      <parameters name="location">
+        <value xsi:type="patternLanguage:VariableValue">
+          <value var="C"/>
+        </value>
+      </parameters>
+      <parameters name="message">
+        <value xsi:type="patternLanguage:StringValue" value="$C.subject$ does not have a teacher"/>
+      </parameters>
+      <parameters name="severity">
+        <value xsi:type="patternLanguage:StringValue" value="warning"/>
+      </parameters>
+    </annotations>
+    <parameters name="C">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#//Course"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
+        <call patternRef="//@patterns.30">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="C"/>
+          </parameters>
+        </call>
+      </constraints>
+    </bodies>
+  </patterns>
   <importPackages xsi:type="eMFPatternLanguage:PackageImport">
-    <ePackage href="http://school.ecore#/"/>
+    <ePackage href="file:/Users/stampie/git/EMF-IncQuery-Examples/school/school/model/school.ecore#/"/>
   </importPackages>
 </eMFPatternLanguage:PatternModel>

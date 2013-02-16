@@ -5,7 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Student;
 
 /**
  * Pattern-specific match representation of the school.theOnesWithTheBiggestCircle pattern, 
@@ -21,11 +20,11 @@ import school.Student;
  * 
  */
 public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
-  private Student fS;
+  private Object fS;
   
   private static String[] parameterNames = {"S"};
   
-  TheOnesWithTheBiggestCircleMatch(final Student pS) {
+  TheOnesWithTheBiggestCircleMatch(final Object pS) {
     this.fS = pS;
     
   }
@@ -37,22 +36,22 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
     
   }
   
-  public Student getS() {
+  public Object getS() {
     return this.fS;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S".equals(parameterName) ) {
-    	this.fS = (school.Student) newValue;
+    if ("S".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fS = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS(final Student pS) {
+  public void setS(final Object pS) {
     this.fS = pS;
     
   }

@@ -12,7 +12,6 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
-import school.Student;
 import school.morefriendsthan.MoreFriendsThanMatch;
 import school.morefriendsthan.MoreFriendsThanMatcherFactory;
 
@@ -74,7 +73,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return matches represented as a MoreFriendsThanMatch object.
    * 
    */
-  public Collection<MoreFriendsThanMatch> getAllMatches(final Student pS1, final Student pS2) {
+  public Collection<MoreFriendsThanMatch> getAllMatches(final Object pS1, final Object pS2) {
     return rawGetAllMatches(new Object[]{pS1, pS2});
   }
   
@@ -86,7 +85,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return a match represented as a MoreFriendsThanMatch object, or null if no match is found.
    * 
    */
-  public MoreFriendsThanMatch getOneArbitraryMatch(final Student pS1, final Student pS2) {
+  public MoreFriendsThanMatch getOneArbitraryMatch(final Object pS1, final Object pS2) {
     return rawGetOneArbitraryMatch(new Object[]{pS1, pS2});
   }
   
@@ -98,7 +97,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Student pS1, final Student pS2) {
+  public boolean hasMatch(final Object pS1, final Object pS2) {
     return rawHasMatch(new Object[]{pS1, pS2});
   }
   
@@ -109,7 +108,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Student pS1, final Student pS2) {
+  public int countMatches(final Object pS1, final Object pS2) {
     return rawCountMatches(new Object[]{pS1, pS2});
   }
   
@@ -120,7 +119,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super MoreFriendsThanMatch> processor) {
+  public void forEachMatch(final Object pS1, final Object pS2, final IMatchProcessor<? super MoreFriendsThanMatch> processor) {
     rawForEachMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -133,7 +132,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super MoreFriendsThanMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pS1, final Object pS2, final IMatchProcessor<? super MoreFriendsThanMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -149,7 +148,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<MoreFriendsThanMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
+  public DeltaMonitor<MoreFriendsThanMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pS1, final Object pS2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1, pS2});
   }
   
@@ -161,7 +160,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the (partial) match object.
    * 
    */
-  public MoreFriendsThanMatch newMatch(final Student pS1, final Student pS2) {
+  public MoreFriendsThanMatch newMatch(final Object pS1, final Object pS2) {
     return new MoreFriendsThanMatch(pS1, pS2);
     
   }
@@ -171,8 +170,8 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> rawAccumulateAllValuesOfS1(final Object[] parameters) {
-    Set<Student> results = new HashSet<Student>();
+  public Set<Object> rawAccumulateAllValuesOfS1(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_S1, parameters, results);
     return results;
   }
@@ -182,7 +181,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1() {
+  public Set<Object> getAllValuesOfS1() {
     return rawAccumulateAllValuesOfS1(emptyArray());
   }
   
@@ -191,7 +190,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final MoreFriendsThanMatch partialMatch) {
+  public Set<Object> getAllValuesOfS1(final MoreFriendsThanMatch partialMatch) {
     return rawAccumulateAllValuesOfS1(partialMatch.toArray());
   }
   
@@ -200,7 +199,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final Student pS2) {
+  public Set<Object> getAllValuesOfS1(final Object pS2) {
     return rawAccumulateAllValuesOfS1(new Object[]{null, pS2});
   }
   
@@ -209,8 +208,8 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> rawAccumulateAllValuesOfS2(final Object[] parameters) {
-    Set<Student> results = new HashSet<Student>();
+  public Set<Object> rawAccumulateAllValuesOfS2(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_S2, parameters, results);
     return results;
   }
@@ -220,7 +219,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2() {
+  public Set<Object> getAllValuesOfS2() {
     return rawAccumulateAllValuesOfS2(emptyArray());
   }
   
@@ -229,7 +228,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final MoreFriendsThanMatch partialMatch) {
+  public Set<Object> getAllValuesOfS2(final MoreFriendsThanMatch partialMatch) {
     return rawAccumulateAllValuesOfS2(partialMatch.toArray());
   }
   
@@ -238,14 +237,14 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final Student pS1) {
+  public Set<Object> getAllValuesOfS2(final Object pS1) {
     return rawAccumulateAllValuesOfS2(new Object[]{pS1, null});
   }
   
   @Override
   public MoreFriendsThanMatch tupleToMatch(final Tuple t) {
     try {
-    	return new MoreFriendsThanMatch((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));	
+    	return new MoreFriendsThanMatch((java.lang.Object) t.get(POSITION_S1), (java.lang.Object) t.get(POSITION_S2));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -255,7 +254,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
   @Override
   public MoreFriendsThanMatch arrayToMatch(final Object[] match) {
     try {
-    	return new MoreFriendsThanMatch((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+    	return new MoreFriendsThanMatch((java.lang.Object) match[POSITION_S1], (java.lang.Object) match[POSITION_S2]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

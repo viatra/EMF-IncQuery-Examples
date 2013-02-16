@@ -13,7 +13,7 @@ import school.coursewithweightthirty.CourseWithWeightThirtyMatcher;
  * @see CourseWithWeightThirtyMatch
  * 
  */
-public class CourseWithWeightThirtyMatcherFactory extends BaseGeneratedMatcherFactory<CourseWithWeightThirtyMatcher> {
+public final class CourseWithWeightThirtyMatcherFactory extends BaseGeneratedMatcherFactory<CourseWithWeightThirtyMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

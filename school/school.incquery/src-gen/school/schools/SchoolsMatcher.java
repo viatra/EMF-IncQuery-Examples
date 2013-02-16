@@ -12,7 +12,6 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
-import school.School;
 import school.schools.SchoolsMatch;
 import school.schools.SchoolsMatcherFactory;
 
@@ -71,7 +70,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return matches represented as a SchoolsMatch object.
    * 
    */
-  public Collection<SchoolsMatch> getAllMatches(final School pSch) {
+  public Collection<SchoolsMatch> getAllMatches(final Object pSch) {
     return rawGetAllMatches(new Object[]{pSch});
   }
   
@@ -82,7 +81,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return a match represented as a SchoolsMatch object, or null if no match is found.
    * 
    */
-  public SchoolsMatch getOneArbitraryMatch(final School pSch) {
+  public SchoolsMatch getOneArbitraryMatch(final Object pSch) {
     return rawGetOneArbitraryMatch(new Object[]{pSch});
   }
   
@@ -93,7 +92,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final School pSch) {
+  public boolean hasMatch(final Object pSch) {
     return rawHasMatch(new Object[]{pSch});
   }
   
@@ -103,7 +102,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final School pSch) {
+  public int countMatches(final Object pSch) {
     return rawCountMatches(new Object[]{pSch});
   }
   
@@ -113,7 +112,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final School pSch, final IMatchProcessor<? super SchoolsMatch> processor) {
+  public void forEachMatch(final Object pSch, final IMatchProcessor<? super SchoolsMatch> processor) {
     rawForEachMatch(new Object[]{pSch}, processor);
   }
   
@@ -125,7 +124,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final School pSch, final IMatchProcessor<? super SchoolsMatch> processor) {
+  public boolean forOneArbitraryMatch(final Object pSch, final IMatchProcessor<? super SchoolsMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pSch}, processor);
   }
   
@@ -140,7 +139,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<SchoolsMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final School pSch) {
+  public DeltaMonitor<SchoolsMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pSch) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSch});
   }
   
@@ -151,7 +150,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return the (partial) match object.
    * 
    */
-  public SchoolsMatch newMatch(final School pSch) {
+  public SchoolsMatch newMatch(final Object pSch) {
     return new SchoolsMatch(pSch);
     
   }
@@ -161,8 +160,8 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<School> rawAccumulateAllValuesOfSch(final Object[] parameters) {
-    Set<School> results = new HashSet<School>();
+  public Set<Object> rawAccumulateAllValuesOfSch(final Object[] parameters) {
+    Set<Object> results = new HashSet<Object>();
     rawAccumulateAllValues(POSITION_SCH, parameters, results);
     return results;
   }
@@ -172,14 +171,14 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<School> getAllValuesOfSch() {
+  public Set<Object> getAllValuesOfSch() {
     return rawAccumulateAllValuesOfSch(emptyArray());
   }
   
   @Override
   public SchoolsMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SchoolsMatch((school.School) t.get(POSITION_SCH));	
+    	return new SchoolsMatch((java.lang.Object) t.get(POSITION_SCH));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -189,7 +188,7 @@ public class SchoolsMatcher extends BaseGeneratedMatcher<SchoolsMatch> {
   @Override
   public SchoolsMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SchoolsMatch((school.School) match[POSITION_SCH]);
+    	return new SchoolsMatch((java.lang.Object) match[POSITION_SCH]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

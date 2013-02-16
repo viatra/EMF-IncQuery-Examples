@@ -1,10 +1,6 @@
 package school.finalpattern;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import school.Course;
-import school.Student;
-import school.Teacher;
-import school.Year;
 import school.finalpattern.FinalPatternMatch;
 
 /**
@@ -22,7 +18,7 @@ public abstract class FinalPatternProcessor implements IMatchProcessor<FinalPatt
    * @param pS the value of pattern parameter S in the currently processed match 
    * 
    */
-  public abstract void process(final Year Y, final Course C, final Teacher T, final Student S);
+  public abstract void process(final Object Y, final Object C, final Object T, final Object S);
   
   @Override
   public void process(final FinalPatternMatch match) {

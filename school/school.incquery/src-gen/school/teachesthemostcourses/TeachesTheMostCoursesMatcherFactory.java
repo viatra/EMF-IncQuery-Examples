@@ -13,7 +13,7 @@ import school.teachesthemostcourses.TeachesTheMostCoursesMatcher;
  * @see TeachesTheMostCoursesMatch
  * 
  */
-public class TeachesTheMostCoursesMatcherFactory extends BaseGeneratedMatcherFactory<TeachesTheMostCoursesMatcher> {
+public final class TeachesTheMostCoursesMatcherFactory extends BaseGeneratedMatcherFactory<TeachesTheMostCoursesMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

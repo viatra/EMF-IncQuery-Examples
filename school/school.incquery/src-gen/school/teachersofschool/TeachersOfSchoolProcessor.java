@@ -1,8 +1,6 @@
 package school.teachersofschool;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import school.School;
-import school.Teacher;
 import school.teachersofschool.TeachersOfSchoolMatch;
 
 /**
@@ -18,7 +16,7 @@ public abstract class TeachersOfSchoolProcessor implements IMatchProcessor<Teach
    * @param pSch the value of pattern parameter Sch in the currently processed match 
    * 
    */
-  public abstract void process(final Teacher T, final School Sch);
+  public abstract void process(final Object T, final Object Sch);
   
   @Override
   public void process(final TeachersOfSchoolMatch match) {

@@ -5,7 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Teacher;
 
 /**
  * Pattern-specific match representation of the school.teacherWithoutClass pattern, 
@@ -21,11 +20,11 @@ import school.Teacher;
  * 
  */
 public final class TeacherWithoutClassMatch extends BasePatternMatch {
-  private Teacher fT;
+  private Object fT;
   
   private static String[] parameterNames = {"T"};
   
-  TeacherWithoutClassMatch(final Teacher pT) {
+  TeacherWithoutClassMatch(final Object pT) {
     this.fT = pT;
     
   }
@@ -37,22 +36,22 @@ public final class TeacherWithoutClassMatch extends BasePatternMatch {
     
   }
   
-  public Teacher getT() {
+  public Object getT() {
     return this.fT;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T".equals(parameterName) ) {
-    	this.fT = (school.Teacher) newValue;
+    if ("T".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fT = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setT(final Teacher pT) {
+  public void setT(final Object pT) {
     this.fT = pT;
     
   }

@@ -13,7 +13,7 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcher;
  * @see TheOnesWithTheBiggestCircleMatch
  * 
  */
-public class TheOnesWithTheBiggestCircleMatcherFactory extends BaseGeneratedMatcherFactory<TheOnesWithTheBiggestCircleMatcher> {
+public final class TheOnesWithTheBiggestCircleMatcherFactory extends BaseGeneratedMatcherFactory<TheOnesWithTheBiggestCircleMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded

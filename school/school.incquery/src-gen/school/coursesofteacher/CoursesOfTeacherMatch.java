@@ -5,8 +5,6 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import school.Course;
-import school.Teacher;
 
 /**
  * Pattern-specific match representation of the school.coursesOfTeacher pattern, 
@@ -22,13 +20,13 @@ import school.Teacher;
  * 
  */
 public final class CoursesOfTeacherMatch extends BasePatternMatch {
-  private Teacher fT;
+  private Object fT;
   
-  private Course fC;
+  private Object fC;
   
   private static String[] parameterNames = {"T", "C"};
   
-  CoursesOfTeacherMatch(final Teacher pT, final Course pC) {
+  CoursesOfTeacherMatch(final Object pT, final Object pC) {
     this.fT = pT;
     this.fC = pC;
     
@@ -42,36 +40,36 @@ public final class CoursesOfTeacherMatch extends BasePatternMatch {
     
   }
   
-  public Teacher getT() {
+  public Object getT() {
     return this.fT;
     
   }
   
-  public Course getC() {
+  public Object getC() {
     return this.fC;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T".equals(parameterName) ) {
-    	this.fT = (school.Teacher) newValue;
+    if ("T".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fT = (java.lang.Object) newValue;
     	return true;
     }
-    if ("C".equals(parameterName) ) {
-    	this.fC = (school.Course) newValue;
+    if ("C".equals(parameterName) && newValue instanceof java.lang.Object) {
+    	this.fC = (java.lang.Object) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setT(final Teacher pT) {
+  public void setT(final Object pT) {
     this.fT = pT;
     
   }
   
-  public void setC(final Course pC) {
+  public void setC(final Object pC) {
     this.fC = pC;
     
   }

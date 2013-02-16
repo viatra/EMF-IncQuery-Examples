@@ -13,7 +13,7 @@ import school.teachersofschoolnames.TeachersOfSchoolNamesMatcher;
  * @see TeachersOfSchoolNamesMatch
  * 
  */
-public class TeachersOfSchoolNamesMatcherFactory extends BaseGeneratedMatcherFactory<TeachersOfSchoolNamesMatcher> {
+public final class TeachersOfSchoolNamesMatcherFactory extends BaseGeneratedMatcherFactory<TeachersOfSchoolNamesMatcher> {
   /**
    * @return the singleton instance of the matcher factory
    * @throws IncQueryException if the pattern definition could not be loaded
