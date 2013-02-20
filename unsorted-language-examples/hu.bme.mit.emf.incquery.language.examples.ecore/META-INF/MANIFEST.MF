@@ -23,6 +23,6 @@ Export-Package: hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute,
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.incquery.runtime,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

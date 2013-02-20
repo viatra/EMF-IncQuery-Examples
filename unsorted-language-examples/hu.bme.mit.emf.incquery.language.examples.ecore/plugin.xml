@@ -3,7 +3,7 @@
 
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint.ThisIsEIntMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt">
@@ -11,7 +11,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintconcise.ThisIsEIntConciseMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise">
@@ -19,31 +19,55 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2MatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2Evaluator1_1"
+            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchEvaluator1_1"
+            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionEvaluator1_1"
+            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseinttwice.ThisIsEIntTwiceMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice">
@@ -51,7 +75,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisisnoteint.ThisIsNotEIntMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt">
@@ -59,15 +83,23 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssEvaluator1_1"
+            id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute.EClassAttributeMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute">
@@ -75,7 +107,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.numberofattributes.NumberOfAttributesMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes">
@@ -83,7 +115,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.withtwoattributes.WithTwoAttributesMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes">
@@ -91,7 +123,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.howmanyattributesofagiventype.HowManyAttributesOfAGivenTypeMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType">
@@ -99,7 +131,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.twoattributesofthistype.TwoAttributesOfThisTypeMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType">
@@ -107,7 +139,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.pathsegmentheadsubclass.PathSegmentHeadSubclassMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass">
@@ -115,7 +147,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.references"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.references.ReferencesMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.references">
@@ -123,7 +155,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencestransitively.ReferencesTransitivelyMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively">
@@ -131,7 +163,7 @@
    </extension>
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencesloop.ReferencesLoopMatcherFactory$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop">
