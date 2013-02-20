@@ -12,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
+import school.Student;
 import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatch;
 import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory;
 
@@ -67,7 +68,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return matches represented as a TheOnesWithTheBiggestCircleMatch object.
    * 
    */
-  public Collection<TheOnesWithTheBiggestCircleMatch> getAllMatches(final Object pS) {
+  public Collection<TheOnesWithTheBiggestCircleMatch> getAllMatches(final Student pS) {
     return rawGetAllMatches(new Object[]{pS});
   }
   
@@ -78,7 +79,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return a match represented as a TheOnesWithTheBiggestCircleMatch object, or null if no match is found.
    * 
    */
-  public TheOnesWithTheBiggestCircleMatch getOneArbitraryMatch(final Object pS) {
+  public TheOnesWithTheBiggestCircleMatch getOneArbitraryMatch(final Student pS) {
     return rawGetOneArbitraryMatch(new Object[]{pS});
   }
   
@@ -89,7 +90,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pS) {
+  public boolean hasMatch(final Student pS) {
     return rawHasMatch(new Object[]{pS});
   }
   
@@ -99,7 +100,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pS) {
+  public int countMatches(final Student pS) {
     return rawCountMatches(new Object[]{pS});
   }
   
@@ -109,7 +110,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pS, final IMatchProcessor<? super TheOnesWithTheBiggestCircleMatch> processor) {
+  public void forEachMatch(final Student pS, final IMatchProcessor<? super TheOnesWithTheBiggestCircleMatch> processor) {
     rawForEachMatch(new Object[]{pS}, processor);
   }
   
@@ -121,7 +122,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pS, final IMatchProcessor<? super TheOnesWithTheBiggestCircleMatch> processor) {
+  public boolean forOneArbitraryMatch(final Student pS, final IMatchProcessor<? super TheOnesWithTheBiggestCircleMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pS}, processor);
   }
   
@@ -136,19 +137,20 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<TheOnesWithTheBiggestCircleMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pS) {
+  public DeltaMonitor<TheOnesWithTheBiggestCircleMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pS the fixed value of pattern parameter S, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public TheOnesWithTheBiggestCircleMatch newMatch(final Object pS) {
-    return new TheOnesWithTheBiggestCircleMatch(pS);
+  public TheOnesWithTheBiggestCircleMatch newMatch(final Student pS) {
+    return new TheOnesWithTheBiggestCircleMatch.Immutable(pS);
     
   }
   
@@ -157,8 +159,8 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfS(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Student> rawAccumulateAllValuesOfS(final Object[] parameters) {
+    Set<Student> results = new HashSet<Student>();
     rawAccumulateAllValues(POSITION_S, parameters, results);
     return results;
   }
@@ -168,14 +170,14 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS() {
+  public Set<Student> getAllValuesOfS() {
     return rawAccumulateAllValuesOfS(emptyArray());
   }
   
   @Override
-  public TheOnesWithTheBiggestCircleMatch tupleToMatch(final Tuple t) {
+  protected TheOnesWithTheBiggestCircleMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TheOnesWithTheBiggestCircleMatch((java.lang.Object) t.get(POSITION_S));	
+    	return new TheOnesWithTheBiggestCircleMatch.Immutable((school.Student) t.get(POSITION_S));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -183,9 +185,19 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
   }
   
   @Override
-  public TheOnesWithTheBiggestCircleMatch arrayToMatch(final Object[] match) {
+  protected TheOnesWithTheBiggestCircleMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TheOnesWithTheBiggestCircleMatch((java.lang.Object) match[POSITION_S]);
+    	return new TheOnesWithTheBiggestCircleMatch.Immutable((school.Student) match[POSITION_S]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected TheOnesWithTheBiggestCircleMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new TheOnesWithTheBiggestCircleMatch.Mutable((school.Student) match[POSITION_S]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

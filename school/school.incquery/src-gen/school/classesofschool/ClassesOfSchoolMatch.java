@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.SchoolClass;
 
 /**
  * Pattern-specific match representation of the school.classesOfSchool pattern, 
- * to be used in conjunction with ClassesOfSchoolMatcher.
+ * to be used in conjunction with {@link ClassesOfSchoolMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see ClassesOfSchoolProcessor
  * 
  */
-public final class ClassesOfSchoolMatch extends BasePatternMatch {
-  private Object fSC;
+public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
+  private SchoolClass fSC;
   
   private static String[] parameterNames = {"SC"};
   
-  ClassesOfSchoolMatch(final Object pSC) {
+  private ClassesOfSchoolMatch(final SchoolClass pSC) {
     this.fSC = pSC;
     
   }
@@ -36,22 +37,24 @@ public final class ClassesOfSchoolMatch extends BasePatternMatch {
     
   }
   
-  public Object getSC() {
+  public SchoolClass getSC() {
     return this.fSC;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("SC".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSC = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("SC".equals(parameterName) ) {
+    	this.fSC = (school.SchoolClass) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setSC(final Object pSC) {
+  public void setSC(final SchoolClass pSC) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSC = pSC;
     
   }
@@ -120,4 +123,28 @@ public final class ClassesOfSchoolMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends ClassesOfSchoolMatch {
+    Mutable(final SchoolClass pSC) {
+      super(pSC);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends ClassesOfSchoolMatch {
+    Immutable(final SchoolClass pSC) {
+      super(pSC);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

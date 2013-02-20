@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Student;
 
 /**
  * Pattern-specific match representation of the school.friendlyTo pattern, 
- * to be used in conjunction with FriendlyToMatcher.
+ * to be used in conjunction with {@link FriendlyToMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +20,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see FriendlyToProcessor
  * 
  */
-public final class FriendlyToMatch extends BasePatternMatch {
-  private Object fS1;
+public abstract class FriendlyToMatch extends BasePatternMatch {
+  private Student fS1;
   
-  private Object fS2;
+  private Student fS2;
   
   private static String[] parameterNames = {"S1", "S2"};
   
-  FriendlyToMatch(final Object pS1, final Object pS2) {
+  private FriendlyToMatch(final Student pS1, final Student pS2) {
     this.fS1 = pS1;
     this.fS2 = pS2;
     
@@ -40,36 +41,39 @@ public final class FriendlyToMatch extends BasePatternMatch {
     
   }
   
-  public Object getS1() {
+  public Student getS1() {
     return this.fS1;
     
   }
   
-  public Object getS2() {
+  public Student getS2() {
     return this.fS2;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS1 = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("S1".equals(parameterName) ) {
+    	this.fS1 = (school.Student) newValue;
     	return true;
     }
-    if ("S2".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS2 = (java.lang.Object) newValue;
+    if ("S2".equals(parameterName) ) {
+    	this.fS2 = (school.Student) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1(final Object pS1) {
+  public void setS1(final Student pS1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS1 = pS1;
     
   }
   
-  public void setS2(final Object pS2) {
+  public void setS2(final Student pS2) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS2 = pS2;
     
   }
@@ -142,4 +146,28 @@ public final class FriendlyToMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends FriendlyToMatch {
+    Mutable(final Student pS1, final Student pS2) {
+      super(pS1, pS2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends FriendlyToMatch {
+    Immutable(final Student pS1, final Student pS2) {
+      super(pS1, pS2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

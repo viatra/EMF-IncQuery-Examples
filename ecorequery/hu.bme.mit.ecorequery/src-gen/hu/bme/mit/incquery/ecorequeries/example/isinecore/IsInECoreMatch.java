@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.IsInECore pattern, 
- * to be used in conjunction with IsInECoreMatcher.
+ * to be used in conjunction with {@link IsInECoreMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see IsInECoreProcessor
  * 
  */
-public final class IsInECoreMatch extends BasePatternMatch {
+public abstract class IsInECoreMatch extends BasePatternMatch {
   private EClassifier fElement;
   
   private static String[] parameterNames = {"Element"};
   
-  IsInECoreMatch(final EClassifier pElement) {
+  private IsInECoreMatch(final EClassifier pElement) {
     this.fElement = pElement;
     
   }
@@ -44,6 +44,7 @@ public final class IsInECoreMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Element".equals(parameterName) ) {
     	this.fElement = (org.eclipse.emf.ecore.EClassifier) newValue;
     	return true;
@@ -53,6 +54,7 @@ public final class IsInECoreMatch extends BasePatternMatch {
   }
   
   public void setElement(final EClassifier pElement) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fElement = pElement;
     
   }
@@ -121,4 +123,28 @@ public final class IsInECoreMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends IsInECoreMatch {
+    Mutable(final EClassifier pElement) {
+      super(pElement);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends IsInECoreMatch {
+    Immutable(final EClassifier pElement) {
+      super(pElement);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

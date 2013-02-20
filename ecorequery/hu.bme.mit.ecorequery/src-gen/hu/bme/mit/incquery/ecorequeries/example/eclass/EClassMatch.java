@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClass pattern, 
- * to be used in conjunction with EClassMatcher.
+ * to be used in conjunction with {@link EClassMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EClassProcessor
  * 
  */
-public final class EClassMatch extends BasePatternMatch {
+public abstract class EClassMatch extends BasePatternMatch {
   private EClass fEClass;
   
   private static String[] parameterNames = {"EClass"};
   
-  EClassMatch(final EClass pEClass) {
+  private EClassMatch(final EClass pEClass) {
     this.fEClass = pEClass;
     
   }
@@ -44,6 +44,7 @@ public final class EClassMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("EClass".equals(parameterName) ) {
     	this.fEClass = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
@@ -53,6 +54,7 @@ public final class EClassMatch extends BasePatternMatch {
   }
   
   public void setEClass(final EClass pEClass) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fEClass = pEClass;
     
   }
@@ -121,4 +123,28 @@ public final class EClassMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends EClassMatch {
+    Mutable(final EClass pEClass) {
+      super(pEClass);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends EClassMatch {
+    Immutable(final EClass pEClass) {
+      super(pEClass);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

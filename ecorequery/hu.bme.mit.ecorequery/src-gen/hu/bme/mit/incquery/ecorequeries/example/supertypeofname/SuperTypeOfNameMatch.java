@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName pattern, 
- * to be used in conjunction with SuperTypeOfNameMatcher.
+ * to be used in conjunction with {@link SuperTypeOfNameMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +19,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SuperTypeOfNameProcessor
  * 
  */
-public final class SuperTypeOfNameMatch extends BasePatternMatch {
+public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
   private String fSuperName;
   
   private String fSubName;
   
   private static String[] parameterNames = {"SuperName", "SubName"};
   
-  SuperTypeOfNameMatch(final String pSuperName, final String pSubName) {
+  private SuperTypeOfNameMatch(final String pSuperName, final String pSubName) {
     this.fSuperName = pSuperName;
     this.fSubName = pSubName;
     
@@ -52,6 +52,7 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("SuperName".equals(parameterName) ) {
     	this.fSuperName = (java.lang.String) newValue;
     	return true;
@@ -65,11 +66,13 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch {
   }
   
   public void setSuperName(final String pSuperName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSuperName = pSuperName;
     
   }
   
   public void setSubName(final String pSubName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSubName = pSubName;
     
   }
@@ -142,4 +145,28 @@ public final class SuperTypeOfNameMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends SuperTypeOfNameMatch {
+    Mutable(final String pSuperName, final String pSubName) {
+      super(pSuperName, pSubName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends SuperTypeOfNameMatch {
+    Immutable(final String pSuperName, final String pSubName) {
+      super(pSuperName, pSubName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

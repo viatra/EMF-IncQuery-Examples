@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.teachersNames pattern, 
- * to be used in conjunction with TeachersNamesMatcher.
+ * to be used in conjunction with {@link TeachersNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TeachersNamesProcessor
  * 
  */
-public final class TeachersNamesMatch extends BasePatternMatch {
+public abstract class TeachersNamesMatch extends BasePatternMatch {
   private String fTN;
   
   private static String[] parameterNames = {"TN"};
   
-  TeachersNamesMatch(final String pTN) {
+  private TeachersNamesMatch(final String pTN) {
     this.fTN = pTN;
     
   }
@@ -43,6 +43,7 @@ public final class TeachersNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("TN".equals(parameterName) ) {
     	this.fTN = (java.lang.String) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class TeachersNamesMatch extends BasePatternMatch {
   }
   
   public void setTN(final String pTN) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTN = pTN;
     
   }
@@ -120,4 +122,28 @@ public final class TeachersNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends TeachersNamesMatch {
+    Mutable(final String pTN) {
+      super(pTN);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TeachersNamesMatch {
+    Immutable(final String pTN) {
+      super(pTN);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

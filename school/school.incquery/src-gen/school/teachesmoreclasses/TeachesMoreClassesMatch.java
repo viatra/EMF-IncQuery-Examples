@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Teacher;
 
 /**
  * Pattern-specific match representation of the school.teachesMoreClasses pattern, 
- * to be used in conjunction with TeachesMoreClassesMatcher.
+ * to be used in conjunction with {@link TeachesMoreClassesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +20,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TeachesMoreClassesProcessor
  * 
  */
-public final class TeachesMoreClassesMatch extends BasePatternMatch {
-  private Object fT1;
+public abstract class TeachesMoreClassesMatch extends BasePatternMatch {
+  private Teacher fT1;
   
-  private Object fT2;
+  private Teacher fT2;
   
   private static String[] parameterNames = {"T1", "T2"};
   
-  TeachesMoreClassesMatch(final Object pT1, final Object pT2) {
+  private TeachesMoreClassesMatch(final Teacher pT1, final Teacher pT2) {
     this.fT1 = pT1;
     this.fT2 = pT2;
     
@@ -40,36 +41,39 @@ public final class TeachesMoreClassesMatch extends BasePatternMatch {
     
   }
   
-  public Object getT1() {
+  public Teacher getT1() {
     return this.fT1;
     
   }
   
-  public Object getT2() {
+  public Teacher getT2() {
     return this.fT2;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T1".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fT1 = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("T1".equals(parameterName) ) {
+    	this.fT1 = (school.Teacher) newValue;
     	return true;
     }
-    if ("T2".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fT2 = (java.lang.Object) newValue;
+    if ("T2".equals(parameterName) ) {
+    	this.fT2 = (school.Teacher) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setT1(final Object pT1) {
+  public void setT1(final Teacher pT1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fT1 = pT1;
     
   }
   
-  public void setT2(final Object pT2) {
+  public void setT2(final Teacher pT2) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fT2 = pT2;
     
   }
@@ -142,4 +146,28 @@ public final class TeachesMoreClassesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends TeachesMoreClassesMatch {
+    Mutable(final Teacher pT1, final Teacher pT2) {
+      super(pT1, pT2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TeachesMoreClassesMatch {
+    Immutable(final Teacher pT1, final Teacher pT2) {
+      super(pT1, pT2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

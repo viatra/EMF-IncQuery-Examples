@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Course;
 
 /**
  * Pattern-specific match representation of the school.courseWithNameLongerThanWeight pattern, 
- * to be used in conjunction with CourseWithNameLongerThanWeightMatcher.
+ * to be used in conjunction with {@link CourseWithNameLongerThanWeightMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see CourseWithNameLongerThanWeightProcessor
  * 
  */
-public final class CourseWithNameLongerThanWeightMatch extends BasePatternMatch {
-  private Object fC;
+public abstract class CourseWithNameLongerThanWeightMatch extends BasePatternMatch {
+  private Course fC;
   
   private static String[] parameterNames = {"C"};
   
-  CourseWithNameLongerThanWeightMatch(final Object pC) {
+  private CourseWithNameLongerThanWeightMatch(final Course pC) {
     this.fC = pC;
     
   }
@@ -36,22 +37,24 @@ public final class CourseWithNameLongerThanWeightMatch extends BasePatternMatch 
     
   }
   
-  public Object getC() {
+  public Course getC() {
     return this.fC;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("C".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fC = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("C".equals(parameterName) ) {
+    	this.fC = (school.Course) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setC(final Object pC) {
+  public void setC(final Course pC) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fC = pC;
     
   }
@@ -120,4 +123,28 @@ public final class CourseWithNameLongerThanWeightMatch extends BasePatternMatch 
     }
     
   }
+  static final class Mutable extends CourseWithNameLongerThanWeightMatch {
+    Mutable(final Course pC) {
+      super(pC);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends CourseWithNameLongerThanWeightMatch {
+    Immutable(final Course pC) {
+      super(pC);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

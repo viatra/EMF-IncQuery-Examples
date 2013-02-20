@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName pattern, 
- * to be used in conjunction with ECoreNamedElementNameMatcher.
+ * to be used in conjunction with {@link ECoreNamedElementNameMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see ECoreNamedElementNameProcessor
  * 
  */
-public final class ECoreNamedElementNameMatch extends BasePatternMatch {
+public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   private String fName;
   
   private static String[] parameterNames = {"Name"};
   
-  ECoreNamedElementNameMatch(final String pName) {
+  private ECoreNamedElementNameMatch(final String pName) {
     this.fName = pName;
     
   }
@@ -43,6 +43,7 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Name".equals(parameterName) ) {
     	this.fName = (java.lang.String) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch {
   }
   
   public void setName(final String pName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fName = pName;
     
   }
@@ -120,4 +122,28 @@ public final class ECoreNamedElementNameMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends ECoreNamedElementNameMatch {
+    Mutable(final String pName) {
+      super(pName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends ECoreNamedElementNameMatch {
+    Immutable(final String pName) {
+      super(pName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

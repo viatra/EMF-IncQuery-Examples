@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement pattern, 
- * to be used in conjunction with ECoreNamedElementMatcher.
+ * to be used in conjunction with {@link ECoreNamedElementMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,14 +20,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see ECoreNamedElementProcessor
  * 
  */
-public final class ECoreNamedElementMatch extends BasePatternMatch {
+public abstract class ECoreNamedElementMatch extends BasePatternMatch {
   private ENamedElement fElement;
   
   private String fName;
   
   private static String[] parameterNames = {"Element", "Name"};
   
-  ECoreNamedElementMatch(final ENamedElement pElement, final String pName) {
+  private ECoreNamedElementMatch(final ENamedElement pElement, final String pName) {
     this.fElement = pElement;
     this.fName = pName;
     
@@ -53,6 +53,7 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Element".equals(parameterName) ) {
     	this.fElement = (org.eclipse.emf.ecore.ENamedElement) newValue;
     	return true;
@@ -66,11 +67,13 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
   }
   
   public void setElement(final ENamedElement pElement) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fElement = pElement;
     
   }
   
   public void setName(final String pName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fName = pName;
     
   }
@@ -143,4 +146,28 @@ public final class ECoreNamedElementMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends ECoreNamedElementMatch {
+    Mutable(final ENamedElement pElement, final String pName) {
+      super(pElement, pName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends ECoreNamedElementMatch {
+    Immutable(final ENamedElement pElement, final String pName) {
+      super(pElement, pName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

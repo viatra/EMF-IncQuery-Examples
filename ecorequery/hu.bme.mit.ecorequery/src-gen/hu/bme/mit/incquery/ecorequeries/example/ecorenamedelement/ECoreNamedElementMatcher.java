@@ -154,13 +154,14 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
    * @param pName the fixed value of pattern parameter Name, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public ECoreNamedElementMatch newMatch(final ENamedElement pElement, final String pName) {
-    return new ECoreNamedElementMatch(pElement, pName);
+    return new ECoreNamedElementMatch.Immutable(pElement, pName);
     
   }
   
@@ -169,7 +170,7 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<ENamedElement> rawAccumulateAllValuesOfElement(final Object[] parameters) {
+  protected Set<ENamedElement> rawAccumulateAllValuesOfElement(final Object[] parameters) {
     Set<ENamedElement> results = new HashSet<ENamedElement>();
     rawAccumulateAllValues(POSITION_ELEMENT, parameters, results);
     return results;
@@ -207,7 +208,7 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_NAME, parameters, results);
     return results;
@@ -241,9 +242,9 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
   }
   
   @Override
-  public ECoreNamedElementMatch tupleToMatch(final Tuple t) {
+  protected ECoreNamedElementMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ECoreNamedElementMatch((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));	
+    	return new ECoreNamedElementMatch.Immutable((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -251,9 +252,19 @@ public class ECoreNamedElementMatcher extends BaseGeneratedMatcher<ECoreNamedEle
   }
   
   @Override
-  public ECoreNamedElementMatch arrayToMatch(final Object[] match) {
+  protected ECoreNamedElementMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ECoreNamedElementMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+    	return new ECoreNamedElementMatch.Immutable((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected ECoreNamedElementMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new ECoreNamedElementMatch.Mutable((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

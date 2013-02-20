@@ -10,7 +10,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute pattern, 
- * to be used in conjunction with EClassWithEStringAttributeMatcher.
+ * to be used in conjunction with {@link EClassWithEStringAttributeMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -21,14 +21,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EClassWithEStringAttributeProcessor
  * 
  */
-public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
+public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   private EClass fE;
   
   private EAttribute fAttr;
   
   private static String[] parameterNames = {"E", "Attr"};
   
-  EClassWithEStringAttributeMatch(final EClass pE, final EAttribute pAttr) {
+  private EClassWithEStringAttributeMatch(final EClass pE, final EAttribute pAttr) {
     this.fE = pE;
     this.fAttr = pAttr;
     
@@ -54,6 +54,7 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
@@ -67,11 +68,13 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
   }
   
   public void setE(final EClass pE) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
     
   }
   
   public void setAttr(final EAttribute pAttr) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fAttr = pAttr;
     
   }
@@ -144,4 +147,28 @@ public final class EClassWithEStringAttributeMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends EClassWithEStringAttributeMatch {
+    Mutable(final EClass pE, final EAttribute pAttr) {
+      super(pE, pAttr);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends EClassWithEStringAttributeMatch {
+    Immutable(final EClass pE, final EAttribute pAttr) {
+      super(pE, pAttr);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

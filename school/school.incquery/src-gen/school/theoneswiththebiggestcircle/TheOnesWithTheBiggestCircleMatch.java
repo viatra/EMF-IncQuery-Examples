@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Student;
 
 /**
  * Pattern-specific match representation of the school.theOnesWithTheBiggestCircle pattern, 
- * to be used in conjunction with TheOnesWithTheBiggestCircleMatcher.
+ * to be used in conjunction with {@link TheOnesWithTheBiggestCircleMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TheOnesWithTheBiggestCircleProcessor
  * 
  */
-public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
-  private Object fS;
+public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
+  private Student fS;
   
   private static String[] parameterNames = {"S"};
   
-  TheOnesWithTheBiggestCircleMatch(final Object pS) {
+  private TheOnesWithTheBiggestCircleMatch(final Student pS) {
     this.fS = pS;
     
   }
@@ -36,22 +37,24 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
     
   }
   
-  public Object getS() {
+  public Student getS() {
     return this.fS;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("S".equals(parameterName) ) {
+    	this.fS = (school.Student) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS(final Object pS) {
+  public void setS(final Student pS) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS = pS;
     
   }
@@ -120,4 +123,28 @@ public final class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends TheOnesWithTheBiggestCircleMatch {
+    Mutable(final Student pS) {
+      super(pS);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TheOnesWithTheBiggestCircleMatch {
+    Immutable(final Student pS) {
+      super(pS);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

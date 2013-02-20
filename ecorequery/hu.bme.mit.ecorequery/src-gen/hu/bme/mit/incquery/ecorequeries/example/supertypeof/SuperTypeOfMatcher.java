@@ -155,13 +155,14 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSuper the fixed value of pattern parameter Super, or null if not bound.
    * @param pSub the fixed value of pattern parameter Sub, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public SuperTypeOfMatch newMatch(final EClass pSuper, final EClass pSub) {
-    return new SuperTypeOfMatch(pSuper, pSub);
+    return new SuperTypeOfMatch.Immutable(pSuper, pSub);
     
   }
   
@@ -170,7 +171,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfSuper(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfSuper(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_SUPER, parameters, results);
     return results;
@@ -208,7 +209,7 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfSub(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfSub(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_SUB, parameters, results);
     return results;
@@ -242,9 +243,9 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
   }
   
   @Override
-  public SuperTypeOfMatch tupleToMatch(final Tuple t) {
+  protected SuperTypeOfMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SuperTypeOfMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));	
+    	return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -252,9 +253,19 @@ public class SuperTypeOfMatcher extends BaseGeneratedMatcher<SuperTypeOfMatch> {
   }
   
   @Override
-  public SuperTypeOfMatch arrayToMatch(final Object[] match) {
+  protected SuperTypeOfMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SuperTypeOfMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+    	return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected SuperTypeOfMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new SuperTypeOfMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

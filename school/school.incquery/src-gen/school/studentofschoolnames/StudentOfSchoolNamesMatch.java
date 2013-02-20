@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.studentOfSchoolNames pattern, 
- * to be used in conjunction with StudentOfSchoolNamesMatcher.
+ * to be used in conjunction with {@link StudentOfSchoolNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +19,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see StudentOfSchoolNamesProcessor
  * 
  */
-public final class StudentOfSchoolNamesMatch extends BasePatternMatch {
+public abstract class StudentOfSchoolNamesMatch extends BasePatternMatch {
   private String fSName;
   
   private String fSchName;
   
   private static String[] parameterNames = {"SName", "SchName"};
   
-  StudentOfSchoolNamesMatch(final String pSName, final String pSchName) {
+  private StudentOfSchoolNamesMatch(final String pSName, final String pSchName) {
     this.fSName = pSName;
     this.fSchName = pSchName;
     
@@ -52,6 +52,7 @@ public final class StudentOfSchoolNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("SName".equals(parameterName) ) {
     	this.fSName = (java.lang.String) newValue;
     	return true;
@@ -65,11 +66,13 @@ public final class StudentOfSchoolNamesMatch extends BasePatternMatch {
   }
   
   public void setSName(final String pSName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSName = pSName;
     
   }
   
   public void setSchName(final String pSchName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSchName = pSchName;
     
   }
@@ -142,4 +145,28 @@ public final class StudentOfSchoolNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends StudentOfSchoolNamesMatch {
+    Mutable(final String pSName, final String pSchName) {
+      super(pSName, pSchName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends StudentOfSchoolNamesMatch {
+    Immutable(final String pSName, final String pSchName) {
+      super(pSName, pSchName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

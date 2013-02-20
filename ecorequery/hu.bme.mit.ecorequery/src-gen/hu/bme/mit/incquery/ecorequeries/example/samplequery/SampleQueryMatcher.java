@@ -197,6 +197,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pXElement the fixed value of pattern parameter XElement, or null if not bound.
    * @param pYElement the fixed value of pattern parameter YElement, or null if not bound.
    * @param pRelates the fixed value of pattern parameter Relates, or null if not bound.
@@ -206,7 +207,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * 
    */
   public SampleQueryMatch newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return new SampleQueryMatch(pXElement, pYElement, pRelates, pLabel1, pLabel2);
+    return new SampleQueryMatch.Immutable(pXElement, pYElement, pRelates, pLabel1, pLabel2);
     
   }
   
@@ -215,7 +216,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfXElement(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfXElement(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_XELEMENT, parameters, results);
     return results;
@@ -253,7 +254,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfYElement(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfYElement(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_YELEMENT, parameters, results);
     return results;
@@ -291,7 +292,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EReference> rawAccumulateAllValuesOfRelates(final Object[] parameters) {
+  protected Set<EReference> rawAccumulateAllValuesOfRelates(final Object[] parameters) {
     Set<EReference> results = new HashSet<EReference>();
     rawAccumulateAllValues(POSITION_RELATES, parameters, results);
     return results;
@@ -329,7 +330,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EAttribute> rawAccumulateAllValuesOfLabel1(final Object[] parameters) {
+  protected Set<EAttribute> rawAccumulateAllValuesOfLabel1(final Object[] parameters) {
     Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_LABEL1, parameters, results);
     return results;
@@ -367,7 +368,7 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EAttribute> rawAccumulateAllValuesOfLabel2(final Object[] parameters) {
+  protected Set<EAttribute> rawAccumulateAllValuesOfLabel2(final Object[] parameters) {
     Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_LABEL2, parameters, results);
     return results;
@@ -401,9 +402,9 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
   }
   
   @Override
-  public SampleQueryMatch tupleToMatch(final Tuple t) {
+  protected SampleQueryMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SampleQueryMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));	
+    	return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -411,9 +412,19 @@ public class SampleQueryMatcher extends BaseGeneratedMatcher<SampleQueryMatch> {
   }
   
   @Override
-  public SampleQueryMatch arrayToMatch(final Object[] match) {
+  protected SampleQueryMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SampleQueryMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    	return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected SampleQueryMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new SampleQueryMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

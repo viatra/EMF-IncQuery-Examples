@@ -12,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
+import school.Teacher;
 import school.teachers.TeachersMatch;
 import school.teachers.TeachersMatcherFactory;
 
@@ -67,7 +68,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return matches represented as a TeachersMatch object.
    * 
    */
-  public Collection<TeachersMatch> getAllMatches(final Object pT) {
+  public Collection<TeachersMatch> getAllMatches(final Teacher pT) {
     return rawGetAllMatches(new Object[]{pT});
   }
   
@@ -78,7 +79,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return a match represented as a TeachersMatch object, or null if no match is found.
    * 
    */
-  public TeachersMatch getOneArbitraryMatch(final Object pT) {
+  public TeachersMatch getOneArbitraryMatch(final Teacher pT) {
     return rawGetOneArbitraryMatch(new Object[]{pT});
   }
   
@@ -89,7 +90,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pT) {
+  public boolean hasMatch(final Teacher pT) {
     return rawHasMatch(new Object[]{pT});
   }
   
@@ -99,7 +100,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pT) {
+  public int countMatches(final Teacher pT) {
     return rawCountMatches(new Object[]{pT});
   }
   
@@ -109,7 +110,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pT, final IMatchProcessor<? super TeachersMatch> processor) {
+  public void forEachMatch(final Teacher pT, final IMatchProcessor<? super TeachersMatch> processor) {
     rawForEachMatch(new Object[]{pT}, processor);
   }
   
@@ -121,7 +122,7 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pT, final IMatchProcessor<? super TeachersMatch> processor) {
+  public boolean forOneArbitraryMatch(final Teacher pT, final IMatchProcessor<? super TeachersMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pT}, processor);
   }
   
@@ -136,19 +137,20 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<TeachersMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pT) {
+  public DeltaMonitor<TeachersMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Teacher pT) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pT the fixed value of pattern parameter T, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public TeachersMatch newMatch(final Object pT) {
-    return new TeachersMatch(pT);
+  public TeachersMatch newMatch(final Teacher pT) {
+    return new TeachersMatch.Immutable(pT);
     
   }
   
@@ -157,8 +159,8 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfT(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Teacher> rawAccumulateAllValuesOfT(final Object[] parameters) {
+    Set<Teacher> results = new HashSet<Teacher>();
     rawAccumulateAllValues(POSITION_T, parameters, results);
     return results;
   }
@@ -168,14 +170,14 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfT() {
+  public Set<Teacher> getAllValuesOfT() {
     return rawAccumulateAllValuesOfT(emptyArray());
   }
   
   @Override
-  public TeachersMatch tupleToMatch(final Tuple t) {
+  protected TeachersMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TeachersMatch((java.lang.Object) t.get(POSITION_T));	
+    	return new TeachersMatch.Immutable((school.Teacher) t.get(POSITION_T));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -183,9 +185,19 @@ public class TeachersMatcher extends BaseGeneratedMatcher<TeachersMatch> {
   }
   
   @Override
-  public TeachersMatch arrayToMatch(final Object[] match) {
+  protected TeachersMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TeachersMatch((java.lang.Object) match[POSITION_T]);
+    	return new TeachersMatch.Immutable((school.Teacher) match[POSITION_T]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected TeachersMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new TeachersMatch.Mutable((school.Teacher) match[POSITION_T]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

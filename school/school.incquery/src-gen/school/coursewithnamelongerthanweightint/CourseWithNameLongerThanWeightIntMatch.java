@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.courseWithNameLongerThanWeightInt pattern, 
- * to be used in conjunction with CourseWithNameLongerThanWeightIntMatcher.
+ * to be used in conjunction with {@link CourseWithNameLongerThanWeightIntMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see CourseWithNameLongerThanWeightIntProcessor
  * 
  */
-public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
+public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
   private Integer fW;
   
   private static String[] parameterNames = {"W"};
   
-  CourseWithNameLongerThanWeightIntMatch(final Integer pW) {
+  private CourseWithNameLongerThanWeightIntMatch(final Integer pW) {
     this.fW = pW;
     
   }
@@ -43,6 +43,7 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("W".equals(parameterName) ) {
     	this.fW = (java.lang.Integer) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
   }
   
   public void setW(final Integer pW) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fW = pW;
     
   }
@@ -120,4 +122,28 @@ public final class CourseWithNameLongerThanWeightIntMatch extends BasePatternMat
     }
     
   }
+  static final class Mutable extends CourseWithNameLongerThanWeightIntMatch {
+    Mutable(final Integer pW) {
+      super(pW);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends CourseWithNameLongerThanWeightIntMatch {
+    Immutable(final Integer pW) {
+      super(pW);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

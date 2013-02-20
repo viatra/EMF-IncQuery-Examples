@@ -12,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
+import school.Course;
 import school.somecourse.SomeCourseMatch;
 import school.somecourse.SomeCourseMatcherFactory;
 
@@ -70,7 +71,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return matches represented as a SomeCourseMatch object.
    * 
    */
-  public Collection<SomeCourseMatch> getAllMatches(final Object pC) {
+  public Collection<SomeCourseMatch> getAllMatches(final Course pC) {
     return rawGetAllMatches(new Object[]{pC});
   }
   
@@ -81,7 +82,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return a match represented as a SomeCourseMatch object, or null if no match is found.
    * 
    */
-  public SomeCourseMatch getOneArbitraryMatch(final Object pC) {
+  public SomeCourseMatch getOneArbitraryMatch(final Course pC) {
     return rawGetOneArbitraryMatch(new Object[]{pC});
   }
   
@@ -92,7 +93,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pC) {
+  public boolean hasMatch(final Course pC) {
     return rawHasMatch(new Object[]{pC});
   }
   
@@ -102,7 +103,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pC) {
+  public int countMatches(final Course pC) {
     return rawCountMatches(new Object[]{pC});
   }
   
@@ -112,7 +113,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pC, final IMatchProcessor<? super SomeCourseMatch> processor) {
+  public void forEachMatch(final Course pC, final IMatchProcessor<? super SomeCourseMatch> processor) {
     rawForEachMatch(new Object[]{pC}, processor);
   }
   
@@ -124,7 +125,7 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pC, final IMatchProcessor<? super SomeCourseMatch> processor) {
+  public boolean forOneArbitraryMatch(final Course pC, final IMatchProcessor<? super SomeCourseMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pC}, processor);
   }
   
@@ -139,19 +140,20 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<SomeCourseMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pC) {
+  public DeltaMonitor<SomeCourseMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Course pC) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pC});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pC the fixed value of pattern parameter C, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public SomeCourseMatch newMatch(final Object pC) {
-    return new SomeCourseMatch(pC);
+  public SomeCourseMatch newMatch(final Course pC) {
+    return new SomeCourseMatch.Immutable(pC);
     
   }
   
@@ -160,8 +162,8 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfC(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Course> rawAccumulateAllValuesOfC(final Object[] parameters) {
+    Set<Course> results = new HashSet<Course>();
     rawAccumulateAllValues(POSITION_C, parameters, results);
     return results;
   }
@@ -171,14 +173,14 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfC() {
+  public Set<Course> getAllValuesOfC() {
     return rawAccumulateAllValuesOfC(emptyArray());
   }
   
   @Override
-  public SomeCourseMatch tupleToMatch(final Tuple t) {
+  protected SomeCourseMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SomeCourseMatch((java.lang.Object) t.get(POSITION_C));	
+    	return new SomeCourseMatch.Immutable((school.Course) t.get(POSITION_C));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,9 +188,19 @@ public class SomeCourseMatcher extends BaseGeneratedMatcher<SomeCourseMatch> {
   }
   
   @Override
-  public SomeCourseMatch arrayToMatch(final Object[] match) {
+  protected SomeCourseMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SomeCourseMatch((java.lang.Object) match[POSITION_C]);
+    	return new SomeCourseMatch.Immutable((school.Course) match[POSITION_C]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected SomeCourseMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new SomeCourseMatch.Mutable((school.Course) match[POSITION_C]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

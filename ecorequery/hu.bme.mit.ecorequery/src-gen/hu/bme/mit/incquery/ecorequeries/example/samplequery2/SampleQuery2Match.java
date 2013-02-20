@@ -11,7 +11,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern, 
- * to be used in conjunction with SampleQuery2Matcher.
+ * to be used in conjunction with {@link SampleQuery2Matcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -22,7 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SampleQuery2Processor
  * 
  */
-public final class SampleQuery2Match extends BasePatternMatch {
+public abstract class SampleQuery2Match extends BasePatternMatch {
   private EClass fXElement;
   
   private EClass fYElement;
@@ -37,7 +37,7 @@ public final class SampleQuery2Match extends BasePatternMatch {
   
   private static String[] parameterNames = {"XElement", "YElement", "Relates1", "Relates2", "Label1", "Label2"};
   
-  SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+  private SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     this.fXElement = pXElement;
     this.fYElement = pYElement;
     this.fRelates1 = pRelates1;
@@ -91,6 +91,7 @@ public final class SampleQuery2Match extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("XElement".equals(parameterName) ) {
     	this.fXElement = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
@@ -120,31 +121,37 @@ public final class SampleQuery2Match extends BasePatternMatch {
   }
   
   public void setXElement(final EClass pXElement) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fXElement = pXElement;
     
   }
   
   public void setYElement(final EClass pYElement) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fYElement = pYElement;
     
   }
   
   public void setRelates1(final EReference pRelates1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fRelates1 = pRelates1;
     
   }
   
   public void setRelates2(final EReference pRelates2) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fRelates2 = pRelates2;
     
   }
   
   public void setLabel1(final EAttribute pLabel1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fLabel1 = pLabel1;
     
   }
   
   public void setLabel2(final EAttribute pLabel2) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fLabel2 = pLabel2;
     
   }
@@ -233,4 +240,28 @@ public final class SampleQuery2Match extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends SampleQuery2Match {
+    Mutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+      super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends SampleQuery2Match {
+    Immutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+      super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

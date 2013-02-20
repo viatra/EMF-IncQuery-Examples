@@ -185,6 +185,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pYDate the fixed value of pattern parameter YDate, or null if not bound.
    * @param pCSub the fixed value of pattern parameter CSub, or null if not bound.
    * @param pTName the fixed value of pattern parameter TName, or null if not bound.
@@ -193,7 +194,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * 
    */
   public FinalPattern2Match newMatch(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
-    return new FinalPattern2Match(pYDate, pCSub, pTName, pSName);
+    return new FinalPattern2Match.Immutable(pYDate, pCSub, pTName, pSName);
     
   }
   
@@ -202,7 +203,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Integer> rawAccumulateAllValuesOfYDate(final Object[] parameters) {
+  protected Set<Integer> rawAccumulateAllValuesOfYDate(final Object[] parameters) {
     Set<Integer> results = new HashSet<Integer>();
     rawAccumulateAllValues(POSITION_YDATE, parameters, results);
     return results;
@@ -240,7 +241,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfCSub(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfCSub(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_CSUB, parameters, results);
     return results;
@@ -278,7 +279,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfTName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfTName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_TNAME, parameters, results);
     return results;
@@ -316,7 +317,7 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
@@ -350,9 +351,9 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
   }
   
   @Override
-  public FinalPattern2Match tupleToMatch(final Tuple t) {
+  protected FinalPattern2Match tupleToMatch(final Tuple t) {
     try {
-    	return new FinalPattern2Match((java.lang.Integer) t.get(POSITION_YDATE), (java.lang.String) t.get(POSITION_CSUB), (java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_SNAME));	
+    	return new FinalPattern2Match.Immutable((java.lang.Integer) t.get(POSITION_YDATE), (java.lang.String) t.get(POSITION_CSUB), (java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_SNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -360,9 +361,19 @@ public class FinalPattern2Matcher extends BaseGeneratedMatcher<FinalPattern2Matc
   }
   
   @Override
-  public FinalPattern2Match arrayToMatch(final Object[] match) {
+  protected FinalPattern2Match arrayToMatch(final Object[] match) {
     try {
-    	return new FinalPattern2Match((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
+    	return new FinalPattern2Match.Immutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected FinalPattern2Match arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new FinalPattern2Match.Mutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

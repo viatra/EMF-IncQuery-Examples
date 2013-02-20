@@ -144,12 +144,13 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter E, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public EObjectMatch newMatch(final EObject pE) {
-    return new EObjectMatch(pE);
+    return new EObjectMatch.Immutable(pE);
     
   }
   
@@ -158,7 +159,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EObject> rawAccumulateAllValuesOfE(final Object[] parameters) {
+  protected Set<EObject> rawAccumulateAllValuesOfE(final Object[] parameters) {
     Set<EObject> results = new HashSet<EObject>();
     rawAccumulateAllValues(POSITION_E, parameters, results);
     return results;
@@ -174,9 +175,9 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
   }
   
   @Override
-  public EObjectMatch tupleToMatch(final Tuple t) {
+  protected EObjectMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EObjectMatch((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));	
+    	return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -184,9 +185,19 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
   }
   
   @Override
-  public EObjectMatch arrayToMatch(final Object[] match) {
+  protected EObjectMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EObjectMatch((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
+    	return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EObjectMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EObjectMatch.Mutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

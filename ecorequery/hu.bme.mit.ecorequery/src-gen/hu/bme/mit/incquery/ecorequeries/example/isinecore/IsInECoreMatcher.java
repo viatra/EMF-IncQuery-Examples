@@ -146,12 +146,13 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public IsInECoreMatch newMatch(final EClassifier pElement) {
-    return new IsInECoreMatch(pElement);
+    return new IsInECoreMatch.Immutable(pElement);
     
   }
   
@@ -160,7 +161,7 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClassifier> rawAccumulateAllValuesOfElement(final Object[] parameters) {
+  protected Set<EClassifier> rawAccumulateAllValuesOfElement(final Object[] parameters) {
     Set<EClassifier> results = new HashSet<EClassifier>();
     rawAccumulateAllValues(POSITION_ELEMENT, parameters, results);
     return results;
@@ -176,9 +177,9 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
   }
   
   @Override
-  public IsInECoreMatch tupleToMatch(final Tuple t) {
+  protected IsInECoreMatch tupleToMatch(final Tuple t) {
     try {
-    	return new IsInECoreMatch((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));	
+    	return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,9 +187,19 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
   }
   
   @Override
-  public IsInECoreMatch arrayToMatch(final Object[] match) {
+  protected IsInECoreMatch arrayToMatch(final Object[] match) {
     try {
-    	return new IsInECoreMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+    	return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected IsInECoreMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new IsInECoreMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

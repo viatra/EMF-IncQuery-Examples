@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.schoolsNames pattern, 
- * to be used in conjunction with SchoolsNamesMatcher.
+ * to be used in conjunction with {@link SchoolsNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SchoolsNamesProcessor
  * 
  */
-public final class SchoolsNamesMatch extends BasePatternMatch {
+public abstract class SchoolsNamesMatch extends BasePatternMatch {
   private String fSchName;
   
   private static String[] parameterNames = {"SchName"};
   
-  SchoolsNamesMatch(final String pSchName) {
+  private SchoolsNamesMatch(final String pSchName) {
     this.fSchName = pSchName;
     
   }
@@ -43,6 +43,7 @@ public final class SchoolsNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("SchName".equals(parameterName) ) {
     	this.fSchName = (java.lang.String) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class SchoolsNamesMatch extends BasePatternMatch {
   }
   
   public void setSchName(final String pSchName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSchName = pSchName;
     
   }
@@ -120,4 +122,28 @@ public final class SchoolsNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends SchoolsNamesMatch {
+    Mutable(final String pSchName) {
+      super(pSchName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends SchoolsNamesMatch {
+    Immutable(final String pSchName) {
+      super(pSchName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

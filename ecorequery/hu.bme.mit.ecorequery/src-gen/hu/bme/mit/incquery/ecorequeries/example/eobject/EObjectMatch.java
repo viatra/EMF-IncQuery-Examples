@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EObject pattern, 
- * to be used in conjunction with EObjectMatcher.
+ * to be used in conjunction with {@link EObjectMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EObjectProcessor
  * 
  */
-public final class EObjectMatch extends BasePatternMatch {
+public abstract class EObjectMatch extends BasePatternMatch {
   private EObject fE;
   
   private static String[] parameterNames = {"E"};
   
-  EObjectMatch(final EObject pE) {
+  private EObjectMatch(final EObject pE) {
     this.fE = pE;
     
   }
@@ -44,6 +44,7 @@ public final class EObjectMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EObject) newValue;
     	return true;
@@ -53,6 +54,7 @@ public final class EObjectMatch extends BasePatternMatch {
   }
   
   public void setE(final EObject pE) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
     
   }
@@ -121,4 +123,28 @@ public final class EObjectMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends EObjectMatch {
+    Mutable(final EObject pE) {
+      super(pE);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends EObjectMatch {
+    Immutable(final EObject pE) {
+      super(pE);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

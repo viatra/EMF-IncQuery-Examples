@@ -167,6 +167,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter E, or null if not bound.
    * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
    * @param pType the fixed value of pattern parameter Type, or null if not bound.
@@ -174,7 +175,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public EClassAttributeMatch newMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
-    return new EClassAttributeMatch(pE, pAttr, pType);
+    return new EClassAttributeMatch.Immutable(pE, pAttr, pType);
     
   }
   
@@ -183,7 +184,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfE(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfE(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_E, parameters, results);
     return results;
@@ -221,7 +222,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
+  protected Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
     Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_ATTR, parameters, results);
     return results;
@@ -259,7 +260,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClassifier> rawAccumulateAllValuesOfType(final Object[] parameters) {
+  protected Set<EClassifier> rawAccumulateAllValuesOfType(final Object[] parameters) {
     Set<EClassifier> results = new HashSet<EClassifier>();
     rawAccumulateAllValues(POSITION_TYPE, parameters, results);
     return results;
@@ -293,9 +294,9 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   }
   
   @Override
-  public EClassAttributeMatch tupleToMatch(final Tuple t) {
+  protected EClassAttributeMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));	
+    	return new EClassAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -303,9 +304,19 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   }
   
   @Override
-  public EClassAttributeMatch arrayToMatch(final Object[] match) {
+  protected EClassAttributeMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
+    	return new EClassAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EClassAttributeMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EClassAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

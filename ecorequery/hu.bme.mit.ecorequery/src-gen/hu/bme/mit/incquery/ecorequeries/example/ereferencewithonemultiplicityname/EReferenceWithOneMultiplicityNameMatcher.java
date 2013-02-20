@@ -145,12 +145,13 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseGeneratedMatch
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public EReferenceWithOneMultiplicityNameMatch newMatch(final String pERefName) {
-    return new EReferenceWithOneMultiplicityNameMatch(pERefName);
+    return new EReferenceWithOneMultiplicityNameMatch.Immutable(pERefName);
     
   }
   
@@ -159,7 +160,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseGeneratedMatch
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfERefName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfERefName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_EREFNAME, parameters, results);
     return results;
@@ -175,9 +176,9 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseGeneratedMatch
   }
   
   @Override
-  public EReferenceWithOneMultiplicityNameMatch tupleToMatch(final Tuple t) {
+  protected EReferenceWithOneMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EReferenceWithOneMultiplicityNameMatch((java.lang.String) t.get(POSITION_EREFNAME));	
+    	return new EReferenceWithOneMultiplicityNameMatch.Immutable((java.lang.String) t.get(POSITION_EREFNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -185,9 +186,19 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseGeneratedMatch
   }
   
   @Override
-  public EReferenceWithOneMultiplicityNameMatch arrayToMatch(final Object[] match) {
+  protected EReferenceWithOneMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EReferenceWithOneMultiplicityNameMatch((java.lang.String) match[POSITION_EREFNAME]);
+    	return new EReferenceWithOneMultiplicityNameMatch.Immutable((java.lang.String) match[POSITION_EREFNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EReferenceWithOneMultiplicityNameMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EReferenceWithOneMultiplicityNameMatch.Mutable((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

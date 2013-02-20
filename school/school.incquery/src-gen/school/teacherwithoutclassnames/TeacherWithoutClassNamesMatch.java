@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.teacherWithoutClassNames pattern, 
- * to be used in conjunction with TeacherWithoutClassNamesMatcher.
+ * to be used in conjunction with {@link TeacherWithoutClassNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TeacherWithoutClassNamesProcessor
  * 
  */
-public final class TeacherWithoutClassNamesMatch extends BasePatternMatch {
+public abstract class TeacherWithoutClassNamesMatch extends BasePatternMatch {
   private String fTNames;
   
   private static String[] parameterNames = {"TNames"};
   
-  TeacherWithoutClassNamesMatch(final String pTNames) {
+  private TeacherWithoutClassNamesMatch(final String pTNames) {
     this.fTNames = pTNames;
     
   }
@@ -43,6 +43,7 @@ public final class TeacherWithoutClassNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("TNames".equals(parameterName) ) {
     	this.fTNames = (java.lang.String) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class TeacherWithoutClassNamesMatch extends BasePatternMatch {
   }
   
   public void setTNames(final String pTNames) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTNames = pTNames;
     
   }
@@ -120,4 +122,28 @@ public final class TeacherWithoutClassNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends TeacherWithoutClassNamesMatch {
+    Mutable(final String pTNames) {
+      super(pTNames);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TeacherWithoutClassNamesMatch {
+    Immutable(final String pTNames) {
+      super(pTNames);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

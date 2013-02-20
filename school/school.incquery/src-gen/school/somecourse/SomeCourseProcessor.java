@@ -1,6 +1,7 @@
 package school.somecourse;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
+import school.Course;
 import school.somecourse.SomeCourseMatch;
 
 /**
@@ -15,7 +16,7 @@ public abstract class SomeCourseProcessor implements IMatchProcessor<SomeCourseM
    * @param pC the value of pattern parameter C in the currently processed match 
    * 
    */
-  public abstract void process(final Object C);
+  public abstract void process(final Course C);
   
   @Override
   public void process(final SomeCourseMatch match) {

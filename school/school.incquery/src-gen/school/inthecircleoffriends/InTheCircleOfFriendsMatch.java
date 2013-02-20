@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Student;
 
 /**
  * Pattern-specific match representation of the school.inTheCircleOfFriends pattern, 
- * to be used in conjunction with InTheCircleOfFriendsMatcher.
+ * to be used in conjunction with {@link InTheCircleOfFriendsMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +20,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see InTheCircleOfFriendsProcessor
  * 
  */
-public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
-  private Object fS1;
+public abstract class InTheCircleOfFriendsMatch extends BasePatternMatch {
+  private Student fS1;
   
-  private Object fSomeone;
+  private Student fSomeone;
   
   private static String[] parameterNames = {"S1", "Someone"};
   
-  InTheCircleOfFriendsMatch(final Object pS1, final Object pSomeone) {
+  private InTheCircleOfFriendsMatch(final Student pS1, final Student pSomeone) {
     this.fS1 = pS1;
     this.fSomeone = pSomeone;
     
@@ -40,36 +41,39 @@ public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
     
   }
   
-  public Object getS1() {
+  public Student getS1() {
     return this.fS1;
     
   }
   
-  public Object getSomeone() {
+  public Student getSomeone() {
     return this.fSomeone;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("S1".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS1 = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("S1".equals(parameterName) ) {
+    	this.fS1 = (school.Student) newValue;
     	return true;
     }
-    if ("Someone".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fSomeone = (java.lang.Object) newValue;
+    if ("Someone".equals(parameterName) ) {
+    	this.fSomeone = (school.Student) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setS1(final Object pS1) {
+  public void setS1(final Student pS1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS1 = pS1;
     
   }
   
-  public void setSomeone(final Object pSomeone) {
+  public void setSomeone(final Student pSomeone) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSomeone = pSomeone;
     
   }
@@ -142,4 +146,28 @@ public final class InTheCircleOfFriendsMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends InTheCircleOfFriendsMatch {
+    Mutable(final Student pS1, final Student pSomeone) {
+      super(pS1, pSomeone);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends InTheCircleOfFriendsMatch {
+    Immutable(final Student pS1, final Student pSomeone) {
+      super(pS1, pSomeone);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

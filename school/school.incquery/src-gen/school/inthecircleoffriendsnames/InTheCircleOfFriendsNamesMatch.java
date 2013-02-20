@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.inTheCircleOfFriendsNames pattern, 
- * to be used in conjunction with InTheCircleOfFriendsNamesMatcher.
+ * to be used in conjunction with {@link InTheCircleOfFriendsNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +19,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see InTheCircleOfFriendsNamesProcessor
  * 
  */
-public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
+public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   private String fS1Name;
   
   private String fSomeoneName;
   
   private static String[] parameterNames = {"S1Name", "SomeoneName"};
   
-  InTheCircleOfFriendsNamesMatch(final String pS1Name, final String pSomeoneName) {
+  private InTheCircleOfFriendsNamesMatch(final String pS1Name, final String pSomeoneName) {
     this.fS1Name = pS1Name;
     this.fSomeoneName = pSomeoneName;
     
@@ -52,6 +52,7 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("S1Name".equals(parameterName) ) {
     	this.fS1Name = (java.lang.String) newValue;
     	return true;
@@ -65,11 +66,13 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   }
   
   public void setS1Name(final String pS1Name) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS1Name = pS1Name;
     
   }
   
   public void setSomeoneName(final String pSomeoneName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSomeoneName = pSomeoneName;
     
   }
@@ -142,4 +145,28 @@ public final class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends InTheCircleOfFriendsNamesMatch {
+    Mutable(final String pS1Name, final String pSomeoneName) {
+      super(pS1Name, pSomeoneName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends InTheCircleOfFriendsNamesMatch {
+    Immutable(final String pS1Name, final String pSomeoneName) {
+      super(pS1Name, pSomeoneName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

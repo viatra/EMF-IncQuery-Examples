@@ -12,6 +12,10 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
+import school.Course;
+import school.Student;
+import school.Teacher;
+import school.Year;
 import school.finalpattern.FinalPatternMatch;
 import school.finalpattern.FinalPatternMatcherFactory;
 
@@ -89,7 +93,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return matches represented as a FinalPatternMatch object.
    * 
    */
-  public Collection<FinalPatternMatch> getAllMatches(final Object pY, final Object pC, final Object pT, final Object pS) {
+  public Collection<FinalPatternMatch> getAllMatches(final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawGetAllMatches(new Object[]{pY, pC, pT, pS});
   }
   
@@ -103,7 +107,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return a match represented as a FinalPatternMatch object, or null if no match is found.
    * 
    */
-  public FinalPatternMatch getOneArbitraryMatch(final Object pY, final Object pC, final Object pT, final Object pS) {
+  public FinalPatternMatch getOneArbitraryMatch(final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawGetOneArbitraryMatch(new Object[]{pY, pC, pT, pS});
   }
   
@@ -117,7 +121,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Object pY, final Object pC, final Object pT, final Object pS) {
+  public boolean hasMatch(final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawHasMatch(new Object[]{pY, pC, pT, pS});
   }
   
@@ -130,7 +134,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Object pY, final Object pC, final Object pT, final Object pS) {
+  public int countMatches(final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawCountMatches(new Object[]{pY, pC, pT, pS});
   }
   
@@ -143,7 +147,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Object pY, final Object pC, final Object pT, final Object pS, final IMatchProcessor<? super FinalPatternMatch> processor) {
+  public void forEachMatch(final Year pY, final Course pC, final Teacher pT, final Student pS, final IMatchProcessor<? super FinalPatternMatch> processor) {
     rawForEachMatch(new Object[]{pY, pC, pT, pS}, processor);
   }
   
@@ -158,7 +162,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Object pY, final Object pC, final Object pT, final Object pS, final IMatchProcessor<? super FinalPatternMatch> processor) {
+  public boolean forOneArbitraryMatch(final Year pY, final Course pC, final Teacher pT, final Student pS, final IMatchProcessor<? super FinalPatternMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pY, pC, pT, pS}, processor);
   }
   
@@ -176,13 +180,14 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the delta monitor.
    * 
    */
-  public DeltaMonitor<FinalPatternMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Object pY, final Object pC, final Object pT, final Object pS) {
+  public DeltaMonitor<FinalPatternMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pY, pC, pT, pS});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pY the fixed value of pattern parameter Y, or null if not bound.
    * @param pC the fixed value of pattern parameter C, or null if not bound.
    * @param pT the fixed value of pattern parameter T, or null if not bound.
@@ -190,8 +195,8 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the (partial) match object.
    * 
    */
-  public FinalPatternMatch newMatch(final Object pY, final Object pC, final Object pT, final Object pS) {
-    return new FinalPatternMatch(pY, pC, pT, pS);
+  public FinalPatternMatch newMatch(final Year pY, final Course pC, final Teacher pT, final Student pS) {
+    return new FinalPatternMatch.Immutable(pY, pC, pT, pS);
     
   }
   
@@ -200,8 +205,8 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfY(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Year> rawAccumulateAllValuesOfY(final Object[] parameters) {
+    Set<Year> results = new HashSet<Year>();
     rawAccumulateAllValues(POSITION_Y, parameters, results);
     return results;
   }
@@ -211,7 +216,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfY() {
+  public Set<Year> getAllValuesOfY() {
     return rawAccumulateAllValuesOfY(emptyArray());
   }
   
@@ -220,7 +225,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfY(final FinalPatternMatch partialMatch) {
+  public Set<Year> getAllValuesOfY(final FinalPatternMatch partialMatch) {
     return rawAccumulateAllValuesOfY(partialMatch.toArray());
   }
   
@@ -229,7 +234,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfY(final Object pC, final Object pT, final Object pS) {
+  public Set<Year> getAllValuesOfY(final Course pC, final Teacher pT, final Student pS) {
     return rawAccumulateAllValuesOfY(new Object[]{null, pC, pT, pS});
   }
   
@@ -238,8 +243,8 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfC(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Course> rawAccumulateAllValuesOfC(final Object[] parameters) {
+    Set<Course> results = new HashSet<Course>();
     rawAccumulateAllValues(POSITION_C, parameters, results);
     return results;
   }
@@ -249,7 +254,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfC() {
+  public Set<Course> getAllValuesOfC() {
     return rawAccumulateAllValuesOfC(emptyArray());
   }
   
@@ -258,7 +263,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfC(final FinalPatternMatch partialMatch) {
+  public Set<Course> getAllValuesOfC(final FinalPatternMatch partialMatch) {
     return rawAccumulateAllValuesOfC(partialMatch.toArray());
   }
   
@@ -267,7 +272,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfC(final Object pY, final Object pT, final Object pS) {
+  public Set<Course> getAllValuesOfC(final Year pY, final Teacher pT, final Student pS) {
     return rawAccumulateAllValuesOfC(new Object[]{pY, null, pT, pS});
   }
   
@@ -276,8 +281,8 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfT(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Teacher> rawAccumulateAllValuesOfT(final Object[] parameters) {
+    Set<Teacher> results = new HashSet<Teacher>();
     rawAccumulateAllValues(POSITION_T, parameters, results);
     return results;
   }
@@ -287,7 +292,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfT() {
+  public Set<Teacher> getAllValuesOfT() {
     return rawAccumulateAllValuesOfT(emptyArray());
   }
   
@@ -296,7 +301,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfT(final FinalPatternMatch partialMatch) {
+  public Set<Teacher> getAllValuesOfT(final FinalPatternMatch partialMatch) {
     return rawAccumulateAllValuesOfT(partialMatch.toArray());
   }
   
@@ -305,7 +310,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfT(final Object pY, final Object pC, final Object pS) {
+  public Set<Teacher> getAllValuesOfT(final Year pY, final Course pC, final Student pS) {
     return rawAccumulateAllValuesOfT(new Object[]{pY, pC, null, pS});
   }
   
@@ -314,8 +319,8 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> rawAccumulateAllValuesOfS(final Object[] parameters) {
-    Set<Object> results = new HashSet<Object>();
+  protected Set<Student> rawAccumulateAllValuesOfS(final Object[] parameters) {
+    Set<Student> results = new HashSet<Student>();
     rawAccumulateAllValues(POSITION_S, parameters, results);
     return results;
   }
@@ -325,7 +330,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS() {
+  public Set<Student> getAllValuesOfS() {
     return rawAccumulateAllValuesOfS(emptyArray());
   }
   
@@ -334,7 +339,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS(final FinalPatternMatch partialMatch) {
+  public Set<Student> getAllValuesOfS(final FinalPatternMatch partialMatch) {
     return rawAccumulateAllValuesOfS(partialMatch.toArray());
   }
   
@@ -343,14 +348,14 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Object> getAllValuesOfS(final Object pY, final Object pC, final Object pT) {
+  public Set<Student> getAllValuesOfS(final Year pY, final Course pC, final Teacher pT) {
     return rawAccumulateAllValuesOfS(new Object[]{pY, pC, pT, null});
   }
   
   @Override
-  public FinalPatternMatch tupleToMatch(final Tuple t) {
+  protected FinalPatternMatch tupleToMatch(final Tuple t) {
     try {
-    	return new FinalPatternMatch((java.lang.Object) t.get(POSITION_Y), (java.lang.Object) t.get(POSITION_C), (java.lang.Object) t.get(POSITION_T), (java.lang.Object) t.get(POSITION_S));	
+    	return new FinalPatternMatch.Immutable((school.Year) t.get(POSITION_Y), (school.Course) t.get(POSITION_C), (school.Teacher) t.get(POSITION_T), (school.Student) t.get(POSITION_S));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -358,9 +363,19 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
   }
   
   @Override
-  public FinalPatternMatch arrayToMatch(final Object[] match) {
+  protected FinalPatternMatch arrayToMatch(final Object[] match) {
     try {
-    	return new FinalPatternMatch((java.lang.Object) match[POSITION_Y], (java.lang.Object) match[POSITION_C], (java.lang.Object) match[POSITION_T], (java.lang.Object) match[POSITION_S]);
+    	return new FinalPatternMatch.Immutable((school.Year) match[POSITION_Y], (school.Course) match[POSITION_C], (school.Teacher) match[POSITION_T], (school.Student) match[POSITION_S]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected FinalPatternMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new FinalPatternMatch.Mutable((school.Year) match[POSITION_Y], (school.Course) match[POSITION_C], (school.Teacher) match[POSITION_T], (school.Student) match[POSITION_S]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

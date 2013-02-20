@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity pattern, 
- * to be used in conjunction with EReferenceWithStarMultiplicityMatcher.
+ * to be used in conjunction with {@link EReferenceWithStarMultiplicityMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EReferenceWithStarMultiplicityProcessor
  * 
  */
-public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch {
+public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMatch {
   private EReference fERef;
   
   private static String[] parameterNames = {"ERef"};
   
-  EReferenceWithStarMultiplicityMatch(final EReference pERef) {
+  private EReferenceWithStarMultiplicityMatch(final EReference pERef) {
     this.fERef = pERef;
     
   }
@@ -44,6 +44,7 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("ERef".equals(parameterName) ) {
     	this.fERef = (org.eclipse.emf.ecore.EReference) newValue;
     	return true;
@@ -53,6 +54,7 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
   }
   
   public void setERef(final EReference pERef) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fERef = pERef;
     
   }
@@ -121,4 +123,28 @@ public final class EReferenceWithStarMultiplicityMatch extends BasePatternMatch 
     }
     
   }
+  static final class Mutable extends EReferenceWithStarMultiplicityMatch {
+    Mutable(final EReference pERef) {
+      super(pERef);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends EReferenceWithStarMultiplicityMatch {
+    Immutable(final EReference pERef) {
+      super(pERef);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

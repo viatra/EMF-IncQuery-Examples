@@ -143,12 +143,13 @@ public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch>
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSchName the fixed value of pattern parameter SchName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public SchoolsNamesMatch newMatch(final String pSchName) {
-    return new SchoolsNamesMatch(pSchName);
+    return new SchoolsNamesMatch.Immutable(pSchName);
     
   }
   
@@ -157,7 +158,7 @@ public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch>
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SCHNAME, parameters, results);
     return results;
@@ -173,9 +174,9 @@ public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch>
   }
   
   @Override
-  public SchoolsNamesMatch tupleToMatch(final Tuple t) {
+  protected SchoolsNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SchoolsNamesMatch((java.lang.String) t.get(POSITION_SCHNAME));	
+    	return new SchoolsNamesMatch.Immutable((java.lang.String) t.get(POSITION_SCHNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -183,9 +184,19 @@ public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch>
   }
   
   @Override
-  public SchoolsNamesMatch arrayToMatch(final Object[] match) {
+  protected SchoolsNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SchoolsNamesMatch((java.lang.String) match[POSITION_SCHNAME]);
+    	return new SchoolsNamesMatch.Immutable((java.lang.String) match[POSITION_SCHNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected SchoolsNamesMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new SchoolsNamesMatch.Mutable((java.lang.String) match[POSITION_SCHNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

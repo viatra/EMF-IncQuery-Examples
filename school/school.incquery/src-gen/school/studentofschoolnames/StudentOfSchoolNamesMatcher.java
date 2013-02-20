@@ -155,13 +155,14 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSName the fixed value of pattern parameter SName, or null if not bound.
    * @param pSchName the fixed value of pattern parameter SchName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public StudentOfSchoolNamesMatch newMatch(final String pSName, final String pSchName) {
-    return new StudentOfSchoolNamesMatch(pSName, pSchName);
+    return new StudentOfSchoolNamesMatch.Immutable(pSName, pSchName);
     
   }
   
@@ -170,7 +171,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
@@ -208,7 +209,7 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSchName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SCHNAME, parameters, results);
     return results;
@@ -242,9 +243,9 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
   }
   
   @Override
-  public StudentOfSchoolNamesMatch tupleToMatch(final Tuple t) {
+  protected StudentOfSchoolNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new StudentOfSchoolNamesMatch((java.lang.String) t.get(POSITION_SNAME), (java.lang.String) t.get(POSITION_SCHNAME));	
+    	return new StudentOfSchoolNamesMatch.Immutable((java.lang.String) t.get(POSITION_SNAME), (java.lang.String) t.get(POSITION_SCHNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -252,9 +253,19 @@ public class StudentOfSchoolNamesMatcher extends BaseGeneratedMatcher<StudentOfS
   }
   
   @Override
-  public StudentOfSchoolNamesMatch arrayToMatch(final Object[] match) {
+  protected StudentOfSchoolNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new StudentOfSchoolNamesMatch((java.lang.String) match[POSITION_SNAME], (java.lang.String) match[POSITION_SCHNAME]);
+    	return new StudentOfSchoolNamesMatch.Immutable((java.lang.String) match[POSITION_SNAME], (java.lang.String) match[POSITION_SCHNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected StudentOfSchoolNamesMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new StudentOfSchoolNamesMatch.Mutable((java.lang.String) match[POSITION_SNAME], (java.lang.String) match[POSITION_SCHNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

@@ -11,7 +11,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClassAttribute pattern, 
- * to be used in conjunction with EClassAttributeMatcher.
+ * to be used in conjunction with {@link EClassAttributeMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -22,7 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EClassAttributeProcessor
  * 
  */
-public final class EClassAttributeMatch extends BasePatternMatch {
+public abstract class EClassAttributeMatch extends BasePatternMatch {
   private EClass fE;
   
   private EAttribute fAttr;
@@ -31,7 +31,7 @@ public final class EClassAttributeMatch extends BasePatternMatch {
   
   private static String[] parameterNames = {"E", "Attr", "Type"};
   
-  EClassAttributeMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
+  private EClassAttributeMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     this.fE = pE;
     this.fAttr = pAttr;
     this.fType = pType;
@@ -64,6 +64,7 @@ public final class EClassAttributeMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("E".equals(parameterName) ) {
     	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
@@ -81,16 +82,19 @@ public final class EClassAttributeMatch extends BasePatternMatch {
   }
   
   public void setE(final EClass pE) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
     
   }
   
   public void setAttr(final EAttribute pAttr) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fAttr = pAttr;
     
   }
   
   public void setType(final EClassifier pType) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fType = pType;
     
   }
@@ -167,4 +171,28 @@ public final class EClassAttributeMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends EClassAttributeMatch {
+    Mutable(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
+      super(pE, pAttr, pType);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends EClassAttributeMatch {
+    Immutable(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
+      super(pE, pAttr, pType);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

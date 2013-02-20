@@ -143,12 +143,13 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> {
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pEName the fixed value of pattern parameter EName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public EClassNameMatch newMatch(final String pEName) {
-    return new EClassNameMatch(pEName);
+    return new EClassNameMatch.Immutable(pEName);
     
   }
   
@@ -157,7 +158,7 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfEName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfEName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_ENAME, parameters, results);
     return results;
@@ -173,9 +174,9 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> {
   }
   
   @Override
-  public EClassNameMatch tupleToMatch(final Tuple t) {
+  protected EClassNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassNameMatch((java.lang.String) t.get(POSITION_ENAME));	
+    	return new EClassNameMatch.Immutable((java.lang.String) t.get(POSITION_ENAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -183,9 +184,19 @@ public class EClassNameMatcher extends BaseGeneratedMatcher<EClassNameMatch> {
   }
   
   @Override
-  public EClassNameMatch arrayToMatch(final Object[] match) {
+  protected EClassNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassNameMatch((java.lang.String) match[POSITION_ENAME]);
+    	return new EClassNameMatch.Immutable((java.lang.String) match[POSITION_ENAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EClassNameMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EClassNameMatch.Mutable((java.lang.String) match[POSITION_ENAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

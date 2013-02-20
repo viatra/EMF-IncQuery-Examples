@@ -155,13 +155,14 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pTName the fixed value of pattern parameter TName, or null if not bound.
    * @param pSCName the fixed value of pattern parameter SCName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public ClassesOfTeacherNamesMatch newMatch(final String pTName, final Character pSCName) {
-    return new ClassesOfTeacherNamesMatch(pTName, pSCName);
+    return new ClassesOfTeacherNamesMatch.Immutable(pTName, pSCName);
     
   }
   
@@ -170,7 +171,7 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfTName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfTName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_TNAME, parameters, results);
     return results;
@@ -208,7 +209,7 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Character> rawAccumulateAllValuesOfSCName(final Object[] parameters) {
+  protected Set<Character> rawAccumulateAllValuesOfSCName(final Object[] parameters) {
     Set<Character> results = new HashSet<Character>();
     rawAccumulateAllValues(POSITION_SCNAME, parameters, results);
     return results;
@@ -242,9 +243,9 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
   }
   
   @Override
-  public ClassesOfTeacherNamesMatch tupleToMatch(final Tuple t) {
+  protected ClassesOfTeacherNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ClassesOfTeacherNamesMatch((java.lang.String) t.get(POSITION_TNAME), (java.lang.Character) t.get(POSITION_SCNAME));	
+    	return new ClassesOfTeacherNamesMatch.Immutable((java.lang.String) t.get(POSITION_TNAME), (java.lang.Character) t.get(POSITION_SCNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -252,9 +253,19 @@ public class ClassesOfTeacherNamesMatcher extends BaseGeneratedMatcher<ClassesOf
   }
   
   @Override
-  public ClassesOfTeacherNamesMatch arrayToMatch(final Object[] match) {
+  protected ClassesOfTeacherNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ClassesOfTeacherNamesMatch((java.lang.String) match[POSITION_TNAME], (java.lang.Character) match[POSITION_SCNAME]);
+    	return new ClassesOfTeacherNamesMatch.Immutable((java.lang.String) match[POSITION_TNAME], (java.lang.Character) match[POSITION_SCNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected ClassesOfTeacherNamesMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new ClassesOfTeacherNamesMatch.Mutable((java.lang.String) match[POSITION_TNAME], (java.lang.Character) match[POSITION_SCNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

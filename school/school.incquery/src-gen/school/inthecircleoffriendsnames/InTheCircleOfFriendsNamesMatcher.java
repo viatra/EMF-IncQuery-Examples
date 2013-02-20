@@ -155,13 +155,14 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pS1Name the fixed value of pattern parameter S1Name, or null if not bound.
    * @param pSomeoneName the fixed value of pattern parameter SomeoneName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public InTheCircleOfFriendsNamesMatch newMatch(final String pS1Name, final String pSomeoneName) {
-    return new InTheCircleOfFriendsNamesMatch(pS1Name, pSomeoneName);
+    return new InTheCircleOfFriendsNamesMatch.Immutable(pS1Name, pSomeoneName);
     
   }
   
@@ -170,7 +171,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfS1Name(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfS1Name(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_S1NAME, parameters, results);
     return results;
@@ -208,7 +209,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSomeoneName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSomeoneName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SOMEONENAME, parameters, results);
     return results;
@@ -242,9 +243,9 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
   }
   
   @Override
-  public InTheCircleOfFriendsNamesMatch tupleToMatch(final Tuple t) {
+  protected InTheCircleOfFriendsNamesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new InTheCircleOfFriendsNamesMatch((java.lang.String) t.get(POSITION_S1NAME), (java.lang.String) t.get(POSITION_SOMEONENAME));	
+    	return new InTheCircleOfFriendsNamesMatch.Immutable((java.lang.String) t.get(POSITION_S1NAME), (java.lang.String) t.get(POSITION_SOMEONENAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -252,9 +253,19 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
   }
   
   @Override
-  public InTheCircleOfFriendsNamesMatch arrayToMatch(final Object[] match) {
+  protected InTheCircleOfFriendsNamesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new InTheCircleOfFriendsNamesMatch((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
+    	return new InTheCircleOfFriendsNamesMatch.Immutable((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected InTheCircleOfFriendsNamesMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new InTheCircleOfFriendsNamesMatch.Mutable((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

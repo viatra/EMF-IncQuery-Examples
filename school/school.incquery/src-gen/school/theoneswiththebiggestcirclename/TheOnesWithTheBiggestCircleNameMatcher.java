@@ -144,12 +144,13 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSName the fixed value of pattern parameter SName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public TheOnesWithTheBiggestCircleNameMatch newMatch(final String pSName) {
-    return new TheOnesWithTheBiggestCircleNameMatch(pSName);
+    return new TheOnesWithTheBiggestCircleNameMatch.Immutable(pSName);
     
   }
   
@@ -158,7 +159,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SNAME, parameters, results);
     return results;
@@ -174,9 +175,9 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
   }
   
   @Override
-  public TheOnesWithTheBiggestCircleNameMatch tupleToMatch(final Tuple t) {
+  protected TheOnesWithTheBiggestCircleNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.String) t.get(POSITION_SNAME));	
+    	return new TheOnesWithTheBiggestCircleNameMatch.Immutable((java.lang.String) t.get(POSITION_SNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -184,9 +185,19 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseGeneratedMatcher
   }
   
   @Override
-  public TheOnesWithTheBiggestCircleNameMatch arrayToMatch(final Object[] match) {
+  protected TheOnesWithTheBiggestCircleNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TheOnesWithTheBiggestCircleNameMatch((java.lang.String) match[POSITION_SNAME]);
+    	return new TheOnesWithTheBiggestCircleNameMatch.Immutable((java.lang.String) match[POSITION_SNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected TheOnesWithTheBiggestCircleNameMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new TheOnesWithTheBiggestCircleNameMatch.Mutable((java.lang.String) match[POSITION_SNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

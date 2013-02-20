@@ -9,7 +9,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern, 
- * to be used in conjunction with SuperTypeOfMatcher.
+ * to be used in conjunction with {@link SuperTypeOfMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -20,14 +20,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SuperTypeOfProcessor
  * 
  */
-public final class SuperTypeOfMatch extends BasePatternMatch {
+public abstract class SuperTypeOfMatch extends BasePatternMatch {
   private EClass fSuper;
   
   private EClass fSub;
   
   private static String[] parameterNames = {"Super", "Sub"};
   
-  SuperTypeOfMatch(final EClass pSuper, final EClass pSub) {
+  private SuperTypeOfMatch(final EClass pSuper, final EClass pSub) {
     this.fSuper = pSuper;
     this.fSub = pSub;
     
@@ -53,6 +53,7 @@ public final class SuperTypeOfMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Super".equals(parameterName) ) {
     	this.fSuper = (org.eclipse.emf.ecore.EClass) newValue;
     	return true;
@@ -66,11 +67,13 @@ public final class SuperTypeOfMatch extends BasePatternMatch {
   }
   
   public void setSuper(final EClass pSuper) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSuper = pSuper;
     
   }
   
   public void setSub(final EClass pSub) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSub = pSub;
     
   }
@@ -143,4 +146,28 @@ public final class SuperTypeOfMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends SuperTypeOfMatch {
+    Mutable(final EClass pSuper, final EClass pSub) {
+      super(pSuper, pSub);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends SuperTypeOfMatch {
+    Immutable(final EClass pSuper, final EClass pSub) {
+      super(pSuper, pSub);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

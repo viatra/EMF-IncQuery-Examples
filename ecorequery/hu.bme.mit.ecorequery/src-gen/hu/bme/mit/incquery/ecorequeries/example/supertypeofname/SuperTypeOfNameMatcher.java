@@ -154,13 +154,14 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSuperName the fixed value of pattern parameter SuperName, or null if not bound.
    * @param pSubName the fixed value of pattern parameter SubName, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public SuperTypeOfNameMatch newMatch(final String pSuperName, final String pSubName) {
-    return new SuperTypeOfNameMatch(pSuperName, pSubName);
+    return new SuperTypeOfNameMatch.Immutable(pSuperName, pSubName);
     
   }
   
@@ -169,7 +170,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSuperName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSuperName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SUPERNAME, parameters, results);
     return results;
@@ -207,7 +208,7 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfSubName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfSubName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_SUBNAME, parameters, results);
     return results;
@@ -241,9 +242,9 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
   }
   
   @Override
-  public SuperTypeOfNameMatch tupleToMatch(final Tuple t) {
+  protected SuperTypeOfNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new SuperTypeOfNameMatch((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));	
+    	return new SuperTypeOfNameMatch.Immutable((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -251,9 +252,19 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
   }
   
   @Override
-  public SuperTypeOfNameMatch arrayToMatch(final Object[] match) {
+  protected SuperTypeOfNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new SuperTypeOfNameMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+    	return new SuperTypeOfNameMatch.Immutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected SuperTypeOfNameMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new SuperTypeOfNameMatch.Mutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

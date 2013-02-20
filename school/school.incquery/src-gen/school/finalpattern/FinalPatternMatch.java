@@ -5,10 +5,14 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Course;
+import school.Student;
+import school.Teacher;
+import school.Year;
 
 /**
  * Pattern-specific match representation of the school.finalPattern pattern, 
- * to be used in conjunction with FinalPatternMatcher.
+ * to be used in conjunction with {@link FinalPatternMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,18 +23,18 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see FinalPatternProcessor
  * 
  */
-public final class FinalPatternMatch extends BasePatternMatch {
-  private Object fY;
+public abstract class FinalPatternMatch extends BasePatternMatch {
+  private Year fY;
   
-  private Object fC;
+  private Course fC;
   
-  private Object fT;
+  private Teacher fT;
   
-  private Object fS;
+  private Student fS;
   
   private static String[] parameterNames = {"Y", "C", "T", "S"};
   
-  FinalPatternMatch(final Object pY, final Object pC, final Object pT, final Object pS) {
+  private FinalPatternMatch(final Year pY, final Course pC, final Teacher pT, final Student pS) {
     this.fY = pY;
     this.fC = pC;
     this.fT = pT;
@@ -48,64 +52,69 @@ public final class FinalPatternMatch extends BasePatternMatch {
     
   }
   
-  public Object getY() {
+  public Year getY() {
     return this.fY;
     
   }
   
-  public Object getC() {
+  public Course getC() {
     return this.fC;
     
   }
   
-  public Object getT() {
+  public Teacher getT() {
     return this.fT;
     
   }
   
-  public Object getS() {
+  public Student getS() {
     return this.fS;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("Y".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fY = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("Y".equals(parameterName) ) {
+    	this.fY = (school.Year) newValue;
     	return true;
     }
-    if ("C".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fC = (java.lang.Object) newValue;
+    if ("C".equals(parameterName) ) {
+    	this.fC = (school.Course) newValue;
     	return true;
     }
-    if ("T".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fT = (java.lang.Object) newValue;
+    if ("T".equals(parameterName) ) {
+    	this.fT = (school.Teacher) newValue;
     	return true;
     }
-    if ("S".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fS = (java.lang.Object) newValue;
+    if ("S".equals(parameterName) ) {
+    	this.fS = (school.Student) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setY(final Object pY) {
+  public void setY(final Year pY) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fY = pY;
     
   }
   
-  public void setC(final Object pC) {
+  public void setC(final Course pC) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fC = pC;
     
   }
   
-  public void setT(final Object pT) {
+  public void setT(final Teacher pT) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fT = pT;
     
   }
   
-  public void setS(final Object pS) {
+  public void setS(final Student pS) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fS = pS;
     
   }
@@ -186,4 +195,28 @@ public final class FinalPatternMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends FinalPatternMatch {
+    Mutable(final Year pY, final Course pC, final Teacher pT, final Student pS) {
+      super(pY, pC, pT, pS);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends FinalPatternMatch {
+    Immutable(final Year pY, final Course pC, final Teacher pT, final Student pS) {
+      super(pY, pC, pT, pS);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

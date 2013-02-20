@@ -144,12 +144,13 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pName the fixed value of pattern parameter Name, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public ECoreNamedElementNameMatch newMatch(final String pName) {
-    return new ECoreNamedElementNameMatch(pName);
+    return new ECoreNamedElementNameMatch.Immutable(pName);
     
   }
   
@@ -158,7 +159,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<String> rawAccumulateAllValuesOfName(final Object[] parameters) {
+  protected Set<String> rawAccumulateAllValuesOfName(final Object[] parameters) {
     Set<String> results = new HashSet<String>();
     rawAccumulateAllValues(POSITION_NAME, parameters, results);
     return results;
@@ -174,9 +175,9 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
   }
   
   @Override
-  public ECoreNamedElementNameMatch tupleToMatch(final Tuple t) {
+  protected ECoreNamedElementNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new ECoreNamedElementNameMatch((java.lang.String) t.get(POSITION_NAME));	
+    	return new ECoreNamedElementNameMatch.Immutable((java.lang.String) t.get(POSITION_NAME));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -184,9 +185,19 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
   }
   
   @Override
-  public ECoreNamedElementNameMatch arrayToMatch(final Object[] match) {
+  protected ECoreNamedElementNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new ECoreNamedElementNameMatch((java.lang.String) match[POSITION_NAME]);
+    	return new ECoreNamedElementNameMatch.Immutable((java.lang.String) match[POSITION_NAME]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected ECoreNamedElementNameMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new ECoreNamedElementNameMatch.Mutable((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

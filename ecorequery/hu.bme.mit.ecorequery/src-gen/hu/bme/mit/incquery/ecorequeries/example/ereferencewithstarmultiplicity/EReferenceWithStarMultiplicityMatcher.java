@@ -146,12 +146,13 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseGeneratedMatcher<
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public EReferenceWithStarMultiplicityMatch newMatch(final EReference pERef) {
-    return new EReferenceWithStarMultiplicityMatch(pERef);
+    return new EReferenceWithStarMultiplicityMatch.Immutable(pERef);
     
   }
   
@@ -160,7 +161,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseGeneratedMatcher<
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EReference> rawAccumulateAllValuesOfERef(final Object[] parameters) {
+  protected Set<EReference> rawAccumulateAllValuesOfERef(final Object[] parameters) {
     Set<EReference> results = new HashSet<EReference>();
     rawAccumulateAllValues(POSITION_EREF, parameters, results);
     return results;
@@ -176,9 +177,9 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseGeneratedMatcher<
   }
   
   @Override
-  public EReferenceWithStarMultiplicityMatch tupleToMatch(final Tuple t) {
+  protected EReferenceWithStarMultiplicityMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EReferenceWithStarMultiplicityMatch((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));	
+    	return new EReferenceWithStarMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -186,9 +187,19 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseGeneratedMatcher<
   }
   
   @Override
-  public EReferenceWithStarMultiplicityMatch arrayToMatch(final Object[] match) {
+  protected EReferenceWithStarMultiplicityMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EReferenceWithStarMultiplicityMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+    	return new EReferenceWithStarMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EReferenceWithStarMultiplicityMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EReferenceWithStarMultiplicityMatch.Mutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

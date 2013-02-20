@@ -156,13 +156,14 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
   /**
    * Returns a new (partial) Match object for the matcher. 
    * This can be used e.g. to call the matcher with a partial match. 
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter E, or null if not bound.
    * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
    * @return the (partial) match object.
    * 
    */
   public EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
-    return new EClassWithEStringAttributeMatch(pE, pAttr);
+    return new EClassWithEStringAttributeMatch.Immutable(pE, pAttr);
     
   }
   
@@ -171,7 +172,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EClass> rawAccumulateAllValuesOfE(final Object[] parameters) {
+  protected Set<EClass> rawAccumulateAllValuesOfE(final Object[] parameters) {
     Set<EClass> results = new HashSet<EClass>();
     rawAccumulateAllValues(POSITION_E, parameters, results);
     return results;
@@ -209,7 +210,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
+  protected Set<EAttribute> rawAccumulateAllValuesOfAttr(final Object[] parameters) {
     Set<EAttribute> results = new HashSet<EAttribute>();
     rawAccumulateAllValues(POSITION_ATTR, parameters, results);
     return results;
@@ -243,9 +244,9 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
   }
   
   @Override
-  public EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
+  protected EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));	
+    	return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));	
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }
@@ -253,9 +254,19 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
   }
   
   @Override
-  public EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
+  protected EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassWithEStringAttributeMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    	return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
+    	return null;
+    }
+    
+  }
+  
+  @Override
+  protected EClassWithEStringAttributeMatch arrayToMatchMutable(final Object[] match) {
+    try {
+    	return new EClassWithEStringAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
     	return null;
     }

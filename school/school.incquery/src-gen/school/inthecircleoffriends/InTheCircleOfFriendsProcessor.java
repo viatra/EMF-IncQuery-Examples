@@ -1,6 +1,7 @@
 package school.inthecircleoffriends;
 
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
+import school.Student;
 import school.inthecircleoffriends.InTheCircleOfFriendsMatch;
 
 /**
@@ -16,7 +17,7 @@ public abstract class InTheCircleOfFriendsProcessor implements IMatchProcessor<I
    * @param pSomeone the value of pattern parameter Someone in the currently processed match 
    * 
    */
-  public abstract void process(final Object S1, final Object Someone);
+  public abstract void process(final Student S1, final Student Someone);
   
   @Override
   public void process(final InTheCircleOfFriendsMatch match) {

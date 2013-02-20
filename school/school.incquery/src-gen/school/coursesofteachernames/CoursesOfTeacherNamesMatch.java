@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.coursesOfTeacherNames pattern, 
- * to be used in conjunction with CoursesOfTeacherNamesMatcher.
+ * to be used in conjunction with {@link CoursesOfTeacherNamesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,14 +19,14 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see CoursesOfTeacherNamesProcessor
  * 
  */
-public final class CoursesOfTeacherNamesMatch extends BasePatternMatch {
+public abstract class CoursesOfTeacherNamesMatch extends BasePatternMatch {
   private String fTName;
   
   private String fCName;
   
   private static String[] parameterNames = {"TName", "CName"};
   
-  CoursesOfTeacherNamesMatch(final String pTName, final String pCName) {
+  private CoursesOfTeacherNamesMatch(final String pTName, final String pCName) {
     this.fTName = pTName;
     this.fCName = pCName;
     
@@ -52,6 +52,7 @@ public final class CoursesOfTeacherNamesMatch extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("TName".equals(parameterName) ) {
     	this.fTName = (java.lang.String) newValue;
     	return true;
@@ -65,11 +66,13 @@ public final class CoursesOfTeacherNamesMatch extends BasePatternMatch {
   }
   
   public void setTName(final String pTName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTName = pTName;
     
   }
   
   public void setCName(final String pCName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fCName = pCName;
     
   }
@@ -142,4 +145,28 @@ public final class CoursesOfTeacherNamesMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends CoursesOfTeacherNamesMatch {
+    Mutable(final String pTName, final String pCName) {
+      super(pTName, pCName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends CoursesOfTeacherNamesMatch {
+    Immutable(final String pTName, final String pCName) {
+      super(pTName, pCName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

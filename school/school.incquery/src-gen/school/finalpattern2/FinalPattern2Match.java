@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.finalPattern2 pattern, 
- * to be used in conjunction with FinalPattern2Matcher.
+ * to be used in conjunction with {@link FinalPattern2Matcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,7 +19,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see FinalPattern2Processor
  * 
  */
-public final class FinalPattern2Match extends BasePatternMatch {
+public abstract class FinalPattern2Match extends BasePatternMatch {
   private Integer fYDate;
   
   private String fCSub;
@@ -30,7 +30,7 @@ public final class FinalPattern2Match extends BasePatternMatch {
   
   private static String[] parameterNames = {"YDate", "CSub", "TName", "SName"};
   
-  FinalPattern2Match(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+  private FinalPattern2Match(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
     this.fYDate = pYDate;
     this.fCSub = pCSub;
     this.fTName = pTName;
@@ -70,6 +70,7 @@ public final class FinalPattern2Match extends BasePatternMatch {
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("YDate".equals(parameterName) ) {
     	this.fYDate = (java.lang.Integer) newValue;
     	return true;
@@ -91,21 +92,25 @@ public final class FinalPattern2Match extends BasePatternMatch {
   }
   
   public void setYDate(final Integer pYDate) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fYDate = pYDate;
     
   }
   
   public void setCSub(final String pCSub) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fCSub = pCSub;
     
   }
   
   public void setTName(final String pTName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fTName = pTName;
     
   }
   
   public void setSName(final String pSName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSName = pSName;
     
   }
@@ -186,4 +191,28 @@ public final class FinalPattern2Match extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends FinalPattern2Match {
+    Mutable(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+      super(pYDate, pCSub, pTName, pSName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends FinalPattern2Match {
+    Immutable(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
+      super(pYDate, pCSub, pTName, pSName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

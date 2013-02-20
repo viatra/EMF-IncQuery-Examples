@@ -5,10 +5,11 @@ import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import school.Teacher;
 
 /**
  * Pattern-specific match representation of the school.teachers pattern, 
- * to be used in conjunction with TeachersMatcher.
+ * to be used in conjunction with {@link TeachersMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +20,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TeachersProcessor
  * 
  */
-public final class TeachersMatch extends BasePatternMatch {
-  private Object fT;
+public abstract class TeachersMatch extends BasePatternMatch {
+  private Teacher fT;
   
   private static String[] parameterNames = {"T"};
   
-  TeachersMatch(final Object pT) {
+  private TeachersMatch(final Teacher pT) {
     this.fT = pT;
     
   }
@@ -36,22 +37,24 @@ public final class TeachersMatch extends BasePatternMatch {
     
   }
   
-  public Object getT() {
+  public Teacher getT() {
     return this.fT;
     
   }
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
-    if ("T".equals(parameterName) && newValue instanceof java.lang.Object) {
-    	this.fT = (java.lang.Object) newValue;
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    if ("T".equals(parameterName) ) {
+    	this.fT = (school.Teacher) newValue;
     	return true;
     }
     return false;
     
   }
   
-  public void setT(final Object pT) {
+  public void setT(final Teacher pT) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fT = pT;
     
   }
@@ -120,4 +123,28 @@ public final class TeachersMatch extends BasePatternMatch {
     }
     
   }
+  static final class Mutable extends TeachersMatch {
+    Mutable(final Teacher pT) {
+      super(pT);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TeachersMatch {
+    Immutable(final Teacher pT) {
+      super(pT);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }

@@ -8,7 +8,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the school.theOnesWithTheBiggestCircleName pattern, 
- * to be used in conjunction with TheOnesWithTheBiggestCircleNameMatcher.
+ * to be used in conjunction with {@link TheOnesWithTheBiggestCircleNameMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters, 
@@ -19,12 +19,12 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TheOnesWithTheBiggestCircleNameProcessor
  * 
  */
-public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch {
+public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch {
   private String fSName;
   
   private static String[] parameterNames = {"SName"};
   
-  TheOnesWithTheBiggestCircleNameMatch(final String pSName) {
+  private TheOnesWithTheBiggestCircleNameMatch(final String pSName) {
     this.fSName = pSName;
     
   }
@@ -43,6 +43,7 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
   
   @Override
   public boolean set(final String parameterName, final Object newValue) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("SName".equals(parameterName) ) {
     	this.fSName = (java.lang.String) newValue;
     	return true;
@@ -52,6 +53,7 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
   }
   
   public void setSName(final String pSName) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSName = pSName;
     
   }
@@ -120,4 +122,28 @@ public final class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch
     }
     
   }
+  static final class Mutable extends TheOnesWithTheBiggestCircleNameMatch {
+    Mutable(final String pSName) {
+      super(pSName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return true;
+    }
+  }
+  
+  static final class Immutable extends TheOnesWithTheBiggestCircleNameMatch {
+    Immutable(final String pSName) {
+      super(pSName);
+      
+    }
+    
+    @Override
+    public boolean isMutable() {
+      return false;
+    }
+  }
+  
 }
