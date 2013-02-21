@@ -98,15 +98,16 @@ public abstract class IsEStringMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!IsEStringMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof IsEStringMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     IsEStringMatch other = (IsEStringMatch) obj;
     if (fElement == null) {if (other.fElement != null) return false;}
     else if (!fElement.equals(other.fElement)) return false;

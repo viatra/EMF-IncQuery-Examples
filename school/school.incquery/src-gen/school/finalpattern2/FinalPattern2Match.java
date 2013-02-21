@@ -160,15 +160,16 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!FinalPattern2Match.class.equals(obj.getClass()))
+    if (!(obj instanceof FinalPattern2Match)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     FinalPattern2Match other = (FinalPattern2Match) obj;
     if (fYDate == null) {if (other.fYDate != null) return false;}
     else if (!fYDate.equals(other.fYDate)) return false;

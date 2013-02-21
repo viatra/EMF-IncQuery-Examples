@@ -98,15 +98,16 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!IsInECoreMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof IsInECoreMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     IsInECoreMatch other = (IsInECoreMatch) obj;
     if (fElement == null) {if (other.fElement != null) return false;}
     else if (!fElement.equals(other.fElement)) return false;

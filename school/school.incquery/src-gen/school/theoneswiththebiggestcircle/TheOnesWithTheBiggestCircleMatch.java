@@ -98,15 +98,16 @@ public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch 
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!TheOnesWithTheBiggestCircleMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof TheOnesWithTheBiggestCircleMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     TheOnesWithTheBiggestCircleMatch other = (TheOnesWithTheBiggestCircleMatch) obj;
     if (fS == null) {if (other.fS != null) return false;}
     else if (!fS.equals(other.fS)) return false;

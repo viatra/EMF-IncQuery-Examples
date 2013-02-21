@@ -120,15 +120,16 @@ public abstract class StudentOfSchoolMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!StudentOfSchoolMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof StudentOfSchoolMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     StudentOfSchoolMatch other = (StudentOfSchoolMatch) obj;
     if (fS == null) {if (other.fS != null) return false;}
     else if (!fS.equals(other.fS)) return false;

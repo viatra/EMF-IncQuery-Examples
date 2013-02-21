@@ -119,15 +119,16 @@ public abstract class TeachesMoreClassesMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!TeachesMoreClassesMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof TeachesMoreClassesMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     TeachesMoreClassesMatch other = (TeachesMoreClassesMatch) obj;
     if (fT1 == null) {if (other.fT1 != null) return false;}
     else if (!fT1.equals(other.fT1)) return false;

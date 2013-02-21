@@ -98,15 +98,16 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!EReferenceWithOneMultiplicityMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof EReferenceWithOneMultiplicityMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     EReferenceWithOneMultiplicityMatch other = (EReferenceWithOneMultiplicityMatch) obj;
     if (fERef == null) {if (other.fERef != null) return false;}
     else if (!fERef.equals(other.fERef)) return false;

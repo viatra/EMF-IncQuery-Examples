@@ -98,15 +98,16 @@ public abstract class TeachesTheMostCoursesMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!TeachesTheMostCoursesMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof TeachesTheMostCoursesMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     TeachesTheMostCoursesMatch other = (TeachesTheMostCoursesMatch) obj;
     if (fT == null) {if (other.fT != null) return false;}
     else if (!fT.equals(other.fT)) return false;

@@ -97,15 +97,16 @@ public abstract class TeacherWithoutClassNamesMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!TeacherWithoutClassNamesMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof TeacherWithoutClassNamesMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     TeacherWithoutClassNamesMatch other = (TeacherWithoutClassNamesMatch) obj;
     if (fTNames == null) {if (other.fTNames != null) return false;}
     else if (!fTNames.equals(other.fTNames)) return false;

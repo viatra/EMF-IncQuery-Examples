@@ -119,15 +119,16 @@ public abstract class MoreFriendsThanMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!MoreFriendsThanMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof MoreFriendsThanMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     MoreFriendsThanMatch other = (MoreFriendsThanMatch) obj;
     if (fS1 == null) {if (other.fS1 != null) return false;}
     else if (!fS1.equals(other.fS1)) return false;

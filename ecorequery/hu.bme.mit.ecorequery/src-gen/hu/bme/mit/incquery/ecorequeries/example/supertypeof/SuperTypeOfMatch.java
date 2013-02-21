@@ -119,15 +119,16 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!SuperTypeOfMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof SuperTypeOfMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     SuperTypeOfMatch other = (SuperTypeOfMatch) obj;
     if (fSuper == null) {if (other.fSuper != null) return false;}
     else if (!fSuper.equals(other.fSuper)) return false;

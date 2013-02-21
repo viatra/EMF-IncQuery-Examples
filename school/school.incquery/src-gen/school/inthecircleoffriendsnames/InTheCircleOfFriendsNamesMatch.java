@@ -118,15 +118,16 @@ public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!InTheCircleOfFriendsNamesMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof InTheCircleOfFriendsNamesMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     InTheCircleOfFriendsNamesMatch other = (InTheCircleOfFriendsNamesMatch) obj;
     if (fS1Name == null) {if (other.fS1Name != null) return false;}
     else if (!fS1Name.equals(other.fS1Name)) return false;

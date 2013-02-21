@@ -98,15 +98,16 @@ public abstract class CourseWithNameLongerThanWeightMatch extends BasePatternMat
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!CourseWithNameLongerThanWeightMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof CourseWithNameLongerThanWeightMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     CourseWithNameLongerThanWeightMatch other = (CourseWithNameLongerThanWeightMatch) obj;
     if (fC == null) {if (other.fC != null) return false;}
     else if (!fC.equals(other.fC)) return false;

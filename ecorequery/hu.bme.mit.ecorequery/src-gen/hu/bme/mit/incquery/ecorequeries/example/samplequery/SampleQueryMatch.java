@@ -184,15 +184,16 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (obj == null)
-    	return false;
-    if (!(obj instanceof IPatternMatch))
-    	return false;
-    IPatternMatch otherSig  = (IPatternMatch) obj;
-    if (!pattern().equals(otherSig.pattern()))
-    	return false;
-    if (!SampleQueryMatch.class.equals(obj.getClass()))
+    if (!(obj instanceof SampleQueryMatch)) { // this should be infrequent				
+    	if (obj == null)
+    		return false;
+    	if (!(obj instanceof IPatternMatch))
+    		return false;
+    	IPatternMatch otherSig  = (IPatternMatch) obj;
+    	if (!pattern().equals(otherSig.pattern()))
+    		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
+    }
     SampleQueryMatch other = (SampleQueryMatch) obj;
     if (fXElement == null) {if (other.fXElement != null) return false;}
     else if (!fXElement.equals(other.fXElement)) return false;
