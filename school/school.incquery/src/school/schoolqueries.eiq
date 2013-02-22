@@ -11,6 +11,10 @@ pattern schools(Sch) {
 	School(Sch);
 }
 
+pattern courses(C) {
+	Course(C);
+}
+
 pattern schoolsNames(SchName) {
 	School.name(_Sch, SchName);
 }

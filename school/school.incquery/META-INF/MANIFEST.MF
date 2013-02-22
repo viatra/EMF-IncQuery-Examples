@@ -6,6 +6,7 @@ Bundle-Version: 0.7.0.qualifier
 Export-Package: school.classesofschool,
  school.classesofteacher,
  school.classesofteachernames,
+ school.courses,
  school.coursesofteacher,
  school.coursesofteachernames,
  school.coursewithnamelongerthanweight,

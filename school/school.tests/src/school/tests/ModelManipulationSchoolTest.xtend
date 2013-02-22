@@ -30,6 +30,9 @@ import school.Course
 import school.SchoolClass
 import school.Year
 import school.Student
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.junit.Ignore
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -47,7 +50,9 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
-		
+	@Inject
+  ParseHelper parseHelper
+  
 	@Test
 	def testModelModification(){
 		val sns = snapshot
@@ -641,5 +646,26 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		}
 				
 	}
-				
+			
+	@Test
+	@Ignore
+  def createSpecCourse(){
+    
+    val sns = snapshot
+    val pm = queryInputXMI
+    pm.assertMatchResults(sns)
+    
+    // MODEL MODIFICATION HERE
+    // add a new Specialization Course "Visitor theory"
+    val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
+    val s = matcher.oneArbitraryMatch.get("Sch") as School
+    Assert::assertNotNull(s)
+    if (s!=null) {
+      val c = SchoolFactory::eINSTANCE.createSpecialisationCourse
+      c.setSubject("Visitor theory")
+      c.setSchool(s)
+      val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createSpecCourse.eiqsnapshot")
+          pm.assertMatchResults(newSns)                         
+    }       
+  }	
 }

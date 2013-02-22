@@ -2,11 +2,35 @@
 <plugin>
 
    <extension
+         id="school.CourseWithTeacher"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
+            id="school.CourseWithoutTeacher">
+      </matcher>
+   </extension>
+   <extension
          id="school.schools"
          point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
             factoryProvider="school.schools.SchoolsMatcherFactory$Provider"
             id="school.schools">
+      </matcher>
+   </extension>
+   <extension
+         id="school.courses"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="school.courses.CoursesMatcherFactory$Provider"
+            id="school.courses">
       </matcher>
    </extension>
    <extension
@@ -279,22 +303,6 @@
       <matcher
             factoryProvider="school.somecourse.SomeCourseMatcherFactory$Provider"
             id="school.SomeCourse">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
-            id="school.CourseWithTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithoutTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
-            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 

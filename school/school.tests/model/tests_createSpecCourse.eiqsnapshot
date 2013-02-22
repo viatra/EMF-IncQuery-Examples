@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/incquery/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="school.courses">
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.1"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.5"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.2"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.0"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.3"/>
+      </substitutions>
+    </matches>
+    <matches>
+      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="C">
+        <value href="../../school.instancemodel/BUTE.school#//@courses.4"/>
+      </substitutions>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
+  <modelRoots href="tests.eiqsnapshot#/"/>
+</eiqSnapshot:IncQuerySnapshot>
