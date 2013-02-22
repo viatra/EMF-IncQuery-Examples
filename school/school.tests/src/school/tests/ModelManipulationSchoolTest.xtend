@@ -648,7 +648,6 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	}
 			
 	@Test
-	@Ignore
   def createSpecCourse(){
     
     val sns = snapshot
