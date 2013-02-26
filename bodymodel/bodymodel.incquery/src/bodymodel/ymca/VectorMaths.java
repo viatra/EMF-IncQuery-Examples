@@ -2,7 +2,6 @@ package bodymodel.ymca;
 
 import java.util.Vector;
 
-import org.eclipse.xtext.xbase.lib.Pure;
 import org.jnect.bodymodel.PositionedElement;
 
 /**
@@ -16,7 +15,6 @@ public class VectorMaths {
 	 * Calculate a vector based on X,Y,Z coordinates (given as Vectors) of its endpoints.
 	 * endpoints should be 3D Float vectors of X,Y,Z coordinates respectively.
 	 */
-	@Pure
 	public static Vector<Float> createVector(Vector<Float> start, Vector<Float> end) {
 		Vector<Float> r = new Vector<Float>();
 		r.add(end.get(0)-start.get(0)); // X 
@@ -24,7 +22,7 @@ public class VectorMaths {
 		r.add(end.get(2)-start.get(2)); // Z 
 		return r;
 	}
-	@Pure
+	
 	public static Vector<Float> createVector(PositionedElement start, PositionedElement end) {
 		Vector<Float> r = new Vector<Float>();
 		r.add(end.getX()-start.getX()); // X 
@@ -32,7 +30,7 @@ public class VectorMaths {
 		r.add(end.getZ()-start.getZ()); // Z 
 		return r;
 	}
-	@Pure
+	
 	public static Vector<Float> createVector(
 			float startX, float startY, float startZ,
 			float endX, float endY, float endZ) {
@@ -49,7 +47,6 @@ public class VectorMaths {
 	 * Calculate the dot product of two Float vectors (of equal length).
 	 * Note: dumb method, does not check for equal dimensions, nulls etc.
 	 */
-	@Pure
 	public static float dotProduct(Vector<Float> a, Vector<Float> b) {
 		Float r = 0.0f;
 		for (int x=0; x<a.size(); x++) {
@@ -61,7 +58,6 @@ public class VectorMaths {
 	/**
 	 * Calculate the length of a 3D Float vector.
 	 */
-	@Pure
 	public static float lengthOf(Vector<Float> a) {
 		Float r = 0.0f;
 		for (Float ai : a) {
@@ -73,7 +69,6 @@ public class VectorMaths {
 	/**
 	 * Calculate the angle in radians between two orthonormal Float vectors.
 	 */
-	@Pure
 	public static float angleBetween(Vector<Float> a, Vector<Float> b) {
 		return (float)Math.acos( dotProduct(a, b) / (lengthOf(a)*lengthOf(b)) );
 	}

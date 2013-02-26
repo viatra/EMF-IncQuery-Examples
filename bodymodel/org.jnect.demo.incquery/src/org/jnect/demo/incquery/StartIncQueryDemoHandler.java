@@ -3,13 +3,13 @@ package org.jnect.demo.incquery;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryException;
-import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.jnect.core.KinectManager;
 
-//import bodymodel.jump.JumpMatcher;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatch;
 import bodymodel.righthandabovehead.RightHandAboveHeadMatcher;
+//import bodymodel.jump.JumpMatcher;
 
 /**
  * 

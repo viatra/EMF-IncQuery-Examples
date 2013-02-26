@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jnect/IncQuery RCP Demo App
+Bundle-SymbolicName: org.jnect.demo.incquery.app; singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.jnect.demo.incquery.app.Activator
+Bundle-Vendor: Istvan Rath
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.jnect.demo.incquery;bundle-version="0.0.1",
+ org.eclipse.ui.ide;bundle-version="3.8.0",
+ org.eclipse.core.filesystem;bundle-version="1.3.200"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.jnect.demo.incquery.app

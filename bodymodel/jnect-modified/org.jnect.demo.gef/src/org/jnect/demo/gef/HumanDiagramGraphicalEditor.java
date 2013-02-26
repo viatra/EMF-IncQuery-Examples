@@ -14,11 +14,14 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gef.DefaultEditDomain;
 import org.eclipse.gef.ui.parts.GraphicalEditor;
 import org.jnect.bodymodel.Body;
+import org.jnect.core.IKinectUpdateListener;
+import org.jnect.core.KinectManager;
 
-public class HumanDiagramGraphicalEditor extends GraphicalEditor {
+public class HumanDiagramGraphicalEditor extends GraphicalEditor implements IKinectUpdateListener {
 
 	public HumanDiagramGraphicalEditor() {
 		setEditDomain(new DefaultEditDomain(this));
+		KinectManager.INSTANCE.addKinectUpdateListener(this);
 	}
 
 	protected void configureGraphicalViewer() {
@@ -31,13 +34,23 @@ public class HumanDiagramGraphicalEditor extends GraphicalEditor {
 		//
 	}
 
-	public void setContent(Body container) {
-		getGraphicalViewer().setContents(container);
-	}
 
 	@Override
 	protected void initializeGraphicalViewer() {
-		// TODO Auto-generated method stub
+		getGraphicalViewer().setContents( KinectManager.INSTANCE.getSkeletonModel() );
+	}
+
+
+	@Override
+	public void kinectChangedModel() {
+		// big refresh necessary
+		initializeGraphicalViewer();
+	}
+	
+	@Override
+	public void dispose() {
+		KinectManager.INSTANCE.removeKinectUpdateListener(this);
+		super.dispose();
 	}
 
 }

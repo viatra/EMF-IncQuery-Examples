@@ -25,7 +25,7 @@ public class RefreshGefHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		HumanDiagramGraphicalEditor editor = ((HumanDiagramGraphicalEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor());
 		if (editor!=null) {
-			editor.setContent(KinectManager.INSTANCE.getSkeletonModel());
+			editor.kinectChangedModel();//, input)setContent(KinectManager.INSTANCE.getSkeletonModel());
 		}
 		return null;
 	}

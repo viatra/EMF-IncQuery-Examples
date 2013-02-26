@@ -2,9 +2,14 @@ package bodymodel.ymca
 
 import "http://org/jnect/bodymodel"
 
-uses bodymodel.*;
-uses bodymodel.ymca.*;
+uses bodymodel.MovingAverageCalculator;
+uses bodymodel.ymca.VectorMaths;
+uses bodymodel.ymca.YMCAConstants;
 
+
+/*
+ * This pattern is buggy! Depending on the relative position of (0,0,0) this may yield wrong results.
+ */
 @QueryExplorer(display = true)
 pattern rightHandAboveHead(RH:RightHand,H:Head) {
 	RightHand.y(RH,RHy);
@@ -14,6 +19,8 @@ pattern rightHandAboveHead(RH:RightHand,H:Head) {
 		 MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg
 	);
 }
+
+
 
 @QueryExplorer(display = true)
 pattern leftHandAboveHead(LH:LeftHand,H:Head) {
@@ -28,8 +35,7 @@ pattern leftHandAboveHead(LH:LeftHand,H:Head) {
 /*
  * See https://github.com/ujhelyiz/EMF-IncQuery/issues/312
  */
- /*/
-@QueryExplorer(display = true)
+/* @QueryExplorer(display = true)
 pattern handsAreClose_buggy(LH:LeftHand,RH:RightHand) {
 	LeftHand.x(LH,LHX);
 	LeftHand.y(LH,LHY);
@@ -45,7 +51,7 @@ pattern handsAreClose_buggy(LH:LeftHand,RH:RightHand) {
 		var float rhy = RHY
 		var float rhz = RHZ
 		// I suspect the issue stems from the fact that EMF domain objects are wired into Java code
-		VectorMaths::lengthOf(VectorMaths::createVector(LH,RH)) < 0.1
+		VectorMaths::lengthOf(VectorMaths::createVector(LH,RH)) < YMCAConstants::closeDistance
 		});
 } */
 
@@ -65,7 +71,7 @@ pattern handsAreClose(LH:LeftHand,RH:RightHand) {
 			MovingAverageCalculator::getCalculator("RHX").addValue(RHX).movingAvg,
 			MovingAverageCalculator::getCalculator("RHY").addValue(RHY).movingAvg,
 			MovingAverageCalculator::getCalculator("RHZ").addValue(RHZ).movingAvg
-		)) < 0.1 );
+		)) < YMCAConstants::closeDistance );
 }
 
 @QueryExplorer(display = true)
@@ -84,7 +90,7 @@ pattern handsAreApart(LH:LeftHand,RH:RightHand) {
 			MovingAverageCalculator::getCalculator("RHX").addValue(RHX).movingAvg,
 			MovingAverageCalculator::getCalculator("RHY").addValue(RHY).movingAvg,
 			MovingAverageCalculator::getCalculator("RHZ").addValue(RHZ).movingAvg
-		)) > 1.0 );
+		)) > YMCAConstants::apartDistance );
 }
 
 
@@ -104,7 +110,26 @@ pattern feetAreClose(LF:LeftFoot,RF:RightFoot) {
 			MovingAverageCalculator::getCalculator("RFX").addValue(RFX).movingAvg,
 			MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
 			MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
-		)) < 0.3 );
+		)) < YMCAConstants::closeDistance );
+}
+
+@QueryExplorer(display = true)
+pattern feetAreApart(LF:LeftFoot,RF:RightFoot) {
+	LeftFoot.x(LF,LFX);
+	LeftFoot.y(LF,LFY);
+	LeftFoot.z(LF,LFZ);
+	RightFoot.x(RF,RFX);
+	RightFoot.y(RF,RFY);
+	RightFoot.z(RF,RFZ);
+	check( VectorMaths::lengthOf(
+		VectorMaths::createVector(
+			MovingAverageCalculator::getCalculator("LFX").addValue(LFX).movingAvg,
+			MovingAverageCalculator::getCalculator("LFY").addValue(LFY).movingAvg,
+			MovingAverageCalculator::getCalculator("LFZ").addValue(LFZ).movingAvg, 
+			MovingAverageCalculator::getCalculator("RFX").addValue(RFX).movingAvg,
+			MovingAverageCalculator::getCalculator("RFY").addValue(RFY).movingAvg,
+			MovingAverageCalculator::getCalculator("RFZ").addValue(RFZ).movingAvg
+		)) > YMCAConstants::apartDistance );
 }
 
 
@@ -149,7 +174,7 @@ pattern stretchedRightArm(RH:RightHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		(Math::PI - angleBetween) < 0.3
+		(Math::PI - angleBetween) < YMCAConstants::angleTolerance
 	});
 }
 
@@ -194,7 +219,7 @@ pattern bentRightArm(RH:RightHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/2 - angleBetween) < 0.5
+		Math::abs(Math::PI/2 - angleBetween) < YMCAConstants::angleTolerance
 	});
 }
 
@@ -239,7 +264,7 @@ pattern stretchedLeftArm(LH:LeftHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		(Math::PI - angleBetween) < 0.3
+		(Math::PI - angleBetween) < YMCAConstants::angleTolerance
 	});
 }
 
@@ -284,7 +309,7 @@ pattern bentLeftArm(LH:LeftHand, // hand
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/2 - angleBetween) < 0.5
+		Math::abs(Math::PI/2 - angleBetween) < YMCAConstants::angleTolerance
 	});
 }
 
@@ -331,7 +356,7 @@ pattern upperArmsInY(LE:LeftElbow,
 			)
 		)
 		// System::out.println(angleBetween)
-		Math::abs(Math::PI/3 - angleBetween) < 0.2
+		Math::abs(Math::PI/3 - angleBetween) < YMCAConstants::angleTolerance
 	});
 }
 
@@ -418,11 +443,11 @@ pattern M(RH:RightHand,
 	LeftElbow.y(LE,LEY);
 	LeftShoulder.y(LS,LSY);
 	check(Math::abs(MovingAverageCalculator::getCalculator("LEY").addValue(LEY).movingAvg
-		- MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg) < 0.05);
+		- MovingAverageCalculator::getCalculator("LSY").addValue(LSY).movingAvg) < YMCAConstants::veryCloseDistance);
 	RightElbow.y(RE,REY);
 	RightShoulder.y(RS,RSY);
 	check(Math::abs(MovingAverageCalculator::getCalculator("REY").addValue(REY).movingAvg
-		- MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg) < 0.05);	
+		- MovingAverageCalculator::getCalculator("RSY").addValue(RSY).movingAvg) < YMCAConstants::veryCloseDistance);	
 	// hands are apart
 	find handsAreApart(LH,RH);
 }
@@ -451,7 +476,7 @@ pattern Q(RH:RightHand,
 	// right leg is straight 
 	// TODO
 	// right foot is far away from left foot
-	neg find feetAreClose(LF,RF);
+	find feetAreApart(LF,RF);
 }
 
 /**
@@ -462,20 +487,144 @@ pattern C(RH:RightHand,
 		  RS:RightShoulder,
 		  LH:LeftHand, 
 		  LE:LeftElbow, 
-		  LS:LeftShoulder,
+//		  LS:LeftShoulder,
 		  H:Head
 ) {
 	// both arms are bent
 	find bentRightArm(RH,RE,RS);
-	find bentLeftArm(LH,LE,LS);
+	// find bentLeftArm(LH,LE,LS);
 	// right hand below, left hand above the head
 	neg find rightHandAboveHead(RH,H);
-	find leftHandAboveHead(LH,H);
+	neg find leftHandAboveHead(LH,H);
 	// hands are not close
-	neg find handsAreClose(LH,RH);
+	// neg find handsAreClose(LH,RH);
 	// left hand is to the right of the head
 	Head.x(H,HX);
 	LeftHand.x(LH,LHX);
 	check(MovingAverageCalculator::getCalculator("LHX").addValue(LHX).movingAvg > 
 		MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+	// left elbow is to the right of the head
+	LeftElbow.x(LE,LEX);
+	check(MovingAverageCalculator::getCalculator("LEX").addValue(LEX).movingAvg > 
+		MovingAverageCalculator::getCalculator("HX").addValue(HX).movingAvg);
+		
 }
+
+// "control powerpoint with awt.Robot" demo
+
+/*
+ * Forward start position.
+ */
+pattern FS(RH: RightHand,
+					  RE: RightElbow,
+					  RS: RightShoulder,
+					   H: Head) 
+{
+	find stretchedRightArm(RH,RE,RS);
+	neg find rightHandAboveHead(RH,H);
+}
+
+/*
+ * Forward end position.
+ */
+pattern FE(RH: RightHand,
+					RE: RightElbow,
+					RS: RightShoulder,
+					 H: Head) 
+{
+	find bentRightArm(RH,RE,RS);
+	neg find rightHandAboveHead(RH,H);
+}
+
+/*
+ * Backward start position.
+ */
+pattern BS(LH: LeftHand,
+					   LE: LeftElbow,
+					   LS: LeftShoulder,
+					   H: Head) 
+{
+	find stretchedLeftArm(LH,LE,LS);
+	neg find leftHandAboveHead(LH,H);
+}
+
+/*
+ * Backward end position.
+ */
+pattern BE(LH: LeftHand,
+					 LE: LeftElbow,
+					 LS: LeftShoulder,
+					  H: Head) 
+{
+	find bentLeftArm(LH,LE,LS);
+	neg find leftHandAboveHead(LH,H);
+}
+
+
+// control model train through Sheldon demo
+
+/*
+ * Sheldon gesture start position:
+ *  - right hand around center hip height
+ */
+@QueryExplorer(display = true) 
+pattern SS(RH: RightHand,
+		   //RE: RightElbow,
+		   //RS: RightShoulder,
+		   CH : CenterHip)
+{
+	//find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	CenterHip.y(CH,CHy);
+	check(
+		Math::abs(
+		 MovingAverageCalculator::getCalculator("CHY").addValue(CHy).movingAvg - 
+		 MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg) 
+		 < YMCAConstants::closeDistance
+	);				   	
+}
+
+/*
+ * Sheldon gesture middle position:
+ *  - stretched right arm
+ *  - right hand around shoulder's height
+ */
+@QueryExplorer(display = true) 
+pattern SM(RH: RightHand,
+		   RE: RightElbow,
+		   RS: RightShoulder
+		   //H : Head
+		   )
+{
+	find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	RightShoulder.y(RS,RSy);
+	check(
+		Math::abs(
+		 MovingAverageCalculator::getCalculator("RSY").addValue(RSy).movingAvg - 
+		 MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg) 
+		 < YMCAConstants::closeDistance
+	);		   	
+}
+
+/*
+ * Sheldon gesture end position:
+ *  - stretched right arm
+ *  - right hand significantly above head's height
+ */
+@QueryExplorer(display = true) 
+pattern SE(RH: RightHand,
+		   RE: RightElbow,
+		   RS: RightShoulder,
+		   H : Head)
+{
+	find stretchedRightArm(RH,RE,RS);
+	RightHand.y(RH,RHy);
+	Head.y(H,Hy);
+	check(
+		 MovingAverageCalculator::getCalculator("RHY").addValue(RHy).movingAvg -
+		 MovingAverageCalculator::getCalculator("HY").addValue(Hy).movingAvg
+		 > YMCAConstants::veryCloseDistance
+	);		   	
+}
+ 

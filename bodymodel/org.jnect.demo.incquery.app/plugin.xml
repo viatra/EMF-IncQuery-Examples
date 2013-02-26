@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.jnect.demo.incquery.app.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.jnect.demo.incquery.app.Perspective"
+            fixed="false"
+            id="org.jnect.demo.incquery.app.perspective"
+            name="Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="top"
+               id="org.jnect.demo.incquery.views.YMCADemoView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+         <menu
+               id="menu.jnectincqueryesper"
+               label="JnectIncQueryEsper">
+            <command
+                  commandId="org.jnect.demo.gef.start"
+                  label="Start Kinect GEF Demo"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.esperymca.start.combined"
+                  label="YMCA Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.robot.start.combined"
+                  label="Robot Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.sheldon.start.combined"
+                  label="Sheldon Combined Start"
+                  style="push">
+            </command>
+            <command
+                  commandId="org.jnect.demo.incquery.ymca.start"
+                  label="IncQuery Raw Output"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.jnect.demo.incquery.app.application"
+            name="Jnect/IncQuery YMCA RCP Demo">
+         <property
+               name="appName"
+               value="Jnect/IncQuery YMCA RCP Demo">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

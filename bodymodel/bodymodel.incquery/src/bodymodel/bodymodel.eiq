@@ -2,8 +2,6 @@ package bodymodel
 
 import "http://org/jnect/bodymodel"
 
-uses bodymodel.*;
-
 //@QueryExplorer(display = true)
 //pattern body(B : Body) = {
 //	Body(B);
@@ -44,7 +42,7 @@ pattern RightHandAboveHead(RH:RightHand,H:Head) {
 //	find partsOfABody(B,H); // just to ensure that they are part of the same body
 	RightHand.y(RH,RHy);
 	Head.y(H,Hy);
-	check( (Hy as Float) < (RHy as Float) );
+	check( Hy < RHy );
 }
  @QueryExplorer(display = true)
 pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
@@ -53,10 +51,12 @@ pattern RightHandAboveHead_MovingAverage(RH:RightHand,H:Head) {
 	RightHand.y(RH,RHy);
 	Head.y(H,Hy);
 	check({
-		var MovingAverageCalculator rhy_mac = MovingAverageCalculator::getCalculator("RH_Y")
-		rhy_mac.addValue(RHy as Float)
-		var MovingAverageCalculator hy_mac = MovingAverageCalculator::getCalculator("H_Y")
-		hy_mac.addValue(Hy as Float)
+		var bodymodel.MovingAverageCalculator rhy_mac = 
+			bodymodel::MovingAverageCalculator::getCalculator("RH_Y")
+		rhy_mac.addValue(RHy)
+		var bodymodel.MovingAverageCalculator hy_mac = 
+			bodymodel::MovingAverageCalculator::getCalculator("H_Y")
+		hy_mac.addValue(Hy)
 		//return
 			hy_mac.movingAvg < rhy_mac.movingAvg
 	});

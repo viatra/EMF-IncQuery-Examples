@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.jnect.bodymodel:Body xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.jnect.bodymodel="http://org/jnect/bodymodel">
+  <Head x="0.3741106" y="0.3144598" z="2.491124" outgoingLinks="//@links.0" color_r="255" color_b="255"/>
+  <CenterShoulder x="0.3822819" y="0.1264412" z="2.518345" incomingLinks="//@links.0" outgoingLinks="//@links.1 //@links.2 //@links.9"/>
+  <LeftShoulder x="0.2602822" y="0.134331" z="2.605594" incomingLinks="//@links.1" outgoingLinks="//@links.3"/>
+  <RightShoulder x="0.5301452" y="0.1219672" z="2.490505" incomingLinks="//@links.2" outgoingLinks="//@links.4"/>
+  <LeftElbow x="0.2205558" y="0.3986175" z="2.562038" incomingLinks="//@links.3" outgoingLinks="//@links.5"/>
+  <RightElbow x="0.6054878" y="0.3100068" z="2.415807" incomingLinks="//@links.4" outgoingLinks="//@links.6"/>
+  <LeftWrist x="0.2911315" y="0.5816998" z="2.52258" incomingLinks="//@links.5" outgoingLinks="//@links.7"/>
+  <RightWrist x="0.6014948" y="0.5061148" z="2.429524" incomingLinks="//@links.6" outgoingLinks="//@links.8"/>
+  <LeftHand x="0.3418407" y="0.6438011" z="2.510423" incomingLinks="//@links.7" color_r="255"/>
+  <RightHand x="0.5696529" y="0.5721375" z="2.464206" incomingLinks="//@links.8" color_r="255"/>
+  <Spine x="0.3103637" y="-0.1376218" z="2.484178" incomingLinks="//@links.9" outgoingLinks="//@links.10"/>
+  <CenterHip x="0.2756881" y="-0.1671407" z="2.430972" incomingLinks="//@links.10" outgoingLinks="//@links.11 //@links.12"/>
+  <LeftHip x="0.1829611" y="-0.234059" z="2.443461" incomingLinks="//@links.11" outgoingLinks="//@links.13"/>
+  <RightHip x="0.3241583" y="-0.2220683" z="2.377355" incomingLinks="//@links.12" outgoingLinks="//@links.14"/>
+  <LeftKnee x="-0.07531723" y="-0.5017818" z="2.239399" incomingLinks="//@links.13" outgoingLinks="//@links.15"/>
+  <RightKnee x="0.2675017" y="-0.6029274" z="2.248371" incomingLinks="//@links.14" outgoingLinks="//@links.16"/>
+  <LeftFoot x="-0.3752979" y="-0.6435785" z="2.015566" incomingLinks="//@links.17" color_g="255"/>
+  <RightFoot x="0.2628768" y="-0.856278" z="2.125227" incomingLinks="//@links.18" color_g="255"/>
+  <links source="//@Head" target="//@CenterShoulder"/>
+  <links source="//@CenterShoulder" target="//@LeftShoulder"/>
+  <links source="//@CenterShoulder" target="//@RightShoulder"/>
+  <links source="//@LeftShoulder" target="//@LeftElbow"/>
+  <links source="//@RightShoulder" target="//@RightElbow"/>
+  <links source="//@LeftElbow" target="//@LeftWrist"/>
+  <links source="//@RightElbow" target="//@RightWrist"/>
+  <links source="//@LeftWrist" target="//@LeftHand"/>
+  <links source="//@RightWrist" target="//@RightHand"/>
+  <links source="//@CenterShoulder" target="//@Spine"/>
+  <links source="//@Spine" target="//@CenterHip"/>
+  <links source="//@CenterHip" target="//@LeftHip"/>
+  <links source="//@CenterHip" target="//@RightHip"/>
+  <links source="//@LeftHip" target="//@LeftKnee"/>
+  <links source="//@RightHip" target="//@RightKnee"/>
+  <links source="//@LeftKnee" target="//@LeftAnkle"/>
+  <links source="//@RightKnee" target="//@RightAnkle"/>
+  <links source="//@LeftAnkle" target="//@LeftFoot"/>
+  <links source="//@RightAnkle" target="//@RightFoot"/>
+  <LeftAnkle x="-0.3296403" y="-0.6609811" z="2.087749" incomingLinks="//@links.15" outgoingLinks="//@links.17"/>
+  <RightAnkle x="0.252336" y="-0.8458406" z="2.197819" incomingLinks="//@links.16" outgoingLinks="//@links.18"/>
+</org.jnect.bodymodel:Body>
