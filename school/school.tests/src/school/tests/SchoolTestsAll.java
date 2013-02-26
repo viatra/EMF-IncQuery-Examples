@@ -8,6 +8,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 	BasicSchoolTest.class,
 	ModelManipulationSchoolTest.class,
-	APISchoolTest.class
+	APISchoolTest.class,
+	TestingFrameworkTest.class
 })
 public class SchoolTestsAll { }
