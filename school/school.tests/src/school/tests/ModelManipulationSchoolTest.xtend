@@ -50,8 +50,6 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
-	@Inject
-  ParseHelper parseHelper
   
 	@Test
 	def testModelModification(){
