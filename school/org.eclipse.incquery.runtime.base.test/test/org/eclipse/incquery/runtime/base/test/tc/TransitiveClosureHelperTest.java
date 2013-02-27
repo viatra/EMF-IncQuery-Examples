@@ -37,26 +37,23 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
 		super(notifier);
 	}
 	
+	@Override
 	@Before
-	public void init() {
-		try {
-			super.init();
-			Set<EReference> refs = new HashSet<EReference>();
-			refs.add(SchoolPackage.eINSTANCE.getStudent_FriendsWith());
-			transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(notifier, refs);
-			aStudent = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
-			bStudent = (Student) navigationHelper.findByAttributeValue("Gabor Bergmann").iterator().next().getEObject();
-			cStudent = (Student) navigationHelper.findByAttributeValue("Zoltan Ujhelyi").iterator().next().getEObject();
-		} 
-		catch (IncQueryBaseException e) {
-			e.printStackTrace();
-		}
+	public void init() throws IncQueryBaseException {
+		super.init();
+		Set<EReference> refs = new HashSet<EReference>();
+		refs.add(SchoolPackage.eINSTANCE.getStudent_FriendsWith());
+		transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(this.navigationHelper, refs);
+		aStudent = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
+		bStudent = (Student) navigationHelper.findByAttributeValue("Gabor Bergmann").iterator().next().getEObject();
+		cStudent = (Student) navigationHelper.findByAttributeValue("Zoltan Ujhelyi").iterator().next().getEObject();
 	}
 	
+	@Override
 	@After
 	public void dispose() {
 		transitiveClosureHelper.dispose();
-		navigationHelper.dispose();
+		super.dispose();
 	}
 	
 	/**

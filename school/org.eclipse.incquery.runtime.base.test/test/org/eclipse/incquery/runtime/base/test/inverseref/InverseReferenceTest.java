@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.Before;
@@ -39,8 +40,9 @@ public class InverseReferenceTest extends IncQueryBaseParameterizedTest {
 	private Year year2012;
 	private Student student;
 		
+	@Override
 	@Before
-	public void init() {
+	public void init() throws IncQueryBaseException {
 		super.init();
 		year2012 = (Year) navigationHelper.findByAttributeValue(2012).iterator().next().getEObject();
 		student = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
