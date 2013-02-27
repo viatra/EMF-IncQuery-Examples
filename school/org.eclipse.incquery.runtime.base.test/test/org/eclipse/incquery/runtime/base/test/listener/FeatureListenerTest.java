@@ -58,8 +58,8 @@ public class FeatureListenerTest extends IncQueryBaseListenerTest {
 
 	@Override
 	public void unregisterListener() {
-		navigationHelper.unregisterEStructuralFeatures(features);
 		navigationHelper.unregisterFeatureListener(features, featureListener);
+		navigationHelper.unregisterEStructuralFeatures(features);
 	}
 	
 }

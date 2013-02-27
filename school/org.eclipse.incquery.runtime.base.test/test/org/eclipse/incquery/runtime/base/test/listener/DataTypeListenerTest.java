@@ -52,7 +52,7 @@ public class DataTypeListenerTest extends IncQueryBaseListenerTest {
 
 	@Override
 	public void unregisterListener() {
-		navigationHelper.unregisterEDataTypes(dataTypes);
 		navigationHelper.unregisterDataTypeListener(dataTypes, dataTypeListener);
+		navigationHelper.unregisterEDataTypes(dataTypes);
 	}
 }
