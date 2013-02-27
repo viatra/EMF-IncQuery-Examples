@@ -2,6 +2,7 @@ package org.eclipse.incquery.runtime.base.test.tc;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,6 +10,8 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.api.IncQueryBaseFactory;
 import org.eclipse.incquery.runtime.base.api.TransitiveClosureHelper;
@@ -34,13 +37,20 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
 	private Student cStudent;
 	
 	public TransitiveClosureHelperTest(Notifier notifier) {
-		super(notifier);
+		super(notifier, false);
 	}
 	
 	@Override
 	@Before
 	public void init() throws IncQueryBaseException {
 		super.init();
+		if (!navigationHelper.isInWildcardMode()) {
+			navigationHelper.registerObservedTypes(
+					Collections.singleton(SchoolPackage.eINSTANCE.getStudent()), 
+					Collections.singleton(EcorePackage.eINSTANCE.getEString()),
+					Collections.singleton((EStructuralFeature) SchoolPackage.eINSTANCE.getStudent_Name()) 
+			);
+		}
 		Set<EReference> refs = new HashSet<EReference>();
 		refs.add(SchoolPackage.eINSTANCE.getStudent_FriendsWith());
 		transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(this.navigationHelper, refs);
@@ -101,7 +111,6 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
 			}
 		};
 		ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(nodeModCommand);
-		
 		transitiveClosureHelper.detachObserver(observer);
 		
 		//Undo the previously executed commands to restore the original state of the model
