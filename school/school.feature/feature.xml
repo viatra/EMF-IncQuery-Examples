@@ -18,10 +18,6 @@
       <update label="School Metamodel" url="http://viatra.inf.mit.bme.hu/update/incquery-extra/"/>
    </url>
 
-   <includes
-         id="org.eclipse.incquery.runtime.feature"
-         version="0.0.0"/>
-
    <plugin
          id="school"
          download-size="0"
