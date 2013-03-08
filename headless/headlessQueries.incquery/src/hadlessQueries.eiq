@@ -1,5 +1,0 @@
-import "http://www.eclipse.org/emf/2002/Ecore"
-
-pattern EClassNames(C: EClass, N : EString)= {
-	EClass.name(C,N);
-}

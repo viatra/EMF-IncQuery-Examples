@@ -2,11 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: headlessQueries.incquery
 Bundle-SymbolicName: headlessQueries.incquery;singleton:=true
-Bundle-Version: 0.0.1.qualifier
-Export-Package: eclassnames
+Bundle-Version: 0.0.2.qualifier
+Export-Package: headless.eclassnames,
+ headless.eobject
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.incquery.runtime;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

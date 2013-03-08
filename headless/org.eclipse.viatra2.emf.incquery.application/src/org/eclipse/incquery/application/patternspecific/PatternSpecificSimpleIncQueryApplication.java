@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004-2011 Abel Hegedus and Daniel Varro
+ * Copyright (c) 2004-2011 Abel Hegedus, Istvan Rath and Daniel Varro
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,22 +7,24 @@
  *
  * Contributors:
  *    Abel Hegedus - initial API and implementation
+ *    Istvan Rath - modifications for pattern-specific API demonstration
  *******************************************************************************/
-package org.eclipse.viatra2.emf.incquery.application;
+package org.eclipse.incquery.application.patternspecific;
 
 import java.util.Map;
 
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.incquery.application.common.IncQueryHeadless;
 
 /**
  * @author Abel Hegedus
+ * @author Istvan Rath
  * 
  */
-public class IncQueryApplication implements IApplication {
+public class PatternSpecificSimpleIncQueryApplication implements IApplication {
 
 	private static String modelParam = "-m";
-	private static String patternParam = "-p";
 
 	/*
 	 * (non-Javadoc)
@@ -36,7 +38,6 @@ public class IncQueryApplication implements IApplication {
 		Map<String, Object> arguments = context.getArguments();
 		String[] args = (String[]) arguments.get("application.args");
 		String model = null;
-		String patternFQN = null;
 		if (args == null || args.length == 0) {
 			displayHelp();
 			return IApplication.EXIT_OK;
@@ -48,11 +49,7 @@ public class IncQueryApplication implements IApplication {
 				i += 2;
 				continue;
 			}
-			if (args[i].equals(patternParam)) {
-				patternFQN = args[i + 1];
-				i += 2;
-				continue;
-			} else {
+			else {
 				i++;
 				continue;
 			}
@@ -63,13 +60,8 @@ public class IncQueryApplication implements IApplication {
 			displayHelp();
 			return IApplication.EXIT_OK;
 		}
-		if (patternFQN == null) {
-		  System.out.println("PatternFQN parameter not set");
-			displayHelp();
-			return IApplication.EXIT_OK;
-		}
 
-		new IncQueryHeadless().execute(model, patternFQN);
+		new IncQueryHeadless().executePatternSpecific(model);
 
 		return IApplication.EXIT_OK;
 	}
@@ -87,6 +79,6 @@ public class IncQueryApplication implements IApplication {
 
 	private void displayHelp() {
 		System.out.println(
-						"Usage:\n<call> -m <modelFilePAth> -p <patternFQN>\n  -m    :  Required, the model to match on.\n  -m    :  Required, the pattern to match");
+						"Usage:\n<call> -m <modelFilePAth> \n  -m    :  Required, the model to match on.");
 	}
 }

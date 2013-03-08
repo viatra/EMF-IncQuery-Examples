@@ -2,11 +2,19 @@
 <plugin>
 
    <extension
-         id="EClassNames"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         id="headless.eClassNames"
+         point="org.eclipse.incquery.runtime.matcherfactory">
       <matcher
-            factory="eclassnames.EClassNamesMatcherFactory"
-            id="EClassNames">
+            factoryProvider="headless.eclassnames.EClassNamesMatcherFactory$Provider"
+            id="headless.eClassNames">
+      </matcher>
+   </extension>
+   <extension
+         id="headless.eObject"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="headless.eobject.EObjectMatcherFactory$Provider"
+            id="headless.eObject">
       </matcher>
    </extension>
 
