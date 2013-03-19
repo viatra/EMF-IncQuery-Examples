@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notConnectedClient"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notconnectedclient.NotConnectedClientMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notConnectedClient">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.noCycle"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.nocycle.NoCycleMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.noCycle">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniqueNameConstraint"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniquenameconstraint.UniqueNameConstraintMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniqueNameConstraint">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.connectedClient"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.connectedclient.ConnectedClientMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.connectedClient">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.linked"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.linked.LinkedMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.linked">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.transitiveClosureOfLinked"
+         point="org.eclipse.incquery.runtime.matcherfactory">
+      <matcher
+            factoryProvider="org.eclipse.viatra2.emf.incquery.stochsim.patterns.transitiveclosureoflinked.TransitiveClosureOfLinkedMatcherFactory$Provider"
+            id="org.eclipse.viatra2.emf.incquery.stochsim.patterns.transitiveClosureOfLinked">
+      </matcher>
+   </extension>
+
+</plugin>

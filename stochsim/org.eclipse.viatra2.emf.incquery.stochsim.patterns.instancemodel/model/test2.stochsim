@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stochsim:SnetModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stochsim="http://org.eclipse.viatra2.emf.incquery.stochsim.model">
+  <nodes xsi:type="stochsim:SN" name="SN1"/>
+  <nodes xsi:type="stochsim:SN" name="SN2" link="//@nodes.0"/>
+  <nodes xsi:type="stochsim:CL" name="CL1"/>
+</stochsim:SnetModel>

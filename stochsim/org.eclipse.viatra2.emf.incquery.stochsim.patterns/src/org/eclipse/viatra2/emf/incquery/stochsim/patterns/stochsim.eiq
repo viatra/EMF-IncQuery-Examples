@@ -1,0 +1,46 @@
+package org.eclipse.viatra2.emf.incquery.stochsim.patterns
+
+import "http://org.eclipse.viatra2.emf.incquery.stochsim.model"
+import "http://www.eclipse.org/emf/2002/Ecore"
+
+@Constraint(location = CL, message = "Client node $CL.name$ is disconnected!", severity = "error", targetEditorId = "*")
+pattern notConnectedClient(CL : CL) {
+	neg find connectedClient(CL);
+}
+
+@Constraint(location = SN1, message = "Cycle between super node connections: $SN1.name$ and $SN2.name$!", severity = "error", targetEditorId = "*")
+pattern noCycle(SN1 : SN, SN2 : SN) {
+	find transitiveClosureOfLinked(SN1, SN2);
+	SN1 == SN2;
+}
+
+@Constraint(location = Node, message = "Node $Node.name$ has a non-unique name!", severity = "error", targetEditorId = "*")
+pattern uniqueNameConstraint(Node : Node) {
+	Node.name(Node, Name);
+	Node.name(OtherNode, Name);
+	Node != OtherNode;
+}
+
+/*
+ * Lists those client nodes which are connected to any super node. 
+ */
+pattern connectedClient(CL : CL) {
+	CL.cnn(CL, _SN);
+}
+
+/*
+ * Linked connections between super nodes. 
+ */
+pattern linked(S1 : SN, S2 : SN) = {
+    SN.link(S1, S2);
+} 
+/*or {
+    SN.link(S2, S1);
+}*/
+
+/*
+ * Computes the transitive closure of the linked relationship between super nodes. 
+ */
+pattern transitiveClosureOfLinked (S1 : SN , S2 : SN) = {
+	find linked+(S1, S2);
+}

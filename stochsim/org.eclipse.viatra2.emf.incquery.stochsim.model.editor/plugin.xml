@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="stochsim.presentation.StochsimModelWizardID"
+            name="%_UI_StochsimModelWizard_label"
+            class="stochsim.presentation.StochsimModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StochsimModelFile.gif">
+         <description>%_UI_StochsimModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="stochsim.presentation.StochsimEditorID"
+            name="%_UI_StochsimEditor_label"
+            icon="icons/full/obj16/StochsimModelFile.gif"
+            extensions="stochsim"
+            class="stochsim.presentation.StochsimEditor"
+            contributorClass="stochsim.presentation.StochsimActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

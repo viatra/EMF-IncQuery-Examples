@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="validation.constraint.org.eclipse.viatra2.emf.incquery.stochsim.patterns.notConnectedClient"
+         point="org.eclipse.incquery.validation.runtime.constraint">
+      <constraint
+            name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notConnectedClient"
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notconnectedclient.NotConnectedClientConstraint0">
+         <enabledForEditor
+               editorId="*">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="stochsim.presentation.StochsimEditorID">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.emf.ecore.presentation.EcoreEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.org.eclipse.viatra2.emf.incquery.stochsim.patterns.noCycle"
+         point="org.eclipse.incquery.validation.runtime.constraint">
+      <constraint
+            name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.noCycle"
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.nocycle.NoCycleConstraint0">
+         <enabledForEditor
+               editorId="*">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="stochsim.presentation.StochsimEditorID">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.emf.ecore.presentation.EcoreEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+   <extension
+         id="validation.constraint.org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniqueNameConstraint"
+         point="org.eclipse.incquery.validation.runtime.constraint">
+      <constraint
+            name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniqueNameConstraint"
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniquenameconstraint.UniqueNameConstraintConstraint0">
+         <enabledForEditor
+               editorId="*">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="stochsim.presentation.StochsimEditorID">
+         </enabledForEditor>
+         <enabledForEditor
+               editorId="org.eclipse.emf.ecore.presentation.EcoreEditorID">
+         </enabledForEditor>
+      </constraint>
+   </extension>
+
+</plugin>

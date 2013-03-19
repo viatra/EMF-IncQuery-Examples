@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.viatra2.emf.incquery.stochsim.patterns.validation
+Bundle-SymbolicName: org.eclipse.viatra2.emf.incquery.stochsim.patterns.validation;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: org.eclipse.viatra2.emf.incquery.stochsim.patterns,
+ org.eclipse.viatra2.emf.incquery.stochsim.model,
+ org.eclipse.viatra2.emf.incquery.stochsim.patterns,
+ org.eclipse.viatra2.emf.incquery.stochsim.model,
+ org.eclipse.incquery.runtime,
+ org.eclipse.incquery.validation.runtime,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
