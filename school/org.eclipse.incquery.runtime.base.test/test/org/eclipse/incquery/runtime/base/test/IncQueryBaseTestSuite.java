@@ -1,6 +1,7 @@
 package org.eclipse.incquery.runtime.base.test;
 
 import org.eclipse.incquery.runtime.base.test.attribute.AttributeValueTest;
+import org.eclipse.incquery.runtime.base.test.containment.ContainmentManglingTest;
 import org.eclipse.incquery.runtime.base.test.datatype.DataTypeTest;
 import org.eclipse.incquery.runtime.base.test.feature.FeatureTest;
 import org.eclipse.incquery.runtime.base.test.instance.InstanceTest;
@@ -27,7 +28,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	InstanceListenerTest.class,
 	TransitiveClosureHelperTest.class,
 	ParameterizedScopeTest.class,
-	ResourceSetScopeTest.class
+	ResourceSetScopeTest.class,
+	ContainmentManglingTest.class
 })
 public class IncQueryBaseTestSuite {
 

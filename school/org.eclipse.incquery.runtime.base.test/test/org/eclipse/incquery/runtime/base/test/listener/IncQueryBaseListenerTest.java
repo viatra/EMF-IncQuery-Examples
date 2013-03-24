@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.junit.Assert;
 import org.junit.Test;
 
 import school.Course;
@@ -64,7 +65,12 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 		final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
 			@Override
 			protected void doExecute() {
-				ResourceAccess.getFirstSchool().getCourses().add(newCourse);
+				try {
+					ResourceAccess.getFirstSchool().getCourses().add(newCourse);
+				} catch (RuntimeException ex) {
+					Assert.fail("Exception: " + ex.getMessage());
+					throw ex;
+				}
 			}
 		};
 		try {
