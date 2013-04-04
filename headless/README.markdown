@@ -1,4 +1,5 @@
 Headless IncQuery Application
 =============================
 
-See https://viatra.inf.mit.bme.hu/incquery/examples/application for details
+This code has been migrated to eclipse.org.
+See http://wiki.eclipse.org/EMFIncQuery/UserDocumentation/HeadlessExecution for details.
