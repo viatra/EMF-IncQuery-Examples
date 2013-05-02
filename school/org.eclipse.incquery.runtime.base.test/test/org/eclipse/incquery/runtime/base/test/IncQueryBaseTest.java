@@ -29,17 +29,20 @@ public abstract class IncQueryBaseTest {
 	protected boolean wildcardMode;
 	protected Logger logger;
 	protected AppenderSkeleton testAppender;
+	protected boolean isDynamicModel;
 	
 	final protected ArrayList<LoggingEvent> loggedEvents = new ArrayList<LoggingEvent>();
 	
 	public IncQueryBaseTest(Notifier notifier) {
 		this.notifier = notifier;
 		this.wildcardMode = true;
+		this.isDynamicModel = false;
 	}
 	
-	public IncQueryBaseTest(Notifier notifier, boolean wildcardMode) {
+	public IncQueryBaseTest(Notifier notifier, boolean wildcardMode, boolean isDynamicModel) {
 		this.notifier = notifier;
 		this.wildcardMode = wildcardMode;
+		this.isDynamicModel = isDynamicModel;
 	}
 	
 	@After
@@ -95,7 +98,7 @@ public abstract class IncQueryBaseTest {
 			}
 		};
 		logger.addAppender(testAppender);
-		navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(notifier, wildcardMode, logger);
+		navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(notifier, wildcardMode, isDynamicModel, logger);
 	}
 
 }
