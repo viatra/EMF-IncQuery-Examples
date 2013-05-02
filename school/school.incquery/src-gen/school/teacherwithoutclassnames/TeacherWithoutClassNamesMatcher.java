@@ -4,16 +4,16 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatch;
-import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory;
+import school.teacherwithoutclassnames.TeacherWithoutClassNamesQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.teacherWithoutClassNames pattern, 
@@ -28,7 +28,7 @@ import school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory;
  * </pre></code>
  * 
  * @see TeacherWithoutClassNamesMatch
- * @see TeacherWithoutClassNamesMatcherFactory
+ * @see TeacherWithoutClassNamesQuerySpecification
  * @see TeacherWithoutClassNamesProcessor
  * 
  */
@@ -47,7 +47,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * 
    */
   public TeacherWithoutClassNamesMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -59,7 +59,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    * 
    */
   public TeacherWithoutClassNamesMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -205,11 +205,11 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<TeacherWithoutClassNamesMatcher> factory() throws IncQueryException {
-    return TeacherWithoutClassNamesMatcherFactory.instance();
+  public static IQuerySpecification<TeacherWithoutClassNamesMatcher> querySpecification() throws IncQueryException {
+    return TeacherWithoutClassNamesQuerySpecification.instance();
   }
 }

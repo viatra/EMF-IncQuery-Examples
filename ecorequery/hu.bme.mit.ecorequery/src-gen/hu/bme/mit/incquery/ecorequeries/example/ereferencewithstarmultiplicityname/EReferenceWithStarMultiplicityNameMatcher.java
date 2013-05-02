@@ -1,15 +1,15 @@
 package hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname;
 
 import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname.EReferenceWithStarMultiplicityNameMatch;
-import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname.EReferenceWithStarMultiplicityNameMatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname.EReferenceWithStarMultiplicityNameQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -29,7 +29,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see EReferenceWithStarMultiplicityNameMatch
- * @see EReferenceWithStarMultiplicityNameMatcherFactory
+ * @see EReferenceWithStarMultiplicityNameQuerySpecification
  * @see EReferenceWithStarMultiplicityNameProcessor
  * 
  */
@@ -48,7 +48,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * 
    */
   public EReferenceWithStarMultiplicityNameMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -60,7 +60,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
    * 
    */
   public EReferenceWithStarMultiplicityNameMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -206,11 +206,11 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseGeneratedMatc
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<EReferenceWithStarMultiplicityNameMatcher> factory() throws IncQueryException {
-    return EReferenceWithStarMultiplicityNameMatcherFactory.instance();
+  public static IQuerySpecification<EReferenceWithStarMultiplicityNameMatcher> querySpecification() throws IncQueryException {
+    return EReferenceWithStarMultiplicityNameQuerySpecification.instance();
   }
 }

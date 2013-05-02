@@ -4,16 +4,16 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.teachersofschoolnames.TeachersOfSchoolNamesMatch;
-import school.teachersofschoolnames.TeachersOfSchoolNamesMatcherFactory;
+import school.teachersofschoolnames.TeachersOfSchoolNamesQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.teachersOfSchoolNames pattern, 
@@ -29,7 +29,7 @@ import school.teachersofschoolnames.TeachersOfSchoolNamesMatcherFactory;
  * </pre></code>
  * 
  * @see TeachersOfSchoolNamesMatch
- * @see TeachersOfSchoolNamesMatcherFactory
+ * @see TeachersOfSchoolNamesQuerySpecification
  * @see TeachersOfSchoolNamesProcessor
  * 
  */
@@ -50,7 +50,7 @@ public class TeachersOfSchoolNamesMatcher extends BaseGeneratedMatcher<TeachersO
    * 
    */
   public TeachersOfSchoolNamesMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -62,7 +62,7 @@ public class TeachersOfSchoolNamesMatcher extends BaseGeneratedMatcher<TeachersO
    * 
    */
   public TeachersOfSchoolNamesMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -272,11 +272,11 @@ public class TeachersOfSchoolNamesMatcher extends BaseGeneratedMatcher<TeachersO
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<TeachersOfSchoolNamesMatcher> factory() throws IncQueryException {
-    return TeachersOfSchoolNamesMatcherFactory.instance();
+  public static IQuerySpecification<TeachersOfSchoolNamesMatcher> querySpecification() throws IncQueryException {
+    return TeachersOfSchoolNamesQuerySpecification.instance();
   }
 }

@@ -185,9 +185,9 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return FinalPattern2Matcher.factory().getPattern();
+    	return FinalPattern2Matcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

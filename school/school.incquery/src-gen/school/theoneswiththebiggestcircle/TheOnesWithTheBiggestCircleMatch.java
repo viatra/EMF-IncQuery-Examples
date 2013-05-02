@@ -117,9 +117,9 @@ public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch 
   @Override
   public Pattern pattern() {
     try {
-    	return TheOnesWithTheBiggestCircleMatcher.factory().getPattern();
+    	return TheOnesWithTheBiggestCircleMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

@@ -4,17 +4,17 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.Course;
 import school.coursewithweightthirty.CourseWithWeightThirtyMatch;
-import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory;
+import school.coursewithweightthirty.CourseWithWeightThirtyQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.courseWithWeightThirty pattern, 
@@ -31,7 +31,7 @@ import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory;
  * </pre></code>
  * 
  * @see CourseWithWeightThirtyMatch
- * @see CourseWithWeightThirtyMatcherFactory
+ * @see CourseWithWeightThirtyQuerySpecification
  * @see CourseWithWeightThirtyProcessor
  * 
  */
@@ -50,7 +50,7 @@ public class CourseWithWeightThirtyMatcher extends BaseGeneratedMatcher<CourseWi
    * 
    */
   public CourseWithWeightThirtyMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -62,7 +62,7 @@ public class CourseWithWeightThirtyMatcher extends BaseGeneratedMatcher<CourseWi
    * 
    */
   public CourseWithWeightThirtyMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -208,11 +208,11 @@ public class CourseWithWeightThirtyMatcher extends BaseGeneratedMatcher<CourseWi
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<CourseWithWeightThirtyMatcher> factory() throws IncQueryException {
-    return CourseWithWeightThirtyMatcherFactory.instance();
+  public static IQuerySpecification<CourseWithWeightThirtyMatcher> querySpecification() throws IncQueryException {
+    return CourseWithWeightThirtyQuerySpecification.instance();
   }
 }

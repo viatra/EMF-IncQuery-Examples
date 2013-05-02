@@ -7,8 +7,8 @@ import school.coursewithteacher.CourseWithTeacherMatcher;
 
 public final class GroupOfFileSchoolvalidationrules extends BaseGeneratedPatternGroup {
   public GroupOfFileSchoolvalidationrules() throws IncQueryException {
-    matcherFactories.add(CourseWithTeacherMatcher.factory());
-    matcherFactories.add(CourseWithoutTeacherMatcher.factory());
+    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithTeacherMatcher.querySpecification());
     
   }
 }

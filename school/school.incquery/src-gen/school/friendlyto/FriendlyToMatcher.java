@@ -4,17 +4,17 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.Student;
 import school.friendlyto.FriendlyToMatch;
-import school.friendlyto.FriendlyToMatcherFactory;
+import school.friendlyto.FriendlyToQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.friendlyTo pattern, 
@@ -34,7 +34,7 @@ import school.friendlyto.FriendlyToMatcherFactory;
  * </pre></code>
  * 
  * @see FriendlyToMatch
- * @see FriendlyToMatcherFactory
+ * @see FriendlyToQuerySpecification
  * @see FriendlyToProcessor
  * 
  */
@@ -55,7 +55,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * 
    */
   public FriendlyToMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -67,7 +67,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    * 
    */
   public FriendlyToMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -277,11 +277,11 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<FriendlyToMatcher> factory() throws IncQueryException {
-    return FriendlyToMatcherFactory.instance();
+  public static IQuerySpecification<FriendlyToMatcher> querySpecification() throws IncQueryException {
+    return FriendlyToQuerySpecification.instance();
   }
 }

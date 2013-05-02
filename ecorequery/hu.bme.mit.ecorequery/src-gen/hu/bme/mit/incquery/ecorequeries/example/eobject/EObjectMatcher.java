@@ -1,16 +1,16 @@
 package hu.bme.mit.incquery.ecorequeries.example.eobject;
 
 import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatch;
-import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -28,7 +28,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see EObjectMatch
- * @see EObjectMatcherFactory
+ * @see EObjectQuerySpecification
  * @see EObjectProcessor
  * 
  */
@@ -47,7 +47,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * 
    */
   public EObjectMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -59,7 +59,7 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
    * 
    */
   public EObjectMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -205,11 +205,11 @@ public class EObjectMatcher extends BaseGeneratedMatcher<EObjectMatch> {
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<EObjectMatcher> factory() throws IncQueryException {
-    return EObjectMatcherFactory.instance();
+  public static IQuerySpecification<EObjectMatcher> querySpecification() throws IncQueryException {
+    return EObjectQuerySpecification.instance();
   }
 }

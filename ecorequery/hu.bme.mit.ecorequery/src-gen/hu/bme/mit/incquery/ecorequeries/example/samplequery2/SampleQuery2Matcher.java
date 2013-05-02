@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.samplequery2;
 
 import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2Match;
-import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2QuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,10 +9,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -51,7 +51,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see SampleQuery2Match
- * @see SampleQuery2MatcherFactory
+ * @see SampleQuery2QuerySpecification
  * @see SampleQuery2Processor
  * 
  */
@@ -80,7 +80,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * 
    */
   public SampleQuery2Matcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -92,7 +92,7 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * 
    */
   public SampleQuery2Matcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -486,11 +486,11 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<SampleQuery2Matcher> factory() throws IncQueryException {
-    return SampleQuery2MatcherFactory.instance();
+  public static IQuerySpecification<SampleQuery2Matcher> querySpecification() throws IncQueryException {
+    return SampleQuery2QuerySpecification.instance();
   }
 }

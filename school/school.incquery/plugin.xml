@@ -2,146 +2,162 @@
 <plugin>
 
    <extension
-         id="school.schools"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="school.CourseWithTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.schools.SchoolsMatcherFactory$Provider"
+            querySpecificationProvider="school.coursewithteacher.CourseWithTeacherQuerySpecification$Provider"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.coursewithoutteacher.CourseWithoutTeacherQuerySpecification$Provider"
+            id="school.CourseWithoutTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.schools"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.schools.SchoolsQuerySpecification$Provider"
             id="school.schools">
       </matcher>
    </extension>
    <extension
          id="school.courses"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.courses.CoursesMatcherFactory$Provider"
+            querySpecificationProvider="school.courses.CoursesQuerySpecification$Provider"
             id="school.courses">
       </matcher>
    </extension>
    <extension
          id="school.schoolsNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.schoolsnames.SchoolsNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.schoolsnames.SchoolsNamesQuerySpecification$Provider"
             id="school.schoolsNames">
       </matcher>
    </extension>
    <extension
          id="school.teachers"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachers.TeachersMatcherFactory$Provider"
+            querySpecificationProvider="school.teachers.TeachersQuerySpecification$Provider"
             id="school.teachers">
       </matcher>
    </extension>
    <extension
          id="school.teachersNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachersnames.TeachersNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.teachersnames.TeachersNamesQuerySpecification$Provider"
             id="school.teachersNames">
       </matcher>
    </extension>
    <extension
          id="school.teachersOfSchool"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachersofschool.TeachersOfSchoolMatcherFactory$Provider"
+            querySpecificationProvider="school.teachersofschool.TeachersOfSchoolQuerySpecification$Provider"
             id="school.teachersOfSchool">
       </matcher>
    </extension>
    <extension
          id="school.teachersOfSchoolNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachersofschoolnames.TeachersOfSchoolNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.teachersofschoolnames.TeachersOfSchoolNamesQuerySpecification$Provider"
             id="school.teachersOfSchoolNames">
       </matcher>
    </extension>
    <extension
          id="school.coursesOfTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursesofteacher.CoursesOfTeacherMatcherFactory$Provider"
+            querySpecificationProvider="school.coursesofteacher.CoursesOfTeacherQuerySpecification$Provider"
             id="school.coursesOfTeacher">
       </matcher>
    </extension>
    <extension
          id="school.coursesOfTeacherNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursesofteachernames.CoursesOfTeacherNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.coursesofteachernames.CoursesOfTeacherNamesQuerySpecification$Provider"
             id="school.coursesOfTeacherNames">
       </matcher>
    </extension>
    <extension
          id="school.classesOfTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.classesofteacher.ClassesOfTeacherMatcherFactory$Provider"
+            querySpecificationProvider="school.classesofteacher.ClassesOfTeacherQuerySpecification$Provider"
             id="school.classesOfTeacher">
       </matcher>
    </extension>
    <extension
          id="school.classesOfSchool"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.classesofschool.ClassesOfSchoolMatcherFactory$Provider"
+            querySpecificationProvider="school.classesofschool.ClassesOfSchoolQuerySpecification$Provider"
             id="school.classesOfSchool">
       </matcher>
    </extension>
    <extension
          id="school.classesOfTeacherNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.classesofteachernames.ClassesOfTeacherNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.classesofteachernames.ClassesOfTeacherNamesQuerySpecification$Provider"
             id="school.classesOfTeacherNames">
       </matcher>
    </extension>
    <extension
          id="school.teacherWithoutClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teacherwithoutclass.TeacherWithoutClassMatcherFactory$Provider"
+            querySpecificationProvider="school.teacherwithoutclass.TeacherWithoutClassQuerySpecification$Provider"
             id="school.teacherWithoutClass">
       </matcher>
    </extension>
    <extension
          id="school.teacherWithoutClassNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teacherwithoutclassnames.TeacherWithoutClassNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.teacherwithoutclassnames.TeacherWithoutClassNamesQuerySpecification$Provider"
             id="school.teacherWithoutClassNames">
       </matcher>
    </extension>
    <extension
          id="school.studentOfSchool"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.studentofschool.StudentOfSchoolMatcherFactory$Provider"
+            querySpecificationProvider="school.studentofschool.StudentOfSchoolQuerySpecification$Provider"
             id="school.studentOfSchool">
       </matcher>
    </extension>
    <extension
          id="school.studentOfSchoolNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.studentofschoolnames.StudentOfSchoolNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.studentofschoolnames.StudentOfSchoolNamesQuerySpecification$Provider"
             id="school.studentOfSchoolNames">
       </matcher>
    </extension>
    <extension
          id="school.courseWithWeightThirty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory$Provider"
+            querySpecificationProvider="school.coursewithweightthirty.CourseWithWeightThirtyQuerySpecification$Provider"
             id="school.courseWithWeightThirty">
       </matcher>
    </extension>
    <extension
          id="school.courseWithNameLongerThanWeight"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatcherFactory$Provider"
+            querySpecificationProvider="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightQuerySpecification$Provider"
             id="school.courseWithNameLongerThanWeight">
       </matcher>
    </extension>
@@ -155,9 +171,9 @@
    </extension>
    <extension
          id="school.courseWithNameLongerThanWeightInt"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntMatcherFactory$Provider"
+            querySpecificationProvider="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntQuerySpecification$Provider"
             id="school.courseWithNameLongerThanWeightInt">
       </matcher>
    </extension>
@@ -171,9 +187,9 @@
    </extension>
    <extension
          id="school.courseWithPrimeWeight"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory$Provider"
+            querySpecificationProvider="school.coursewithprimeweight.CourseWithPrimeWeightQuerySpecification$Provider"
             id="school.courseWithPrimeWeight">
       </matcher>
    </extension>
@@ -187,9 +203,9 @@
    </extension>
    <extension
          id="school.teachesMoreClasses"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachesmoreclasses.TeachesMoreClassesMatcherFactory$Provider"
+            querySpecificationProvider="school.teachesmoreclasses.TeachesMoreClassesQuerySpecification$Provider"
             id="school.teachesMoreClasses">
       </matcher>
    </extension>
@@ -203,41 +219,41 @@
    </extension>
    <extension
          id="school.teachesTheMostCourses"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory$Provider"
+            querySpecificationProvider="school.teachesthemostcourses.TeachesTheMostCoursesQuerySpecification$Provider"
             id="school.teachesTheMostCourses">
       </matcher>
    </extension>
    <extension
          id="school.friendlyTo"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.friendlyto.FriendlyToMatcherFactory$Provider"
+            querySpecificationProvider="school.friendlyto.FriendlyToQuerySpecification$Provider"
             id="school.friendlyTo">
       </matcher>
    </extension>
    <extension
          id="school.inTheCircleOfFriends"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory$Provider"
+            querySpecificationProvider="school.inthecircleoffriends.InTheCircleOfFriendsQuerySpecification$Provider"
             id="school.inTheCircleOfFriends">
       </matcher>
    </extension>
    <extension
          id="school.inTheCircleOfFriendsNames"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesMatcherFactory$Provider"
+            querySpecificationProvider="school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesQuerySpecification$Provider"
             id="school.inTheCircleOfFriendsNames">
       </matcher>
    </extension>
    <extension
          id="school.moreFriendsThan"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.morefriendsthan.MoreFriendsThanMatcherFactory$Provider"
+            querySpecificationProvider="school.morefriendsthan.MoreFriendsThanQuerySpecification$Provider"
             id="school.moreFriendsThan">
       </matcher>
    </extension>
@@ -251,58 +267,42 @@
    </extension>
    <extension
          id="school.theOnesWithTheBiggestCircle"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory$Provider"
+            querySpecificationProvider="school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleQuerySpecification$Provider"
             id="school.theOnesWithTheBiggestCircle">
       </matcher>
    </extension>
    <extension
          id="school.theOnesWithTheBiggestCircleName"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameMatcherFactory$Provider"
+            querySpecificationProvider="school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameQuerySpecification$Provider"
             id="school.theOnesWithTheBiggestCircleName">
       </matcher>
    </extension>
    <extension
          id="school.finalPattern"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.finalpattern.FinalPatternMatcherFactory$Provider"
+            querySpecificationProvider="school.finalpattern.FinalPatternQuerySpecification$Provider"
             id="school.finalPattern">
       </matcher>
    </extension>
    <extension
          id="school.finalPattern2"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.finalpattern2.FinalPattern2MatcherFactory$Provider"
+            querySpecificationProvider="school.finalpattern2.FinalPattern2QuerySpecification$Provider"
             id="school.finalPattern2">
       </matcher>
    </extension>
    <extension
          id="school.SomeCourse"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="school.somecourse.SomeCourseMatcherFactory$Provider"
+            querySpecificationProvider="school.somecourse.SomeCourseQuerySpecification$Provider"
             id="school.SomeCourse">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithteacher.CourseWithTeacherMatcherFactory$Provider"
-            id="school.CourseWithTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithoutTeacher"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory$Provider"
-            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 

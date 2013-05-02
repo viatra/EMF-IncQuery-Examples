@@ -4,10 +4,10 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -15,7 +15,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.Course;
 import school.Teacher;
 import school.coursesofteacher.CoursesOfTeacherMatch;
-import school.coursesofteacher.CoursesOfTeacherMatcherFactory;
+import school.coursesofteacher.CoursesOfTeacherQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.coursesOfTeacher pattern, 
@@ -32,7 +32,7 @@ import school.coursesofteacher.CoursesOfTeacherMatcherFactory;
  * </pre></code>
  * 
  * @see CoursesOfTeacherMatch
- * @see CoursesOfTeacherMatcherFactory
+ * @see CoursesOfTeacherQuerySpecification
  * @see CoursesOfTeacherProcessor
  * 
  */
@@ -53,7 +53,7 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
    * 
    */
   public CoursesOfTeacherMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -65,7 +65,7 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
    * 
    */
   public CoursesOfTeacherMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -275,11 +275,11 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<CoursesOfTeacherMatcher> factory() throws IncQueryException {
-    return CoursesOfTeacherMatcherFactory.instance();
+  public static IQuerySpecification<CoursesOfTeacherMatcher> querySpecification() throws IncQueryException {
+    return CoursesOfTeacherQuerySpecification.instance();
   }
 }

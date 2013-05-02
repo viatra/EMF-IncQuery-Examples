@@ -4,17 +4,17 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.Course;
 import school.coursewithoutteacher.CourseWithoutTeacherMatch;
-import school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory;
+import school.coursewithoutteacher.CourseWithoutTeacherQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.CourseWithoutTeacher pattern, 
@@ -33,7 +33,7 @@ import school.coursewithoutteacher.CourseWithoutTeacherMatcherFactory;
  * </pre></code>
  * 
  * @see CourseWithoutTeacherMatch
- * @see CourseWithoutTeacherMatcherFactory
+ * @see CourseWithoutTeacherQuerySpecification
  * @see CourseWithoutTeacherProcessor
  * 
  */
@@ -52,7 +52,7 @@ public class CourseWithoutTeacherMatcher extends BaseGeneratedMatcher<CourseWith
    * 
    */
   public CourseWithoutTeacherMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -64,7 +64,7 @@ public class CourseWithoutTeacherMatcher extends BaseGeneratedMatcher<CourseWith
    * 
    */
   public CourseWithoutTeacherMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -210,11 +210,11 @@ public class CourseWithoutTeacherMatcher extends BaseGeneratedMatcher<CourseWith
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<CourseWithoutTeacherMatcher> factory() throws IncQueryException {
-    return CourseWithoutTeacherMatcherFactory.instance();
+  public static IQuerySpecification<CourseWithoutTeacherMatcher> querySpecification() throws IncQueryException {
+    return CourseWithoutTeacherQuerySpecification.instance();
   }
 }

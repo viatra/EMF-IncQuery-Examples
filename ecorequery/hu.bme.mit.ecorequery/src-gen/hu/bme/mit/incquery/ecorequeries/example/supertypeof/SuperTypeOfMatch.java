@@ -140,9 +140,9 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return SuperTypeOfMatcher.factory().getPattern();
+    	return SuperTypeOfMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

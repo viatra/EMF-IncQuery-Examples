@@ -141,9 +141,9 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return EClassWithEStringAttributeMatcher.factory().getPattern();
+    	return EClassWithEStringAttributeMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

@@ -3,9 +3,9 @@
 
    <extension
          id="network.MutualFriends"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="network.mutualfriends.MutualFriendsMatcherFactory$Provider"
+            querySpecificationProvider="network.mutualfriends.MutualFriendsQuerySpecification$Provider"
             id="network.MutualFriends">
       </matcher>
    </extension>

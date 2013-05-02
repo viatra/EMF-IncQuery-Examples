@@ -7,7 +7,7 @@ import java.util.Collection;
 
 import network.NetworkPackage;
 import network.mutualfriends.MutualFriendsMatcher;
-import network.mutualfriends.MutualFriendsMatcherFactory;
+import network.mutualfriends.MutualFriendsQuerySpecification;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -84,7 +84,7 @@ public class IncQueryTest {
 		try {
 			long startTime = System.nanoTime();
 			
-			MutualFriendsMatcher matcher = MutualFriendsMatcherFactory.instance().getMatcher(resource);
+			MutualFriendsMatcher matcher = MutualFriendsQuerySpecification.instance().getMatcher(resource);
 			//PersonFriendsMatcher matcher = PersonFriendsMatcherFactory.instance().getMatcher(resource);
 			
 			double elapsedSec = (double)(System.nanoTime() - startTime) / (1000*1000*1000);

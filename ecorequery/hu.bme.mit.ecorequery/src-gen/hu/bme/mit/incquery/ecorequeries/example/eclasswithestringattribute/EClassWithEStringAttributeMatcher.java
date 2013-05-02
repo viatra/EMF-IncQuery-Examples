@@ -1,17 +1,17 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute;
 
 import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatch;
-import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -31,7 +31,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see EClassWithEStringAttributeMatch
- * @see EClassWithEStringAttributeMatcherFactory
+ * @see EClassWithEStringAttributeQuerySpecification
  * @see EClassWithEStringAttributeProcessor
  * 
  */
@@ -52,7 +52,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * 
    */
   public EClassWithEStringAttributeMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -64,7 +64,7 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
    * 
    */
   public EClassWithEStringAttributeMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -274,11 +274,11 @@ public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<ECla
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<EClassWithEStringAttributeMatcher> factory() throws IncQueryException {
-    return EClassWithEStringAttributeMatcherFactory.instance();
+  public static IQuerySpecification<EClassWithEStringAttributeMatcher> querySpecification() throws IncQueryException {
+    return EClassWithEStringAttributeQuerySpecification.instance();
   }
 }

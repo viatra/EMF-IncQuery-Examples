@@ -17,28 +17,27 @@ import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import static org.junit.Assert.*
-import org.junit.Ignore
-import school.schools.SchoolsMatcherFactory
-import school.teachers.TeachersMatcherFactory
-import school.teachersofschool.TeachersOfSchoolMatcherFactory
-import school.coursesofteacher.CoursesOfTeacherMatcherFactory
-import school.classesofteacher.ClassesOfTeacherMatcherFactory
-import school.teacherwithoutclass.TeacherWithoutClassMatcherFactory
-import school.studentofschool.StudentOfSchoolMatcherFactory
-import school.coursewithweightthirty.CourseWithWeightThirtyMatcherFactory
-import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightMatcherFactory
-import school.coursewithprimeweight.CourseWithPrimeWeightMatcherFactory
-import school.teachesmoreclasses.TeachesMoreClassesMatcherFactory
-import school.teachesthemostcourses.TeachesTheMostCoursesMatcherFactory
-import school.friendlyto.FriendlyToMatcherFactory
-import school.inthecircleoffriends.InTheCircleOfFriendsMatcherFactory
-import school.morefriendsthan.MoreFriendsThanMatcherFactory
-import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleMatcherFactory
-import school.finalpattern.FinalPatternMatcherFactory
+import school.classesofteacher.ClassesOfTeacherQuerySpecification
+import school.coursesofteacher.CoursesOfTeacherQuerySpecification
+import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightQuerySpecification
+import school.coursewithprimeweight.CourseWithPrimeWeightQuerySpecification
+import school.coursewithweightthirty.CourseWithWeightThirtyQuerySpecification
+import school.schools.SchoolsQuerySpecification
+import school.studentofschool.StudentOfSchoolQuerySpecification
+import school.teachers.TeachersQuerySpecification
+import school.teachersofschool.TeachersOfSchoolQuerySpecification
+import school.teacherwithoutclass.TeacherWithoutClassQuerySpecification
+import school.teachesmoreclasses.TeachesMoreClassesQuerySpecification
+import school.teachesthemostcourses.TeachesTheMostCoursesQuerySpecification
+import school.friendlyto.FriendlyToQuerySpecification
+import school.inthecircleoffriends.InTheCircleOfFriendsQuerySpecification
+import school.morefriendsthan.MoreFriendsThanQuerySpecification
+import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleQuerySpecification
+import school.finalpattern2.FinalPattern2QuerySpecification
+import school.finalpattern.FinalPatternQuerySpecification
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -84,22 +83,22 @@ class BasicSchoolTest extends SchoolTestsBase {
 	@Test def testTheOnesWithTheBiggestCircle() { testQuery("school.theOnesWithTheBiggestCircle") }
 	@Test def testFinalPattern() { testQuery("school.finalPattern") }	
 	
-	@Test def mfTestSchools() { testQuery(SchoolsMatcherFactory::instance) }
-	@Test def mfTestTeachers() { testQuery(TeachersMatcherFactory::instance) }
-	@Test def mfTestTeachersOfSchool() { testQuery(TeachersOfSchoolMatcherFactory::instance) }
-	@Test def mfTestCoursesOfTeacher() { testQuery(CoursesOfTeacherMatcherFactory::instance) }
-	@Test def mfTestClassesOfTeacher() { testQuery(ClassesOfTeacherMatcherFactory::instance) }
-	@Test def mfTestTeacherWithoutClass() { testQuery(TeacherWithoutClassMatcherFactory::instance) }
-	@Test def mfTestStudentOfSchool() { testQuery(StudentOfSchoolMatcherFactory::instance) }
-	@Test def mfTestCourseWithWeightThirty() { testQuery(CourseWithWeightThirtyMatcherFactory::instance) }
-	@Test def mfTestCourseWithNameLongerThanWeight() { testQuery(CourseWithNameLongerThanWeightMatcherFactory::instance) }
-	@Test def mfTestCourseWithPrimeWeight() { testQuery(CourseWithPrimeWeightMatcherFactory::instance) }
-	@Test def mfTestTeachesMoreClasses() { testQuery(TeachesMoreClassesMatcherFactory::instance) }
-	@Test def mfTestTeachesTheMostCourses() { testQuery(TeachesTheMostCoursesMatcherFactory::instance) }
-	@Test def mfTestFriendlyTo() { testQuery(FriendlyToMatcherFactory::instance) }
-	@Test def mfTestInTheCircleOfFriends() { testQuery(InTheCircleOfFriendsMatcherFactory::instance) }
-	@Test def mfTestMoreFriendsThan() { testQuery(MoreFriendsThanMatcherFactory::instance) }
-	@Test def mfTestTheOnesWithTheBiggestCircle() { testQuery(TheOnesWithTheBiggestCircleMatcherFactory::instance) }
-	@Test def mfTestFinalPattern() { testQuery(FinalPatternMatcherFactory::instance) }	
+	@Test def mfTestSchools() { testQuery(SchoolsQuerySpecification::instance) }
+	@Test def mfTestTeachers() { testQuery(TeachersQuerySpecification::instance) }
+	@Test def mfTestTeachersOfSchool() { testQuery(TeachersOfSchoolQuerySpecification::instance) }
+	@Test def mfTestCoursesOfTeacher() { testQuery(CoursesOfTeacherQuerySpecification::instance) }
+	@Test def mfTestClassesOfTeacher() { testQuery(ClassesOfTeacherQuerySpecification::instance) }
+	@Test def mfTestTeacherWithoutClass() { testQuery(TeacherWithoutClassQuerySpecification::instance) }
+	@Test def mfTestStudentOfSchool() { testQuery(StudentOfSchoolQuerySpecification::instance) }
+	@Test def mfTestCourseWithWeightThirty() { testQuery(CourseWithWeightThirtyQuerySpecification::instance) }
+	@Test def mfTestCourseWithNameLongerThanWeight() { testQuery(CourseWithNameLongerThanWeightQuerySpecification::instance) }
+	@Test def mfTestCourseWithPrimeWeight() { testQuery(CourseWithPrimeWeightQuerySpecification::instance) }
+	@Test def mfTestTeachesMoreClasses() { testQuery(TeachesMoreClassesQuerySpecification::instance) }
+	@Test def mfTestTeachesTheMostCourses() { testQuery(TeachesTheMostCoursesQuerySpecification::instance) }
+	@Test def mfTestFriendlyTo() { testQuery(FriendlyToQuerySpecification::instance) }
+	@Test def mfTestInTheCircleOfFriends() { testQuery(InTheCircleOfFriendsQuerySpecification::instance) }
+	@Test def mfTestMoreFriendsThan() { testQuery(MoreFriendsThanQuerySpecification::instance) }
+	@Test def mfTestTheOnesWithTheBiggestCircle() { testQuery(TheOnesWithTheBiggestCircleQuerySpecification::instance) }
+	@Test def mfTestFinalPattern() { testQuery(FinalPatternQuerySpecification::instance) }	
 	
 }

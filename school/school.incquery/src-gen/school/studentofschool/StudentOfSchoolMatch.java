@@ -141,9 +141,9 @@ public abstract class StudentOfSchoolMatch extends BasePatternMatch {
   @Override
   public Pattern pattern() {
     try {
-    	return StudentOfSchoolMatcher.factory().getPattern();
+    	return StudentOfSchoolMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

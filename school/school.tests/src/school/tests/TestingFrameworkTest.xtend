@@ -1,19 +1,18 @@
 package school.tests
 
-import school.tests.SchoolTestsBase
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import com.google.inject.Inject
-import org.eclipse.incquery.testing.core.TestExecutor
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager
+import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
+import org.eclipse.incquery.snapshot.EIQSnapshot.RecordRole
 import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.snapshot.EIQSnapshot.RecordRole
+import org.eclipse.incquery.testing.core.TestExecutor
+import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
-import org.eclipse.incquery.runtime.api.EngineManager
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
+import org.junit.runner.RunWith
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
@@ -46,7 +45,7 @@ class TestingFrameworkTest extends SchoolTestsBase {
   @Test
   def wildcardTest(){
     val sns = snapshot
-    val engine = EngineManager::instance.getIncQueryEngine(sns.EMFRootForSnapshot)
+    val engine = IncQueryEngineManager::instance.getIncQueryEngine(sns.EMFRootForSnapshot)
     engine.setWildcardMode(true)
     testValues(sns)
   }

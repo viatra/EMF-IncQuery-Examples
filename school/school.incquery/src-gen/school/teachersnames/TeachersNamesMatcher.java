@@ -4,16 +4,16 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 import school.teachersnames.TeachersNamesMatch;
-import school.teachersnames.TeachersNamesMatcherFactory;
+import school.teachersnames.TeachersNamesQuerySpecification;
 
 /**
  * Generated pattern matcher API of the school.teachersNames pattern, 
@@ -27,7 +27,7 @@ import school.teachersnames.TeachersNamesMatcherFactory;
  * </pre></code>
  * 
  * @see TeachersNamesMatch
- * @see TeachersNamesMatcherFactory
+ * @see TeachersNamesQuerySpecification
  * @see TeachersNamesProcessor
  * 
  */
@@ -46,7 +46,7 @@ public class TeachersNamesMatcher extends BaseGeneratedMatcher<TeachersNamesMatc
    * 
    */
   public TeachersNamesMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -58,7 +58,7 @@ public class TeachersNamesMatcher extends BaseGeneratedMatcher<TeachersNamesMatc
    * 
    */
   public TeachersNamesMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -204,11 +204,11 @@ public class TeachersNamesMatcher extends BaseGeneratedMatcher<TeachersNamesMatc
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<TeachersNamesMatcher> factory() throws IncQueryException {
-    return TeachersNamesMatcherFactory.instance();
+  public static IQuerySpecification<TeachersNamesMatcher> querySpecification() throws IncQueryException {
+    return TeachersNamesQuerySpecification.instance();
   }
 }

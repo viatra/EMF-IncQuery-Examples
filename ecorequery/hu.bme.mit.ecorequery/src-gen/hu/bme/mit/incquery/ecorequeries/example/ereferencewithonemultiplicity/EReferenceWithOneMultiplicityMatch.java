@@ -117,9 +117,9 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
   @Override
   public Pattern pattern() {
     try {
-    	return EReferenceWithOneMultiplicityMatcher.factory().getPattern();
+    	return EReferenceWithOneMultiplicityMatcher.querySpecification().getPattern();
     } catch (IncQueryException ex) {
-     	// This cannot happen, as the match object can only be instantiated if the matcher factory exists
+     	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);
     }
     

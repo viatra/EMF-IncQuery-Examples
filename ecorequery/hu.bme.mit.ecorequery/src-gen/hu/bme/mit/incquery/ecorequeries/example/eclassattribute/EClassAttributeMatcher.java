@@ -1,7 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.eclassattribute;
 
 import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatch;
-import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,10 +9,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -33,7 +33,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see EClassAttributeMatch
- * @see EClassAttributeMatcherFactory
+ * @see EClassAttributeQuerySpecification
  * @see EClassAttributeProcessor
  * 
  */
@@ -56,7 +56,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public EClassAttributeMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -68,7 +68,7 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
    * 
    */
   public EClassAttributeMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -324,11 +324,11 @@ public class EClassAttributeMatcher extends BaseGeneratedMatcher<EClassAttribute
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<EClassAttributeMatcher> factory() throws IncQueryException {
-    return EClassAttributeMatcherFactory.instance();
+  public static IQuerySpecification<EClassAttributeMatcher> querySpecification() throws IncQueryException {
+    return EClassAttributeQuerySpecification.instance();
   }
 }

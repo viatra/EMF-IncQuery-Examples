@@ -1,15 +1,15 @@
 package hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname;
 
 import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameMatch;
-import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameMatcherFactory;
+import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname.ECoreNamedElementNameQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.EngineManager;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IMatcherFactory;
+import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
+import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -28,7 +28,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * </pre></code>
  * 
  * @see ECoreNamedElementNameMatch
- * @see ECoreNamedElementNameMatcherFactory
+ * @see ECoreNamedElementNameQuerySpecification
  * @see ECoreNamedElementNameProcessor
  * 
  */
@@ -47,7 +47,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * 
    */
   public ECoreNamedElementNameMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(EngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
   
   /**
@@ -59,7 +59,7 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
    * 
    */
   public ECoreNamedElementNameMatcher(final IncQueryEngine engine) throws IncQueryException {
-    super(engine, factory());
+    super(engine, querySpecification());
   }
   
   /**
@@ -205,11 +205,11 @@ public class ECoreNamedElementNameMatcher extends BaseGeneratedMatcher<ECoreName
   }
   
   /**
-   * @return the singleton instance of the factory of this pattern
+   * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IMatcherFactory<ECoreNamedElementNameMatcher> factory() throws IncQueryException {
-    return ECoreNamedElementNameMatcherFactory.instance();
+  public static IQuerySpecification<ECoreNamedElementNameMatcher> querySpecification() throws IncQueryException {
+    return ECoreNamedElementNameQuerySpecification.instance();
   }
 }

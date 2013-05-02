@@ -1,18 +1,18 @@
 package hu.bme.mit.ecorequery.tests
 
 import com.google.inject.Inject
-import hu.bme.mit.incquery.ecorequeries.example.eclass.EClassMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryMatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2MatcherFactory
-import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfMatcherFactory
+import hu.bme.mit.incquery.ecorequeries.example.eclass.EClassQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.eclassattribute.EClassAttributeQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute.EClassWithEStringAttributeQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement.ECoreNamedElementQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.eobject.EObjectQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity.EReferenceWithOneMultiplicityQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity.EReferenceWithStarMultiplicityQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.isestring.IsEStringQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.isinecore.IsInECoreQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.samplequery.SampleQueryQuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.samplequery2.SampleQuery2QuerySpecification
+import hu.bme.mit.incquery.ecorequeries.example.supertypeof.SuperTypeOfQuerySpecification
 import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
@@ -65,18 +65,18 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	@Test def testECoreNamedElement() { testQuery("hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElement") }
 	@Test def testIsInECore() { testQuery("hu.bme.mit.incquery.ecorequeries.example.IsInECore") }
 
-	@Test def mfTestEObject() { testQuery(EObjectMatcherFactory::instance) }
-	@Test def mfTestEClass() { testQuery(EClassMatcherFactory::instance) }
-	@Test def mfTestSuperTypeOf() { testQuery(SuperTypeOfMatcherFactory::instance) }
-	@Test def mfTestEClassAttribute() { testQuery(EClassAttributeMatcherFactory::instance) }
-	@Test def mfTestEClassWithEStringAttribute() { testQuery(EClassWithEStringAttributeMatcherFactory::instance) }
-	@Test def mfTestEReferenceWithStarMultiplicity() { testQuery(EReferenceWithStarMultiplicityMatcherFactory::instance) }
-	@Test def mfTestEReferenceWithOneMultiplicity() { testQuery(EReferenceWithOneMultiplicityMatcherFactory::instance) }
-	@Test def mfTestSampleQuery() { testQuery(SampleQueryMatcherFactory::instance) }
-	@Test def mfTestSampleQuery2() { testQuery(SampleQuery2MatcherFactory::instance) }
-	@Test def mfTestIsEString() { testQuery(IsEStringMatcherFactory::instance) }
-	@Test def mfTestECoreNamedElement() { testQuery(ECoreNamedElementMatcherFactory::instance) }
-	@Test def mfTestIsInECore() { testQuery(IsInECoreMatcherFactory::instance) }
+	@Test def mfTestEObject() { testQuery(EObjectQuerySpecification::instance) }
+	@Test def mfTestEClass() { testQuery(EClassQuerySpecification::instance) }
+	@Test def mfTestSuperTypeOf() { testQuery(SuperTypeOfQuerySpecification::instance) }
+	@Test def mfTestEClassAttribute() { testQuery(EClassAttributeQuerySpecification::instance) }
+	@Test def mfTestEClassWithEStringAttribute() { testQuery(EClassWithEStringAttributeQuerySpecification::instance) }
+	@Test def mfTestEReferenceWithStarMultiplicity() { testQuery(EReferenceWithStarMultiplicityQuerySpecification::instance) }
+	@Test def mfTestEReferenceWithOneMultiplicity() { testQuery(EReferenceWithOneMultiplicityQuerySpecification::instance) }
+	@Test def mfTestSampleQuery() { testQuery(SampleQueryQuerySpecification::instance) }
+	@Test def mfTestSampleQuery2() { testQuery(SampleQuery2QuerySpecification::instance) }
+	@Test def mfTestIsEString() { testQuery(IsEStringQuerySpecification::instance) }
+	@Test def mfTestECoreNamedElement() { testQuery(ECoreNamedElementQuerySpecification::instance) }
+	@Test def mfTestIsInECore() { testQuery(IsInECoreQuerySpecification::instance) }
 	
 	
 	@Test
