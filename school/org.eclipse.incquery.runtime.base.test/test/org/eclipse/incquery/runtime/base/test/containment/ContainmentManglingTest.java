@@ -53,21 +53,21 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
 	 * @param notifier
 	 */
 	public ContainmentManglingTest() {
-		super(ResourceAccess.getResourceOfFirstSchool(), true, false);
+		super(ResourceAccess.getResourceOfFirstSchool(), true);
 	}
 	
 	private Set<EStructuralFeature> listenerFeatures;
 	private FeatureListener featureListener;
 	
- 	public void registerListener() {
+ 	@SuppressWarnings("serial")
+	public void registerListener() {
  		initListener();
 		if (!navigationHelper.isInWildcardMode()) 
 			navigationHelper.registerEStructuralFeatures(listenerFeatures);
 		navigationHelper.registerFeatureListener(listenerFeatures, featureListener);
 	}
 
-	@SuppressWarnings("serial")
-    private void initListener() {
+	private void initListener() {
 		listenerFeatures = new HashSet<EStructuralFeature>(){{
  			add(SCHOOL_YEARS);
  			add(YEAR_SCHOOLCLASSES);

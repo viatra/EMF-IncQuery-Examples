@@ -24,12 +24,12 @@ public abstract class IncQueryBaseParameterizedTest extends IncQueryBaseTest {
 		super(notifier);
 	}
 
-	public IncQueryBaseParameterizedTest(Notifier notifier, boolean wildcardMode, boolean isDynamicModel) {
-		super(notifier, wildcardMode, isDynamicModel);
+	public IncQueryBaseParameterizedTest(Notifier notifier, boolean wildcardMode) {
+		super(notifier, wildcardMode);
 	}
 	
 	@Parameters
-	public static Collection<Notifier[]> initializeParameters() {
+	public static Collection<Notifier[]> getNotifiers() {
 		return Arrays.asList(new Notifier[][] {
 		                 { ResourceAccess.getResourceSet() },
 		                 { ResourceAccess.getResourceOfFirstSchool() },

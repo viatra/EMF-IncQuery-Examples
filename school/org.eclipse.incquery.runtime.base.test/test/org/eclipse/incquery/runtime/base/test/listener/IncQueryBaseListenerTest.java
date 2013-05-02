@@ -36,7 +36,7 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 	}
 	
 	public IncQueryBaseListenerTest(Notifier notifier, boolean wildcardMode) {
-		super(notifier, wildcardMode, false);
+		super(notifier, wildcardMode);
 		
 		newCourse = SchoolFactory.eINSTANCE.createCourse();
 		newCourse.setSubject(newCourseSubject);
