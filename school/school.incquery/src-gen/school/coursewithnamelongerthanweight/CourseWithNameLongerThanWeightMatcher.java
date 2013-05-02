@@ -35,6 +35,18 @@ import school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightQuery
  * 
  */
 public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<CourseWithNameLongerThanWeightMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static CourseWithNameLongerThanWeightMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new CourseWithNameLongerThanWeightMatcher(engine);
+  }
+  
   private final static int POSITION_C = 0;
   
   /**
@@ -46,8 +58,10 @@ public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public CourseWithNameLongerThanWeightMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -58,8 +72,10 @@ public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public CourseWithNameLongerThanWeightMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

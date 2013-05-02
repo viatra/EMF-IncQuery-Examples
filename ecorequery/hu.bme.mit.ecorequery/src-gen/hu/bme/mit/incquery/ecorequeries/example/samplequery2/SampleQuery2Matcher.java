@@ -56,6 +56,18 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  */
 public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static SampleQuery2Matcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new SampleQuery2Matcher(engine);
+  }
+  
   private final static int POSITION_XELEMENT = 0;
   
   private final static int POSITION_YELEMENT = 1;
@@ -77,8 +89,10 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public SampleQuery2Matcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -89,8 +103,10 @@ public class SampleQuery2Matcher extends BaseGeneratedMatcher<SampleQuery2Match>
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public SampleQuery2Matcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

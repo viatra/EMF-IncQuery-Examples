@@ -34,6 +34,18 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  */
 public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfNameMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static SuperTypeOfNameMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new SuperTypeOfNameMatcher(engine);
+  }
+  
   private final static int POSITION_SUPERNAME = 0;
   
   private final static int POSITION_SUBNAME = 1;
@@ -47,8 +59,10 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public SuperTypeOfNameMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -59,8 +73,10 @@ public class SuperTypeOfNameMatcher extends BaseGeneratedMatcher<SuperTypeOfName
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public SuperTypeOfNameMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

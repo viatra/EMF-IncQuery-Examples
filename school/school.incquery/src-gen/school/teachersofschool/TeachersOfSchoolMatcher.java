@@ -36,6 +36,18 @@ import school.teachersofschool.TeachersOfSchoolQuerySpecification;
  * 
  */
 public class TeachersOfSchoolMatcher extends BaseGeneratedMatcher<TeachersOfSchoolMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static TeachersOfSchoolMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new TeachersOfSchoolMatcher(engine);
+  }
+  
   private final static int POSITION_T = 0;
   
   private final static int POSITION_SCH = 1;
@@ -49,8 +61,10 @@ public class TeachersOfSchoolMatcher extends BaseGeneratedMatcher<TeachersOfScho
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public TeachersOfSchoolMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -61,8 +75,10 @@ public class TeachersOfSchoolMatcher extends BaseGeneratedMatcher<TeachersOfScho
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public TeachersOfSchoolMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

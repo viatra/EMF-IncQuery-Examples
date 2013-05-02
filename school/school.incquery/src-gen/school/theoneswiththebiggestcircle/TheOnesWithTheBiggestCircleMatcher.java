@@ -33,6 +33,18 @@ import school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleQuerySpecif
  * 
  */
 public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<TheOnesWithTheBiggestCircleMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static TheOnesWithTheBiggestCircleMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new TheOnesWithTheBiggestCircleMatcher(engine);
+  }
+  
   private final static int POSITION_S = 0;
   
   /**
@@ -44,8 +56,10 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public TheOnesWithTheBiggestCircleMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -56,8 +70,10 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public TheOnesWithTheBiggestCircleMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

@@ -49,6 +49,18 @@ import school.finalpattern.FinalPatternQuerySpecification;
  * 
  */
 public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static FinalPatternMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new FinalPatternMatcher(engine);
+  }
+  
   private final static int POSITION_Y = 0;
   
   private final static int POSITION_C = 1;
@@ -66,8 +78,10 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public FinalPatternMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -78,8 +92,10 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public FinalPatternMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }

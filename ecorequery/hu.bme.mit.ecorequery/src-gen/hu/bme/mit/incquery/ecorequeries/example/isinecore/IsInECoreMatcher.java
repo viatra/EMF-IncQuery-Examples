@@ -35,6 +35,18 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * 
  */
 public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
+  /**
+   * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
+   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * The match set will be incrementally refreshed upon updates.
+   * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
+   * @throws IncQueryException if an error occurs during pattern matcher creation
+   * 
+   */
+  public static IsInECoreMatcher on(final IncQueryEngine engine) throws IncQueryException {
+    return new IsInECoreMatcher(engine);
+  }
+  
   private final static int POSITION_ELEMENT = 0;
   
   /**
@@ -46,8 +58,10 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
    * 
    */
+  @Deprecated
   public IsInECoreMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
   }
@@ -58,8 +72,10 @@ public class IsInECoreMatcher extends BaseGeneratedMatcher<IsInECoreMatch> {
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
+   * @deprecated use {@link #on(IncQueryEngine)} instead
    * 
    */
+  @Deprecated
   public IsInECoreMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
