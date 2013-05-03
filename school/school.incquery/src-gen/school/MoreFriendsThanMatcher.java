@@ -51,8 +51,7 @@ public class MoreFriendsThanMatcher extends BaseGeneratedMatcher<MoreFriendsThan
    */
   public static MoreFriendsThanMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    MoreFriendsThanMatcher matcher = 
-    	(MoreFriendsThanMatcher) engine.getExistingMatcher(querySpecification());
+    MoreFriendsThanMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new MoreFriendsThanMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

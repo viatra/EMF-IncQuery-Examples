@@ -57,8 +57,7 @@ public class TeachesMoreClassesMatcher extends BaseGeneratedMatcher<TeachesMoreC
    */
   public static TeachesMoreClassesMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    TeachesMoreClassesMatcher matcher = 
-    	(TeachesMoreClassesMatcher) engine.getExistingMatcher(querySpecification());
+    TeachesMoreClassesMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new TeachesMoreClassesMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

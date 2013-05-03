@@ -54,8 +54,7 @@ public class FriendlyToMatcher extends BaseGeneratedMatcher<FriendlyToMatch> {
    */
   public static FriendlyToMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    FriendlyToMatcher matcher = 
-    	(FriendlyToMatcher) engine.getExistingMatcher(querySpecification());
+    FriendlyToMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new FriendlyToMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

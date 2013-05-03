@@ -25,7 +25,7 @@ import school.School
 import school.SchoolFactory
 import org.junit.Assert
 import school.Teacher
-import org.eclipse.incquery.runtime.api.GenericPatternMatch
+import org.eclipse.incquery.runtime.api.IPatternMatch
 import school.Course
 import school.SchoolClass
 import school.Year
@@ -105,7 +105,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.teachers")
 		val match = matcher.allMatches
 		
-		for(GenericPatternMatch g : match){
+		for(IPatternMatch g : match){
 			val t = g.get("T") as Teacher
 			
 			Assert::assertNotNull(t)
@@ -254,7 +254,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			for(Course c : courses){
 				if(c.subject == "Formal methods"){
 					
-					for(GenericPatternMatch g : schoolClasses){
+					for(IPatternMatch g : schoolClasses){
 						val schoolClass = g.get("SC") as SchoolClass			
 						Assert::assertNotNull(schoolClass)
 						if(schoolClass!=null){	
@@ -327,7 +327,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 							val students = matcher2.allMatches
 							Assert::assertNotNull(students)
 							if(students != null){
-								for(GenericPatternMatch g :students){
+								for(IPatternMatch g :students){
 									val friend = g.get("S") as Student
 									Assert::assertNotNull(friend)
 									if(friend!=null){	
@@ -596,7 +596,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			val students = matcher2.allMatches
 			Assert::assertNotNull(students)
 			if(students != null){
-				for(GenericPatternMatch g :students){
+				for(IPatternMatch g :students){
 					val friend = g.get("S") as Student
 					Assert::assertNotNull(friend)
 					if(friend!=null){	

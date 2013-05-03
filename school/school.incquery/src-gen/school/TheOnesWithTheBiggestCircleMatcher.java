@@ -48,8 +48,7 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<The
    */
   public static TheOnesWithTheBiggestCircleMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    TheOnesWithTheBiggestCircleMatcher matcher = 
-    	(TheOnesWithTheBiggestCircleMatcher) engine.getExistingMatcher(querySpecification());
+    TheOnesWithTheBiggestCircleMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new TheOnesWithTheBiggestCircleMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

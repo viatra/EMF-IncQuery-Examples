@@ -53,8 +53,7 @@ public class StudentOfSchoolMatcher extends BaseGeneratedMatcher<StudentOfSchool
    */
   public static StudentOfSchoolMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    StudentOfSchoolMatcher matcher = 
-    	(StudentOfSchoolMatcher) engine.getExistingMatcher(querySpecification());
+    StudentOfSchoolMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new StudentOfSchoolMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

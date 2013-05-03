@@ -61,8 +61,7 @@ public class CourseWithPrimeWeightMatcher extends BaseGeneratedMatcher<CourseWit
    */
   public static CourseWithPrimeWeightMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    CourseWithPrimeWeightMatcher matcher = 
-    	(CourseWithPrimeWeightMatcher) engine.getExistingMatcher(querySpecification());
+    CourseWithPrimeWeightMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new CourseWithPrimeWeightMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

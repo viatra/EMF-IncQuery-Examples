@@ -9,7 +9,7 @@ import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.eclipse.incquery.runtime.api.GenericPatternMatch
+import org.eclipse.incquery.runtime.api.IPatternMatch
 import org.junit.Assert
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EcoreFactory
@@ -34,7 +34,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "hu.bme.mit.incquery.ecorequeries.example.EClass")
 		val match = matcher.allMatches
 		
-		for(GenericPatternMatch g : match){
+		for(IPatternMatch g : match){
 			val e = g.get("EClass") as EClass
 			Assert::assertNotNull(e)
 			if(e != null){
@@ -62,7 +62,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 		
 		Assert::assertNotNull(match)
 		if (match != null) {			
-			for(GenericPatternMatch g : match){
+			for(IPatternMatch g : match){
 				val e = g.get("EClass") as EClass
 				Assert::assertNotNull(e)
 				if(e != null){
@@ -93,7 +93,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 		
 		Assert::assertNotNull(match)
 		if (match != null) {			
-			for(GenericPatternMatch g : match){
+			for(IPatternMatch g : match){
 				val e = g.get("EClass") as EClass
 				Assert::assertNotNull(e)
 				if(e != null){
@@ -132,7 +132,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 		
 		Assert::assertNotNull(match)
 		if (match != null) {			
-			for(GenericPatternMatch g : match){
+			for(IPatternMatch g : match){
 				val e = g.get("EClass") as EClass
 				Assert::assertNotNull(e)
 				if(e != null){

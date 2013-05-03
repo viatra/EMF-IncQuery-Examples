@@ -50,8 +50,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseGeneratedMatcher<InThe
    */
   public static InTheCircleOfFriendsNamesMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    InTheCircleOfFriendsNamesMatcher matcher = 
-    	(InTheCircleOfFriendsNamesMatcher) engine.getExistingMatcher(querySpecification());
+    InTheCircleOfFriendsNamesMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new InTheCircleOfFriendsNamesMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

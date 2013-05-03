@@ -50,8 +50,7 @@ public class CourseWithNameLongerThanWeightMatcher extends BaseGeneratedMatcher<
    */
   public static CourseWithNameLongerThanWeightMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    CourseWithNameLongerThanWeightMatcher matcher = 
-    	(CourseWithNameLongerThanWeightMatcher) engine.getExistingMatcher(querySpecification());
+    CourseWithNameLongerThanWeightMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new CourseWithNameLongerThanWeightMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

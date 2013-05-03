@@ -64,8 +64,7 @@ public class FinalPatternMatcher extends BaseGeneratedMatcher<FinalPatternMatch>
    */
   public static FinalPatternMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    FinalPatternMatcher matcher = 
-    	(FinalPatternMatcher) engine.getExistingMatcher(querySpecification());
+    FinalPatternMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new FinalPatternMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it

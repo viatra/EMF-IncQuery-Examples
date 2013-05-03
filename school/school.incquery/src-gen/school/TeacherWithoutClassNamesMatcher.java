@@ -48,8 +48,7 @@ public class TeacherWithoutClassNamesMatcher extends BaseGeneratedMatcher<Teache
    */
   public static TeacherWithoutClassNamesMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    TeacherWithoutClassNamesMatcher matcher = 
-    	(TeacherWithoutClassNamesMatcher) engine.getExistingMatcher(querySpecification());
+    TeacherWithoutClassNamesMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
     	matcher = new TeacherWithoutClassNamesMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
