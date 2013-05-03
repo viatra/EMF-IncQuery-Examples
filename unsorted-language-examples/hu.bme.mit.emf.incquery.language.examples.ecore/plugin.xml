@@ -3,145 +3,9 @@
 
    <extension
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint.ThisIsEIntMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintconcise.ThisIsEIntConciseMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2MatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseinttwice.ThisIsEIntTwiceMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisisnoteint.ThisIsNotEIntMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute.EClassAttributeMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.numberofattributes.NumberOfAttributesMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.withtwoattributes.WithTwoAttributesMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.howmanyattributesofagiventype.HowManyAttributesOfAGivenTypeMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.twoattributesofthistype.TwoAttributesOfThisTypeMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.pathsegmentheadsubclass.PathSegmentHeadSubclassMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.references"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.references.ReferencesMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.references">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencestransitively.ReferencesTransitivelyMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencesloop.ReferencesLoopMatcherFactory$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint.ThisIsEIntQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEIntQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt">
       </matcher>
    </extension>
@@ -149,7 +13,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintconcise.ThisIsEIntConciseQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEIntConciseQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise">
       </matcher>
    </extension>
@@ -157,7 +21,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2QuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEInt2QuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2">
       </matcher>
    </extension>
@@ -165,7 +29,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2Evaluator1_1"
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEInt2Evaluator1_1"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2_1_1">
       </evaluator>
    </extension>
@@ -173,7 +37,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEInt3NoMatchQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch">
       </matcher>
    </extension>
@@ -181,7 +45,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchEvaluator1_1"
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEInt3NoMatchEvaluator1_1"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch_1_1">
       </evaluator>
    </extension>
@@ -189,7 +53,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEIntBuggycheckWithExpectedExceptionQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException">
       </matcher>
    </extension>
@@ -197,7 +61,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionEvaluator1_1"
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEIntBuggycheckWithExpectedExceptionEvaluator1_1"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException_1_1">
       </evaluator>
    </extension>
@@ -205,7 +69,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseinttwice.ThisIsEIntTwiceQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsEIntTwiceQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice">
       </matcher>
    </extension>
@@ -213,7 +77,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisisnoteint.ThisIsNotEIntQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ThisIsNotEIntQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt">
       </matcher>
    </extension>
@@ -221,7 +85,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.HasAssQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss">
       </matcher>
    </extension>
@@ -229,7 +93,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssEvaluator1_1"
+            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.util.HasAssEvaluator1_1"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss_1_1">
       </evaluator>
    </extension>
@@ -237,7 +101,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute.EClassAttributeQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.EClassAttributeQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute">
       </matcher>
    </extension>
@@ -245,7 +109,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.numberofattributes.NumberOfAttributesQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.NumberOfAttributesQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes">
       </matcher>
    </extension>
@@ -253,7 +117,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.withtwoattributes.WithTwoAttributesQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.WithTwoAttributesQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes">
       </matcher>
    </extension>
@@ -261,7 +125,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.howmanyattributesofagiventype.HowManyAttributesOfAGivenTypeQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.HowManyAttributesOfAGivenTypeQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType">
       </matcher>
    </extension>
@@ -269,7 +133,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.twoattributesofthistype.TwoAttributesOfThisTypeQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.TwoAttributesOfThisTypeQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType">
       </matcher>
    </extension>
@@ -277,7 +141,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.pathsegmentheadsubclass.PathSegmentHeadSubclassQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.PathSegmentHeadSubclassQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass">
       </matcher>
    </extension>
@@ -285,7 +149,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.references"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.references.ReferencesQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ReferencesQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.references">
       </matcher>
    </extension>
@@ -293,7 +157,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencestransitively.ReferencesTransitivelyQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ReferencesTransitivelyQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively">
       </matcher>
    </extension>
@@ -301,175 +165,7 @@
          id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencesloop.ReferencesLoopQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint.ThisIsEIntQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintconcise.ThisIsEIntConciseQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntConcise">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2QuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2.ThisIsEInt2Evaluator1_1"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt2_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch.ThisIsEInt3NoMatchEvaluator1_1"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEInt3NoMatch_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception.ThisIsEIntBuggycheckWithExpectedExceptionEvaluator1_1"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntBuggycheckWithExpectedException_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisiseinttwice.ThisIsEIntTwiceQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsEIntTwice">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.thisisnoteint.ThisIsNotEIntQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.thisIsNotEInt">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="hu.bme.mit.emf.incquery.language.examples.ecore.hasass.HasAssEvaluator1_1"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.hasAss_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute.EClassAttributeQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.EClassAttribute">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.numberofattributes.NumberOfAttributesQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.numberOfAttributes">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.withtwoattributes.WithTwoAttributesQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.withTwoAttributes">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.howmanyattributesofagiventype.HowManyAttributesOfAGivenTypeQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.howManyAttributesOfAGivenType">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.twoattributesofthistype.TwoAttributesOfThisTypeQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.twoAttributesOfThisType">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.pathsegmentheadsubclass.PathSegmentHeadSubclassQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.pathSegmentHeadSubclass">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.references"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.references.ReferencesQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.references">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencestransitively.ReferencesTransitivelyQuerySpecification$Provider"
-            id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesTransitively">
-      </matcher>
-   </extension>
-   <extension
-         id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.referencesloop.ReferencesLoopQuerySpecification$Provider"
+            querySpecificationProvider="hu.bme.mit.emf.incquery.language.examples.ecore.util.ReferencesLoopQuerySpecification$Provider"
             id="hu.bme.mit.emf.incquery.language.examples.ecore.referencesLoop">
       </matcher>
    </extension>

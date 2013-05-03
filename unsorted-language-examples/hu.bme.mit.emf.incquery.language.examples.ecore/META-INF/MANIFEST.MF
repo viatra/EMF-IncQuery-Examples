@@ -3,23 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.emf.incquery.language.examples.ecore
 Bundle-SymbolicName: hu.bme.mit.emf.incquery.language.examples.ecore;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: hu.bme.mit.emf.incquery.language.examples.ecore.eclassattribute,
- hu.bme.mit.emf.incquery.language.examples.ecore.hasass,
- hu.bme.mit.emf.incquery.language.examples.ecore.howmanyattributesofagiventype,
- hu.bme.mit.emf.incquery.language.examples.ecore.numberofattributes,
- hu.bme.mit.emf.incquery.language.examples.ecore.pathsegmentheadsubclass,
- hu.bme.mit.emf.incquery.language.examples.ecore.references,
- hu.bme.mit.emf.incquery.language.examples.ecore.referencesloop,
- hu.bme.mit.emf.incquery.language.examples.ecore.referencestransitively,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint2,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseint3nomatch,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintbuggycheckwithexpectedexception,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseintconcise,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisiseinttwice,
- hu.bme.mit.emf.incquery.language.examples.ecore.thisisnoteint,
- hu.bme.mit.emf.incquery.language.examples.ecore.twoattributesofthistype,
- hu.bme.mit.emf.incquery.language.examples.ecore.withtwoattributes
+Export-Package: hu.bme.mit.emf.incquery.language.examples.ecore,
+ hu.bme.mit.emf.incquery.language.examples.ecore.util
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

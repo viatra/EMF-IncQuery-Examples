@@ -19,6 +19,11 @@ import school.util.SchoolsNamesQuerySpecification;
  * Generated pattern matcher API of the school.schoolsNames pattern, 
  * providing pattern-specific query methods.
  * 
+ * Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
+ * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * 
+ * <p>Matches of the pattern will be represented as {@link SchoolsNamesMatch}.
+ * 
  * <p>Original source:
  * <code><pre>
  * pattern schoolsNames(SchName) {
@@ -27,28 +32,35 @@ import school.util.SchoolsNamesQuerySpecification;
  * </pre></code>
  * 
  * @see SchoolsNamesMatch
- * @see SchoolsNamesQuerySpecification
  * @see SchoolsNamesProcessor
+ * @see SchoolsNamesQuerySpecification
  * 
  */
 public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
-   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
   public static SchoolsNamesMatcher on(final IncQueryEngine engine) throws IncQueryException {
-    return new SchoolsNamesMatcher(engine);
+    // check if matcher already exists
+    SchoolsNamesMatcher matcher = 
+    	(SchoolsNamesMatcher) engine.getExistingMatcher(querySpecification());
+    if (matcher == null) {
+    	matcher = new SchoolsNamesMatcher(engine);
+    	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
+    } 	
+    return matcher;
   }
   
   private final static int POSITION_SCHNAME = 0;
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet). 
-   * If a pattern matcher is already constructed with the same root, only a lightweight reference is created.
+   * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
    * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
    * The match set will be incrementally refreshed upon updates from this scope.
    * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so 
@@ -65,7 +77,7 @@ public class SchoolsNamesMatcher extends BaseGeneratedMatcher<SchoolsNamesMatch>
   
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
-   * If the pattern matcher is already constructed in the engine, only a lightweight reference is created.
+   * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
