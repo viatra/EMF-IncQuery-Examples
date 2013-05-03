@@ -5,7 +5,7 @@
          id="school.schools"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.schools.SchoolsQuerySpecification$Provider"
+            querySpecificationProvider="school.util.SchoolsQuerySpecification$Provider"
             id="school.schools">
       </matcher>
    </extension>
@@ -13,7 +13,7 @@
          id="school.courses"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.courses.CoursesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CoursesQuerySpecification$Provider"
             id="school.courses">
       </matcher>
    </extension>
@@ -21,7 +21,7 @@
          id="school.schoolsNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.schoolsnames.SchoolsNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.SchoolsNamesQuerySpecification$Provider"
             id="school.schoolsNames">
       </matcher>
    </extension>
@@ -29,7 +29,7 @@
          id="school.teachers"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachers.TeachersQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachersQuerySpecification$Provider"
             id="school.teachers">
       </matcher>
    </extension>
@@ -37,7 +37,7 @@
          id="school.teachersNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachersnames.TeachersNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachersNamesQuerySpecification$Provider"
             id="school.teachersNames">
       </matcher>
    </extension>
@@ -45,7 +45,7 @@
          id="school.teachersOfSchool"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachersofschool.TeachersOfSchoolQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachersOfSchoolQuerySpecification$Provider"
             id="school.teachersOfSchool">
       </matcher>
    </extension>
@@ -53,7 +53,7 @@
          id="school.teachersOfSchoolNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachersofschoolnames.TeachersOfSchoolNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachersOfSchoolNamesQuerySpecification$Provider"
             id="school.teachersOfSchoolNames">
       </matcher>
    </extension>
@@ -61,7 +61,7 @@
          id="school.coursesOfTeacher"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursesofteacher.CoursesOfTeacherQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CoursesOfTeacherQuerySpecification$Provider"
             id="school.coursesOfTeacher">
       </matcher>
    </extension>
@@ -69,7 +69,7 @@
          id="school.coursesOfTeacherNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursesofteachernames.CoursesOfTeacherNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CoursesOfTeacherNamesQuerySpecification$Provider"
             id="school.coursesOfTeacherNames">
       </matcher>
    </extension>
@@ -77,7 +77,7 @@
          id="school.classesOfTeacher"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.classesofteacher.ClassesOfTeacherQuerySpecification$Provider"
+            querySpecificationProvider="school.util.ClassesOfTeacherQuerySpecification$Provider"
             id="school.classesOfTeacher">
       </matcher>
    </extension>
@@ -85,7 +85,7 @@
          id="school.classesOfSchool"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.classesofschool.ClassesOfSchoolQuerySpecification$Provider"
+            querySpecificationProvider="school.util.ClassesOfSchoolQuerySpecification$Provider"
             id="school.classesOfSchool">
       </matcher>
    </extension>
@@ -93,7 +93,7 @@
          id="school.classesOfTeacherNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.classesofteachernames.ClassesOfTeacherNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.ClassesOfTeacherNamesQuerySpecification$Provider"
             id="school.classesOfTeacherNames">
       </matcher>
    </extension>
@@ -101,7 +101,7 @@
          id="school.teacherWithoutClass"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teacherwithoutclass.TeacherWithoutClassQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeacherWithoutClassQuerySpecification$Provider"
             id="school.teacherWithoutClass">
       </matcher>
    </extension>
@@ -109,7 +109,7 @@
          id="school.teacherWithoutClassNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teacherwithoutclassnames.TeacherWithoutClassNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeacherWithoutClassNamesQuerySpecification$Provider"
             id="school.teacherWithoutClassNames">
       </matcher>
    </extension>
@@ -117,7 +117,7 @@
          id="school.studentOfSchool"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.studentofschool.StudentOfSchoolQuerySpecification$Provider"
+            querySpecificationProvider="school.util.StudentOfSchoolQuerySpecification$Provider"
             id="school.studentOfSchool">
       </matcher>
    </extension>
@@ -125,7 +125,7 @@
          id="school.studentOfSchoolNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.studentofschoolnames.StudentOfSchoolNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.StudentOfSchoolNamesQuerySpecification$Provider"
             id="school.studentOfSchoolNames">
       </matcher>
    </extension>
@@ -133,7 +133,7 @@
          id="school.courseWithWeightThirty"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithweightthirty.CourseWithWeightThirtyQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithWeightThirtyQuerySpecification$Provider"
             id="school.courseWithWeightThirty">
       </matcher>
    </extension>
@@ -141,7 +141,7 @@
          id="school.courseWithNameLongerThanWeight"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithNameLongerThanWeightQuerySpecification$Provider"
             id="school.courseWithNameLongerThanWeight">
       </matcher>
    </extension>
@@ -149,7 +149,7 @@
          id="school.courseWithNameLongerThanWeight"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="school.coursewithnamelongerthanweight.CourseWithNameLongerThanWeightEvaluator1_1"
+            evaluatorClass="school.util.CourseWithNameLongerThanWeightEvaluator1_1"
             id="school.courseWithNameLongerThanWeight_1_1">
       </evaluator>
    </extension>
@@ -157,7 +157,7 @@
          id="school.courseWithNameLongerThanWeightInt"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithNameLongerThanWeightIntQuerySpecification$Provider"
             id="school.courseWithNameLongerThanWeightInt">
       </matcher>
    </extension>
@@ -165,7 +165,7 @@
          id="school.courseWithNameLongerThanWeightInt"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="school.coursewithnamelongerthanweightint.CourseWithNameLongerThanWeightIntEvaluator1_1"
+            evaluatorClass="school.util.CourseWithNameLongerThanWeightIntEvaluator1_1"
             id="school.courseWithNameLongerThanWeightInt_1_1">
       </evaluator>
    </extension>
@@ -173,7 +173,7 @@
          id="school.courseWithPrimeWeight"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithprimeweight.CourseWithPrimeWeightQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithPrimeWeightQuerySpecification$Provider"
             id="school.courseWithPrimeWeight">
       </matcher>
    </extension>
@@ -181,7 +181,7 @@
          id="school.courseWithPrimeWeight"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="school.coursewithprimeweight.CourseWithPrimeWeightEvaluator1_1"
+            evaluatorClass="school.util.CourseWithPrimeWeightEvaluator1_1"
             id="school.courseWithPrimeWeight_1_1">
       </evaluator>
    </extension>
@@ -189,7 +189,7 @@
          id="school.teachesMoreClasses"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachesmoreclasses.TeachesMoreClassesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachesMoreClassesQuerySpecification$Provider"
             id="school.teachesMoreClasses">
       </matcher>
    </extension>
@@ -197,7 +197,7 @@
          id="school.teachesMoreClasses"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="school.teachesmoreclasses.TeachesMoreClassesEvaluator1_1"
+            evaluatorClass="school.util.TeachesMoreClassesEvaluator1_1"
             id="school.teachesMoreClasses_1_1">
       </evaluator>
    </extension>
@@ -205,7 +205,7 @@
          id="school.teachesTheMostCourses"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.teachesthemostcourses.TeachesTheMostCoursesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TeachesTheMostCoursesQuerySpecification$Provider"
             id="school.teachesTheMostCourses">
       </matcher>
    </extension>
@@ -213,7 +213,7 @@
          id="school.friendlyTo"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.friendlyto.FriendlyToQuerySpecification$Provider"
+            querySpecificationProvider="school.util.FriendlyToQuerySpecification$Provider"
             id="school.friendlyTo">
       </matcher>
    </extension>
@@ -221,7 +221,7 @@
          id="school.inTheCircleOfFriends"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.inthecircleoffriends.InTheCircleOfFriendsQuerySpecification$Provider"
+            querySpecificationProvider="school.util.InTheCircleOfFriendsQuerySpecification$Provider"
             id="school.inTheCircleOfFriends">
       </matcher>
    </extension>
@@ -229,7 +229,7 @@
          id="school.inTheCircleOfFriendsNames"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.inthecircleoffriendsnames.InTheCircleOfFriendsNamesQuerySpecification$Provider"
+            querySpecificationProvider="school.util.InTheCircleOfFriendsNamesQuerySpecification$Provider"
             id="school.inTheCircleOfFriendsNames">
       </matcher>
    </extension>
@@ -237,7 +237,7 @@
          id="school.moreFriendsThan"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.morefriendsthan.MoreFriendsThanQuerySpecification$Provider"
+            querySpecificationProvider="school.util.MoreFriendsThanQuerySpecification$Provider"
             id="school.moreFriendsThan">
       </matcher>
    </extension>
@@ -245,7 +245,7 @@
          id="school.moreFriendsThan"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="school.morefriendsthan.MoreFriendsThanEvaluator1_1"
+            evaluatorClass="school.util.MoreFriendsThanEvaluator1_1"
             id="school.moreFriendsThan_1_1">
       </evaluator>
    </extension>
@@ -253,7 +253,7 @@
          id="school.theOnesWithTheBiggestCircle"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.theoneswiththebiggestcircle.TheOnesWithTheBiggestCircleQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TheOnesWithTheBiggestCircleQuerySpecification$Provider"
             id="school.theOnesWithTheBiggestCircle">
       </matcher>
    </extension>
@@ -261,7 +261,7 @@
          id="school.theOnesWithTheBiggestCircleName"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.theoneswiththebiggestcirclename.TheOnesWithTheBiggestCircleNameQuerySpecification$Provider"
+            querySpecificationProvider="school.util.TheOnesWithTheBiggestCircleNameQuerySpecification$Provider"
             id="school.theOnesWithTheBiggestCircleName">
       </matcher>
    </extension>
@@ -269,7 +269,7 @@
          id="school.finalPattern"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.finalpattern.FinalPatternQuerySpecification$Provider"
+            querySpecificationProvider="school.util.FinalPatternQuerySpecification$Provider"
             id="school.finalPattern">
       </matcher>
    </extension>
@@ -277,7 +277,7 @@
          id="school.finalPattern2"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.finalpattern2.FinalPattern2QuerySpecification$Provider"
+            querySpecificationProvider="school.util.FinalPattern2QuerySpecification$Provider"
             id="school.finalPattern2">
       </matcher>
    </extension>
@@ -285,7 +285,7 @@
          id="school.SomeCourse"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.somecourse.SomeCourseQuerySpecification$Provider"
+            querySpecificationProvider="school.util.SomeCourseQuerySpecification$Provider"
             id="school.SomeCourse">
       </matcher>
    </extension>
@@ -293,7 +293,7 @@
          id="school.CourseWithTeacher"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithteacher.CourseWithTeacherQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
             id="school.CourseWithTeacher">
       </matcher>
    </extension>
@@ -301,7 +301,7 @@
          id="school.CourseWithoutTeacher"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.coursewithoutteacher.CourseWithoutTeacherQuerySpecification$Provider"
+            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
             id="school.CourseWithoutTeacher">
       </matcher>
    </extension>

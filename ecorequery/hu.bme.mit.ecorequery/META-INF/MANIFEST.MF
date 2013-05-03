@@ -3,23 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ecorequery
 Bundle-SymbolicName: hu.bme.mit.ecorequery;singleton:=true
 Bundle-Version: 0.7.0.qualifier
-Export-Package: hu.bme.mit.incquery.ecorequeries.example.eclass,
- hu.bme.mit.incquery.ecorequeries.example.eclassattribute,
- hu.bme.mit.incquery.ecorequeries.example.eclassname,
- hu.bme.mit.incquery.ecorequeries.example.eclasswithestringattribute,
- hu.bme.mit.incquery.ecorequeries.example.ecorenamedelement,
- hu.bme.mit.incquery.ecorequeries.example.ecorenamedelementname,
- hu.bme.mit.incquery.ecorequeries.example.eobject,
- hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicity,
- hu.bme.mit.incquery.ecorequeries.example.ereferencewithonemultiplicityname,
- hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicity,
- hu.bme.mit.incquery.ecorequeries.example.ereferencewithstarmultiplicityname,
- hu.bme.mit.incquery.ecorequeries.example.isestring,
- hu.bme.mit.incquery.ecorequeries.example.isinecore,
- hu.bme.mit.incquery.ecorequeries.example.samplequery,
- hu.bme.mit.incquery.ecorequeries.example.samplequery2,
- hu.bme.mit.incquery.ecorequeries.example.supertypeof,
- hu.bme.mit.incquery.ecorequeries.example.supertypeofname
+Export-Package: hu.bme.mit.incquery.ecorequeries.example,
+ hu.bme.mit.incquery.ecorequeries.example.util
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.transaction;visibility:=reexport,
  org.eclipse.incquery.runtime;bundle-version="0.7.0";visibility:=reexport

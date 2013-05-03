@@ -5,7 +5,7 @@
          id="network.MutualFriends"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="network.mutualfriends.MutualFriendsQuerySpecification$Provider"
+            querySpecificationProvider="network.util.MutualFriendsQuerySpecification$Provider"
             id="network.MutualFriends">
       </matcher>
    </extension>

@@ -21,7 +21,7 @@ import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.testing.core.SnapshotHelper
 import org.junit.Assert
 import org.junit.Test
-import school.classesofteacher.ClassesOfTeacherMatcher
+import school.ClassesOfTeacherMatcher
 
 /**
  * API test set for testing IncQuery with the school example.

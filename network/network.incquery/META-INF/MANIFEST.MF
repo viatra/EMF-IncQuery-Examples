@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.onlab.incquery
 Bundle-SymbolicName: network.incquery;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: network.mutualfriends
+Export-Package: network,
+ network.util
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

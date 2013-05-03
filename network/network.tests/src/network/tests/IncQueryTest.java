@@ -5,9 +5,9 @@ package network.tests;
 import java.util.Arrays;
 import java.util.Collection;
 
+import network.MutualFriendsMatcher;
 import network.NetworkPackage;
-import network.mutualfriends.MutualFriendsMatcher;
-import network.mutualfriends.MutualFriendsQuerySpecification;
+import network.util.MutualFriendsQuerySpecification;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
