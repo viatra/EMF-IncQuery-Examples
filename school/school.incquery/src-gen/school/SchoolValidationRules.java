@@ -7,8 +7,8 @@ import school.CourseWithoutTeacherMatcher;
 
 public final class SchoolValidationRules extends BaseGeneratedPatternGroup {
   public SchoolValidationRules() throws IncQueryException {
-    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     querySpecifications.add(CourseWithTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     
   }
 }
