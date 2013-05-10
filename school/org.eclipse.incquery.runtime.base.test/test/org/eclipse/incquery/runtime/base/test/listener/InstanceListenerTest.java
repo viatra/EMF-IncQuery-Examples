@@ -49,12 +49,12 @@ public class InstanceListenerTest extends IncQueryBaseListenerTest {
 	@Override
 	public void registerListener() {
 		navigationHelper.registerEClasses(classes);
-		navigationHelper.registerInstanceListener(classes, instanceListener);
+		navigationHelper.addInstanceListener(classes, instanceListener);
 	}
 
 	@Override
 	public void unregisterListener() {
-		navigationHelper.unregisterInstanceListener(classes, instanceListener);
+		navigationHelper.removeInstanceListener(classes, instanceListener);
 		navigationHelper.unregisterEClasses(classes);
 	}
 }

@@ -64,7 +64,7 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
  		initListener();
 		if (!navigationHelper.isInWildcardMode()) 
 			navigationHelper.registerEStructuralFeatures(listenerFeatures);
-		navigationHelper.registerFeatureListener(listenerFeatures, featureListener);
+		navigationHelper.addFeatureListener(listenerFeatures, featureListener);
 	}
 
 	private void initListener() {
@@ -108,7 +108,7 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
 	}
 
  	public void unregisterListener() {
-		navigationHelper.unregisterFeatureListener(listenerFeatures, featureListener);
+		navigationHelper.removeFeatureListener(listenerFeatures, featureListener);
 		if (!navigationHelper.isInWildcardMode()) 
 			navigationHelper.unregisterEStructuralFeatures(listenerFeatures);
 	}
