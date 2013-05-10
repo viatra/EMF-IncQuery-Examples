@@ -22,23 +22,23 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public final class EcoreQueries extends BaseGeneratedPatternGroup {
   public EcoreQueries() throws IncQueryException {
-    querySpecifications.add(EReferenceWithOneMultiplicityMatcher.querySpecification());
     querySpecifications.add(SampleQuery2Matcher.querySpecification());
     querySpecifications.add(EReferenceWithStarMultiplicityNameMatcher.querySpecification());
-    querySpecifications.add(EClassAttributeMatcher.querySpecification());
-    querySpecifications.add(EClassWithEStringAttributeMatcher.querySpecification());
     querySpecifications.add(EReferenceWithOneMultiplicityNameMatcher.querySpecification());
-    querySpecifications.add(IsInECoreMatcher.querySpecification());
-    querySpecifications.add(EObjectMatcher.querySpecification());
-    querySpecifications.add(SuperTypeOfNameMatcher.querySpecification());
-    querySpecifications.add(IsEStringMatcher.querySpecification());
+    querySpecifications.add(EReferenceWithOneMultiplicityMatcher.querySpecification());
     querySpecifications.add(ECoreNamedElementNameMatcher.querySpecification());
     querySpecifications.add(EClassMatcher.querySpecification());
-    querySpecifications.add(EClassNameMatcher.querySpecification());
-    querySpecifications.add(EReferenceWithStarMultiplicityMatcher.querySpecification());
-    querySpecifications.add(ECoreNamedElementMatcher.querySpecification());
     querySpecifications.add(SuperTypeOfMatcher.querySpecification());
+    querySpecifications.add(IsEStringMatcher.querySpecification());
+    querySpecifications.add(EClassAttributeMatcher.querySpecification());
+    querySpecifications.add(SuperTypeOfNameMatcher.querySpecification());
+    querySpecifications.add(EReferenceWithStarMultiplicityMatcher.querySpecification());
+    querySpecifications.add(IsInECoreMatcher.querySpecification());
+    querySpecifications.add(EObjectMatcher.querySpecification());
+    querySpecifications.add(EClassNameMatcher.querySpecification());
     querySpecifications.add(SampleQueryMatcher.querySpecification());
+    querySpecifications.add(EClassWithEStringAttributeMatcher.querySpecification());
+    querySpecifications.add(ECoreNamedElementMatcher.querySpecification());
     
   }
 }
