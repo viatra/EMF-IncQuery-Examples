@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
@@ -78,7 +77,7 @@ public class CoursesOfTeacherMatcher extends BaseGeneratedMatcher<CoursesOfTeach
    */
   @Deprecated
   public CoursesOfTeacherMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngineManager.getInstance().getIncQueryEngine(emfRoot));
+    this(IncQueryEngine.on(emfRoot));
   }
   
   /**
