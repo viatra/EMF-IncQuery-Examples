@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -22,7 +23,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   private String fName;
   
-  private static String[] parameterNames = {"Name"};
+  private static List<String> parameterNames = makeImmutableList("Name");
   
   private ECoreNamedElementNameMatch(final String pName) {
     this.fName = pName;
@@ -65,7 +66,7 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return ECoreNamedElementNameMatch.parameterNames;
     
   }

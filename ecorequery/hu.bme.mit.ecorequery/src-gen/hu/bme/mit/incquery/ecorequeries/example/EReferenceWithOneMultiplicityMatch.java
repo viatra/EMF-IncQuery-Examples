@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -23,7 +24,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatch {
   private EReference fERef;
   
-  private static String[] parameterNames = {"ERef"};
+  private static List<String> parameterNames = makeImmutableList("ERef");
   
   private EReferenceWithOneMultiplicityMatch(final EReference pERef) {
     this.fERef = pERef;
@@ -66,7 +67,7 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return EReferenceWithOneMultiplicityMatch.parameterNames;
     
   }

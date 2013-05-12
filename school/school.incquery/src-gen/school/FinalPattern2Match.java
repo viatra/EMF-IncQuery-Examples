@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -28,7 +29,7 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
   
   private String fSName;
   
-  private static String[] parameterNames = {"YDate", "CSub", "TName", "SName"};
+  private static List<String> parameterNames = makeImmutableList("YDate", "CSub", "TName", "SName");
   
   private FinalPattern2Match(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
     this.fYDate = pYDate;
@@ -122,7 +123,7 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return FinalPattern2Match.parameterNames;
     
   }

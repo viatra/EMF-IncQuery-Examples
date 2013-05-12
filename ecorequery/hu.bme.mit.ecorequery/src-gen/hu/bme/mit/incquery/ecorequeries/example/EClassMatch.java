@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -23,7 +24,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class EClassMatch extends BasePatternMatch {
   private EClass fEClass;
   
-  private static String[] parameterNames = {"EClass"};
+  private static List<String> parameterNames = makeImmutableList("EClass");
   
   private EClassMatch(final EClass pEClass) {
     this.fEClass = pEClass;
@@ -66,7 +67,7 @@ public abstract class EClassMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return EClassMatch.parameterNames;
     
   }

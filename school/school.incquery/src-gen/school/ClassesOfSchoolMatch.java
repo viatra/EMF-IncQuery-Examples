@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -23,7 +24,7 @@ import school.SchoolClass;
 public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
   private SchoolClass fSC;
   
-  private static String[] parameterNames = {"SC"};
+  private static List<String> parameterNames = makeImmutableList("SC");
   
   private ClassesOfSchoolMatch(final SchoolClass pSC) {
     this.fSC = pSC;
@@ -66,7 +67,7 @@ public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return ClassesOfSchoolMatch.parameterNames;
     
   }

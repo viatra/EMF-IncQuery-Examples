@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -22,7 +23,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
   private Integer fW;
   
-  private static String[] parameterNames = {"W"};
+  private static List<String> parameterNames = makeImmutableList("W");
   
   private CourseWithNameLongerThanWeightIntMatch(final Integer pW) {
     this.fW = pW;
@@ -65,7 +66,7 @@ public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePattern
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return CourseWithNameLongerThanWeightIntMatch.parameterNames;
     
   }

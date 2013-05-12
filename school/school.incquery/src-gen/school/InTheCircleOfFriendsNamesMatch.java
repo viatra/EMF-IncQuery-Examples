@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -24,7 +25,7 @@ public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   
   private String fSomeoneName;
   
-  private static String[] parameterNames = {"S1Name", "SomeoneName"};
+  private static List<String> parameterNames = makeImmutableList("S1Name", "SomeoneName");
   
   private InTheCircleOfFriendsNamesMatch(final String pS1Name, final String pSomeoneName) {
     this.fS1Name = pS1Name;
@@ -84,7 +85,7 @@ public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return InTheCircleOfFriendsNamesMatch.parameterNames;
     
   }

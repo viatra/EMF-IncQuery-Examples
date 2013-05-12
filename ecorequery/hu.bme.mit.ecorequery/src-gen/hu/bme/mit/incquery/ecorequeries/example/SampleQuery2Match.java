@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -35,7 +36,7 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   
   private EAttribute fLabel2;
   
-  private static String[] parameterNames = {"XElement", "YElement", "Relates1", "Relates2", "Label1", "Label2"};
+  private static List<String> parameterNames = makeImmutableList("XElement", "YElement", "Relates1", "Relates2", "Label1", "Label2");
   
   private SampleQuery2Match(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     this.fXElement = pXElement;
@@ -163,7 +164,7 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return SampleQuery2Match.parameterNames;
     
   }

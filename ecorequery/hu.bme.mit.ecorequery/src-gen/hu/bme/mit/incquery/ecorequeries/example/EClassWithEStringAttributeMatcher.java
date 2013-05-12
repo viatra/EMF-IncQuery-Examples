@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
+import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
@@ -39,7 +39,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EClassWithEStringAttributeQuerySpecification
  * 
  */
-public class EClassWithEStringAttributeMatcher extends BaseGeneratedMatcher<EClassWithEStringAttributeMatch> {
+public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithEStringAttributeMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.

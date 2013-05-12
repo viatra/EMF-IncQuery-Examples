@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -22,7 +23,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch {
   private String fSName;
   
-  private static String[] parameterNames = {"SName"};
+  private static List<String> parameterNames = makeImmutableList("SName");
   
   private TheOnesWithTheBiggestCircleNameMatch(final String pSName) {
     this.fSName = pSName;
@@ -65,7 +66,7 @@ public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMa
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return TheOnesWithTheBiggestCircleNameMatch.parameterNames;
     
   }

@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -29,7 +30,7 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
   
   private EClassifier fType;
   
-  private static String[] parameterNames = {"E", "Attr", "Type"};
+  private static List<String> parameterNames = makeImmutableList("E", "Attr", "Type");
   
   private EClassAttributeMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     this.fE = pE;
@@ -106,7 +107,7 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return EClassAttributeMatch.parameterNames;
     
   }

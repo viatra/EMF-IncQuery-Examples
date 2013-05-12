@@ -1,6 +1,7 @@
 package school;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -23,7 +24,7 @@ import school.Student;
 public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
   private Student fS;
   
-  private static String[] parameterNames = {"S"};
+  private static List<String> parameterNames = makeImmutableList("S");
   
   private TheOnesWithTheBiggestCircleMatch(final Student pS) {
     this.fS = pS;
@@ -66,7 +67,7 @@ public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch 
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return TheOnesWithTheBiggestCircleMatch.parameterNames;
     
   }

@@ -7,7 +7,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedMatcher;
+import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
@@ -36,7 +36,7 @@ import school.util.TheOnesWithTheBiggestCircleQuerySpecification;
  * @see TheOnesWithTheBiggestCircleQuerySpecification
  * 
  */
-public class TheOnesWithTheBiggestCircleMatcher extends BaseGeneratedMatcher<TheOnesWithTheBiggestCircleMatch> {
+public class TheOnesWithTheBiggestCircleMatcher extends BaseMatcher<TheOnesWithTheBiggestCircleMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.

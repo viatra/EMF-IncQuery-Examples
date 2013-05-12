@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
@@ -22,7 +23,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatternMatch {
   private String fERefName;
   
-  private static String[] parameterNames = {"ERefName"};
+  private static List<String> parameterNames = makeImmutableList("ERefName");
   
   private EReferenceWithStarMultiplicityNameMatch(final String pERefName) {
     this.fERefName = pERefName;
@@ -65,7 +66,7 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return EReferenceWithStarMultiplicityNameMatch.parameterNames;
     
   }

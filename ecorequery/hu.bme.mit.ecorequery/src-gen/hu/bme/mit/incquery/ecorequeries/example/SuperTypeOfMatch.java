@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
 import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -25,7 +26,7 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   
   private EClass fSub;
   
-  private static String[] parameterNames = {"Super", "Sub"};
+  private static List<String> parameterNames = makeImmutableList("Super", "Sub");
   
   private SuperTypeOfMatch(final EClass pSuper, final EClass pSub) {
     this.fSuper = pSuper;
@@ -85,7 +86,7 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   }
   
   @Override
-  public String[] parameterNames() {
+  public List<String> parameterNames() {
     return SuperTypeOfMatch.parameterNames;
     
   }
