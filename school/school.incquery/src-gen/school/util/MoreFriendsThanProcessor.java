@@ -17,7 +17,7 @@ public abstract class MoreFriendsThanProcessor implements IMatchProcessor<MoreFr
    * @param pS2 the value of pattern parameter S2 in the currently processed match 
    * 
    */
-  public abstract void process(final Student S1, final Student S2);
+  public abstract void process(final Student pS1, final Student pS2);
   
   @Override
   public void process(final MoreFriendsThanMatch match) {

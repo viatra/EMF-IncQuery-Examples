@@ -19,7 +19,7 @@ import school.util.InTheCircleOfFriendsQuerySpecification;
  * Generated pattern matcher API of the school.inTheCircleOfFriends pattern, 
  * providing pattern-specific query methods.
  * 
- * Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
+ * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)}, 
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link InTheCircleOfFriendsMatch}.

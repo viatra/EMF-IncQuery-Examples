@@ -16,7 +16,7 @@ public abstract class SuperTypeOfNameProcessor implements IMatchProcessor<SuperT
    * @param pSubName the value of pattern parameter SubName in the currently processed match 
    * 
    */
-  public abstract void process(final String SuperName, final String SubName);
+  public abstract void process(final String pSuperName, final String pSubName);
   
   @Override
   public void process(final SuperTypeOfNameMatch match) {

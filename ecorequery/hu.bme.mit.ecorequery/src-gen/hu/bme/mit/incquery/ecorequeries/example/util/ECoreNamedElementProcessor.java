@@ -17,7 +17,7 @@ public abstract class ECoreNamedElementProcessor implements IMatchProcessor<ECor
    * @param pName the value of pattern parameter Name in the currently processed match 
    * 
    */
-  public abstract void process(final ENamedElement Element, final String Name);
+  public abstract void process(final ENamedElement pElement, final String pName);
   
   @Override
   public void process(final ECoreNamedElementMatch match) {

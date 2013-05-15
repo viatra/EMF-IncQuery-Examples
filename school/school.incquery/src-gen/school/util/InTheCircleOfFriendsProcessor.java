@@ -17,7 +17,7 @@ public abstract class InTheCircleOfFriendsProcessor implements IMatchProcessor<I
    * @param pSomeone the value of pattern parameter Someone in the currently processed match 
    * 
    */
-  public abstract void process(final Student S1, final Student Someone);
+  public abstract void process(final Student pS1, final Student pSomeone);
   
   @Override
   public void process(final InTheCircleOfFriendsMatch match) {

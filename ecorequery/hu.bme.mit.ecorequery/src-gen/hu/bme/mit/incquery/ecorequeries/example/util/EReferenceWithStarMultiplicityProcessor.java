@@ -16,7 +16,7 @@ public abstract class EReferenceWithStarMultiplicityProcessor implements IMatchP
    * @param pERef the value of pattern parameter ERef in the currently processed match 
    * 
    */
-  public abstract void process(final EReference ERef);
+  public abstract void process(final EReference pERef);
   
   @Override
   public void process(final EReferenceWithStarMultiplicityMatch match) {

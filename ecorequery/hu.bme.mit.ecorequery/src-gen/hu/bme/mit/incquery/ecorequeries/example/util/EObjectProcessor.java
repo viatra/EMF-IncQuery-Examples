@@ -16,7 +16,7 @@ public abstract class EObjectProcessor implements IMatchProcessor<EObjectMatch> 
    * @param pE the value of pattern parameter E in the currently processed match 
    * 
    */
-  public abstract void process(final EObject E);
+  public abstract void process(final EObject pE);
   
   @Override
   public void process(final EObjectMatch match) {

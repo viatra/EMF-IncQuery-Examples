@@ -20,7 +20,7 @@ public abstract class EClassAttributeProcessor implements IMatchProcessor<EClass
    * @param pType the value of pattern parameter Type in the currently processed match 
    * 
    */
-  public abstract void process(final EClass E, final EAttribute Attr, final EClassifier Type);
+  public abstract void process(final EClass pE, final EAttribute pAttr, final EClassifier pType);
   
   @Override
   public void process(final EClassAttributeMatch match) {

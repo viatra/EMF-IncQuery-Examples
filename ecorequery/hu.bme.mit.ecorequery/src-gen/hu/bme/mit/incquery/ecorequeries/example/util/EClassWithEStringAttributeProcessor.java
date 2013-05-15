@@ -18,7 +18,7 @@ public abstract class EClassWithEStringAttributeProcessor implements IMatchProce
    * @param pAttr the value of pattern parameter Attr in the currently processed match 
    * 
    */
-  public abstract void process(final EClass E, final EAttribute Attr);
+  public abstract void process(final EClass pE, final EAttribute pAttr);
   
   @Override
   public void process(final EClassWithEStringAttributeMatch match) {

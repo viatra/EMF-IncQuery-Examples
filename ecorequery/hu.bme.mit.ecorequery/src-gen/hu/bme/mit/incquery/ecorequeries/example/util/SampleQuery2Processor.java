@@ -23,7 +23,7 @@ public abstract class SampleQuery2Processor implements IMatchProcessor<SampleQue
    * @param pLabel2 the value of pattern parameter Label2 in the currently processed match 
    * 
    */
-  public abstract void process(final EClass XElement, final EClass YElement, final EReference Relates1, final EReference Relates2, final EAttribute Label1, final EAttribute Label2);
+  public abstract void process(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2);
   
   @Override
   public void process(final SampleQuery2Match match) {

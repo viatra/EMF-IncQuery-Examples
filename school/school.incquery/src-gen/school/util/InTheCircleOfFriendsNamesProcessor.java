@@ -16,7 +16,7 @@ public abstract class InTheCircleOfFriendsNamesProcessor implements IMatchProces
    * @param pSomeoneName the value of pattern parameter SomeoneName in the currently processed match 
    * 
    */
-  public abstract void process(final String S1Name, final String SomeoneName);
+  public abstract void process(final String pS1Name, final String pSomeoneName);
   
   @Override
   public void process(final InTheCircleOfFriendsNamesMatch match) {
