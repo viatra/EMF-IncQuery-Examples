@@ -13,6 +13,8 @@ import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
+import org.eclipse.incquery.runtime.api.IncQueryEngine
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
@@ -42,11 +44,4 @@ class TestingFrameworkTest extends SchoolTestsBase {
     testValues(sns)
   }
   
-  @Test
-  def wildcardTest(){
-    val sns = snapshot
-    val engine = IncQueryEngineManager::instance.getIncQueryEngine(sns.EMFRootForSnapshot)
-    engine.setWildcardMode(true)
-    testValues(sns)
-  }
 }

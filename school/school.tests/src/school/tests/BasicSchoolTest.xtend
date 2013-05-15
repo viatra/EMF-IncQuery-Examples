@@ -38,6 +38,8 @@ import school.util.MoreFriendsThanQuerySpecification
 import school.util.TheOnesWithTheBiggestCircleQuerySpecification
 import school.util.FinalPattern2QuerySpecification
 import school.util.FinalPatternQuerySpecification
+import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
+import org.eclipse.incquery.testing.core.SnapshotHelper
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -49,6 +51,7 @@ import school.util.FinalPatternQuerySpecification
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class BasicSchoolTest extends SchoolTestsBase {
 	
+	@Inject extension SnapshotHelper
 	@Inject extension TestExecutor
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
@@ -100,5 +103,12 @@ class BasicSchoolTest extends SchoolTestsBase {
 	@Test def mfTestMoreFriendsThan() { testQuery(MoreFriendsThanQuerySpecification::instance) }
 	@Test def mfTestTheOnesWithTheBiggestCircle() { testQuery(TheOnesWithTheBiggestCircleQuerySpecification::instance) }
 	@Test def mfTestFinalPattern() { testQuery(FinalPatternQuerySpecification::instance) }	
+	
+	@Test
+	def wildcardTestFinalPattern(){
+    	val sns = snapshot
+    	val engine = AdvancedIncQueryEngine::createUnmanagedEngine(sns.EMFRootForSnapshot, true)
+    	engine.testQuery(sns, FinalPatternQuerySpecification::instance)
+	}
 	
 }
