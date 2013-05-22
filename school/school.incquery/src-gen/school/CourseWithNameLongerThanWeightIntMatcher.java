@@ -162,8 +162,10 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseMatcher<Course
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pW the fixed value of pattern parameter W, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<CourseWithNameLongerThanWeightIntMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Integer pW) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pW});
   }

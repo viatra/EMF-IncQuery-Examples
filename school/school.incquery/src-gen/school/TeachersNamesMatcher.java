@@ -160,8 +160,10 @@ public class TeachersNamesMatcher extends BaseMatcher<TeachersNamesMatch> {
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pTN the fixed value of pattern parameter TN, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<TeachersNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pTN) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTN});
   }

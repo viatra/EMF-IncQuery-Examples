@@ -161,8 +161,10 @@ public class TheOnesWithTheBiggestCircleMatcher extends BaseMatcher<TheOnesWithT
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pS the fixed value of pattern parameter S, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<TheOnesWithTheBiggestCircleMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS});
   }

@@ -173,8 +173,10 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
    * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
    * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<MoreFriendsThanMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1, pS2});
   }

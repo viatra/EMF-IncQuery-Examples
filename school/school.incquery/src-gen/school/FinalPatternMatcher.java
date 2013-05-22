@@ -204,8 +204,10 @@ public class FinalPatternMatcher extends BaseMatcher<FinalPatternMatch> {
    * @param pT the fixed value of pattern parameter T, or null if not bound.
    * @param pS the fixed value of pattern parameter S, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<FinalPatternMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Year pY, final Course pC, final Teacher pT, final Student pS) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pY, pC, pT, pS});
   }

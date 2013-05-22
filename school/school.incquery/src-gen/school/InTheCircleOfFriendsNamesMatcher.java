@@ -172,8 +172,10 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseMatcher<InTheCircleOfF
    * @param pS1Name the fixed value of pattern parameter S1Name, or null if not bound.
    * @param pSomeoneName the fixed value of pattern parameter SomeoneName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<InTheCircleOfFriendsNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pS1Name, final String pSomeoneName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1Name, pSomeoneName});
   }

@@ -202,8 +202,10 @@ public class FinalPattern2Matcher extends BaseMatcher<FinalPattern2Match> {
    * @param pTName the fixed value of pattern parameter TName, or null if not bound.
    * @param pSName the fixed value of pattern parameter SName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<FinalPattern2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pYDate, pCSub, pTName, pSName});
   }

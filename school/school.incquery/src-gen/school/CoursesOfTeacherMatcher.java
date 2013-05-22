@@ -174,8 +174,10 @@ public class CoursesOfTeacherMatcher extends BaseMatcher<CoursesOfTeacherMatch> 
    * @param pT the fixed value of pattern parameter T, or null if not bound.
    * @param pC the fixed value of pattern parameter C, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<CoursesOfTeacherMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Teacher pT, final Course pC) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pC});
   }

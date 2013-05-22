@@ -174,8 +174,10 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pC the fixed value of pattern parameter C, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<CourseWithPrimeWeightMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Course pC) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pC});
   }

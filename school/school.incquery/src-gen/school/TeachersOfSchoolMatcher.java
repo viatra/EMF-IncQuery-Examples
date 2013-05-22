@@ -173,8 +173,10 @@ public class TeachersOfSchoolMatcher extends BaseMatcher<TeachersOfSchoolMatch> 
    * @param pT the fixed value of pattern parameter T, or null if not bound.
    * @param pSch the fixed value of pattern parameter Sch, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<TeachersOfSchoolMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Teacher pT, final School pSch) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT, pSch});
   }

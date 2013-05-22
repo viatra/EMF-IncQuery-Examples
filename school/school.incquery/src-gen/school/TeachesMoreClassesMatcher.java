@@ -179,8 +179,10 @@ public class TeachesMoreClassesMatcher extends BaseMatcher<TeachesMoreClassesMat
    * @param pT1 the fixed value of pattern parameter T1, or null if not bound.
    * @param pT2 the fixed value of pattern parameter T2, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<TeachesMoreClassesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Teacher pT1, final Teacher pT2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT1, pT2});
   }

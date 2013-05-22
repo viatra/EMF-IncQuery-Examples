@@ -171,8 +171,10 @@ public class CoursesOfTeacherNamesMatcher extends BaseMatcher<CoursesOfTeacherNa
    * @param pTName the fixed value of pattern parameter TName, or null if not bound.
    * @param pCName the fixed value of pattern parameter CName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<CoursesOfTeacherNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pTName, final String pCName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTName, pCName});
   }

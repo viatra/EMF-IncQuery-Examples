@@ -172,8 +172,10 @@ public class StudentOfSchoolNamesMatcher extends BaseMatcher<StudentOfSchoolName
    * @param pSName the fixed value of pattern parameter SName, or null if not bound.
    * @param pSchName the fixed value of pattern parameter SchName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<StudentOfSchoolNamesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pSName, final String pSchName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSName, pSchName});
   }

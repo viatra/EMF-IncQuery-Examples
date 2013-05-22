@@ -161,8 +161,10 @@ public class TeachesTheMostCoursesMatcher extends BaseMatcher<TeachesTheMostCour
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pT the fixed value of pattern parameter T, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<TeachesTheMostCoursesMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Teacher pT) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pT});
   }
