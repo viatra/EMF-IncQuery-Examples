@@ -3,30 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.inf.gs.dsl.validators
 Bundle-SymbolicName: hu.bme.mit.inf.gs.dsl.validators;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: hu.bme.mit.inf.gs.dsl.validators.allrestmethods,
- hu.bme.mit.inf.gs.dsl.validators.collectiontypes,
- hu.bme.mit.inf.gs.dsl.validators.collectiontypesinthearchitecture,
- hu.bme.mit.inf.gs.dsl.validators.datatypesandcomponentsinthearchitecture,
- hu.bme.mit.inf.gs.dsl.validators.entityidnotattributeoftheentity,
- hu.bme.mit.inf.gs.dsl.validators.oclconstraintdescriptionunfinished,
- hu.bme.mit.inf.gs.dsl.validators.restmethods,
- hu.bme.mit.inf.gs.dsl.validators.servicemethoddescriptionunfinished,
- hu.bme.mit.inf.gs.dsl.validators.soaarchitecturetypes,
- hu.bme.mit.inf.gs.dsl.validators.soaservicecomponent,
- hu.bme.mit.inf.gs.dsl.validators.supertype,
- hu.bme.mit.inf.gs.dsl.validators.uniqueattributename,
- hu.bme.mit.inf.gs.dsl.validators.uniquecollections,
- hu.bme.mit.inf.gs.dsl.validators.uniquedatatypenames,
- hu.bme.mit.inf.gs.dsl.validators.uniqueentitynames,
- hu.bme.mit.inf.gs.dsl.validators.uniqueenumliteralids,
- hu.bme.mit.inf.gs.dsl.validators.uniqueenumliteralnames,
- hu.bme.mit.inf.gs.dsl.validators.uniqueparametername,
- hu.bme.mit.inf.gs.dsl.validators.uniqueservicecomponentnames,
- hu.bme.mit.inf.gs.dsl.validators.uniqueservicecomponenturiandnamespace,
- hu.bme.mit.inf.gs.dsl.validators.uniqueservicemethodsignature
+Export-Package: hu.bme.mit.inf.gs.dsl.validators,
+ hu.bme.mit.inf.gs.dsl.validators.util
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.incquery.runtime;bundle-version="0.7.0",
+ hu.bme.mit.inf.gs.dsl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

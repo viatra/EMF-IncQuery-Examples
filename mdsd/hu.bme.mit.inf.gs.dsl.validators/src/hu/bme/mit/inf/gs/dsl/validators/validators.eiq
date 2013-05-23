@@ -4,7 +4,7 @@ import "http://soamodel/1.0"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The ServiceComponent name $S1.name$ is duplicated", severity="error", location="S1")
+@Constraint(message="The ServiceComponent name $S1.name$ is duplicated", severity="error", location=S1)
 pattern UniqueServiceComponentNames(Name, S1) = {
 	ServiceComponent.name(S1, Name);
 	ServiceComponent.name(S2, Name);
@@ -13,7 +13,7 @@ pattern UniqueServiceComponentNames(Name, S1) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The ServiceMethod signature with name $S1.name$ is duplicated", severity="error", location="S1")
+@Constraint(message="The ServiceMethod signature with name $S1.name$ is duplicated", severity="error", location=S1)
 pattern UniqueServiceMethodSignature(Name, S1) = {
 	ServiceMethod.name(S1, Name);
 	ServiceMethod.name(S2, Name);
@@ -28,7 +28,7 @@ pattern RestMethods(RM) = {
 	RestMethod(RM);
 }
 
-@Constraint(message="$M.name$ is a ServiceMethod, but not a RestMethod.", severity="error", location="M")
+@Constraint(message="$M.name$ is a ServiceMethod, but not a RestMethod.", severity="error", location=M)
 pattern AllRestMethods(M) = {
 	ServiceMethod(M);
 	neg find RestMethods(M);
@@ -37,7 +37,7 @@ pattern AllRestMethods(M) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The $SM.name$ method has two parameters with the same name.", severity="error", location="SM")
+@Constraint(message="The $SM.name$ method has two parameters with the same name.", severity="error", location=SM)
 pattern UniqueParameterName(SM, Name) = {
 	ServiceMethod.parameters(SM, P1);
 	ServiceMethod.parameters(SM, P2);
@@ -48,7 +48,7 @@ pattern UniqueParameterName(SM, Name) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The DataType name $S1.name$ is duplicated", severity="error", location="S1")
+@Constraint(message="The DataType name $S1.name$ is duplicated", severity="error", location=S1)
 pattern UniqueDataTypeNames(Name, S1) = {
 	DataType.name(S1, Name);
 	DataType.name(S2, Name);
@@ -57,7 +57,7 @@ pattern UniqueDataTypeNames(Name, S1) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The Entity name $S1.name$ is duplicated", severity="error", location="S1")
+@Constraint(message="The Entity name $S1.name$ is duplicated", severity="error", location=S1)
 pattern UniqueEntityNames(Name, S1) = {
 	Entity.name(S1, Name);
 	Entity.name(S2, Name);
@@ -66,7 +66,7 @@ pattern UniqueEntityNames(Name, S1) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The $E.name$ entity has two attributes with the name $Name$", severity="error", location="E")
+@Constraint(message="The $E.name$ entity has two attributes with the name $Name$", severity="error", location=E)
 pattern UniqueAttributeName(E, Name) = {
 	Entity.attributes(E, P1);
 	Entity.attributes(E, P2);
@@ -77,7 +77,7 @@ pattern UniqueAttributeName(E, Name) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="Entity $E1.name$'s ID is not an attribute of the entity.", severity="error", location="E1")
+@Constraint(message="Entity $E1.name$'s ID is not an attribute of the entity.", severity="error", location=E1)
 pattern EntityIDNotAttributeOfTheEntity(E1) = {
 	Entity.ID(E1, ID);
 	Attribute.attributeOf(ID, E2);
@@ -86,7 +86,7 @@ pattern EntityIDNotAttributeOfTheEntity(E1) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The EnumLiteral name $S1.name$ is duplicated", severity="error", location="S1")
+@Constraint(message="The EnumLiteral name $S1.name$ is duplicated", severity="error", location=S1)
 pattern UniqueEnumLiteralNames(Name, S1) = {
 	EnumLiteral.name(S1, Name);
 	EnumLiteral.name(S2, Name);
@@ -99,7 +99,7 @@ pattern CollectionTypes(T) = {
 	CollectionType.itemType(CollectionType, T);
 }
 
-@Constraint(message="Collection type $T.name$ is not in the architecture types.", severity="error", location="T")
+@Constraint(message="Collection type $T.name$ is not in the architecture types.", severity="error", location=T)
 pattern CollectionTypesInTheArchitecture(T) = {
 	CollectionType.itemType(CollectionType, T);
 	neg find SOAArchitectureTypes(T);
@@ -115,7 +115,7 @@ pattern SOAServiceComponent(SC) = {
 	ServiceOrientedArchitecture.components(SOA, SC);
 }
 
-@Constraint(message="Data type $T.name$ is not in the architecture types.", severity="error", location="T")
+@Constraint(message="Data type $T.name$ is not in the architecture types.", severity="error", location=T)
 pattern DataTypesAndComponentsInTheArchitecture(T) = {
 	DataType(T);
 	neg find SOAArchitectureTypes(T);
@@ -126,7 +126,7 @@ pattern DataTypesAndComponentsInTheArchitecture(T) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="ServiceComponent $SC1.name$ shares the same URI or namespace with another ServiceComponent.", severity="error", location="SC1")
+@Constraint(message="ServiceComponent $SC1.name$ shares the same URI or namespace with another ServiceComponent.", severity="error", location=SC1)
 pattern UniqueServiceComponentURIAndNamespace(SC1, SC2) = {
 	ServiceComponent.URI(SC1, URI);
 	ServiceComponent.URI(SC2, URI);
@@ -139,7 +139,7 @@ pattern UniqueServiceComponentURIAndNamespace(SC1, SC2) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="DataType $DT.name$ has two collection types.", severity="error", location="DT")
+@Constraint(message="DataType $DT.name$ has two collection types.", severity="error", location=DT)
 pattern UniqueCollections(DT) = {
 	DataType(DT);
 	CollectionType(CT1);
@@ -151,7 +151,7 @@ pattern UniqueCollections(DT) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="Enum $E.name$ has two literals of the same value.", severity="error", location="E")
+@Constraint(message="Enum $E.name$ has two literals of the same value.", severity="error", location=E)
 pattern UniqueEnumLiteralIDs(E, EL1, EL2) = {
 	Enum.literals(E, EL1);
 	Enum.literals(E, EL2);
@@ -166,7 +166,7 @@ pattern UniqueEnumLiteralIDs(E, EL1, EL2) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The method $SM.name$ has an empty description field.", severity="warning", location="SM")
+@Constraint(message="The method $SM.name$ has an empty description field.", severity="warning", location=SM)
 pattern ServiceMethodDescriptionUnfinished(SM) = {
     ServiceMethod.description(SM, Desc);
     check(Desc == "");
@@ -174,7 +174,7 @@ pattern ServiceMethodDescriptionUnfinished(SM) = {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-@Constraint(message="The OCL constraint $SM.name$ has an empty description field.", severity="warning", location="SM")
+@Constraint(message="The OCL constraint $OCL$ has an empty description field.", severity="warning", location=OCL)
 pattern OCLConstraintDescriptionUnfinished(OCL) = {
     OCLConstraint.description(OCL, Desc);
     check(Desc == "");
@@ -188,7 +188,7 @@ pattern SuperType(E, S) = {
 
 
 /*
-@Constraint(message="The Entity $E.name$ has a circle in its inheritance graph.", severity="error", location="E")
+@Constraint(message="The Entity $E.name$ has a circle in its inheritance graph.", severity="error", location=E)
 pattern NoCirclesInInheritance(E) = {
     neg find SuperType(E, ST);
 } or {

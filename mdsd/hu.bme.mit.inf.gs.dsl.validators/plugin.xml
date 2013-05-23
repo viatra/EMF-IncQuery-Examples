@@ -3,169 +3,185 @@
 
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceComponentNames"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueservicecomponentnames.UniqueServiceComponentNamesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueServiceComponentNamesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceComponentNames">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceMethodSignature"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueservicemethodsignature.UniqueServiceMethodSignatureMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueServiceMethodSignatureQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceMethodSignature">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.RestMethods"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.restmethods.RestMethodsMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.RestMethodsQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.RestMethods">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.AllRestMethods"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.allrestmethods.AllRestMethodsMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.AllRestMethodsQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.AllRestMethods">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueParameterName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueparametername.UniqueParameterNameMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueParameterNameQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueParameterName">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueDataTypeNames"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniquedatatypenames.UniqueDataTypeNamesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueDataTypeNamesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueDataTypeNames">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueEntityNames"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueentitynames.UniqueEntityNamesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueEntityNamesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueEntityNames">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueAttributeName"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueattributename.UniqueAttributeNameMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueAttributeNameQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueAttributeName">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.EntityIDNotAttributeOfTheEntity"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.entityidnotattributeoftheentity.EntityIDNotAttributeOfTheEntityMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.EntityIDNotAttributeOfTheEntityQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.EntityIDNotAttributeOfTheEntity">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueEnumLiteralNames"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueenumliteralnames.UniqueEnumLiteralNamesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueEnumLiteralNamesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueEnumLiteralNames">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.CollectionTypes"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.collectiontypes.CollectionTypesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.CollectionTypesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.CollectionTypes">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.CollectionTypesInTheArchitecture"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.collectiontypesinthearchitecture.CollectionTypesInTheArchitectureMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.CollectionTypesInTheArchitectureQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.CollectionTypesInTheArchitecture">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.SOAArchitectureTypes"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.soaarchitecturetypes.SOAArchitectureTypesMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.SOAArchitectureTypesQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.SOAArchitectureTypes">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.SOAServiceComponent"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.soaservicecomponent.SOAServiceComponentMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.SOAServiceComponentQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.SOAServiceComponent">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.DataTypesAndComponentsInTheArchitecture"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.datatypesandcomponentsinthearchitecture.DataTypesAndComponentsInTheArchitectureMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.DataTypesAndComponentsInTheArchitectureQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.DataTypesAndComponentsInTheArchitecture">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceComponentURIAndNamespace"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueservicecomponenturiandnamespace.UniqueServiceComponentURIAndNamespaceMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueServiceComponentURIAndNamespaceQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueServiceComponentURIAndNamespace">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueCollections"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniquecollections.UniqueCollectionsMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueCollectionsQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueCollections">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.UniqueEnumLiteralIDs"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.uniqueenumliteralids.UniqueEnumLiteralIDsMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.UniqueEnumLiteralIDsQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.UniqueEnumLiteralIDs">
       </matcher>
    </extension>
    <extension
          id="hu.bme.mit.inf.gs.dsl.validators.ServiceMethodDescriptionUnfinished"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.servicemethoddescriptionunfinished.ServiceMethodDescriptionUnfinishedMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.ServiceMethodDescriptionUnfinishedQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.ServiceMethodDescriptionUnfinished">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.inf.gs.dsl.validators.ServiceMethodDescriptionUnfinished"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.inf.gs.dsl.validators.util.ServiceMethodDescriptionUnfinishedEvaluator1_1"
+            id="hu.bme.mit.inf.gs.dsl.validators.ServiceMethodDescriptionUnfinished_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.inf.gs.dsl.validators.OCLConstraintDescriptionUnfinished"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.oclconstraintdescriptionunfinished.OCLConstraintDescriptionUnfinishedMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.OCLConstraintDescriptionUnfinishedQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.OCLConstraintDescriptionUnfinished">
       </matcher>
    </extension>
    <extension
+         id="hu.bme.mit.inf.gs.dsl.validators.OCLConstraintDescriptionUnfinished"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="hu.bme.mit.inf.gs.dsl.validators.util.OCLConstraintDescriptionUnfinishedEvaluator1_1"
+            id="hu.bme.mit.inf.gs.dsl.validators.OCLConstraintDescriptionUnfinished_1_1">
+      </evaluator>
+   </extension>
+   <extension
          id="hu.bme.mit.inf.gs.dsl.validators.SuperType"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="hu.bme.mit.inf.gs.dsl.validators.supertype.SuperTypeMatcherFactory"
+            querySpecificationProvider="hu.bme.mit.inf.gs.dsl.validators.util.SuperTypeQuerySpecification$Provider"
             id="hu.bme.mit.inf.gs.dsl.validators.SuperType">
       </matcher>
    </extension>
