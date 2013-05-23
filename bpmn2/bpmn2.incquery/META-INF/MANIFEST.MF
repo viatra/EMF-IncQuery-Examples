@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: bpmn2.incquery
 Bundle-SymbolicName: bpmn2.incquery;singleton:=true
-Bundle-Version: 0.0.1.qualifier
-Export-Package: bpmn2.activity,
- bpmn2.event
+Bundle-Version: 0.0.2.qualifier
+Export-Package: bpmn2,
+ bpmn2.util
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
- org.eclipse.viatra2.emf.incquery.runtime,
+ org.eclipse.incquery.runtime,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
