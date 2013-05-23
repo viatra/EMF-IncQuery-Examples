@@ -6,7 +6,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="uml.statemachine.operationWithoutBehaviour"
-            class="uml.statemachine.operationwithoutbehaviour.OperationWithoutBehaviourConstraint0">
+            class="uml.statemachine.OperationWithoutBehaviourConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -20,7 +20,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="uml.statemachine.OpaqueBehaviorWithoutOperation"
-            class="uml.statemachine.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationConstraint0">
+            class="uml.statemachine.OpaqueBehaviorWithoutOperationConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -34,7 +34,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="uml.statemachine.receptionWithoutAction"
-            class="uml.statemachine.receptionwithoutaction.ReceptionWithoutActionConstraint0">
+            class="uml.statemachine.ReceptionWithoutActionConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -48,7 +48,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="uml.statemachine.incompatibleSpecification"
-            class="uml.statemachine.incompatiblespecification.IncompatibleSpecificationConstraint0">
+            class="uml.statemachine.IncompatibleSpecificationConstraint0">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>
@@ -62,7 +62,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="uml.emptyclass.emptyClass"
-            class="uml.emptyclass.emptyclass.EmptyClassConstraint2">
+            class="uml.emptyclass.EmptyClassConstraint2">
          <enabledForEditor
                editorId="org.eclipse.papyrus.infra.core.papyrusEditor">
          </enabledForEditor>

@@ -1,51 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
 
+
    <extension
-         id="uml.validation.superClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.statemachine.usedTriggerSignals"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.validation.superclass.SuperClassMatcherFactory$Provider"
-            id="uml.validation.superClass">
+            querySpecificationProvider="uml.statemachine.util.UsedTriggerSignalsQuerySpecification$Provider"
+            id="uml.statemachine.usedTriggerSignals">
       </matcher>
    </extension>
    <extension
-         id="uml.validation.superOrEqualClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.statemachine.eventForTrigger"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.validation.superorequalclass.SuperOrEqualClassMatcherFactory$Provider"
-            id="uml.validation.superOrEqualClass">
+            querySpecificationProvider="uml.statemachine.util.EventForTriggerQuerySpecification$Provider"
+            id="uml.statemachine.eventForTrigger">
       </matcher>
    </extension>
    <extension
-         id="uml.validation.ownsOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.statemachine.operationWithoutBehaviour"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.validation.ownsoperation.OwnsOperationMatcherFactory$Provider"
-            id="uml.validation.ownsOperation">
+            querySpecificationProvider="uml.statemachine.util.OperationWithoutBehaviourQuerySpecification$Provider"
+            id="uml.statemachine.operationWithoutBehaviour">
       </matcher>
    </extension>
    <extension
-         id="uml.validation.ownsProperty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.statemachine.OpaqueBehaviorWithoutOperation"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.validation.ownsproperty.OwnsPropertyMatcherFactory$Provider"
-            id="uml.validation.ownsProperty">
+            querySpecificationProvider="uml.statemachine.util.OpaqueBehaviorWithoutOperationQuerySpecification$Provider"
+            id="uml.statemachine.OpaqueBehaviorWithoutOperation">
       </matcher>
    </extension>
    <extension
-         id="uml.validation.hasOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.statemachine.receptionWithoutAction"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.validation.hasoperation.HasOperationMatcherFactory$Provider"
-            id="uml.validation.hasOperation">
+            querySpecificationProvider="uml.statemachine.util.ReceptionWithoutActionQuerySpecification$Provider"
+            id="uml.statemachine.receptionWithoutAction">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.incompatibleSpecification"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="uml.statemachine.util.IncompatibleSpecificationQuerySpecification$Provider"
+            id="uml.statemachine.incompatibleSpecification">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.parameterOfOperation"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="uml.statemachine.util.ParameterOfOperationQuerySpecification$Provider"
+            id="uml.statemachine.parameterOfOperation">
+      </matcher>
+   </extension>
+   <extension
+         id="uml.statemachine.parameterOfBehavior"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="uml.statemachine.util.ParameterOfBehaviorQuerySpecification$Provider"
+            id="uml.statemachine.parameterOfBehavior">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.inheritanceDiamond"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.inheritancediamond.InheritanceDiamondMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.InheritanceDiamondQuerySpecification$Provider"
             id="uml.sequencediagram.inheritanceDiamond">
       </matcher>
    </extension>
@@ -53,271 +78,247 @@
          id="uml.sequencediagram.inheritanceDiamond"
          point="org.eclipse.incquery.runtime.xexpressionevaluator">
       <evaluator
-            evaluatorClass="uml.sequencediagram.inheritancediamond.InheritanceDiamondEvaluator1_1"
+            evaluatorClass="uml.sequencediagram.util.InheritanceDiamondEvaluator1_1"
             id="uml.sequencediagram.inheritanceDiamond_1_1">
       </evaluator>
    </extension>
    <extension
          id="uml.sequencediagram.messageWithoutAssociation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.messagewithoutassociation.MessageWithoutAssociationMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.MessageWithoutAssociationQuerySpecification$Provider"
             id="uml.sequencediagram.messageWithoutAssociation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.unreferencedClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.unreferencedclass.UnreferencedClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.UnreferencedClassQuerySpecification$Provider"
             id="uml.sequencediagram.unreferencedClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.directSuperClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.directsuperclass.DirectSuperClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.DirectSuperClassQuerySpecification$Provider"
             id="uml.sequencediagram.directSuperClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.transitiveSuperClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.transitivesuperclass.TransitiveSuperClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.TransitiveSuperClassQuerySpecification$Provider"
             id="uml.sequencediagram.transitiveSuperClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.superOrEqualClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.superorequalclass.SuperOrEqualClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.SuperOrEqualClassQuerySpecification$Provider"
             id="uml.sequencediagram.superOrEqualClass">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.ownsOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.ownsoperation.OwnsOperationMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.OwnsOperationQuerySpecification$Provider"
             id="uml.sequencediagram.ownsOperation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.ownsProperty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.ownsproperty.OwnsPropertyMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.OwnsPropertyQuerySpecification$Provider"
             id="uml.sequencediagram.ownsProperty">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.hasoperation.HasOperationMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.HasOperationQuerySpecification$Provider"
             id="uml.sequencediagram.hasOperation">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasProperty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.hasproperty.HasPropertyMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.HasPropertyQuerySpecification$Provider"
             id="uml.sequencediagram.hasProperty">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasType"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.hastype.HasTypeMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.HasTypeQuerySpecification$Provider"
             id="uml.sequencediagram.hasType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.hasName"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.hasname.HasNameMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.HasNameQuerySpecification$Provider"
             id="uml.sequencediagram.hasName">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.messageEndType"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.messageendtype.MessageEndTypeMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.MessageEndTypeQuerySpecification$Provider"
             id="uml.sequencediagram.messageEndType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.associationEndType"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.associationendtype.AssociationEndTypeMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.AssociationEndTypeQuerySpecification$Provider"
             id="uml.sequencediagram.associationEndType">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.potentialAssociationBetween"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.potentialassociationbetween.PotentialAssociationBetweenMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.PotentialAssociationBetweenQuerySpecification$Provider"
             id="uml.sequencediagram.potentialAssociationBetween">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.messageEvents"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.messageevents.MessageEventsMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.MessageEventsQuerySpecification$Provider"
             id="uml.sequencediagram.messageEvents">
       </matcher>
    </extension>
    <extension
          id="uml.sequencediagram.propertyNumberOfClassInPackage"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageMatcherFactory$Provider"
+            querySpecificationProvider="uml.sequencediagram.util.PropertyNumberOfClassInPackageQuerySpecification$Provider"
             id="uml.sequencediagram.propertyNumberOfClassInPackage">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.usedTriggerSignals"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.validation.superClass"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.statemachine.usedtriggersignals.UsedTriggerSignalsMatcherFactory$Provider"
-            id="uml.statemachine.usedTriggerSignals">
+            querySpecificationProvider="uml.validation.util.SuperClassQuerySpecification$Provider"
+            id="uml.validation.superClass">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.eventForTrigger"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.validation.superOrEqualClass"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.statemachine.eventfortrigger.EventForTriggerMatcherFactory$Provider"
-            id="uml.statemachine.eventForTrigger">
+            querySpecificationProvider="uml.validation.util.SuperOrEqualClassQuerySpecification$Provider"
+            id="uml.validation.superOrEqualClass">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.operationWithoutBehaviour"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.validation.ownsOperation"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.statemachine.operationwithoutbehaviour.OperationWithoutBehaviourMatcherFactory$Provider"
-            id="uml.statemachine.operationWithoutBehaviour">
+            querySpecificationProvider="uml.validation.util.OwnsOperationQuerySpecification$Provider"
+            id="uml.validation.ownsOperation">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.OpaqueBehaviorWithoutOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.validation.ownsProperty"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.statemachine.opaquebehaviorwithoutoperation.OpaqueBehaviorWithoutOperationMatcherFactory$Provider"
-            id="uml.statemachine.OpaqueBehaviorWithoutOperation">
+            querySpecificationProvider="uml.validation.util.OwnsPropertyQuerySpecification$Provider"
+            id="uml.validation.ownsProperty">
       </matcher>
    </extension>
    <extension
-         id="uml.statemachine.receptionWithoutAction"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         id="uml.validation.hasOperation"
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.statemachine.receptionwithoutaction.ReceptionWithoutActionMatcherFactory$Provider"
-            id="uml.statemachine.receptionWithoutAction">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.incompatibleSpecification"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.incompatiblespecification.IncompatibleSpecificationMatcherFactory$Provider"
-            id="uml.statemachine.incompatibleSpecification">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.parameterOfOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.parameterofoperation.ParameterOfOperationMatcherFactory$Provider"
-            id="uml.statemachine.parameterOfOperation">
-      </matcher>
-   </extension>
-   <extension
-         id="uml.statemachine.parameterOfBehavior"
-         point="org.eclipse.incquery.runtime.matcherfactory">
-      <matcher
-            factoryProvider="uml.statemachine.parameterofbehavior.ParameterOfBehaviorMatcherFactory$Provider"
-            id="uml.statemachine.parameterOfBehavior">
+            querySpecificationProvider="uml.validation.util.HasOperationQuerySpecification$Provider"
+            id="uml.validation.hasOperation">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.superClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.superclass.SuperClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.SuperClassQuerySpecification$Provider"
             id="uml.emptyclass.superClass">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.transitiveSuperClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.transitivesuperclass.TransitiveSuperClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.TransitiveSuperClassQuerySpecification$Provider"
             id="uml.emptyclass.transitiveSuperClass">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.superOrEqualClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.superorequalclass.SuperOrEqualClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.SuperOrEqualClassQuerySpecification$Provider"
             id="uml.emptyclass.superOrEqualClass">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.ownsOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.ownsoperation.OwnsOperationMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.OwnsOperationQuerySpecification$Provider"
             id="uml.emptyclass.ownsOperation">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.ownsProperty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.ownsproperty.OwnsPropertyMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.OwnsPropertyQuerySpecification$Provider"
             id="uml.emptyclass.ownsProperty">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.hasOperation"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.hasoperation.HasOperationMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.HasOperationQuerySpecification$Provider"
             id="uml.emptyclass.hasOperation">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.hasProperty"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.hasproperty.HasPropertyMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.HasPropertyQuerySpecification$Provider"
             id="uml.emptyclass.hasProperty">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.emptyClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.emptyclass.EmptyClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.EmptyClassQuerySpecification$Provider"
             id="uml.emptyclass.emptyClass">
       </matcher>
    </extension>
    <extension
          id="uml.emptyclass.nonEmptyClass"
-         point="org.eclipse.incquery.runtime.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factoryProvider="uml.emptyclass.nonemptyclass.NonEmptyClassMatcherFactory$Provider"
+            querySpecificationProvider="uml.emptyclass.util.NonEmptyClassQuerySpecification$Provider"
             id="uml.emptyclass.nonEmptyClass">
       </matcher>
    </extension>

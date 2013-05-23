@@ -2,6 +2,8 @@ package hu.bme.mit.examples.uml.incquery.databinding.demo;
 
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.incquery.databinding.runtime.collection.ObservablePatternMatchList;
+import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.jface.databinding.viewers.ViewerSupport;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
@@ -12,11 +14,9 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.incquery.databinding.runtime.collection.ObservablePatternMatchList;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
 
-import uml.emptyclass.emptyclass.EmptyClassDatabindingAdapter;
-import uml.emptyclass.emptyclass.EmptyClassMatcher;
+import uml.emptyclass.EmptyClassDatabindingAdapter;
+import uml.emptyclass.EmptyClassMatcher;
 
 public class ClassView extends ViewPart {
     public ClassView() {
@@ -61,8 +61,8 @@ public class ClassView extends ViewPart {
     }
 
     public void loadModel(ResourceSet resourceSet) throws IncQueryException {
-        EmptyClassMatcher matcher = new uml.emptyclass.emptyclass.EmptyClassMatcher(resourceSet);
-        EmptyClassDatabindingAdapter adapter = new uml.emptyclass.emptyclass.EmptyClassDatabindingAdapter();
+        EmptyClassMatcher matcher = new EmptyClassMatcher(resourceSet);
+        EmptyClassDatabindingAdapter adapter = new EmptyClassDatabindingAdapter();
         ViewerSupport.bind(
                 tableViewer,
                 new ObservablePatternMatchList(matcher),

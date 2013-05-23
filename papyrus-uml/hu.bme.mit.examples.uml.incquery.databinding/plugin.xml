@@ -6,9 +6,9 @@
          point="org.eclipse.incquery.databinding.runtime.databinding">
       <databinding
             message=""
-            class="uml.sequencediagram.messageevents.MessageEventsDatabindingAdapter"
-            patternName="uml.sequencediagram.messageEvents"
-            matcherFactoryClass="uml.sequencediagram.messageevents.MessageEventsMatcherFactory">
+            class="uml.sequencediagram.MessageEventsDatabindingAdapter"
+            querySpecificationClass="uml.sequencediagram.util.MessageEventsQuerySpecification"
+            patternName="uml.sequencediagram.messageEvents">
       </databinding>
    </extension>
    <extension
@@ -16,9 +16,9 @@
          point="org.eclipse.incquery.databinding.runtime.databinding">
       <databinding
             message=""
-            class="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageDatabindingAdapter"
-            patternName="uml.sequencediagram.propertyNumberOfClassInPackage"
-            matcherFactoryClass="uml.sequencediagram.propertynumberofclassinpackage.PropertyNumberOfClassInPackageMatcherFactory">
+            class="uml.sequencediagram.PropertyNumberOfClassInPackageDatabindingAdapter"
+            querySpecificationClass="uml.sequencediagram.util.PropertyNumberOfClassInPackageQuerySpecification"
+            patternName="uml.sequencediagram.propertyNumberOfClassInPackage">
       </databinding>
    </extension>
    <extension
@@ -26,9 +26,9 @@
          point="org.eclipse.incquery.databinding.runtime.databinding">
       <databinding
             message=""
-            class="uml.emptyclass.emptyclass.EmptyClassDatabindingAdapter"
-            patternName="uml.emptyclass.emptyClass"
-            matcherFactoryClass="uml.emptyclass.emptyclass.EmptyClassMatcherFactory">
+            class="uml.emptyclass.EmptyClassDatabindingAdapter"
+            querySpecificationClass="uml.emptyclass.util.EmptyClassQuerySpecification"
+            patternName="uml.emptyclass.emptyClass">
       </databinding>
    </extension>
 
