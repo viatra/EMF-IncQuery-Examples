@@ -3,12 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.viatra2.emf.incquery.stochsim.patterns
 Bundle-SymbolicName: org.eclipse.viatra2.emf.incquery.stochsim.patterns;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: org.eclipse.viatra2.emf.incquery.stochsim.patterns.connectedclient,
- org.eclipse.viatra2.emf.incquery.stochsim.patterns.linked,
- org.eclipse.viatra2.emf.incquery.stochsim.patterns.nocycle,
- org.eclipse.viatra2.emf.incquery.stochsim.patterns.notconnectedclient,
- org.eclipse.viatra2.emf.incquery.stochsim.patterns.transitiveclosureoflinked,
- org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniquenameconstraint
+Export-Package: org.eclipse.viatra2.emf.incquery.stochsim.patterns,
+ org.eclipse.viatra2.emf.incquery.stochsim.patterns.util
 Require-Bundle: org.eclipse.pde.core,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

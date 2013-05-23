@@ -6,7 +6,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notConnectedClient"
-            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.notconnectedclient.NotConnectedClientConstraint0">
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.NotConnectedClientConstraint0">
          <enabledForEditor
                editorId="*">
          </enabledForEditor>
@@ -23,7 +23,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.noCycle"
-            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.nocycle.NoCycleConstraint0">
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.NoCycleConstraint0">
          <enabledForEditor
                editorId="*">
          </enabledForEditor>
@@ -40,7 +40,7 @@
          point="org.eclipse.incquery.validation.runtime.constraint">
       <constraint
             name="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniqueNameConstraint"
-            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.uniquenameconstraint.UniqueNameConstraintConstraint0">
+            class="org.eclipse.viatra2.emf.incquery.stochsim.patterns.UniqueNameConstraintConstraint0">
          <enabledForEditor
                editorId="*">
          </enabledForEditor>
