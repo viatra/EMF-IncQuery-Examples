@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
 
+
    <extension
          id="queryt.dependedBy"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="queryt.dependedby.DependedByMatcherFactory"
+            querySpecificationProvider="queryt.util.DependedByQuerySpecification$Provider"
             id="queryt.dependedBy">
       </matcher>
    </extension>
    <extension
          id="queryt.dependedComponents"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="queryt.dependedcomponents.DependedComponentsMatcherFactory"
+            querySpecificationProvider="queryt.util.DependedComponentsQuerySpecification$Provider"
             id="queryt.dependedComponents">
       </matcher>
    </extension>
    <extension
          id="query.dependedBy"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="query.dependedby.DependedByMatcherFactory"
+            querySpecificationProvider="query.util.DependedByQuerySpecification$Provider"
             id="query.dependedBy">
       </matcher>
    </extension>
    <extension
          id="query.dependedByTran"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="query.dependedbytran.DependedByTranMatcherFactory"
+            querySpecificationProvider="query.util.DependedByTranQuerySpecification$Provider"
             id="query.dependedByTran">
       </matcher>
    </extension>
    <extension
          id="query.dependedComponents"
-         point="org.eclipse.viatra2.emf.incquery.matcherfactory">
+         point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            factory="query.dependedcomponents.DependedComponentsMatcherFactory"
+            querySpecificationProvider="query.util.DependedComponentsQuerySpecification$Provider"
             id="query.dependedComponents">
       </matcher>
    </extension>

@@ -26,14 +26,14 @@ import "http://dependency-graph/1.0"
 	// Transitive dependedBy relation
 	pattern dependedByTran(Source, Target) =
 	{
-		EObject(Source);
-		EObject(Target);
+		GraphElement(Source);
+		GraphElement(Target);
 		find dependedBy(Source, Target);
 	}
 	or
 	{
-		EObject(Source);
-		EObject(Mid);
+		GraphElement(Source);
+		GraphElement(Mid);
 		find dependedBy(Source, Mid);
 		EObject(Target);
 		find dependedByTran(Mid, Target);
