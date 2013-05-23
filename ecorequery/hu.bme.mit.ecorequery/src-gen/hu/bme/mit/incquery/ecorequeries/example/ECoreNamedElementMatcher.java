@@ -171,8 +171,10 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
    * @param pName the fixed value of pattern parameter Name, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<ECoreNamedElementMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final ENamedElement pElement, final String pName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pElement, pName});
   }

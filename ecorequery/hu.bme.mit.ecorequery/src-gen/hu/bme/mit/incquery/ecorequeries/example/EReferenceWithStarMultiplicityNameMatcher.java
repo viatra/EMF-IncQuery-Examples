@@ -162,8 +162,10 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<EReferenceWithStarMultiplicityNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pERefName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pERefName});
   }

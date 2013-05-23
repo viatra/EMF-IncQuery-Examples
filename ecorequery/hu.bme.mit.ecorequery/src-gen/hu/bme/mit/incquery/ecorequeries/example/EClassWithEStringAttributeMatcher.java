@@ -173,8 +173,10 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
    * @param pE the fixed value of pattern parameter E, or null if not bound.
    * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<EClassWithEStringAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EAttribute pAttr) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pAttr});
   }

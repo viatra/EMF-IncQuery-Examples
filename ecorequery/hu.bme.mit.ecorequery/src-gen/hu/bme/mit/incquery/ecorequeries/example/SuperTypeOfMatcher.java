@@ -172,8 +172,10 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
    * @param pSuper the fixed value of pattern parameter Super, or null if not bound.
    * @param pSub the fixed value of pattern parameter Sub, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<SuperTypeOfMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pSuper, final EClass pSub) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSuper, pSub});
   }

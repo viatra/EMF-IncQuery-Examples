@@ -163,8 +163,10 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<IsInECoreMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClassifier pElement) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pElement});
   }

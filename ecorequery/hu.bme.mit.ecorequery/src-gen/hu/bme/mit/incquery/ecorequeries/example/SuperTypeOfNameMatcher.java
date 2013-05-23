@@ -171,8 +171,10 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
    * @param pSuperName the fixed value of pattern parameter SuperName, or null if not bound.
    * @param pSubName the fixed value of pattern parameter SubName, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<SuperTypeOfNameMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final String pSuperName, final String pSubName) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pSuperName, pSubName});
   }

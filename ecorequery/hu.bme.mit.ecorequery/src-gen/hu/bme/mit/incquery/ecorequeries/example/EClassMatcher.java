@@ -161,8 +161,10 @@ public class EClassMatcher extends BaseMatcher<EClassMatch> {
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pEClass the fixed value of pattern parameter EClass, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<EClassMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pEClass) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pEClass});
   }

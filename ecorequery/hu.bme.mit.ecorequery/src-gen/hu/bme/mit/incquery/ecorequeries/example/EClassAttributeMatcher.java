@@ -184,8 +184,10 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
    * @param pType the fixed value of pattern parameter Type, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<EClassAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pAttr, pType});
   }

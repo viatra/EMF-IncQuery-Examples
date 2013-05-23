@@ -229,8 +229,10 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * @param pLabel1 the fixed value of pattern parameter Label1, or null if not bound.
    * @param pLabel2 the fixed value of pattern parameter Label2, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<SampleQuery2Match> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
   }

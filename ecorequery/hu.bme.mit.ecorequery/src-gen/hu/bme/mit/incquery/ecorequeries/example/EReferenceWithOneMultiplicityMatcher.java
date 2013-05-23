@@ -163,8 +163,10 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
    * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
    * @return the delta monitor.
+   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
+  @Deprecated
   public DeltaMonitor<EReferenceWithOneMultiplicityMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EReference pERef) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pERef});
   }
