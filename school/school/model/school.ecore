@@ -23,7 +23,11 @@
         <details key="documentation" value="The real name of the School, e.g. &quot;Budapest University of Technology and Economics.&quot; "/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The real life postal address of the School."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="years" upperBound="-1"
         eType="#//Year" containment="true" resolveProxies="false" eOpposite="#//Year/school"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="teachers" upperBound="-1"
