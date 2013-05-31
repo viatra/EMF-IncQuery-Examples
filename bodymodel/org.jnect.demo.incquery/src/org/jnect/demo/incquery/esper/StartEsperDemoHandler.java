@@ -4,19 +4,20 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 
-import bodymodel.ymca.a.AMatcher;
-import bodymodel.ymca.be.BEMatcher;
-import bodymodel.ymca.bs.BSMatcher;
-import bodymodel.ymca.c.CMatcher;
-import bodymodel.ymca.fe.FEMatcher;
-import bodymodel.ymca.fs.FSMatcher;
-import bodymodel.ymca.i.IMatcher;
-import bodymodel.ymca.m.MMatcher;
-import bodymodel.ymca.q.QMatcher;
-import bodymodel.ymca.y.YMatcher;
+import bodymodel.ymca.AMatcher;
+import bodymodel.ymca.BEMatcher;
+import bodymodel.ymca.BSMatcher;
+import bodymodel.ymca.CMatcher;
+import bodymodel.ymca.FEMatcher;
+import bodymodel.ymca.FSMatcher;
+import bodymodel.ymca.IMatcher;
+import bodymodel.ymca.MMatcher;
+import bodymodel.ymca.QMatcher;
+import bodymodel.ymca.YMatcher;
 
 /**
  * 
@@ -31,20 +32,20 @@ public class StartEsperDemoHandler extends AbstractHandler {
 
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
-
+				IncQueryEngine e = IncQueryEngine.on(km);
 				// adapters for the YMCA demo
-				new EsperAdapter(YMatcher.factory().getMatcher(km));
-				new EsperAdapter(MMatcher.factory().getMatcher(km));
-				new EsperAdapter(CMatcher.factory().getMatcher(km));
-				new EsperAdapter(AMatcher.factory().getMatcher(km));
-				new EsperAdapter(IMatcher.factory().getMatcher(km));
-				new EsperAdapter(QMatcher.factory().getMatcher(km));
+				new EsperAdapter(YMatcher.on(e));
+				new EsperAdapter(MMatcher.on(e));
+				new EsperAdapter(CMatcher.on(e));
+				new EsperAdapter(AMatcher.on(e));
+				new EsperAdapter(IMatcher.on(e));
+				new EsperAdapter(QMatcher.on(e));
 				
 				// adapters for the powerpoint robot demo
-				new EsperAdapter(FSMatcher.factory().getMatcher(km));
-				new EsperAdapter(FEMatcher.factory().getMatcher(km));
-				new EsperAdapter(BSMatcher.factory().getMatcher(km));
-				new EsperAdapter(BEMatcher.factory().getMatcher(km));
+				new EsperAdapter(FSMatcher.on(e));
+				new EsperAdapter(FEMatcher.on(e));
+				new EsperAdapter(BSMatcher.on(e));
+				new EsperAdapter(BEMatcher.on(e));
 				
 				
 			} catch (IncQueryException e) {

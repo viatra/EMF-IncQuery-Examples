@@ -4,14 +4,15 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 import org.jnect.demo.incquery.esper.EsperAdapter;
 import org.jnect.demo.incquery.esper.EsperManager;
 
-import bodymodel.ymca.se.SEMatcher;
-import bodymodel.ymca.sm.SMMatcher;
-import bodymodel.ymca.ss.SSMatcher;
+import bodymodel.ymca.SEMatcher;
+import bodymodel.ymca.SMMatcher;
+import bodymodel.ymca.SSMatcher;
 
 //import bodymodel.jump.JumpMatcher;
 
@@ -30,11 +31,11 @@ public class StartCombinedSheldonDemoHandler extends AbstractHandler {
 			
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
-				
+				IncQueryEngine e = IncQueryEngine.on(km);
 				// adapters for the sheldon
-				new EsperAdapter(SEMatcher.factory().getMatcher(km));
-				new EsperAdapter(SMMatcher.factory().getMatcher(km));
-				new EsperAdapter(SSMatcher.factory().getMatcher(km));
+				new EsperAdapter(SEMatcher.on(e));
+				new EsperAdapter(SMMatcher.on(e));
+				new EsperAdapter(SSMatcher.on(e));
 				
 				
 			} catch (IncQueryException e) {

@@ -1,8 +1,13 @@
 package org.jnect.demo.incquery.esper;
 
+import org.eclipse.core.databinding.observable.Realm;
+import org.eclipse.core.databinding.observable.set.IObservableSet;
+import org.eclipse.core.databinding.observable.set.ISetChangeListener;
+import org.eclipse.core.databinding.observable.set.SetChangeEvent;
+import org.eclipse.incquery.databinding.runtime.api.IncQueryHeadlessRealm;
+import org.eclipse.incquery.databinding.runtime.api.IncQueryObservables;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.IncQueryMatcher;
-import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.jnect.demo.incquery.esper.events.PatternMatchEvent;
 import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 
@@ -14,36 +19,42 @@ import org.jnect.demo.incquery.esper.events.PatternMatchEventType;
 public class EsperAdapter {
     
     IncQueryMatcher<? extends IPatternMatch> matcher;
-    DeltaMonitor<? extends IPatternMatch> dm;
 
     
     public EsperAdapter(IncQueryMatcher<? extends IPatternMatch> m) {
-
         matcher = m;
-        dm = matcher.newDeltaMonitor(true);
-        matcher.addCallbackAfterUpdates(new Runnable(){
-           @Override
-            public void run() {
-                for (IPatternMatch pm : dm.matchFoundEvents) {
-                   // System.out.println("New match found:" + pm.toString());
-                   // v.appendString(pm.patternName());
-                   // for (Object _pe: pm.toArray()) {
-                   // 	((PositionedElement)_pe).setColor_r(255);
-                   //}
-                	EsperManager.getInstance().sendEvent(
-                			new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.NEW));
+        if (Realm.getDefault()==null) {
+            // make sure we work well in a headless / non-UI thread environment
+            IncQueryHeadlessRealm realm = new IncQueryHeadlessRealm();
+        }
+        IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
+        os.addSetChangeListener(new ISetChangeListener() {
+
+            @Override
+            public void handleSetChange(SetChangeEvent event) {
+                for (Object _o : event.diff.getAdditions()) {
+                    IPatternMatch pm = (IPatternMatch) _o;
+                 // System.out.println("New match found:" + pm.toString());
+                    // v.appendString(pm.patternName());
+                    // for (Object _pe: pm.toArray()) {
+                    //   ((PositionedElement)_pe).setColor_r(255);
+                    //}
+                     EsperManager.getInstance().sendEvent(
+                             new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.NEW));
                 }
-                for (IPatternMatch pm : dm.matchLostEvents) {
-                   // System.out.println("Lost match found:" + pm.toString());
+                for (Object _o : event.diff.getRemovals()) {
+                    IPatternMatch pm = (IPatternMatch) _o;
+                 // System.out.println("Lost match found:" + pm.toString());
                     // v.appendString(pm.patternName());
                     //for (Object _pe: pm.toArray()) {
-                    //	((PositionedElement)_pe).setColor_r(0);
+                    //  ((PositionedElement)_pe).setColor_r(0);
                     //}
-                	EsperManager.getInstance().sendEvent(
-                			new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.LOST));
+                    EsperManager.getInstance().sendEvent(
+                            new PatternMatchEvent(pm, pm.patternName(), PatternMatchEventType.LOST));
                 }
-                dm.clear();
-            } 
+                
+            }
+            
         });
     }
     

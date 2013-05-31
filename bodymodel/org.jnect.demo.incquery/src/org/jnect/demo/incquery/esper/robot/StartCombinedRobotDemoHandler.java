@@ -4,15 +4,16 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 import org.jnect.demo.incquery.esper.EsperAdapter;
 import org.jnect.demo.incquery.esper.EsperManager;
 
-import bodymodel.ymca.be.BEMatcher;
-import bodymodel.ymca.bs.BSMatcher;
-import bodymodel.ymca.fe.FEMatcher;
-import bodymodel.ymca.fs.FSMatcher;
+import bodymodel.ymca.BEMatcher;
+import bodymodel.ymca.BSMatcher;
+import bodymodel.ymca.FEMatcher;
+import bodymodel.ymca.FSMatcher;
 
 //import bodymodel.jump.JumpMatcher;
 
@@ -31,12 +32,12 @@ public class StartCombinedRobotDemoHandler extends AbstractHandler {
 			
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
-				
+				IncQueryEngine e = IncQueryEngine.on(km);
 				// adapters for the powerpoint robot demo
-				new EsperAdapter(FSMatcher.factory().getMatcher(km));
-				new EsperAdapter(FEMatcher.factory().getMatcher(km));
-				new EsperAdapter(BSMatcher.factory().getMatcher(km));
-				new EsperAdapter(BEMatcher.factory().getMatcher(km));
+				new EsperAdapter(FSMatcher.on(e));
+				new EsperAdapter(FEMatcher.on(e));
+				new EsperAdapter(BSMatcher.on(e));
+				new EsperAdapter(BEMatcher.on(e));
 				
 				
 			} catch (IncQueryException e) {

@@ -4,15 +4,16 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.jnect.core.KinectManager;
 
-import bodymodel.ymca.a.AMatcher;
-import bodymodel.ymca.c.CMatcher;
-import bodymodel.ymca.i.IMatcher;
-import bodymodel.ymca.m.MMatcher;
-import bodymodel.ymca.q.QMatcher;
-import bodymodel.ymca.y.YMatcher;
+import bodymodel.ymca.AMatcher;
+import bodymodel.ymca.CMatcher;
+import bodymodel.ymca.IMatcher;
+import bodymodel.ymca.MMatcher;
+import bodymodel.ymca.QMatcher;
+import bodymodel.ymca.YMatcher;
 
 
 /**
@@ -28,12 +29,13 @@ public class StartCombinedYMCADemoHandler extends AbstractHandler {
 			try {
 				Notifier km = KinectManager.INSTANCE.getSkeletonModel();
 				// adapters for the YMCA demo
-				new EsperAdapter(YMatcher.factory().getMatcher(km));
-				new EsperAdapter(MMatcher.factory().getMatcher(km));
-				new EsperAdapter(CMatcher.factory().getMatcher(km));
-				new EsperAdapter(AMatcher.factory().getMatcher(km));
-				new EsperAdapter(IMatcher.factory().getMatcher(km));
-				new EsperAdapter(QMatcher.factory().getMatcher(km));
+				IncQueryEngine e = IncQueryEngine.on(km);
+				new EsperAdapter(YMatcher.on(e));
+				new EsperAdapter(MMatcher.on(e));
+				new EsperAdapter(CMatcher.on(e));
+				new EsperAdapter(AMatcher.on(e));
+				new EsperAdapter(IMatcher.on(e));
+				new EsperAdapter(QMatcher.on(e));
 			} catch (IncQueryException e) {
 				e.printStackTrace();
 			}
