@@ -1,8 +1,5 @@
 package org.eclipse.incquery.runtime.base.test.util;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -38,7 +35,16 @@ public class DynamicResourceModel {
     public EObject Graphtransformations;
     public EObject Eclipsebaseddevelopmentandintegration;
     
-    public DynamicResourceModel() {
+    private static DynamicResourceModel instance;
+    
+    public static DynamicResourceModel getInstance() {
+        if (instance == null) {
+            instance = new DynamicResourceModel();
+        }
+        return instance;
+    }
+    
+    private DynamicResourceModel() {
 
         EFactory schoolFactoryInstance = DynamicResourceMetamodel.eINSTANCE.schoolEPackage.getEFactoryInstance();
 
@@ -183,20 +189,15 @@ public class DynamicResourceModel {
         IstvanRath.eSet(DynamicResourceMetamodel.eINSTANCE.StudentFriendsWithEReference, friendsWith);
     }
     
-    private static Map<EObject, TransactionalEditingDomain> editingDomainMap = new HashMap<EObject, TransactionalEditingDomain>();
+    private TransactionalEditingDomain editingDomain;
     
-    public static TransactionalEditingDomain getTransactionalEditingDomain(EObject obj) {
-        TransactionalEditingDomain editingDomain = editingDomainMap.get(obj);
-        if (editingDomain != null) {
-            return editingDomain;
-        }
-        else {
+    public TransactionalEditingDomain getTransactionalEditingDomain() {
+        if (editingDomain == null) {
             ResourceSet resourceSet = new ResourceSetImpl();
             Resource resource = resourceSet.createResource(URI.createURI("test"));
-            resource.getContents().add(obj);
-            editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
-            editingDomainMap.put(obj, editingDomain);
-            return editingDomain;
+            resource.getContents().add(school);
+            editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);            
         }
+        return editingDomain;
     }
 }

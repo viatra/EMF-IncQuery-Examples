@@ -10,8 +10,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
- * This class is the super class of all EMF-IncQuery Base Getter test cases (except the scope tests). It is
- * parameterized and operates on the first school model (all three {@link Notifier} types).
+ * This class is the super class of all EMF-IncQuery Base Getter test cases for dynamic EMF models.
  * 
  * @author Tamas Szabo
  * 
@@ -29,7 +28,6 @@ public abstract class IncQueryBaseDynamicParameterizedTest extends IncQueryBaseT
 
     @Parameters
     public static Collection<Notifier[]> initializeParameters() {
-        DynamicResourceModel model = new DynamicResourceModel();
-        return Arrays.asList(new Notifier[][] { { model.school } });
+        return Arrays.asList(new Notifier[][] { { DynamicResourceModel.getInstance().school } });
     }
 }

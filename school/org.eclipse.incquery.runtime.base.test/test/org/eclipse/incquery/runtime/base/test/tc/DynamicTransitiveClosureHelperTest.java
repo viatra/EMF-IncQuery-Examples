@@ -80,7 +80,7 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
                     friendsWith.add(aStudent);
                 }
             };
-            DynamicResourceModel.getTransactionalEditingDomain((EObject) notifier).getCommandStack()
+            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack()
                     .execute(firstCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
@@ -95,7 +95,7 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
                     friendsWith.add(bStudent);
                 }
             };
-            DynamicResourceModel.getTransactionalEditingDomain((EObject) notifier).getCommandStack()
+            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack()
                     .execute(secondCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
@@ -104,8 +104,8 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
             assertTrue(!transitiveClosureHelper.isReachable(bStudent, cStudent));
         } finally {
             // Undo the previously executed commands to restore the original state of the model
-            DynamicResourceModel.getTransactionalEditingDomain((EObject) notifier).getCommandStack().undo();
-            DynamicResourceModel.getTransactionalEditingDomain((EObject) notifier).getCommandStack().undo();
+            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack().undo();
+            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack().undo();
         }
     }
 }

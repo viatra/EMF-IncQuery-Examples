@@ -10,9 +10,8 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
- * This class is the super class of all EMF-IncQuery Base Getter test cases 
- * (except the scope tests). It is parameterized and operates on the 
- * first school model (all three {@link Notifier} types). 
+ * This class is the super class of all EMF-IncQuery Base Getter test cases. 
+ * It is parameterized and operates on the first school model (all three {@link Notifier} types). 
  * 
  * @author Tamas Szabo
  *
