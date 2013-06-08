@@ -23,10 +23,10 @@ public class EsperAdapter {
     
     public EsperAdapter(IncQueryMatcher<? extends IPatternMatch> m) {
         matcher = m;
-        if (Realm.getDefault()==null) {
+ //       if (Realm.getDefault()==null) {
             // make sure we work well in a headless / non-UI thread environment
             IncQueryHeadlessRealm realm = new IncQueryHeadlessRealm();
-        }
+ //       }
         IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
         os.addSetChangeListener(new ISetChangeListener() {
 

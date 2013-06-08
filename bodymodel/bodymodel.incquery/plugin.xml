@@ -2,38 +2,6 @@
 <plugin>
 
    <extension
-         id="bodymodel.RightHandAboveHead"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="bodymodel.util.RightHandAboveHeadQuerySpecification$Provider"
-            id="bodymodel.RightHandAboveHead">
-      </matcher>
-   </extension>
-   <extension
-         id="bodymodel.RightHandAboveHead"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.util.RightHandAboveHeadEvaluator1_1"
-            id="bodymodel.RightHandAboveHead_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="bodymodel.RightHandAboveHead_MovingAverage"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="bodymodel.util.RightHandAboveHead_MovingAverageQuerySpecification$Provider"
-            id="bodymodel.RightHandAboveHead_MovingAverage">
-      </matcher>
-   </extension>
-   <extension
-         id="bodymodel.RightHandAboveHead_MovingAverage"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.util.RightHandAboveHead_MovingAverageEvaluator1_1"
-            id="bodymodel.RightHandAboveHead_MovingAverage_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.rightHandAboveHead"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -367,6 +335,38 @@
       <evaluator
             evaluatorClass="bodymodel.ymca.util.SEEvaluator1_1"
             id="bodymodel.ymca.SE_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.RightHandAboveHead"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="bodymodel.util.RightHandAboveHeadQuerySpecification$Provider"
+            id="bodymodel.RightHandAboveHead">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.RightHandAboveHead"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.util.RightHandAboveHeadEvaluator1_1"
+            id="bodymodel.RightHandAboveHead_1_1">
+      </evaluator>
+   </extension>
+   <extension
+         id="bodymodel.RightHandAboveHead_MovingAverage"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="bodymodel.util.RightHandAboveHead_MovingAverageQuerySpecification$Provider"
+            id="bodymodel.RightHandAboveHead_MovingAverage">
+      </matcher>
+   </extension>
+   <extension
+         id="bodymodel.RightHandAboveHead_MovingAverage"
+         point="org.eclipse.incquery.runtime.xexpressionevaluator">
+      <evaluator
+            evaluatorClass="bodymodel.util.RightHandAboveHead_MovingAverageEvaluator1_1"
+            id="bodymodel.RightHandAboveHead_MovingAverage_1_1">
       </evaluator>
    </extension>
 

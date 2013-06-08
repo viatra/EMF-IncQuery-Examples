@@ -57,10 +57,10 @@ public class StartIncQueryDemoHandler extends AbstractHandler {
 					
 				});
 				*/
-				if (Realm.getDefault()==null) {
+//				if (Realm.getDefault()==null) {
 				    // make sure we work well in a headless / non-UI thread environment
 				    IncQueryHeadlessRealm realm = new IncQueryHeadlessRealm();
-				}
+//				}
 				IObservableSet os = IncQueryObservables.observeMatchesAsSet(matcher);
 				os.addSetChangeListener(new ISetChangeListener() {
                     
