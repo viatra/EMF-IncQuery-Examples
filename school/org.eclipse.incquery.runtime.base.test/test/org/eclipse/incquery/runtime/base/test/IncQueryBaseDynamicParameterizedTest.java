@@ -19,11 +19,15 @@ import org.junit.runners.Parameterized.Parameters;
 public abstract class IncQueryBaseDynamicParameterizedTest extends IncQueryBaseTest {
 
     public IncQueryBaseDynamicParameterizedTest(Notifier notifier) {
-        super(notifier, true, true);
+    	this(notifier, true, true);
     }
 
     public IncQueryBaseDynamicParameterizedTest(Notifier notifier, boolean wildcardMode) {
-        super(notifier, wildcardMode, true);
+        this(notifier, wildcardMode, true);
+    }
+    
+    public IncQueryBaseDynamicParameterizedTest(Notifier notifier, boolean wildcardMode, boolean isDynamicMode) {
+        super(notifier, wildcardMode, isDynamicMode);
     }
 
     @Parameters

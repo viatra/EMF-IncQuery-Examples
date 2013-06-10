@@ -1,6 +1,10 @@
 package org.eclipse.incquery.runtime.base.test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Logger;
@@ -31,6 +35,8 @@ public abstract class IncQueryBaseTest {
 	protected AppenderSkeleton testAppender;
 	protected boolean isDynamicModel;
 	
+	final private Map<String,Boolean> expectedLogsOccurred = new HashMap<String, Boolean>();
+	
 	final protected ArrayList<LoggingEvent> loggedEvents = new ArrayList<LoggingEvent>();
 	
 	public IncQueryBaseTest(Notifier notifier) {
@@ -50,21 +56,37 @@ public abstract class IncQueryBaseTest {
 		navigationHelper.dispose();
 		logger.removeAppender(testAppender);
 		
-		// TODO add facility for expected log events
 		for (LoggingEvent event : loggedEvents) {
-			StringBuilder sb = new StringBuilder("IQBase logged event: ");  
-			sb.append(event.getRenderedMessage());
-			final ThrowableInformation throwableInfo = event.getThrowableInformation();
-			if (throwableInfo != null) {
-				final String[] throwableStrRep = throwableInfo.getThrowableStrRep();
-				for (String line : throwableStrRep) {
-					sb.append("\n");
-					sb.append(line);
+			final String renderedMessage = event.getRenderedMessage();
+			if (expectedLogsOccurred.containsKey(renderedMessage)) {
+				expectedLogsOccurred.put(renderedMessage, true);
+			} else {
+				StringBuilder sb = new StringBuilder("IQBase logged event: ");  
+				sb.append(renderedMessage);
+				final ThrowableInformation throwableInfo = event.getThrowableInformation();
+				if (throwableInfo != null) {
+					final String[] throwableStrRep = throwableInfo.getThrowableStrRep();
+					for (String line : throwableStrRep) {
+						sb.append("\n");
+						sb.append(line);
+					}
 				}
+				Assert.fail(sb.toString());		
 			}
-			Assert.fail(sb.toString());		
 		}
 		loggedEvents.clear();
+		
+		Set<Entry<String, Boolean>> expectedEntrySet = expectedLogsOccurred.entrySet();
+		for (Entry<String, Boolean> entry : expectedEntrySet) {
+			if (!entry.getValue()) {
+				Assert.fail("Expected log entry not found: " + entry.getKey());	
+			}
+		}
+
+	}
+	
+	protected void expectLogMessage(String msg) {
+		expectedLogsOccurred.put(msg, false);
 	}
 	
 	@Before

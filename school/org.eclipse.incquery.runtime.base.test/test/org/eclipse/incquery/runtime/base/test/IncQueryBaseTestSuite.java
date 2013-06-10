@@ -11,6 +11,8 @@ import org.eclipse.incquery.runtime.base.test.instance.DynamicInstanceTest;
 import org.eclipse.incquery.runtime.base.test.instance.InstanceTest;
 import org.eclipse.incquery.runtime.base.test.inverseref.DynamicInverseReferenceTest;
 import org.eclipse.incquery.runtime.base.test.inverseref.InverseReferenceTest;
+import org.eclipse.incquery.runtime.base.test.inverseref.MixedDynamicInverseReferenceTest;
+import org.eclipse.incquery.runtime.base.test.inverseref.MixedNonDynamicInverseReferenceTest;
 import org.eclipse.incquery.runtime.base.test.listener.DataTypeListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.FeatureListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.InstanceListenerTest;
@@ -26,6 +28,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
 	InverseReferenceTest.class,
 	DynamicInverseReferenceTest.class,
+	MixedDynamicInverseReferenceTest.class,
+	MixedNonDynamicInverseReferenceTest.class,
 	
 	AttributeValueTest.class,
 	DynamicAttributeValueTest.class,

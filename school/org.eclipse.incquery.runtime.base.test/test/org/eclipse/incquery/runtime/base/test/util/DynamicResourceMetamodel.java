@@ -48,7 +48,7 @@ public class DynamicResourceMetamodel {
         schoolEPackage = coreFactory.createEPackage();
         schoolEPackage.setName("SchoolPackage");
         schoolEPackage.setNsPrefix("school");
-        schoolEPackage.setNsURI("http:///org.example.incquery.school");
+        schoolEPackage.setNsURI("http://school.ecore");
 
         SchoolEClass = coreFactory.createEClass();
         SchoolEClass.setName("School");
