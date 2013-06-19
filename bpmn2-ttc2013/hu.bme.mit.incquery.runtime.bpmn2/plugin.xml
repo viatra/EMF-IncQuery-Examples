@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.bpmn2.modeler.ui.editor.BPMN2MultiPageEditor"
+            class="hu.bme.mit.incquery.runtime.bpmn2.ModelConnectorAdapterFactoryForBPMN">
+         <adapter
+               type="org.eclipse.incquery.runtime.api.IModelConnector">
+         </adapter>
+      </factory>
+   </extension>
+</plugin>
