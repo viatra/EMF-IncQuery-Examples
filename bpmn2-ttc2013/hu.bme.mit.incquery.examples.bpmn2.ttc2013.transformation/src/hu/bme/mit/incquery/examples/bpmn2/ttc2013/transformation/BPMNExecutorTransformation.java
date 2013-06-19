@@ -1,5 +1,8 @@
 package hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;
 
+import hu.bme.mit.incquery.examples.bpmn.ttc2013.rules.Rules;
+
+import java.util.Collections;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -20,15 +23,17 @@ public class BPMNExecutorTransformation {
     	try {
             IncQueryEngine engine = IncQueryEngine.on(modelResource.getResourceSet());
 			UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
-			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(IncQueryEventRealm.create(engine), scheduling, null);
+			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(
+					IncQueryEventRealm.create(engine), 
+					scheduling, 
+					Collections.<RuleSpecification<?>>emptySet());
 			execSchema.setConflictResolver(new FairRandomConflictResolver());
-			
-			Set<RuleSpecification<?>> rules = null; // TODO add rules
-			for (RuleSpecification<?> rule : rules) {
-				execSchema.addRule(rule, true);
-			}
-			execSchema.dispose();
-			
+									
+			Rules ruleSet = new Rules(engine, null, null, null, 0);
+			execSchema.addRule(ruleSet.createEndingRuleSpecification());
+			execSchema.addRule(ruleSet.createProcessInstantiationRuleSpecification());
+			execSchema.addRule(ruleSet.createStartingRuleSpecification(), true); // START now!
+			execSchema.dispose();		
 			
 		} catch (IncQueryException e) {
 			// TODO Auto-generated catch block

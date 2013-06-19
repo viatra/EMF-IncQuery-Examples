@@ -97,5 +97,13 @@
             id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.ending">
       </matcher>
    </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.enteringTasks"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.EnteringTasksQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.enteringTasks">
+      </matcher>
+   </extension>
 
 </plugin>
