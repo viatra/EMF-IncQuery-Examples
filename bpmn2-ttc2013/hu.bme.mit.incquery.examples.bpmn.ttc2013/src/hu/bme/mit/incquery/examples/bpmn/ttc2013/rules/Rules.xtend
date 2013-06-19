@@ -51,11 +51,9 @@ class Rules {
 			
 		]
 		
-		newHashSet(
 		newSimpleMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
-		)
 	}
 	
 	/*
@@ -66,11 +64,9 @@ class Rules {
 			token.element = sequenceFlow
 		]
 		
-		newHashSet(
 		newSimpleMatcherRuleSpecification(StartingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
-		)
 	}
 	
 	def createEndingRuleSpecification() {
@@ -78,11 +74,9 @@ class Rules {
 			token.element = endEvent
 		]
 		
-		newHashSet(
 		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
-		)
 	}
 	
 	/*

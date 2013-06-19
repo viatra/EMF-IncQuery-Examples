@@ -77,3 +77,12 @@ pattern ending(token : Token, endEvent : EndEvent) {
 	EndEvent(endEvent);
 	EndEvent.incoming(endEvent, sequenceFlow);
 }
+
+pattern enteringTasks(token, task) {
+	find runningProceess(processInstance);
+	ProcessInstance.tokens(processInstance, token);
+	Token.element(token, sequenceFlow);
+	SequenceFlow(sequenceFlow);
+	Task(task);
+	SequenceFlow.targetRef(sequenceFlow, task);
+}
