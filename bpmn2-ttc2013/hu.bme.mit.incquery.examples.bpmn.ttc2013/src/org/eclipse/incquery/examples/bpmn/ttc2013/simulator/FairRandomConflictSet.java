@@ -25,6 +25,7 @@ public final class FairRandomConflictSet extends BasicConflictSet {
 
 	@Override
 	public Activation<?> getNextActivation() {
+		if (activations.isEmpty()) return null;
 		int index = rnd.nextInt(activations.size());
 		return new ArrayList<Activation<?>>(activations).get(index);
 	}

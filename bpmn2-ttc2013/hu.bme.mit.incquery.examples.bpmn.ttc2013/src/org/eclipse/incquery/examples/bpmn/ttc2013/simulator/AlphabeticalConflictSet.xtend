@@ -18,7 +18,7 @@ class AlphabeticalConflictSet extends BasicConflictSet {
 	}
 	
 	override getNextActivation() {
-		// todo
+		if (activations.empty) null;
 		val filtered = activations.filter[a | 
 			/* rule enter */ null == (a.instance.specification.sourceSpecification as IncQueryEventSourceSpecification).querySpecification 
 		]
