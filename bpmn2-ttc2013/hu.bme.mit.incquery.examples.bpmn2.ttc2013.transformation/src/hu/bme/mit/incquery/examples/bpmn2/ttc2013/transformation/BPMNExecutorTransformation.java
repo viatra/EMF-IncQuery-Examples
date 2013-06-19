@@ -29,7 +29,7 @@ public class BPMNExecutorTransformation {
 					Collections.<RuleSpecification<?>>emptySet());
 			execSchema.setConflictResolver(new FairRandomConflictResolver());
 									
-			Rules ruleSet = new Rules(engine, modelResource, executionResource, null, 0);
+			Rules ruleSet = new Rules(engine, modelResource, executionResource);
 			execSchema.addRule(ruleSet.createEndingRuleSpecification());
 			execSchema.addRule(ruleSet.createProcessInstantiationRuleSpecification());
 			execSchema.addRule(ruleSet.createStartingRuleSpecification(), true); // START now!
