@@ -11,6 +11,8 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.incquery.runtime.api.IModelConnectorTypeEnum;
 import org.eclipse.ui.handlers.HandlerUtil;
 
@@ -24,7 +26,10 @@ public class BPMNExecutionHandler extends AbstractHandler implements IHandler {
         final IFile file = (IFile) HandlerUtil.getActiveEditor(event).getEditorInput().getAdapter(IFile.class);
         final String modelUri = file.getFullPath().toString();
         final Resource modelResource = set.getResource(URI.createPlatformResourceURI(modelUri, false), false);
-        final Resource executionResource = set.createResource(URI.createPlatformResourceURI(modelUri.concat(".bpmn20exec"), false));
+        TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(modelResource);
+        Resource executionResource = 
+        		editingDomain.createResource(
+        				URI.createPlatformResourceURI(modelUri.concat(".bpmn20exec"), false).toString());
         
         
         final BPMNExecutorTransformation transformation = new BPMNExecutorTransformation();
