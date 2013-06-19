@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.incquery.examples.bpmn.ttc2013
 Bundle-SymbolicName: hu.bme.mit.incquery.examples.bpmn.ttc2013;singleton:=true
 Bundle-Version: 0.0.1.qualifier
-Export-Package: org.eclipse.incquery.examples.bpmn.ttc2013.queries,
+Export-Package: hu.bme.mit.incquery.examples.bpmn.ttc2013.rules,
+ org.eclipse.incquery.examples.bpmn.ttc2013.queries,
  org.eclipse.incquery.examples.bpmn.ttc2013.queries.util
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,

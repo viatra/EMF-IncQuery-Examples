@@ -16,6 +16,10 @@ import bpmn20exec.ProcessState
 import org.eclipse.incquery.runtime.evm.api.RuleSpecification
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatcher
 
 class Rules {
 	IncQueryEngine engine
@@ -49,6 +53,33 @@ class Rules {
 		
 		newHashSet(
 		newSimpleMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
+			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+		)
+	}
+	
+	/*
+	 * TASK 2: Process Instantiation
+	 */
+	def createStartingRuleSpecification() {
+		val IMatchProcessor<StartingMatch> processor = [
+			token.element = sequenceFlow
+		]
+		
+		newHashSet(
+		newSimpleMatcherRuleSpecification(StartingMatcher::querySpecification,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
+			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+		)
+	}
+	
+	def createEndingRuleSpecification() {
+		val IMatchProcessor<EndingMatch> processor = [
+			token.element = endEvent
+		]
+		
+		newHashSet(
+		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
 		)
