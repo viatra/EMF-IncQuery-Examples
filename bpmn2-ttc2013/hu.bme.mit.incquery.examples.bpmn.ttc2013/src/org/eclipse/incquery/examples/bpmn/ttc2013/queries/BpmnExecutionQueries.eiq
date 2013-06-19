@@ -70,7 +70,7 @@ pattern starting(token : Token, sequenceFlow : SequenceFlow) {
 }
 
 
-pattern ending(token : Token, endEvent : SequenceFlow) {
+pattern ending(token : Token, endEvent : EndEvent) {
 	Token(token);
 	SequenceFlow(sequenceFlow);
 	Token.element(token, sequenceFlow);
