@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:Definitions
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI/TTC bpmn20.ecore">
+  <rootElements
+      xsi:type="bpmn2:Process"
+      xmi:id="process_1"
+      name="Default Process">
+    <flowElements
+        xsi:type="bpmn2:StartEvent"
+        xmi:id="StartEvent_1"
+        outgoing="SequenceFlow_1"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_1"
+        sourceRef="StartEvent_1"
+        targetRef="Task_1"/>
+    <flowElements
+        xsi:type="bpmn2:Task"
+        xmi:id="Task_1"
+        name="Read Challenge"
+        incoming="SequenceFlow_1"
+        outgoing="SequenceFlow_2"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_2"
+        name=""
+        sourceRef="Task_1"
+        targetRef="ParallelGateway_1"/>
+    <flowElements
+        xsi:type="bpmn2:ParallelGateway"
+        xmi:id="ParallelGateway_1"
+        name="Parallel Gateway"
+        incoming="SequenceFlow_2"
+        outgoing="SequenceFlow_3 SequenceFlow_4"
+        gatewayDirection="Diverging"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_3"
+        name=""
+        sourceRef="ParallelGateway_1"
+        targetRef="Task_2"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_4"
+        name=""
+        sourceRef="ParallelGateway_1"
+        targetRef="Task_3"/>
+    <flowElements
+        xsi:type="bpmn2:Task"
+        xmi:id="Task_2"
+        name="Specify Rules"
+        incoming="SequenceFlow_3"
+        outgoing="SequenceFlow_5"/>
+    <flowElements
+        xsi:type="bpmn2:Task"
+        xmi:id="Task_3"
+        name="Implement Example"
+        incoming="SequenceFlow_4"
+        outgoing="SequenceFlow_6"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_5"
+        name=""
+        sourceRef="Task_2"
+        targetRef="ParallelGateway_2"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_6"
+        name=""
+        sourceRef="Task_3"
+        targetRef="ParallelGateway_2"/>
+    <flowElements
+        xsi:type="bpmn2:ParallelGateway"
+        xmi:id="ParallelGateway_2"
+        name="Parallel Gateway"
+        incoming="SequenceFlow_5 SequenceFlow_6"
+        outgoing="SequenceFlow_7"
+        gatewayDirection="Converging"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_7"
+        name=""
+        sourceRef="ParallelGateway_2"
+        targetRef="Task_4"/>
+    <flowElements
+        xsi:type="bpmn2:Task"
+        xmi:id="Task_4"
+        name="Run Example"
+        incoming="SequenceFlow_7"
+        outgoing="SequenceFlow_8"/>
+    <flowElements
+        xsi:type="bpmn2:SequenceFlow"
+        xmi:id="SequenceFlow_8"
+        name=""
+        sourceRef="Task_4"
+        targetRef="EndEvent_1"/>
+    <flowElements
+        xsi:type="bpmn2:EndEvent"
+        xmi:id="EndEvent_1"
+        incoming="SequenceFlow_8"/>
+  </rootElements>
+</bpmn2:Definitions>

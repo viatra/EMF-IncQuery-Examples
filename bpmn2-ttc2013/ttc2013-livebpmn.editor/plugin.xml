@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bpmn20exec.presentation.Bpmn20execModelWizardID"
+            name="%_UI_Bpmn20execModelWizard_label"
+            class="bpmn20exec.presentation.Bpmn20execModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Bpmn20execModelFile.gif">
+         <description>%_UI_Bpmn20execModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="bpmn20exec.presentation.Bpmn20execEditorID"
+            name="%_UI_Bpmn20execEditor_label"
+            icon="icons/full/obj16/Bpmn20execModelFile.gif"
+            extensions="bpmn20exec"
+            class="bpmn20exec.presentation.Bpmn20execEditor"
+            contributorClass="bpmn20exec.presentation.Bpmn20execActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

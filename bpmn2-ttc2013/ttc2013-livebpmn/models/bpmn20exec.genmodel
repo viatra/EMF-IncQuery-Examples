@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ttc2013-livebpmn/src" modelPluginID="ttc2013-livebpmn"
+    modelName="Bpmn20exec" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.bpmn2/model/BPMN20.genmodel#//bpmn2 platform:/plugin/org.eclipse.bpmn2/model/BPMN20.genmodel#//di platform:/plugin/org.eclipse.bpmn2/model/BPMN20.genmodel#//di.1 platform:/plugin/org.eclipse.bpmn2/model/BPMN20.genmodel#//dc">
+  <foreignModel>bpmn20exec.ecore</foreignModel>
+  <genPackages prefix="Bpmn20exec" resource="XML" disposableProviderFactory="true"
+      ecorePackage="bpmn20exec.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bpmn20exec.ecore#//ProcessState">
+      <genEnumLiterals ecoreEnumLiteral="bpmn20exec.ecore#//ProcessState/CREATED"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn20exec.ecore#//ProcessState/RUNNING"/>
+      <genEnumLiterals ecoreEnumLiteral="bpmn20exec.ecore#//ProcessState/FINISHED"/>
+    </genEnums>
+    <genClasses ecoreClass="bpmn20exec.ecore#//ProcessInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn20exec.ecore#//ProcessInstance/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bpmn20exec.ecore#//ProcessInstance/tokens"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bpmn20exec.ecore#//ProcessInstance/state"/>
+    </genClasses>
+    <genClasses ecoreClass="bpmn20exec.ecore#//Token">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bpmn20exec.ecore#//Token/element"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

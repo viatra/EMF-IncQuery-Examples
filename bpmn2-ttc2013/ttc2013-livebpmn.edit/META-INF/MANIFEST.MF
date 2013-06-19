@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ttc2013-livebpmn.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: bpmn20exec.provider.Bpmn20execEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: bpmn20exec.provider
+Require-Bundle: org.eclipse.core.runtime,
+ ttc2013-livebpmn;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.bpmn2;visibility:=reexport,
+ org.eclipse.bpmn2.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy
