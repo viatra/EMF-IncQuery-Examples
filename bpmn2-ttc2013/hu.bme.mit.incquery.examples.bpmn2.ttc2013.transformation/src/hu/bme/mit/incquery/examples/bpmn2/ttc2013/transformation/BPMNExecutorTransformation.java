@@ -1,9 +1,8 @@
 package hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;
 
-import java.util.Collections;
 import java.util.Set;
 
-import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.incquery.examples.bpmn.ttc2013.simulator.FairRandomConflictResolver;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.evm.api.EventDrivenVM;
@@ -16,10 +15,10 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 public class BPMNExecutorTransformation {
 
-    public void execute(ResourceSet model) {
+    public void execute(Resource modelResource, Resource executionResource) {
     	// TODO runtime modell összerakása
     	try {
-			IncQueryEngine engine = IncQueryEngine.on(model);
+            IncQueryEngine engine = IncQueryEngine.on(modelResource.getResourceSet());
 			UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
 			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(IncQueryEventRealm.create(engine), scheduling, null);
 			execSchema.setConflictResolver(new FairRandomConflictResolver());
