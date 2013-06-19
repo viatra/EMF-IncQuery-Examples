@@ -20,6 +20,8 @@ import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatcher
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatcher
 
 class Rules {
 	IncQueryEngine engine
@@ -75,6 +77,16 @@ class Rules {
 		]
 		
 		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
+			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+	}
+	
+	def createEnteringTasksRuleSpecification() {
+		val IMatchProcessor<EnteringTasksMatch> processor = [
+			token.element = task
+		]
+		
+		newSimpleMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
 	}
