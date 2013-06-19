@@ -22,6 +22,8 @@ import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatcher
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.LeavingTasksMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.LeavingTasksMatcher
 
 class Rules {
 	IncQueryEngine engine
@@ -31,7 +33,7 @@ class Rules {
 	
 	static val bpmnexecf = Bpmn20execFactory::eINSTANCE;
 	
-	new(IncQueryEngine engine, Resource bpmnResource, Resource bpmn20execResource, String basePath, long debug) {
+	new(IncQueryEngine engine, Resource bpmnResource, Resource bpmn20execResource) {
 		this.debug = debug
 		this.engine = engine
 		this.bpmnResource = bpmnResource
@@ -55,7 +57,7 @@ class Rules {
 		
 		newSimpleMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	/*
@@ -68,7 +70,7 @@ class Rules {
 		
 		newSimpleMatcherRuleSpecification(StartingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	def createEndingRuleSpecification() {
@@ -78,7 +80,7 @@ class Rules {
 		
 		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	def createEnteringTasksRuleSpecification() {
@@ -88,7 +90,19 @@ class Rules {
 		
 		newSimpleMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor))) as RuleSpecification<?> 
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
+	}
+	
+	def createLeavingTasksRuleSpecification() {
+		val IMatchProcessor<LeavingTasksMatch> processor = [
+			token.element
+			
+			processInstance.tokens += token
+		]
+		
+		newSimpleMatcherRuleSpecification(LeavingTasksMatcher::querySpecification,
+			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	/*

@@ -86,3 +86,12 @@ pattern enteringTasks(token, task) {
 	Task(task);
 	SequenceFlow.targetRef(sequenceFlow, task);
 }
+
+pattern leavingTasks(processInstance, token) {
+	find runningProceess(processInstance);
+	ProcessInstance.tokens(processInstance, token);
+	Task(task);
+	Token.element(token, task);
+	SequenceFlow(sequenceFlow);
+	Task.outgoing(task, sequenceFlow);
+}
