@@ -1,5 +1,6 @@
 package hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;
 
+import java.util.Collections;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -20,13 +21,13 @@ public class BPMNExecutorTransformation {
     	try {
 			IncQueryEngine engine = IncQueryEngine.on(model);
 			UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
-			Set<RuleSpecification<?>> rules = null; // TODO add rules
-			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(IncQueryEventRealm.create(engine), scheduling);
+			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(IncQueryEventRealm.create(engine), scheduling, null);
 			execSchema.setConflictResolver(new FairRandomConflictResolver());
+			
+			Set<RuleSpecification<?>> rules = null; // TODO add rules
 			for (RuleSpecification<?> rule : rules) {
-				execSchema.addRule(rule);
+				execSchema.addRule(rule, true);
 			}
-			execSchema.
 			execSchema.dispose();
 			
 			
