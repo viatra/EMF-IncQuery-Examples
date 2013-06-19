@@ -33,7 +33,7 @@ public class BPMNExecutionHandler extends AbstractHandler implements IHandler {
         
         
         final BPMNExecutorTransformation transformation = new BPMNExecutorTransformation();
-        transformation.execute(modelResource, executionResource);
+        transformation.execute(editingDomain, modelResource, executionResource);
 
         return null;
     }
