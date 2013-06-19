@@ -1,0 +1,18 @@
+package org.eclipse.incquery.examples.bpmn.ttc2013.queries
+
+import "http://www.omg.org/spec/BPMN/20100524/MODEL"
+import "http://bpmn20exec"
+
+pattern startEvent(event : StartEvent) {
+	StartEvent(event);
+}
+
+pattern endEvent(event : EndEvent) {
+	EndEvent(event);
+}
+
+pattern tokenOnElement(element : FlowElement, token : Token) {
+	Token.element(token, element);
+}
+
+
