@@ -16,3 +16,64 @@ pattern tokenOnElement(element : FlowElement, token : Token) {
 }
 
 
+pattern startEventWithDefinition(startEvent : StartEvent) {
+	StartEvent.eventDefinitions(startEvent, eventDefinition);
+	EventDefinition(eventDefinition);
+}
+
+
+pattern startEventOfProcess(process : Process, event : StartEvent) {
+	Process(process);
+	Process.flowElements(process, event);
+	StartEvent(event);
+}
+
+pattern timerEventDefinitions(timerEventDefinition : TimerEventDefinition) {
+	TimerEventDefinition(timerEventDefinition);
+}
+
+pattern startEventDefWOTimedEventdef(startEvent : StartEvent) {
+	StartEvent.eventDefinitions(startEvent, eventDefinition);
+	EventDefinition(eventDefinition);
+	neg find timerEventDefinitions(timerEventDefinition);
+}
+
+pattern processInstantiation(process : Process, event : StartEvent) {
+	find startEventOfProcess(process, event);
+	
+	neg find startEventWithDefinition(event);
+} or {
+	find startEventOfProcess(process, event);
+	
+	neg find startEventDefWOTimedEventdef(event);
+}
+
+pattern runningProceess(processInstance : ProcessInstance) {
+	ProcessInstance(processInstance);
+	ProcessInstance.state(processInstance, ProcessState::RUNNING);
+}
+
+pattern processTermination(processInstance) {
+	ProcessInstance(processInstance);
+	ProcessInstance.state(processInstance, ProcessState::RUNNING);
+	
+	Process(process);
+	
+}
+
+pattern starting(token : Token, sequenceFlow : SequenceFlow) {
+	Token(token);
+	StartEvent(startEvent);
+	Token.element(token, startEvent);
+	SequenceFlow(sequenceFlow);
+	StartEvent.outgoing(startEvent, sequenceFlow);
+}
+
+
+pattern ending(token : Token, endEvent : SequenceFlow) {
+	Token(token);
+	SequenceFlow(sequenceFlow);
+	Token.element(token, sequenceFlow);
+	EndEvent(endEvent);
+	EndEvent.incoming(endEvent, sequenceFlow);
+}
