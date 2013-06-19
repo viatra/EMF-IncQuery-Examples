@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation.execute"
+            name="Execute BPMN model">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.bpmn2.modeler.ui.bpmn2editor?after=additions">
+         <separator
+               name="hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation.execute"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation.handlers.BPMNExecutionHandler"
+            commandId="hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation.execute">
+      </handler>
+   </extension>
+
+</plugin>

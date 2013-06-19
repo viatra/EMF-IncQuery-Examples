@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BPMN transformation project
+Bundle-SymbolicName: hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.incquery.runtime;bundle-version="0.7.0",
+ hu.bme.mit.incquery.examples.bpmn.ttc2013;bundle-version="0.0.1",
+ hu.bme.mit.incquery.runtime.bpmn2;bundle-version="0.2.5",
+ org.eclipse.incquery.tooling.ui;bundle-version="0.7.0"
