@@ -9,4 +9,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.incquery.runtime;bundle-version="0.7.0",
  hu.bme.mit.incquery.examples.bpmn.ttc2013;bundle-version="0.0.1",
  hu.bme.mit.incquery.runtime.bpmn2;bundle-version="0.2.5",
- org.eclipse.incquery.tooling.ui;bundle-version="0.7.0"
+ org.eclipse.incquery.tooling.ui;bundle-version="0.7.0",
+ org.eclipse.incquery.runtime.evm;bundle-version="0.7.0"
