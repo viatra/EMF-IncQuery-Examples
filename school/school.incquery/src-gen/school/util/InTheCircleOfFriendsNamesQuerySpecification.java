@@ -13,6 +13,7 @@ import school.InTheCircleOfFriendsNamesMatcher;
  * @see InTheCircleOfFriendsNamesMatch
  * 
  */
+@SuppressWarnings("all")
 public final class InTheCircleOfFriendsNamesQuerySpecification extends BaseGeneratedQuerySpecification<InTheCircleOfFriendsNamesMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class InTheCircleOfFriendsNamesQuerySpecification extends BaseGener
   private InTheCircleOfFriendsNamesQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<InTheCircleOfFriendsNamesQuerySpecification> {
     @Override
     public InTheCircleOfFriendsNamesQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class InTheCircleOfFriendsNamesQuerySpecification extends BaseGener
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static InTheCircleOfFriendsNamesQuerySpecification INSTANCE = make();
     

@@ -21,6 +21,7 @@ import school.Student;
  * @see InTheCircleOfFriendsProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class InTheCircleOfFriendsMatch extends BasePatternMatch {
   private Student fS1;
   
@@ -148,6 +149,8 @@ public abstract class InTheCircleOfFriendsMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends InTheCircleOfFriendsMatch {
     Mutable(final Student pS1, final Student pSomeone) {
       super(pS1, pSomeone);
@@ -160,6 +163,8 @@ public abstract class InTheCircleOfFriendsMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends InTheCircleOfFriendsMatch {
     Immutable(final Student pS1, final Student pSomeone) {
       super(pS1, pSomeone);

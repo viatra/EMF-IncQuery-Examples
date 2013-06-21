@@ -13,6 +13,7 @@ import school.MoreFriendsThanMatcher;
  * @see MoreFriendsThanMatch
  * 
  */
+@SuppressWarnings("all")
 public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQuerySpecification<MoreFriendsThanMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
   private MoreFriendsThanQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<MoreFriendsThanQuerySpecification> {
     @Override
     public MoreFriendsThanQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static MoreFriendsThanQuerySpecification INSTANCE = make();
     

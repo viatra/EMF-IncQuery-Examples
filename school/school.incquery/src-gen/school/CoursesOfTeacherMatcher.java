@@ -40,6 +40,7 @@ import school.util.CoursesOfTeacherQuerySpecification;
  * @see CoursesOfTeacherQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class CoursesOfTeacherMatcher extends BaseMatcher<CoursesOfTeacherMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

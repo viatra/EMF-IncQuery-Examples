@@ -21,6 +21,7 @@ import school.Course;
  * @see CourseWithWeightThirtyProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class CourseWithWeightThirtyMatch extends BasePatternMatch {
   private Course fC;
   
@@ -125,6 +126,8 @@ public abstract class CourseWithWeightThirtyMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends CourseWithWeightThirtyMatch {
     Mutable(final Course pC) {
       super(pC);
@@ -137,6 +140,8 @@ public abstract class CourseWithWeightThirtyMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends CourseWithWeightThirtyMatch {
     Immutable(final Course pC) {
       super(pC);

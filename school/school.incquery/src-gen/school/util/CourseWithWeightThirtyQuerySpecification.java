@@ -13,6 +13,7 @@ import school.CourseWithWeightThirtyMatcher;
  * @see CourseWithWeightThirtyMatch
  * 
  */
+@SuppressWarnings("all")
 public final class CourseWithWeightThirtyQuerySpecification extends BaseGeneratedQuerySpecification<CourseWithWeightThirtyMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class CourseWithWeightThirtyQuerySpecification extends BaseGenerate
   private CourseWithWeightThirtyQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithWeightThirtyQuerySpecification> {
     @Override
     public CourseWithWeightThirtyQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class CourseWithWeightThirtyQuerySpecification extends BaseGenerate
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static CourseWithWeightThirtyQuerySpecification INSTANCE = make();
     

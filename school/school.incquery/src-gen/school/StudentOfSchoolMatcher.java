@@ -41,6 +41,7 @@ import school.util.StudentOfSchoolQuerySpecification;
  * @see StudentOfSchoolQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class StudentOfSchoolMatcher extends BaseMatcher<StudentOfSchoolMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

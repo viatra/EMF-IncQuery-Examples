@@ -38,6 +38,7 @@ import school.util.CourseWithNameLongerThanWeightQuerySpecification;
  * @see CourseWithNameLongerThanWeightQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class CourseWithNameLongerThanWeightMatcher extends BaseMatcher<CourseWithNameLongerThanWeightMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

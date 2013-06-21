@@ -13,6 +13,7 @@ import school.FinalPatternMatcher;
  * @see FinalPatternMatch
  * 
  */
+@SuppressWarnings("all")
 public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpecification<FinalPatternMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
   private FinalPatternQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FinalPatternQuerySpecification> {
     @Override
     public FinalPatternQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static FinalPatternQuerySpecification INSTANCE = make();
     

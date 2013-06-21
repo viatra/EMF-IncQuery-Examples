@@ -10,6 +10,7 @@ import school.Student;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class FriendlyToProcessor implements IMatchProcessor<FriendlyToMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -21,7 +22,7 @@ public abstract class FriendlyToProcessor implements IMatchProcessor<FriendlyToM
   
   @Override
   public void process(final FriendlyToMatch match) {
-    process(match.getS1(), match.getS2());  				
+    process(match.getS1(), match.getS2());
     
   }
 }

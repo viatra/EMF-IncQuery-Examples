@@ -39,6 +39,7 @@ import school.util.MoreFriendsThanQuerySpecification;
  * @see MoreFriendsThanQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

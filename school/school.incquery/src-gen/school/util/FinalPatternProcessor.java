@@ -13,6 +13,7 @@ import school.Year;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalPatternProcessor implements IMatchProcessor<FinalPatternMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -26,7 +27,7 @@ public abstract class FinalPatternProcessor implements IMatchProcessor<FinalPatt
   
   @Override
   public void process(final FinalPatternMatch match) {
-    process(match.getY(), match.getC(), match.getT(), match.getS());  				
+    process(match.getY(), match.getC(), match.getT(), match.getS());
     
   }
 }

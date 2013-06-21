@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see FinalPattern2Processor
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalPattern2Match extends BasePatternMatch {
   private Integer fYDate;
   
@@ -193,6 +194,8 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends FinalPattern2Match {
     Mutable(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
       super(pYDate, pCSub, pTName, pSName);
@@ -205,6 +208,8 @@ public abstract class FinalPattern2Match extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends FinalPattern2Match {
     Immutable(final Integer pYDate, final String pCSub, final String pTName, final String pSName) {
       super(pYDate, pCSub, pTName, pSName);

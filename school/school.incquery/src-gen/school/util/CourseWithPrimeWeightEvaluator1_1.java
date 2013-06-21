@@ -7,30 +7,28 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 /**
  * A xbase xexpression evaluator tailored for the school.courseWithPrimeWeight pattern.
  */
+@SuppressWarnings("all")
 public class CourseWithPrimeWeightEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
   private Boolean evaluateXExpressionGenerated(final Integer W) {
     boolean _xifexpression = false;
-    Integer _W = W;
-    int _modulo = ((_W).intValue() % 2);
+    int _modulo = ((W).intValue() % 2);
     boolean _equals = (_modulo == 0);
     if (_equals) {
       _xifexpression = false;
     } else {
       boolean _xblockexpression = false;
       {
-        Integer _W_1 = W;
-        double _sqrt = Math.sqrt((_W_1).intValue());
+        double _sqrt = Math.sqrt((W).intValue());
         Float _float = new Float(_sqrt);
         Integer maxValue = Integer.valueOf(Math.round((_float).floatValue()));
         Integer divisor = Integer.valueOf(3);
         boolean _lessEqualsThan = (divisor.compareTo(maxValue) <= 0);
         boolean _while = _lessEqualsThan;
         while (_while) {
-          Integer _W_2 = W;
-          int _modulo_1 = ((_W_2).intValue() % (divisor).intValue());
+          int _modulo_1 = ((W).intValue() % (divisor).intValue());
           boolean _equals_1 = (_modulo_1 == 0);
           if (_equals_1) {
             return Boolean.valueOf(false);

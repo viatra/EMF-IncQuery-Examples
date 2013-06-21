@@ -49,6 +49,7 @@ import school.util.CourseWithPrimeWeightQuerySpecification;
  * @see CourseWithPrimeWeightQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWeightMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

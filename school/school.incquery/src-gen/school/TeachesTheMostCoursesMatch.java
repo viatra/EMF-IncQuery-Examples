@@ -21,6 +21,7 @@ import school.Teacher;
  * @see TeachesTheMostCoursesProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TeachesTheMostCoursesMatch extends BasePatternMatch {
   private Teacher fT;
   
@@ -125,6 +126,8 @@ public abstract class TeachesTheMostCoursesMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TeachesTheMostCoursesMatch {
     Mutable(final Teacher pT) {
       super(pT);
@@ -137,6 +140,8 @@ public abstract class TeachesTheMostCoursesMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TeachesTheMostCoursesMatch {
     Immutable(final Teacher pT) {
       super(pT);

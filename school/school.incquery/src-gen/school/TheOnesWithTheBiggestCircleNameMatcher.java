@@ -36,6 +36,7 @@ import school.util.TheOnesWithTheBiggestCircleNameQuerySpecification;
  * @see TheOnesWithTheBiggestCircleNameQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class TheOnesWithTheBiggestCircleNameMatcher extends BaseMatcher<TheOnesWithTheBiggestCircleNameMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

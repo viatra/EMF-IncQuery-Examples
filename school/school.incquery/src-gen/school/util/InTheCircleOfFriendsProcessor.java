@@ -10,6 +10,7 @@ import school.Student;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class InTheCircleOfFriendsProcessor implements IMatchProcessor<InTheCircleOfFriendsMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -21,7 +22,7 @@ public abstract class InTheCircleOfFriendsProcessor implements IMatchProcessor<I
   
   @Override
   public void process(final InTheCircleOfFriendsMatch match) {
-    process(match.getS1(), match.getSomeone());  				
+    process(match.getS1(), match.getSomeone());
     
   }
 }

@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see InTheCircleOfFriendsNamesProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
   private String fS1Name;
   
@@ -147,6 +148,8 @@ public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends InTheCircleOfFriendsNamesMatch {
     Mutable(final String pS1Name, final String pSomeoneName) {
       super(pS1Name, pSomeoneName);
@@ -159,6 +162,8 @@ public abstract class InTheCircleOfFriendsNamesMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends InTheCircleOfFriendsNamesMatch {
     Immutable(final String pS1Name, final String pSomeoneName) {
       super(pS1Name, pSomeoneName);

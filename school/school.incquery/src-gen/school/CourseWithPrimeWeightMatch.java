@@ -21,6 +21,7 @@ import school.Course;
  * @see CourseWithPrimeWeightProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class CourseWithPrimeWeightMatch extends BasePatternMatch {
   private Course fC;
   
@@ -125,6 +126,8 @@ public abstract class CourseWithPrimeWeightMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends CourseWithPrimeWeightMatch {
     Mutable(final Course pC) {
       super(pC);
@@ -137,6 +140,8 @@ public abstract class CourseWithPrimeWeightMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends CourseWithPrimeWeightMatch {
     Immutable(final Course pC) {
       super(pC);

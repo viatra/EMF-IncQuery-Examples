@@ -39,6 +39,7 @@ import school.util.CourseWithWeightThirtyQuerySpecification;
  * @see CourseWithWeightThirtyQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class CourseWithWeightThirtyMatcher extends BaseMatcher<CourseWithWeightThirtyMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

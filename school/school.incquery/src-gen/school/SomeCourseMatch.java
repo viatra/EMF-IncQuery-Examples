@@ -21,6 +21,7 @@ import school.Course;
  * @see SomeCourseProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class SomeCourseMatch extends BasePatternMatch {
   private Course fC;
   
@@ -125,6 +126,8 @@ public abstract class SomeCourseMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends SomeCourseMatch {
     Mutable(final Course pC) {
       super(pC);
@@ -137,6 +140,8 @@ public abstract class SomeCourseMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends SomeCourseMatch {
     Immutable(final Course pC) {
       super(pC);

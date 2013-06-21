@@ -13,6 +13,7 @@ import school.FriendlyToMatcher;
  * @see FriendlyToMatch
  * 
  */
+@SuppressWarnings("all")
 public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecification<FriendlyToMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
   private FriendlyToQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FriendlyToQuerySpecification> {
     @Override
     public FriendlyToQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static FriendlyToQuerySpecification INSTANCE = make();
     

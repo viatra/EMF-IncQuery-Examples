@@ -9,6 +9,7 @@ import school.TeacherWithoutClassNamesMatch;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class TeacherWithoutClassNamesProcessor implements IMatchProcessor<TeacherWithoutClassNamesMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -19,7 +20,7 @@ public abstract class TeacherWithoutClassNamesProcessor implements IMatchProcess
   
   @Override
   public void process(final TeacherWithoutClassNamesMatch match) {
-    process(match.getTNames());  				
+    process(match.getTNames());
     
   }
 }

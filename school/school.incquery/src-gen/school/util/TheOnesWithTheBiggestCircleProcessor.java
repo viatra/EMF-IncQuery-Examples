@@ -10,6 +10,7 @@ import school.TheOnesWithTheBiggestCircleMatch;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class TheOnesWithTheBiggestCircleProcessor implements IMatchProcessor<TheOnesWithTheBiggestCircleMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -20,7 +21,7 @@ public abstract class TheOnesWithTheBiggestCircleProcessor implements IMatchProc
   
   @Override
   public void process(final TheOnesWithTheBiggestCircleMatch match) {
-    process(match.getS());  				
+    process(match.getS());
     
   }
 }

@@ -13,6 +13,7 @@ import school.CoursesOfTeacherNamesMatcher;
  * @see CoursesOfTeacherNamesMatch
  * 
  */
+@SuppressWarnings("all")
 public final class CoursesOfTeacherNamesQuerySpecification extends BaseGeneratedQuerySpecification<CoursesOfTeacherNamesMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class CoursesOfTeacherNamesQuerySpecification extends BaseGenerated
   private CoursesOfTeacherNamesQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CoursesOfTeacherNamesQuerySpecification> {
     @Override
     public CoursesOfTeacherNamesQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class CoursesOfTeacherNamesQuerySpecification extends BaseGenerated
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static CoursesOfTeacherNamesQuerySpecification INSTANCE = make();
     

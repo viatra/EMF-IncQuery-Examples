@@ -21,6 +21,7 @@ import school.Student;
  * @see MoreFriendsThanProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class MoreFriendsThanMatch extends BasePatternMatch {
   private Student fS1;
   
@@ -148,6 +149,8 @@ public abstract class MoreFriendsThanMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends MoreFriendsThanMatch {
     Mutable(final Student pS1, final Student pS2) {
       super(pS1, pS2);
@@ -160,6 +163,8 @@ public abstract class MoreFriendsThanMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends MoreFriendsThanMatch {
     Immutable(final Student pS1, final Student pS2) {
       super(pS1, pS2);

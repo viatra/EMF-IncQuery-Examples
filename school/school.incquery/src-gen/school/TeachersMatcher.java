@@ -36,6 +36,7 @@ import school.util.TeachersQuerySpecification;
  * @see TeachersQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class TeachersMatcher extends BaseMatcher<TeachersMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

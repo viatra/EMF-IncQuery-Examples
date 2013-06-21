@@ -21,6 +21,7 @@ import school.Teacher;
  * @see TeacherWithoutClassProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TeacherWithoutClassMatch extends BasePatternMatch {
   private Teacher fT;
   
@@ -125,6 +126,8 @@ public abstract class TeacherWithoutClassMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TeacherWithoutClassMatch {
     Mutable(final Teacher pT) {
       super(pT);
@@ -137,6 +140,8 @@ public abstract class TeacherWithoutClassMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TeacherWithoutClassMatch {
     Immutable(final Teacher pT) {
       super(pT);

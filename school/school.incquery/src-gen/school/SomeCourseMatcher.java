@@ -39,6 +39,7 @@ import school.util.SomeCourseQuerySpecification;
  * @see SomeCourseQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class SomeCourseMatcher extends BaseMatcher<SomeCourseMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

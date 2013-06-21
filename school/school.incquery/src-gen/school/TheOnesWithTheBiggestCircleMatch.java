@@ -21,6 +21,7 @@ import school.Student;
  * @see TheOnesWithTheBiggestCircleProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch {
   private Student fS;
   
@@ -125,6 +126,8 @@ public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch 
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TheOnesWithTheBiggestCircleMatch {
     Mutable(final Student pS) {
       super(pS);
@@ -137,6 +140,8 @@ public abstract class TheOnesWithTheBiggestCircleMatch extends BasePatternMatch 
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TheOnesWithTheBiggestCircleMatch {
     Immutable(final Student pS) {
       super(pS);

@@ -13,6 +13,7 @@ import school.CourseWithNameLongerThanWeightMatcher;
  * @see CourseWithNameLongerThanWeightMatch
  * 
  */
+@SuppressWarnings("all")
 public final class CourseWithNameLongerThanWeightQuerySpecification extends BaseGeneratedQuerySpecification<CourseWithNameLongerThanWeightMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class CourseWithNameLongerThanWeightQuerySpecification extends Base
   private CourseWithNameLongerThanWeightQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithNameLongerThanWeightQuerySpecification> {
     @Override
     public CourseWithNameLongerThanWeightQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class CourseWithNameLongerThanWeightQuerySpecification extends Base
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static CourseWithNameLongerThanWeightQuerySpecification INSTANCE = make();
     

@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see StudentOfSchoolNamesProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class StudentOfSchoolNamesMatch extends BasePatternMatch {
   private String fSName;
   
@@ -147,6 +148,8 @@ public abstract class StudentOfSchoolNamesMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends StudentOfSchoolNamesMatch {
     Mutable(final String pSName, final String pSchName) {
       super(pSName, pSchName);
@@ -159,6 +162,8 @@ public abstract class StudentOfSchoolNamesMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends StudentOfSchoolNamesMatch {
     Immutable(final String pSName, final String pSchName) {
       super(pSName, pSchName);

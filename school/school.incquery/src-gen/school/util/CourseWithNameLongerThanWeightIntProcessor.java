@@ -9,6 +9,7 @@ import school.CourseWithNameLongerThanWeightIntMatch;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class CourseWithNameLongerThanWeightIntProcessor implements IMatchProcessor<CourseWithNameLongerThanWeightIntMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -19,7 +20,7 @@ public abstract class CourseWithNameLongerThanWeightIntProcessor implements IMat
   
   @Override
   public void process(final CourseWithNameLongerThanWeightIntMatch match) {
-    process(match.getW());  				
+    process(match.getW());
     
   }
 }

@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see TheOnesWithTheBiggestCircleNameProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMatch {
   private String fSName;
   
@@ -124,6 +125,8 @@ public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMa
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends TheOnesWithTheBiggestCircleNameMatch {
     Mutable(final String pSName) {
       super(pSName);
@@ -136,6 +139,8 @@ public abstract class TheOnesWithTheBiggestCircleNameMatch extends BasePatternMa
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends TheOnesWithTheBiggestCircleNameMatch {
     Immutable(final String pSName) {
       super(pSName);

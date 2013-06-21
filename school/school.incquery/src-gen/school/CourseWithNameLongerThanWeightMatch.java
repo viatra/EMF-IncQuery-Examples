@@ -21,6 +21,7 @@ import school.Course;
  * @see CourseWithNameLongerThanWeightProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class CourseWithNameLongerThanWeightMatch extends BasePatternMatch {
   private Course fC;
   
@@ -125,6 +126,8 @@ public abstract class CourseWithNameLongerThanWeightMatch extends BasePatternMat
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends CourseWithNameLongerThanWeightMatch {
     Mutable(final Course pC) {
       super(pC);
@@ -137,6 +140,8 @@ public abstract class CourseWithNameLongerThanWeightMatch extends BasePatternMat
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends CourseWithNameLongerThanWeightMatch {
     Immutable(final Course pC) {
       super(pC);

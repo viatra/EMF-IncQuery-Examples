@@ -21,6 +21,7 @@ import school.Student;
  * @see FriendlyToProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class FriendlyToMatch extends BasePatternMatch {
   private Student fS1;
   
@@ -148,6 +149,8 @@ public abstract class FriendlyToMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends FriendlyToMatch {
     Mutable(final Student pS1, final Student pS2) {
       super(pS1, pS2);
@@ -160,6 +163,8 @@ public abstract class FriendlyToMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends FriendlyToMatch {
     Immutable(final Student pS1, final Student pS2) {
       super(pS1, pS2);

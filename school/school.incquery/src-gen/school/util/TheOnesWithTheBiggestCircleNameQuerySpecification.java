@@ -13,6 +13,7 @@ import school.TheOnesWithTheBiggestCircleNameMatcher;
  * @see TheOnesWithTheBiggestCircleNameMatch
  * 
  */
+@SuppressWarnings("all")
 public final class TheOnesWithTheBiggestCircleNameQuerySpecification extends BaseGeneratedQuerySpecification<TheOnesWithTheBiggestCircleNameMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class TheOnesWithTheBiggestCircleNameQuerySpecification extends Bas
   private TheOnesWithTheBiggestCircleNameQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TheOnesWithTheBiggestCircleNameQuerySpecification> {
     @Override
     public TheOnesWithTheBiggestCircleNameQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class TheOnesWithTheBiggestCircleNameQuerySpecification extends Bas
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static TheOnesWithTheBiggestCircleNameQuerySpecification INSTANCE = make();
     

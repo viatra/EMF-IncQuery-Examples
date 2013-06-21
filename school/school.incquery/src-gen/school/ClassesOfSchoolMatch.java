@@ -21,6 +21,7 @@ import school.SchoolClass;
  * @see ClassesOfSchoolProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
   private SchoolClass fSC;
   
@@ -125,6 +126,8 @@ public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends ClassesOfSchoolMatch {
     Mutable(final SchoolClass pSC) {
       super(pSC);
@@ -137,6 +140,8 @@ public abstract class ClassesOfSchoolMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends ClassesOfSchoolMatch {
     Immutable(final SchoolClass pSC) {
       super(pSC);

@@ -9,6 +9,7 @@ import school.InTheCircleOfFriendsNamesMatch;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class InTheCircleOfFriendsNamesProcessor implements IMatchProcessor<InTheCircleOfFriendsNamesMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -20,7 +21,7 @@ public abstract class InTheCircleOfFriendsNamesProcessor implements IMatchProces
   
   @Override
   public void process(final InTheCircleOfFriendsNamesMatch match) {
-    process(match.getS1Name(), match.getSomeoneName());  				
+    process(match.getS1Name(), match.getSomeoneName());
     
   }
 }

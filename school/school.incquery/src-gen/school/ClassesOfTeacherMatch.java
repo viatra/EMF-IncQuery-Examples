@@ -22,6 +22,7 @@ import school.Teacher;
  * @see ClassesOfTeacherProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class ClassesOfTeacherMatch extends BasePatternMatch {
   private Teacher fT;
   
@@ -149,6 +150,8 @@ public abstract class ClassesOfTeacherMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends ClassesOfTeacherMatch {
     Mutable(final Teacher pT, final SchoolClass pSC) {
       super(pT, pSC);
@@ -161,6 +164,8 @@ public abstract class ClassesOfTeacherMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends ClassesOfTeacherMatch {
     Immutable(final Teacher pT, final SchoolClass pSC) {
       super(pT, pSC);

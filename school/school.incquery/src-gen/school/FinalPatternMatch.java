@@ -24,6 +24,7 @@ import school.Year;
  * @see FinalPatternProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalPatternMatch extends BasePatternMatch {
   private Year fY;
   
@@ -197,6 +198,8 @@ public abstract class FinalPatternMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends FinalPatternMatch {
     Mutable(final Year pY, final Course pC, final Teacher pT, final Student pS) {
       super(pY, pC, pT, pS);
@@ -209,6 +212,8 @@ public abstract class FinalPatternMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends FinalPatternMatch {
     Immutable(final Year pY, final Course pC, final Teacher pT, final Student pS) {
       super(pY, pC, pT, pS);

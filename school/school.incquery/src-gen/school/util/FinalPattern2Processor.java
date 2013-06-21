@@ -9,6 +9,7 @@ import school.FinalPattern2Match;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class FinalPattern2Processor implements IMatchProcessor<FinalPattern2Match> {
   /**
    * Defines the action that is to be executed on each match.
@@ -22,7 +23,7 @@ public abstract class FinalPattern2Processor implements IMatchProcessor<FinalPat
   
   @Override
   public void process(final FinalPattern2Match match) {
-    process(match.getYDate(), match.getCSub(), match.getTName(), match.getSName());  				
+    process(match.getYDate(), match.getCSub(), match.getTName(), match.getSName());
     
   }
 }

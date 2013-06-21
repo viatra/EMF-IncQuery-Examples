@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see CourseWithNameLongerThanWeightIntProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePatternMatch {
   private Integer fW;
   
@@ -124,6 +125,8 @@ public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePattern
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends CourseWithNameLongerThanWeightIntMatch {
     Mutable(final Integer pW) {
       super(pW);
@@ -136,6 +139,8 @@ public abstract class CourseWithNameLongerThanWeightIntMatch extends BasePattern
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends CourseWithNameLongerThanWeightIntMatch {
     Immutable(final Integer pW) {
       super(pW);

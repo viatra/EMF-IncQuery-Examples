@@ -36,6 +36,7 @@ import school.util.TeachesTheMostCoursesQuerySpecification;
  * @see TeachesTheMostCoursesQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class TeachesTheMostCoursesMatcher extends BaseMatcher<TeachesTheMostCoursesMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

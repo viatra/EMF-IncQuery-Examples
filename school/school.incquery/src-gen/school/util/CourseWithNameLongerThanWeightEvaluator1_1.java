@@ -7,15 +7,14 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 /**
  * A xbase xexpression evaluator tailored for the school.courseWithNameLongerThanWeight pattern.
  */
+@SuppressWarnings("all")
 public class CourseWithNameLongerThanWeightEvaluator1_1 implements IMatchChecker {
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
   private Boolean evaluateXExpressionGenerated(final String CName, final Integer W) {
-    String _CName = CName;
-    int _length = _CName.length();
-    Integer _W = W;
-    boolean _greaterThan = (_length > (_W).intValue());
+    int _length = CName.length();
+    boolean _greaterThan = (_length > (W).intValue());
     return Boolean.valueOf(_greaterThan);
   }
   

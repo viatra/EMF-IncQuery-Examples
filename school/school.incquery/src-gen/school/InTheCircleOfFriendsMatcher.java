@@ -39,6 +39,7 @@ import school.util.InTheCircleOfFriendsQuerySpecification;
  * @see InTheCircleOfFriendsQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class InTheCircleOfFriendsMatcher extends BaseMatcher<InTheCircleOfFriendsMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

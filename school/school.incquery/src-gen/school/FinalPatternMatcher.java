@@ -52,6 +52,7 @@ import school.util.FinalPatternQuerySpecification;
  * @see FinalPatternQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class FinalPatternMatcher extends BaseMatcher<FinalPatternMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

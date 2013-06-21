@@ -37,6 +37,7 @@ import school.util.TeachersOfSchoolNamesQuerySpecification;
  * @see TeachersOfSchoolNamesQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class TeachersOfSchoolNamesMatcher extends BaseMatcher<TeachersOfSchoolNamesMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

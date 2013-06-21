@@ -42,6 +42,7 @@ import school.util.FriendlyToQuerySpecification;
  * @see FriendlyToQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
