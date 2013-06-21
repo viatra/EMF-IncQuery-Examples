@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see EReferenceWithStarMultiplicityMatch
  * 
  */
+@SuppressWarnings("all")
 public final class EReferenceWithStarMultiplicityQuerySpecification extends BaseGeneratedQuerySpecification<EReferenceWithStarMultiplicityMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
   private EReferenceWithStarMultiplicityQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EReferenceWithStarMultiplicityQuerySpecification> {
     @Override
     public EReferenceWithStarMultiplicityQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static EReferenceWithStarMultiplicityQuerySpecification INSTANCE = make();
     

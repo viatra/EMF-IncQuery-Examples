@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see IsEStringProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class IsEStringMatch extends BasePatternMatch {
   private EClassifier fElement;
   
@@ -125,6 +126,8 @@ public abstract class IsEStringMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends IsEStringMatch {
     Mutable(final EClassifier pElement) {
       super(pElement);
@@ -137,6 +140,8 @@ public abstract class IsEStringMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends IsEStringMatch {
     Immutable(final EClassifier pElement) {
       super(pElement);

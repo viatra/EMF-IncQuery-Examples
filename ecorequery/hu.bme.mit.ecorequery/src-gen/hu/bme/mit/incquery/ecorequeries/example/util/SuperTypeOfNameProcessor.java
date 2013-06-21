@@ -9,6 +9,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class SuperTypeOfNameProcessor implements IMatchProcessor<SuperTypeOfNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -20,7 +21,7 @@ public abstract class SuperTypeOfNameProcessor implements IMatchProcessor<SuperT
   
   @Override
   public void process(final SuperTypeOfNameMatch match) {
-    process(match.getSuperName(), match.getSubName());  				
+    process(match.getSuperName(), match.getSubName());
     
   }
 }

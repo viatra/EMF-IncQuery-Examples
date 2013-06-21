@@ -36,6 +36,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EObjectQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

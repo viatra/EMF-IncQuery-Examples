@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SuperTypeOfProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class SuperTypeOfMatch extends BasePatternMatch {
   private EClass fSuper;
   
@@ -148,6 +149,8 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends SuperTypeOfMatch {
     Mutable(final EClass pSuper, final EClass pSub) {
       super(pSuper, pSub);
@@ -160,6 +163,8 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends SuperTypeOfMatch {
     Immutable(final EClass pSuper, final EClass pSub) {
       super(pSuper, pSub);

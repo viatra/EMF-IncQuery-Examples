@@ -12,6 +12,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class SampleQueryProcessor implements IMatchProcessor<SampleQueryMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -26,7 +27,7 @@ public abstract class SampleQueryProcessor implements IMatchProcessor<SampleQuer
   
   @Override
   public void process(final SampleQueryMatch match) {
-    process(match.getXElement(), match.getYElement(), match.getRelates(), match.getLabel1(), match.getLabel2());  				
+    process(match.getXElement(), match.getYElement(), match.getRelates(), match.getLabel1(), match.getLabel2());
     
   }
 }

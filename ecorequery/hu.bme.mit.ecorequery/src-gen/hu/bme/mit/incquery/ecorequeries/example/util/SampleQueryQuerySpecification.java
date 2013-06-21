@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see SampleQueryMatch
  * 
  */
+@SuppressWarnings("all")
 public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpecification<SampleQueryMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
   private SampleQueryQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<SampleQueryQuerySpecification> {
     @Override
     public SampleQueryQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static SampleQueryQuerySpecification INSTANCE = make();
     

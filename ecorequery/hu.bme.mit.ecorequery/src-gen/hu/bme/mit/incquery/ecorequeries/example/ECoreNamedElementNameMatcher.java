@@ -36,6 +36,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see ECoreNamedElementNameQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementNameMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

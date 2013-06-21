@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see SuperTypeOfNameMatch
  * 
  */
+@SuppressWarnings("all")
 public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQuerySpecification<SuperTypeOfNameMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQueryS
   private SuperTypeOfNameQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<SuperTypeOfNameQuerySpecification> {
     @Override
     public SuperTypeOfNameQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQueryS
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static SuperTypeOfNameQuerySpecification INSTANCE = make();
     

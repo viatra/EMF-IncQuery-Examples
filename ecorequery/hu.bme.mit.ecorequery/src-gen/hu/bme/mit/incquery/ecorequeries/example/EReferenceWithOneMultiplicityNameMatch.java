@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EReferenceWithOneMultiplicityNameProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePatternMatch {
   private String fERefName;
   
@@ -124,6 +125,8 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EReferenceWithOneMultiplicityNameMatch {
     Mutable(final String pERefName) {
       super(pERefName);
@@ -136,6 +139,8 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EReferenceWithOneMultiplicityNameMatch {
     Immutable(final String pERefName) {
       super(pERefName);

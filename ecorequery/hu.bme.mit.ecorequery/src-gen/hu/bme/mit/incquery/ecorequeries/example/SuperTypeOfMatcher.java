@@ -38,6 +38,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see SuperTypeOfQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

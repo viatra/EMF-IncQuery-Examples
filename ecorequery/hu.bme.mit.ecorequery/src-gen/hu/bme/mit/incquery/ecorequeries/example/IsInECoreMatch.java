@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see IsInECoreProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class IsInECoreMatch extends BasePatternMatch {
   private EClassifier fElement;
   
@@ -125,6 +126,8 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends IsInECoreMatch {
     Mutable(final EClassifier pElement) {
       super(pElement);
@@ -137,6 +140,8 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends IsInECoreMatch {
     Immutable(final EClassifier pElement) {
       super(pElement);

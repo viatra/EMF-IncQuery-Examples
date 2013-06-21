@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see ECoreNamedElementMatch
  * 
  */
+@SuppressWarnings("all")
 public final class ECoreNamedElementQuerySpecification extends BaseGeneratedQuerySpecification<ECoreNamedElementMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class ECoreNamedElementQuerySpecification extends BaseGeneratedQuer
   private ECoreNamedElementQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<ECoreNamedElementQuerySpecification> {
     @Override
     public ECoreNamedElementQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class ECoreNamedElementQuerySpecification extends BaseGeneratedQuer
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static ECoreNamedElementQuerySpecification INSTANCE = make();
     

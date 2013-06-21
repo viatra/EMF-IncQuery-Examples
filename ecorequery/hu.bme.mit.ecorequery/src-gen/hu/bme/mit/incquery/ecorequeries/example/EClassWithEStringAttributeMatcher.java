@@ -39,6 +39,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EClassWithEStringAttributeQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithEStringAttributeMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

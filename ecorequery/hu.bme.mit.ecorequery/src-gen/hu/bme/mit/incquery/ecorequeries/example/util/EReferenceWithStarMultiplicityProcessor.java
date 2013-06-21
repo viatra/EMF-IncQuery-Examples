@@ -10,6 +10,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class EReferenceWithStarMultiplicityProcessor implements IMatchProcessor<EReferenceWithStarMultiplicityMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -20,7 +21,7 @@ public abstract class EReferenceWithStarMultiplicityProcessor implements IMatchP
   
   @Override
   public void process(final EReferenceWithStarMultiplicityMatch match) {
-    process(match.getERef());  				
+    process(match.getERef());
     
   }
 }

@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see SuperTypeOfNameProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
   private String fSuperName;
   
@@ -147,6 +148,8 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends SuperTypeOfNameMatch {
     Mutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);
@@ -159,6 +162,8 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends SuperTypeOfNameMatch {
     Immutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);

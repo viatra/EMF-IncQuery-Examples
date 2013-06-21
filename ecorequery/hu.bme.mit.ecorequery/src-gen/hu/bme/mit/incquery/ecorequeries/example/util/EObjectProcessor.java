@@ -10,6 +10,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
  * Clients should derive an (anonymous) class that implements the abstract process().
  * 
  */
+@SuppressWarnings("all")
 public abstract class EObjectProcessor implements IMatchProcessor<EObjectMatch> {
   /**
    * Defines the action that is to be executed on each match.
@@ -20,7 +21,7 @@ public abstract class EObjectProcessor implements IMatchProcessor<EObjectMatch> 
   
   @Override
   public void process(final EObjectMatch match) {
-    process(match.getE());  				
+    process(match.getE());
     
   }
 }

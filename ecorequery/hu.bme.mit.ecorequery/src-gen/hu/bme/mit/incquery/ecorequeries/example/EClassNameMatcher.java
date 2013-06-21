@@ -35,6 +35,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EClassNameQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

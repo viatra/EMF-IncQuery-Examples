@@ -38,6 +38,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see IsInECoreQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

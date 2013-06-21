@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EClassNameProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EClassNameMatch extends BasePatternMatch {
   private String fEName;
   
@@ -124,6 +125,8 @@ public abstract class EClassNameMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EClassNameMatch {
     Mutable(final String pEName) {
       super(pEName);
@@ -136,6 +139,8 @@ public abstract class EClassNameMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EClassNameMatch {
     Immutable(final String pEName) {
       super(pEName);

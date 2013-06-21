@@ -20,6 +20,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see ECoreNamedElementNameProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   private String fName;
   
@@ -124,6 +125,8 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends ECoreNamedElementNameMatch {
     Mutable(final String pName) {
       super(pName);
@@ -136,6 +139,8 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends ECoreNamedElementNameMatch {
     Immutable(final String pName) {
       super(pName);

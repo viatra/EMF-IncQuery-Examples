@@ -22,6 +22,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see EClassWithEStringAttributeProcessor
  * 
  */
+@SuppressWarnings("all")
 public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   private EClass fE;
   
@@ -149,6 +150,8 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     }
     
   }
+  
+  @SuppressWarnings("all")
   static final class Mutable extends EClassWithEStringAttributeMatch {
     Mutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
@@ -161,6 +164,8 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     }
   }
   
+  
+  @SuppressWarnings("all")
   static final class Immutable extends EClassWithEStringAttributeMatch {
     Immutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);

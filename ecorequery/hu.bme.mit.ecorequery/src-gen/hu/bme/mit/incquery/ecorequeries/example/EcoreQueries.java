@@ -50,6 +50,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * @see IPatternGroup
  * 
  */
+@SuppressWarnings("all")
 public final class EcoreQueries extends BaseGeneratedPatternGroup {
   /**
    * Access the pattern group.
@@ -69,23 +70,23 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
   private static EcoreQueries INSTANCE;
   
   private EcoreQueries() throws IncQueryException {
-    querySpecifications.add(EClassMatcher.querySpecification());
+    querySpecifications.add(EObjectMatcher.querySpecification());
     querySpecifications.add(EClassAttributeMatcher.querySpecification());
     querySpecifications.add(ECoreNamedElementMatcher.querySpecification());
-    querySpecifications.add(SuperTypeOfNameMatcher.querySpecification());
-    querySpecifications.add(EClassWithEStringAttributeMatcher.querySpecification());
-    querySpecifications.add(IsEStringMatcher.querySpecification());
-    querySpecifications.add(EObjectMatcher.querySpecification());
-    querySpecifications.add(IsInECoreMatcher.querySpecification());
-    querySpecifications.add(SampleQuery2Matcher.querySpecification());
-    querySpecifications.add(SuperTypeOfMatcher.querySpecification());
-    querySpecifications.add(EReferenceWithOneMultiplicityMatcher.querySpecification());
-    querySpecifications.add(EClassNameMatcher.querySpecification());
-    querySpecifications.add(ECoreNamedElementNameMatcher.querySpecification());
     querySpecifications.add(EReferenceWithStarMultiplicityNameMatcher.querySpecification());
-    querySpecifications.add(EReferenceWithStarMultiplicityMatcher.querySpecification());
+    querySpecifications.add(ECoreNamedElementNameMatcher.querySpecification());
     querySpecifications.add(EReferenceWithOneMultiplicityNameMatcher.querySpecification());
+    querySpecifications.add(SuperTypeOfMatcher.querySpecification());
+    querySpecifications.add(SampleQuery2Matcher.querySpecification());
+    querySpecifications.add(EClassWithEStringAttributeMatcher.querySpecification());
+    querySpecifications.add(EReferenceWithOneMultiplicityMatcher.querySpecification());
+    querySpecifications.add(EClassMatcher.querySpecification());
+    querySpecifications.add(SuperTypeOfNameMatcher.querySpecification());
+    querySpecifications.add(IsEStringMatcher.querySpecification());
     querySpecifications.add(SampleQueryMatcher.querySpecification());
+    querySpecifications.add(EClassNameMatcher.querySpecification());
+    querySpecifications.add(IsInECoreMatcher.querySpecification());
+    querySpecifications.add(EReferenceWithStarMultiplicityMatcher.querySpecification());
     
   }
 }

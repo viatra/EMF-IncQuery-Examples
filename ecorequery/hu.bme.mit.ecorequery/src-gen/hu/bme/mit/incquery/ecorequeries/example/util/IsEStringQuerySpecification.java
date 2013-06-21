@@ -13,6 +13,7 @@ import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
  * @see IsEStringMatch
  * 
  */
+@SuppressWarnings("all")
 public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecification<IsEStringMatcher> {
   /**
    * @return the singleton instance of the query specification
@@ -50,6 +51,8 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
   private IsEStringQuerySpecification() throws IncQueryException {
     super();
   }
+  
+  @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<IsEStringQuerySpecification> {
     @Override
     public IsEStringQuerySpecification get() throws IncQueryException {
@@ -57,6 +60,8 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
     }
   }
   
+  
+  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static IsEStringQuerySpecification INSTANCE = make();
     

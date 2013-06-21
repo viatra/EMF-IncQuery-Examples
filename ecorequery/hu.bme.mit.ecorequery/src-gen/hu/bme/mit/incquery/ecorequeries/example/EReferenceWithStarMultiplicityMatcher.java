@@ -38,6 +38,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see EReferenceWithStarMultiplicityQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenceWithStarMultiplicityMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 

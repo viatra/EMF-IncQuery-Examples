@@ -53,6 +53,7 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  * @see SampleQueryQuerySpecification
  * 
  */
+@SuppressWarnings("all")
 public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
