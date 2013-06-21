@@ -30,6 +30,7 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 	
 	protected Course newCourse;
 	protected String newCourseSubject = "NewCourse";
+	protected Integer preExistingCourseWeight = 17;
 	
 	public IncQueryBaseListenerTest(Notifier notifier) {
 		this(notifier, false);
@@ -40,6 +41,7 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 		
 		newCourse = SchoolFactory.eINSTANCE.createCourse();
 		newCourse.setSubject(newCourseSubject);
+		newCourse.setWeight(preExistingCourseWeight);
 	}
 	
 	/**

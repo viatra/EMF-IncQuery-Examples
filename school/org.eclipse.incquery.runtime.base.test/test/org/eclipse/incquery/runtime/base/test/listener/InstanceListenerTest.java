@@ -12,6 +12,9 @@ import org.eclipse.incquery.runtime.base.api.InstanceListener;
 
 import school.SchoolPackage;
 
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
+
 /**
  * {@link InstanceListener} based test of EMF-IncQuery Base.
  * 
@@ -22,6 +25,9 @@ public class InstanceListenerTest extends IncQueryBaseListenerTest {
 
 	private Set<EClass> classes;
 	private InstanceListener instanceListener;
+	
+	private Multiset<EClass> receivedInsert = HashMultiset.create();
+	private Multiset<EClass> receivedDelete = HashMultiset.create();
 	
 	public InstanceListenerTest(Notifier notifier) {
 		super(notifier, false);
@@ -34,12 +40,14 @@ public class InstanceListenerTest extends IncQueryBaseListenerTest {
 			
 			@Override
 			public void instanceInserted(EClass clazz, EObject instance) {
+				receivedInsert.add(clazz);
 				assertTrue(clazz.equals(SchoolPackage.eINSTANCE.getCourse()) && 
 						instance.equals(newCourse));
 			}
 			
 			@Override
 			public void instanceDeleted(EClass clazz, EObject instance) {
+				receivedDelete.add(clazz);
 				assertTrue(clazz.equals(SchoolPackage.eINSTANCE.getCourse()) && 
 						instance.equals(newCourse));
 			}
@@ -56,5 +64,10 @@ public class InstanceListenerTest extends IncQueryBaseListenerTest {
 	public void unregisterListener() {
 		navigationHelper.removeInstanceListener(classes, instanceListener);
 		navigationHelper.unregisterEClasses(classes);
+		
+		assertTrue(1 == receivedInsert.size());
+		assertTrue(1 == receivedInsert.count(SchoolPackage.eINSTANCE.getCourse()));
+		assertTrue(receivedInsert.equals(receivedDelete));
+
 	}
 }
