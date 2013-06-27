@@ -1,5 +1,6 @@
 package org.eclipse.incquery.runtime.base.test.listener;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
@@ -74,10 +75,10 @@ public class FeatureListenerTest extends IncQueryBaseListenerTest {
 		navigationHelper.removeFeatureListener(features, featureListener);
 		navigationHelper.unregisterEStructuralFeatures(features);
 		
-		assertTrue(2 == receivedInsert.size());
-		assertTrue(1 == receivedInsert.count(SchoolPackage.eINSTANCE.getCourse_Subject()));
-		assertTrue(1 == receivedInsert.count(SchoolPackage.eINSTANCE.getCourse_Weight()));
-		assertTrue(receivedInsert.equals(receivedDelete));
+		assertEquals(2, receivedInsert.size());
+		assertEquals(1, receivedInsert.count(SchoolPackage.eINSTANCE.getCourse_Subject()));
+		assertEquals(1, receivedInsert.count(SchoolPackage.eINSTANCE.getCourse_Weight()));
+		assertEquals(receivedInsert, receivedDelete);
 	}
 	
 }
