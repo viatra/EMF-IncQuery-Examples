@@ -8,7 +8,7 @@
 	<url>http://viatra.inf.mit.bme.hu/incquery</url>
 	<parent>
 		<artifactId>org.eclipse.incquery.parent</artifactId>
-		<version>0.7.0-SNAPSHOT</version>
+		<version>0.7.1-SNAPSHOT</version>
 		<groupId>org.eclipse.incquery</groupId>
 	</parent>
 	<packaging>pom</packaging>
@@ -39,7 +39,7 @@
 						<artifact>
 							<groupId>org.eclipse.incquery</groupId>
 							<artifactId>org.eclipse.incquery.tests.school.parent</artifactId>
-							<version>0.7.0-SNAPSHOT</version>
+							<version>${project.version}</version>
 							<classifier>schooltest</classifier>
 						</artifact>
 					</target>
