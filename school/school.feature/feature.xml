@@ -2,8 +2,8 @@
 <feature
       id="school.feature"
       label="School Metamodel"
-      version="0.7.0.qualifier"
-      license-feature="org.eclipse.viatra2.emf.incquery.licence.feature"
+      version="0.7.1.qualifier"
+      license-feature="org.eclipse.incquery.licence.feature"
       license-feature-version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
