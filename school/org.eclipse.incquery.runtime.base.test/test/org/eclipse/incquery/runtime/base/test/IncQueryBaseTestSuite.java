@@ -16,6 +16,7 @@ import org.eclipse.incquery.runtime.base.test.inverseref.MixedNonDynamicInverseR
 import org.eclipse.incquery.runtime.base.test.listener.DataTypeListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.FeatureListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.InstanceListenerTest;
+import org.eclipse.incquery.runtime.base.test.listener.LightweightObserverTest;
 import org.eclipse.incquery.runtime.base.test.scope.ParameterizedScopeTest;
 import org.eclipse.incquery.runtime.base.test.scope.ResourceSetScopeTest;
 import org.eclipse.incquery.runtime.base.test.tc.DynamicTransitiveClosureHelperTest;
@@ -46,6 +47,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	FeatureListenerTest.class,
 	DataTypeListenerTest.class,
 	InstanceListenerTest.class,
+	LightweightObserverTest.class,
 	
 	TransitiveClosureHelperTest.class,
 	DynamicTransitiveClosureHelperTest.class,
