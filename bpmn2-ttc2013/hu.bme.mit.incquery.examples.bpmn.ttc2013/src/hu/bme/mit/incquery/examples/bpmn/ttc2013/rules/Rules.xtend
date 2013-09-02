@@ -53,35 +53,32 @@ class Rules {
 			token.element = event
 			processInstance.tokens += token
 			
-			engine.logger.info("Process instantiated. Token location: \"" + event.name + "\".")
 		]
 		
-		newMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
+		newSimpleMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	/*
-	 * TASK 2: Starting and ending
+	 * TASK 2: Process Instantiation
 	 */
 	def createStartingRuleSpecification() {
 		val IMatchProcessor<StartingMatch> processor = [
 			token.element = sequenceFlow
-			engine.logger.info("Process starting. Token location: \"" + sequenceFlow.name + "\".") 
 		]
 		
-		newMatcherRuleSpecification(StartingMatcher::querySpecification,
+		newSimpleMatcherRuleSpecification(StartingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?>
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	def createEndingRuleSpecification() {
 		val IMatchProcessor<EndingMatch> processor = [
 			token.element = endEvent
-			engine.logger.info("Process ending. Token " + token + " at location: \"" + endEvent.name + "\".")
 		]
 		
-		newMatcherRuleSpecification(EndingMatcher::querySpecification,
+		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
@@ -89,28 +86,21 @@ class Rules {
 	def createEnteringTasksRuleSpecification() {
 		val IMatchProcessor<EnteringTasksMatch> processor = [
 			token.element = task
-			engine.logger.info("Entering task \"" + task.name + "\".")
 		]
 		
-		newMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
+		newSimpleMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	def createLeavingTasksRuleSpecification() {
-		val IMatchProcessor<LeavingTasksMatch> processor = [		
-			processInstance.tokens.remove(token)
-			engine.logger.info("Leaving task (1): Removing token " + token + " from location \"" + taskToLeave.name + "\".")
-			for(sequenceFlow : taskToLeave.outgoing){
-				var newToken = bpmnexecf.createToken
-				processInstance.tokens.add(newToken)
-				newToken.setElement(sequenceFlow)
-				engine.logger.info("Leaving task (2): Creating token " + newToken + " at location \"" + sequenceFlow.name + "\".")
-			}
-			engine.logger.info("Leaving task: Task \"" + taskToLeave.name + "\" left.")
+		val IMatchProcessor<LeavingTasksMatch> processor = [
+			token.element
+			
+			processInstance.tokens += token
 		]
 		
-		newMatcherRuleSpecification(LeavingTasksMatcher::querySpecification,
+		newSimpleMatcherRuleSpecification(LeavingTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}

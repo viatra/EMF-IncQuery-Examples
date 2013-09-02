@@ -3,8 +3,8 @@ package hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;
 import hu.bme.mit.incquery.examples.bpmn.ttc2013.rules.Rules;
 
 import java.util.Collections;
+import java.util.Set;
 
-import org.apache.log4j.Level;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.examples.bpmn.ttc2013.simulator.FairRandomConflictResolver;
@@ -23,7 +23,6 @@ public class BPMNExecutorTransformation {
     public void execute(TransactionalEditingDomain editingDomain, Resource modelResource, Resource executionResource) {
     	try {
             IncQueryEngine engine = IncQueryEngine.on(modelResource.getResourceSet());
-            engine.getLogger().setLevel(Level.INFO);
 			UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
 			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(
 					IncQueryEventRealm.create(engine), 
@@ -33,10 +32,10 @@ public class BPMNExecutorTransformation {
 			execSchema.getContext().put(RecordingJob.TRANSACTIONAL_EDITING_DOMAIN, editingDomain);
 									
 			Rules ruleSet = new Rules(engine, modelResource, executionResource);
+			execSchema.addRule(ruleSet.createEndingRuleSpecification());
 			execSchema.addRule(ruleSet.createProcessInstantiationRuleSpecification());
 			execSchema.addRule(ruleSet.createEnteringTasksRuleSpecification());
 			execSchema.addRule(ruleSet.createLeavingTasksRuleSpecification());
-			execSchema.addRule(ruleSet.createEndingRuleSpecification());
 			execSchema.addRule(ruleSet.createStartingRuleSpecification(), true); // START now!
 			execSchema.dispose();		
 			
