@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="ASCII"?>
 <exec:ProcessInstance xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:exec="http://bpmn20exec" state="RUNNING">
-  <tokens element="bpmn2:tEndEvent platform:/resource/testBpmn/process_1.bpmn#EndEvent_1"/>
-  <tokens element="bpmn2:tEndEvent platform:/resource/testBpmn/process_1.bpmn#EndEvent_1"/>
+  <tokens element="bpmn2:tStartEvent process_1.bpmn#StartEvent_1"/>
 </exec:ProcessInstance>

@@ -1,29 +1,29 @@
 package hu.bme.mit.incquery.examples.bpmn.ttc2013.rules
 
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.common.util.EList
-import java.util.Collection
-import org.eclipse.incquery.runtime.api.IncQueryEngine
-
-import static org.eclipse.incquery.runtime.evm.specific.Rules.*
-import static org.eclipse.incquery.runtime.evm.specific.Jobs.*
-import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle
-import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
-import org.eclipse.incquery.runtime.api.IMatchProcessor
-import org.eclipse.emf.ecore.resource.Resource
 import bpmn20exec.Bpmn20execFactory
 import bpmn20exec.ProcessState
-import org.eclipse.incquery.runtime.evm.api.RuleSpecification
-import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatch
-import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatcher
-import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatch
-import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatcher
+import java.util.Collection
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EndingMatcher
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.EnteringTasksMatcher
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.LeavingTasksMatch
 import org.eclipse.incquery.examples.bpmn.ttc2013.queries.LeavingTasksMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartEventOfProcessMatcher
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatch
+import org.eclipse.incquery.examples.bpmn.ttc2013.queries.StartingMatcher
+import org.eclipse.incquery.runtime.api.IMatchProcessor
+import org.eclipse.incquery.runtime.api.IncQueryEngine
+import org.eclipse.incquery.runtime.evm.api.RuleSpecification
+import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
+import org.eclipse.incquery.runtime.evm.specific.lifecycle.DefaultActivationLifeCycle
+
+import static org.eclipse.incquery.runtime.evm.specific.Jobs.*
+import static org.eclipse.incquery.runtime.evm.specific.Rules.*
 
 class Rules {
 	IncQueryEngine engine
@@ -53,32 +53,35 @@ class Rules {
 			token.element = event
 			processInstance.tokens += token
 			
+			engine.logger.info("Process instantiated. Token location: \"" + event.name + "\".")
 		]
 		
-		newSimpleMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
+		newMatcherRuleSpecification(StartEventOfProcessMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	/*
-	 * TASK 2: Process Instantiation
+	 * TASK 2: Starting and ending
 	 */
 	def createStartingRuleSpecification() {
 		val IMatchProcessor<StartingMatch> processor = [
 			token.element = sequenceFlow
+			engine.logger.info("Process starting. Token location: \"" + sequenceFlow.name + "\".") 
 		]
 		
-		newSimpleMatcherRuleSpecification(StartingMatcher::querySpecification,
+		newMatcherRuleSpecification(StartingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
-			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
+			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?>
 	}
 	
 	def createEndingRuleSpecification() {
 		val IMatchProcessor<EndingMatch> processor = [
 			token.element = endEvent
+			engine.logger.info("Process ending. Token " + token + " at location: \"" + endEvent.name + "\".")
 		]
 		
-		newSimpleMatcherRuleSpecification(EndingMatcher::querySpecification,
+		newMatcherRuleSpecification(EndingMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
@@ -86,21 +89,28 @@ class Rules {
 	def createEnteringTasksRuleSpecification() {
 		val IMatchProcessor<EnteringTasksMatch> processor = [
 			token.element = task
+			engine.logger.info("Entering task \"" + task.name + "\".")
 		]
 		
-		newSimpleMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
+		newMatcherRuleSpecification(EnteringTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}
 	
 	def createLeavingTasksRuleSpecification() {
-		val IMatchProcessor<LeavingTasksMatch> processor = [
-			token.element
-			
-			processInstance.tokens += token
+		val IMatchProcessor<LeavingTasksMatch> processor = [		
+			processInstance.tokens.remove(token)
+			engine.logger.info("Leaving task (1): Removing token " + token + " from location \"" + taskToLeave.name + "\".")
+			for(sequenceFlow : taskToLeave.outgoing){
+				var newToken = bpmnexecf.createToken
+				processInstance.tokens.add(newToken)
+				newToken.setElement(sequenceFlow)
+				engine.logger.info("Leaving task (2): Creating token " + newToken + " at location \"" + sequenceFlow.name + "\".")
+			}
+			engine.logger.info("Leaving task: Task \"" + taskToLeave.name + "\" left.")
 		]
 		
-		newSimpleMatcherRuleSpecification(LeavingTasksMatcher::querySpecification,
+		newMatcherRuleSpecification(LeavingTasksMatcher::querySpecification,
 			DefaultActivationLifeCycle::DEFAULT_NO_UPDATE_AND_DISAPPEAR,
 			newHashSet(newRecordingJob(newStatelessJob(IncQueryActivationStateEnum::APPEARED, processor)))) as RuleSpecification<?> 
 	}

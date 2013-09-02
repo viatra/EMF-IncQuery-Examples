@@ -3,8 +3,8 @@ package hu.bme.mit.incquery.examples.bpmn2.ttc2013.transformation;
 import hu.bme.mit.incquery.examples.bpmn.ttc2013.rules.Rules;
 
 import java.util.Collections;
-import java.util.Set;
 
+import org.apache.log4j.Level;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.incquery.examples.bpmn.ttc2013.simulator.FairRandomConflictResolver;
@@ -23,7 +23,8 @@ public class BPMNExecutorTransformation {
     public void execute(TransactionalEditingDomain editingDomain, Resource modelResource, Resource executionResource) {
     	try {
             IncQueryEngine engine = IncQueryEngine.on(modelResource.getResourceSet());
-			UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
+            engine.getLogger().setLevel(Level.INFO);
+            UpdateCompleteBasedSchedulerFactory scheduling = Schedulers.getIQEngineSchedulerFactory(engine);
 			ExecutionSchema execSchema = EventDrivenVM.createExecutionSchema(
 					IncQueryEventRealm.create(engine), 
 					scheduling, 
