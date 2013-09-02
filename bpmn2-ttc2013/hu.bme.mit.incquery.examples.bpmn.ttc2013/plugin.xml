@@ -2,27 +2,19 @@
 <plugin>
 
    <extension
-         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEvent"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.StartEventQuerySpecification$Provider"
-            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEvent">
-      </matcher>
-   </extension>
-   <extension
-         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.endEvent"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.EndEventQuerySpecification$Provider"
-            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.endEvent">
-      </matcher>
-   </extension>
-   <extension
          id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.tokenOnElement"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.TokenOnElementQuerySpecification$Provider"
             id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.tokenOnElement">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventOfProcess"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.StartEventOfProcessQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventOfProcess">
       </matcher>
    </extension>
    <extension
@@ -34,11 +26,11 @@
       </matcher>
    </extension>
    <extension
-         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventOfProcess"
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventWithoutEventDefinitions"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.StartEventOfProcessQuerySpecification$Provider"
-            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventOfProcess">
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.StartEventWithoutEventDefinitionsQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.startEventWithoutEventDefinitions">
       </matcher>
    </extension>
    <extension
@@ -66,19 +58,51 @@
       </matcher>
    </extension>
    <extension
-         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.runningProceess"
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.runningProcess"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.RunningProceessQuerySpecification$Provider"
-            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.runningProceess">
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.RunningProcessQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.runningProcess">
       </matcher>
    </extension>
    <extension
-         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.processTermination"
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.terminableProcess"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.ProcessTerminationQuerySpecification$Provider"
-            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.processTermination">
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.TerminableProcessQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.terminableProcess">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.processWithoutEndEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.ProcessWithoutEndEventQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.processWithoutEndEvent">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.everyTokenInEndEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.EveryTokenInEndEventQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.everyTokenInEndEvent">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.tokenNotInEndEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.TokenNotInEndEventQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.tokenNotInEndEvent">
+      </matcher>
+   </extension>
+   <extension
+         id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.endEvent"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="org.eclipse.incquery.examples.bpmn.ttc2013.queries.util.EndEventQuerySpecification$Provider"
+            id="org.eclipse.incquery.examples.bpmn.ttc2013.queries.endEvent">
       </matcher>
    </extension>
    <extension
