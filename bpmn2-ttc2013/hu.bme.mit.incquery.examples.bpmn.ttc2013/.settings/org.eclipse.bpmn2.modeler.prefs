@@ -1,0 +1,4 @@
+default.model.enablement.profile=
+eclipse.preferences.version=1
+override.model.enablements=false
+target.runtime=org.jboss.runtime.jbpm5
