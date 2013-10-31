@@ -69,7 +69,7 @@ final class QRMTestSetter implements IQueryResultSetter<String, String> {
             }
         } else {
             testQrMap.testInternalRemove(map);
-            if(testQrMap.get(key).equals(value)) {
+            if(testQrMap.containsKey(key) && testQrMap.get(key).equals(value)) {
                 return false;
             }
         }
