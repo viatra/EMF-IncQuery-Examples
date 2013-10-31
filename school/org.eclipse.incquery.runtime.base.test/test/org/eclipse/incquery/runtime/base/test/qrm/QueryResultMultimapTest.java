@@ -163,7 +163,7 @@ public class QueryResultMultimapTest {
         
     }
     
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void faultyListenerTest() {
         QRMTestListener listener = new QRMTestListener(true);
         
@@ -237,7 +237,7 @@ public class QueryResultMultimapTest {
         
     }
     
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void queryResultSetterExceptionTest() {
         
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));

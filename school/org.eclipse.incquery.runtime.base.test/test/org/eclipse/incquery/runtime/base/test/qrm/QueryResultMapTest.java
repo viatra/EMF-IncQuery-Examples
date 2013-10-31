@@ -135,7 +135,7 @@ public class QueryResultMapTest {
         
     }
     
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void faultyListenerTest() {
         QRMTestListener listener = new QRMTestListener(true);
         
@@ -208,7 +208,7 @@ public class QueryResultMapTest {
         
     }
     
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void queryResultSetterExceptionTest() {
         
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));
@@ -254,6 +254,12 @@ public class QueryResultMapTest {
         
     }
     
+    /**
+     * This test uses a specific setter ({@link QRMTestSetter} that will 
+     * violate the contract agains QRM setters and will respond with 
+     * false when asked whether is contains a specific value. This
+     * will cause the clear() to output warnings on the log!
+     */
     @Test
     public void QRMClearSetterTest() {
         qrm.setQueryResultSetter(new QRMTestSetter(qrm));
@@ -261,6 +267,7 @@ public class QueryResultMapTest {
         qrm.clear();
         
         assertTrue(qrm.isEmpty());
+        
         
         qrm.put("errorRemove", "r");
         qrm.put("errorRemove", "v");
