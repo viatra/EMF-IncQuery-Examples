@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: hu.bme.mit.ocl2iq.mapping.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.bme.mit.ocl2iq.mapping.test.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ hu.bme.mit.ocl2iq.mapping;bundle-version="1.0.0",
+ school;bundle-version="0.8.0",
+ org.junit
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
