@@ -20,7 +20,6 @@ import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseDynamicParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.DynamicResourceMetamodel;
 import org.eclipse.incquery.runtime.base.test.util.DynamicResourceModel;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -71,7 +70,7 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 2);
             assertTrue(transitiveClosureHelper.getAllReachableTargets(aStudent).size() == 0);
 
-            Command firstCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command firstCommand = new RecordingCommand(DynamicResourceModel.getInstance().getTransactionalEditingDomain()) {
                 @SuppressWarnings("unchecked")
                 @Override
                 protected void doExecute() {
@@ -80,13 +79,14 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
                     friendsWith.add(aStudent);
                 }
             };
+            
             DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack()
                     .execute(firstCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
                     && transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
 
-            Command secondCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command secondCommand = new RecordingCommand(DynamicResourceModel.getInstance().getTransactionalEditingDomain()) {
                 @SuppressWarnings("unchecked")
                 @Override
                 protected void doExecute() {
