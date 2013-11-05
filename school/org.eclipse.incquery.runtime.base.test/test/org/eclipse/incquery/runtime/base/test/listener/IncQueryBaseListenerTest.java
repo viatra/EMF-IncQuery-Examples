@@ -3,25 +3,27 @@ package org.eclipse.incquery.runtime.base.test.listener;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Assert;
 import org.junit.Test;
 
 import school.Course;
+import school.School;
 import school.SchoolFactory;
 
 /**
- * Wrapper class for the listener based EMF-IncQuery Base test cases.
+ * Wrapper class for the listener based EMF-IncQuery-Base test cases.
  * <br><br>
  * The class defines a test method where a new {@link Course} instance will be inserted into the model. 
  * Subclasses must define the way the various listeners are registered and unregistered. 
  * <br><br>
- * Subclasses is not required to define an own @Test method.
+ * Subclasses are not required to define an own @Test method.
  * The implementation uses {@link RecordingCommand} for model manipulation and 
- * undoes the top of the {@link CommandStack} after listener unregistration.
- * This way the model will return to its original state. 
+ * undoes the top of the {@link CommandStack} after listener unregistration, 
+ * this way the model will return to its original state. 
  * 
  * @author Tamas Szabo
  *
@@ -64,11 +66,12 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 	public void listenerBasedTest() {		
 		registerListener();
 		
-		final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+		final Command command = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
 			@Override
 			protected void doExecute() {
 				try {
-					ResourceAccess.getFirstSchool().getCourses().add(newCourse);
+				    EObject firstSchool = ModelManager.getModel().getResources().get(0).getContents().get(0);
+					((School) firstSchool).getCourses().add(newCourse);
 				} catch (RuntimeException ex) {
 					Assert.fail("Exception: " + ex.getMessage());
 					throw ex;
@@ -76,10 +79,10 @@ public abstract class IncQueryBaseListenerTest extends IncQueryBaseParameterized
 			}
 		};
 		try {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+		    ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(command);
 		}
 		finally {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+		    ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
 			unregisterListener();
 		}
 	}

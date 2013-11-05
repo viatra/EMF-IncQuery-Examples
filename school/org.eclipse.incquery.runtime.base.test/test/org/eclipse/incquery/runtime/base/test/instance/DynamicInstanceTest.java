@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseDynamicParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.DynamicResourceMetamodel;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
 import school.Course;
@@ -34,7 +34,7 @@ public class DynamicInstanceTest extends IncQueryBaseDynamicParameterizedTest {
 	@Test
 	public void allInstancesTest() {		
 		Collection<EObject> result = navigationHelper.getAllInstances(DynamicResourceMetamodel.eINSTANCE.StudentEClass);
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj.eClass().equals(DynamicResourceMetamodel.eINSTANCE.StudentEClass)) {
 				assertTrue(result.contains(obj));
 			}
@@ -48,7 +48,7 @@ public class DynamicInstanceTest extends IncQueryBaseDynamicParameterizedTest {
 	@Test
 	public void directInstancesTest() {		
 		Collection<EObject> result = navigationHelper.getDirectInstances(DynamicResourceMetamodel.eINSTANCE.CourseEClass);
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj.eClass().equals(DynamicResourceMetamodel.eINSTANCE.SpecialisationCourseEClass)) {
 				assertTrue(!result.contains(obj));
 			}

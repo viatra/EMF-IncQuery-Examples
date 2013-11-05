@@ -8,7 +8,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
 import school.Course;
@@ -34,7 +34,7 @@ public class InstanceTest extends IncQueryBaseParameterizedTest {
 	@Test
 	public void allInstancesTest() {		
 		Collection<EObject> result = navigationHelper.getAllInstances(SchoolPackage.Literals.STUDENT);
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj instanceof Student) {
 				assertTrue(result.contains(obj));
 			}
@@ -48,7 +48,7 @@ public class InstanceTest extends IncQueryBaseParameterizedTest {
 	@Test
 	public void directInstancesTest() {		
 		Collection<EObject> result = navigationHelper.getDirectInstances(SchoolPackage.Literals.COURSE);
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj instanceof SpecialisationCourse) {
 				assertTrue(!result.contains(obj));
 			}

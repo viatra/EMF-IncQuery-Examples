@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.api.FeatureListener;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -53,7 +53,7 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
 	 * @param notifier
 	 */
 	public ContainmentManglingTest() {
-		super(ResourceAccess.getResourceOfFirstSchool(), true, false);
+		super(ModelManager.getModel().getResources().get(0), true, false);
 	}
 	
 	private Set<EStructuralFeature> listenerFeatures;
@@ -116,11 +116,11 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
 	
 	@Test
 	public void containmentRootReplacer() {
-		final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+		final Command command = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
 			@Override
 			protected void doExecute() {
 				try {
-					final Resource resource = ResourceAccess.getResourceOfFirstSchool();
+					final Resource resource = ModelManager.getModel().getResources().get(0);
 					final EList<EObject> toplevel = resource.getContents();
 					
 					assertEquals(1, toplevel.size());
@@ -162,10 +162,10 @@ public class ContainmentManglingTest extends IncQueryBaseTest {
 			}
 		};
 		try {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(command);
 		}
 		finally {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
 		}
 		
 	}

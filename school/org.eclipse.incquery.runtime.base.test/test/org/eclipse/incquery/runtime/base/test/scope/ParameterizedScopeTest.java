@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -91,8 +91,8 @@ public class ParameterizedScopeTest extends IncQueryBaseParameterizedTest {
 		// pattern studentOfSchool(S, Sch) {
 		// Student.schoolClass.courses.school(S, Sch);
 		// }
-		for (Setting schoolInverseRef : navigationHelper
-				.getInverseReferences(ResourceAccess.getFirstSchool())) {
+		EObject school = ModelManager.getModel().getResources().get(0).getContents().get(0);
+		for (Setting schoolInverseRef : navigationHelper.getInverseReferences(school)) {
 
 			if (schoolInverseRef.getEObject() instanceof Course) {
 

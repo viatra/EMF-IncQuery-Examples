@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
 import school.Course;
@@ -24,7 +24,7 @@ import school.Teacher;
 public class ResourceSetScopeTest extends IncQueryBaseTest {
 
 	public ResourceSetScopeTest() {
-		super(ResourceAccess.getResourceSet());
+		super(ModelManager.getModel());
 	}
 	
 	@Test

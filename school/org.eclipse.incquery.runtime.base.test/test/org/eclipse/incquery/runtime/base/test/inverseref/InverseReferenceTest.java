@@ -15,11 +15,12 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Before;
 import org.junit.Test;
 
 import school.Course;
+import school.School;
 import school.SchoolFactory;
 import school.SchoolPackage;
 import school.Student;
@@ -94,11 +95,11 @@ public class InverseReferenceTest extends IncQueryBaseParameterizedTest {
 	@Test
 	public void valueAndReferencesModTest() {
 		try {
-			final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+			final Command command = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
 				@Override
 				protected void doExecute() {
-					
-					for (Course c : ResourceAccess.getFirstSchool().getCourses()) {
+					School firstSchool = (School) ModelManager.getModel().getResources().get(0).getContents().get(0);
+					for (Course c : firstSchool.getCourses()) {
 						if (c.getSchoolClass() != null) {
 							List<Student> students = new ArrayList<Student>(c.getSchoolClass().getStudents());
 							for (Student s : students) {
@@ -110,7 +111,7 @@ public class InverseReferenceTest extends IncQueryBaseParameterizedTest {
 					}
 				}
 			};
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(command);
 			
 			List<EReference> references = new ArrayList<EReference>();
 			references.add(SchoolFactory.eINSTANCE.getSchoolPackage().getStudent_FriendsWith());
@@ -122,7 +123,7 @@ public class InverseReferenceTest extends IncQueryBaseParameterizedTest {
 			assertEquals(student, result.iterator().next().get(false));
 		}
 		finally {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
 		}
 	}
 }
