@@ -19,7 +19,7 @@ import org.eclipse.incquery.runtime.base.api.TransitiveClosureHelper;
 import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseDynamicParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.DynamicResourceMetamodel;
-import org.eclipse.incquery.runtime.base.test.util.DynamicResourceModel;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -70,7 +70,7 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 2);
             assertTrue(transitiveClosureHelper.getAllReachableTargets(aStudent).size() == 0);
 
-            Command firstCommand = new RecordingCommand(DynamicResourceModel.getInstance().getTransactionalEditingDomain()) {
+            Command firstCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @SuppressWarnings("unchecked")
                 @Override
                 protected void doExecute() {
@@ -79,14 +79,13 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
                     friendsWith.add(aStudent);
                 }
             };
-            
-            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack()
-                    .execute(firstCommand);
+
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(firstCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
                     && transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
 
-            Command secondCommand = new RecordingCommand(DynamicResourceModel.getInstance().getTransactionalEditingDomain()) {
+            Command secondCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @SuppressWarnings("unchecked")
                 @Override
                 protected void doExecute() {
@@ -95,8 +94,7 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
                     friendsWith.add(bStudent);
                 }
             };
-            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack()
-                    .execute(secondCommand);
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(secondCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
                     && transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
@@ -104,8 +102,8 @@ public class DynamicTransitiveClosureHelperTest extends IncQueryBaseDynamicParam
             assertTrue(!transitiveClosureHelper.isReachable(bStudent, cStudent));
         } finally {
             // Undo the previously executed commands to restore the original state of the model
-            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack().undo();
-            DynamicResourceModel.getInstance().getTransactionalEditingDomain().getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
         }
     }
 }

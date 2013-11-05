@@ -2,13 +2,8 @@ package org.eclipse.incquery.runtime.base.test.util;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 public class DynamicResourceModel {
     
@@ -35,16 +30,7 @@ public class DynamicResourceModel {
     public EObject Graphtransformations;
     public EObject Eclipsebaseddevelopmentandintegration;
     
-    private static DynamicResourceModel instance;
-    
-    public static DynamicResourceModel getInstance() {
-        if (instance == null) {
-            instance = new DynamicResourceModel();
-        }
-        return instance;
-    }
-    
-    private DynamicResourceModel() {
+    DynamicResourceModel() {
 
         EFactory schoolFactoryInstance = DynamicResourceMetamodel.eINSTANCE.schoolEPackage.getEFactoryInstance();
 
@@ -188,16 +174,5 @@ public class DynamicResourceModel {
         friendsWith.add(AkosHorvath);
         IstvanRath.eSet(DynamicResourceMetamodel.eINSTANCE.StudentFriendsWithEReference, friendsWith);
     }
-    
-    private TransactionalEditingDomain editingDomain;
-    
-    public TransactionalEditingDomain getTransactionalEditingDomain() {
-        if (editingDomain == null) {
-            ResourceSet resourceSet = new ResourceSetImpl();
-            Resource resource = resourceSet.createResource(URI.createURI("test"));
-            resource.getContents().add(school);
-            editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);            
-        }
-        return editingDomain;
-    }
+   
 }

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseDynamicParameterizedTest;
 import org.eclipse.incquery.runtime.base.test.util.DynamicResourceMetamodel;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
 /**
@@ -30,7 +30,7 @@ public class DynamicFeatureTest extends IncQueryBaseDynamicParameterizedTest {
 	@Test
 	public void holderTest() {		
 		Collection<EObject> result = navigationHelper.getHoldersOfFeature(DynamicResourceMetamodel.eINSTANCE.StudentNameEAttribute);
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj.eClass().equals(DynamicResourceMetamodel.eINSTANCE.StudentEClass)) {
 				assertTrue(result.contains(obj));
 			}

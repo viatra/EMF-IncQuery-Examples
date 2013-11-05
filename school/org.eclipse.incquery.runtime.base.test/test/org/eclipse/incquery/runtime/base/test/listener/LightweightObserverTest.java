@@ -18,8 +18,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.incquery.runtime.base.api.LightweightEObjectObserver;
 import org.eclipse.incquery.runtime.base.api.LightweightEObjectObserverAdapter;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 
+import school.School;
 import school.SchoolPackage;
 
 import com.google.common.collect.Sets;
@@ -33,6 +34,8 @@ public class LightweightObserverTest extends IncQueryBaseListenerTest {
     private LightweightEObjectObserver observer;
     private LightweightEObjectObserverAdapter adapter;
     private EStructuralFeature feature;
+    private School firstSchool;
+    private School secondSchool;
     
     /**
      * @param notifier
@@ -41,14 +44,15 @@ public class LightweightObserverTest extends IncQueryBaseListenerTest {
         super(notifier, false);
         
         feature = SchoolPackage.eINSTANCE.getSchool_Courses();
-        
+        firstSchool = (School) ModelManager.getModel().getResources().get(0).getContents().get(0);
+        secondSchool = (School) ModelManager.getModel().getResources().get(1).getContents().get(0);
         observer = new LightweightEObjectObserver() {
 
             @Override
             public void notifyFeatureChanged(EObject host, EStructuralFeature feature, Notification notification) {
-                boolean courseAdded = host.equals(ResourceAccess.getFirstSchool()) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
+                boolean courseAdded = host.equals(firstSchool) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
                         && newCourse.equals(notification.getNewValue());
-                boolean courseRemoved = host.equals(ResourceAccess.getFirstSchool()) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
+                boolean courseRemoved = host.equals(firstSchool) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
                         && notification.getNewValue() == null;
                 assertTrue(courseAdded || courseRemoved);
             }
@@ -58,9 +62,9 @@ public class LightweightObserverTest extends IncQueryBaseListenerTest {
             
             @Override
             public void observedFeatureUpdate(EObject host, EStructuralFeature feature, Notification notification) {
-                boolean courseAdded = host.equals(ResourceAccess.getFirstSchool()) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
+                boolean courseAdded = host.equals(firstSchool) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
                         && newCourse.equals(notification.getNewValue());
-                boolean courseRemoved = host.equals(ResourceAccess.getFirstSchool()) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
+                boolean courseRemoved = host.equals(firstSchool) && feature.equals(SchoolPackage.eINSTANCE.getSchool_Courses())
                         && notification.getNewValue() == null;
                 assertTrue(courseAdded || courseRemoved);
             }
@@ -70,18 +74,18 @@ public class LightweightObserverTest extends IncQueryBaseListenerTest {
 
     @Override
     public void registerListener() {
-        navigationHelper.addLightweightEObjectObserver(observer, ResourceAccess.getFirstSchool());
-        navigationHelper.addLightweightEObjectObserver(adapter, ResourceAccess.getFirstSchool());
-        navigationHelper.addLightweightEObjectObserver(observer, ResourceAccess.getSecondSchool());
-        navigationHelper.addLightweightEObjectObserver(adapter, ResourceAccess.getSecondSchool());
+        navigationHelper.addLightweightEObjectObserver(observer, firstSchool);
+        navigationHelper.addLightweightEObjectObserver(adapter, firstSchool);
+        navigationHelper.addLightweightEObjectObserver(observer, secondSchool);
+        navigationHelper.addLightweightEObjectObserver(adapter, secondSchool);
     }
 
     @Override
     public void unregisterListener() {
-        navigationHelper.removeLightweightEObjectObserver(observer, ResourceAccess.getFirstSchool());
-        navigationHelper.removeLightweightEObjectObserver(adapter, ResourceAccess.getFirstSchool());
-        navigationHelper.removeLightweightEObjectObserver(observer, ResourceAccess.getSecondSchool());
-        navigationHelper.removeLightweightEObjectObserver(adapter, ResourceAccess.getSecondSchool());
+        navigationHelper.removeLightweightEObjectObserver(observer, firstSchool);
+        navigationHelper.removeLightweightEObjectObserver(adapter, firstSchool);
+        navigationHelper.removeLightweightEObjectObserver(observer, secondSchool);
+        navigationHelper.removeLightweightEObjectObserver(adapter, secondSchool);
     }
 
 }

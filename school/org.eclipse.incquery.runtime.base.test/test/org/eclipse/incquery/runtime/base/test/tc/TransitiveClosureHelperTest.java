@@ -18,7 +18,7 @@ import org.eclipse.incquery.runtime.base.api.TransitiveClosureHelper;
 import org.eclipse.incquery.runtime.base.exception.IncQueryBaseException;
 import org.eclipse.incquery.runtime.base.itc.alg.misc.Tuple;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.eclipse.incquery.runtime.base.test.util.TestObserver;
 import org.junit.After;
 import org.junit.Before;
@@ -85,7 +85,7 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
 
             transitiveClosureHelper.attachObserver(observer);
 
-            Command edgeModCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command edgeModCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @Override
                 protected void doExecute() {
                     aStudent.getFriendsWith().add(aStudent);
@@ -93,7 +93,7 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
                     aStudent.getFriendsWith().remove(bStudent);
                 }
             };
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(edgeModCommand);
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(edgeModCommand);
 
             final SchoolClass schoolClass = aStudent.getSchoolClass();
             final Student newStudent = SchoolFactory.eINSTANCE.createStudent();
@@ -102,19 +102,19 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
             observer.addInsertedTuple(new Tuple<EObject>(newStudent, aStudent));
             observer.addInsertedTuple(new Tuple<EObject>(newStudent, bStudent));
 
-            Command nodeModCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command nodeModCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @Override
                 protected void doExecute() {
                     schoolClass.getStudents().add(newStudent);
                     newStudent.getFriendsWith().add(bStudent);
                 }
             };
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(nodeModCommand);
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(nodeModCommand);
             transitiveClosureHelper.detachObserver(observer);
         } finally {
             // Undo the previously executed commands to restore the original state of the model
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
         }
     }
 
@@ -127,24 +127,24 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 2);
             assertTrue(transitiveClosureHelper.getAllReachableTargets(aStudent).size() == 0);
 
-            Command firstCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command firstCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @Override
                 protected void doExecute() {
                     aStudent.getFriendsWith().add(aStudent);
                 }
             };
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(firstCommand);
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(firstCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
                     && transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
 
-            Command secondCommand = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+            Command secondCommand = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
                 @Override
                 protected void doExecute() {
                     aStudent.getFriendsWith().add(bStudent);
                 }
             };
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(secondCommand);
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(secondCommand);
 
             assertTrue(transitiveClosureHelper.getAllReachableSources(aStudent).size() == 3
                     && transitiveClosureHelper.getAllReachableSources(aStudent).contains(aStudent));
@@ -152,8 +152,8 @@ public class TransitiveClosureHelperTest extends IncQueryBaseParameterizedTest {
             assertTrue(!transitiveClosureHelper.isReachable(bStudent, cStudent));
         } finally {
             // Undo the previously executed commands to restore the original state of the model
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
-            ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
+            ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
         }
     }
 }

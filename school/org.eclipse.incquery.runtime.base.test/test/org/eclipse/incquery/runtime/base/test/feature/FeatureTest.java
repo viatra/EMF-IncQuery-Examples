@@ -10,9 +10,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
+import school.School;
 import school.SchoolPackage;
 import school.Student;
 
@@ -34,7 +35,7 @@ public class FeatureTest extends IncQueryBaseParameterizedTest {
 	@Test
 	public void holderTest() {		
 		Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
-		for (EObject obj : ResourceAccess.getAllContents(notifier)) {
+		for (EObject obj : ModelManager.getAllContents(notifier)) {
 			if (obj instanceof Student) {
 				assertTrue(result.contains(obj));
 			}
@@ -47,23 +48,25 @@ public class FeatureTest extends IncQueryBaseParameterizedTest {
 	@Test
 	public void holderModTest() {
 		try {
-			final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+			final Command command = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
 				@Override
 				protected void doExecute() {
 					//years and courses have references to students
 					//remove all of them from the ResourceSet
-					ResourceAccess.getFirstSchool().getCourses().clear();
-					ResourceAccess.getFirstSchool().getYears().clear();
-					ResourceAccess.getSecondSchool().getCourses().clear();
-					ResourceAccess.getSecondSchool().getYears().clear();
+				    School firstSchool = (School) ModelManager.getModel().getResources().get(0).getContents().get(0);
+				    School secondSchool = (School) ModelManager.getModel().getResources().get(1).getContents().get(0);
+					firstSchool.getCourses().clear();
+					firstSchool.getYears().clear();
+					secondSchool.getCourses().clear();
+					secondSchool.getYears().clear();
 				}
 			};
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(command);
 			Collection<EObject> result = navigationHelper.getHoldersOfFeature(SchoolPackage.eINSTANCE.getStudent_Name());
 			assertTrue(result.isEmpty());
 		}
 		finally {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
 		}
 	}
 	

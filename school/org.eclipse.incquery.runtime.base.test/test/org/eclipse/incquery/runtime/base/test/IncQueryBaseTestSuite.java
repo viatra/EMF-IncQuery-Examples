@@ -17,6 +17,8 @@ import org.eclipse.incquery.runtime.base.test.listener.DataTypeListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.FeatureListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.InstanceListenerTest;
 import org.eclipse.incquery.runtime.base.test.listener.LightweightObserverTest;
+import org.eclipse.incquery.runtime.base.test.qrm.QueryResultMapTest;
+import org.eclipse.incquery.runtime.base.test.qrm.QueryResultMultimapTest;
 import org.eclipse.incquery.runtime.base.test.scope.ParameterizedScopeTest;
 import org.eclipse.incquery.runtime.base.test.scope.ResourceSetScopeTest;
 import org.eclipse.incquery.runtime.base.test.tc.DynamicTransitiveClosureHelperTest;
@@ -54,7 +56,10 @@ import org.junit.runners.Suite.SuiteClasses;
 	
 	ParameterizedScopeTest.class,
 	ResourceSetScopeTest.class,
-	ContainmentManglingTest.class
+	ContainmentManglingTest.class,
+	
+	QueryResultMapTest.class,
+	QueryResultMultimapTest.class
 })
 public class IncQueryBaseTestSuite {
 

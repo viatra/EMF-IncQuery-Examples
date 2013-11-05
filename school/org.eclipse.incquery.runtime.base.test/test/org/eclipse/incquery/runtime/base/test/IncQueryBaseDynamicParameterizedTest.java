@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.base.test.util.DynamicResourceModel;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
- * This class is the super class of all EMF-IncQuery Base Getter test cases for dynamic EMF models.
+ * This class is the super class of all EMF-IncQuery-Base test cases for dynamic EMF models.
  * 
  * @author Tamas Szabo
  * 
@@ -32,6 +32,6 @@ public abstract class IncQueryBaseDynamicParameterizedTest extends IncQueryBaseT
 
     @Parameters
     public static Collection<Notifier[]> initializeParameters() {
-        return Arrays.asList(new Notifier[][] { { DynamicResourceModel.getInstance().school } });
+        return Arrays.asList(new Notifier[][] { { ModelManager.getDynamicModel() } });
     }
 }

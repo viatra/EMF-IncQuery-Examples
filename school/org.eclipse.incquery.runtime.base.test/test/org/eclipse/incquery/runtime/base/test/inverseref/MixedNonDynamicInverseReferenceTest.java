@@ -39,7 +39,8 @@ public class MixedNonDynamicInverseReferenceTest extends IncQueryBaseDynamicPara
 	}
 
 	private EObject year2012;
-	private EObject student;
+	@SuppressWarnings("unused")
+    private EObject student;
 		
 	@Override
 	@Before

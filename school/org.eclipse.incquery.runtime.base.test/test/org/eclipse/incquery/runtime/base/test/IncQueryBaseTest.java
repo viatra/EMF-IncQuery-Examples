@@ -19,7 +19,7 @@ import org.junit.Assert;
 import org.junit.Before;
 
 /**
- * This class is the super class of all EMF-IncQuery Base test cases. 
+ * This class is the super class of all EMF-IncQuery-Base test cases. 
  * It is used to handle the {@link NavigationHelper} registration 
  * based on the given {@link Notifier} instance and wildcard mode setting. 
  * 
@@ -39,6 +39,12 @@ public abstract class IncQueryBaseTest {
 	
 	final protected ArrayList<LoggingEvent> loggedEvents = new ArrayList<LoggingEvent>();
 	
+	/**
+	 * wildcard mode default is true<br/>
+	 * dynamic mode default is false
+	 * 
+	 * @param notifier
+	 */
 	public IncQueryBaseTest(Notifier notifier) {
 		this.notifier = notifier;
 		this.wildcardMode = true;

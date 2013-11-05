@@ -11,10 +11,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.incquery.runtime.base.test.IncQueryBaseParameterizedTest;
-import org.eclipse.incquery.runtime.base.test.util.ResourceAccess;
+import org.eclipse.incquery.runtime.base.test.util.ModelManager;
 import org.junit.Test;
 
 import school.Course;
+import school.School;
 import school.SchoolPackage;
 import school.Teacher;
 import school.Year;
@@ -27,8 +28,13 @@ import school.Year;
  */
 public class DataTypeTest extends IncQueryBaseParameterizedTest {
 
+    private School firstSchool;
+    private School secondSchool;
+    
 	public DataTypeTest(Notifier notifier) {
 		super(notifier);
+        firstSchool = (School) ModelManager.getModel().getResources().get(0).getContents().get(0);
+        secondSchool = (School) ModelManager.getModel().getResources().get(1).getContents().get(0);
 	}
 
 	/**
@@ -64,35 +70,35 @@ public class DataTypeTest extends IncQueryBaseParameterizedTest {
 	public void charModTest() {
 		try {
 			//the command removes any reference to schools thus no EChar will be present in the model
-			final Command command = new RecordingCommand(ResourceAccess.getTransactionalEditingDomain()) {
+			final Command command = new RecordingCommand(ModelManager.demandCreateTransactionalEditingDomain(notifier)) {
 				@Override
 				protected void doExecute() {
 					
-					List<Course> courses = new ArrayList<Course>(ResourceAccess.getFirstSchool().getCourses());
-					courses.addAll(ResourceAccess.getSecondSchool().getCourses());
+					List<Course> courses = new ArrayList<Course>(firstSchool.getCourses());
+					courses.addAll(secondSchool.getCourses());
 					for (Course c : courses) {
 						c.setSchool(null);
 					}
 					
-					List<Teacher> teachers = new ArrayList<Teacher>(ResourceAccess.getFirstSchool().getTeachers());
-					teachers.addAll(ResourceAccess.getSecondSchool().getTeachers());
+					List<Teacher> teachers = new ArrayList<Teacher>(firstSchool.getTeachers());
+					teachers.addAll(secondSchool.getTeachers());
 					for (Teacher t : teachers) {
 						t.setSchool(null);
 					}
 					
-					List<Year> years = new ArrayList<Year>(ResourceAccess.getFirstSchool().getYears());
-					years.addAll(ResourceAccess.getSecondSchool().getYears());
+					List<Year> years = new ArrayList<Year>(firstSchool.getYears());
+					years.addAll(secondSchool.getYears());
 					for (Year y : years) {
 						y.setSchool(null);
 					}
 				}
 			};
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().execute(command);
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().execute(command);
 			Collection<Object> result = navigationHelper.getDataTypeInstances(SchoolPackage.Literals.SCHOOL_CLASS__CODE.getEAttributeType());
 			assertTrue(result.isEmpty());
 		}
 		finally {
-			ResourceAccess.getTransactionalEditingDomain().getCommandStack().undo();
+			ModelManager.demandCreateTransactionalEditingDomain(notifier).getCommandStack().undo();
 		}
 	}
 }
