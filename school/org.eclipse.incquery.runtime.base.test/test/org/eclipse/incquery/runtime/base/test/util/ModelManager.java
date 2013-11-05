@@ -2,9 +2,9 @@ package org.eclipse.incquery.runtime.base.test.util;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.WeakHashMap;
 
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -18,11 +18,25 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 import school.SchoolPackage;
 
+/**
+ * Utility class to access persisted and dynamic EMF instance models and 
+ * demand create {@link TransactionalEditingDomain}s for these models. 
+ * 
+ * @author Tamas Szabo (itemis AG)
+ *
+ */
 public class ModelManager {
 
     private static ResourceSet cachedModel = null;
     private static EObject cachedDynamicModel = null;
 
+    /**
+     * Returns a {@link ResourceSet} consisting of the persisted 
+     * model/school1.school and model/school2.school instance models (as two {@link Resource}s). 
+     * Consecutive calls return the same cached {@link ResourceSet} instance.
+     * 
+     * @return the persisted instance model
+     */
     public static ResourceSet getModel() {
         if (cachedModel == null) {
             cachedModel = new ResourceSetImpl();
@@ -36,6 +50,13 @@ public class ModelManager {
         return cachedModel;
     }
 
+    /**
+     * Returns the root (School instance) of the dynamic instance model which is populated 
+     * with similar objects as the persisted model.
+     * Consecutive calls return the same cached {@link EObject} instance.
+     * 
+     * @return the dynamic instance model
+     */
     public static EObject getDynamicModel() {
         if (cachedDynamicModel == null) {
             cachedDynamicModel = new DynamicResourceModel().school;
@@ -43,6 +64,12 @@ public class ModelManager {
         return cachedDynamicModel;
     }
 
+    /**
+     * Returns all contents of the given {@link Notifier} instance as a {@link List} of {@link EObject}s.
+     * 
+     * @param notifier the notifier instance
+     * @return the list of contents
+     */
     public static List<EObject> getAllContents(Notifier notifier) {
         List<EObject> contents = new ArrayList<EObject>();
 
@@ -64,9 +91,18 @@ public class ModelManager {
         }
     }
 
-    private static Map<ResourceSet, TransactionalEditingDomain> editingDomainMap = new WeakHashMap<ResourceSet, TransactionalEditingDomain>();
-    private static Map<Notifier, ResourceSet> resourceSetMap = new WeakHashMap<Notifier, ResourceSet>();
+    private static Map<ResourceSet, TransactionalEditingDomain> editingDomainMap = new HashMap<ResourceSet, TransactionalEditingDomain>();
+    private static Map<Notifier, ResourceSet> resourceSetMap = new HashMap<Notifier, ResourceSet>();
 
+    /**
+     * Demand creates a {@link TransactionalEditingDomain} for the given {@link Notifier}. 
+     * First a {@link ResourceSet} instance will be demand created for the {@link Notifier} and this one will 
+     * be used to create the editing domain. 
+     * Consecutive calls return the same {@link TransactionalEditingDomain} instance for the given {@link Notifier}. 
+     *
+     * @param notifier the notifier instance
+     * @return the transactional editing domain
+     */
     public static TransactionalEditingDomain demandCreateTransactionalEditingDomain(Notifier notifier) {
         ResourceSet resSet = demandCreateResourceSet(notifier);
         
