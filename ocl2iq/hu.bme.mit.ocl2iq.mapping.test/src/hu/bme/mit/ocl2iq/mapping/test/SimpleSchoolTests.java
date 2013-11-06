@@ -130,6 +130,13 @@ public class SimpleSchoolTests {
 		final EClass context = SCHOOL.getSchoolClass();
 		testCode(oclCode, context);
 	}
+	
+	@Test
+	public void translateTest015() throws ParserException {
+		final String oclCode = "students->collect(if (name = 'Istvan Rath') then 'almafa' else name endif)";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
 
 	
 }
