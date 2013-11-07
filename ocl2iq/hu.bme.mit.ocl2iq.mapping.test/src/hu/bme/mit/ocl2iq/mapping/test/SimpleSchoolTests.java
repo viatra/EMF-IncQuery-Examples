@@ -30,7 +30,8 @@ public class SimpleSchoolTests {
 	private static final SchoolPackage SCHOOL = SchoolPackage.eINSTANCE;
 	private void testCode(final String oclCode, final EClass context)
 			throws ParserException {
-		System.out.println("\n*** generating output for context " + context.getName() + ": " + oclCode);
+		System.out.println("\n// *** generating output for context " + context.getName() + ": ");
+		System.out.println("// "+ oclCode);
 		final OCLExpression exp = new OCLParseControl().parse(context, oclCode);
 		final String patternCode = new OCL2IQ(context, exp, "translated").gen().toString(); 
 		System.out.println(patternCode);
@@ -134,6 +135,54 @@ public class SimpleSchoolTests {
 	@Test
 	public void translateTest015() throws ParserException {
 		final String oclCode = "students->collect(if (name = 'Istvan Rath') then 'almafa' else name endif)";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest016() throws ParserException {
+		final String oclCode = "courses->reject(oclIsKindOf(LimitedCapacityCourse))";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest017() throws ParserException {
+		final String oclCode = "courses->reject(c | LimitedCapacityCourse.allInstances()->includes(c))";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest018() throws ParserException {
+		final String oclCode = "courses->reject(c | Course.allInstances()->includes(c))->isEmpty()";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest019() throws ParserException {
+		final String oclCode = "courses->reject(oclIsKindOf(LimitedCapacityCourse))->notEmpty()";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest020() throws ParserException {
+		final String oclCode = "courses->exists(oclIsKindOf(LimitedCapacityCourse))";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest021() throws ParserException {
+		final String oclCode = "courses->forAll(oclIsKindOf(LimitedCapacityCourse))";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest022() throws ParserException {
+		final String oclCode = "Set{1,2,3,4}";
+		final EClass context = SCHOOL.getSchoolClass();
+		testCode(oclCode, context);
+	}
+	@Test
+	public void translateTest023() throws ParserException {
+		final String oclCode = "year->notEmpty()";
 		final EClass context = SCHOOL.getSchoolClass();
 		testCode(oclCode, context);
 	}
