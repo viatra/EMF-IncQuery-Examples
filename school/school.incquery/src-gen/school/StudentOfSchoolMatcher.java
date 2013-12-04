@@ -44,6 +44,15 @@ import school.util.StudentOfSchoolQuerySpecification;
 @SuppressWarnings("all")
 public class StudentOfSchoolMatcher extends BaseMatcher<StudentOfSchoolMatch> {
   /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<StudentOfSchoolMatcher> querySpecification() throws IncQueryException {
+    return StudentOfSchoolQuerySpecification.instance();
+  }
+  
+  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -302,14 +311,5 @@ public class StudentOfSchoolMatcher extends BaseMatcher<StudentOfSchoolMatch> {
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<StudentOfSchoolMatcher> querySpecification() throws IncQueryException {
-    return StudentOfSchoolQuerySpecification.instance();
   }
 }

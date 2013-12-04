@@ -98,37 +98,37 @@ public final class SimpleSchoolQueries extends BaseGeneratedPatternGroup {
   private static SimpleSchoolQueries INSTANCE;
   
   private SimpleSchoolQueries() throws IncQueryException {
-    querySpecifications.add(FriendlyToMatcher.querySpecification());
-    querySpecifications.add(TheOnesWithTheBiggestCircleMatcher.querySpecification());
-    querySpecifications.add(TeachesMoreClassesMatcher.querySpecification());
-    querySpecifications.add(TeacherWithoutClassMatcher.querySpecification());
-    querySpecifications.add(FinalPattern2Matcher.querySpecification());
-    querySpecifications.add(MoreFriendsThanMatcher.querySpecification());
-    querySpecifications.add(CoursesOfTeacherMatcher.querySpecification());
-    querySpecifications.add(TeacherWithoutClassNamesMatcher.querySpecification());
     querySpecifications.add(FinalPatternMatcher.querySpecification());
+    querySpecifications.add(TeachesMoreClassesMatcher.querySpecification());
+    querySpecifications.add(MoreFriendsThanMatcher.querySpecification());
     querySpecifications.add(TheOnesWithTheBiggestCircleNameMatcher.querySpecification());
-    querySpecifications.add(CoursesMatcher.querySpecification());
-    querySpecifications.add(StudentOfSchoolMatcher.querySpecification());
-    querySpecifications.add(CourseWithNameLongerThanWeightMatcher.querySpecification());
-    querySpecifications.add(ClassesOfTeacherMatcher.querySpecification());
-    querySpecifications.add(StudentOfSchoolNamesMatcher.querySpecification());
-    querySpecifications.add(CourseWithNameLongerThanWeightIntMatcher.querySpecification());
-    querySpecifications.add(InTheCircleOfFriendsNamesMatcher.querySpecification());
-    querySpecifications.add(TeachersOfSchoolNamesMatcher.querySpecification());
-    querySpecifications.add(CourseWithWeightThirtyMatcher.querySpecification());
-    querySpecifications.add(SomeCourseMatcher.querySpecification());
-    querySpecifications.add(CourseWithPrimeWeightMatcher.querySpecification());
     querySpecifications.add(TeachersMatcher.querySpecification());
-    querySpecifications.add(ClassesOfTeacherNamesMatcher.querySpecification());
-    querySpecifications.add(ClassesOfSchoolMatcher.querySpecification());
-    querySpecifications.add(SchoolsMatcher.querySpecification());
-    querySpecifications.add(InTheCircleOfFriendsMatcher.querySpecification());
     querySpecifications.add(TeachersNamesMatcher.querySpecification());
-    querySpecifications.add(SchoolsNamesMatcher.querySpecification());
+    querySpecifications.add(StudentOfSchoolNamesMatcher.querySpecification());
+    querySpecifications.add(CoursesMatcher.querySpecification());
+    querySpecifications.add(FinalPattern2Matcher.querySpecification());
+    querySpecifications.add(ClassesOfTeacherMatcher.querySpecification());
+    querySpecifications.add(FriendlyToMatcher.querySpecification());
+    querySpecifications.add(SchoolsMatcher.querySpecification());
+    querySpecifications.add(CourseWithWeightThirtyMatcher.querySpecification());
     querySpecifications.add(CoursesOfTeacherNamesMatcher.querySpecification());
+    querySpecifications.add(TheOnesWithTheBiggestCircleMatcher.querySpecification());
+    querySpecifications.add(InTheCircleOfFriendsNamesMatcher.querySpecification());
     querySpecifications.add(TeachersOfSchoolMatcher.querySpecification());
+    querySpecifications.add(SchoolsNamesMatcher.querySpecification());
+    querySpecifications.add(CourseWithPrimeWeightMatcher.querySpecification());
+    querySpecifications.add(InTheCircleOfFriendsMatcher.querySpecification());
+    querySpecifications.add(ClassesOfSchoolMatcher.querySpecification());
+    querySpecifications.add(StudentOfSchoolMatcher.querySpecification());
+    querySpecifications.add(TeachersOfSchoolNamesMatcher.querySpecification());
+    querySpecifications.add(TeacherWithoutClassNamesMatcher.querySpecification());
+    querySpecifications.add(CourseWithNameLongerThanWeightIntMatcher.querySpecification());
+    querySpecifications.add(SomeCourseMatcher.querySpecification());
+    querySpecifications.add(TeacherWithoutClassMatcher.querySpecification());
+    querySpecifications.add(ClassesOfTeacherNamesMatcher.querySpecification());
     querySpecifications.add(TeachesTheMostCoursesMatcher.querySpecification());
+    querySpecifications.add(CoursesOfTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithNameLongerThanWeightMatcher.querySpecification());
     
   }
 }

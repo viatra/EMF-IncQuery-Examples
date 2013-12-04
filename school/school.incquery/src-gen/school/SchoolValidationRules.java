@@ -20,6 +20,7 @@ import school.CourseWithoutTeacherMatcher;
  * @see IPatternGroup
  * 
  */
+@SuppressWarnings("all")
 public final class SchoolValidationRules extends BaseGeneratedPatternGroup {
   /**
    * Access the pattern group.

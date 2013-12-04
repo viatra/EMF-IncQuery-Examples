@@ -1,7 +1,9 @@
 package school.util;
 
+import com.google.common.collect.ImmutableList;
 import java.util.Map;
 import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
+import org.eclipse.incquery.runtime.rete.construction.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
@@ -9,10 +11,15 @@ import org.eclipse.incquery.runtime.rete.tuple.Tuple;
  */
 @SuppressWarnings("all")
 public class CourseWithPrimeWeightEvaluator1_1 implements IMatchChecker {
+  private ImmutableList<String> parameterNames = ImmutableList.of(
+    "W"	
+    );
+    ;
+  
   /**
    * The raw java code generated from the xbase xexpression by xtext.
    */
-  private Boolean evaluateXExpressionGenerated(final Integer W) {
+  private Boolean evaluateGeneratedExpression(final Integer W) {
     boolean _xifexpression = false;
     int _modulo = ((W).intValue() % 2);
     boolean _equals = (_modulo == 0);
@@ -50,9 +57,38 @@ public class CourseWithPrimeWeightEvaluator1_1 implements IMatchChecker {
    * A wrapper method for calling the generated java method with the correct attributes.
    */
   @Override
+  @Deprecated
   public Boolean evaluateXExpression(final Tuple tuple, final Map<String,Integer> tupleNameMap) {
     int WPosition = tupleNameMap.get("W");
     java.lang.Integer W = (java.lang.Integer) tuple.get(WPosition);
-    return evaluateXExpressionGenerated(W);
+    return evaluateGeneratedExpression(W);
+  }
+  
+  /**
+   * A wrapper method for calling the generated java method with the correct attributes.
+   */
+  @Override
+  public Boolean evaluateExpression(final IValueProvider provider) {
+    java.lang.Integer W = (java.lang.Integer) provider.getValue("W");
+    return evaluateGeneratedExpression(W);
+    
+  }
+  
+  /**
+   * A wrapper method for calling the generated java method with the correct attributes.
+   */
+  @Override
+  public Iterable<String> getInputParameterNames() {
+    return parameterNames;
+    
+  }
+  
+  /**
+   * A wrapper method for calling the generated java method with the correct attributes.
+   */
+  @Override
+  public String getShortDescription() {
+    return "XExpression 1_1 from Pattern courseWithPrimeWeight";
+    
   }
 }

@@ -39,6 +39,15 @@ import school.util.CoursesQuerySpecification;
 @SuppressWarnings("all")
 public class CoursesMatcher extends BaseMatcher<CoursesMatch> {
   /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<CoursesMatcher> querySpecification() throws IncQueryException {
+    return CoursesQuerySpecification.instance();
+  }
+  
+  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -231,14 +240,5 @@ public class CoursesMatcher extends BaseMatcher<CoursesMatch> {
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<CoursesMatcher> querySpecification() throws IncQueryException {
-    return CoursesQuerySpecification.instance();
   }
 }

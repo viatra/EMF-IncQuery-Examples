@@ -55,6 +55,15 @@ import school.util.FinalPatternQuerySpecification;
 @SuppressWarnings("all")
 public class FinalPatternMatcher extends BaseMatcher<FinalPatternMatch> {
   /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<FinalPatternMatcher> querySpecification() throws IncQueryException {
+    return FinalPatternQuerySpecification.instance();
+  }
+  
+  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -409,14 +418,5 @@ public class FinalPatternMatcher extends BaseMatcher<FinalPatternMatch> {
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<FinalPatternMatcher> querySpecification() throws IncQueryException {
-    return FinalPatternQuerySpecification.instance();
   }
 }

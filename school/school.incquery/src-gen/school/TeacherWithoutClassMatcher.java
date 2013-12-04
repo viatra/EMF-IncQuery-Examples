@@ -39,6 +39,15 @@ import school.util.TeacherWithoutClassQuerySpecification;
 @SuppressWarnings("all")
 public class TeacherWithoutClassMatcher extends BaseMatcher<TeacherWithoutClassMatch> {
   /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<TeacherWithoutClassMatcher> querySpecification() throws IncQueryException {
+    return TeacherWithoutClassQuerySpecification.instance();
+  }
+  
+  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine. 
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -231,14 +240,5 @@ public class TeacherWithoutClassMatcher extends BaseMatcher<TeacherWithoutClassM
     	return null;
     }
     
-  }
-  
-  /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<TeacherWithoutClassMatcher> querySpecification() throws IncQueryException {
-    return TeacherWithoutClassQuerySpecification.instance();
   }
 }
