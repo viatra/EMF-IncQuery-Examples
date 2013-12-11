@@ -43,266 +43,266 @@ import school.Student;
  */
 public class StudentImpl extends EObjectImpl implements Student {
 	/**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
 	protected String name = NAME_EDEFAULT;
 
 	/**
-     * The cached value of the '{@link #getFriendsWith() <em>Friends With</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFriendsWith() <em>Friends With</em>}' reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getFriendsWith()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFriendsWith()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<Student> friendsWith;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StudentImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return SchoolPackage.Literals.STUDENT;
-    }
+		return SchoolPackage.Literals.STUDENT;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getName() {
-        return name;
-    }
+		return name;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.STUDENT__NAME, oldName, name));
-    }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.STUDENT__NAME, oldName, name));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public SchoolClass getSchoolClass() {
-        if (eContainerFeatureID() != SchoolPackage.STUDENT__SCHOOL_CLASS) return null;
-        return (SchoolClass)eContainer();
-    }
+		if (eContainerFeatureID() != SchoolPackage.STUDENT__SCHOOL_CLASS) return null;
+		return (SchoolClass)eInternalContainer();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetSchoolClass(SchoolClass newSchoolClass, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newSchoolClass, SchoolPackage.STUDENT__SCHOOL_CLASS, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSchoolClass, SchoolPackage.STUDENT__SCHOOL_CLASS, msgs);
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setSchoolClass(SchoolClass newSchoolClass) {
-        if (newSchoolClass != eInternalContainer() || (eContainerFeatureID() != SchoolPackage.STUDENT__SCHOOL_CLASS && newSchoolClass != null)) {
-            if (EcoreUtil.isAncestor(this, newSchoolClass))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSchoolClass != null)
-                msgs = ((InternalEObject)newSchoolClass).eInverseAdd(this, SchoolPackage.SCHOOL_CLASS__STUDENTS, SchoolClass.class, msgs);
-            msgs = basicSetSchoolClass(newSchoolClass, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.STUDENT__SCHOOL_CLASS, newSchoolClass, newSchoolClass));
-    }
+		if (newSchoolClass != eInternalContainer() || (eContainerFeatureID() != SchoolPackage.STUDENT__SCHOOL_CLASS && newSchoolClass != null)) {
+			if (EcoreUtil.isAncestor(this, newSchoolClass))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSchoolClass != null)
+				msgs = ((InternalEObject)newSchoolClass).eInverseAdd(this, SchoolPackage.SCHOOL_CLASS__STUDENTS, SchoolClass.class, msgs);
+			msgs = basicSetSchoolClass(newSchoolClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.STUDENT__SCHOOL_CLASS, newSchoolClass, newSchoolClass));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<Student> getFriendsWith() {
-        if (friendsWith == null) {
-            friendsWith = new EObjectResolvingEList<Student>(Student.class, this, SchoolPackage.STUDENT__FRIENDS_WITH);
-        }
-        return friendsWith;
-    }
+		if (friendsWith == null) {
+			friendsWith = new EObjectResolvingEList<Student>(Student.class, this, SchoolPackage.STUDENT__FRIENDS_WITH);
+		}
+		return friendsWith;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSchoolClass((SchoolClass)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSchoolClass((SchoolClass)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                return basicSetSchoolClass(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				return basicSetSchoolClass(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                return eInternalContainer().eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__STUDENTS, SchoolClass.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				return eInternalContainer().eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__STUDENTS, SchoolClass.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__NAME:
-                return getName();
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                return getSchoolClass();
-            case SchoolPackage.STUDENT__FRIENDS_WITH:
-                return getFriendsWith();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__NAME:
+				return getName();
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				return getSchoolClass();
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				return getFriendsWith();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__NAME:
-                setName((String)newValue);
-                return;
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                setSchoolClass((SchoolClass)newValue);
-                return;
-            case SchoolPackage.STUDENT__FRIENDS_WITH:
-                getFriendsWith().clear();
-                getFriendsWith().addAll((Collection<? extends Student>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__NAME:
+				setName((String)newValue);
+				return;
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				setSchoolClass((SchoolClass)newValue);
+				return;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				getFriendsWith().clear();
+				getFriendsWith().addAll((Collection<? extends Student>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                setSchoolClass((SchoolClass)null);
-                return;
-            case SchoolPackage.STUDENT__FRIENDS_WITH:
-                getFriendsWith().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				setSchoolClass((SchoolClass)null);
+				return;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				getFriendsWith().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.STUDENT__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case SchoolPackage.STUDENT__SCHOOL_CLASS:
-                return getSchoolClass() != null;
-            case SchoolPackage.STUDENT__FRIENDS_WITH:
-                return friendsWith != null && !friendsWith.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.STUDENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SchoolPackage.STUDENT__SCHOOL_CLASS:
+				return getSchoolClass() != null;
+			case SchoolPackage.STUDENT__FRIENDS_WITH:
+				return friendsWith != null && !friendsWith.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } //StudentImpl
