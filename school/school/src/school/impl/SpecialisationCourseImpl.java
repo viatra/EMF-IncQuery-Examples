@@ -30,137 +30,137 @@ import school.SpecialisationCourse;
  */
 public class SpecialisationCourseImpl extends CourseImpl implements SpecialisationCourse {
 	/**
-     * The default value of the '{@link #getSpecialisation() <em>Specialisation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSpecialisation() <em>Specialisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSpecialisation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSpecialisation()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String SPECIALISATION_EDEFAULT = null;
 
 	/**
-     * The cached value of the '{@link #getSpecialisation() <em>Specialisation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSpecialisation() <em>Specialisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSpecialisation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSpecialisation()
+	 * @generated
+	 * @ordered
+	 */
 	protected String specialisation = SPECIALISATION_EDEFAULT;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected SpecialisationCourseImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return SchoolPackage.Literals.SPECIALISATION_COURSE;
-    }
+		return SchoolPackage.Literals.SPECIALISATION_COURSE;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getSpecialisation() {
-        return specialisation;
-    }
+		return specialisation;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setSpecialisation(String newSpecialisation) {
-        String oldSpecialisation = specialisation;
-        specialisation = newSpecialisation;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION, oldSpecialisation, specialisation));
-    }
+		String oldSpecialisation = specialisation;
+		specialisation = newSpecialisation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION, oldSpecialisation, specialisation));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
-                return getSpecialisation();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
+				return getSpecialisation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
-                setSpecialisation((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
+				setSpecialisation((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
-                setSpecialisation(SPECIALISATION_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
+				setSpecialisation(SPECIALISATION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
-                return SPECIALISATION_EDEFAULT == null ? specialisation != null : !SPECIALISATION_EDEFAULT.equals(specialisation);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.SPECIALISATION_COURSE__SPECIALISATION:
+				return SPECIALISATION_EDEFAULT == null ? specialisation != null : !SPECIALISATION_EDEFAULT.equals(specialisation);
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (specialisation: ");
-        result.append(specialisation);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (specialisation: ");
+		result.append(specialisation);
+		result.append(')');
+		return result.toString();
+	}
 
 } //SpecialisationCourseImpl

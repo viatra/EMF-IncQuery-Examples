@@ -48,358 +48,358 @@ import school.Teacher;
  */
 public class TeacherImpl extends EObjectImpl implements Teacher {
 	/**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
 	protected String name = NAME_EDEFAULT;
 
 	/**
-     * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getCourses()
-     * @generated
-     * @ordered
-     */
+	 * @see #getCourses()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<Course> courses;
 
 	/**
-     * The cached value of the '{@link #getHomeroomedClass() <em>Homeroomed Class</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHomeroomedClass() <em>Homeroomed Class</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getHomeroomedClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getHomeroomedClass()
+	 * @generated
+	 * @ordered
+	 */
 	protected SchoolClass homeroomedClass;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected TeacherImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return SchoolPackage.Literals.TEACHER;
-    }
+		return SchoolPackage.Literals.TEACHER;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getName() {
-        return name;
-    }
+		return name;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__NAME, oldName, name));
-    }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__NAME, oldName, name));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public School getSchool() {
-        if (eContainerFeatureID() != SchoolPackage.TEACHER__SCHOOL) return null;
-        return (School)eContainer();
-    }
+		if (eContainerFeatureID() != SchoolPackage.TEACHER__SCHOOL) return null;
+		return (School)eInternalContainer();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetSchool(School newSchool, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newSchool, SchoolPackage.TEACHER__SCHOOL, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSchool, SchoolPackage.TEACHER__SCHOOL, msgs);
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setSchool(School newSchool) {
-        if (newSchool != eInternalContainer() || (eContainerFeatureID() != SchoolPackage.TEACHER__SCHOOL && newSchool != null)) {
-            if (EcoreUtil.isAncestor(this, newSchool))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSchool != null)
-                msgs = ((InternalEObject)newSchool).eInverseAdd(this, SchoolPackage.SCHOOL__TEACHERS, School.class, msgs);
-            msgs = basicSetSchool(newSchool, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__SCHOOL, newSchool, newSchool));
-    }
+		if (newSchool != eInternalContainer() || (eContainerFeatureID() != SchoolPackage.TEACHER__SCHOOL && newSchool != null)) {
+			if (EcoreUtil.isAncestor(this, newSchool))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSchool != null)
+				msgs = ((InternalEObject)newSchool).eInverseAdd(this, SchoolPackage.SCHOOL__TEACHERS, School.class, msgs);
+			msgs = basicSetSchool(newSchool, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__SCHOOL, newSchool, newSchool));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<Course> getCourses() {
-        if (courses == null) {
-            courses = new EObjectWithInverseEList<Course>(Course.class, this, SchoolPackage.TEACHER__COURSES, SchoolPackage.COURSE__TEACHER);
-        }
-        return courses;
-    }
+		if (courses == null) {
+			courses = new EObjectWithInverseEList<Course>(Course.class, this, SchoolPackage.TEACHER__COURSES, SchoolPackage.COURSE__TEACHER);
+		}
+		return courses;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public SchoolClass getHomeroomedClass() {
-        if (homeroomedClass != null && homeroomedClass.eIsProxy()) {
-            InternalEObject oldHomeroomedClass = (InternalEObject)homeroomedClass;
-            homeroomedClass = (SchoolClass)eResolveProxy(oldHomeroomedClass);
-            if (homeroomedClass != oldHomeroomedClass) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchoolPackage.TEACHER__HOMEROOMED_CLASS, oldHomeroomedClass, homeroomedClass));
-            }
-        }
-        return homeroomedClass;
-    }
+		if (homeroomedClass != null && homeroomedClass.eIsProxy()) {
+			InternalEObject oldHomeroomedClass = (InternalEObject)homeroomedClass;
+			homeroomedClass = (SchoolClass)eResolveProxy(oldHomeroomedClass);
+			if (homeroomedClass != oldHomeroomedClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchoolPackage.TEACHER__HOMEROOMED_CLASS, oldHomeroomedClass, homeroomedClass));
+			}
+		}
+		return homeroomedClass;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public SchoolClass basicGetHomeroomedClass() {
-        return homeroomedClass;
-    }
+		return homeroomedClass;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetHomeroomedClass(SchoolClass newHomeroomedClass, NotificationChain msgs) {
-        SchoolClass oldHomeroomedClass = homeroomedClass;
-        homeroomedClass = newHomeroomedClass;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__HOMEROOMED_CLASS, oldHomeroomedClass, newHomeroomedClass);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		SchoolClass oldHomeroomedClass = homeroomedClass;
+		homeroomedClass = newHomeroomedClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__HOMEROOMED_CLASS, oldHomeroomedClass, newHomeroomedClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setHomeroomedClass(SchoolClass newHomeroomedClass) {
-        if (newHomeroomedClass != homeroomedClass) {
-            NotificationChain msgs = null;
-            if (homeroomedClass != null)
-                msgs = ((InternalEObject)homeroomedClass).eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
-            if (newHomeroomedClass != null)
-                msgs = ((InternalEObject)newHomeroomedClass).eInverseAdd(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
-            msgs = basicSetHomeroomedClass(newHomeroomedClass, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__HOMEROOMED_CLASS, newHomeroomedClass, newHomeroomedClass));
-    }
+		if (newHomeroomedClass != homeroomedClass) {
+			NotificationChain msgs = null;
+			if (homeroomedClass != null)
+				msgs = ((InternalEObject)homeroomedClass).eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
+			if (newHomeroomedClass != null)
+				msgs = ((InternalEObject)newHomeroomedClass).eInverseAdd(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
+			msgs = basicSetHomeroomedClass(newHomeroomedClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchoolPackage.TEACHER__HOMEROOMED_CLASS, newHomeroomedClass, newHomeroomedClass));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__SCHOOL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSchool((School)otherEnd, msgs);
-            case SchoolPackage.TEACHER__COURSES:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                if (homeroomedClass != null)
-                    msgs = ((InternalEObject)homeroomedClass).eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
-                return basicSetHomeroomedClass((SchoolClass)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__SCHOOL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSchool((School)otherEnd, msgs);
+			case SchoolPackage.TEACHER__COURSES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				if (homeroomedClass != null)
+					msgs = ((InternalEObject)homeroomedClass).eInverseRemove(this, SchoolPackage.SCHOOL_CLASS__HOMEROOM_TEACHER, SchoolClass.class, msgs);
+				return basicSetHomeroomedClass((SchoolClass)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__SCHOOL:
-                return basicSetSchool(null, msgs);
-            case SchoolPackage.TEACHER__COURSES:
-                return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                return basicSetHomeroomedClass(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__SCHOOL:
+				return basicSetSchool(null, msgs);
+			case SchoolPackage.TEACHER__COURSES:
+				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				return basicSetHomeroomedClass(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
-            case SchoolPackage.TEACHER__SCHOOL:
-                return eInternalContainer().eInverseRemove(this, SchoolPackage.SCHOOL__TEACHERS, School.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SchoolPackage.TEACHER__SCHOOL:
+				return eInternalContainer().eInverseRemove(this, SchoolPackage.SCHOOL__TEACHERS, School.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__NAME:
-                return getName();
-            case SchoolPackage.TEACHER__SCHOOL:
-                return getSchool();
-            case SchoolPackage.TEACHER__COURSES:
-                return getCourses();
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                if (resolve) return getHomeroomedClass();
-                return basicGetHomeroomedClass();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__NAME:
+				return getName();
+			case SchoolPackage.TEACHER__SCHOOL:
+				return getSchool();
+			case SchoolPackage.TEACHER__COURSES:
+				return getCourses();
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				if (resolve) return getHomeroomedClass();
+				return basicGetHomeroomedClass();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__NAME:
-                setName((String)newValue);
-                return;
-            case SchoolPackage.TEACHER__SCHOOL:
-                setSchool((School)newValue);
-                return;
-            case SchoolPackage.TEACHER__COURSES:
-                getCourses().clear();
-                getCourses().addAll((Collection<? extends Course>)newValue);
-                return;
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                setHomeroomedClass((SchoolClass)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__NAME:
+				setName((String)newValue);
+				return;
+			case SchoolPackage.TEACHER__SCHOOL:
+				setSchool((School)newValue);
+				return;
+			case SchoolPackage.TEACHER__COURSES:
+				getCourses().clear();
+				getCourses().addAll((Collection<? extends Course>)newValue);
+				return;
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				setHomeroomedClass((SchoolClass)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__NAME:
-                setName(NAME_EDEFAULT);
-                return;
-            case SchoolPackage.TEACHER__SCHOOL:
-                setSchool((School)null);
-                return;
-            case SchoolPackage.TEACHER__COURSES:
-                getCourses().clear();
-                return;
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                setHomeroomedClass((SchoolClass)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case SchoolPackage.TEACHER__SCHOOL:
+				setSchool((School)null);
+				return;
+			case SchoolPackage.TEACHER__COURSES:
+				getCourses().clear();
+				return;
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				setHomeroomedClass((SchoolClass)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SchoolPackage.TEACHER__NAME:
-                return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-            case SchoolPackage.TEACHER__SCHOOL:
-                return getSchool() != null;
-            case SchoolPackage.TEACHER__COURSES:
-                return courses != null && !courses.isEmpty();
-            case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
-                return homeroomedClass != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SchoolPackage.TEACHER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SchoolPackage.TEACHER__SCHOOL:
+				return getSchool() != null;
+			case SchoolPackage.TEACHER__COURSES:
+				return courses != null && !courses.isEmpty();
+			case SchoolPackage.TEACHER__HOMEROOMED_CLASS:
+				return homeroomedClass != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(name);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } //TeacherImpl
