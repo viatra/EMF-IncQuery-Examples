@@ -11,8 +11,8 @@ import org.eclipse.incquery.runtime.api.IQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
-import org.eclipse.incquery.runtime.rete.tuple.Tuple;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EClassName pattern, 
