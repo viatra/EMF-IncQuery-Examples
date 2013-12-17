@@ -14,11 +14,11 @@ public final class SchoolValidationRulesMatchers {
     
   }
   
-  public CourseWithTeacherMatcher getCourseWithTeacherMatcher() throws IncQueryException {
-    return CourseWithTeacherMatcher.on(engine);
-  }
-  
   public CourseWithoutTeacherMatcher getCourseWithoutTeacherMatcher() throws IncQueryException {
     return CourseWithoutTeacherMatcher.on(engine);
+  }
+  
+  public CourseWithTeacherMatcher getCourseWithTeacherMatcher() throws IncQueryException {
+    return CourseWithTeacherMatcher.on(engine);
   }
 }

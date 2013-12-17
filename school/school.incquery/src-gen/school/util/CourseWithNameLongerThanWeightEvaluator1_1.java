@@ -3,8 +3,8 @@ package school.util;
 import com.google.common.collect.ImmutableList;
 import java.util.Map;
 import org.eclipse.incquery.runtime.extensibility.IMatchChecker;
-import org.eclipse.incquery.runtime.rete.construction.psystem.IValueProvider;
-import org.eclipse.incquery.runtime.rete.tuple.Tuple;
+import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
+import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 
 /**
  * A xbase xexpression evaluator tailored for the school.courseWithNameLongerThanWeight pattern.
