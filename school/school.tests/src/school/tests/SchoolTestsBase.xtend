@@ -33,7 +33,7 @@ class SchoolTestsBase extends CommonStaticQueryTester {
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
 	override queryInputEIQURI() { // Creates new resource set
-		"school.incquery/src/school/simpleSchoolQueries.eiq"
+		"school.incquery/school/simpleSchoolQueries.eiq"
 	}
 
 	def queryInputEIQ() { // Creates new resource set
