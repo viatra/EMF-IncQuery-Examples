@@ -13,8 +13,8 @@ import school.InTheCircleOfFriendsNamesMatch;
 public abstract class InTheCircleOfFriendsNamesProcessor implements IMatchProcessor<InTheCircleOfFriendsNamesMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pS1Name the value of pattern parameter S1Name in the currently processed match 
-   * @param pSomeoneName the value of pattern parameter SomeoneName in the currently processed match 
+   * @param pS1Name the value of pattern parameter S1Name in the currently processed match
+   * @param pSomeoneName the value of pattern parameter SomeoneName in the currently processed match
    * 
    */
   public abstract void process(final String pS1Name, final String pSomeoneName);

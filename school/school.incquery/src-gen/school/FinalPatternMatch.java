@@ -2,7 +2,6 @@ package school;
 
 import java.util.Arrays;
 import java.util.List;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
@@ -10,14 +9,15 @@ import school.Course;
 import school.Student;
 import school.Teacher;
 import school.Year;
+import school.util.FinalPatternQuerySpecification;
 
 /**
- * Pattern-specific match representation of the school.finalPattern pattern, 
+ * Pattern-specific match representation of the school.finalPattern pattern,
  * to be used in conjunction with {@link FinalPatternMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
- * Each instance is a (possibly partial) substitution of pattern parameters, 
- * usable to represent a match of the pattern in the result of a query, 
+ * Each instance is a (possibly partial) substitution of pattern parameters,
+ * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
  * @see FinalPatternMatcher
@@ -154,11 +154,11 @@ public abstract class FinalPatternMatch extends BasePatternMatch {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((fY == null) ? 0 : fY.hashCode()); 
-    result = prime * result + ((fC == null) ? 0 : fC.hashCode()); 
-    result = prime * result + ((fT == null) ? 0 : fT.hashCode()); 
-    result = prime * result + ((fS == null) ? 0 : fS.hashCode()); 
-    return result; 
+    result = prime * result + ((fY == null) ? 0 : fY.hashCode());
+    result = prime * result + ((fC == null) ? 0 : fC.hashCode());
+    result = prime * result + ((fT == null) ? 0 : fT.hashCode());
+    result = prime * result + ((fS == null) ? 0 : fS.hashCode());
+    return result;
     
   }
   
@@ -166,13 +166,13 @@ public abstract class FinalPatternMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof FinalPatternMatch)) { // this should be infrequent				
+    if (!(obj instanceof FinalPatternMatch)) { // this should be infrequent
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
     		return false;
     	IPatternMatch otherSig  = (IPatternMatch) obj;
-    	if (!pattern().equals(otherSig.pattern()))
+    	if (!specification().equals(otherSig.specification()))
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
@@ -189,9 +189,9 @@ public abstract class FinalPatternMatch extends BasePatternMatch {
   }
   
   @Override
-  public Pattern pattern() {
+  public FinalPatternQuerySpecification specification() {
     try {
-    	return FinalPatternMatcher.querySpecification().getPattern();
+    	return FinalPatternQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);

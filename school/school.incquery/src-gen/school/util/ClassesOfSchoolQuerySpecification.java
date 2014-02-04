@@ -1,9 +1,20 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
 import school.ClassesOfSchoolMatcher;
 
 /**
@@ -33,24 +44,44 @@ public final class ClassesOfSchoolQuerySpecification extends BaseGeneratedQueryS
   @Override
   protected ClassesOfSchoolMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return ClassesOfSchoolMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.classesOfSchool";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("SC");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("SC", "school.SchoolClass"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private ClassesOfSchoolQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_SC = body.getOrCreateVariableByName("SC");
+      new ExportedParameter(body, var_SC, "SC");
+      new TypeUnary(body, var_SC, getClassifierLiteral("http://school.ecore", "SchoolClass"), "http://school.ecore/SchoolClass");
+      body.setSymbolicParameters(Arrays.asList(var_SC));
+      bodies.add(body);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<ClassesOfSchoolQuerySpecification> {

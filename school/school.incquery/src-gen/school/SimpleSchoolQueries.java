@@ -37,7 +37,7 @@ import school.TheOnesWithTheBiggestCircleNameMatcher;
 /**
  * A pattern group formed of all patterns defined in simpleSchoolQueries.eiq.
  * 
- * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare 
+ * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare
  * an EMF-IncQuery engine for matching all patterns originally defined in file simpleSchoolQueries.eiq,
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
@@ -98,37 +98,37 @@ public final class SimpleSchoolQueries extends BaseGeneratedPatternGroup {
   private static SimpleSchoolQueries INSTANCE;
   
   private SimpleSchoolQueries() throws IncQueryException {
-    querySpecifications.add(TeachersOfSchoolMatcher.querySpecification());
-    querySpecifications.add(TeachersMatcher.querySpecification());
-    querySpecifications.add(TheOnesWithTheBiggestCircleMatcher.querySpecification());
-    querySpecifications.add(TheOnesWithTheBiggestCircleNameMatcher.querySpecification());
-    querySpecifications.add(InTheCircleOfFriendsMatcher.querySpecification());
-    querySpecifications.add(FriendlyToMatcher.querySpecification());
-    querySpecifications.add(FinalPatternMatcher.querySpecification());
-    querySpecifications.add(MoreFriendsThanMatcher.querySpecification());
-    querySpecifications.add(StudentOfSchoolNamesMatcher.querySpecification());
-    querySpecifications.add(CourseWithWeightThirtyMatcher.querySpecification());
-    querySpecifications.add(ClassesOfTeacherMatcher.querySpecification());
-    querySpecifications.add(CourseWithPrimeWeightMatcher.querySpecification());
-    querySpecifications.add(TeachersNamesMatcher.querySpecification());
-    querySpecifications.add(StudentOfSchoolMatcher.querySpecification());
-    querySpecifications.add(CourseWithNameLongerThanWeightMatcher.querySpecification());
-    querySpecifications.add(FinalPattern2Matcher.querySpecification());
-    querySpecifications.add(TeacherWithoutClassMatcher.querySpecification());
-    querySpecifications.add(TeachesMoreClassesMatcher.querySpecification());
-    querySpecifications.add(InTheCircleOfFriendsNamesMatcher.querySpecification());
-    querySpecifications.add(TeachersOfSchoolNamesMatcher.querySpecification());
-    querySpecifications.add(CoursesMatcher.querySpecification());
-    querySpecifications.add(CoursesOfTeacherNamesMatcher.querySpecification());
-    querySpecifications.add(SchoolsMatcher.querySpecification());
     querySpecifications.add(SchoolsNamesMatcher.querySpecification());
-    querySpecifications.add(SomeCourseMatcher.querySpecification());
-    querySpecifications.add(ClassesOfTeacherNamesMatcher.querySpecification());
+    querySpecifications.add(CoursesOfTeacherNamesMatcher.querySpecification());
+    querySpecifications.add(TeachersOfSchoolMatcher.querySpecification());
+    querySpecifications.add(CourseWithWeightThirtyMatcher.querySpecification());
+    querySpecifications.add(CourseWithPrimeWeightMatcher.querySpecification());
+    querySpecifications.add(FinalPattern2Matcher.querySpecification());
+    querySpecifications.add(InTheCircleOfFriendsNamesMatcher.querySpecification());
     querySpecifications.add(TeacherWithoutClassNamesMatcher.querySpecification());
-    querySpecifications.add(CourseWithNameLongerThanWeightIntMatcher.querySpecification());
     querySpecifications.add(TeachesTheMostCoursesMatcher.querySpecification());
+    querySpecifications.add(MoreFriendsThanMatcher.querySpecification());
+    querySpecifications.add(StudentOfSchoolMatcher.querySpecification());
     querySpecifications.add(CoursesOfTeacherMatcher.querySpecification());
+    querySpecifications.add(ClassesOfTeacherMatcher.querySpecification());
+    querySpecifications.add(TeachersNamesMatcher.querySpecification());
+    querySpecifications.add(TeacherWithoutClassMatcher.querySpecification());
+    querySpecifications.add(TeachersOfSchoolNamesMatcher.querySpecification());
     querySpecifications.add(ClassesOfSchoolMatcher.querySpecification());
+    querySpecifications.add(TeachersMatcher.querySpecification());
+    querySpecifications.add(CourseWithNameLongerThanWeightMatcher.querySpecification());
+    querySpecifications.add(TeachesMoreClassesMatcher.querySpecification());
+    querySpecifications.add(FinalPatternMatcher.querySpecification());
+    querySpecifications.add(SomeCourseMatcher.querySpecification());
+    querySpecifications.add(InTheCircleOfFriendsMatcher.querySpecification());
+    querySpecifications.add(CoursesMatcher.querySpecification());
+    querySpecifications.add(TheOnesWithTheBiggestCircleMatcher.querySpecification());
+    querySpecifications.add(ClassesOfTeacherNamesMatcher.querySpecification());
+    querySpecifications.add(SchoolsMatcher.querySpecification());
+    querySpecifications.add(StudentOfSchoolNamesMatcher.querySpecification());
+    querySpecifications.add(CourseWithNameLongerThanWeightIntMatcher.querySpecification());
+    querySpecifications.add(FriendlyToMatcher.querySpecification());
+    querySpecifications.add(TheOnesWithTheBiggestCircleNameMatcher.querySpecification());
     
   }
 }

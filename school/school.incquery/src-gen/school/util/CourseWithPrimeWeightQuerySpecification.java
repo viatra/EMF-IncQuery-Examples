@@ -1,9 +1,23 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
+import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
 import school.CourseWithPrimeWeightMatcher;
 
 /**
@@ -33,24 +47,63 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
   @Override
   protected CourseWithPrimeWeightMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return CourseWithPrimeWeightMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.courseWithPrimeWeight";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("C");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("C", "school.Course"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private CourseWithPrimeWeightQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_C = body.getOrCreateVariableByName("C");
+      PVariable var_W = body.getOrCreateVariableByName("W");
+      new ExportedParameter(body, var_C, "C");
+      new TypeBinary(body, context, var_C, var_W, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
+      new ExpressionEvaluation(body, new IExpressionEvaluator() {
+        @Override
+        public String getShortDescription() {
+        	return "Expression evaluation from pattern courseWithPrimeWeight";
+        }
+        
+        @Override
+        public Iterable<String> getInputParameterNames() {
+        	return Arrays.asList("W");
+        }
+        
+        @Override
+        public Object evaluateExpression(IValueProvider provider) throws Exception {
+        	java.lang.Integer W = (java.lang.Integer) provider.getValue("W");
+        	return evaluateExpression_1_1(W);
+        }
+        
+        },  null); 
+      body.setSymbolicParameters(Arrays.asList(var_C));
+      bodies.add(body);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithPrimeWeightQuerySpecification> {
@@ -75,4 +128,38 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
     }
   }
   
+  
+  private Boolean evaluateExpression_1_1(final Integer W) {
+    boolean _xifexpression = false;
+    int _modulo = ((W).intValue() % 2);
+    boolean _equals = (_modulo == 0);
+    if (_equals) {
+      _xifexpression = false;
+    } else {
+      boolean _xblockexpression = false;
+      {
+        double _sqrt = Math.sqrt((W).intValue());
+        Float _float = new Float(_sqrt);
+        Integer maxValue = Integer.valueOf(Math.round((_float).floatValue()));
+        Integer divisor = Integer.valueOf(3);
+        boolean _lessEqualsThan = (divisor.compareTo(maxValue) <= 0);
+        boolean _while = _lessEqualsThan;
+        while (_while) {
+          int _modulo_1 = ((W).intValue() % (divisor).intValue());
+          boolean _equals_1 = (_modulo_1 == 0);
+          if (_equals_1) {
+            return Boolean.valueOf(false);
+          } else {
+            int _plus = ((divisor).intValue() + 2);
+            divisor = Integer.valueOf(_plus);
+          }
+          boolean _lessEqualsThan_1 = (divisor.compareTo(maxValue) <= 0);
+          _while = _lessEqualsThan_1;
+        }
+        _xblockexpression = (true);
+      }
+      _xifexpression = _xblockexpression;
+    }
+    return Boolean.valueOf(_xifexpression);
+  }
 }

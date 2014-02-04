@@ -13,7 +13,7 @@ import school.TeacherWithoutClassNamesMatch;
 public abstract class TeacherWithoutClassNamesProcessor implements IMatchProcessor<TeacherWithoutClassNamesMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pTNames the value of pattern parameter TNames in the currently processed match 
+   * @param pTNames the value of pattern parameter TNames in the currently processed match
    * 
    */
   public abstract void process(final String pTNames);

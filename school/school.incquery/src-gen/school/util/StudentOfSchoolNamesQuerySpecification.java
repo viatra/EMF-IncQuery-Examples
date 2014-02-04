@@ -1,9 +1,20 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
 import school.StudentOfSchoolNamesMatcher;
 
 /**
@@ -33,24 +44,54 @@ public final class StudentOfSchoolNamesQuerySpecification extends BaseGeneratedQ
   @Override
   protected StudentOfSchoolNamesMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return StudentOfSchoolNamesMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.studentOfSchoolNames";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("SName","SchName");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("SName", "java.lang.String"),new PParameter("SchName", "java.lang.String"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private StudentOfSchoolNamesQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_SName = body.getOrCreateVariableByName("SName");
+      PVariable var_SchName = body.getOrCreateVariableByName("SchName");
+      PVariable var_S = body.getOrCreateVariableByName("S");
+      PVariable var_Sch = body.getOrCreateVariableByName("Sch");
+      PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+      new ExportedParameter(body, var_SName, "SName");
+      new ExportedParameter(body, var_SchName, "SchName");
+      new TypeBinary(body, context, var_S, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
+      new TypeBinary(body, context, var__virtual_0_, var__virtual_1_, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
+      new TypeBinary(body, context, var__virtual_1_, var_Sch, getFeatureLiteral("http://school.ecore", "Course", "school"), "http://school.ecore/Course.school");
+      new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
+      new TypeBinary(body, context, var_Sch, var_SchName, getFeatureLiteral("http://school.ecore", "School", "name"), "http://school.ecore/School.name");
+      body.setSymbolicParameters(Arrays.asList(var_SName, var_SchName));
+      bodies.add(body);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<StudentOfSchoolNamesQuerySpecification> {

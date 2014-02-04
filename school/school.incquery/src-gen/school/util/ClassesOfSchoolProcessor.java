@@ -14,7 +14,7 @@ import school.SchoolClass;
 public abstract class ClassesOfSchoolProcessor implements IMatchProcessor<ClassesOfSchoolMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pSC the value of pattern parameter SC in the currently processed match 
+   * @param pSC the value of pattern parameter SC in the currently processed match
    * 
    */
   public abstract void process(final SchoolClass pSC);

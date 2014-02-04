@@ -15,8 +15,8 @@ import school.Teacher;
 public abstract class CoursesOfTeacherProcessor implements IMatchProcessor<CoursesOfTeacherMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pT the value of pattern parameter T in the currently processed match 
-   * @param pC the value of pattern parameter C in the currently processed match 
+   * @param pT the value of pattern parameter T in the currently processed match
+   * @param pC the value of pattern parameter C in the currently processed match
    * 
    */
   public abstract void process(final Teacher pT, final Course pC);

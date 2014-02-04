@@ -1,10 +1,28 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
+import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.PatternMatchCounter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.MoreFriendsThanMatcher;
+import school.util.InTheCircleOfFriendsQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate MoreFriendsThanMatcher in a type-safe way.
@@ -33,24 +51,77 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
   @Override
   protected MoreFriendsThanMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return MoreFriendsThanMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.moreFriendsThan";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("S1","S2");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("S1", "school.Student"),new PParameter("S2", "school.Student"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private MoreFriendsThanQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_S2 = body.getOrCreateVariableByName("S2");
+      PVariable var_N = body.getOrCreateVariableByName("N");
+      PVariable var__Sx1 = body.getOrCreateVariableByName("_Sx1");
+      PVariable var_M = body.getOrCreateVariableByName("M");
+      PVariable var__Sx2 = body.getOrCreateVariableByName("_Sx2");
+      new ExportedParameter(body, var_S1, "S1");
+      new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
+      new ExportedParameter(body, var_S2, "S2");
+      new TypeUnary(body, var_S2, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
+      new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance(), var_N);
+      new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance(), var_M);
+      new ExpressionEvaluation(body, new IExpressionEvaluator() {
+        @Override
+        public String getShortDescription() {
+        	return "Expression evaluation from pattern moreFriendsThan";
+        }
+        
+        @Override
+        public Iterable<String> getInputParameterNames() {
+        	return Arrays.asList("M", "N");
+        }
+        
+        @Override
+        public Object evaluateExpression(IValueProvider provider) throws Exception {
+        	java.lang.Integer M = (java.lang.Integer) provider.getValue("M");
+        	java.lang.Integer N = (java.lang.Integer) provider.getValue("N");
+        	return evaluateExpression_1_1(M, N);
+        }
+        
+        },  null); 
+      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
+      bodies.add(body);
+    }
+    {
+      PAnnotation annotation = new PAnnotation("QueryExplorer");
+      annotation.addAttribute("display",false);
+      addAnnotation(annotation);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<MoreFriendsThanQuerySpecification> {
@@ -75,4 +146,9 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
     }
   }
   
+  
+  private boolean evaluateExpression_1_1(final Integer M, final Integer N) {
+    boolean _greaterThan = (N.compareTo(M) > 0);
+    return _greaterThan;
+  }
 }

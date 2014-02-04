@@ -2,20 +2,20 @@ package school;
 
 import java.util.Arrays;
 import java.util.List;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.School;
 import school.Teacher;
+import school.util.TeachersOfSchoolQuerySpecification;
 
 /**
- * Pattern-specific match representation of the school.teachersOfSchool pattern, 
+ * Pattern-specific match representation of the school.teachersOfSchool pattern,
  * to be used in conjunction with {@link TeachersOfSchoolMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
- * Each instance is a (possibly partial) substitution of pattern parameters, 
- * usable to represent a match of the pattern in the result of a query, 
+ * Each instance is a (possibly partial) substitution of pattern parameters,
+ * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
  * @see TeachersOfSchoolMatcher
@@ -112,9 +112,9 @@ public abstract class TeachersOfSchoolMatch extends BasePatternMatch {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((fT == null) ? 0 : fT.hashCode()); 
-    result = prime * result + ((fSch == null) ? 0 : fSch.hashCode()); 
-    return result; 
+    result = prime * result + ((fT == null) ? 0 : fT.hashCode());
+    result = prime * result + ((fSch == null) ? 0 : fSch.hashCode());
+    return result;
     
   }
   
@@ -122,13 +122,13 @@ public abstract class TeachersOfSchoolMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof TeachersOfSchoolMatch)) { // this should be infrequent				
+    if (!(obj instanceof TeachersOfSchoolMatch)) { // this should be infrequent
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
     		return false;
     	IPatternMatch otherSig  = (IPatternMatch) obj;
-    	if (!pattern().equals(otherSig.pattern()))
+    	if (!specification().equals(otherSig.specification()))
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
@@ -141,9 +141,9 @@ public abstract class TeachersOfSchoolMatch extends BasePatternMatch {
   }
   
   @Override
-  public Pattern pattern() {
+  public TeachersOfSchoolQuerySpecification specification() {
     try {
-    	return TeachersOfSchoolMatcher.querySpecification().getPattern();
+    	return TeachersOfSchoolQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);

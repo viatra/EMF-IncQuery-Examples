@@ -13,6 +13,8 @@
 package school.tests
 
 import com.google.inject.Inject
+import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
+import org.eclipse.incquery.testing.core.SnapshotHelper
 import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
@@ -21,25 +23,22 @@ import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import school.util.ClassesOfTeacherQuerySpecification
-import school.util.CoursesOfTeacherQuerySpecification
 import school.util.CourseWithNameLongerThanWeightQuerySpecification
 import school.util.CourseWithPrimeWeightQuerySpecification
 import school.util.CourseWithWeightThirtyQuerySpecification
-import school.util.SchoolsQuerySpecification
-import school.util.StudentOfSchoolQuerySpecification
-import school.util.TeachersQuerySpecification
-import school.util.TeachersOfSchoolQuerySpecification
-import school.util.TeacherWithoutClassQuerySpecification
-import school.util.TeachesMoreClassesQuerySpecification
-import school.util.TeachesTheMostCoursesQuerySpecification
+import school.util.CoursesOfTeacherQuerySpecification
+import school.util.FinalPatternQuerySpecification
 import school.util.FriendlyToQuerySpecification
 import school.util.InTheCircleOfFriendsQuerySpecification
 import school.util.MoreFriendsThanQuerySpecification
+import school.util.SchoolsQuerySpecification
+import school.util.StudentOfSchoolQuerySpecification
+import school.util.TeacherWithoutClassQuerySpecification
+import school.util.TeachersOfSchoolQuerySpecification
+import school.util.TeachersQuerySpecification
+import school.util.TeachesMoreClassesQuerySpecification
+import school.util.TeachesTheMostCoursesQuerySpecification
 import school.util.TheOnesWithTheBiggestCircleQuerySpecification
-import school.util.FinalPattern2QuerySpecification
-import school.util.FinalPatternQuerySpecification
-import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
-import org.eclipse.incquery.testing.core.SnapshotHelper
 
 /**
  * Basic test set for testing IncQuery with the school example.

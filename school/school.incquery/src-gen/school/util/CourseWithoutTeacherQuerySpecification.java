@@ -1,10 +1,26 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.incquery.runtime.matchers.psystem.annotations.ParameterReference;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.CourseWithoutTeacherMatcher;
+import school.util.CourseWithTeacherQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate CourseWithoutTeacherMatcher in a type-safe way.
@@ -33,24 +49,52 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
   @Override
   protected CourseWithoutTeacherMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return CourseWithoutTeacherMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.CourseWithoutTeacher";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("C");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("C", "school.Course"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private CourseWithoutTeacherQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_C = body.getOrCreateVariableByName("C");
+      new ExportedParameter(body, var_C, "C");
+      new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "Course"), "http://school.ecore/Course");
+      new NegativePatternCall(body, new FlatTuple(var_C), CourseWithTeacherQuerySpecification.instance());
+      body.setSymbolicParameters(Arrays.asList(var_C));
+      bodies.add(body);
+    }
+    {
+      PAnnotation annotation = new PAnnotation("Constraint");
+      annotation.addAttribute("message","$C.subject$ does not have a teacher");
+      annotation.addAttribute("location",new ParameterReference("C"));
+      annotation.addAttribute("severity","warning");
+      addAnnotation(annotation);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithoutTeacherQuerySpecification> {

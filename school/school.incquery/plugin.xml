@@ -2,22 +2,6 @@
 <plugin>
 
    <extension
-         id="school.CourseWithTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
-            id="school.CourseWithTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithoutTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
-            id="school.CourseWithoutTeacher">
-      </matcher>
-   </extension>
-   <extension
          id="school.schools"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -162,28 +146,12 @@
       </matcher>
    </extension>
    <extension
-         id="school.courseWithNameLongerThanWeight"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="school.util.CourseWithNameLongerThanWeightEvaluator1_1"
-            id="school.courseWithNameLongerThanWeight_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="school.courseWithNameLongerThanWeightInt"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="school.util.CourseWithNameLongerThanWeightIntQuerySpecification$Provider"
             id="school.courseWithNameLongerThanWeightInt">
       </matcher>
-   </extension>
-   <extension
-         id="school.courseWithNameLongerThanWeightInt"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="school.util.CourseWithNameLongerThanWeightIntEvaluator1_1"
-            id="school.courseWithNameLongerThanWeightInt_1_1">
-      </evaluator>
    </extension>
    <extension
          id="school.courseWithPrimeWeight"
@@ -194,28 +162,12 @@
       </matcher>
    </extension>
    <extension
-         id="school.courseWithPrimeWeight"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="school.util.CourseWithPrimeWeightEvaluator1_1"
-            id="school.courseWithPrimeWeight_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="school.teachesMoreClasses"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="school.util.TeachesMoreClassesQuerySpecification$Provider"
             id="school.teachesMoreClasses">
       </matcher>
-   </extension>
-   <extension
-         id="school.teachesMoreClasses"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="school.util.TeachesMoreClassesEvaluator1_1"
-            id="school.teachesMoreClasses_1_1">
-      </evaluator>
    </extension>
    <extension
          id="school.teachesTheMostCourses"
@@ -258,14 +210,6 @@
       </matcher>
    </extension>
    <extension
-         id="school.moreFriendsThan"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="school.util.MoreFriendsThanEvaluator1_1"
-            id="school.moreFriendsThan_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="school.theOnesWithTheBiggestCircle"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -303,6 +247,22 @@
       <matcher
             querySpecificationProvider="school.util.SomeCourseQuerySpecification$Provider"
             id="school.SomeCourse">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
+            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 

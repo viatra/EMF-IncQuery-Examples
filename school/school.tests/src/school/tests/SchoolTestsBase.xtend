@@ -16,6 +16,7 @@ import com.google.inject.Inject
 import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
+import com.google.inject.Injector
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -24,25 +25,26 @@ import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
  */
 
 class SchoolTestsBase extends CommonStaticQueryTester {
-	
+
 	@Inject extension ModelLoadHelper
-	
+	@Inject var Injector injector
+
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	override queryInputXMIURI() { // Creates new resource set
-		"school.incquery/queries/globalEiqModel.xmi"
+	override queryInputEIQURI() { // Creates new resource set
+		"school.incquery/src/school/simpleSchoolQueries.eiq"
 	}
-	
+
 	def queryInputEIQ() { // Creates new resource set
-		return "school.incquery/src/school/schoolqueries.eiq".loadPatternModelFromUri as PatternModel
+		return queryInputEIQURI.loadPatternModelFromUri(injector) as PatternModel
+
 	}
-		
-	override snapshotURI() { 
+	override snapshotURI() {
 		return "school.tests/model/tests.eiqsnapshot"
 	}
 
-		
-	
-	
+
+
+
 }

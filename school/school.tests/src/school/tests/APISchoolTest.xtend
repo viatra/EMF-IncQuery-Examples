@@ -44,7 +44,7 @@ class APISchoolTest extends SchoolTestsBase {
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 		val match = matcher.oneArbitraryMatch
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertNotNull(match.get(i))		
@@ -81,7 +81,7 @@ class APISchoolTest extends SchoolTestsBase {
 
 		val match = matcher.newMatch(sampleMatchAsArray)
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertEquals(match.get(i), sampleMatch.get(i))		
@@ -97,7 +97,7 @@ class APISchoolTest extends SchoolTestsBase {
 
 		val match = matcher.newEmptyMatch()
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertNull(match.get(i))		
@@ -134,7 +134,7 @@ class APISchoolTest extends SchoolTestsBase {
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val match = matcher.oneArbitraryMatch
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertNotNull(match.get(i))		
@@ -170,7 +170,7 @@ class APISchoolTest extends SchoolTestsBase {
 		
 		val match = matcher.newMatch(sampleMatch.t, sampleMatch.SC)
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertEquals(match.get(i), sampleMatch.get(i))		
@@ -188,7 +188,7 @@ class APISchoolTest extends SchoolTestsBase {
 
 		val match = matcher.newEmptyMatch()
 		Assert::assertNotNull(match)
-		Assert::assertEquals(match.pattern,matcher.pattern)
+		Assert::assertEquals(match.specification,matcher.specification)
 		Assert::assertArrayEquals(match.parameterNames,matcher.parameterNames)
 		for (int i : 0..match.parameterNames.size-1) 
 			Assert::assertNull(match.get(i))		

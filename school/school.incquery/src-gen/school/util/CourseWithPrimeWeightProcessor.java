@@ -14,7 +14,7 @@ import school.CourseWithPrimeWeightMatch;
 public abstract class CourseWithPrimeWeightProcessor implements IMatchProcessor<CourseWithPrimeWeightMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pC the value of pattern parameter C in the currently processed match 
+   * @param pC the value of pattern parameter C in the currently processed match
    * 
    */
   public abstract void process(final Course pC);

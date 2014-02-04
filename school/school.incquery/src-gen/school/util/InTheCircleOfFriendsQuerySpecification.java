@@ -1,10 +1,25 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Inequality;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.BinaryTransitiveClosure;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.InTheCircleOfFriendsMatcher;
+import school.util.FriendlyToQuerySpecification;
 
 /**
  * A pattern-specific query specification that can instantiate InTheCircleOfFriendsMatcher in a type-safe way.
@@ -33,24 +48,49 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
   @Override
   protected InTheCircleOfFriendsMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return InTheCircleOfFriendsMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.inTheCircleOfFriends";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("S1","Someone");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("S1", "school.Student"),new PParameter("Someone", "school.Student"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private InTheCircleOfFriendsQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_Someone = body.getOrCreateVariableByName("Someone");
+      new ExportedParameter(body, var_S1, "S1");
+      new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
+      new ExportedParameter(body, var_Someone, "Someone");
+      new TypeUnary(body, var_Someone, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
+      new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance());
+      new Inequality(body, var_S1, var_Someone);
+      body.setSymbolicParameters(Arrays.asList(var_S1, var_Someone));
+      bodies.add(body);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<InTheCircleOfFriendsQuerySpecification> {

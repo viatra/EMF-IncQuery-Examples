@@ -1,9 +1,21 @@
 package school.util;
 
+import com.google.common.collect.Sets;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
 import school.FriendlyToMatcher;
 
 /**
@@ -33,24 +45,61 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
   @Override
   protected FriendlyToMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return FriendlyToMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "school.incquery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "school.friendlyTo";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("S1","S2");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("S1", "school.Student"),new PParameter("S2", "school.Student"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private FriendlyToQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_S2 = body.getOrCreateVariableByName("S2");
+      new ExportedParameter(body, var_S1, "S1");
+      new ExportedParameter(body, var_S2, "S2");
+      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
+      bodies.add(body);
+    }
+    {
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_S2 = body.getOrCreateVariableByName("S2");
+      new ExportedParameter(body, var_S1, "S1");
+      new ExportedParameter(body, var_S2, "S2");
+      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
+      bodies.add(body);
+    }
+    {
+      PAnnotation annotation = new PAnnotation("QueryExplorer");
+      annotation.addAttribute("display",false);
+      addAnnotation(annotation);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FriendlyToQuerySpecification> {

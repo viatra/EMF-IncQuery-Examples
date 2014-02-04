@@ -13,7 +13,7 @@ import school.TheOnesWithTheBiggestCircleNameMatch;
 public abstract class TheOnesWithTheBiggestCircleNameProcessor implements IMatchProcessor<TheOnesWithTheBiggestCircleNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pSName the value of pattern parameter SName in the currently processed match 
+   * @param pSName the value of pattern parameter SName in the currently processed match
    * 
    */
   public abstract void process(final String pSName);

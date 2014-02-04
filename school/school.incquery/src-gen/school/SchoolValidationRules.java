@@ -8,7 +8,7 @@ import school.CourseWithoutTeacherMatcher;
 /**
  * A pattern group formed of all patterns defined in schoolValidationRules.eiq.
  * 
- * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare 
+ * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare
  * an EMF-IncQuery engine for matching all patterns originally defined in file schoolValidationRules.eiq,
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
@@ -40,8 +40,8 @@ public final class SchoolValidationRules extends BaseGeneratedPatternGroup {
   private static SchoolValidationRules INSTANCE;
   
   private SchoolValidationRules() throws IncQueryException {
-    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     querySpecifications.add(CourseWithTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     
   }
 }
