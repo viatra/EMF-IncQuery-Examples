@@ -14,7 +14,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class IsInECoreProcessor implements IMatchProcessor<IsInECoreMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pElement the value of pattern parameter Element in the currently processed match 
+   * @param pElement the value of pattern parameter Element in the currently processed match
    * 
    */
   public abstract void process(final EClassifier pElement);

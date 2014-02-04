@@ -7,12 +7,14 @@ Require-Bundle: org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.core.runtime,
- org.eclipse.xtext.junit4;bundle-version="2.3.0",
- org.junit4;bundle-version="4.8.1",
+ org.junit;bundle-version="4.8.1",
  org.eclipse.incquery.runtime;bundle-version="0.7.0",
  org.eclipse.incquery.testing.core;bundle-version="0.7.0",
  org.eclipse.incquery.snapshot;bundle-version="0.7.0",
- hu.bme.mit.ecorequery;bundle-version="0.0.1"
+ hu.bme.mit.ecorequery;bundle-version="0.0.1",
+ org.eclipse.incquery.patternlanguage;bundle-version="0.8.0",
+ org.eclipse.incquery.patternlanguage.emf;bundle-version="0.8.0",
+ org.eclipse.xtext.junit4;bundle-version="2.3.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

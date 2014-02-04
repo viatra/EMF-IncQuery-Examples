@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class EReferenceWithStarMultiplicityNameProcessor implements IMatchProcessor<EReferenceWithStarMultiplicityNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pERefName the value of pattern parameter ERefName in the currently processed match 
+   * @param pERefName the value of pattern parameter ERefName in the currently processed match
    * 
    */
   public abstract void process(final String pERefName);

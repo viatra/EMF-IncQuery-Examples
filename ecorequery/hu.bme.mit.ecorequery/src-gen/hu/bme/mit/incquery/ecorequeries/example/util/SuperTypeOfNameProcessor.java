@@ -13,8 +13,8 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class SuperTypeOfNameProcessor implements IMatchProcessor<SuperTypeOfNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pSuperName the value of pattern parameter SuperName in the currently processed match 
-   * @param pSubName the value of pattern parameter SubName in the currently processed match 
+   * @param pSuperName the value of pattern parameter SuperName in the currently processed match
+   * @param pSubName the value of pattern parameter SubName in the currently processed match
    * 
    */
   public abstract void process(final String pSuperName, final String pSubName);

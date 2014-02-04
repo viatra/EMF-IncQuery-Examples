@@ -14,8 +14,8 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class SuperTypeOfProcessor implements IMatchProcessor<SuperTypeOfMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pSuper the value of pattern parameter Super in the currently processed match 
-   * @param pSub the value of pattern parameter Sub in the currently processed match 
+   * @param pSuper the value of pattern parameter Super in the currently processed match
+   * @param pSub the value of pattern parameter Sub in the currently processed match
    * 
    */
   public abstract void process(final EClass pSuper, final EClass pSub);

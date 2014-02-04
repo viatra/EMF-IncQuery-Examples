@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class EClassNameProcessor implements IMatchProcessor<EClassNameMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pEName the value of pattern parameter EName in the currently processed match 
+   * @param pEName the value of pattern parameter EName in the currently processed match
    * 
    */
   public abstract void process(final String pEName);

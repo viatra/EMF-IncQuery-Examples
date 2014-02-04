@@ -1,22 +1,22 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
+import hu.bme.mit.incquery.ecorequeries.example.util.SampleQuery2QuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern,
  * to be used in conjunction with {@link SampleQuery2Matcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
- * Each instance is a (possibly partial) substitution of pattern parameters, 
- * usable to represent a match of the pattern in the result of a query, 
+ * Each instance is a (possibly partial) substitution of pattern parameters,
+ * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
  * @see SampleQuery2Matcher
@@ -193,13 +193,13 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((fXElement == null) ? 0 : fXElement.hashCode()); 
-    result = prime * result + ((fYElement == null) ? 0 : fYElement.hashCode()); 
-    result = prime * result + ((fRelates1 == null) ? 0 : fRelates1.hashCode()); 
-    result = prime * result + ((fRelates2 == null) ? 0 : fRelates2.hashCode()); 
-    result = prime * result + ((fLabel1 == null) ? 0 : fLabel1.hashCode()); 
-    result = prime * result + ((fLabel2 == null) ? 0 : fLabel2.hashCode()); 
-    return result; 
+    result = prime * result + ((fXElement == null) ? 0 : fXElement.hashCode());
+    result = prime * result + ((fYElement == null) ? 0 : fYElement.hashCode());
+    result = prime * result + ((fRelates1 == null) ? 0 : fRelates1.hashCode());
+    result = prime * result + ((fRelates2 == null) ? 0 : fRelates2.hashCode());
+    result = prime * result + ((fLabel1 == null) ? 0 : fLabel1.hashCode());
+    result = prime * result + ((fLabel2 == null) ? 0 : fLabel2.hashCode());
+    return result;
     
   }
   
@@ -207,13 +207,13 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof SampleQuery2Match)) { // this should be infrequent				
+    if (!(obj instanceof SampleQuery2Match)) { // this should be infrequent
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
     		return false;
     	IPatternMatch otherSig  = (IPatternMatch) obj;
-    	if (!pattern().equals(otherSig.pattern()))
+    	if (!specification().equals(otherSig.specification()))
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
@@ -234,9 +234,9 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   }
   
   @Override
-  public Pattern pattern() {
+  public SampleQuery2QuerySpecification specification() {
     try {
-    	return SampleQuery2Matcher.querySpecification().getPattern();
+    	return SampleQuery2QuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);

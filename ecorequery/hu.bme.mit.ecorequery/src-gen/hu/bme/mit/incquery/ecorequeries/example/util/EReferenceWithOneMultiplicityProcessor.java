@@ -14,7 +14,7 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class EReferenceWithOneMultiplicityProcessor implements IMatchProcessor<EReferenceWithOneMultiplicityMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pERef the value of pattern parameter ERef in the currently processed match 
+   * @param pERef the value of pattern parameter ERef in the currently processed match
    * 
    */
   public abstract void process(final EReference pERef);

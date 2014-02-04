@@ -1,20 +1,20 @@
 package hu.bme.mit.incquery.ecorequeries.example;
 
+import hu.bme.mit.incquery.ecorequeries.example.util.SuperTypeOfQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.incquery.patternlanguage.patternLanguage.Pattern;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
 import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern, 
+ * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern,
  * to be used in conjunction with {@link SuperTypeOfMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
- * Each instance is a (possibly partial) substitution of pattern parameters, 
- * usable to represent a match of the pattern in the result of a query, 
+ * Each instance is a (possibly partial) substitution of pattern parameters,
+ * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
  * @see SuperTypeOfMatcher
@@ -111,9 +111,9 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((fSuper == null) ? 0 : fSuper.hashCode()); 
-    result = prime * result + ((fSub == null) ? 0 : fSub.hashCode()); 
-    return result; 
+    result = prime * result + ((fSuper == null) ? 0 : fSuper.hashCode());
+    result = prime * result + ((fSub == null) ? 0 : fSub.hashCode());
+    return result;
     
   }
   
@@ -121,13 +121,13 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof SuperTypeOfMatch)) { // this should be infrequent				
+    if (!(obj instanceof SuperTypeOfMatch)) { // this should be infrequent
     	if (obj == null)
     		return false;
     	if (!(obj instanceof IPatternMatch))
     		return false;
     	IPatternMatch otherSig  = (IPatternMatch) obj;
-    	if (!pattern().equals(otherSig.pattern()))
+    	if (!specification().equals(otherSig.specification()))
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
@@ -140,9 +140,9 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   }
   
   @Override
-  public Pattern pattern() {
+  public SuperTypeOfQuerySpecification specification() {
     try {
-    	return SuperTypeOfMatcher.querySpecification().getPattern();
+    	return SuperTypeOfQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException	(ex);

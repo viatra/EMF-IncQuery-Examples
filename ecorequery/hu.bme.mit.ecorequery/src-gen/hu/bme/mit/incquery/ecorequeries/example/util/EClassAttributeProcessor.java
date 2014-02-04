@@ -16,9 +16,9 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class EClassAttributeProcessor implements IMatchProcessor<EClassAttributeMatch> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pE the value of pattern parameter E in the currently processed match 
-   * @param pAttr the value of pattern parameter Attr in the currently processed match 
-   * @param pType the value of pattern parameter Type in the currently processed match 
+   * @param pE the value of pattern parameter E in the currently processed match
+   * @param pAttr the value of pattern parameter Attr in the currently processed match
+   * @param pType the value of pattern parameter Type in the currently processed match
    * 
    */
   public abstract void process(final EClass pE, final EAttribute pAttr, final EClassifier pType);

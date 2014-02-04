@@ -1,10 +1,25 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
+import com.google.common.collect.Sets;
 import hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttributeMatcher;
+import hu.bme.mit.incquery.ecorequeries.example.util.EClassAttributeQuerySpecification;
+import hu.bme.mit.incquery.ecorequeries.example.util.IsEStringQuerySpecification;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
+import org.eclipse.incquery.runtime.matchers.psystem.PBody;
+import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 /**
  * A pattern-specific query specification that can instantiate EClassWithEStringAttributeMatcher in a type-safe way.
@@ -33,24 +48,49 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
   @Override
   protected EClassWithEStringAttributeMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
     return EClassWithEStringAttributeMatcher.on(engine);
-    
   }
   
   @Override
-  protected String getBundleName() {
-    return "hu.bme.mit.ecorequery";
-    
-  }
-  
-  @Override
-  protected String patternName() {
+  public String getFullyQualifiedName() {
     return "hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute";
     
   }
   
+  @Override
+  public List<String> getParameterNames() {
+    return Arrays.asList("E","Attr");
+  }
+  
+  @Override
+  public List<PParameter> getParameters() {
+    return Arrays.asList(new PParameter("E", "org.eclipse.emf.ecore.EClass"),new PParameter("Attr", "org.eclipse.emf.ecore.EAttribute"));
+  }
+  
+  @Override
+  public Set<PBody> doGetContainedBodies() {
+    return bodies;
+  }
+  
   private EClassWithEStringAttributeQuerySpecification() throws IncQueryException {
     super();
+    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    {
+      PBody body = new PBody(this);
+      PVariable var_E = body.getOrCreateVariableByName("E");
+      PVariable var_Attr = body.getOrCreateVariableByName("Attr");
+      PVariable var_Type = body.getOrCreateVariableByName("Type");
+      new ExportedParameter(body, var_E, "E");
+      new ExportedParameter(body, var_Attr, "Attr");
+      new TypeUnary(body, var_E, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
+      new PositivePatternCall(body, new FlatTuple(var_E, var_Attr, var_Type), EClassAttributeQuerySpecification.instance());
+      new PositivePatternCall(body, new FlatTuple(var_Type), IsEStringQuerySpecification.instance());
+      body.setSymbolicParameters(Arrays.asList(var_E, var_Attr));
+      bodies.add(body);
+    }
+    setStatus(PQueryStatus.OK);
   }
+  
+  private Set<PBody> bodies = Sets.newHashSet();;
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EClassWithEStringAttributeQuerySpecification> {

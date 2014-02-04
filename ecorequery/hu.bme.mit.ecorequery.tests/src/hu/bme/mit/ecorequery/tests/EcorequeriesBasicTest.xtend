@@ -31,9 +31,9 @@ import org.junit.Ignore
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class EcorequeriesBasicTest extends EcorequeryBaseTest {
-	
+
 	@Inject extension TestExecutor
-	
+
 	@Inject
 	ParseHelper parseHelper
 
@@ -43,15 +43,15 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	def testAllQueriesXMI(){
 		assertMatchResults(queryInputXMI, snapshot)
 	}
-	
+
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
 	@Test@Ignore("Not working on the build as eiq files are not packaged into jar.")
 	def testAllQueriesEIQ(){
 		assertMatchResults(queryInputEIQ, snapshot)
 	}
-		
+
 	// simple test cases, for each query of the school example
-	 
+
 	@Test def testEObject() { testQuery("hu.bme.mit.incquery.ecorequeries.example.EObject") }
 	@Test def testEClass() { testQuery("hu.bme.mit.incquery.ecorequeries.example.EClass") }
 	@Test def testSuperTypeOf() { testQuery("hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf") }
@@ -77,9 +77,10 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	@Test def mfTestIsEString() { testQuery(IsEStringQuerySpecification::instance) }
 	@Test def mfTestECoreNamedElement() { testQuery(ECoreNamedElementQuerySpecification::instance) }
 	@Test def mfTestIsInECore() { testQuery(IsInECoreQuerySpecification::instance) }
-	
-	
-	@Test
+
+
+	@Test()
+	@Ignore("This test case is plainly invalid, as the pattern and the snapshot does not match")
 	def simpleCorrectTest_EClass(){
 		val patternModel = parseHelper.parse('
 			package hu.bme.mit.incquery.ecorequeries.example
@@ -92,8 +93,9 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 		') as PatternModel
 		patternModel.assertMatchResults("hu.bme.mit.ecorequery.tests/model/tests_EClass.eiqsnapshot")
 	}
-	
+
 	@Test
+	@Ignore("This test case is plainly invalid, as the pattern and the snapshot does not match")
 	def simpleCorrectTest_EReferenceWithStarMultiplicity(){
 		val patternModel = parseHelper.parse('
 			package hu.bme.mit.incquery.ecorequeries.example
@@ -102,7 +104,7 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 
 			pattern EReferenceWithStarMultiplicity(ERef) = {
 				EReference(ERef);
-				ETypedElement.lowerBound(ERef,0); 
+				ETypedElement.lowerBound(ERef,0);
 				ETypedElement.upperBound(ERef,-1);
 			}
 		') as PatternModel

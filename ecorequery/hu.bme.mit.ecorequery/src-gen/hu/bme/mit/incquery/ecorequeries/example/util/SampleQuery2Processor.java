@@ -16,12 +16,12 @@ import org.eclipse.incquery.runtime.api.IMatchProcessor;
 public abstract class SampleQuery2Processor implements IMatchProcessor<SampleQuery2Match> {
   /**
    * Defines the action that is to be executed on each match.
-   * @param pXElement the value of pattern parameter XElement in the currently processed match 
-   * @param pYElement the value of pattern parameter YElement in the currently processed match 
-   * @param pRelates1 the value of pattern parameter Relates1 in the currently processed match 
-   * @param pRelates2 the value of pattern parameter Relates2 in the currently processed match 
-   * @param pLabel1 the value of pattern parameter Label1 in the currently processed match 
-   * @param pLabel2 the value of pattern parameter Label2 in the currently processed match 
+   * @param pXElement the value of pattern parameter XElement in the currently processed match
+   * @param pYElement the value of pattern parameter YElement in the currently processed match
+   * @param pRelates1 the value of pattern parameter Relates1 in the currently processed match
+   * @param pRelates2 the value of pattern parameter Relates2 in the currently processed match
+   * @param pLabel1 the value of pattern parameter Label1 in the currently processed match
+   * @param pLabel2 the value of pattern parameter Label2 in the currently processed match
    * 
    */
   public abstract void process(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2);
