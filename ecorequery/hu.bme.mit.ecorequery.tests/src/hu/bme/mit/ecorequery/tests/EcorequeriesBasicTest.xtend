@@ -35,7 +35,7 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	@Inject extension TestExecutor
 
 	@Inject
-	ParseHelper parseHelper
+	ParseHelper<PatternModel> parseHelper
 
 
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
