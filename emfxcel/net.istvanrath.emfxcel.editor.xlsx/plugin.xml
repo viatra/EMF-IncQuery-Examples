@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="net.istvanrath.emfxcel.editor.xlsx.XlsxEditor"
+            default="false"
+            extensions="xlsx"
+            id="net.istvanrath.emfxcel.editor.xlsx"
+            name="EMFxcel xlsx Editor"
+            contributorClass="net.istvanrath.emfxcel.presentation.EmfxcelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,36 @@
+package net.istvanrath.emfxcel.incquery.demo
+
+import "http://istvanrath.net/demos/emfxcel"
+
+@QueryExplorer(display=true,message = "$Nev$")
+pattern AgazatiHallgato(Hallgato : StringCell, Nev) {
+	Worksheet.name(WS, "AgazatiBesorolas");
+	Worksheet.rows(WS, HallgatoSor);
+	Row.cells(HallgatoSor, Hallgato);
+	StringCell.columnIndex(Hallgato, 1);
+	StringCell.stringValue(Hallgato, Nev);
+	Row.cells(HallgatoSor, Agazat);
+	StringCell(Agazat);
+	Cell.columnIndex(Agazat, 5);
+	StringCell.stringValue(Agazat, "Rendszertervezés");
+}
+
+@QueryExplorer(display=true,message = "$Nev$")
+pattern OnlabosHallgato(Hallgato : Cell, Nev) {
+	Worksheet.name(WS, "Onlab");
+	Worksheet.rows(WS, HallgatoSor);
+	Row(HallgatoSor);
+	Row.cells(HallgatoSor, Hallgato);
+	StringCell.columnIndex(Hallgato, 1);
+	StringCell.stringValue(Hallgato, Nev);
+}
+
+pattern NemVetteFelAzOnlabot(Nev) {
+	neg find OnlabosHallgato(_H, Nev);
+	find AgazatiHallgato(_J, Nev);
+}
+
+pattern KakukkFioka(Nev) {
+	find OnlabosHallgato(_H, Nev);
+	neg find AgazatiHallgato(_J, Nev);
+}

@@ -1,0 +1,38 @@
+@Ecore(nsPrefix="emfxcel", nsURI="http://istvanrath.net/demos/emfxcel")
+@GenModel(editDirectory="/net.istvanrath.emfxcel.edit/src")
+@GenModel(editorDirectory="/net.istvanrath.emfxcel.editor/src")
+package net.istvanrath.emfxcel
+
+interface NamedElement {
+	String name
+}
+
+class Workbook extends NamedElement {
+	contains Worksheet[] sheets
+}
+
+class Worksheet extends NamedElement {
+	contains Row[] rows
+}
+
+class Row {
+	int rowNum
+	contains Cell[] cells
+}
+
+abstract class Cell {
+	int columnIndex
+	int rowIndex
+}
+
+class BooleanCell extends Cell {
+	boolean boolValue	
+}
+
+class StringCell extends Cell {
+	String stringValue
+}
+
+class NumericCell extends Cell {
+	double numericValue
+}

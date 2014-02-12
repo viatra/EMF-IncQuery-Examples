@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.AgazatiHallgato"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.AgazatiHallgatoQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.AgazatiHallgato">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.OnlabosHallgato"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.OnlabosHallgatoQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.OnlabosHallgato">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.NemVetteFelAzOnlabot"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.NemVetteFelAzOnlabotQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.NemVetteFelAzOnlabot">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.KakukkFioka"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.KakukkFiokaQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.KakukkFioka">
+      </matcher>
+   </extension>
+
+</plugin>

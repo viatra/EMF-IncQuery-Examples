@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFxcel xlsx Editor
+Bundle-SymbolicName: net.istvanrath.emfxcel.editor.xlsx;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: net.istvanrath.emfxcel.editor.xlsx.Activator
+Bundle-Vendor: Istvan Rath
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.istvanrath.emfxcel.editor;bundle-version="1.0.0",
+ net.istvanrath.emfxcel
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/deps/commons-codec-1.5.jar,
+ lib/deps/commons-logging-1.1.jar,
+ lib/deps/dom4j-1.6.1.jar,
+ lib/deps/junit-4.11.jar,
+ lib/deps/log4j-1.2.13.jar,
+ lib/deps/stax-api-1.0.1.jar,
+ lib/deps/xmlbeans-2.3.0.jar,
+ .,
+ lib/poi/poi-3.10-FINAL-20140208.jar,
+ lib/poi/poi-examples-3.10-FINAL-20140208.jar,
+ lib/poi/poi-excelant-3.10-FINAL-20140208.jar,
+ lib/poi/poi-ooxml-3.10-FINAL-20140208.jar,
+ lib/poi/poi-ooxml-schemas-3.10-FINAL-20140208.jar,
+ lib/poi/poi-scratchpad-3.10-FINAL-20140208.jar
