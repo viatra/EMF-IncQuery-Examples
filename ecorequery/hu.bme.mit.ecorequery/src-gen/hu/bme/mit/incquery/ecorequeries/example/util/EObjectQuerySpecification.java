@@ -73,9 +73,11 @@ public final class EObjectQuerySpecification extends BaseGeneratedQuerySpecifica
     {
       PBody body = new PBody(this);
       PVariable var_E = body.getOrCreateVariableByName("E");
-      new ExportedParameter(body, var_E, "E");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_E, "E")
+      ));
+      
       new TypeUnary(body, var_E, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EObject"), "http://www.eclipse.org/emf/2002/Ecore/EObject");
-      body.setSymbolicParameters(Arrays.asList(var_E));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

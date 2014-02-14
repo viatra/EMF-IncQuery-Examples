@@ -74,10 +74,13 @@ public final class SuperTypeOfQuerySpecification extends BaseGeneratedQuerySpeci
       PBody body = new PBody(this);
       PVariable var_Super = body.getOrCreateVariableByName("Super");
       PVariable var_Sub = body.getOrCreateVariableByName("Sub");
-      new ExportedParameter(body, var_Super, "Super");
-      new ExportedParameter(body, var_Sub, "Sub");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_Super, "Super"), 
+        new ExportedParameter(body, var_Sub, "Sub")
+      ));
+      
+      
       new TypeBinary(body, context, var_Sub, var_Super, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eSuperTypes"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eSuperTypes");
-      body.setSymbolicParameters(Arrays.asList(var_Super, var_Sub));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

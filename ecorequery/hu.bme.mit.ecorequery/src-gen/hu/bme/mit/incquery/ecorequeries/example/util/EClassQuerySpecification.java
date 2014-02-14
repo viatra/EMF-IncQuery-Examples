@@ -73,9 +73,11 @@ public final class EClassQuerySpecification extends BaseGeneratedQuerySpecificat
     {
       PBody body = new PBody(this);
       PVariable var_EClass = body.getOrCreateVariableByName("EClass");
-      new ExportedParameter(body, var_EClass, "EClass");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_EClass, "EClass")
+      ));
+      
       new TypeUnary(body, var_EClass, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
-      body.setSymbolicParameters(Arrays.asList(var_EClass));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

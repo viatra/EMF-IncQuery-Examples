@@ -77,13 +77,15 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
       PVariable var_ERef = body.getOrCreateVariableByName("ERef");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-      new ExportedParameter(body, var_ERef, "ERef");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_ERef, "ERef")
+      ));
+      
       new TypeUnary(body, var_ERef, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference"), "http://www.eclipse.org/emf/2002/Ecore/EReference");
       new ConstantValue(body, var__virtual_0_, 0);
       new TypeBinary(body, context, var_ERef, var__virtual_0_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "lowerBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.lowerBound");
       new ConstantValue(body, var__virtual_2_, -1);
       new TypeBinary(body, context, var_ERef, var__virtual_2_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.upperBound");
-      body.setSymbolicParameters(Arrays.asList(var_ERef));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

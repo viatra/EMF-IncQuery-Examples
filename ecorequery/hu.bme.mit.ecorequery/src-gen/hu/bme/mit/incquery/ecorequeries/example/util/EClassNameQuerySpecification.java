@@ -75,10 +75,12 @@ public final class EClassNameQuerySpecification extends BaseGeneratedQuerySpecif
       PBody body = new PBody(this);
       PVariable var_EName = body.getOrCreateVariableByName("EName");
       PVariable var__EClass = body.getOrCreateVariableByName("_EClass");
-      new ExportedParameter(body, var_EName, "EName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_EName, "EName")
+      ));
+      
       new TypeUnary(body, var__EClass, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
       new TypeBinary(body, context, var__EClass, var_EName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
-      body.setSymbolicParameters(Arrays.asList(var_EName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

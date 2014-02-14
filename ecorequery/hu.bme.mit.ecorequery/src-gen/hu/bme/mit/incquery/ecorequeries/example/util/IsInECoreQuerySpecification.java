@@ -76,11 +76,13 @@ public final class IsInECoreQuerySpecification extends BaseGeneratedQuerySpecifi
       PVariable var_Element = body.getOrCreateVariableByName("Element");
       PVariable var_EP = body.getOrCreateVariableByName("EP");
       PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      new ExportedParameter(body, var_Element, "Element");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_Element, "Element")
+      ));
+      
       new TypeBinary(body, context, var_Element, var_EP, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClassifier", "ePackage"), "http://www.eclipse.org/emf/2002/Ecore/EClassifier.ePackage");
       new ConstantValue(body, var__virtual_1_, "http://www.eclipse.org/emf/2002/Ecore");
       new TypeBinary(body, context, var_EP, var__virtual_1_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EPackage", "nsURI"), "http://www.eclipse.org/emf/2002/Ecore/EPackage.nsURI");
-      body.setSymbolicParameters(Arrays.asList(var_Element));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

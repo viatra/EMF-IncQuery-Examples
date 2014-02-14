@@ -78,11 +78,13 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
       PBody body = new PBody(this);
       PVariable var_Element = body.getOrCreateVariableByName("Element");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      new ExportedParameter(body, var_Element, "Element");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_Element, "Element")
+      ));
+      
       new PositivePatternCall(body, new FlatTuple(var_Element), IsInECoreQuerySpecification.instance());
       new ConstantValue(body, var__virtual_0_, "EString");
       new PositivePatternCall(body, new FlatTuple(var_Element, var__virtual_0_), ECoreNamedElementQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_Element));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

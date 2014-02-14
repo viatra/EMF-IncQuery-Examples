@@ -79,12 +79,15 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
       PVariable var_E = body.getOrCreateVariableByName("E");
       PVariable var_Attr = body.getOrCreateVariableByName("Attr");
       PVariable var_Type = body.getOrCreateVariableByName("Type");
-      new ExportedParameter(body, var_E, "E");
-      new ExportedParameter(body, var_Attr, "Attr");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_E, "E"), 
+        new ExportedParameter(body, var_Attr, "Attr")
+      ));
+      
+      
       new TypeUnary(body, var_E, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
       new PositivePatternCall(body, new FlatTuple(var_E, var_Attr, var_Type), EClassAttributeQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_Type), IsEStringQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_E, var_Attr));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

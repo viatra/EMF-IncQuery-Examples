@@ -29,20 +29,32 @@ public final class EcoreQueriesMatchers {
     
   }
   
+  public SuperTypeOfNameMatcher getSuperTypeOfNameMatcher() throws IncQueryException {
+    return SuperTypeOfNameMatcher.on(engine);
+  }
+  
   public EClassMatcher getEClassMatcher() throws IncQueryException {
     return EClassMatcher.on(engine);
   }
   
-  public IsEStringMatcher getIsEStringMatcher() throws IncQueryException {
-    return IsEStringMatcher.on(engine);
+  public EReferenceWithStarMultiplicityNameMatcher getEReferenceWithStarMultiplicityNameMatcher() throws IncQueryException {
+    return EReferenceWithStarMultiplicityNameMatcher.on(engine);
   }
   
-  public EObjectMatcher getEObjectMatcher() throws IncQueryException {
-    return EObjectMatcher.on(engine);
+  public ECoreNamedElementMatcher getECoreNamedElementMatcher() throws IncQueryException {
+    return ECoreNamedElementMatcher.on(engine);
   }
   
-  public SampleQuery2Matcher getSampleQuery2Matcher() throws IncQueryException {
-    return SampleQuery2Matcher.on(engine);
+  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicityMatcher() throws IncQueryException {
+    return EReferenceWithOneMultiplicityMatcher.on(engine);
+  }
+  
+  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityNameMatcher() throws IncQueryException {
+    return EReferenceWithOneMultiplicityNameMatcher.on(engine);
+  }
+  
+  public EClassAttributeMatcher getEClassAttributeMatcher() throws IncQueryException {
+    return EClassAttributeMatcher.on(engine);
   }
   
   public ECoreNamedElementNameMatcher getECoreNamedElementNameMatcher() throws IncQueryException {
@@ -53,47 +65,35 @@ public final class EcoreQueriesMatchers {
     return IsInECoreMatcher.on(engine);
   }
   
-  public EClassAttributeMatcher getEClassAttributeMatcher() throws IncQueryException {
-    return EClassAttributeMatcher.on(engine);
-  }
-  
-  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityNameMatcher() throws IncQueryException {
-    return EReferenceWithOneMultiplicityNameMatcher.on(engine);
-  }
-  
-  public ECoreNamedElementMatcher getECoreNamedElementMatcher() throws IncQueryException {
-    return ECoreNamedElementMatcher.on(engine);
-  }
-  
-  public EClassNameMatcher getEClassNameMatcher() throws IncQueryException {
-    return EClassNameMatcher.on(engine);
-  }
-  
-  public SampleQueryMatcher getSampleQueryMatcher() throws IncQueryException {
-    return SampleQueryMatcher.on(engine);
-  }
-  
-  public SuperTypeOfNameMatcher getSuperTypeOfNameMatcher() throws IncQueryException {
-    return SuperTypeOfNameMatcher.on(engine);
-  }
-  
   public EReferenceWithStarMultiplicityMatcher getEReferenceWithStarMultiplicityMatcher() throws IncQueryException {
     return EReferenceWithStarMultiplicityMatcher.on(engine);
   }
   
-  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicityMatcher() throws IncQueryException {
-    return EReferenceWithOneMultiplicityMatcher.on(engine);
+  public EObjectMatcher getEObjectMatcher() throws IncQueryException {
+    return EObjectMatcher.on(engine);
   }
   
   public SuperTypeOfMatcher getSuperTypeOfMatcher() throws IncQueryException {
     return SuperTypeOfMatcher.on(engine);
   }
   
-  public EClassWithEStringAttributeMatcher getEClassWithEStringAttributeMatcher() throws IncQueryException {
-    return EClassWithEStringAttributeMatcher.on(engine);
+  public SampleQueryMatcher getSampleQueryMatcher() throws IncQueryException {
+    return SampleQueryMatcher.on(engine);
   }
   
-  public EReferenceWithStarMultiplicityNameMatcher getEReferenceWithStarMultiplicityNameMatcher() throws IncQueryException {
-    return EReferenceWithStarMultiplicityNameMatcher.on(engine);
+  public SampleQuery2Matcher getSampleQuery2Matcher() throws IncQueryException {
+    return SampleQuery2Matcher.on(engine);
+  }
+  
+  public IsEStringMatcher getIsEStringMatcher() throws IncQueryException {
+    return IsEStringMatcher.on(engine);
+  }
+  
+  public EClassNameMatcher getEClassNameMatcher() throws IncQueryException {
+    return EClassNameMatcher.on(engine);
+  }
+  
+  public EClassWithEStringAttributeMatcher getEClassWithEStringAttributeMatcher() throws IncQueryException {
+    return EClassWithEStringAttributeMatcher.on(engine);
   }
 }

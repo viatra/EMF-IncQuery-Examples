@@ -86,12 +86,20 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
       PVariable var_Relates2 = body.getOrCreateVariableByName("Relates2");
       PVariable var_Label1 = body.getOrCreateVariableByName("Label1");
       PVariable var_Label2 = body.getOrCreateVariableByName("Label2");
-      new ExportedParameter(body, var_XElement, "XElement");
-      new ExportedParameter(body, var_YElement, "YElement");
-      new ExportedParameter(body, var_Relates1, "Relates1");
-      new ExportedParameter(body, var_Relates2, "Relates2");
-      new ExportedParameter(body, var_Label1, "Label1");
-      new ExportedParameter(body, var_Label2, "Label2");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_XElement, "XElement"), 
+        new ExportedParameter(body, var_YElement, "YElement"), 
+        new ExportedParameter(body, var_Relates1, "Relates1"), 
+        new ExportedParameter(body, var_Relates2, "Relates2"), 
+        new ExportedParameter(body, var_Label1, "Label1"), 
+        new ExportedParameter(body, var_Label2, "Label2")
+      ));
+      
+      
+      
+      
+      
+      
       new TypeBinary(body, context, var_XElement, var_Relates1, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eStructuralFeatures");
       new TypeBinary(body, context, var_Relates1, var_Relates2, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference", "eOpposite"), "http://www.eclipse.org/emf/2002/Ecore/EReference.eOpposite");
       new TypeUnary(body, var_YElement, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
@@ -102,7 +110,6 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
       new PositivePatternCall(body, new FlatTuple(var_YElement, var_Label2), EClassWithEStringAttributeQuerySpecification.instance());
       new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance());
       new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_XElement, var_YElement, var_Relates1, var_Relates2, var_Label1, var_Label2));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

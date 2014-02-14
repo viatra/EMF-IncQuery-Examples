@@ -74,9 +74,11 @@ public final class ECoreNamedElementNameQuerySpecification extends BaseGenerated
       PBody body = new PBody(this);
       PVariable var_Name = body.getOrCreateVariableByName("Name");
       PVariable var_Element = body.getOrCreateVariableByName("Element");
-      new ExportedParameter(body, var_Name, "Name");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_Name, "Name")
+      ));
+      
       new TypeBinary(body, context, var_Element, var_Name, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
-      body.setSymbolicParameters(Arrays.asList(var_Name));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

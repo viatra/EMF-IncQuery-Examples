@@ -76,12 +76,15 @@ public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQueryS
       PVariable var_SubName = body.getOrCreateVariableByName("SubName");
       PVariable var_Sub = body.getOrCreateVariableByName("Sub");
       PVariable var_Super = body.getOrCreateVariableByName("Super");
-      new ExportedParameter(body, var_SuperName, "SuperName");
-      new ExportedParameter(body, var_SubName, "SubName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_SuperName, "SuperName"), 
+        new ExportedParameter(body, var_SubName, "SubName")
+      ));
+      
+      
       new TypeBinary(body, context, var_Sub, var_Super, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eSuperTypes"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eSuperTypes");
       new TypeBinary(body, context, var_Super, var_SuperName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
       new TypeBinary(body, context, var_Sub, var_SubName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
-      body.setSymbolicParameters(Arrays.asList(var_SuperName, var_SubName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

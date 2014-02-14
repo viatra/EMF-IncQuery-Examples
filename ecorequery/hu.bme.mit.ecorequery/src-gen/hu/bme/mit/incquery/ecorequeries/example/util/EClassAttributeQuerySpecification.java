@@ -76,13 +76,17 @@ public final class EClassAttributeQuerySpecification extends BaseGeneratedQueryS
       PVariable var_E = body.getOrCreateVariableByName("E");
       PVariable var_Attr = body.getOrCreateVariableByName("Attr");
       PVariable var_Type = body.getOrCreateVariableByName("Type");
-      new ExportedParameter(body, var_E, "E");
-      new ExportedParameter(body, var_Attr, "Attr");
-      new ExportedParameter(body, var_Type, "Type");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_E, "E"), 
+        new ExportedParameter(body, var_Attr, "Attr"), 
+        new ExportedParameter(body, var_Type, "Type")
+      ));
+      
+      
+      
       new TypeBinary(body, context, var_E, var_Attr, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eStructuralFeatures");
       new TypeUnary(body, var_Attr, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute"), "http://www.eclipse.org/emf/2002/Ecore/EAttribute");
       new TypeBinary(body, context, var_Attr, var_Type, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
-      body.setSymbolicParameters(Arrays.asList(var_E, var_Attr, var_Type));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

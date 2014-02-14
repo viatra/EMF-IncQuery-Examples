@@ -78,14 +78,16 @@ public final class EReferenceWithStarMultiplicityNameQuerySpecification extends 
       PVariable var_ERef = body.getOrCreateVariableByName("ERef");
       PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      new ExportedParameter(body, var_ERefName, "ERefName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_ERefName, "ERefName")
+      ));
+      
       new TypeUnary(body, var_ERef, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference"), "http://www.eclipse.org/emf/2002/Ecore/EReference");
       new TypeBinary(body, context, var_ERef, var_ERefName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
       new ConstantValue(body, var__virtual_1_, 0);
       new TypeBinary(body, context, var_ERef, var__virtual_1_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "lowerBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.lowerBound");
       new ConstantValue(body, var__virtual_3_, -1);
       new TypeBinary(body, context, var_ERef, var__virtual_3_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.upperBound");
-      body.setSymbolicParameters(Arrays.asList(var_ERefName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);
