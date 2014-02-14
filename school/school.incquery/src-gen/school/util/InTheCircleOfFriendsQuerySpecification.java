@@ -78,13 +78,16 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
       PVariable var_Someone = body.getOrCreateVariableByName("Someone");
-      new ExportedParameter(body, var_S1, "S1");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_Someone, "Someone")
+      ));
+      
       new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      new ExportedParameter(body, var_Someone, "Someone");
+      
       new TypeUnary(body, var_Someone, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance());
       new Inequality(body, var_S1, var_Someone);
-      body.setSymbolicParameters(Arrays.asList(var_S1, var_Someone));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

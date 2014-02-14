@@ -85,9 +85,13 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
       PVariable var__Sx1 = body.getOrCreateVariableByName("_Sx1");
       PVariable var_M = body.getOrCreateVariableByName("M");
       PVariable var__Sx2 = body.getOrCreateVariableByName("_Sx2");
-      new ExportedParameter(body, var_S1, "S1");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_S2, "S2")
+      ));
+      
       new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      new ExportedParameter(body, var_S2, "S2");
+      
       new TypeUnary(body, var_S2, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance(), var_N);
       new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance(), var_M);
@@ -110,7 +114,6 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
         }
         
         },  null); 
-      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
       bodies.add(body);
     }
     {

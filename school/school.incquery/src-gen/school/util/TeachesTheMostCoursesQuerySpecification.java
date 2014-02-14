@@ -77,10 +77,12 @@ public final class TeachesTheMostCoursesQuerySpecification extends BaseGenerated
       PBody body = new PBody(this);
       PVariable var_T = body.getOrCreateVariableByName("T");
       PVariable var__Tx = body.getOrCreateVariableByName("_Tx");
-      new ExportedParameter(body, var_T, "T");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_T, "T")
+      ));
+      
       new TypeUnary(body, var_T, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
       new NegativePatternCall(body, new FlatTuple(var__Tx, var_T), TeachesMoreClassesQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_T));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

@@ -78,7 +78,10 @@ public final class CourseWithNameLongerThanWeightQuerySpecification extends Base
       PVariable var_C = body.getOrCreateVariableByName("C");
       PVariable var_CName = body.getOrCreateVariableByName("CName");
       PVariable var_W = body.getOrCreateVariableByName("W");
-      new ExportedParameter(body, var_C, "C");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_C, "C")
+      ));
+      
       new TypeBinary(body, context, var_C, var_CName, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
       new TypeBinary(body, context, var_C, var_W, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
@@ -100,7 +103,6 @@ public final class CourseWithNameLongerThanWeightQuerySpecification extends Base
         }
         
         },  null); 
-      body.setSymbolicParameters(Arrays.asList(var_C));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

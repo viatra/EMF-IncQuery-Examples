@@ -77,10 +77,12 @@ public final class TheOnesWithTheBiggestCircleQuerySpecification extends BaseGen
       PBody body = new PBody(this);
       PVariable var_S = body.getOrCreateVariableByName("S");
       PVariable var__Sx = body.getOrCreateVariableByName("_Sx");
-      new ExportedParameter(body, var_S, "S");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S, "S")
+      ));
+      
       new TypeUnary(body, var_S, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       new NegativePatternCall(body, new FlatTuple(var__Sx, var_S), MoreFriendsThanQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_S));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

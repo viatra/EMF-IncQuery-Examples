@@ -78,10 +78,12 @@ public final class TheOnesWithTheBiggestCircleNameQuerySpecification extends Bas
       PVariable var_SName = body.getOrCreateVariableByName("SName");
       PVariable var__Sx = body.getOrCreateVariableByName("_Sx");
       PVariable var_S = body.getOrCreateVariableByName("S");
-      new ExportedParameter(body, var_SName, "SName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_SName, "SName")
+      ));
+      
       new NegativePatternCall(body, new FlatTuple(var__Sx, var_S), MoreFriendsThanQuerySpecification.instance());
       new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
-      body.setSymbolicParameters(Arrays.asList(var_SName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

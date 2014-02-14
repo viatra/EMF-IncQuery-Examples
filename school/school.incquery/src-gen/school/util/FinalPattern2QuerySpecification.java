@@ -87,10 +87,16 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       PVariable var_T = body.getOrCreateVariableByName("T");
       PVariable var_S = body.getOrCreateVariableByName("S");
       PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      new ExportedParameter(body, var_YDate, "YDate");
-      new ExportedParameter(body, var_CSub, "CSub");
-      new ExportedParameter(body, var_TName, "TName");
-      new ExportedParameter(body, var_SName, "SName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_YDate, "YDate"), 
+        new ExportedParameter(body, var_CSub, "CSub"), 
+        new ExportedParameter(body, var_TName, "TName"), 
+        new ExportedParameter(body, var_SName, "SName")
+      ));
+      
+      
+      
+      
       new TypeBinary(body, context, var_Y, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Year", "schoolClasses"), "http://school.ecore/Year.schoolClasses");
       new TypeBinary(body, context, var__virtual_0_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new TypeBinary(body, context, var_C, var_T, getFeatureLiteral("http://school.ecore", "Course", "teacher"), "http://school.ecore/Course.teacher");
@@ -102,12 +108,12 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       new TypeBinary(body, context, var_C, var_CSub, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
       new TypeBinary(body, context, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
-      body.setSymbolicParameters(Arrays.asList(var_YDate, var_CSub, var_TName, var_SName));
       bodies.add(body);
     }
     {
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("message","The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$");
+      annotation.addAttribute("display",true);
       addAnnotation(annotation);
     }
     {

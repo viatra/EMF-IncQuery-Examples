@@ -25,7 +25,7 @@ import school.util.FinalPattern2QuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * {@literal @}QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+ * {@literal @}QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$", display=true)
  * 	{@literal @}ObservableValue(name = "Year", expression = "YDate")
  * 	{@literal @}ObservableValue(name = "Teacher", expression = "TName")
  * 	{@literal @}ObservableValue(name = "Student", expression = "SName")

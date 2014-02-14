@@ -83,10 +83,16 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       PVariable var_S = body.getOrCreateVariableByName("S");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      new ExportedParameter(body, var_Y, "Y");
-      new ExportedParameter(body, var_C, "C");
-      new ExportedParameter(body, var_T, "T");
-      new ExportedParameter(body, var_S, "S");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_Y, "Y"), 
+        new ExportedParameter(body, var_C, "C"), 
+        new ExportedParameter(body, var_T, "T"), 
+        new ExportedParameter(body, var_S, "S")
+      ));
+      
+      
+      
+      
       new TypeBinary(body, context, var_Y, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Year", "schoolClasses"), "http://school.ecore/Year.schoolClasses");
       new TypeBinary(body, context, var__virtual_0_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new TypeBinary(body, context, var_C, var_T, getFeatureLiteral("http://school.ecore", "Course", "teacher"), "http://school.ecore/Course.teacher");
@@ -94,7 +100,6 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       new TypeBinary(body, context, var__virtual_3_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new PositivePatternCall(body, new FlatTuple(var_S), TheOnesWithTheBiggestCircleQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_T), TeachesTheMostCoursesQuerySpecification.instance());
-      body.setSymbolicParameters(Arrays.asList(var_Y, var_C, var_T, var_S));
       bodies.add(body);
     }
     {

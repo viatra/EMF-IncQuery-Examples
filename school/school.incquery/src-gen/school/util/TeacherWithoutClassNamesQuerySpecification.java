@@ -78,10 +78,12 @@ public final class TeacherWithoutClassNamesQuerySpecification extends BaseGenera
       PVariable var_TNames = body.getOrCreateVariableByName("TNames");
       PVariable var_T = body.getOrCreateVariableByName("T");
       PVariable var__SC = body.getOrCreateVariableByName("_SC");
-      new ExportedParameter(body, var_TNames, "TNames");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_TNames, "TNames")
+      ));
+      
       new NegativePatternCall(body, new FlatTuple(var_T, var__SC), ClassesOfTeacherQuerySpecification.instance());
       new TypeBinary(body, context, var_T, var_TNames, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
-      body.setSymbolicParameters(Arrays.asList(var_TNames));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

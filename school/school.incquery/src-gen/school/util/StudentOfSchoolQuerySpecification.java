@@ -76,12 +76,15 @@ public final class StudentOfSchoolQuerySpecification extends BaseGeneratedQueryS
       PVariable var_Sch = body.getOrCreateVariableByName("Sch");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      new ExportedParameter(body, var_S, "S");
-      new ExportedParameter(body, var_Sch, "Sch");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S, "S"), 
+        new ExportedParameter(body, var_Sch, "Sch")
+      ));
+      
+      
       new TypeBinary(body, context, var_S, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
       new TypeBinary(body, context, var__virtual_0_, var__virtual_1_, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new TypeBinary(body, context, var__virtual_1_, var_Sch, getFeatureLiteral("http://school.ecore", "Course", "school"), "http://school.ecore/Course.school");
-      body.setSymbolicParameters(Arrays.asList(var_S, var_Sch));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

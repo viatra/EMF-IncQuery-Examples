@@ -80,13 +80,16 @@ public final class InTheCircleOfFriendsNamesQuerySpecification extends BaseGener
       PVariable var_SomeoneName = body.getOrCreateVariableByName("SomeoneName");
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
       PVariable var_Someone = body.getOrCreateVariableByName("Someone");
-      new ExportedParameter(body, var_S1Name, "S1Name");
-      new ExportedParameter(body, var_SomeoneName, "SomeoneName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1Name, "S1Name"), 
+        new ExportedParameter(body, var_SomeoneName, "SomeoneName")
+      ));
+      
+      
       new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance());
       new Inequality(body, var_S1, var_Someone);
       new TypeBinary(body, context, var_S1, var_S1Name, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       new TypeBinary(body, context, var_Someone, var_SomeoneName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
-      body.setSymbolicParameters(Arrays.asList(var_S1Name, var_SomeoneName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

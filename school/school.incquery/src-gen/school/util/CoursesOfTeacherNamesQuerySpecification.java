@@ -76,12 +76,15 @@ public final class CoursesOfTeacherNamesQuerySpecification extends BaseGenerated
       PVariable var_CName = body.getOrCreateVariableByName("CName");
       PVariable var_T = body.getOrCreateVariableByName("T");
       PVariable var_C = body.getOrCreateVariableByName("C");
-      new ExportedParameter(body, var_TName, "TName");
-      new ExportedParameter(body, var_CName, "CName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_TName, "TName"), 
+        new ExportedParameter(body, var_CName, "CName")
+      ));
+      
+      
       new TypeBinary(body, context, var_T, var_C, getFeatureLiteral("http://school.ecore", "Teacher", "courses"), "http://school.ecore/Teacher.courses");
       new TypeBinary(body, context, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       new TypeBinary(body, context, var_C, var_CName, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
-      body.setSymbolicParameters(Arrays.asList(var_TName, var_CName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

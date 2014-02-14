@@ -73,9 +73,11 @@ public final class TeachersQuerySpecification extends BaseGeneratedQuerySpecific
     {
       PBody body = new PBody(this);
       PVariable var_T = body.getOrCreateVariableByName("T");
-      new ExportedParameter(body, var_T, "T");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_T, "T")
+      ));
+      
       new TypeUnary(body, var_T, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
-      body.setSymbolicParameters(Arrays.asList(var_T));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

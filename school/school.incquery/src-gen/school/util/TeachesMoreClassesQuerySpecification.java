@@ -85,9 +85,13 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
       PVariable var__SC1 = body.getOrCreateVariableByName("_SC1");
       PVariable var_M = body.getOrCreateVariableByName("M");
       PVariable var__SC2 = body.getOrCreateVariableByName("_SC2");
-      new ExportedParameter(body, var_T1, "T1");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_T1, "T1"), 
+        new ExportedParameter(body, var_T2, "T2")
+      ));
+      
       new TypeUnary(body, var_T1, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
-      new ExportedParameter(body, var_T2, "T2");
+      
       new TypeUnary(body, var_T2, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
       new PatternMatchCounter(body, new FlatTuple(var_T1, var__SC1), ClassesOfTeacherQuerySpecification.instance(), var_N);
       new PatternMatchCounter(body, new FlatTuple(var_T2, var__SC2), ClassesOfTeacherQuerySpecification.instance(), var_M);
@@ -110,7 +114,6 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
         }
         
         },  null); 
-      body.setSymbolicParameters(Arrays.asList(var_T1, var_T2));
       bodies.add(body);
     }
     {

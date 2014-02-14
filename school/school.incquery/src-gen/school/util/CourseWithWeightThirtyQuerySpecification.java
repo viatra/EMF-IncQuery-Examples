@@ -75,10 +75,12 @@ public final class CourseWithWeightThirtyQuerySpecification extends BaseGenerate
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      new ExportedParameter(body, var_C, "C");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_C, "C")
+      ));
+      
       new ConstantValue(body, var__virtual_0_, 30);
       new TypeBinary(body, context, var_C, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
-      body.setSymbolicParameters(Arrays.asList(var_C));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

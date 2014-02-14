@@ -77,7 +77,10 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
       PVariable var_W = body.getOrCreateVariableByName("W");
-      new ExportedParameter(body, var_C, "C");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_C, "C")
+      ));
+      
       new TypeBinary(body, context, var_C, var_W, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
         @Override
@@ -97,7 +100,6 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         }
         
         },  null); 
-      body.setSymbolicParameters(Arrays.asList(var_C));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);
@@ -129,7 +131,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
   }
   
   
-  private Boolean evaluateExpression_1_1(final Integer W) {
+  private boolean evaluateExpression_1_1(final Integer W) {
     boolean _xifexpression = false;
     int _modulo = ((W).intValue() % 2);
     boolean _equals = (_modulo == 0);
@@ -148,7 +150,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
           int _modulo_1 = ((W).intValue() % (divisor).intValue());
           boolean _equals_1 = (_modulo_1 == 0);
           if (_equals_1) {
-            return Boolean.valueOf(false);
+            return false;
           } else {
             int _plus = ((divisor).intValue() + 2);
             divisor = Integer.valueOf(_plus);
@@ -160,6 +162,6 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
       }
       _xifexpression = _xblockexpression;
     }
-    return Boolean.valueOf(_xifexpression);
+    return _xifexpression;
   }
 }

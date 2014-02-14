@@ -78,14 +78,17 @@ public final class StudentOfSchoolNamesQuerySpecification extends BaseGeneratedQ
       PVariable var_Sch = body.getOrCreateVariableByName("Sch");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      new ExportedParameter(body, var_SName, "SName");
-      new ExportedParameter(body, var_SchName, "SchName");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_SName, "SName"), 
+        new ExportedParameter(body, var_SchName, "SchName")
+      ));
+      
+      
       new TypeBinary(body, context, var_S, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
       new TypeBinary(body, context, var__virtual_0_, var__virtual_1_, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new TypeBinary(body, context, var__virtual_1_, var_Sch, getFeatureLiteral("http://school.ecore", "Course", "school"), "http://school.ecore/Course.school");
       new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       new TypeBinary(body, context, var_Sch, var_SchName, getFeatureLiteral("http://school.ecore", "School", "name"), "http://school.ecore/School.name");
-      body.setSymbolicParameters(Arrays.asList(var_SName, var_SchName));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

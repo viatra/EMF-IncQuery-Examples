@@ -75,20 +75,26 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
       PVariable var_S2 = body.getOrCreateVariableByName("S2");
-      new ExportedParameter(body, var_S1, "S1");
-      new ExportedParameter(body, var_S2, "S2");
-      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
-      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_S2, "S2")
+      ));
+      
+      
+      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
     }
     {
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
       PVariable var_S2 = body.getOrCreateVariableByName("S2");
-      new ExportedParameter(body, var_S1, "S1");
-      new ExportedParameter(body, var_S2, "S2");
-      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
-      body.setSymbolicParameters(Arrays.asList(var_S1, var_S2));
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_S2, "S2")
+      ));
+      
+      
+      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
     }
     {

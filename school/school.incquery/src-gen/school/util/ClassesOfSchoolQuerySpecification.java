@@ -73,9 +73,11 @@ public final class ClassesOfSchoolQuerySpecification extends BaseGeneratedQueryS
     {
       PBody body = new PBody(this);
       PVariable var_SC = body.getOrCreateVariableByName("SC");
-      new ExportedParameter(body, var_SC, "SC");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_SC, "SC")
+      ));
+      
       new TypeUnary(body, var_SC, getClassifierLiteral("http://school.ecore", "SchoolClass"), "http://school.ecore/SchoolClass");
-      body.setSymbolicParameters(Arrays.asList(var_SC));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

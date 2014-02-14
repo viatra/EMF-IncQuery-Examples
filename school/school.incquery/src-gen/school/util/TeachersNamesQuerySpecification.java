@@ -74,9 +74,11 @@ public final class TeachersNamesQuerySpecification extends BaseGeneratedQuerySpe
       PBody body = new PBody(this);
       PVariable var_TN = body.getOrCreateVariableByName("TN");
       PVariable var__T = body.getOrCreateVariableByName("_T");
-      new ExportedParameter(body, var_TN, "TN");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_TN, "TN")
+      ));
+      
       new TypeBinary(body, context, var__T, var_TN, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
-      body.setSymbolicParameters(Arrays.asList(var_TN));
       bodies.add(body);
     }
     setStatus(PQueryStatus.OK);

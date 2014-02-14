@@ -272,7 +272,7 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 		find teachesTheMostCourses(T);
 	}
 
-	@QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
+	@QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$", display=true)
 	@ObservableValue(name = "Year", expression = "YDate")
 	@ObservableValue(name = "Teacher", expression = "TName")
 	@ObservableValue(name = "Student", expression = "SName")
