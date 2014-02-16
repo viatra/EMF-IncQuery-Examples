@@ -18,6 +18,14 @@
       </matcher>
    </extension>
    <extension
+         id="net.istvanrath.emfxcel.incquery.demo.IITOnlabosHallgato"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.IITOnlabosHallgatoQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.IITOnlabosHallgato">
+      </matcher>
+   </extension>
+   <extension
          id="net.istvanrath.emfxcel.incquery.demo.NemVetteFelAzOnlabot"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -31,6 +39,22 @@
       <matcher
             querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.KakukkFiokaQuerySpecification$Provider"
             id="net.istvanrath.emfxcel.incquery.demo.KakukkFioka">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.IITreAtSlisszolt"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.IITreAtSlisszoltQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.IITreAtSlisszolt">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.demo.IITKakukkfioka"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.IITKakukkfiokaQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.IITKakukkfioka">
       </matcher>
    </extension>
 

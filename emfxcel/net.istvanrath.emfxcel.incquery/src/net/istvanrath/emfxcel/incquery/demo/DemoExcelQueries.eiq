@@ -2,35 +2,82 @@ package net.istvanrath.emfxcel.incquery.demo
 
 import "http://istvanrath.net/demos/emfxcel"
 
-@QueryExplorer(display=true,message = "$Nev$")
-pattern AgazatiHallgato(Hallgato : StringCell, Nev) {
-	Worksheet.name(WS, "AgazatiBesorolas");
-	Worksheet.rows(WS, HallgatoSor);
-	Row.cells(HallgatoSor, Hallgato);
-	StringCell.columnIndex(Hallgato, 1);
-	StringCell.stringValue(Hallgato, Nev);
-	Row.cells(HallgatoSor, Agazat);
-	StringCell(Agazat);
-	Cell.columnIndex(Agazat, 5);
-	StringCell.stringValue(Agazat, "Rendszertervezés");
+private pattern CellInWorkSheet(C: Cell, WorkSheetName, RowNum, ColNum)
+{
+	Worksheet.name(WS, WorkSheetName);
+	Worksheet.rows(WS, Row);
+	Row.cells(Row, C);
+	Cell.columnIndex(C,ColNum);
+	Cell.rowIndex(C,RowNum);
 }
 
-@QueryExplorer(display=true,message = "$Nev$")
-pattern OnlabosHallgato(Hallgato : Cell, Nev) {
-	Worksheet.name(WS, "Onlab");
-	Worksheet.rows(WS, HallgatoSor);
-	Row(HallgatoSor);
-	Row.cells(HallgatoSor, Hallgato);
-	StringCell.columnIndex(Hallgato, 1);
-	StringCell.stringValue(Hallgato, Nev);
+private pattern NamedColumn(WorkSheetName, ColName, ColNum)
+{
+	find CellInWorkSheet(Top, WorkSheetName, 0, ColNum);
+	StringCell.stringValue(Top,ColName);
 }
 
-pattern NemVetteFelAzOnlabot(Nev) {
-	neg find OnlabosHallgato(_H, Nev);
-	find AgazatiHallgato(_J, Nev);
+@QueryExplorer(display=true, message = "$Nev$ : $NeptunKod$")
+pattern AgazatiHallgato(AgazatNeve, Nev, NeptunKod) {
+	find NamedColumn("AgazatiBesorolas", "neptunkód", NeptunColumn);
+	find CellInWorkSheet(HallgatoNeptun, "AgazatiBesorolas", RowNum, NeptunColumn);
+	StringCell.stringValue(HallgatoNeptun, NeptunKod);
+	
+	find NamedColumn("AgazatiBesorolas", "név", NevColumn);
+	find CellInWorkSheet(HallgatoNev, "AgazatiBesorolas", RowNum, NevColumn);
+	StringCell.stringValue(HallgatoNev, Nev);
+
+	find NamedColumn("AgazatiBesorolas", "2013/14/2", AgazatColumn);	
+	find CellInWorkSheet(Agazat, "AgazatiBesorolas", RowNum, AgazatColumn);
+	StringCell.stringValue(Agazat, AgazatNeve);
+	check(RowNum>0);
 }
 
-pattern KakukkFioka(Nev) {
-	find OnlabosHallgato(_H, Nev);
-	neg find AgazatiHallgato(_J, Nev);
+@QueryExplorer(display=true, message = "$Nev$ : $NeptunKod$")
+pattern OnlabosHallgato(Nev, NeptunKod) {
+	find NamedColumn("Onlab", "Név", NevColumn);
+	find NamedColumn("Onlab", "Neptun kód", NeptunColumn);
+
+	find CellInWorkSheet(HallgatoNev, "Onlab", RowNum, NevColumn);
+	find CellInWorkSheet(HallgatoNeptun, "Onlab", RowNum, NeptunColumn);
+	
+	StringCell.stringValue(HallgatoNev, Nev);
+	StringCell.stringValue(HallgatoNeptun, NeptunKod);	
+	check(RowNum>0);
+}	
+
+@QueryExplorer(display=true, message = "$Nev$ : $NeptunKod$")
+pattern IITOnlabosHallgato(Nev, NeptunKod) {
+	find NamedColumn("IITOnlab", "Név", NevColumn);
+	find NamedColumn("IITOnlab", "Neptun kód", NeptunColumn);
+
+	find CellInWorkSheet(HallgatoNev, "IITOnlab", RowNum, NevColumn);
+	find CellInWorkSheet(HallgatoNeptun, "IITOnlab", RowNum, NeptunColumn);
+	
+	StringCell.stringValue(HallgatoNev, Nev);
+	StringCell.stringValue(HallgatoNeptun, NeptunKod);	
+	check(RowNum>0);
+}	
+
+@QueryExplorer(display=true, message = "$Nev$ : $Neptun$")
+pattern NemVetteFelAzOnlabot(Nev, Neptun) {
+	neg find OnlabosHallgato(_HNev, Neptun);
+	find AgazatiHallgato("Rendszertervezés", Nev, Neptun);
 }
+
+@QueryExplorer(display=true, message = "$Nev$ : $Neptun$")
+pattern KakukkFioka(Nev, Neptun) {
+	find OnlabosHallgato(Nev, Neptun);
+	neg find AgazatiHallgato("Rendszertervezés", _HNev, Neptun);
+}
+
+pattern IITreAtSlisszolt(Nev, Neptun) {
+	find AgazatiHallgato("Rendszertervezés", Nev, Neptun);
+	find IITOnlabosHallgato(_JNev, Neptun);
+}
+
+pattern IITKakukkfioka(Nev, Neptun) {
+	neg find AgazatiHallgato("Rendszerfejlesztés", _JNev, Neptun);
+	find IITOnlabosHallgato(Nev, Neptun);
+}
+
