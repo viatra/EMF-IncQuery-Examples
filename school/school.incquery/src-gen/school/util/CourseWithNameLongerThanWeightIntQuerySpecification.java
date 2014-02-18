@@ -66,13 +66,9 @@ public final class CourseWithNameLongerThanWeightIntQuerySpecification extends B
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private CourseWithNameLongerThanWeightIntQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_W = body.getOrCreateVariableByName("W");
@@ -104,11 +100,14 @@ public final class CourseWithNameLongerThanWeightIntQuerySpecification extends B
         
         },  null); 
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private CourseWithNameLongerThanWeightIntQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithNameLongerThanWeightIntQuerySpecification> {

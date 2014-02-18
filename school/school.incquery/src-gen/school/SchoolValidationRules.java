@@ -40,8 +40,8 @@ public final class SchoolValidationRules extends BaseGeneratedPatternGroup {
   private static SchoolValidationRules INSTANCE;
   
   private SchoolValidationRules() throws IncQueryException {
-    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     querySpecifications.add(CourseWithTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
     
   }
 }

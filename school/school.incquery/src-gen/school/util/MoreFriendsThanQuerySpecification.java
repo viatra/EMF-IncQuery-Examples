@@ -70,13 +70,9 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private MoreFriendsThanQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
@@ -93,8 +89,8 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
       new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       
       new TypeUnary(body, var_S2, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance(), var_N);
-      new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance(), var_M);
+      new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance().instance(), var_N);
+      new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance().instance(), var_M);
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
         @Override
         public String getShortDescription() {
@@ -115,16 +111,19 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
         
         },  null); 
       bodies.add(body);
-    }
-    {
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private MoreFriendsThanQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<MoreFriendsThanQuerySpecification> {

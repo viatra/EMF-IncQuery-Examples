@@ -68,13 +68,9 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private FinalPattern2QuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_YDate = body.getOrCreateVariableByName("YDate");
@@ -109,8 +105,7 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       new TypeBinary(body, context, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       bodies.add(body);
-    }
-    {
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("message","The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$");
       annotation.addAttribute("display",true);
@@ -140,9 +135,13 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private FinalPattern2QuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FinalPattern2QuerySpecification> {

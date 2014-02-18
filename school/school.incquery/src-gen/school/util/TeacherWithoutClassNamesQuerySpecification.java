@@ -66,13 +66,9 @@ public final class TeacherWithoutClassNamesQuerySpecification extends BaseGenera
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private TeacherWithoutClassNamesQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_TNames = body.getOrCreateVariableByName("TNames");
@@ -82,14 +78,17 @@ public final class TeacherWithoutClassNamesQuerySpecification extends BaseGenera
         new ExportedParameter(body, var_TNames, "TNames")
       ));
       
-      new NegativePatternCall(body, new FlatTuple(var_T, var__SC), ClassesOfTeacherQuerySpecification.instance());
+      new NegativePatternCall(body, new FlatTuple(var_T, var__SC), ClassesOfTeacherQuerySpecification.instance().instance());
       new TypeBinary(body, context, var_T, var_TNames, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private TeacherWithoutClassNamesQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TeacherWithoutClassNamesQuerySpecification> {

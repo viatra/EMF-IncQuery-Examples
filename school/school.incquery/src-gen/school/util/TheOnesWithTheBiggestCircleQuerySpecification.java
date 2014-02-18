@@ -66,13 +66,9 @@ public final class TheOnesWithTheBiggestCircleQuerySpecification extends BaseGen
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private TheOnesWithTheBiggestCircleQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_S = body.getOrCreateVariableByName("S");
@@ -82,13 +78,16 @@ public final class TheOnesWithTheBiggestCircleQuerySpecification extends BaseGen
       ));
       
       new TypeUnary(body, var_S, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      new NegativePatternCall(body, new FlatTuple(var__Sx, var_S), MoreFriendsThanQuerySpecification.instance());
+      new NegativePatternCall(body, new FlatTuple(var__Sx, var_S), MoreFriendsThanQuerySpecification.instance().instance());
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private TheOnesWithTheBiggestCircleQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TheOnesWithTheBiggestCircleQuerySpecification> {

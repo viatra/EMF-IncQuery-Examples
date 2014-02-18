@@ -64,26 +64,9 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private FriendlyToQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
-    {
-      PBody body = new PBody(this);
-      PVariable var_S1 = body.getOrCreateVariableByName("S1");
-      PVariable var_S2 = body.getOrCreateVariableByName("S2");
-      body.setExportedParameters(Arrays.asList(
-        new ExportedParameter(body, var_S1, "S1"), 
-        new ExportedParameter(body, var_S2, "S2")
-      ));
-      
-      
-      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
-      bodies.add(body);
-    }
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
@@ -96,16 +79,31 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       
       new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
-    }
-    {
+    }{
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_S2 = body.getOrCreateVariableByName("S2");
+      body.setExportedParameters(Arrays.asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_S2, "S2")
+      ));
+      
+      
+      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      bodies.add(body);
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private FriendlyToQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FriendlyToQuerySpecification> {

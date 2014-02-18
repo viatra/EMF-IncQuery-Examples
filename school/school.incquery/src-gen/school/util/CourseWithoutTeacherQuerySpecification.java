@@ -68,13 +68,9 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private CourseWithoutTeacherQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
@@ -83,10 +79,9 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
       ));
       
       new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "Course"), "http://school.ecore/Course");
-      new NegativePatternCall(body, new FlatTuple(var_C), CourseWithTeacherQuerySpecification.instance());
+      new NegativePatternCall(body, new FlatTuple(var_C), CourseWithTeacherQuerySpecification.instance().instance());
       bodies.add(body);
-    }
-    {
+    }{
       PAnnotation annotation = new PAnnotation("Constraint");
       annotation.addAttribute("message","$C.subject$ does not have a teacher");
       annotation.addAttribute("location",new ParameterReference("C"));
@@ -94,9 +89,13 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private CourseWithoutTeacherQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<CourseWithoutTeacherQuerySpecification> {

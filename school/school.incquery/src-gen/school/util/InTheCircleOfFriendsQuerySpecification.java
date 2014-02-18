@@ -67,13 +67,9 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private InTheCircleOfFriendsQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
@@ -86,14 +82,17 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
       new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       
       new TypeUnary(body, var_Someone, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance());
+      new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance().instance());
       new Inequality(body, var_S1, var_Someone);
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private InTheCircleOfFriendsQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<InTheCircleOfFriendsQuerySpecification> {

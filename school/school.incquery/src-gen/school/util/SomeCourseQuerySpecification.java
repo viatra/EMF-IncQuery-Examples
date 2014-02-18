@@ -63,13 +63,9 @@ public final class SomeCourseQuerySpecification extends BaseGeneratedQuerySpecif
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private SomeCourseQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
@@ -79,8 +75,7 @@ public final class SomeCourseQuerySpecification extends BaseGeneratedQuerySpecif
       
       new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "SpecialisationCourse"), "http://school.ecore/SpecialisationCourse");
       bodies.add(body);
-    }
-    {
+    }{
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
       body.setExportedParameters(Arrays.asList(
@@ -89,11 +84,14 @@ public final class SomeCourseQuerySpecification extends BaseGeneratedQuerySpecif
       
       new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "LimitedCapacityCourse"), "http://school.ecore/LimitedCapacityCourse");
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private SomeCourseQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<SomeCourseQuerySpecification> {

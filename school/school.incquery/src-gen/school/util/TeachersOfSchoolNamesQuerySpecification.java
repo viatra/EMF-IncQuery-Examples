@@ -63,13 +63,9 @@ public final class TeachersOfSchoolNamesQuerySpecification extends BaseGenerated
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private TeachersOfSchoolNamesQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_TName = body.getOrCreateVariableByName("TName");
@@ -86,11 +82,14 @@ public final class TeachersOfSchoolNamesQuerySpecification extends BaseGenerated
       new TypeBinary(body, context, var_Sch, var_SName, getFeatureLiteral("http://school.ecore", "School", "name"), "http://school.ecore/School.name");
       new TypeBinary(body, context, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private TeachersOfSchoolNamesQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TeachersOfSchoolNamesQuerySpecification> {

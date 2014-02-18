@@ -68,13 +68,9 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private FinalPatternQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_Y = body.getOrCreateVariableByName("Y");
@@ -101,8 +97,7 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       new PositivePatternCall(body, new FlatTuple(var_S), TheOnesWithTheBiggestCircleQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_T), TeachesTheMostCoursesQuerySpecification.instance());
       bodies.add(body);
-    }
-    {
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("message","The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$");
       addAnnotation(annotation);
@@ -131,9 +126,13 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private FinalPatternQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<FinalPatternQuerySpecification> {

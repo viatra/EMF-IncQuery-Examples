@@ -70,13 +70,9 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private TeachesMoreClassesQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_T1 = body.getOrCreateVariableByName("T1");
@@ -93,8 +89,8 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
       new TypeUnary(body, var_T1, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
       
       new TypeUnary(body, var_T2, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
-      new PatternMatchCounter(body, new FlatTuple(var_T1, var__SC1), ClassesOfTeacherQuerySpecification.instance(), var_N);
-      new PatternMatchCounter(body, new FlatTuple(var_T2, var__SC2), ClassesOfTeacherQuerySpecification.instance(), var_M);
+      new PatternMatchCounter(body, new FlatTuple(var_T1, var__SC1), ClassesOfTeacherQuerySpecification.instance().instance(), var_N);
+      new PatternMatchCounter(body, new FlatTuple(var_T2, var__SC2), ClassesOfTeacherQuerySpecification.instance().instance(), var_M);
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
         @Override
         public String getShortDescription() {
@@ -115,16 +111,19 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
         
         },  null); 
       bodies.add(body);
-    }
-    {
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
     setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private TeachesMoreClassesQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<TeachesMoreClassesQuerySpecification> {
