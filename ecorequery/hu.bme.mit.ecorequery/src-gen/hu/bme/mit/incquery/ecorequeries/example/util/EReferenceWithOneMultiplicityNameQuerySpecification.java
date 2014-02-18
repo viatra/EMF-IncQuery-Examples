@@ -65,13 +65,9 @@ public final class EReferenceWithOneMultiplicityNameQuerySpecification extends B
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private EReferenceWithOneMultiplicityNameQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_ERefName = body.getOrCreateVariableByName("ERefName");
@@ -89,11 +85,14 @@ public final class EReferenceWithOneMultiplicityNameQuerySpecification extends B
       new ConstantValue(body, var__virtual_3_, 1);
       new TypeBinary(body, context, var_ERef, var__virtual_3_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.upperBound");
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private EReferenceWithOneMultiplicityNameQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EReferenceWithOneMultiplicityNameQuerySpecification> {

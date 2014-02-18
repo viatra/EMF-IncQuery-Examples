@@ -67,13 +67,9 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private EClassWithEStringAttributeQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_E = body.getOrCreateVariableByName("E");
@@ -89,11 +85,14 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
       new PositivePatternCall(body, new FlatTuple(var_E, var_Attr, var_Type), EClassAttributeQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_Type), IsEStringQuerySpecification.instance());
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private EClassWithEStringAttributeQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EClassWithEStringAttributeQuerySpecification> {

@@ -29,8 +29,24 @@ public final class EcoreQueriesMatchers {
     
   }
   
-  public SuperTypeOfNameMatcher getSuperTypeOfNameMatcher() throws IncQueryException {
-    return SuperTypeOfNameMatcher.on(engine);
+  public EClassNameMatcher getEClassNameMatcher() throws IncQueryException {
+    return EClassNameMatcher.on(engine);
+  }
+  
+  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicityMatcher() throws IncQueryException {
+    return EReferenceWithOneMultiplicityMatcher.on(engine);
+  }
+  
+  public EClassWithEStringAttributeMatcher getEClassWithEStringAttributeMatcher() throws IncQueryException {
+    return EClassWithEStringAttributeMatcher.on(engine);
+  }
+  
+  public IsInECoreMatcher getIsInECoreMatcher() throws IncQueryException {
+    return IsInECoreMatcher.on(engine);
+  }
+  
+  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityNameMatcher() throws IncQueryException {
+    return EReferenceWithOneMultiplicityNameMatcher.on(engine);
   }
   
   public EClassMatcher getEClassMatcher() throws IncQueryException {
@@ -45,24 +61,28 @@ public final class EcoreQueriesMatchers {
     return ECoreNamedElementMatcher.on(engine);
   }
   
-  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicityMatcher() throws IncQueryException {
-    return EReferenceWithOneMultiplicityMatcher.on(engine);
-  }
-  
-  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityNameMatcher() throws IncQueryException {
-    return EReferenceWithOneMultiplicityNameMatcher.on(engine);
-  }
-  
-  public EClassAttributeMatcher getEClassAttributeMatcher() throws IncQueryException {
-    return EClassAttributeMatcher.on(engine);
+  public SampleQueryMatcher getSampleQueryMatcher() throws IncQueryException {
+    return SampleQueryMatcher.on(engine);
   }
   
   public ECoreNamedElementNameMatcher getECoreNamedElementNameMatcher() throws IncQueryException {
     return ECoreNamedElementNameMatcher.on(engine);
   }
   
-  public IsInECoreMatcher getIsInECoreMatcher() throws IncQueryException {
-    return IsInECoreMatcher.on(engine);
+  public SampleQuery2Matcher getSampleQuery2Matcher() throws IncQueryException {
+    return SampleQuery2Matcher.on(engine);
+  }
+  
+  public SuperTypeOfNameMatcher getSuperTypeOfNameMatcher() throws IncQueryException {
+    return SuperTypeOfNameMatcher.on(engine);
+  }
+  
+  public IsEStringMatcher getIsEStringMatcher() throws IncQueryException {
+    return IsEStringMatcher.on(engine);
+  }
+  
+  public SuperTypeOfMatcher getSuperTypeOfMatcher() throws IncQueryException {
+    return SuperTypeOfMatcher.on(engine);
   }
   
   public EReferenceWithStarMultiplicityMatcher getEReferenceWithStarMultiplicityMatcher() throws IncQueryException {
@@ -73,27 +93,7 @@ public final class EcoreQueriesMatchers {
     return EObjectMatcher.on(engine);
   }
   
-  public SuperTypeOfMatcher getSuperTypeOfMatcher() throws IncQueryException {
-    return SuperTypeOfMatcher.on(engine);
-  }
-  
-  public SampleQueryMatcher getSampleQueryMatcher() throws IncQueryException {
-    return SampleQueryMatcher.on(engine);
-  }
-  
-  public SampleQuery2Matcher getSampleQuery2Matcher() throws IncQueryException {
-    return SampleQuery2Matcher.on(engine);
-  }
-  
-  public IsEStringMatcher getIsEStringMatcher() throws IncQueryException {
-    return IsEStringMatcher.on(engine);
-  }
-  
-  public EClassNameMatcher getEClassNameMatcher() throws IncQueryException {
-    return EClassNameMatcher.on(engine);
-  }
-  
-  public EClassWithEStringAttributeMatcher getEClassWithEStringAttributeMatcher() throws IncQueryException {
-    return EClassWithEStringAttributeMatcher.on(engine);
+  public EClassAttributeMatcher getEClassAttributeMatcher() throws IncQueryException {
+    return EClassAttributeMatcher.on(engine);
   }
 }

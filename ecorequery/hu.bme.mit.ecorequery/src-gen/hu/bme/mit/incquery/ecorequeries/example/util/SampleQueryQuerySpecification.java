@@ -70,13 +70,9 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private SampleQueryQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_XElement = body.getOrCreateVariableByName("XElement");
@@ -103,14 +99,17 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
       new PositivePatternCall(body, new FlatTuple(var_Relates), EReferenceWithStarMultiplicityQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_XElement, var_Label1), EClassWithEStringAttributeQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_YElement, var_Label2), EClassWithEStringAttributeQuerySpecification.instance());
-      new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance());
-      new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance());
+      new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().instance());
+      new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().instance());
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private SampleQueryQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<SampleQueryQuerySpecification> {

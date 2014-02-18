@@ -64,13 +64,9 @@ public final class EClassAttributeQuerySpecification extends BaseGeneratedQueryS
   }
   
   @Override
-  public Set<PBody> doGetContainedBodies() {
-    return bodies;
-  }
-  
-  private EClassAttributeQuerySpecification() throws IncQueryException {
-    super();
+  public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
+    Set<PBody> bodies = Sets.newHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_E = body.getOrCreateVariableByName("E");
@@ -88,11 +84,14 @@ public final class EClassAttributeQuerySpecification extends BaseGeneratedQueryS
       new TypeUnary(body, var_Attr, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute"), "http://www.eclipse.org/emf/2002/Ecore/EAttribute");
       new TypeBinary(body, context, var_Attr, var_Type, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
       bodies.add(body);
-    }
-    setStatus(PQueryStatus.OK);
+    }setStatus(PQueryStatus.OK);
+    return bodies;
   }
   
-  private Set<PBody> bodies = Sets.newHashSet();;
+  private EClassAttributeQuerySpecification() throws IncQueryException {
+    super();
+    setStatus(PQueryStatus.UNINITIALIZED);
+  }
   
   @SuppressWarnings("all")
   public static class Provider implements IQuerySpecificationProvider<EClassAttributeQuerySpecification> {
