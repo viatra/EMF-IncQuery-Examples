@@ -1,6 +1,7 @@
 package net.istvanrath.emfxcel.editor.xlsx;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Iterator;
 
 import net.istvanrath.emfxcel.BooleanCell;
@@ -15,27 +16,28 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.IFileEditorInput;
 
 public class XlsxEditor extends EmfxcelEditor {
 
-	@Override
-	public void createModel() {
+	private Resource resource;
+	private IResourceChangeListener rListener;
+
+	private void populateResource(InputStream is) {
+		// Get the workbook instance for XLS file
+		XSSFWorkbook workbook;
 		try {
-			// super.createModel();
-			IFileEditorInput ie = (IFileEditorInput) getEditorInput();
-			// Get the workbook instance for XLS file
-			XSSFWorkbook workbook = new XSSFWorkbook(ie.getFile().getContents(
-					true));
-
-			Resource resource = getEditingDomain().createResource(
-					ie.getFile().getName());
-
+			workbook = new XSSFWorkbook(is);
 			Workbook wb = EmfxcelFactory.eINSTANCE.createWorkbook();
-			wb.setName(ie.getName());
-
+			wb.setName(resource.getURI().path());
+	
 			// Get first sheet from the workbook
 			for (int s = 0; s < workbook.getNumberOfSheets(); s++) {
 				XSSFSheet sheet = workbook.getSheetAt(s);
@@ -76,12 +78,61 @@ public class XlsxEditor extends EmfxcelEditor {
 			}
 			resource.getContents().add(wb);
 		} catch (IOException e) {
-			// TODO handle error
-			e.printStackTrace();
-		} catch (CoreException e) {
-			// TODO Auto-generated catch block
+			// TODO better error handling
 			e.printStackTrace();
 		}
+
+	}
+	
+	private void registerResourceChangeListener(final IFile res) {
+		rListener = (new IResourceChangeListener() {
+			
+			@Override
+			public void resourceChanged(IResourceChangeEvent event) {
+				try {
+					event.getDelta().accept(new IResourceDeltaVisitor() {
+						
+						@Override
+						public boolean visit(IResourceDelta delta) throws CoreException {
+							if (delta.getResource().equals(res)) {
+								resource.getContents().clear();
+								populateResource(res.getContents());
+								return false;
+							}
+							return true;
+						}
+					});
+				} catch (CoreException e) {
+					// TODO better error handling
+					e.printStackTrace();
+				}
+			}
+		});
+		res.getWorkspace().addResourceChangeListener(rListener, IResourceChangeEvent.POST_CHANGE);
+	}
+	
+	@Override
+	public void createModel() {
+		try {
+			// super.createModel();
+			IFileEditorInput ie = (IFileEditorInput) getEditorInput();
+			if (ie.exists()) {
+				resource = getEditingDomain().createResource(ie.getFile().getName());
+				populateResource(ie.getFile().getContents(true));
+				registerResourceChangeListener(ie.getFile());
+			}
+		} catch (CoreException e) {
+			// TODO better error handling
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void dispose() {
+		if (rListener!=null) {
+			((IFileEditorInput)getEditorInput()).getFile().getWorkspace().removeResourceChangeListener(rListener);
+		}
+		super.dispose();
 	}
 
 }
