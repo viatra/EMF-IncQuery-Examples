@@ -1,0 +1,48 @@
+package net.istvanrath.emfxcel.incquery.lib
+
+import "http://istvanrath.net/demos/emfxcel"
+
+/*
+ * C is a cell in a worksheet identified by Worksheetname.
+ * Its positions are RowNum, ColNum (each starting from 0).
+ */
+pattern CellInWorkSheet(C: Cell, WorkSheetName, RowNum, ColNum)
+{
+	Worksheet.name(WS, WorkSheetName);
+	Worksheet.rows(WS, Row);
+	Row.cells(Row, C);
+	Cell.columnIndex(C,ColNum);
+	Cell.rowIndex(C,RowNum);
+}
+
+/*
+ * ColName idenfities a "named column" (where ColName
+ * is found in the cell in row 0 as a string value),
+ * and its column number is ColNum.
+ */
+pattern NamedColumn(WorkSheetName, ColName, ColNum)
+{
+	find CellInWorkSheet(Top, WorkSheetName, 0, ColNum);
+	StringCell.stringValue(Top,ColName);
+}
+
+/*
+ * value is a cell value in a named column identified by
+ * colName and row number rowNum, all located in worksheet wsName.
+ */
+pattern valueInNamedColumn(wsName, colName, rowNum, value) {
+	find NamedColumn(wsName, colName, colNum);
+	find CellInWorkSheet(cell, wsName, rowNum, colNum);
+	check(rowNum>0);
+	StringCell.stringValue(cell, value); 
+} or {
+	find NamedColumn(wsName, colName, colNum);
+	find CellInWorkSheet(cell, wsName, rowNum, colNum);
+	check(rowNum>0);
+	NumericCell.numericValue(cell, value); 
+} or {
+	find NamedColumn(wsName, colName, colNum);
+	find CellInWorkSheet(cell, wsName, rowNum, colNum);
+	check(rowNum>0);
+	BooleanCell.boolValue(cell, value); 	
+}

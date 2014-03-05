@@ -1,0 +1,61 @@
+package net.istvanrath.emfxcel.incquery.demo
+
+import "http://istvanrath.net/demos/emfxcel"
+
+/*
+ * This currently gives a warning, which can be safely ignored.
+ * See https://bugs.eclipse.org/bugs/show_bug.cgi?id=418991 for details.
+ */
+uses net.istvanrath.emfxcel.incquery.lib.*;
+
+/*
+ * id identifies a student in the example worksheet.
+ * name represents the natural name of the student.
+ */
+pattern student(name, id) {
+	find valueInNamedColumn("Students", "First name", rowNum, firstName);
+	find valueInNamedColumn("Students", "Last name", rowNum, lastName);	
+	find valueInNamedColumn("Students", "Identifier", rowNum, id);
+	name == eval(firstName + " " + lastName);
+}
+
+/*
+ * A student identified by studentId is enrolled
+ * in a course named courseName taught by a teacher
+ * identified by teacherName.
+ */
+pattern enrolledStudent(courseName, teacherName, studentId) {
+	find valueInNamedColumn("Courses", "Course", rowNum, courseName);
+	find valueInNamedColumn("Courses", "Teacher", rowNum, teacherName);
+	find valueInNamedColumn("Courses", "Student Identifier", rowNum, studentId);
+}	
+
+/*
+ * A student identified by name did not apply
+ * for any known course.
+ */
+pattern didNotApplyForAnyCourse(name) {
+	neg find enrolledStudent(_c, _t, id);
+	find student(name, id);
+}
+
+/*
+ * A student identified by name that has
+ * applied to multiple courses concurrently.
+ */
+pattern appliedToMultipleCourses(name) {
+	find student(name, id);
+	find enrolledStudent(c1, _t1, id);
+	find enrolledStudent(c2, _t2, id);
+	c1 != c2;
+}
+
+/*
+ * A course identified by its name c
+ * has inconsistent entries (having different teachers).
+ */
+pattern inconsistentCourse(c) {
+	find enrolledStudent(c, t1, _s1);
+	find enrolledStudent(c, t2, _s2);
+	t1 != t2;
+}

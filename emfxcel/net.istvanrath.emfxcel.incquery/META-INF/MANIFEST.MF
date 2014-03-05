@@ -4,7 +4,9 @@ Bundle-Name: net.istvanrath.emfxcel.incquery
 Bundle-SymbolicName: net.istvanrath.emfxcel.incquery;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Export-Package: net.istvanrath.emfxcel.incquery.demo,
- net.istvanrath.emfxcel.incquery.demo.util
+ net.istvanrath.emfxcel.incquery.demo.util,
+ net.istvanrath.emfxcel.incquery.lib,
+ net.istvanrath.emfxcel.incquery.lib.util
 Require-Bundle: net.istvanrath.emfxcel,
  org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
