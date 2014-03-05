@@ -34,7 +34,8 @@ pattern AgazatiHallgato(AgazatNeve, Nev, NeptunKod) {
 }
 
 @QueryExplorer(display=true, message = "$Nev$ : $NeptunKod$")
-pattern OnlabosHallgato(Nev, NeptunKod) {
+@Item(label = "$Nev$", item = HallgatoNev)
+pattern OnlabosHallgato(HallgatoNev, Nev, NeptunKod) {
 	find NamedColumn("Onlab", "Név", NevColumn);
 	find NamedColumn("Onlab", "Neptun kód", NeptunColumn);
 
@@ -61,13 +62,13 @@ pattern IITOnlabosHallgato(Nev, NeptunKod) {
 
 @QueryExplorer(display=true, message = "$Nev$ : $Neptun$")
 pattern NemVetteFelAzOnlabot(Nev, Neptun) {
-	neg find OnlabosHallgato(_HNev, Neptun);
+	neg find OnlabosHallgato(_HC, _HNev, Neptun);
 	find AgazatiHallgato("Rendszertervezés", Nev, Neptun);
 }
 
 @QueryExplorer(display=true, message = "$Nev$ : $Neptun$")
 pattern KakukkFioka(Nev, Neptun) {
-	find OnlabosHallgato(Nev, Neptun);
+	find OnlabosHallgato(_H, Nev, Neptun);
 	neg find AgazatiHallgato("Rendszertervezés", _HNev, Neptun);
 }
 
