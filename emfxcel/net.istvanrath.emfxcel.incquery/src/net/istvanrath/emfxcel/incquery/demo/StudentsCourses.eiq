@@ -12,6 +12,7 @@ uses net.istvanrath.emfxcel.incquery.lib.*;
  * id identifies a student in the example worksheet.
  * name represents the natural name of the student.
  */
+@Item(item = id, label = "$name$")
 pattern student(name, id) {
 	find valueInNamedColumn("Students", "First name", rowNum, firstName);
 	find valueInNamedColumn("Students", "Last name", rowNum, lastName);	
@@ -19,11 +20,18 @@ pattern student(name, id) {
 	name == eval(firstName + " " + lastName);
 }
 
+@Item(item = name, label="$name$")
+pattern teacher(name)
+{
+	find valueInNamedColumn("Courses", "Teacher", _rowNum, name);
+}
+
 /*
  * A student identified by studentId is enrolled
  * in a course named courseName taught by a teacher
  * identified by teacherName.
  */
+@Edge(source = studentId, target = teacherName, label = "taughtBy") 
 pattern enrolledStudent(courseName, teacherName, studentId) {
 	find valueInNamedColumn("Courses", "Course", rowNum, courseName);
 	find valueInNamedColumn("Courses", "Teacher", rowNum, teacherName);

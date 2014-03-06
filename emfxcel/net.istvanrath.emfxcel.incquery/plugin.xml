@@ -90,6 +90,14 @@
       </matcher>
    </extension>
    <extension
+         id="net.istvanrath.emfxcel.incquery.demo.teacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.TeacherQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.demo.teacher">
+      </matcher>
+   </extension>
+   <extension
          id="net.istvanrath.emfxcel.incquery.demo.enrolledStudent"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
