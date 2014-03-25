@@ -11,7 +11,6 @@
 
 package hu.bme.mit.ocl2iq.mapping.test;
 
-import hu.bme.mit.ocl2iq.mapping.api.OCL2IQ;
 import hu.bme.mit.ocl2iq.mapping.api.OCLParseControl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -25,18 +24,10 @@ import school.SchoolPackage;
  * @author Bergmann Gabor
  *
  */
-public class SimpleSchoolTests {
+public class SimpleSchoolTests extends AbstractTest {
 
 	private static final SchoolPackage SCHOOL = SchoolPackage.eINSTANCE;
-	private void testCode(final String oclCode, final EClass context)
-			throws ParserException {
-		System.out.println("\n// *** generating output for context " + context.getName() + ": ");
-		System.out.println("// "+ oclCode);
-		final OCLExpression exp = new OCLParseControl().parse(context, oclCode);
-		final String patternCode = new OCL2IQ(context, exp, "translated").gen().toString(); 
-		System.out.println(patternCode);
-	}
-
+	
 	@Test
 	public void parseTest() throws ParserException {
 		final OCLExpression exp = new OCLParseControl().parse(
