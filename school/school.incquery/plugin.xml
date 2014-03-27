@@ -2,19 +2,19 @@
 <plugin>
 
    <extension
-         id="school.CourseWithTeacher"
+         id="school.student"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
-            id="school.CourseWithTeacher">
+            querySpecificationProvider="school.util.StudentQuerySpecification$Provider"
+            id="school.student">
       </matcher>
    </extension>
    <extension
-         id="school.CourseWithoutTeacher"
+         id="school.friend"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
-            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
-            id="school.CourseWithoutTeacher">
+            querySpecificationProvider="school.util.FriendQuerySpecification$Provider"
+            id="school.friend">
       </matcher>
    </extension>
    <extension
@@ -263,6 +263,22 @@
       <matcher
             querySpecificationProvider="school.util.SomeCourseQuerySpecification$Provider"
             id="school.SomeCourse">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
+            id="school.CourseWithTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.CourseWithoutTeacher"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
+            id="school.CourseWithoutTeacher">
       </matcher>
    </extension>
 

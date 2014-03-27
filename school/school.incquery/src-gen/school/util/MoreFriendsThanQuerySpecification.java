@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -81,7 +81,7 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
       PVariable var__Sx1 = body.getOrCreateVariableByName("_Sx1");
       PVariable var_M = body.getOrCreateVariableByName("M");
       PVariable var__Sx2 = body.getOrCreateVariableByName("_Sx2");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_S1, "S1"), 
         new ExportedParameter(body, var_S2, "S2")
       ));
@@ -116,13 +116,13 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    setStatus(PQueryStatus.OK);
+    
     return bodies;
   }
   
   private MoreFriendsThanQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")

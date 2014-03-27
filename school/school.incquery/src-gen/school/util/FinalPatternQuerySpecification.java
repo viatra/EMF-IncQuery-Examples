@@ -11,7 +11,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -79,7 +79,7 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       PVariable var_S = body.getOrCreateVariableByName("S");
       PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_Y, "Y"), 
         new ExportedParameter(body, var_C, "C"), 
         new ExportedParameter(body, var_T, "T"), 
@@ -125,13 +125,13 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       annotation.addAttribute("fileExtension","school");
       addAnnotation(annotation);
     }
-    setStatus(PQueryStatus.OK);
+    
     return bodies;
   }
   
   private FinalPatternQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")

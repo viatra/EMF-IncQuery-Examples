@@ -11,7 +11,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -71,19 +71,7 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");
       PVariable var_S2 = body.getOrCreateVariableByName("S2");
-      body.setExportedParameters(Arrays.asList(
-        new ExportedParameter(body, var_S1, "S1"), 
-        new ExportedParameter(body, var_S2, "S2")
-      ));
-      
-      
-      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
-      bodies.add(body);
-    }{
-      PBody body = new PBody(this);
-      PVariable var_S1 = body.getOrCreateVariableByName("S1");
-      PVariable var_S2 = body.getOrCreateVariableByName("S2");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_S1, "S1"), 
         new ExportedParameter(body, var_S2, "S2")
       ));
@@ -92,17 +80,29 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
     }{
+      PBody body = new PBody(this);
+      PVariable var_S1 = body.getOrCreateVariableByName("S1");
+      PVariable var_S2 = body.getOrCreateVariableByName("S2");
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
+        new ExportedParameter(body, var_S1, "S1"), 
+        new ExportedParameter(body, var_S2, "S2")
+      ));
+      
+      
+      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      bodies.add(body);
+    }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    setStatus(PQueryStatus.OK);
+    
     return bodies;
   }
   
   private FriendlyToQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")

@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -81,7 +81,7 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
       PVariable var__SC1 = body.getOrCreateVariableByName("_SC1");
       PVariable var_M = body.getOrCreateVariableByName("M");
       PVariable var__SC2 = body.getOrCreateVariableByName("_SC2");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_T1, "T1"), 
         new ExportedParameter(body, var_T2, "T2")
       ));
@@ -116,13 +116,13 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    setStatus(PQueryStatus.OK);
+    
     return bodies;
   }
   
   private TeachesMoreClassesQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")

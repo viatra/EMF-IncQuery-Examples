@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
@@ -73,7 +73,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
       PBody body = new PBody(this);
       PVariable var_C = body.getOrCreateVariableByName("C");
       PVariable var_W = body.getOrCreateVariableByName("W");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_C, "C")
       ));
       
@@ -97,13 +97,13 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         
         },  null); 
       bodies.add(body);
-    }setStatus(PQueryStatus.OK);
+    }
     return bodies;
   }
   
   private CourseWithPrimeWeightQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -132,9 +132,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
   
   private boolean evaluateExpression_1_1(final Integer W) {
     boolean _xifexpression = false;
-    int _modulo = ((W).intValue() % 2);
-    boolean _equals = (_modulo == 0);
-    if (_equals) {
+    if ((((W).intValue() % 2) == 0)) {
       _xifexpression = false;
     } else {
       boolean _xblockexpression = false;
@@ -146,18 +144,15 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         boolean _lessEqualsThan = (divisor.compareTo(maxValue) <= 0);
         boolean _while = _lessEqualsThan;
         while (_while) {
-          int _modulo_1 = ((W).intValue() % (divisor).intValue());
-          boolean _equals_1 = (_modulo_1 == 0);
-          if (_equals_1) {
+          if ((((W).intValue() % (divisor).intValue()) == 0)) {
             return false;
           } else {
-            int _plus = ((divisor).intValue() + 2);
-            divisor = Integer.valueOf(_plus);
+            divisor = Integer.valueOf(((divisor).intValue() + 2));
           }
           boolean _lessEqualsThan_1 = (divisor.compareTo(maxValue) <= 0);
           _while = _lessEqualsThan_1;
         }
-        _xblockexpression = (true);
+        _xblockexpression = true;
       }
       _xifexpression = _xblockexpression;
     }

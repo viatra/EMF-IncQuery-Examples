@@ -1,9 +1,12 @@
 package school;
 
+import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.CourseWithTeacherMatcher;
 import school.CourseWithoutTeacherMatcher;
+import school.util.CourseWithTeacherQuerySpecification;
+import school.util.CourseWithoutTeacherQuerySpecification;
 
 /**
  * A pattern group formed of all patterns defined in schoolValidationRules.eiq.
@@ -40,8 +43,24 @@ public final class SchoolValidationRules extends BaseGeneratedPatternGroup {
   private static SchoolValidationRules INSTANCE;
   
   private SchoolValidationRules() throws IncQueryException {
-    querySpecifications.add(CourseWithTeacherMatcher.querySpecification());
-    querySpecifications.add(CourseWithoutTeacherMatcher.querySpecification());
+    querySpecifications.add(CourseWithTeacherQuerySpecification.instance());
+    querySpecifications.add(CourseWithoutTeacherQuerySpecification.instance());
     
+  }
+  
+  public CourseWithTeacherQuerySpecification getCourseWithTeacher() throws IncQueryException {
+    return CourseWithTeacherQuerySpecification.instance();
+  }
+  
+  public CourseWithTeacherMatcher getCourseWithTeacher(final IncQueryEngine engine) throws IncQueryException {
+    return CourseWithTeacherMatcher.on(engine);
+  }
+  
+  public CourseWithoutTeacherQuerySpecification getCourseWithoutTeacher() throws IncQueryException {
+    return CourseWithoutTeacherQuerySpecification.instance();
+  }
+  
+  public CourseWithoutTeacherMatcher getCourseWithoutTeacher(final IncQueryEngine engine) throws IncQueryException {
+    return CourseWithoutTeacherMatcher.on(engine);
   }
 }
