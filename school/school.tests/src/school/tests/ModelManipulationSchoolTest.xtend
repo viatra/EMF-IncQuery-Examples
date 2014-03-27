@@ -13,26 +13,23 @@
 package school.tests
 
 import com.google.inject.Inject
+import org.eclipse.incquery.runtime.api.IPatternMatch
 import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.testing.core.SnapshotHelper
 import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
+import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import school.School
-import school.SchoolFactory
-import org.junit.Assert
-import school.Teacher
-import org.eclipse.incquery.runtime.api.IPatternMatch
 import school.Course
+import school.School
 import school.SchoolClass
-import school.Year
+import school.SchoolFactory
 import school.Student
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
-import org.junit.Ignore
+import school.Teacher
+import school.Year
 
 /**
  * Basic test set for testing IncQuery with the school example.

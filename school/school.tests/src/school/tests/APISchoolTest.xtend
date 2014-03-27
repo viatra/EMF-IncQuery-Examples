@@ -10,18 +10,17 @@
  *******************************************************************************/
 package school.tests
 
-import school.tests.SchoolTestsBase
-import org.junit.runner.RunWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import com.google.inject.Inject
-import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.testing.core.SnapshotHelper
+import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
+import org.junit.runner.RunWith
 import school.ClassesOfTeacherMatcher
+import school.util.ClassesOfTeacherQuerySpecification
 
 /**
  * API test set for testing IncQuery with the school example.
@@ -32,7 +31,6 @@ import school.ClassesOfTeacherMatcher
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class APISchoolTest extends SchoolTestsBase {
-	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
 
@@ -129,7 +127,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def resultMatchImmutableGenerated(){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val match = matcher.oneArbitraryMatch
@@ -146,7 +143,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def matchToArrayGenerated(){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val sampleMatch = matcher.oneArbitraryMatch
@@ -162,7 +158,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def newMatchImmutableGenerated(){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val sampleMatch = matcher.oneArbitraryMatch
@@ -182,7 +177,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def newMatchMutableGenerated(){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 
@@ -216,7 +210,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test(expected=typeof(UnsupportedOperationException))
 	def void immutableModification1ExpectedExceptionGenerated (){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val match = matcher.newMatch(null, null)
@@ -226,7 +219,6 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test(expected=typeof(UnsupportedOperationException))
 	def void immutableModification2ExpectedExceptionGenerated (){
 		val sns = snapshot
-		val pm = queryInputXMI
 		
 		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
 		val match = matcher.newMatch(null, null)
@@ -234,6 +226,17 @@ class APISchoolTest extends SchoolTestsBase {
 		match.SC = null;
 	}
 
+	@Test
+	def void immutablePBodyUsage() {
+		val instance = ClassesOfTeacherQuerySpecification.instance
+		instance.containedBodies.forEach[Assert::assertFalse(it.mutable)]
+	}
+	
+	@Test
+	def void mutablePBodyUsage() {
+		val instance = ClassesOfTeacherQuerySpecification.instance
+		instance.mutableBodies.forEach[Assert::assertTrue(it.mutable)]
+	}
 }
 
 

@@ -1,28 +1,17 @@
 package school.tests
 
-import com.google.inject.Inject
-import org.eclipse.incquery.runtime.api.IncQueryEngineManager
 import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
 import org.eclipse.incquery.snapshot.EIQSnapshot.RecordRole
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
-import org.eclipse.incquery.runtime.api.IncQueryEngine
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class TestingFrameworkTest extends SchoolTestsBase {
-  
-  @Inject extension TestExecutor
-  @Inject extension ModelLoadHelper
-  @Inject extension SnapshotHelper
   
   def testValues(IncQuerySnapshot sns){
     sns.matchSetRecords.forEach[
