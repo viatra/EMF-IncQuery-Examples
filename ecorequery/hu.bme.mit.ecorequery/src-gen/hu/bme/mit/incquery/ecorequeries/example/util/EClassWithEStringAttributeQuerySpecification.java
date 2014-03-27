@@ -14,7 +14,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
@@ -75,7 +75,7 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
       PVariable var_E = body.getOrCreateVariableByName("E");
       PVariable var_Attr = body.getOrCreateVariableByName("Attr");
       PVariable var_Type = body.getOrCreateVariableByName("Type");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_E, "E"), 
         new ExportedParameter(body, var_Attr, "Attr")
       ));
@@ -85,13 +85,13 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
       new PositivePatternCall(body, new FlatTuple(var_E, var_Attr, var_Type), EClassAttributeQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_Type), IsEStringQuerySpecification.instance());
       bodies.add(body);
-    }setStatus(PQueryStatus.OK);
+    }
     return bodies;
   }
   
   private EClassWithEStringAttributeQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")

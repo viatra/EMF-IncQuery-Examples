@@ -15,7 +15,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery.PQueryStatus;
+import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
@@ -80,7 +80,7 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
       PVariable var_Relates = body.getOrCreateVariableByName("Relates");
       PVariable var_Label1 = body.getOrCreateVariableByName("Label1");
       PVariable var_Label2 = body.getOrCreateVariableByName("Label2");
-      body.setExportedParameters(Arrays.asList(
+      body.setExportedParameters(Arrays.<ExportedParameter>asList(
         new ExportedParameter(body, var_XElement, "XElement"), 
         new ExportedParameter(body, var_YElement, "YElement"), 
         new ExportedParameter(body, var_Relates, "Relates"), 
@@ -102,13 +102,13 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
       new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().instance());
       new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().instance());
       bodies.add(body);
-    }setStatus(PQueryStatus.OK);
+    }
     return bodies;
   }
   
   private SampleQueryQuerySpecification() throws IncQueryException {
     super();
-    setStatus(PQueryStatus.UNINITIALIZED);
+    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
