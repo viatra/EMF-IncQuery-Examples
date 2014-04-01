@@ -83,7 +83,7 @@ public final class ClassesOfTeacherQuerySpecification extends BaseGeneratedQuery
       new PositivePatternCall(body, new FlatTuple(var_T, var_C), CoursesOfTeacherQuerySpecification.instance());
       new TypeBinary(body, context, var_C, var_SC, getFeatureLiteral("http://school.ecore", "Course", "schoolClass"), "http://school.ecore/Course.schoolClass");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

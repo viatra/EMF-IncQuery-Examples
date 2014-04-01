@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.Course;
 import school.CourseWithPrimeWeightMatch;
 import school.util.CourseWithPrimeWeightQuerySpecification;
@@ -79,6 +81,8 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
   }
   
   private final static int POSITION_C = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(CourseWithPrimeWeightMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -228,9 +232,10 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
   @Override
   protected CourseWithPrimeWeightMatch tupleToMatch(final Tuple t) {
     try {
-    	return new CourseWithPrimeWeightMatch.Immutable((school.Course) t.get(POSITION_C));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithPrimeWeightMatch.Immutable((school.Course) t.get(POSITION_C));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -238,9 +243,10 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
   @Override
   protected CourseWithPrimeWeightMatch arrayToMatch(final Object[] match) {
     try {
-    	return new CourseWithPrimeWeightMatch.Immutable((school.Course) match[POSITION_C]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithPrimeWeightMatch.Immutable((school.Course) match[POSITION_C]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -248,9 +254,10 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
   @Override
   protected CourseWithPrimeWeightMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new CourseWithPrimeWeightMatch.Mutable((school.Course) match[POSITION_C]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithPrimeWeightMatch.Mutable((school.Course) match[POSITION_C]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

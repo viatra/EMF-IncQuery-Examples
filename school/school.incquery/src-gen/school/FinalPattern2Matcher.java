@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.FinalPattern2Match;
 import school.util.FinalPattern2QuerySpecification;
 
@@ -86,6 +88,8 @@ public class FinalPattern2Matcher extends BaseMatcher<FinalPattern2Match> {
   private final static int POSITION_TNAME = 2;
   
   private final static int POSITION_SNAME = 3;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(FinalPattern2Matcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -391,9 +395,10 @@ public class FinalPattern2Matcher extends BaseMatcher<FinalPattern2Match> {
   @Override
   protected FinalPattern2Match tupleToMatch(final Tuple t) {
     try {
-    	return new FinalPattern2Match.Immutable((java.lang.Integer) t.get(POSITION_YDATE), (java.lang.String) t.get(POSITION_CSUB), (java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_SNAME));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new FinalPattern2Match.Immutable((java.lang.Integer) t.get(POSITION_YDATE), (java.lang.String) t.get(POSITION_CSUB), (java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_SNAME));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -401,9 +406,10 @@ public class FinalPattern2Matcher extends BaseMatcher<FinalPattern2Match> {
   @Override
   protected FinalPattern2Match arrayToMatch(final Object[] match) {
     try {
-    	return new FinalPattern2Match.Immutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new FinalPattern2Match.Immutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -411,9 +417,10 @@ public class FinalPattern2Matcher extends BaseMatcher<FinalPattern2Match> {
   @Override
   protected FinalPattern2Match arrayToMatchMutable(final Object[] match) {
     try {
-    	return new FinalPattern2Match.Mutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new FinalPattern2Match.Mutable((java.lang.Integer) match[POSITION_YDATE], (java.lang.String) match[POSITION_CSUB], (java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_SNAME]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

@@ -78,7 +78,7 @@ public final class CourseWithWeightThirtyQuerySpecification extends BaseGenerate
       new ConstantValue(body, var__virtual_0_, 30);
       new TypeBinary(body, context, var_C, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

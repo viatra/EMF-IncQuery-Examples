@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.Course;
 import school.CourseWithoutTeacherMatch;
 import school.util.CourseWithoutTeacherQuerySpecification;
@@ -71,6 +73,8 @@ public class CourseWithoutTeacherMatcher extends BaseMatcher<CourseWithoutTeache
   }
   
   private final static int POSITION_C = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(CourseWithoutTeacherMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -220,9 +224,10 @@ public class CourseWithoutTeacherMatcher extends BaseMatcher<CourseWithoutTeache
   @Override
   protected CourseWithoutTeacherMatch tupleToMatch(final Tuple t) {
     try {
-    	return new CourseWithoutTeacherMatch.Immutable((school.Course) t.get(POSITION_C));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithoutTeacherMatch.Immutable((school.Course) t.get(POSITION_C));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -230,9 +235,10 @@ public class CourseWithoutTeacherMatcher extends BaseMatcher<CourseWithoutTeache
   @Override
   protected CourseWithoutTeacherMatch arrayToMatch(final Object[] match) {
     try {
-    	return new CourseWithoutTeacherMatch.Immutable((school.Course) match[POSITION_C]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithoutTeacherMatch.Immutable((school.Course) match[POSITION_C]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -240,9 +246,10 @@ public class CourseWithoutTeacherMatcher extends BaseMatcher<CourseWithoutTeache
   @Override
   protected CourseWithoutTeacherMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new CourseWithoutTeacherMatch.Mutable((school.Course) match[POSITION_C]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithoutTeacherMatch.Mutable((school.Course) match[POSITION_C]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

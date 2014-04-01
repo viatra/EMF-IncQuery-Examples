@@ -75,7 +75,7 @@ public final class TeachersQuerySpecification extends BaseGeneratedQuerySpecific
       
       new TypeUnary(body, var_T, getClassifierLiteral("http://school.ecore", "Teacher"), "http://school.ecore/Teacher");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

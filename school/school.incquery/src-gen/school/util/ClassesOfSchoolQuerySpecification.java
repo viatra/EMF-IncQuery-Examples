@@ -75,7 +75,7 @@ public final class ClassesOfSchoolQuerySpecification extends BaseGeneratedQueryS
       
       new TypeUnary(body, var_SC, getClassifierLiteral("http://school.ecore", "SchoolClass"), "http://school.ecore/SchoolClass");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.MoreFriendsThanMatch;
 import school.Student;
 import school.util.MoreFriendsThanQuerySpecification;
@@ -71,6 +73,8 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   private final static int POSITION_S1 = 0;
   
   private final static int POSITION_S2 = 1;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(MoreFriendsThanMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -284,9 +288,10 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   @Override
   protected MoreFriendsThanMatch tupleToMatch(final Tuple t) {
     try {
-    	return new MoreFriendsThanMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new MoreFriendsThanMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -294,9 +299,10 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   @Override
   protected MoreFriendsThanMatch arrayToMatch(final Object[] match) {
     try {
-    	return new MoreFriendsThanMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new MoreFriendsThanMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -304,9 +310,10 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   @Override
   protected MoreFriendsThanMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new MoreFriendsThanMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new MoreFriendsThanMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

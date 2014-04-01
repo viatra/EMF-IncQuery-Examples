@@ -81,7 +81,7 @@ public final class TeacherWithoutClassNamesQuerySpecification extends BaseGenera
       new NegativePatternCall(body, new FlatTuple(var_T, var__SC), ClassesOfTeacherQuerySpecification.instance().instance());
       new TypeBinary(body, context, var_T, var_TNames, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

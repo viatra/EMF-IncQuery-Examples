@@ -82,7 +82,7 @@ public final class CourseWithTeacherQuerySpecification extends BaseGeneratedQuer
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

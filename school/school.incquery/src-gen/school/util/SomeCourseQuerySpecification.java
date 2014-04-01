@@ -84,7 +84,7 @@ public final class SomeCourseQuerySpecification extends BaseGeneratedQuerySpecif
       
       new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "LimitedCapacityCourse"), "http://school.ecore/LimitedCapacityCourse");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

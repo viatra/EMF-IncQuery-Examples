@@ -134,7 +134,7 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       annotation.addAttribute("fileExtension","school");
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

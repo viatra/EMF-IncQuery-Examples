@@ -80,7 +80,7 @@ public final class TheOnesWithTheBiggestCircleQuerySpecification extends BaseGen
       new TypeUnary(body, var_S, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
       new NegativePatternCall(body, new FlatTuple(var__Sx, var_S), MoreFriendsThanQuerySpecification.instance().instance());
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

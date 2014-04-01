@@ -76,7 +76,7 @@ public final class SchoolsNamesQuerySpecification extends BaseGeneratedQuerySpec
       
       new TypeBinary(body, context, var__Sch, var_SchName, getFeatureLiteral("http://school.ecore", "School", "name"), "http://school.ecore/School.name");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

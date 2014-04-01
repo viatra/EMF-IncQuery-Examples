@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.CourseWithNameLongerThanWeightIntMatch;
 import school.util.CourseWithNameLongerThanWeightIntQuerySpecification;
 
@@ -67,6 +69,8 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseMatcher<Course
   }
   
   private final static int POSITION_W = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(CourseWithNameLongerThanWeightIntMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -216,9 +220,10 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseMatcher<Course
   @Override
   protected CourseWithNameLongerThanWeightIntMatch tupleToMatch(final Tuple t) {
     try {
-    	return new CourseWithNameLongerThanWeightIntMatch.Immutable((java.lang.Integer) t.get(POSITION_W));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithNameLongerThanWeightIntMatch.Immutable((java.lang.Integer) t.get(POSITION_W));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -226,9 +231,10 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseMatcher<Course
   @Override
   protected CourseWithNameLongerThanWeightIntMatch arrayToMatch(final Object[] match) {
     try {
-    	return new CourseWithNameLongerThanWeightIntMatch.Immutable((java.lang.Integer) match[POSITION_W]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithNameLongerThanWeightIntMatch.Immutable((java.lang.Integer) match[POSITION_W]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -236,9 +242,10 @@ public class CourseWithNameLongerThanWeightIntMatcher extends BaseMatcher<Course
   @Override
   protected CourseWithNameLongerThanWeightIntMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new CourseWithNameLongerThanWeightIntMatch.Mutable((java.lang.Integer) match[POSITION_W]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new CourseWithNameLongerThanWeightIntMatch.Mutable((java.lang.Integer) match[POSITION_W]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

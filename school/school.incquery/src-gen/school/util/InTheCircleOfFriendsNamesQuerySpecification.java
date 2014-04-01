@@ -87,7 +87,7 @@ public final class InTheCircleOfFriendsNamesQuerySpecification extends BaseGener
       new TypeBinary(body, context, var_S1, var_S1Name, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       new TypeBinary(body, context, var_Someone, var_SomeoneName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

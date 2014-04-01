@@ -125,7 +125,7 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       annotation.addAttribute("fileExtension","school");
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

@@ -97,7 +97,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         
         },  null); 
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

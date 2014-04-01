@@ -78,7 +78,7 @@ public final class TeachersOfSchoolQuerySpecification extends BaseGeneratedQuery
       
       new TypeBinary(body, context, var_Sch, var_T, getFeatureLiteral("http://school.ecore", "School", "teachers"), "http://school.ecore/School.teachers");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

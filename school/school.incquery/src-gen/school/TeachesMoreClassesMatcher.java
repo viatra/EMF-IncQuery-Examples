@@ -3,6 +3,7 @@ package school;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -11,6 +12,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 import school.Teacher;
 import school.TeachesMoreClassesMatch;
 import school.util.TeachesMoreClassesQuerySpecification;
@@ -77,6 +79,8 @@ public class TeachesMoreClassesMatcher extends BaseMatcher<TeachesMoreClassesMat
   private final static int POSITION_T1 = 0;
   
   private final static int POSITION_T2 = 1;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(TeachesMoreClassesMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -290,9 +294,10 @@ public class TeachesMoreClassesMatcher extends BaseMatcher<TeachesMoreClassesMat
   @Override
   protected TeachesMoreClassesMatch tupleToMatch(final Tuple t) {
     try {
-    	return new TeachesMoreClassesMatch.Immutable((school.Teacher) t.get(POSITION_T1), (school.Teacher) t.get(POSITION_T2));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new TeachesMoreClassesMatch.Immutable((school.Teacher) t.get(POSITION_T1), (school.Teacher) t.get(POSITION_T2));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -300,9 +305,10 @@ public class TeachesMoreClassesMatcher extends BaseMatcher<TeachesMoreClassesMat
   @Override
   protected TeachesMoreClassesMatch arrayToMatch(final Object[] match) {
     try {
-    	return new TeachesMoreClassesMatch.Immutable((school.Teacher) match[POSITION_T1], (school.Teacher) match[POSITION_T2]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new TeachesMoreClassesMatch.Immutable((school.Teacher) match[POSITION_T1], (school.Teacher) match[POSITION_T2]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -310,9 +316,10 @@ public class TeachesMoreClassesMatcher extends BaseMatcher<TeachesMoreClassesMat
   @Override
   protected TeachesMoreClassesMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new TeachesMoreClassesMatch.Mutable((school.Teacher) match[POSITION_T1], (school.Teacher) match[POSITION_T2]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new TeachesMoreClassesMatch.Mutable((school.Teacher) match[POSITION_T1], (school.Teacher) match[POSITION_T2]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

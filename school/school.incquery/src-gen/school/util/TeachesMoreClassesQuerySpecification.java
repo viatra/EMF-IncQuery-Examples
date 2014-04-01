@@ -116,7 +116,7 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

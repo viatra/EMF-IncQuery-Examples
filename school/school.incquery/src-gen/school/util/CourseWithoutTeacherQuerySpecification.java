@@ -88,7 +88,7 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
       annotation.addAttribute("severity","warning");
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

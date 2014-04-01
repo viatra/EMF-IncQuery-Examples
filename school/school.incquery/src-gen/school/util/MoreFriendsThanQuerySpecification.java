@@ -116,7 +116,7 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedQueryS
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

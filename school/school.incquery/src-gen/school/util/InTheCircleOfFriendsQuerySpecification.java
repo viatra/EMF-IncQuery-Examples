@@ -85,7 +85,7 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
       new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance().instance());
       new Inequality(body, var_S1, var_Someone);
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

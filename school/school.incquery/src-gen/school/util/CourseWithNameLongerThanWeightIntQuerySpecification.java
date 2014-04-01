@@ -100,7 +100,7 @@ public final class CourseWithNameLongerThanWeightIntQuerySpecification extends B
         
         },  null); 
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

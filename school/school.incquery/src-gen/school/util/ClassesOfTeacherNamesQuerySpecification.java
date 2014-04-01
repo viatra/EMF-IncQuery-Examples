@@ -87,7 +87,7 @@ public final class ClassesOfTeacherNamesQuerySpecification extends BaseGenerated
       new TypeBinary(body, context, var_C, var_SC, getFeatureLiteral("http://school.ecore", "Course", "schoolClass"), "http://school.ecore/Course.schoolClass");
       new TypeBinary(body, context, var_SC, var_SCName, getFeatureLiteral("http://school.ecore", "SchoolClass", "code"), "http://school.ecore/SchoolClass.code");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

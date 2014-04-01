@@ -100,7 +100,7 @@ public final class CourseWithNameLongerThanWeightQuerySpecification extends Base
         
         },  null); 
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

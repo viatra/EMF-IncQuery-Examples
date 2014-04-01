@@ -77,7 +77,7 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       ));
       
       
-      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
     }{
       PBody body = new PBody(this);
@@ -89,14 +89,14 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       ));
       
       
-      new TypeBinary(body, context, var_S1, var_S2, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
+      new TypeBinary(body, context, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
     }{
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    
+    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   
