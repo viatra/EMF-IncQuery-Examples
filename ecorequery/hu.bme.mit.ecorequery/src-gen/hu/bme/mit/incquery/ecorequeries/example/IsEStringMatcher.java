@@ -5,6 +5,7 @@ import hu.bme.mit.incquery.ecorequeries.example.util.IsEStringQuerySpecification
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -14,6 +15,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.IsEString pattern,
@@ -67,6 +69,8 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   }
   
   private final static int POSITION_ELEMENT = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(IsEStringMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -216,9 +220,10 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch tupleToMatch(final Tuple t) {
     try {
-    	return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -226,9 +231,10 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch arrayToMatch(final Object[] match) {
     try {
-    	return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -236,9 +242,10 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new IsEStringMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new IsEStringMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

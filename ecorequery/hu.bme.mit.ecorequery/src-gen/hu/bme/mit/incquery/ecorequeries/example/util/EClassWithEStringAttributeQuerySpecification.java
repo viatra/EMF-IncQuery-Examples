@@ -85,7 +85,7 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
       new PositivePatternCall(body, new FlatTuple(var_E, var_Attr, var_Type), EClassAttributeQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_Type), IsEStringQuerySpecification.instance());
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

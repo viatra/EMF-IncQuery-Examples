@@ -5,6 +5,7 @@ import hu.bme.mit.incquery.ecorequeries.example.util.EReferenceWithOneMultiplici
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
@@ -14,6 +15,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicity pattern,
@@ -68,6 +70,8 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   }
   
   private final static int POSITION_EREF = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(EReferenceWithOneMultiplicityMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -217,9 +221,10 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -227,9 +232,10 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -237,9 +243,10 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EReferenceWithOneMultiplicityMatch.Mutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EReferenceWithOneMultiplicityMatch.Mutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

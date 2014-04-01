@@ -83,7 +83,7 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
       new ConstantValue(body, var__virtual_2_, -1);
       new TypeBinary(body, context, var_ERef, var__virtual_2_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.upperBound");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

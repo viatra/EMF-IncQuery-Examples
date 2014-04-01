@@ -78,7 +78,7 @@ public final class SuperTypeOfQuerySpecification extends BaseGeneratedQuerySpeci
       
       new TypeBinary(body, context, var_Sub, var_Super, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eSuperTypes"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eSuperTypes");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

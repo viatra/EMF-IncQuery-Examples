@@ -80,7 +80,7 @@ public final class IsInECoreQuerySpecification extends BaseGeneratedQuerySpecifi
       new ConstantValue(body, var__virtual_1_, "http://www.eclipse.org/emf/2002/Ecore");
       new TypeBinary(body, context, var_EP, var__virtual_1_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EPackage", "nsURI"), "http://www.eclipse.org/emf/2002/Ecore/EPackage.nsURI");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

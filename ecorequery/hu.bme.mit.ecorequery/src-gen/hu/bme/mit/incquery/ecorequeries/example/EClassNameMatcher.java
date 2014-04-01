@@ -5,6 +5,7 @@ import hu.bme.mit.incquery.ecorequeries.example.util.EClassNameQuerySpecificatio
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.incquery.runtime.api.IMatchProcessor;
 import org.eclipse.incquery.runtime.api.IQuerySpecification;
@@ -13,6 +14,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EClassName pattern,
@@ -65,6 +67,8 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   }
   
   private final static int POSITION_ENAME = 0;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(EClassNameMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -214,9 +218,10 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassNameMatch.Immutable((java.lang.String) t.get(POSITION_ENAME));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassNameMatch.Immutable((java.lang.String) t.get(POSITION_ENAME));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -224,9 +229,10 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassNameMatch.Immutable((java.lang.String) match[POSITION_ENAME]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassNameMatch.Immutable((java.lang.String) match[POSITION_ENAME]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -234,9 +240,10 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EClassNameMatch.Mutable((java.lang.String) match[POSITION_ENAME]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassNameMatch.Mutable((java.lang.String) match[POSITION_ENAME]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

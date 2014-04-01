@@ -102,7 +102,7 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
       new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().instance());
       new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().instance());
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

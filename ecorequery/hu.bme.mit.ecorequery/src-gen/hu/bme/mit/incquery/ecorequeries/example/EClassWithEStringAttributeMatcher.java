@@ -5,6 +5,7 @@ import hu.bme.mit.incquery.ecorequeries.example.util.EClassWithEStringAttributeQ
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -15,6 +16,7 @@ import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
+import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute pattern,
@@ -71,6 +73,8 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   private final static int POSITION_E = 0;
   
   private final static int POSITION_ATTR = 1;
+  
+  private final static Logger logger = IncQueryLoggingUtil.getLogger(EClassWithEStringAttributeMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -284,9 +288,10 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
     try {
-    	return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in tuple not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in tuple not properly typed!",e);
+      return null;
     }
     
   }
@@ -294,9 +299,10 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
     try {
-    	return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }
@@ -304,9 +310,10 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return new EClassWithEStringAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
-    } catch(ClassCastException e) {engine.getLogger().error("Element(s) in array not properly typed!",e);	//throw new IncQueryRuntimeException(e.getMessage());
-    	return null;
+      return new EClassWithEStringAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    } catch(ClassCastException e) {
+      logger.error("Element(s) in array not properly typed!",e);
+      return null;
     }
     
   }

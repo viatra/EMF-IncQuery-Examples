@@ -78,7 +78,7 @@ public final class ECoreNamedElementQuerySpecification extends BaseGeneratedQuer
       
       new TypeBinary(body, context, var_Element, var_Name, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

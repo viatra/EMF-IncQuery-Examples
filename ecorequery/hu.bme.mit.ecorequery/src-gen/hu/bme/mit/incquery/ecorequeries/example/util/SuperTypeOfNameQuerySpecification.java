@@ -82,7 +82,7 @@ public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQueryS
       new TypeBinary(body, context, var_Super, var_SuperName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
       new TypeBinary(body, context, var_Sub, var_SubName, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ENamedElement", "name"), "http://www.eclipse.org/emf/2002/Ecore/ENamedElement.name");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

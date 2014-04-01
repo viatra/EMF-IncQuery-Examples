@@ -75,7 +75,7 @@ public final class EClassQuerySpecification extends BaseGeneratedQuerySpecificat
       
       new TypeUnary(body, var_EClass, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

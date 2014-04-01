@@ -82,7 +82,7 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
       new ConstantValue(body, var__virtual_0_, "EString");
       new PositivePatternCall(body, new FlatTuple(var_Element, var__virtual_0_), ECoreNamedElementQuerySpecification.instance());
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   

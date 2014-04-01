@@ -84,7 +84,7 @@ public final class EClassAttributeQuerySpecification extends BaseGeneratedQueryS
       new TypeUnary(body, var_Attr, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EAttribute"), "http://www.eclipse.org/emf/2002/Ecore/EAttribute");
       new TypeBinary(body, context, var_Attr, var_Type, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
       bodies.add(body);
-    }
+    }setStatus(PQuery.PQueryStatus.OK);
     return bodies;
   }
   
