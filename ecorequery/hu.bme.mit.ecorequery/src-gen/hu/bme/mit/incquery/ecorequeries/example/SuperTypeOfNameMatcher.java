@@ -72,7 +72,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   
   private final static int POSITION_SUBNAME = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(SuperTypeOfNameMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(SuperTypeOfNameMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -288,7 +288,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
     try {
       return new SuperTypeOfNameMatch.Immutable((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -299,7 +299,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
     try {
       return new SuperTypeOfNameMatch.Immutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -310,7 +310,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
     try {
       return new SuperTypeOfNameMatch.Mutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

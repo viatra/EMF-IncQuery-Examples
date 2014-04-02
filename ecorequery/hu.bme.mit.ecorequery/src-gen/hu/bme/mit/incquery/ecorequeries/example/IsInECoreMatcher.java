@@ -71,7 +71,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   
   private final static int POSITION_ELEMENT = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(IsInECoreMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(IsInECoreMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -223,7 +223,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
     try {
       return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -234,7 +234,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
     try {
       return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -245,7 +245,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
     try {
       return new IsInECoreMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

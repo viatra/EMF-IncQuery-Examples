@@ -70,7 +70,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   
   private final static int POSITION_EREFNAME = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(EReferenceWithStarMultiplicityNameMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(EReferenceWithStarMultiplicityNameMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -222,7 +222,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
     try {
       return new EReferenceWithStarMultiplicityNameMatch.Immutable((java.lang.String) t.get(POSITION_EREFNAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -233,7 +233,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
     try {
       return new EReferenceWithStarMultiplicityNameMatch.Immutable((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -244,7 +244,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
     try {
       return new EReferenceWithStarMultiplicityNameMatch.Mutable((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

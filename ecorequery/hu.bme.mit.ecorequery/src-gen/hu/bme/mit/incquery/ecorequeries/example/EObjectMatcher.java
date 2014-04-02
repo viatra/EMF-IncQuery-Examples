@@ -69,7 +69,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   
   private final static int POSITION_E = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(EObjectMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(EObjectMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -221,7 +221,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
     try {
       return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -232,7 +232,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
     try {
       return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -243,7 +243,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
     try {
       return new EObjectMatch.Mutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

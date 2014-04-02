@@ -94,7 +94,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   
   private final static int POSITION_LABEL2 = 4;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(SampleQueryMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(SampleQueryMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -448,7 +448,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
     try {
       return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -459,7 +459,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
     try {
       return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -470,7 +470,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
     try {
       return new SampleQueryMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

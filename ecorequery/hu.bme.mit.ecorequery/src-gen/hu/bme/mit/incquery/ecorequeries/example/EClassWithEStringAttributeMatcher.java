@@ -74,7 +74,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   
   private final static int POSITION_ATTR = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(EClassWithEStringAttributeMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(EClassWithEStringAttributeMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -290,7 +290,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
     try {
       return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -301,7 +301,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
     try {
       return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -312,7 +312,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
     try {
       return new EClassWithEStringAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

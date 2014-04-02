@@ -78,7 +78,7 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
   
   private final static int POSITION_TYPE = 2;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(EClassAttributeMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(EClassAttributeMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -340,7 +340,7 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
     try {
       return new EClassAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -351,7 +351,7 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
     try {
       return new EClassAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -362,7 +362,7 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
     try {
       return new EClassAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

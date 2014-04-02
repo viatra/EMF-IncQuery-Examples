@@ -69,7 +69,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   
   private final static int POSITION_NAME = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(ECoreNamedElementNameMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(ECoreNamedElementNameMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -221,7 +221,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
     try {
       return new ECoreNamedElementNameMatch.Immutable((java.lang.String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -232,7 +232,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
     try {
       return new ECoreNamedElementNameMatch.Immutable((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -243,7 +243,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
     try {
       return new ECoreNamedElementNameMatch.Mutable((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

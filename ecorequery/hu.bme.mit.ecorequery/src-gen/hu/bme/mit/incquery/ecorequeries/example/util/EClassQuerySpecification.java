@@ -65,7 +65,7 @@ public final class EClassQuerySpecification extends BaseGeneratedQuerySpecificat
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
-    Set<PBody> bodies = Sets.newHashSet();
+    Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_EClass = body.getOrCreateVariableByName("EClass");

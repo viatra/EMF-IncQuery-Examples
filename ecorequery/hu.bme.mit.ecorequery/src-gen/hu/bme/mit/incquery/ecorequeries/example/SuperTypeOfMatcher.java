@@ -73,7 +73,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   
   private final static int POSITION_SUB = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(SuperTypeOfMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(SuperTypeOfMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -289,7 +289,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
     try {
       return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -300,7 +300,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
     try {
       return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -311,7 +311,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
     try {
       return new SuperTypeOfMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
