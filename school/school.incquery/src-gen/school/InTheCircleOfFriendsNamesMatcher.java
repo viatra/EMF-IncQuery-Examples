@@ -73,7 +73,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseMatcher<InTheCircleOfF
   
   private final static int POSITION_SOMEONENAME = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(InTheCircleOfFriendsNamesMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(InTheCircleOfFriendsNamesMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -289,7 +289,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseMatcher<InTheCircleOfF
     try {
       return new InTheCircleOfFriendsNamesMatch.Immutable((java.lang.String) t.get(POSITION_S1NAME), (java.lang.String) t.get(POSITION_SOMEONENAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -300,7 +300,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseMatcher<InTheCircleOfF
     try {
       return new InTheCircleOfFriendsNamesMatch.Immutable((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -311,7 +311,7 @@ public class InTheCircleOfFriendsNamesMatcher extends BaseMatcher<InTheCircleOfF
     try {
       return new InTheCircleOfFriendsNamesMatch.Mutable((java.lang.String) match[POSITION_S1NAME], (java.lang.String) match[POSITION_SOMEONENAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

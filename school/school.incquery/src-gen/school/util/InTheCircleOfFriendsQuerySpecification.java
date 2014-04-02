@@ -69,7 +69,7 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     EMFPatternMatcherContext context = new EMFPatternMatcherContext();
-    Set<PBody> bodies = Sets.newHashSet();
+    Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
       PVariable var_S1 = body.getOrCreateVariableByName("S1");

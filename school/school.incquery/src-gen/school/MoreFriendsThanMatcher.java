@@ -74,7 +74,7 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
   
   private final static int POSITION_S2 = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(MoreFriendsThanMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(MoreFriendsThanMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -290,7 +290,7 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
     try {
       return new MoreFriendsThanMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -301,7 +301,7 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
     try {
       return new MoreFriendsThanMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -312,7 +312,7 @@ public class MoreFriendsThanMatcher extends BaseMatcher<MoreFriendsThanMatch> {
     try {
       return new MoreFriendsThanMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

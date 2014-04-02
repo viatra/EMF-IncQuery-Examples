@@ -72,7 +72,7 @@ public class SchoolsMatcher extends BaseMatcher<SchoolsMatch> {
   
   private final static int POSITION_SCH = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(SchoolsMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(SchoolsMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -224,7 +224,7 @@ public class SchoolsMatcher extends BaseMatcher<SchoolsMatch> {
     try {
       return new SchoolsMatch.Immutable((school.School) t.get(POSITION_SCH));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -235,7 +235,7 @@ public class SchoolsMatcher extends BaseMatcher<SchoolsMatch> {
     try {
       return new SchoolsMatch.Immutable((school.School) match[POSITION_SCH]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -246,7 +246,7 @@ public class SchoolsMatcher extends BaseMatcher<SchoolsMatch> {
     try {
       return new SchoolsMatch.Mutable((school.School) match[POSITION_SCH]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

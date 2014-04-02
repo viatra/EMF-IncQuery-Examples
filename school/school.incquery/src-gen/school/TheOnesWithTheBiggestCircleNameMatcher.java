@@ -69,7 +69,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseMatcher<TheOnesW
   
   private final static int POSITION_SNAME = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(TheOnesWithTheBiggestCircleNameMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(TheOnesWithTheBiggestCircleNameMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -221,7 +221,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseMatcher<TheOnesW
     try {
       return new TheOnesWithTheBiggestCircleNameMatch.Immutable((java.lang.String) t.get(POSITION_SNAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -232,7 +232,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseMatcher<TheOnesW
     try {
       return new TheOnesWithTheBiggestCircleNameMatch.Immutable((java.lang.String) match[POSITION_SNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -243,7 +243,7 @@ public class TheOnesWithTheBiggestCircleNameMatcher extends BaseMatcher<TheOnesW
     try {
       return new TheOnesWithTheBiggestCircleNameMatch.Mutable((java.lang.String) match[POSITION_SNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

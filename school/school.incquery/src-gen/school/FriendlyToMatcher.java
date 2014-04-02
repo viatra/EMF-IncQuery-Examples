@@ -77,7 +77,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   
   private final static int POSITION_S2 = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(FriendlyToMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(FriendlyToMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -293,7 +293,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
     try {
       return new FriendlyToMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -304,7 +304,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
     try {
       return new FriendlyToMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -315,7 +315,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
     try {
       return new FriendlyToMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

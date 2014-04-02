@@ -82,7 +82,7 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
   
   private final static int POSITION_C = 0;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(CourseWithPrimeWeightMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(CourseWithPrimeWeightMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -234,7 +234,7 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
     try {
       return new CourseWithPrimeWeightMatch.Immutable((school.Course) t.get(POSITION_C));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -245,7 +245,7 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
     try {
       return new CourseWithPrimeWeightMatch.Immutable((school.Course) match[POSITION_C]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -256,7 +256,7 @@ public class CourseWithPrimeWeightMatcher extends BaseMatcher<CourseWithPrimeWei
     try {
       return new CourseWithPrimeWeightMatch.Mutable((school.Course) match[POSITION_C]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

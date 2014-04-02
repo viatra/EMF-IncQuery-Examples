@@ -72,7 +72,7 @@ public class CoursesOfTeacherNamesMatcher extends BaseMatcher<CoursesOfTeacherNa
   
   private final static int POSITION_CNAME = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(CoursesOfTeacherNamesMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(CoursesOfTeacherNamesMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -288,7 +288,7 @@ public class CoursesOfTeacherNamesMatcher extends BaseMatcher<CoursesOfTeacherNa
     try {
       return new CoursesOfTeacherNamesMatch.Immutable((java.lang.String) t.get(POSITION_TNAME), (java.lang.String) t.get(POSITION_CNAME));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -299,7 +299,7 @@ public class CoursesOfTeacherNamesMatcher extends BaseMatcher<CoursesOfTeacherNa
     try {
       return new CoursesOfTeacherNamesMatch.Immutable((java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_CNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -310,7 +310,7 @@ public class CoursesOfTeacherNamesMatcher extends BaseMatcher<CoursesOfTeacherNa
     try {
       return new CoursesOfTeacherNamesMatch.Mutable((java.lang.String) match[POSITION_TNAME], (java.lang.String) match[POSITION_CNAME]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     

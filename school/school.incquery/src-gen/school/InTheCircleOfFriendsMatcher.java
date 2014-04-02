@@ -74,7 +74,7 @@ public class InTheCircleOfFriendsMatcher extends BaseMatcher<InTheCircleOfFriend
   
   private final static int POSITION_SOMEONE = 1;
   
-  private final static Logger logger = IncQueryLoggingUtil.getLogger(InTheCircleOfFriendsMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(InTheCircleOfFriendsMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -290,7 +290,7 @@ public class InTheCircleOfFriendsMatcher extends BaseMatcher<InTheCircleOfFriend
     try {
       return new InTheCircleOfFriendsMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_SOMEONE));
     } catch(ClassCastException e) {
-      logger.error("Element(s) in tuple not properly typed!",e);
+      LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
     }
     
@@ -301,7 +301,7 @@ public class InTheCircleOfFriendsMatcher extends BaseMatcher<InTheCircleOfFriend
     try {
       return new InTheCircleOfFriendsMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_SOMEONE]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
@@ -312,7 +312,7 @@ public class InTheCircleOfFriendsMatcher extends BaseMatcher<InTheCircleOfFriend
     try {
       return new InTheCircleOfFriendsMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_SOMEONE]);
     } catch(ClassCastException e) {
-      logger.error("Element(s) in array not properly typed!",e);
+      LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
     }
     
