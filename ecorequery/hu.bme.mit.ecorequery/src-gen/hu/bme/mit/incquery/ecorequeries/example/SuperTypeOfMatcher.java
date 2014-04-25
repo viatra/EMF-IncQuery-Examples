@@ -28,6 +28,8 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Generic pattern: Super and Sub is an EClass and Sub is Super's childclass
+ *  
  * pattern SuperTypeOf(Super,Sub) = {
  * 	EClass.eSuperTypes(Sub,Super);
  * 	EClass(Super);

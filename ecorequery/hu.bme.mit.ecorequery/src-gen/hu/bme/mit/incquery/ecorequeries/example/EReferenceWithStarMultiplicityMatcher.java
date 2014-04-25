@@ -28,6 +28,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * ERef is an EReference with a 0- multiplicity constraint
+ *  
+ * 	
  * pattern EReferenceWithStarMultiplicity(ERef) = {
  * 	EReference(ERef);
  * 	ETypedElement.lowerBound(ERef,0); 

@@ -28,6 +28,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Generic pattern: Element is an ECore model element, having name Name
+ *   
+ * 
  * pattern ECoreNamedElement(Element,Name) = {
  *        ENamedElement(Element);
  *        ENamedElement.name(Element,Name);

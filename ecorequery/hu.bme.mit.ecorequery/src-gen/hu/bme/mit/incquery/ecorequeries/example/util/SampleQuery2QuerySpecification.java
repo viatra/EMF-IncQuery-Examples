@@ -11,18 +11,16 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 /**
@@ -40,12 +38,7 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
    * 
    */
   public static SampleQuery2QuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -72,7 +65,6 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -96,10 +88,10 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
       
       
       
-      new TypeBinary(body, context, var_XElement, var_Relates1, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eStructuralFeatures");
-      new TypeBinary(body, context, var_Relates1, var_Relates2, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference", "eOpposite"), "http://www.eclipse.org/emf/2002/Ecore/EReference.eOpposite");
+      new TypeBinary(body, CONTEXT, var_XElement, var_Relates1, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eStructuralFeatures");
+      new TypeBinary(body, CONTEXT, var_Relates1, var_Relates2, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference", "eOpposite"), "http://www.eclipse.org/emf/2002/Ecore/EReference.eOpposite");
       new TypeUnary(body, var_YElement, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
-      new TypeBinary(body, context, var_Relates1, var_YElement, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
+      new TypeBinary(body, CONTEXT, var_Relates1, var_YElement, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
       new PositivePatternCall(body, new FlatTuple(var_Relates1), EReferenceWithStarMultiplicityQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_Relates2), EReferenceWithOneMultiplicityQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_XElement, var_Label1), EClassWithEStringAttributeQuerySpecification.instance());
@@ -107,13 +99,8 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
       new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().instance());
       new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().instance());
       bodies.add(body);
-    }setStatus(PQuery.PQueryStatus.OK);
+    }
     return bodies;
-  }
-  
-  private SampleQuery2QuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -130,11 +117,7 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
     private final static SampleQuery2QuerySpecification INSTANCE = make();
     
     public static SampleQuery2QuerySpecification make() {
-      try {
-      	return new SampleQuery2QuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new SampleQuery2QuerySpecification();					
       
     }
   }

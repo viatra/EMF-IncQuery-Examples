@@ -28,6 +28,13 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * helper patterns
+ *   
+ * 
+ * 
+ *   Element is "the" EString in the ECore package
+ *   
+ * 
  * pattern IsEString(Element) = {
  * 	find IsInECore(Element);
  * 	find ECoreNamedElement(Element,"EString");

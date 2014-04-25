@@ -29,6 +29,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Problem-specific pattern: E is an EClass, which has an EAttribute Attr, having EString as its datatype
+ *  
+ * 
  * pattern EClassWithEStringAttribute(E,Attr) = {
  * 	EClass(E);
  * 	find EClassAttribute(E,Attr,Type);

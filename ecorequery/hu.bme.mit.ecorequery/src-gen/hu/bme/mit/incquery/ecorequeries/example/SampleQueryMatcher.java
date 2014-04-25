@@ -30,6 +30,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * implements the sample query given in example.pdf
+ *   
+ * 
  * pattern SampleQuery(XElement, YElement, Relates, Label1, Label2) = {
  * 	// structural block, defining the basic pattern body
  * 	EClass(XElement);

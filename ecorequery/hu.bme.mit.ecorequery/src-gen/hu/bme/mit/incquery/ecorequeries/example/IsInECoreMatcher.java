@@ -28,6 +28,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Generic pattern: Element resides in "the" Ecore package
+ *   
+ * 
  * pattern IsInECore(Element) = {
  * 	EClassifier.ePackage(Element,EP);
  * 	EPackage(EP);

@@ -30,6 +30,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Generic pattern: E is an EClass, which has an EAttribute Attr, having a datatype Type
+ *  
+ * 
  * pattern EClassAttribute(E, Attr, Type) = {
  * 	EClass(E); 
  * 	EClass.eStructuralFeatures(E,Attr);

@@ -28,6 +28,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
+ * Generic pattern: EClass is an EClass in ECore
+ *  
+ * 
  * pattern EClass(EClass) = {
  * 	EClass(EClass);
  * }
