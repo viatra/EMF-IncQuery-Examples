@@ -28,6 +28,10 @@ import school.util.TeacherWithoutClassQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * Teacher T is a teacher who doesn't teach any schoolclass.
+ *    
+ *    Note: Teacher type declaration is necesary as type information is not propagated out of neg find calls (by design).
+ *   
  * pattern teacherWithoutClass(T : Teacher) {
  * 	neg find classesOfTeacher(T, _SC);
  * }

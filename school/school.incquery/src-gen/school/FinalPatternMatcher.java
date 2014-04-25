@@ -33,7 +33,12 @@ import school.util.FinalPatternQuerySpecification;
  * <code><pre>
  * // Step 7: combine everything, {@literal @}PatternUI, {@literal @}ObservableValue, {@literal @}Handler
  * 
- * 	 
+ * 	
+ *      
+ *      We want to find those years, which had courses taught by the busiest teacher
+ *      and included the most sociable students
+ *      
+ *     
  * 	{@literal @}QueryExplorer(message = "The busiest teacher $T.name$ taught the most sociable student $S.name$ in $Y.startingDate$")
  * 	{@literal @}ObservableValue(name = "Year", expression = "Y.startingDate")
  * 	{@literal @}ObservableValue(name = "Teacher", expression = "T.name")

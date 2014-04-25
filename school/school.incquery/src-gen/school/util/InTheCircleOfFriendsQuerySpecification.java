@@ -6,17 +6,15 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Inequality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.BinaryTransitiveClosure;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.InTheCircleOfFriendsMatcher;
 import school.util.FriendlyToQuerySpecification;
@@ -36,12 +34,7 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
    * 
    */
   public static InTheCircleOfFriendsQuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -68,7 +61,6 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -85,13 +77,8 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
       new BinaryTransitiveClosure(body, new FlatTuple(var_S1, var_Someone), FriendlyToQuerySpecification.instance().instance());
       new Inequality(body, var_S1, var_Someone);
       bodies.add(body);
-    }setStatus(PQuery.PQueryStatus.OK);
+    }
     return bodies;
-  }
-  
-  private InTheCircleOfFriendsQuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -108,11 +95,7 @@ public final class InTheCircleOfFriendsQuerySpecification extends BaseGeneratedQ
     private final static InTheCircleOfFriendsQuerySpecification INSTANCE = make();
     
     public static InTheCircleOfFriendsQuerySpecification make() {
-      try {
-      	return new InTheCircleOfFriendsQuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new InTheCircleOfFriendsQuerySpecification();					
       
     }
   }

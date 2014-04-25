@@ -6,20 +6,18 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.PatternMatchCounter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.TeachesMoreClassesMatcher;
 import school.util.ClassesOfTeacherQuerySpecification;
@@ -39,12 +37,7 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
    * 
    */
   public static TeachesMoreClassesQuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -71,7 +64,6 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -111,18 +103,13 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
         
         },  null); 
       bodies.add(body);
-    }{
+    }
+    {
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("display",false);
       addAnnotation(annotation);
     }
-    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
-  }
-  
-  private TeachesMoreClassesQuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -139,11 +126,7 @@ public final class TeachesMoreClassesQuerySpecification extends BaseGeneratedQue
     private final static TeachesMoreClassesQuerySpecification INSTANCE = make();
     
     public static TeachesMoreClassesQuerySpecification make() {
-      try {
-      	return new TeachesMoreClassesQuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new TeachesMoreClassesQuerySpecification();					
       
     }
   }

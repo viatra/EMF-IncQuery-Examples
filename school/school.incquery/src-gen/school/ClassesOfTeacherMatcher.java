@@ -29,6 +29,8 @@ import school.util.ClassesOfTeacherQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * Teacher T teaches a course which is being taught to SchoolClass SC 
+ *  
  * pattern classesOfTeacher(T, SC) {
  * 	find coursesOfTeacher(T, C);
  * 	Course.schoolClass(C, SC);

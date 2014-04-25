@@ -6,17 +6,15 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.FinalPattern2Matcher;
 import school.util.TeachesTheMostCoursesQuerySpecification;
@@ -37,12 +35,7 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
    * 
    */
   public static FinalPattern2QuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -69,7 +62,6 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -93,19 +85,20 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       
       
       
-      new TypeBinary(body, context, var_Y, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Year", "schoolClasses"), "http://school.ecore/Year.schoolClasses");
-      new TypeBinary(body, context, var__virtual_0_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
-      new TypeBinary(body, context, var_C, var_T, getFeatureLiteral("http://school.ecore", "Course", "teacher"), "http://school.ecore/Course.teacher");
-      new TypeBinary(body, context, var_S, var__virtual_3_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
-      new TypeBinary(body, context, var__virtual_3_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
+      new TypeBinary(body, CONTEXT, var_Y, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Year", "schoolClasses"), "http://school.ecore/Year.schoolClasses");
+      new TypeBinary(body, CONTEXT, var__virtual_0_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
+      new TypeBinary(body, CONTEXT, var_C, var_T, getFeatureLiteral("http://school.ecore", "Course", "teacher"), "http://school.ecore/Course.teacher");
+      new TypeBinary(body, CONTEXT, var_S, var__virtual_3_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
+      new TypeBinary(body, CONTEXT, var__virtual_3_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
       new PositivePatternCall(body, new FlatTuple(var_S), TheOnesWithTheBiggestCircleQuerySpecification.instance());
       new PositivePatternCall(body, new FlatTuple(var_T), TeachesTheMostCoursesQuerySpecification.instance());
-      new TypeBinary(body, context, var_Y, var_YDate, getFeatureLiteral("http://school.ecore", "Year", "startingDate"), "http://school.ecore/Year.startingDate");
-      new TypeBinary(body, context, var_C, var_CSub, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
-      new TypeBinary(body, context, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
-      new TypeBinary(body, context, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
+      new TypeBinary(body, CONTEXT, var_Y, var_YDate, getFeatureLiteral("http://school.ecore", "Year", "startingDate"), "http://school.ecore/Year.startingDate");
+      new TypeBinary(body, CONTEXT, var_C, var_CSub, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
+      new TypeBinary(body, CONTEXT, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
+      new TypeBinary(body, CONTEXT, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
       bodies.add(body);
-    }{
+    }
+    {
       PAnnotation annotation = new PAnnotation("QueryExplorer");
       annotation.addAttribute("message","The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$");
       annotation.addAttribute("display",true);
@@ -134,13 +127,7 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
       annotation.addAttribute("fileExtension","school");
       addAnnotation(annotation);
     }
-    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
-  }
-  
-  private FinalPattern2QuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -157,11 +144,7 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedQuerySpe
     private final static FinalPattern2QuerySpecification INSTANCE = make();
     
     public static FinalPattern2QuerySpecification make() {
-      try {
-      	return new FinalPattern2QuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new FinalPattern2QuerySpecification();					
       
     }
   }

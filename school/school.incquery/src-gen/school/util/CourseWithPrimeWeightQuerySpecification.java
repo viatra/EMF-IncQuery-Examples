@@ -6,18 +6,16 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import school.CourseWithPrimeWeightMatcher;
 
 /**
@@ -35,12 +33,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
    * 
    */
   public static CourseWithPrimeWeightQuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -67,7 +60,6 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -77,7 +69,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         new ExportedParameter(body, var_C, "C")
       ));
       
-      new TypeBinary(body, context, var_C, var_W, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
+      new TypeBinary(body, CONTEXT, var_C, var_W, getFeatureLiteral("http://school.ecore", "Course", "weight"), "http://school.ecore/Course.weight");
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
         @Override
         public String getShortDescription() {
@@ -97,13 +89,8 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
         
         },  null); 
       bodies.add(body);
-    }setStatus(PQuery.PQueryStatus.OK);
+    }
     return bodies;
-  }
-  
-  private CourseWithPrimeWeightQuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -120,11 +107,7 @@ public final class CourseWithPrimeWeightQuerySpecification extends BaseGenerated
     private final static CourseWithPrimeWeightQuerySpecification INSTANCE = make();
     
     public static CourseWithPrimeWeightQuerySpecification make() {
-      try {
-      	return new CourseWithPrimeWeightQuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new CourseWithPrimeWeightQuerySpecification();					
       
     }
   }

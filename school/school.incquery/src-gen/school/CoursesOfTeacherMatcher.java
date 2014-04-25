@@ -32,6 +32,10 @@ import school.util.CoursesOfTeacherQuerySpecification;
  * // Step 2: pattern calls, negative application conditions
  * 
  *  
+ *   Courses of a teacher.
+ *   
+ *   Teacher T teaches in Course C
+ *  
  * pattern coursesOfTeacher(T, C) {
  * 	Teacher.courses(T, C);
  * }

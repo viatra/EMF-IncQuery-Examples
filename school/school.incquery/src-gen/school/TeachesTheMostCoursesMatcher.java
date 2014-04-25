@@ -28,7 +28,12 @@ import school.util.TeachesTheMostCoursesQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern teachesTheMostCourses(T : Teacher) {
+ * Teacher T teaches the most courses.
+ *     
+ *     Note: there can be multiple matches to T as there might be cases
+ *     where multiple teachers teach the same and maximum amount of courses.
+ *    
+ * 	pattern teachesTheMostCourses(T : Teacher) {
  * 		neg find teachesMoreClasses(_Tx, T); // there is noone who would teach more courses
  * 	}
  * </pre></code>

@@ -29,6 +29,10 @@ import school.util.TeachersOfSchoolQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * a sample query along a reference
+ *    
+ *    Teacher T teaches in school Sch.
+ *   
  * pattern teachersOfSchool(T : Teacher, Sch : School) {
  * 	School.teachers(Sch, T);
  * 	// note that there is no restriction on the direction of navigation:

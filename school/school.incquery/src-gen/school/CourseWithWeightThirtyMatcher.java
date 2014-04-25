@@ -30,7 +30,11 @@ import school.util.CourseWithWeightThirtyQuerySpecification;
  * <code><pre>
  * // Step 4: check conditions
  * 
- *  
+ * 
+ *    Attribute value constraint with a constant:
+ *    
+ *    Course C has weight 30
+ *   
  * pattern courseWithWeightThirty(C) {
  * 	Course.weight(C, 30);
  * }

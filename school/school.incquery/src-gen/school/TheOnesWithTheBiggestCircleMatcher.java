@@ -28,7 +28,12 @@ import school.util.TheOnesWithTheBiggestCircleQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern theOnesWithTheBiggestCircle(S : Student) {
+ * Student S has the largest circle of friends.
+ *      
+ *      Note: again, there can be multiple matches in case there are
+ *      equally large friend circles.
+ *     
+ * 	pattern theOnesWithTheBiggestCircle(S : Student) {
  * 		neg find moreFriendsThan(_Sx, S);
  * 	}
  * </pre></code>

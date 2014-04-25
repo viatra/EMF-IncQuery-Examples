@@ -28,6 +28,11 @@ import school.util.CourseWithPrimeWeightQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * A check condition with some Xbase magic:
+ *     (this must be the most primitive prime tester ever :-)
+ *     
+ *     Course C has a weight which is a prime number
+ *    
  * pattern courseWithPrimeWeight(C) {
  * 	Course.weight(C, W);
  * 	check( { // make sure the check() expression returns a boolean value on all execution paths

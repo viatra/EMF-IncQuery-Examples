@@ -28,6 +28,8 @@ import school.util.TeachersQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * all teachers
+ *   
  * pattern teachers(T) {
  * 	Teacher(T);
  * }

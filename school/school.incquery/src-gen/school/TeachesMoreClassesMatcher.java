@@ -33,7 +33,9 @@ import school.util.TeachesMoreClassesQuerySpecification;
  * 
  * // Step 5: counting (match cardinalities)
  * 
- *  
+ * 
+ *     Teacher T1 teaches more classes than teacher T2
+ *    
  * {@literal @}QueryExplorer(display = false)
  * pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
  * 	N == count find classesOfTeacher(T1, _SC1);

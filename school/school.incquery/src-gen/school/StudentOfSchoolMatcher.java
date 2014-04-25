@@ -31,7 +31,9 @@ import school.util.StudentOfSchoolQuerySpecification;
  * <code><pre>
  * // Step 3: path expressions
  * 
- *  
+ * 
+ *    Student S attends school Sch
+ *   
  * pattern studentOfSchool(S, Sch) {
  * 	Student.schoolClass.courses.school(S, Sch);
  * 	// logically equivalent: School.courses.schoolClass.students(Sch,S);

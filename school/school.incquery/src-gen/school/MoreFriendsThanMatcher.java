@@ -28,7 +28,9 @@ import school.util.MoreFriendsThanQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * {@literal @}QueryExplorer(display = false)
+ * Student S1 has more transitive friends than student S2
+ *     
+ * 	{@literal @}QueryExplorer(display = false)
  * 	pattern moreFriendsThan(S1 : Student, S2 : Student) {
  * 		N == count find inTheCircleOfFriends(S1, _Sx1);
  * 		M == count find inTheCircleOfFriends(S2, _Sx2);

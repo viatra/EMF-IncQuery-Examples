@@ -28,6 +28,10 @@ import school.util.CourseWithNameLongerThanWeightQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
+ * a bit more complicated check expression:
+ *    
+ *    Course C has a subject name which is longer than C's weight.
+ *   
  * pattern courseWithNameLongerThanWeight(C) {
  * 	Course.subject(C, CName);
  * 	Course.weight(C, W);

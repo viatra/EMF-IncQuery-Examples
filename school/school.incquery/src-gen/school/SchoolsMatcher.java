@@ -31,6 +31,8 @@ import school.util.SchoolsQuerySpecification;
  * // Step 1: simple queries
  * 
  *  
+ *    all schools
+ *   
  * pattern schools(Sch) {
  * 	School(Sch);
  * }

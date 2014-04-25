@@ -28,7 +28,13 @@ import school.util.InTheCircleOfFriendsQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern inTheCircleOfFriends(S1 : Student, Someone : Student) {
+ * Student Someone is in the circle of student S1's friends:
+ *       - they are either friendly directly
+ *       - or there is a common friend who is in both student's circle of friends
+ *      
+ *      Student S1 is transitively friendly to student Someone
+ *     
+ * 	pattern inTheCircleOfFriends(S1 : Student, Someone : Student) {
  * 		find friendlyTo +(S1, Someone);
  * 		S1 != Someone; // we do not allow self loops
  * 		// this is not only a short-hand notation, but also much more efficient!

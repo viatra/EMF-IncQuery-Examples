@@ -6,18 +6,16 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
-import org.eclipse.incquery.runtime.context.EMFPatternMatcherContext;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.PQuery;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.ParameterReference;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 import school.CourseWithoutTeacherMatcher;
 import school.util.CourseWithTeacherQuerySpecification;
@@ -37,12 +35,7 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
    * 
    */
   public static CourseWithoutTeacherQuerySpecification instance() throws IncQueryException {
-    try {
-    	return LazyHolder.INSTANCE;
-    } catch (ExceptionInInitializerError err) {
-    	processInitializerError(err);
-    	throw err;
-    }
+    return LazyHolder.INSTANCE;
     
   }
   
@@ -69,7 +62,6 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
   
   @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
-    EMFPatternMatcherContext context = new EMFPatternMatcherContext();
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
       PBody body = new PBody(this);
@@ -81,20 +73,15 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
       new TypeUnary(body, var_C, getClassifierLiteral("http://school.ecore", "Course"), "http://school.ecore/Course");
       new NegativePatternCall(body, new FlatTuple(var_C), CourseWithTeacherQuerySpecification.instance().instance());
       bodies.add(body);
-    }{
+    }
+    {
       PAnnotation annotation = new PAnnotation("Constraint");
       annotation.addAttribute("message","$C.subject$ does not have a teacher");
       annotation.addAttribute("location",new ParameterReference("C"));
       annotation.addAttribute("severity","warning");
       addAnnotation(annotation);
     }
-    setStatus(PQuery.PQueryStatus.OK);
     return bodies;
-  }
-  
-  private CourseWithoutTeacherQuerySpecification() throws IncQueryException {
-    super();
-    setStatus(PQuery.PQueryStatus.UNINITIALIZED);
   }
   
   @SuppressWarnings("all")
@@ -111,11 +98,7 @@ public final class CourseWithoutTeacherQuerySpecification extends BaseGeneratedQ
     private final static CourseWithoutTeacherQuerySpecification INSTANCE = make();
     
     public static CourseWithoutTeacherQuerySpecification make() {
-      try {
-      	return new CourseWithoutTeacherQuerySpecification();
-      } catch (IncQueryException ex) {
-      	throw new RuntimeException	(ex);
-      }
+      return new CourseWithoutTeacherQuerySpecification();					
       
     }
   }
