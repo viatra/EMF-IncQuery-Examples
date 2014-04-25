@@ -229,13 +229,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test
 	def void immutablePBodyUsage() {
 		val instance = ClassesOfTeacherQuerySpecification.instance
-		instance.containedBodies.forEach[Assert::assertFalse(it.mutable)]
-	}
-	
-	@Test
-	def void mutablePBodyUsage() {
-		val instance = ClassesOfTeacherQuerySpecification.instance
-		instance.mutableBodies.forEach[Assert::assertTrue(it.mutable)]
+		instance.disjunctBodies.bodies.forEach[Assert::assertFalse(it.mutable)]
 	}
 }
 
