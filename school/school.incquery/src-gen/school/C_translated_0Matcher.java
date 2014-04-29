@@ -13,42 +13,53 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
-import school.FriendlyToMatch;
+import school.C_translated_0Match;
 import school.Student;
-import school.util.FriendlyToQuerySpecification;
+import school.util.C_translated_0QuerySpecification;
 
 /**
- * Generated pattern matcher API of the school.friendlyTo pattern,
+ * Generated pattern matcher API of the school.C_translated_0 pattern,
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link FriendlyToMatch}.
+ * <p>Matches of the pattern will be represented as {@link C_translated_0Match}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern friendlyTo(S1 : Student, S2 : Student) {
- * 		Student.friendsWith(S1, S2);
+ * pattern C_translated_0(
+ * 	temp1 : Student,
+ * 	string_1
+ * ) {
+ * 		Student.name(temp1, eString_0);
+ * 		string_0 == "Istvan Rath";
+ * 		eString_0 == string_0;
+ * 		string == "almafa";
+ * 		string == string_1;
  * 	} or {
- * 		Student.friendsWith(S2, S1);
- * 	}
+ * 		Student.name(temp1, eString_0);
+ * 		string_0 == "Istvan Rath";
+ * 		eString_0 != string_0;
+ * 		Student.name(temp1, eString);
+ * 		eString == string_1;
+ * }
  * </pre></code>
  * 
- * @see FriendlyToMatch
- * @see FriendlyToProcessor
- * @see FriendlyToQuerySpecification
+ * @see C_translated_0Match
+ * @see C_translated_0Processor
+ * @see C_translated_0QuerySpecification
  * 
  */
 @SuppressWarnings("all")
-public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
+public class C_translated_0Matcher extends BaseMatcher<C_translated_0Match> {
   /**
    * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<FriendlyToMatcher> querySpecification() throws IncQueryException {
-    return FriendlyToQuerySpecification.instance();
+  public static IQuerySpecification<C_translated_0Matcher> querySpecification() throws IncQueryException {
+    return C_translated_0QuerySpecification.instance();
   }
   
   /**
@@ -59,21 +70,21 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static FriendlyToMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static C_translated_0Matcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    FriendlyToMatcher matcher = engine.getExistingMatcher(querySpecification());
+    C_translated_0Matcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new FriendlyToMatcher(engine);
+    	matcher = new C_translated_0Matcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     }
     return matcher;
   }
   
-  private final static int POSITION_S1 = 0;
+  private final static int POSITION_TEMP1 = 0;
   
-  private final static int POSITION_S2 = 1;
+  private final static int POSITION_STRING_1 = 1;
   
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(FriendlyToMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(C_translated_0Matcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -88,7 +99,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * 
    */
   @Deprecated
-  public FriendlyToMatcher(final Notifier emfRoot) throws IncQueryException {
+  public C_translated_0Matcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -102,78 +113,78 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * 
    */
   @Deprecated
-  public FriendlyToMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public C_translated_0Matcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
-   * @return matches represented as a FriendlyToMatch object.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
+   * @return matches represented as a C_translated_0Match object.
    * 
    */
-  public Collection<FriendlyToMatch> getAllMatches(final Student pS1, final Student pS2) {
-    return rawGetAllMatches(new Object[]{pS1, pS2});
+  public Collection<C_translated_0Match> getAllMatches(final Student pTemp1, final String pString_1) {
+    return rawGetAllMatches(new Object[]{pTemp1, pString_1});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
-   * @return a match represented as a FriendlyToMatch object, or null if no match is found.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
+   * @return a match represented as a C_translated_0Match object, or null if no match is found.
    * 
    */
-  public FriendlyToMatch getOneArbitraryMatch(final Student pS1, final Student pS2) {
-    return rawGetOneArbitraryMatch(new Object[]{pS1, pS2});
+  public C_translated_0Match getOneArbitraryMatch(final Student pTemp1, final String pString_1) {
+    return rawGetOneArbitraryMatch(new Object[]{pTemp1, pString_1});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final Student pS1, final Student pS2) {
-    return rawHasMatch(new Object[]{pS1, pS2});
+  public boolean hasMatch(final Student pTemp1, final String pString_1) {
+    return rawHasMatch(new Object[]{pTemp1, pString_1});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final Student pS1, final Student pS2) {
-    return rawCountMatches(new Object[]{pS1, pS2});
+  public int countMatches(final Student pTemp1, final String pString_1) {
+    return rawCountMatches(new Object[]{pTemp1, pString_1});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
-    rawForEachMatch(new Object[]{pS1, pS2}, processor);
+  public void forEachMatch(final Student pTemp1, final String pString_1, final IMatchProcessor<? super C_translated_0Match> processor) {
+    rawForEachMatch(new Object[]{pTemp1, pString_1}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @param processor the action that will process the selected match.
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pS1, pS2}, processor);
+  public boolean forOneArbitraryMatch(final Student pTemp1, final String pString_1, final IMatchProcessor<? super C_translated_0Match> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pTemp1, pString_1}, processor);
   }
   
   /**
@@ -183,111 +194,111 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * and changes can even be acknowledged on an individual basis.
    * See {@link DeltaMonitor} for details.
    * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @return the delta monitor.
    * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
    * 
    */
   @Deprecated
-  public DeltaMonitor<FriendlyToMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1, pS2});
+  public DeltaMonitor<C_translated_0Match> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pTemp1, final String pString_1) {
+    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pTemp1, pString_1});
   }
   
   /**
    * Returns a new (partial) Match object for the matcher.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
-   * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
-   * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
+   * @param pTemp1 the fixed value of pattern parameter temp1, or null if not bound.
+   * @param pString_1 the fixed value of pattern parameter string_1, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public FriendlyToMatch newMatch(final Student pS1, final Student pS2) {
-    return new FriendlyToMatch.Immutable(pS1, pS2);
+  public C_translated_0Match newMatch(final Student pTemp1, final String pString_1) {
+    return new C_translated_0Match.Immutable(pTemp1, pString_1);
     
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S1.
+   * Retrieve the set of values that occur in matches for temp1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<Student> rawAccumulateAllValuesOfS1(final Object[] parameters) {
+  protected Set<Student> rawAccumulateAllValuesOftemp1(final Object[] parameters) {
     Set<Student> results = new HashSet<Student>();
-    rawAccumulateAllValues(POSITION_S1, parameters, results);
+    rawAccumulateAllValues(POSITION_TEMP1, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S1.
+   * Retrieve the set of values that occur in matches for temp1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1() {
-    return rawAccumulateAllValuesOfS1(emptyArray());
+  public Set<Student> getAllValuesOftemp1() {
+    return rawAccumulateAllValuesOftemp1(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S1.
+   * Retrieve the set of values that occur in matches for temp1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final FriendlyToMatch partialMatch) {
-    return rawAccumulateAllValuesOfS1(partialMatch.toArray());
+  public Set<Student> getAllValuesOftemp1(final C_translated_0Match partialMatch) {
+    return rawAccumulateAllValuesOftemp1(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S1.
+   * Retrieve the set of values that occur in matches for temp1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final Student pS2) {
-    return rawAccumulateAllValuesOfS1(new Object[]{null, pS2});
+  public Set<Student> getAllValuesOftemp1(final String pString_1) {
+    return rawAccumulateAllValuesOftemp1(new Object[]{null, pString_1});
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S2.
+   * Retrieve the set of values that occur in matches for string_1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<Student> rawAccumulateAllValuesOfS2(final Object[] parameters) {
-    Set<Student> results = new HashSet<Student>();
-    rawAccumulateAllValues(POSITION_S2, parameters, results);
+  protected Set<String> rawAccumulateAllValuesOfstring_1(final Object[] parameters) {
+    Set<String> results = new HashSet<String>();
+    rawAccumulateAllValues(POSITION_STRING_1, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S2.
+   * Retrieve the set of values that occur in matches for string_1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2() {
-    return rawAccumulateAllValuesOfS2(emptyArray());
+  public Set<String> getAllValuesOfstring_1() {
+    return rawAccumulateAllValuesOfstring_1(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S2.
+   * Retrieve the set of values that occur in matches for string_1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final FriendlyToMatch partialMatch) {
-    return rawAccumulateAllValuesOfS2(partialMatch.toArray());
+  public Set<String> getAllValuesOfstring_1(final C_translated_0Match partialMatch) {
+    return rawAccumulateAllValuesOfstring_1(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for S2.
+   * Retrieve the set of values that occur in matches for string_1.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final Student pS1) {
-    return rawAccumulateAllValuesOfS2(new Object[]{pS1, null});
+  public Set<String> getAllValuesOfstring_1(final Student pTemp1) {
+    return rawAccumulateAllValuesOfstring_1(new Object[]{pTemp1, null});
   }
   
   @Override
-  protected FriendlyToMatch tupleToMatch(final Tuple t) {
+  protected C_translated_0Match tupleToMatch(final Tuple t) {
     try {
-      return new FriendlyToMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
+      return new C_translated_0Match.Immutable((school.Student) t.get(POSITION_TEMP1), (java.lang.String) t.get(POSITION_STRING_1));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -296,9 +307,9 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   }
   
   @Override
-  protected FriendlyToMatch arrayToMatch(final Object[] match) {
+  protected C_translated_0Match arrayToMatch(final Object[] match) {
     try {
-      return new FriendlyToMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+      return new C_translated_0Match.Immutable((school.Student) match[POSITION_TEMP1], (java.lang.String) match[POSITION_STRING_1]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -307,9 +318,9 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   }
   
   @Override
-  protected FriendlyToMatch arrayToMatchMutable(final Object[] match) {
+  protected C_translated_0Match arrayToMatchMutable(final Object[] match) {
     try {
-      return new FriendlyToMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+      return new C_translated_0Match.Mutable((school.Student) match[POSITION_TEMP1], (java.lang.String) match[POSITION_STRING_1]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

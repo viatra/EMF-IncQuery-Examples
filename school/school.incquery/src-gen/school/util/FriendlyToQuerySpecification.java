@@ -10,7 +10,6 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
@@ -84,11 +83,6 @@ public final class FriendlyToQuerySpecification extends BaseGeneratedQuerySpecif
       
       new TypeBinary(body, CONTEXT, var_S2, var_S1, getFeatureLiteral("http://school.ecore", "Student", "friendsWith"), "http://school.ecore/Student.friendsWith");
       bodies.add(body);
-    }
-    {
-      PAnnotation annotation = new PAnnotation("QueryExplorer");
-      annotation.addAttribute("display",false);
-      addAnnotation(annotation);
     }
     return bodies;
   }

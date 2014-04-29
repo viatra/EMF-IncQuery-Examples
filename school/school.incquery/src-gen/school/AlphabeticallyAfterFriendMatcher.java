@@ -13,42 +13,43 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
-import school.FriendlyToMatch;
+import school.AlphabeticallyAfterFriendMatch;
 import school.Student;
-import school.util.FriendlyToQuerySpecification;
+import school.util.AlphabeticallyAfterFriendQuerySpecification;
 
 /**
- * Generated pattern matcher API of the school.friendlyTo pattern,
+ * Generated pattern matcher API of the school.alphabeticallyAfterFriend pattern,
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link FriendlyToMatch}.
+ * <p>Matches of the pattern will be represented as {@link AlphabeticallyAfterFriendMatch}.
  * 
  * <p>Original source:
  * <code><pre>
- * pattern friendlyTo(S1 : Student, S2 : Student) {
- * 		Student.friendsWith(S1, S2);
- * 	} or {
- * 		Student.friendsWith(S2, S1);
- * 	}
+ * pattern alphabeticallyAfterFriend(S1 : Student, S2 : Student) = {
+ * 	find friendlyTo(S1, S2);
+ * 	Student.name(S1, s1Name);
+ * 	Student.name(S2, s2Name);
+ * 	check(s1Name {@literal <} s2Name);
+ * }
  * </pre></code>
  * 
- * @see FriendlyToMatch
- * @see FriendlyToProcessor
- * @see FriendlyToQuerySpecification
+ * @see AlphabeticallyAfterFriendMatch
+ * @see AlphabeticallyAfterFriendProcessor
+ * @see AlphabeticallyAfterFriendQuerySpecification
  * 
  */
 @SuppressWarnings("all")
-public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
+public class AlphabeticallyAfterFriendMatcher extends BaseMatcher<AlphabeticallyAfterFriendMatch> {
   /**
    * @return the singleton instance of the query specification of this pattern
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<FriendlyToMatcher> querySpecification() throws IncQueryException {
-    return FriendlyToQuerySpecification.instance();
+  public static IQuerySpecification<AlphabeticallyAfterFriendMatcher> querySpecification() throws IncQueryException {
+    return AlphabeticallyAfterFriendQuerySpecification.instance();
   }
   
   /**
@@ -59,11 +60,11 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static FriendlyToMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static AlphabeticallyAfterFriendMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    FriendlyToMatcher matcher = engine.getExistingMatcher(querySpecification());
+    AlphabeticallyAfterFriendMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new FriendlyToMatcher(engine);
+    	matcher = new AlphabeticallyAfterFriendMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     }
     return matcher;
@@ -73,7 +74,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   
   private final static int POSITION_S2 = 1;
   
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(FriendlyToMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(AlphabeticallyAfterFriendMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -88,7 +89,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * 
    */
   @Deprecated
-  public FriendlyToMatcher(final Notifier emfRoot) throws IncQueryException {
+  public AlphabeticallyAfterFriendMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -102,7 +103,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * 
    */
   @Deprecated
-  public FriendlyToMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public AlphabeticallyAfterFriendMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -110,10 +111,10 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
    * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
-   * @return matches represented as a FriendlyToMatch object.
+   * @return matches represented as a AlphabeticallyAfterFriendMatch object.
    * 
    */
-  public Collection<FriendlyToMatch> getAllMatches(final Student pS1, final Student pS2) {
+  public Collection<AlphabeticallyAfterFriendMatch> getAllMatches(final Student pS1, final Student pS2) {
     return rawGetAllMatches(new Object[]{pS1, pS2});
   }
   
@@ -122,10 +123,10 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pS1 the fixed value of pattern parameter S1, or null if not bound.
    * @param pS2 the fixed value of pattern parameter S2, or null if not bound.
-   * @return a match represented as a FriendlyToMatch object, or null if no match is found.
+   * @return a match represented as a AlphabeticallyAfterFriendMatch object, or null if no match is found.
    * 
    */
-  public FriendlyToMatch getOneArbitraryMatch(final Student pS1, final Student pS2) {
+  public AlphabeticallyAfterFriendMatch getOneArbitraryMatch(final Student pS1, final Student pS2) {
     return rawGetOneArbitraryMatch(new Object[]{pS1, pS2});
   }
   
@@ -159,7 +160,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
+  public void forEachMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super AlphabeticallyAfterFriendMatch> processor) {
     rawForEachMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -172,7 +173,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super FriendlyToMatch> processor) {
+  public boolean forOneArbitraryMatch(final Student pS1, final Student pS2, final IMatchProcessor<? super AlphabeticallyAfterFriendMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pS1, pS2}, processor);
   }
   
@@ -190,7 +191,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * 
    */
   @Deprecated
-  public DeltaMonitor<FriendlyToMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
+  public DeltaMonitor<AlphabeticallyAfterFriendMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final Student pS1, final Student pS2) {
     return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pS1, pS2});
   }
   
@@ -203,8 +204,8 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @return the (partial) match object.
    * 
    */
-  public FriendlyToMatch newMatch(final Student pS1, final Student pS2) {
-    return new FriendlyToMatch.Immutable(pS1, pS2);
+  public AlphabeticallyAfterFriendMatch newMatch(final Student pS1, final Student pS2) {
+    return new AlphabeticallyAfterFriendMatch.Immutable(pS1, pS2);
     
   }
   
@@ -233,7 +234,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS1(final FriendlyToMatch partialMatch) {
+  public Set<Student> getAllValuesOfS1(final AlphabeticallyAfterFriendMatch partialMatch) {
     return rawAccumulateAllValuesOfS1(partialMatch.toArray());
   }
   
@@ -271,7 +272,7 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Student> getAllValuesOfS2(final FriendlyToMatch partialMatch) {
+  public Set<Student> getAllValuesOfS2(final AlphabeticallyAfterFriendMatch partialMatch) {
     return rawAccumulateAllValuesOfS2(partialMatch.toArray());
   }
   
@@ -285,9 +286,9 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   }
   
   @Override
-  protected FriendlyToMatch tupleToMatch(final Tuple t) {
+  protected AlphabeticallyAfterFriendMatch tupleToMatch(final Tuple t) {
     try {
-      return new FriendlyToMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
+      return new AlphabeticallyAfterFriendMatch.Immutable((school.Student) t.get(POSITION_S1), (school.Student) t.get(POSITION_S2));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -296,9 +297,9 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   }
   
   @Override
-  protected FriendlyToMatch arrayToMatch(final Object[] match) {
+  protected AlphabeticallyAfterFriendMatch arrayToMatch(final Object[] match) {
     try {
-      return new FriendlyToMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+      return new AlphabeticallyAfterFriendMatch.Immutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -307,9 +308,9 @@ public class FriendlyToMatcher extends BaseMatcher<FriendlyToMatch> {
   }
   
   @Override
-  protected FriendlyToMatch arrayToMatchMutable(final Object[] match) {
+  protected AlphabeticallyAfterFriendMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new FriendlyToMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
+      return new AlphabeticallyAfterFriendMatch.Mutable((school.Student) match[POSITION_S1], (school.Student) match[POSITION_S2]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
