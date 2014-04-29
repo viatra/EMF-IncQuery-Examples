@@ -9,6 +9,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	BasicSchoolTest.class,
 	ModelManipulationSchoolTest.class,
 	APISchoolTest.class,
-	TestingFrameworkTest.class
+	TestingFrameworkTest.class,
+	RecursionSchoolTest.class
 })
 public class SchoolTestsAll { }

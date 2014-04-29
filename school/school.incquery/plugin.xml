@@ -178,14 +178,6 @@
       </matcher>
    </extension>
    <extension
-         id="school.friendlyTo"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.FriendlyToQuerySpecification$Provider"
-            id="school.friendlyTo">
-      </matcher>
-   </extension>
-   <extension
          id="school.inTheCircleOfFriends"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -263,6 +255,30 @@
       <matcher
             querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
             id="school.CourseWithoutTeacher">
+      </matcher>
+   </extension>
+   <extension
+         id="school.alphabeticallyAfterFriend"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.AlphabeticallyAfterFriendQuerySpecification$Provider"
+            id="school.alphabeticallyAfterFriend">
+      </matcher>
+   </extension>
+   <extension
+         id="school.increasingAlphabeticalFriendshipChainRec"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.IncreasingAlphabeticalFriendshipChainRecQuerySpecification$Provider"
+            id="school.increasingAlphabeticalFriendshipChainRec">
+      </matcher>
+   </extension>
+   <extension
+         id="school.increasingAlphabeticalFriendshipChainTC"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="school.util.IncreasingAlphabeticalFriendshipChainTCQuerySpecification$Provider"
+            id="school.increasingAlphabeticalFriendshipChainTC">
       </matcher>
    </extension>
 

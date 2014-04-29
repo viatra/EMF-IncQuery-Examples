@@ -1,0 +1,19 @@
+package school
+import "http://school.ecore"
+
+
+pattern alphabeticallyAfterFriend(S1 : Student, S2 : Student) = {
+	find friendlyTo(S1, S2);
+	Student.name(S1, s1Name);
+	Student.name(S2, s2Name);
+	check(s1Name < s2Name);
+} 
+pattern increasingAlphabeticalFriendshipChainRec(S1 : Student, S2 : Student) = {
+	find alphabeticallyAfterFriend(S1, S2);
+} or {
+	find alphabeticallyAfterFriend(S1, S3);
+	find increasingAlphabeticalFriendshipChainRec(S3, S2);
+}
+pattern increasingAlphabeticalFriendshipChainTC(S1 : Student, S2 : Student) = {
+	find alphabeticallyAfterFriend+(S1, S2);
+}
