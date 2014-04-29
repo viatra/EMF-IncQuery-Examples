@@ -17,6 +17,7 @@ import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
 import com.google.inject.Injector
+import java.util.Collections
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -39,7 +40,8 @@ class SchoolTestsBase extends CommonStaticQueryTester {
 	def queryInputEIQ() { // Creates new resource set
 		return queryInputEIQURI.loadPatternModelFromUri(injector) as PatternModel
 
-	}
+	}	
+	override queryInputDependencyURIs() {Collections.emptyList}
 	override snapshotURI() {
 		return "school.tests/model/tests.eiqsnapshot"
 	}

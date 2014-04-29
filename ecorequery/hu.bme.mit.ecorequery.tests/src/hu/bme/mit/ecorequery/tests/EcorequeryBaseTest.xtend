@@ -4,6 +4,7 @@ import com.google.inject.Inject
 import org.eclipse.incquery.testing.core.ModelLoadHelper
 import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.incquery.testing.core.base.CommonStaticQueryTesterimport com.google.inject.Injector
+import java.util.Collections
 
 class EcorequeryBaseTest extends CommonStaticQueryTester {
 
@@ -17,4 +18,6 @@ class EcorequeryBaseTest extends CommonStaticQueryTester {
 	override snapshotURI() {"hu.bme.mit.ecorequery.tests/model/tests.eiqsnapshot"}
 	override queryInputEIQURI() {"hu.bme.mit.ecorequery/hu/bme/mit/incquery/ecorequeries/example/ecoreQueries.eiq"}
 
+	override queryInputDependencyURIs() {Collections.emptyList}
+	
 }
