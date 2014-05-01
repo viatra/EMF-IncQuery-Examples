@@ -2,9 +2,9 @@ package bodymodel.ymca
 
 import "http://org/jnect/bodymodel"
 
-uses bodymodel.MovingAverageCalculator;
-uses bodymodel.ymca.VectorMaths;
-uses bodymodel.ymca.YMCAConstants;
+import java bodymodel.MovingAverageCalculator;
+import java bodymodel.ymca.VectorMaths;
+import java bodymodel.ymca.YMCAConstants;
 
 
 /*

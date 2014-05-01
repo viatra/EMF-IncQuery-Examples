@@ -2,6 +2,30 @@
 <plugin>
 
    <extension
+         id="net.istvanrath.emfxcel.incquery.lib.CellInWorkSheet"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.CellInWorkSheetQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.lib.CellInWorkSheet">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.lib.NamedColumn"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.NamedColumnQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.lib.NamedColumn">
+      </matcher>
+   </extension>
+   <extension
+         id="net.istvanrath.emfxcel.incquery.lib.valueInNamedColumn"
+         point="org.eclipse.incquery.runtime.queryspecification">
+      <matcher
+            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.ValueInNamedColumnQuerySpecification$Provider"
+            id="net.istvanrath.emfxcel.incquery.lib.valueInNamedColumn">
+      </matcher>
+   </extension>
+   <extension
          id="net.istvanrath.emfxcel.incquery.demo.AgazatiHallgato"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -55,30 +79,6 @@
       <matcher
             querySpecificationProvider="net.istvanrath.emfxcel.incquery.demo.util.IITKakukkfiokaQuerySpecification$Provider"
             id="net.istvanrath.emfxcel.incquery.demo.IITKakukkfioka">
-      </matcher>
-   </extension>
-   <extension
-         id="net.istvanrath.emfxcel.incquery.lib.CellInWorkSheet"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.CellInWorkSheetQuerySpecification$Provider"
-            id="net.istvanrath.emfxcel.incquery.lib.CellInWorkSheet">
-      </matcher>
-   </extension>
-   <extension
-         id="net.istvanrath.emfxcel.incquery.lib.NamedColumn"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.NamedColumnQuerySpecification$Provider"
-            id="net.istvanrath.emfxcel.incquery.lib.NamedColumn">
-      </matcher>
-   </extension>
-   <extension
-         id="net.istvanrath.emfxcel.incquery.lib.valueInNamedColumn"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="net.istvanrath.emfxcel.incquery.lib.util.ValueInNamedColumnQuerySpecification$Provider"
-            id="net.istvanrath.emfxcel.incquery.lib.valueInNamedColumn">
       </matcher>
    </extension>
    <extension

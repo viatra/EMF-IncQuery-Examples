@@ -1,12 +1,9 @@
 package net.istvanrath.emfxcel.incquery.demo
 
-import "http://istvanrath.net/demos/emfxcel"
+import epackage "http://istvanrath.net/demos/emfxcel"
 
-/*
- * This currently gives a warning, which can be safely ignored.
- * See https://bugs.eclipse.org/bugs/show_bug.cgi?id=418991 for details.
- */
-uses net.istvanrath.emfxcel.incquery.lib.*;
+import pattern net.istvanrath.emfxcel.incquery.lib.NamedColumn;
+import pattern net.istvanrath.emfxcel.incquery.lib.CellInWorkSheet;
 
 @QueryExplorer(display=true, message = "$Nev$ : $NeptunKod$")
 pattern AgazatiHallgato(AgazatNeve, Nev, NeptunKod) {

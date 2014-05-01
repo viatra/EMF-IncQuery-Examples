@@ -10,28 +10,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.rightHandAboveHead"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.RightHandAboveHeadEvaluator1_1"
-            id="bodymodel.ymca.rightHandAboveHead_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.leftHandAboveHead"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.LeftHandAboveHeadQuerySpecification$Provider"
             id="bodymodel.ymca.leftHandAboveHead">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.leftHandAboveHead"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.LeftHandAboveHeadEvaluator1_1"
-            id="bodymodel.ymca.leftHandAboveHead_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.handsAreClose"
@@ -42,28 +26,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.handsAreClose"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.HandsAreCloseEvaluator1_1"
-            id="bodymodel.ymca.handsAreClose_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.handsAreApart"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.HandsAreApartQuerySpecification$Provider"
             id="bodymodel.ymca.handsAreApart">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.handsAreApart"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.HandsAreApartEvaluator1_1"
-            id="bodymodel.ymca.handsAreApart_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.feetAreClose"
@@ -74,28 +42,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.feetAreClose"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.FeetAreCloseEvaluator1_1"
-            id="bodymodel.ymca.feetAreClose_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.feetAreApart"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.FeetAreApartQuerySpecification$Provider"
             id="bodymodel.ymca.feetAreApart">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.feetAreApart"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.FeetAreApartEvaluator1_1"
-            id="bodymodel.ymca.feetAreApart_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.stretchedRightArm"
@@ -106,28 +58,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.stretchedRightArm"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.StretchedRightArmEvaluator1_1"
-            id="bodymodel.ymca.stretchedRightArm_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.bentRightArm"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.BentRightArmQuerySpecification$Provider"
             id="bodymodel.ymca.bentRightArm">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.bentRightArm"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.BentRightArmEvaluator1_1"
-            id="bodymodel.ymca.bentRightArm_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.stretchedLeftArm"
@@ -138,14 +74,6 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.stretchedLeftArm"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.StretchedLeftArmEvaluator1_1"
-            id="bodymodel.ymca.stretchedLeftArm_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.bentLeftArm"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -154,28 +82,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.bentLeftArm"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.BentLeftArmEvaluator1_1"
-            id="bodymodel.ymca.bentLeftArm_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.upperArmsInY"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.UpperArmsInYQuerySpecification$Provider"
             id="bodymodel.ymca.upperArmsInY">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.upperArmsInY"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.UpperArmsInYEvaluator1_1"
-            id="bodymodel.ymca.upperArmsInY_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.Y"
@@ -210,22 +122,6 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.M"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.MEvaluator1_1"
-            id="bodymodel.ymca.M_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="bodymodel.ymca.M"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.MEvaluator1_2"
-            id="bodymodel.ymca.M_1_2">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.Q"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -240,22 +136,6 @@
             querySpecificationProvider="bodymodel.ymca.util.CQuerySpecification$Provider"
             id="bodymodel.ymca.C">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.C"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.CEvaluator1_1"
-            id="bodymodel.ymca.C_1_1">
-      </evaluator>
-   </extension>
-   <extension
-         id="bodymodel.ymca.C"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.CEvaluator1_2"
-            id="bodymodel.ymca.C_1_2">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.FS"
@@ -298,28 +178,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.SS"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.SSEvaluator1_1"
-            id="bodymodel.ymca.SS_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.ymca.SM"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.ymca.util.SMQuerySpecification$Provider"
             id="bodymodel.ymca.SM">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.ymca.SM"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.SMEvaluator1_1"
-            id="bodymodel.ymca.SM_1_1">
-      </evaluator>
    </extension>
    <extension
          id="bodymodel.ymca.SE"
@@ -330,14 +194,6 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.ymca.SE"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.ymca.util.SEEvaluator1_1"
-            id="bodymodel.ymca.SE_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.RightHandAboveHead"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
@@ -346,28 +202,12 @@
       </matcher>
    </extension>
    <extension
-         id="bodymodel.RightHandAboveHead"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.util.RightHandAboveHeadEvaluator1_1"
-            id="bodymodel.RightHandAboveHead_1_1">
-      </evaluator>
-   </extension>
-   <extension
          id="bodymodel.RightHandAboveHead_MovingAverage"
          point="org.eclipse.incquery.runtime.queryspecification">
       <matcher
             querySpecificationProvider="bodymodel.util.RightHandAboveHead_MovingAverageQuerySpecification$Provider"
             id="bodymodel.RightHandAboveHead_MovingAverage">
       </matcher>
-   </extension>
-   <extension
-         id="bodymodel.RightHandAboveHead_MovingAverage"
-         point="org.eclipse.incquery.runtime.xexpressionevaluator">
-      <evaluator
-            evaluatorClass="bodymodel.util.RightHandAboveHead_MovingAverageEvaluator1_1"
-            id="bodymodel.RightHandAboveHead_MovingAverage_1_1">
-      </evaluator>
    </extension>
 
 </plugin>

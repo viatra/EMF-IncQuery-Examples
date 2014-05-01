@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+
+import org.eclipse.xtext.xbase.lib.Pure;
 /**
  * This class helps to calculate a moving average, this way the data can be cleaned.
  * @author Philip Achenbach
@@ -26,6 +28,7 @@ import java.util.Queue;
  * 
  * @author istvanrath - modifications to allow factory-style operation so that it can be meaningfully used from IncQuery queries
  */
+
 public class MovingAverageCalculator {
 
 	private final Queue<Float> window = new LinkedList<Float>();
@@ -43,6 +46,7 @@ public class MovingAverageCalculator {
 	 * add a value to the moving average, if the number of periods is exceeded, then the oldest value is removed.  
 	 * @param num - the value to add to the moving average
 	 */
+	//@Pure
 	public MovingAverageCalculator addValue(float num) {
 		sum += num;
 		window.add(num);
@@ -55,6 +59,7 @@ public class MovingAverageCalculator {
 	 * get the current moving average
 	 * @return - current value of the moving average
 	 */
+	//@Pure
 	public float getMovingAvg() {
 		return (window.size() == 0) ? 0 : sum / window.size();
 	}
@@ -65,6 +70,7 @@ public class MovingAverageCalculator {
 	
 	public static int periodLength = 10;
 	
+	@Pure
 	public static MovingAverageCalculator getCalculator(String key) {
 		if (calculators.containsKey(key)) {
 			return calculators.get(key); 

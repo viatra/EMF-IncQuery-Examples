@@ -1,6 +1,6 @@
 package net.istvanrath.emfxcel.incquery.lib
 
-import "http://istvanrath.net/demos/emfxcel"
+import epackage "http://istvanrath.net/demos/emfxcel"
 
 /*
  * C is a cell in a worksheet identified by Worksheetname.
