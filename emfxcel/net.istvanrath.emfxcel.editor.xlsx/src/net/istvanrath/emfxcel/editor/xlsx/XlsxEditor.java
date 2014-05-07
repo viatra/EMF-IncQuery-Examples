@@ -23,6 +23,7 @@ import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IFileEditorInput;
 
 public class XlsxEditor extends EmfxcelEditor {
@@ -89,23 +90,35 @@ public class XlsxEditor extends EmfxcelEditor {
 			
 			@Override
 			public void resourceChanged(IResourceChangeEvent event) {
-				try {
-					event.getDelta().accept(new IResourceDeltaVisitor() {
-						
-						@Override
-						public boolean visit(IResourceDelta delta) throws CoreException {
-							if (delta.getResource().equals(res)) {
-								resource.getContents().clear();
-								populateResource(res.getContents());
-								return false;
+					try {
+						event.getDelta().accept(new IResourceDeltaVisitor() {
+							
+							@Override
+							public boolean visit(IResourceDelta delta) throws CoreException {
+								if (delta.getResource().equals(res)) {
+									Display.getDefault().syncExec(new Runnable() {
+										@Override
+										public void run() {
+											// do this on the UI thread, to please EVM
+											resource.getContents().clear();
+											try {
+												populateResource(res.getContents());
+											} catch (CoreException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											}
+										}
+									});
+									return false;
+								}
+								return true;
 							}
-							return true;
-						}
-					});
-				} catch (CoreException e) {
-					// TODO better error handling
-					e.printStackTrace();
-				}
+						});
+					} catch (CoreException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			
 			}
 		});
 		res.getWorkspace().addResourceChangeListener(rListener, IResourceChangeEvent.POST_CHANGE);
