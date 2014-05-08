@@ -28,7 +28,14 @@ import school.util.FriendlyToQuerySpecification;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern friendlyTo(S1 : Student, S2 : Student) {
+ * // Step 6: disjunction, recursion, transitive closure
+ * 
+ * 	
+ *      Student S1 is friendly to student S2, i.e. they are friends in either direction
+ *      
+ *     
+ * 	{@literal @}QueryExplorer(display = false)
+ * 	pattern friendlyTo(S1 : Student, S2 : Student) {
  * 		Student.friendsWith(S1, S2);
  * 	} or {
  * 		Student.friendsWith(S2, S1);

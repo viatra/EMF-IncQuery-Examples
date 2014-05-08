@@ -1,285 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
 
-   <extension
-         id="school.schools"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.SchoolsQuerySpecification$Provider"
-            id="school.schools">
-      </matcher>
-   </extension>
-   <extension
-         id="school.courses"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CoursesQuerySpecification$Provider"
-            id="school.courses">
-      </matcher>
-   </extension>
-   <extension
-         id="school.schoolsNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.SchoolsNamesQuerySpecification$Provider"
-            id="school.schoolsNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachers"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachersQuerySpecification$Provider"
-            id="school.teachers">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachersNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachersNamesQuerySpecification$Provider"
-            id="school.teachersNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachersOfSchool"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachersOfSchoolQuerySpecification$Provider"
-            id="school.teachersOfSchool">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachersOfSchoolNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachersOfSchoolNamesQuerySpecification$Provider"
-            id="school.teachersOfSchoolNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.coursesOfTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CoursesOfTeacherQuerySpecification$Provider"
-            id="school.coursesOfTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.coursesOfTeacherNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CoursesOfTeacherNamesQuerySpecification$Provider"
-            id="school.coursesOfTeacherNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.classesOfTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.ClassesOfTeacherQuerySpecification$Provider"
-            id="school.classesOfTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.classesOfSchool"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.ClassesOfSchoolQuerySpecification$Provider"
-            id="school.classesOfSchool">
-      </matcher>
-   </extension>
-   <extension
-         id="school.classesOfTeacherNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.ClassesOfTeacherNamesQuerySpecification$Provider"
-            id="school.classesOfTeacherNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teacherWithoutClass"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeacherWithoutClassQuerySpecification$Provider"
-            id="school.teacherWithoutClass">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teacherWithoutClassNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeacherWithoutClassNamesQuerySpecification$Provider"
-            id="school.teacherWithoutClassNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.studentOfSchool"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.StudentOfSchoolQuerySpecification$Provider"
-            id="school.studentOfSchool">
-      </matcher>
-   </extension>
-   <extension
-         id="school.studentOfSchoolNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.StudentOfSchoolNamesQuerySpecification$Provider"
-            id="school.studentOfSchoolNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.courseWithWeightThirty"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithWeightThirtyQuerySpecification$Provider"
-            id="school.courseWithWeightThirty">
-      </matcher>
-   </extension>
-   <extension
-         id="school.courseWithNameLongerThanWeight"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithNameLongerThanWeightQuerySpecification$Provider"
-            id="school.courseWithNameLongerThanWeight">
-      </matcher>
-   </extension>
-   <extension
-         id="school.courseWithNameLongerThanWeightInt"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithNameLongerThanWeightIntQuerySpecification$Provider"
-            id="school.courseWithNameLongerThanWeightInt">
-      </matcher>
-   </extension>
-   <extension
-         id="school.courseWithPrimeWeight"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithPrimeWeightQuerySpecification$Provider"
-            id="school.courseWithPrimeWeight">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachesMoreClasses"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachesMoreClassesQuerySpecification$Provider"
-            id="school.teachesMoreClasses">
-      </matcher>
-   </extension>
-   <extension
-         id="school.teachesTheMostCourses"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TeachesTheMostCoursesQuerySpecification$Provider"
-            id="school.teachesTheMostCourses">
-      </matcher>
-   </extension>
-   <extension
-         id="school.inTheCircleOfFriends"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.InTheCircleOfFriendsQuerySpecification$Provider"
-            id="school.inTheCircleOfFriends">
-      </matcher>
-   </extension>
-   <extension
-         id="school.inTheCircleOfFriendsNames"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.InTheCircleOfFriendsNamesQuerySpecification$Provider"
-            id="school.inTheCircleOfFriendsNames">
-      </matcher>
-   </extension>
-   <extension
-         id="school.moreFriendsThan"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.MoreFriendsThanQuerySpecification$Provider"
-            id="school.moreFriendsThan">
-      </matcher>
-   </extension>
-   <extension
-         id="school.theOnesWithTheBiggestCircle"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TheOnesWithTheBiggestCircleQuerySpecification$Provider"
-            id="school.theOnesWithTheBiggestCircle">
-      </matcher>
-   </extension>
-   <extension
-         id="school.theOnesWithTheBiggestCircleName"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.TheOnesWithTheBiggestCircleNameQuerySpecification$Provider"
-            id="school.theOnesWithTheBiggestCircleName">
-      </matcher>
-   </extension>
-   <extension
-         id="school.finalPattern"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.FinalPatternQuerySpecification$Provider"
-            id="school.finalPattern">
-      </matcher>
-   </extension>
-   <extension
-         id="school.finalPattern2"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.FinalPattern2QuerySpecification$Provider"
-            id="school.finalPattern2">
-      </matcher>
-   </extension>
-   <extension
-         id="school.SomeCourse"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.SomeCourseQuerySpecification$Provider"
-            id="school.SomeCourse">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithTeacherQuerySpecification$Provider"
-            id="school.CourseWithTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.CourseWithoutTeacher"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.CourseWithoutTeacherQuerySpecification$Provider"
-            id="school.CourseWithoutTeacher">
-      </matcher>
-   </extension>
-   <extension
-         id="school.alphabeticallyAfterFriend"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.AlphabeticallyAfterFriendQuerySpecification$Provider"
-            id="school.alphabeticallyAfterFriend">
-      </matcher>
-   </extension>
-   <extension
-         id="school.increasingAlphabeticalFriendshipChainRec"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.IncreasingAlphabeticalFriendshipChainRecQuerySpecification$Provider"
-            id="school.increasingAlphabeticalFriendshipChainRec">
-      </matcher>
-   </extension>
-   <extension
-         id="school.increasingAlphabeticalFriendshipChainTC"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="school.util.IncreasingAlphabeticalFriendshipChainTCQuerySpecification$Provider"
-            id="school.increasingAlphabeticalFriendshipChainTC">
-      </matcher>
-   </extension>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
+<extension id="school.SimpleSchoolQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SimpleSchoolQueries" id="school.SimpleSchoolQueries"/>
+  </extension>
+  <extension id="school.SchoolValidationRules" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SchoolValidationRules" id="school.SchoolValidationRules"/>
+  </extension>
+  <extension id="school.RecursiveQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
+  </extension>
 </plugin>
