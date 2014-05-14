@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/master
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <extension id="school.UnnamedVariables" point="org.eclipse.incquery.runtime.queryspecification">
@@ -13,3 +14,16 @@
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
   </extension>
 </plugin>
+=======
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="school.SimpleSchoolQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SimpleSchoolQueries" id="school.SimpleSchoolQueries"/>
+  </extension>
+  <extension id="school.RecursiveQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
+  </extension>
+  <extension id="school.SchoolValidationRules" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SchoolValidationRules" id="school.SchoolValidationRules"/>
+  </extension>
+</plugin>
+>>>>>>> f289a68 Removed unnecessary whitespace from plugin.xml in school
