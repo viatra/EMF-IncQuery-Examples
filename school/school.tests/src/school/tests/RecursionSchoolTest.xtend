@@ -13,9 +13,9 @@
 package school.tests
 
 import com.google.inject.Inject
+import java.util.Collections
 import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
 import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.SnapshotHelper
 import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
@@ -24,8 +24,6 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import school.Student
-import com.google.common.collect.Iterables
-import java.util.Collections
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -42,7 +40,6 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
-	@Inject extension SnapshotHelper
   
 	override queryInputEIQURI() {
 		"school.incquery/school/recursiveQueries.eiq"
@@ -54,14 +51,14 @@ class RecursionSchoolTest extends SchoolTestsBase {
   	@Test
 	def staticRecursionTest(){
 		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainRec.eiqsnapshot") as IncQuerySnapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
     
   	@Test
 	def staticTCTest(){
 		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as IncQuerySnapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
   
@@ -83,7 +80,7 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	
 	def createFriendshipTest(String initialSnsURI, String modifiedSnsURI) {
 		val sns = loadExpectedResultsFromUri(initialSnsURI) as IncQuerySnapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE

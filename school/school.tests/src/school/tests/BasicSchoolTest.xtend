@@ -19,7 +19,6 @@ import org.eclipse.incquery.testing.core.TestExecutor
 import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import school.util.ClassesOfTeacherQuerySpecification
@@ -55,14 +54,8 @@ class BasicSchoolTest extends SchoolTestsBase {
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
-	def testAllQueriesXMI(){
-		assertMatchResults(queryInputXMI, snapshot)
-	}
-	
-	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
-	@Test@Ignore("Not working on the build as eiq files are not packaged into jar.")
-	def testAllQueriesEIQ(){
-		assertMatchResults(queryInputEIQ, snapshot)
+	def testAllQueries(){
+		assertMatchResults(queryInput, snapshot)
 	}
 			
 	// simple test cases, for each query of the school example
