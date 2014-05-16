@@ -26,7 +26,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 	@Test
 	def testsChangeEClassName(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -52,7 +52,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 	@Test
 	def testsCreateEAttribute(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -83,7 +83,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 	@Test
 	def testsDeleteEReference(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE
@@ -122,7 +122,7 @@ class EcorequeriesModelManipulationTest extends EcorequeryBaseTest {
 	@Test
 	def testsChangeMultiplicity(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
 		// MODEL MODIFICATION HERE

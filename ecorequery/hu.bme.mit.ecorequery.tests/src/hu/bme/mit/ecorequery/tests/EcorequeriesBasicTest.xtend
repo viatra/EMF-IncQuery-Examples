@@ -41,7 +41,7 @@ class EcorequeriesBasicTest extends EcorequeryBaseTest {
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def testAllQueriesXMI(){
-		assertMatchResults(queryInputXMI, snapshot)
+		assertMatchResults(queryInput, snapshot)
 	}
 
 	// parse pattern from EIQ, load expected from URI, assertMatchResults, CORRECT
