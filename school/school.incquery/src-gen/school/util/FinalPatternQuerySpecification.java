@@ -112,11 +112,6 @@ public final class FinalPatternQuerySpecification extends BaseGeneratedQuerySpec
       annotation.addAttribute("name","Student");
       addAnnotation(annotation);
     }
-    {
-      PAnnotation annotation = new PAnnotation("Handler");
-      annotation.addAttribute("fileExtension","school");
-      addAnnotation(annotation);
-    }
     return bodies;
   }
   
