@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+  <extension id="school.UnnamedVariables" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.UnnamedVariables" id="school.UnnamedVariables"/>
+  </extension>
   <extension id="school.SimpleSchoolQueries" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SimpleSchoolQueries" id="school.SimpleSchoolQueries"/>
   </extension>
@@ -8,8 +11,5 @@
   </extension>
   <extension id="school.RecursiveQueries" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
-  </extension>
-  <extension id="school.UnnamedVariables" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.UnnamedVariables" id="school.UnnamedVariables"/>
   </extension>
 </plugin>
