@@ -74,7 +74,7 @@
 		<system>Jenkins</system>
 	</ciManagement>
 	<issueManagement>
-		<url>https://github.com/ujhelyiz/EMF-IncQuery/issues</url>
+		<url>https://github.com/ujhelyiz/EMF-IncQuery-Examples/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 </project>
