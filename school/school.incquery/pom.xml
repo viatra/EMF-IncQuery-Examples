@@ -26,7 +26,10 @@
 						<configuration>
 							<filesets>
 								<fileset>
-									<directory>src-gen/**</directory>
+									<directory>src-gen</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
 								</fileset>
 							</filesets>
 						</configuration>
