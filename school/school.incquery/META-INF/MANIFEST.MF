@@ -11,3 +11,4 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.xtext.xbase.lib,
  school;bundle-version="0.8.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j
