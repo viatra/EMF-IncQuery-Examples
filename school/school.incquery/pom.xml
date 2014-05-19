@@ -49,15 +49,12 @@
 				</executions>
 				<configuration>
 					<outputDirectory>src-gen</outputDirectory>
-					<ePackages>
-						<ePackage>school.SchoolPackage</ePackage>
-					</ePackages>
-					<modelPairs>
-						<modelPair>
-							<modelNsUri>http://school.ecore</modelNsUri>
+					<metamodels>
+						<metamodel>
+  						<packageClass>school.SchoolPackage</packageClass>
 							<genmodelUri>../school/model/school.genmodel</genmodelUri>
-						</modelPair>
-					</modelPairs>
+						</metamodel>
+					</metamodels>
 				</configuration>
 				<dependencies>
 					<dependency>
