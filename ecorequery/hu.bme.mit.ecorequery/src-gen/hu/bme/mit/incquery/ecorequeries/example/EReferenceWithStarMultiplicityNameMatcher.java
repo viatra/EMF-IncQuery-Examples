@@ -185,7 +185,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
@@ -193,7 +193,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    * 
    */
   public EReferenceWithStarMultiplicityNameMatch newMatch(final String pERefName) {
-    return new EReferenceWithStarMultiplicityNameMatch.Immutable(pERefName);
+    return EReferenceWithStarMultiplicityNameMatch.newMatch(pERefName);
     
   }
   
@@ -220,7 +220,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-      return new EReferenceWithStarMultiplicityNameMatch.Immutable((java.lang.String) t.get(POSITION_EREFNAME));
+      return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) t.get(POSITION_EREFNAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -231,7 +231,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-      return new EReferenceWithStarMultiplicityNameMatch.Immutable((java.lang.String) match[POSITION_EREFNAME]);
+      return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -242,7 +242,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EReferenceWithStarMultiplicityNameMatch.Mutable((java.lang.String) match[POSITION_EREFNAME]);
+      return EReferenceWithStarMultiplicityNameMatch.newMutableMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

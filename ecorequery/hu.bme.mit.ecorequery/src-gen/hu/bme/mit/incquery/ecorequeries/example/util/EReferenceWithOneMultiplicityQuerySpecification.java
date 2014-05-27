@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -54,6 +55,16 @@ public final class EReferenceWithOneMultiplicityQuerySpecification extends BaseG
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("ERef", "org.eclipse.emf.ecore.EReference"));
+  }
+  
+  @Override
+  public EReferenceWithOneMultiplicityMatch newEmptyMatch() {
+    return EReferenceWithOneMultiplicityMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EReferenceWithOneMultiplicityMatch newMatch(final Object... parameters) {
+    return EReferenceWithOneMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) parameters[0]);
   }
   
   @Override

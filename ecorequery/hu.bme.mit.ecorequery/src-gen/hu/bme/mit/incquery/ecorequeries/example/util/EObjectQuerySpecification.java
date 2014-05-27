@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EObjectMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EObjectMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +53,16 @@ public final class EObjectQuerySpecification extends BaseGeneratedQuerySpecifica
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("E", "org.eclipse.emf.ecore.EObject"));
+  }
+  
+  @Override
+  public EObjectMatch newEmptyMatch() {
+    return EObjectMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EObjectMatch newMatch(final Object... parameters) {
+    return EObjectMatch.newMatch((org.eclipse.emf.ecore.EObject) parameters[0]);
   }
   
   @Override

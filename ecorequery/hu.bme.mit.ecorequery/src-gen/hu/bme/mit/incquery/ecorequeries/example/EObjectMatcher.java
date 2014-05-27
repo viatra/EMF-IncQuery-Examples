@@ -184,7 +184,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter E, or null if not bound.
@@ -192,7 +192,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
    * 
    */
   public EObjectMatch newMatch(final EObject pE) {
-    return new EObjectMatch.Immutable(pE);
+    return EObjectMatch.newMatch(pE);
     
   }
   
@@ -219,7 +219,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   @Override
   protected EObjectMatch tupleToMatch(final Tuple t) {
     try {
-      return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));
+      return EObjectMatch.newMatch((org.eclipse.emf.ecore.EObject) t.get(POSITION_E));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -230,7 +230,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   @Override
   protected EObjectMatch arrayToMatch(final Object[] match) {
     try {
-      return new EObjectMatch.Immutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
+      return EObjectMatch.newMatch((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -241,7 +241,7 @@ public class EObjectMatcher extends BaseMatcher<EObjectMatch> {
   @Override
   protected EObjectMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EObjectMatch.Mutable((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
+      return EObjectMatch.newMutableMatch((org.eclipse.emf.ecore.EObject) match[POSITION_E]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

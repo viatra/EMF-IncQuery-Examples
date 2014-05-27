@@ -199,7 +199,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pE the fixed value of pattern parameter E, or null if not bound.
@@ -208,7 +208,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
    * 
    */
   public EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
-    return new EClassWithEStringAttributeMatch.Immutable(pE, pAttr);
+    return EClassWithEStringAttributeMatch.newMatch(pE, pAttr);
     
   }
   
@@ -291,7 +291,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
     try {
-      return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
+      return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -302,7 +302,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
     try {
-      return new EClassWithEStringAttributeMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+      return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -313,7 +313,7 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EClassWithEStringAttributeMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+      return EClassWithEStringAttributeMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

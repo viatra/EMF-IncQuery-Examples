@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityNameMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityNameMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -54,6 +55,16 @@ public final class EReferenceWithOneMultiplicityNameQuerySpecification extends B
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("ERefName", "java.lang.String"));
+  }
+  
+  @Override
+  public EReferenceWithOneMultiplicityNameMatch newEmptyMatch() {
+    return EReferenceWithOneMultiplicityNameMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EReferenceWithOneMultiplicityNameMatch newMatch(final Object... parameters) {
+    return EReferenceWithOneMultiplicityNameMatch.newMatch((java.lang.String) parameters[0]);
   }
   
   @Override

@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttributeMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttributeMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.EClassAttributeQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.IsEStringQuerySpecification;
@@ -56,6 +57,16 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("E", "org.eclipse.emf.ecore.EClass"),new PParameter("Attr", "org.eclipse.emf.ecore.EAttribute"));
+  }
+  
+  @Override
+  public EClassWithEStringAttributeMatch newEmptyMatch() {
+    return EClassWithEStringAttributeMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EClassWithEStringAttributeMatch newMatch(final Object... parameters) {
+    return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EAttribute) parameters[1]);
   }
   
   @Override

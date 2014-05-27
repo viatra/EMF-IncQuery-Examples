@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EClassNameMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EClassNameMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -53,6 +54,16 @@ public final class EClassNameQuerySpecification extends BaseGeneratedQuerySpecif
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("EName", "java.lang.String"));
+  }
+  
+  @Override
+  public EClassNameMatch newEmptyMatch() {
+    return EClassNameMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EClassNameMatch newMatch(final Object... parameters) {
+    return EClassNameMatch.newMatch((java.lang.String) parameters[0]);
   }
   
   @Override

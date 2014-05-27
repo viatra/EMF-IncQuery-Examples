@@ -184,7 +184,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pName the fixed value of pattern parameter Name, or null if not bound.
@@ -192,7 +192,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
    * 
    */
   public ECoreNamedElementNameMatch newMatch(final String pName) {
-    return new ECoreNamedElementNameMatch.Immutable(pName);
+    return ECoreNamedElementNameMatch.newMatch(pName);
     
   }
   
@@ -219,7 +219,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch tupleToMatch(final Tuple t) {
     try {
-      return new ECoreNamedElementNameMatch.Immutable((java.lang.String) t.get(POSITION_NAME));
+      return ECoreNamedElementNameMatch.newMatch((java.lang.String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -230,7 +230,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch arrayToMatch(final Object[] match) {
     try {
-      return new ECoreNamedElementNameMatch.Immutable((java.lang.String) match[POSITION_NAME]);
+      return ECoreNamedElementNameMatch.newMatch((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -241,7 +241,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new ECoreNamedElementNameMatch.Mutable((java.lang.String) match[POSITION_NAME]);
+      return ECoreNamedElementNameMatch.newMutableMatch((java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

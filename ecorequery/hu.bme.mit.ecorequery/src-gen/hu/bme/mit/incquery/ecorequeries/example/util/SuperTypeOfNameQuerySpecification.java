@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfNameMatch;
 import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfNameMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +53,16 @@ public final class SuperTypeOfNameQuerySpecification extends BaseGeneratedQueryS
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("SuperName", "java.lang.String"),new PParameter("SubName", "java.lang.String"));
+  }
+  
+  @Override
+  public SuperTypeOfNameMatch newEmptyMatch() {
+    return SuperTypeOfNameMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public SuperTypeOfNameMatch newMatch(final Object... parameters) {
+    return SuperTypeOfNameMatch.newMatch((java.lang.String) parameters[0], (java.lang.String) parameters[1]);
   }
   
   @Override

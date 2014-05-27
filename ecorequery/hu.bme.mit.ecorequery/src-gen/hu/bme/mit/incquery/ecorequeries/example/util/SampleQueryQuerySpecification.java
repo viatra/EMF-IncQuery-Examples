@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SampleQueryMatch;
 import hu.bme.mit.incquery.ecorequeries.example.SampleQueryMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.EClassWithEStringAttributeQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.EReferenceWithStarMultiplicityQuerySpecification;
@@ -59,6 +60,16 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("XElement", "org.eclipse.emf.ecore.EClass"),new PParameter("YElement", "org.eclipse.emf.ecore.EClass"),new PParameter("Relates", "org.eclipse.emf.ecore.EReference"),new PParameter("Label1", "org.eclipse.emf.ecore.EAttribute"),new PParameter("Label2", "org.eclipse.emf.ecore.EAttribute"));
+  }
+  
+  @Override
+  public SampleQueryMatch newEmptyMatch() {
+    return SampleQueryMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public SampleQueryMatch newMatch(final Object... parameters) {
+    return SampleQueryMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1], (org.eclipse.emf.ecore.EReference) parameters[2], (org.eclipse.emf.ecore.EAttribute) parameters[3], (org.eclipse.emf.ecore.EAttribute) parameters[4]);
   }
   
   @Override

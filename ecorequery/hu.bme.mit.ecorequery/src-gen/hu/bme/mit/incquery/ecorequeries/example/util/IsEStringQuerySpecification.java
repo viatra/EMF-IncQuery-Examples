@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.IsEStringMatch;
 import hu.bme.mit.incquery.ecorequeries.example.IsEStringMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.ECoreNamedElementQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification;
@@ -56,6 +57,16 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("Element", "org.eclipse.emf.ecore.EClassifier"));
+  }
+  
+  @Override
+  public IsEStringMatch newEmptyMatch() {
+    return IsEStringMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public IsEStringMatch newMatch(final Object... parameters) {
+    return IsEStringMatch.newMatch((org.eclipse.emf.ecore.EClassifier) parameters[0]);
   }
   
   @Override

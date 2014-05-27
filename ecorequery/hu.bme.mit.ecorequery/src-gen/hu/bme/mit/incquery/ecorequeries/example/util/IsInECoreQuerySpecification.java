@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.IsInECoreMatch;
 import hu.bme.mit.incquery.ecorequeries.example.IsInECoreMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -53,6 +54,16 @@ public final class IsInECoreQuerySpecification extends BaseGeneratedQuerySpecifi
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("Element", "org.eclipse.emf.ecore.EClassifier"));
+  }
+  
+  @Override
+  public IsInECoreMatch newEmptyMatch() {
+    return IsInECoreMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public IsInECoreMatch newMatch(final Object... parameters) {
+    return IsInECoreMatch.newMatch((org.eclipse.emf.ecore.EClassifier) parameters[0]);
   }
   
   @Override

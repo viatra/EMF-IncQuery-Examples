@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfMatch;
 import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +53,16 @@ public final class SuperTypeOfQuerySpecification extends BaseGeneratedQuerySpeci
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("Super", "org.eclipse.emf.ecore.EClass"),new PParameter("Sub", "org.eclipse.emf.ecore.EClass"));
+  }
+  
+  @Override
+  public SuperTypeOfMatch newEmptyMatch() {
+    return SuperTypeOfMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public SuperTypeOfMatch newMatch(final Object... parameters) {
+    return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1]);
   }
   
   @Override

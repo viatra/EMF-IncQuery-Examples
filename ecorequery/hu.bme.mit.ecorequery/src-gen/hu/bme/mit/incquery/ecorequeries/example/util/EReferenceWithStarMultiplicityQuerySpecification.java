@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -54,6 +55,16 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("ERef", "org.eclipse.emf.ecore.EReference"));
+  }
+  
+  @Override
+  public EReferenceWithStarMultiplicityMatch newEmptyMatch() {
+    return EReferenceWithStarMultiplicityMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EReferenceWithStarMultiplicityMatch newMatch(final Object... parameters) {
+    return EReferenceWithStarMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) parameters[0]);
   }
   
   @Override

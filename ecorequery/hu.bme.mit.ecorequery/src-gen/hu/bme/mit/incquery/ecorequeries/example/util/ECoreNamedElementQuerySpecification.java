@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementMatch;
 import hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +53,16 @@ public final class ECoreNamedElementQuerySpecification extends BaseGeneratedQuer
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("Element", "org.eclipse.emf.ecore.ENamedElement"),new PParameter("Name", "java.lang.String"));
+  }
+  
+  @Override
+  public ECoreNamedElementMatch newEmptyMatch() {
+    return ECoreNamedElementMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public ECoreNamedElementMatch newMatch(final Object... parameters) {
+    return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) parameters[0], (java.lang.String) parameters[1]);
   }
   
   @Override

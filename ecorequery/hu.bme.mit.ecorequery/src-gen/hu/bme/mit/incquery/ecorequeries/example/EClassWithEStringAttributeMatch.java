@@ -100,6 +100,12 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   }
   
   @Override
+  public EClassWithEStringAttributeMatch toImmutable() {
+    return isMutable() ? newMatch(fE, fAttr) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"E\"=" + prettyPrintValue(fE) + ", ");
@@ -151,8 +157,48 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static EClassWithEStringAttributeMatch newEmptyMatch() {
+    return new Mutable(null, null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pE the fixed value of pattern parameter E, or null if not bound.
+   * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static EClassWithEStringAttributeMatch newMutableMatch(final EClass pE, final EAttribute pAttr) {
+    return new Mutable(pE, pAttr);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pE the fixed value of pattern parameter E, or null if not bound.
+   * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
+    return new Immutable(pE, pAttr);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends EClassWithEStringAttributeMatch {
+  private static final class Mutable extends EClassWithEStringAttributeMatch {
     Mutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
       
@@ -166,7 +212,7 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends EClassWithEStringAttributeMatch {
+  private static final class Immutable extends EClassWithEStringAttributeMatch {
     Immutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
       

@@ -80,6 +80,12 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
   }
   
   @Override
+  public EReferenceWithOneMultiplicityMatch toImmutable() {
+    return isMutable() ? newMatch(fERef) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"ERef\"=" + prettyPrintValue(fERef));
@@ -127,8 +133,46 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static EReferenceWithOneMultiplicityMatch newEmptyMatch() {
+    return new Mutable(null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static EReferenceWithOneMultiplicityMatch newMutableMatch(final EReference pERef) {
+    return new Mutable(pERef);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static EReferenceWithOneMultiplicityMatch newMatch(final EReference pERef) {
+    return new Immutable(pERef);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends EReferenceWithOneMultiplicityMatch {
+  private static final class Mutable extends EReferenceWithOneMultiplicityMatch {
     Mutable(final EReference pERef) {
       super(pERef);
       
@@ -142,7 +186,7 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends EReferenceWithOneMultiplicityMatch {
+  private static final class Immutable extends EReferenceWithOneMultiplicityMatch {
     Immutable(final EReference pERef) {
       super(pERef);
       

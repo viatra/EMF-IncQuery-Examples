@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EClassAttributeMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EClassAttributeMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -53,6 +54,16 @@ public final class EClassAttributeQuerySpecification extends BaseGeneratedQueryS
   @Override
   public List<PParameter> getParameters() {
     return Arrays.asList(new PParameter("E", "org.eclipse.emf.ecore.EClass"),new PParameter("Attr", "org.eclipse.emf.ecore.EAttribute"),new PParameter("Type", "org.eclipse.emf.ecore.EClassifier"));
+  }
+  
+  @Override
+  public EClassAttributeMatch newEmptyMatch() {
+    return EClassAttributeMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EClassAttributeMatch newMatch(final Object... parameters) {
+    return EClassAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EAttribute) parameters[1], (org.eclipse.emf.ecore.EClassifier) parameters[2]);
   }
   
   @Override

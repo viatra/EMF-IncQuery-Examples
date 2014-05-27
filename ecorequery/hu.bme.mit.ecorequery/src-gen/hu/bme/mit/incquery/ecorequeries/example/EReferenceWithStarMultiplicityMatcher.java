@@ -189,7 +189,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenc
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
@@ -197,7 +197,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenc
    * 
    */
   public EReferenceWithStarMultiplicityMatch newMatch(final EReference pERef) {
-    return new EReferenceWithStarMultiplicityMatch.Immutable(pERef);
+    return EReferenceWithStarMultiplicityMatch.newMatch(pERef);
     
   }
   
@@ -224,7 +224,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenc
   @Override
   protected EReferenceWithStarMultiplicityMatch tupleToMatch(final Tuple t) {
     try {
-      return new EReferenceWithStarMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
+      return EReferenceWithStarMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -235,7 +235,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenc
   @Override
   protected EReferenceWithStarMultiplicityMatch arrayToMatch(final Object[] match) {
     try {
-      return new EReferenceWithStarMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+      return EReferenceWithStarMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -246,7 +246,7 @@ public class EReferenceWithStarMultiplicityMatcher extends BaseMatcher<EReferenc
   @Override
   protected EReferenceWithStarMultiplicityMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EReferenceWithStarMultiplicityMatch.Mutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+      return EReferenceWithStarMultiplicityMatch.newMutableMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
