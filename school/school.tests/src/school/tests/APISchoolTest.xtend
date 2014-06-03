@@ -37,7 +37,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def resultMatchImmutableGeneric(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 		val match = matcher.oneArbitraryMatch
@@ -52,7 +52,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def matchToArrayGeneric(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 		val sampleMatch = matcher.oneArbitraryMatch
@@ -68,7 +68,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def newMatchImmutableGeneric(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 		val sampleMatch = matcher.oneArbitraryMatch
@@ -89,7 +89,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test()
 	def newMatchMutableGeneric(){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 
@@ -112,7 +112,7 @@ class APISchoolTest extends SchoolTestsBase {
 	@Test(expected=typeof(UnsupportedOperationException))
 	def void immutableModificationExpectedExceptionGeneric (){
 		val sns = snapshot
-		val pm = queryInputXMI
+		val pm = queryInput
 		
 		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.classesOfTeacher")
 		val match = matcher.newMatch(null, null)

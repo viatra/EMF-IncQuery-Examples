@@ -192,7 +192,7 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
@@ -200,7 +200,7 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
    * 
    */
   public IsEStringMatch newMatch(final EClassifier pElement) {
-    return new IsEStringMatch.Immutable(pElement);
+    return IsEStringMatch.newMatch(pElement);
     
   }
   
@@ -227,7 +227,7 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch tupleToMatch(final Tuple t) {
     try {
-      return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
+      return IsEStringMatch.newMatch((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -238,7 +238,7 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch arrayToMatch(final Object[] match) {
     try {
-      return new IsEStringMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+      return IsEStringMatch.newMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -249,7 +249,7 @@ public class IsEStringMatcher extends BaseMatcher<IsEStringMatch> {
   @Override
   protected IsEStringMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new IsEStringMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+      return IsEStringMatch.newMutableMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

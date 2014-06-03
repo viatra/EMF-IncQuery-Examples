@@ -13,11 +13,9 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
-import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
 import com.google.inject.Injector
 import java.util.Collections
+import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -27,7 +25,6 @@ import java.util.Collections
 
 class SchoolTestsBase extends CommonStaticQueryTester {
 
-	@Inject extension ModelLoadHelper
 	@Inject var Injector injector
 
 	/*
@@ -36,11 +33,7 @@ class SchoolTestsBase extends CommonStaticQueryTester {
 	override queryInputEIQURI() { // Creates new resource set
 		"school.incquery/school/simpleSchoolQueries.eiq"
 	}
-
-	def queryInputEIQ() { // Creates new resource set
-		return queryInputEIQURI.loadPatternModelFromUri(injector) as PatternModel
-
-	}	
+	
 	override queryInputDependencyURIs() {Collections.emptyList}
 	override snapshotURI() {
 		return "school.tests/model/tests.eiqsnapshot"

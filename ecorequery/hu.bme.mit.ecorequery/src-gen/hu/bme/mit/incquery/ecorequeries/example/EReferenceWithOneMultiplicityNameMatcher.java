@@ -185,7 +185,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseMatcher<ERefer
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
@@ -193,7 +193,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseMatcher<ERefer
    * 
    */
   public EReferenceWithOneMultiplicityNameMatch newMatch(final String pERefName) {
-    return new EReferenceWithOneMultiplicityNameMatch.Immutable(pERefName);
+    return EReferenceWithOneMultiplicityNameMatch.newMatch(pERefName);
     
   }
   
@@ -220,7 +220,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseMatcher<ERefer
   @Override
   protected EReferenceWithOneMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-      return new EReferenceWithOneMultiplicityNameMatch.Immutable((java.lang.String) t.get(POSITION_EREFNAME));
+      return EReferenceWithOneMultiplicityNameMatch.newMatch((java.lang.String) t.get(POSITION_EREFNAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -231,7 +231,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseMatcher<ERefer
   @Override
   protected EReferenceWithOneMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-      return new EReferenceWithOneMultiplicityNameMatch.Immutable((java.lang.String) match[POSITION_EREFNAME]);
+      return EReferenceWithOneMultiplicityNameMatch.newMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -242,7 +242,7 @@ public class EReferenceWithOneMultiplicityNameMatcher extends BaseMatcher<ERefer
   @Override
   protected EReferenceWithOneMultiplicityNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EReferenceWithOneMultiplicityNameMatch.Mutable((java.lang.String) match[POSITION_EREFNAME]);
+      return EReferenceWithOneMultiplicityNameMatch.newMutableMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

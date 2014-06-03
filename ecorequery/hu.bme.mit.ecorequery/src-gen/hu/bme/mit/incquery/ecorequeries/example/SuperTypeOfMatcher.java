@@ -197,7 +197,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSuper the fixed value of pattern parameter Super, or null if not bound.
@@ -206,7 +206,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
    * 
    */
   public SuperTypeOfMatch newMatch(final EClass pSuper, final EClass pSub) {
-    return new SuperTypeOfMatch.Immutable(pSuper, pSub);
+    return SuperTypeOfMatch.newMatch(pSuper, pSub);
     
   }
   
@@ -289,7 +289,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   @Override
   protected SuperTypeOfMatch tupleToMatch(final Tuple t) {
     try {
-      return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));
+      return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -300,7 +300,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   @Override
   protected SuperTypeOfMatch arrayToMatch(final Object[] match) {
     try {
-      return new SuperTypeOfMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+      return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -311,7 +311,7 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   @Override
   protected SuperTypeOfMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new SuperTypeOfMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+      return SuperTypeOfMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

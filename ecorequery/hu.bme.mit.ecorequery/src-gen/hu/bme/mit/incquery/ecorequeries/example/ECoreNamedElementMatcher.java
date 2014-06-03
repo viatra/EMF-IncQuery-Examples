@@ -197,7 +197,7 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
@@ -206,7 +206,7 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
    * 
    */
   public ECoreNamedElementMatch newMatch(final ENamedElement pElement, final String pName) {
-    return new ECoreNamedElementMatch.Immutable(pElement, pName);
+    return ECoreNamedElementMatch.newMatch(pElement, pName);
     
   }
   
@@ -289,7 +289,7 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
   @Override
   protected ECoreNamedElementMatch tupleToMatch(final Tuple t) {
     try {
-      return new ECoreNamedElementMatch.Immutable((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));
+      return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -300,7 +300,7 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
   @Override
   protected ECoreNamedElementMatch arrayToMatch(final Object[] match) {
     try {
-      return new ECoreNamedElementMatch.Immutable((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+      return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -311,7 +311,7 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
   @Override
   protected ECoreNamedElementMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new ECoreNamedElementMatch.Mutable((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+      return ECoreNamedElementMatch.newMutableMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

@@ -262,7 +262,6 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 	@ObservableValue(name = "Year", expression = "Y.startingDate")
 	@ObservableValue(name = "Teacher", expression = "T.name")
 	@ObservableValue(name = "Student", expression = "S.name")
-	@Handler(fileExtension = "school")
 	pattern finalPattern(Y : Year, C : Course, T : Teacher, S : Student) {
 		Year.schoolClasses.courses(Y, C);
 		Course.teacher(C, T);
@@ -276,7 +275,6 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 	@ObservableValue(name = "Year", expression = "YDate")
 	@ObservableValue(name = "Teacher", expression = "TName")
 	@ObservableValue(name = "Student", expression = "SName")
-	@Handler(fileExtension = "school")
 	pattern finalPattern2(YDate, CSub, TName, SName) {
 		Year.schoolClasses.courses(Y, C);
 		Course.teacher(C, T);

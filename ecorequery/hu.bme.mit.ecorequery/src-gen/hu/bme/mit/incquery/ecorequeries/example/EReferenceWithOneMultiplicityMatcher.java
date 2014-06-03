@@ -189,7 +189,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pERef the fixed value of pattern parameter ERef, or null if not bound.
@@ -197,7 +197,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
    * 
    */
   public EReferenceWithOneMultiplicityMatch newMatch(final EReference pERef) {
-    return new EReferenceWithOneMultiplicityMatch.Immutable(pERef);
+    return EReferenceWithOneMultiplicityMatch.newMatch(pERef);
     
   }
   
@@ -224,7 +224,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch tupleToMatch(final Tuple t) {
     try {
-      return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
+      return EReferenceWithOneMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) t.get(POSITION_EREF));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -235,7 +235,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch arrayToMatch(final Object[] match) {
     try {
-      return new EReferenceWithOneMultiplicityMatch.Immutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+      return EReferenceWithOneMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -246,7 +246,7 @@ public class EReferenceWithOneMultiplicityMatcher extends BaseMatcher<EReference
   @Override
   protected EReferenceWithOneMultiplicityMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EReferenceWithOneMultiplicityMatch.Mutable((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
+      return EReferenceWithOneMultiplicityMatch.newMutableMatch((org.eclipse.emf.ecore.EReference) match[POSITION_EREF]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

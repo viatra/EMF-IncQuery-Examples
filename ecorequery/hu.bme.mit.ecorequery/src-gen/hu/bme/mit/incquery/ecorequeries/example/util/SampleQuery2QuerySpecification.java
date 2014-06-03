@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SampleQuery2Match;
 import hu.bme.mit.incquery.ecorequeries.example.SampleQuery2Matcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.EClassWithEStringAttributeQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.EReferenceWithOneMultiplicityQuerySpecification;
@@ -12,7 +13,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -64,6 +64,16 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
   }
   
   @Override
+  public SampleQuery2Match newEmptyMatch() {
+    return SampleQuery2Match.newEmptyMatch();
+  }
+  
+  @Override
+  public SampleQuery2Match newMatch(final Object... parameters) {
+    return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1], (org.eclipse.emf.ecore.EReference) parameters[2], (org.eclipse.emf.ecore.EReference) parameters[3], (org.eclipse.emf.ecore.EAttribute) parameters[4], (org.eclipse.emf.ecore.EAttribute) parameters[5]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -102,15 +112,6 @@ public final class SampleQuery2QuerySpecification extends BaseGeneratedQuerySpec
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<SampleQuery2QuerySpecification> {
-    @Override
-    public SampleQuery2QuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

@@ -79,6 +79,12 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
   }
   
   @Override
+  public EReferenceWithStarMultiplicityNameMatch toImmutable() {
+    return isMutable() ? newMatch(fERefName) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"ERefName\"=" + prettyPrintValue(fERefName));
@@ -126,8 +132,46 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static EReferenceWithStarMultiplicityNameMatch newEmptyMatch() {
+    return new Mutable(null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static EReferenceWithStarMultiplicityNameMatch newMutableMatch(final String pERefName) {
+    return new Mutable(pERefName);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pERefName the fixed value of pattern parameter ERefName, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static EReferenceWithStarMultiplicityNameMatch newMatch(final String pERefName) {
+    return new Immutable(pERefName);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends EReferenceWithStarMultiplicityNameMatch {
+  private static final class Mutable extends EReferenceWithStarMultiplicityNameMatch {
     Mutable(final String pERefName) {
       super(pERefName);
       
@@ -141,7 +185,7 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends EReferenceWithStarMultiplicityNameMatch {
+  private static final class Immutable extends EReferenceWithStarMultiplicityNameMatch {
     Immutable(final String pERefName) {
       super(pERefName);
       

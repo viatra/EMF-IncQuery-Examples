@@ -1,13 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin>
-
-   <extension
-         id="network.MutualFriends"
-         point="org.eclipse.incquery.runtime.queryspecification">
-      <matcher
-            querySpecificationProvider="network.util.MutualFriendsQuerySpecification$Provider"
-            id="network.MutualFriends">
-      </matcher>
-   </extension>
-
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="network.QuerySandbox" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:network.QuerySandbox" id="network.QuerySandbox"/>
+  </extension>
 </plugin>

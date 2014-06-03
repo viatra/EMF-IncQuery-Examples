@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfMatch;
 import hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -56,6 +56,16 @@ public final class SuperTypeOfQuerySpecification extends BaseGeneratedQuerySpeci
   }
   
   @Override
+  public SuperTypeOfMatch newEmptyMatch() {
+    return SuperTypeOfMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public SuperTypeOfMatch newMatch(final Object... parameters) {
+    return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -73,15 +83,6 @@ public final class SuperTypeOfQuerySpecification extends BaseGeneratedQuerySpeci
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<SuperTypeOfQuerySpecification> {
-    @Override
-    public SuperTypeOfQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EClassMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EClassMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -56,6 +56,16 @@ public final class EClassQuerySpecification extends BaseGeneratedQuerySpecificat
   }
   
   @Override
+  public EClassMatch newEmptyMatch() {
+    return EClassMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EClassMatch newMatch(final Object... parameters) {
+    return EClassMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -70,15 +80,6 @@ public final class EClassQuerySpecification extends BaseGeneratedQuerySpecificat
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<EClassQuerySpecification> {
-    @Override
-    public EClassQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

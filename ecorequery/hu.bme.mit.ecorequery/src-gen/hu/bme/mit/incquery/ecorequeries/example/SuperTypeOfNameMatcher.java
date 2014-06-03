@@ -194,7 +194,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pSuperName the fixed value of pattern parameter SuperName, or null if not bound.
@@ -203,7 +203,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
    * 
    */
   public SuperTypeOfNameMatch newMatch(final String pSuperName, final String pSubName) {
-    return new SuperTypeOfNameMatch.Immutable(pSuperName, pSubName);
+    return SuperTypeOfNameMatch.newMatch(pSuperName, pSubName);
     
   }
   
@@ -286,7 +286,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   @Override
   protected SuperTypeOfNameMatch tupleToMatch(final Tuple t) {
     try {
-      return new SuperTypeOfNameMatch.Immutable((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));
+      return SuperTypeOfNameMatch.newMatch((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -297,7 +297,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   @Override
   protected SuperTypeOfNameMatch arrayToMatch(final Object[] match) {
     try {
-      return new SuperTypeOfNameMatch.Immutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+      return SuperTypeOfNameMatch.newMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -308,7 +308,7 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   @Override
   protected SuperTypeOfNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new SuperTypeOfNameMatch.Mutable((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+      return SuperTypeOfNameMatch.newMutableMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

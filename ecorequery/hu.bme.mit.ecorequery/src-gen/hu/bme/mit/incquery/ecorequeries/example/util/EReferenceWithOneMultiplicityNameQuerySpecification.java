@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityNameMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityNameMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -58,6 +58,16 @@ public final class EReferenceWithOneMultiplicityNameQuerySpecification extends B
   }
   
   @Override
+  public EReferenceWithOneMultiplicityNameMatch newEmptyMatch() {
+    return EReferenceWithOneMultiplicityNameMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EReferenceWithOneMultiplicityNameMatch newMatch(final Object... parameters) {
+    return EReferenceWithOneMultiplicityNameMatch.newMatch((java.lang.String) parameters[0]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -80,15 +90,6 @@ public final class EReferenceWithOneMultiplicityNameQuerySpecification extends B
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<EReferenceWithOneMultiplicityNameQuerySpecification> {
-    @Override
-    public EReferenceWithOneMultiplicityNameQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

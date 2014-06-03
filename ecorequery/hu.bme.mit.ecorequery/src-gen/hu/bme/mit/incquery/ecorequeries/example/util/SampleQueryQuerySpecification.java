@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.SampleQueryMatch;
 import hu.bme.mit.incquery.ecorequeries.example.SampleQueryMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.EClassWithEStringAttributeQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.EReferenceWithStarMultiplicityQuerySpecification;
@@ -11,7 +12,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -63,6 +63,16 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
   }
   
   @Override
+  public SampleQueryMatch newEmptyMatch() {
+    return SampleQueryMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public SampleQueryMatch newMatch(final Object... parameters) {
+    return SampleQueryMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1], (org.eclipse.emf.ecore.EReference) parameters[2], (org.eclipse.emf.ecore.EAttribute) parameters[3], (org.eclipse.emf.ecore.EAttribute) parameters[4]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -97,15 +107,6 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedQuerySpeci
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<SampleQueryQuerySpecification> {
-    @Override
-    public SampleQueryQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

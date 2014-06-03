@@ -183,7 +183,7 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pEName the fixed value of pattern parameter EName, or null if not bound.
@@ -191,7 +191,7 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
    * 
    */
   public EClassNameMatch newMatch(final String pEName) {
-    return new EClassNameMatch.Immutable(pEName);
+    return EClassNameMatch.newMatch(pEName);
     
   }
   
@@ -218,7 +218,7 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch tupleToMatch(final Tuple t) {
     try {
-      return new EClassNameMatch.Immutable((java.lang.String) t.get(POSITION_ENAME));
+      return EClassNameMatch.newMatch((java.lang.String) t.get(POSITION_ENAME));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -229,7 +229,7 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch arrayToMatch(final Object[] match) {
     try {
-      return new EClassNameMatch.Immutable((java.lang.String) match[POSITION_ENAME]);
+      return EClassNameMatch.newMatch((java.lang.String) match[POSITION_ENAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -240,7 +240,7 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new EClassNameMatch.Mutable((java.lang.String) match[POSITION_ENAME]);
+      return EClassNameMatch.newMutableMatch((java.lang.String) match[POSITION_ENAME]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

@@ -80,6 +80,12 @@ public abstract class EClassMatch extends BasePatternMatch {
   }
   
   @Override
+  public EClassMatch toImmutable() {
+    return isMutable() ? newMatch(fEClass) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"EClass\"=" + prettyPrintValue(fEClass));
@@ -127,8 +133,46 @@ public abstract class EClassMatch extends BasePatternMatch {
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static EClassMatch newEmptyMatch() {
+    return new Mutable(null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pEClass the fixed value of pattern parameter EClass, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static EClassMatch newMutableMatch(final EClass pEClass) {
+    return new Mutable(pEClass);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pEClass the fixed value of pattern parameter EClass, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static EClassMatch newMatch(final EClass pEClass) {
+    return new Immutable(pEClass);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends EClassMatch {
+  private static final class Mutable extends EClassMatch {
     Mutable(final EClass pEClass) {
       super(pEClass);
       
@@ -142,7 +186,7 @@ public abstract class EClassMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends EClassMatch {
+  private static final class Immutable extends EClassMatch {
     Immutable(final EClass pEClass) {
       super(pEClass);
       

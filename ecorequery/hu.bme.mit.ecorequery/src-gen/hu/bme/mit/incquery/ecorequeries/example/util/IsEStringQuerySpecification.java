@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.IsEStringMatch;
 import hu.bme.mit.incquery.ecorequeries.example.IsEStringMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.ECoreNamedElementQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification;
@@ -10,7 +11,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -60,6 +60,16 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
   }
   
   @Override
+  public IsEStringMatch newEmptyMatch() {
+    return IsEStringMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public IsEStringMatch newMatch(final Object... parameters) {
+    return IsEStringMatch.newMatch((org.eclipse.emf.ecore.EClassifier) parameters[0]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -77,15 +87,6 @@ public final class IsEStringQuerySpecification extends BaseGeneratedQuerySpecifi
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<IsEStringQuerySpecification> {
-    @Override
-    public IsEStringQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

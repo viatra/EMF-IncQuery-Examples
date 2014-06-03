@@ -240,7 +240,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pXElement the fixed value of pattern parameter XElement, or null if not bound.
@@ -252,7 +252,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
    * 
    */
   public SampleQueryMatch newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return new SampleQueryMatch.Immutable(pXElement, pYElement, pRelates, pLabel1, pLabel2);
+    return SampleQueryMatch.newMatch(pXElement, pYElement, pRelates, pLabel1, pLabel2);
     
   }
   
@@ -449,7 +449,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   @Override
   protected SampleQueryMatch tupleToMatch(final Tuple t) {
     try {
-      return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
+      return SampleQueryMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -460,7 +460,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   @Override
   protected SampleQueryMatch arrayToMatch(final Object[] match) {
     try {
-      return new SampleQueryMatch.Immutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+      return SampleQueryMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -471,7 +471,7 @@ public class SampleQueryMatcher extends BaseMatcher<SampleQueryMatch> {
   @Override
   protected SampleQueryMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new SampleQueryMatch.Mutable((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+      return SampleQueryMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementNameMatch;
 import hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementNameMatcher;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -56,6 +56,16 @@ public final class ECoreNamedElementNameQuerySpecification extends BaseGenerated
   }
   
   @Override
+  public ECoreNamedElementNameMatch newEmptyMatch() {
+    return ECoreNamedElementNameMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public ECoreNamedElementNameMatch newMatch(final Object... parameters) {
+    return ECoreNamedElementNameMatch.newMatch((java.lang.String) parameters[0]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -71,15 +81,6 @@ public final class ECoreNamedElementNameQuerySpecification extends BaseGenerated
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<ECoreNamedElementNameQuerySpecification> {
-    @Override
-    public ECoreNamedElementNameQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

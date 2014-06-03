@@ -189,7 +189,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   }
   
   /**
-   * Returns a new (partial) Match object for the matcher.
+   * Returns a new (partial) match.
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pElement the fixed value of pattern parameter Element, or null if not bound.
@@ -197,7 +197,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
    * 
    */
   public IsInECoreMatch newMatch(final EClassifier pElement) {
-    return new IsInECoreMatch.Immutable(pElement);
+    return IsInECoreMatch.newMatch(pElement);
     
   }
   
@@ -224,7 +224,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   @Override
   protected IsInECoreMatch tupleToMatch(final Tuple t) {
     try {
-      return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
+      return IsInECoreMatch.newMatch((org.eclipse.emf.ecore.EClassifier) t.get(POSITION_ELEMENT));
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in tuple not properly typed!",e);
       return null;
@@ -235,7 +235,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   @Override
   protected IsInECoreMatch arrayToMatch(final Object[] match) {
     try {
-      return new IsInECoreMatch.Immutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+      return IsInECoreMatch.newMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;
@@ -246,7 +246,7 @@ public class IsInECoreMatcher extends BaseMatcher<IsInECoreMatch> {
   @Override
   protected IsInECoreMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return new IsInECoreMatch.Mutable((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
+      return IsInECoreMatch.newMutableMatch((org.eclipse.emf.ecore.EClassifier) match[POSITION_ELEMENT]);
     } catch(ClassCastException e) {
       LOGGER.error("Element(s) in array not properly typed!",e);
       return null;

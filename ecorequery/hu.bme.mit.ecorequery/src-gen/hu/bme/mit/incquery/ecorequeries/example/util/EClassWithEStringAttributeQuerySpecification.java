@@ -1,6 +1,7 @@
 package hu.bme.mit.incquery.ecorequeries.example.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttributeMatch;
 import hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttributeMatcher;
 import hu.bme.mit.incquery.ecorequeries.example.util.EClassAttributeQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.IsEStringQuerySpecification;
@@ -10,7 +11,6 @@ import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.extensibility.IQuerySpecificationProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
@@ -60,6 +60,16 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
   }
   
   @Override
+  public EClassWithEStringAttributeMatch newEmptyMatch() {
+    return EClassWithEStringAttributeMatch.newEmptyMatch();
+  }
+  
+  @Override
+  public EClassWithEStringAttributeMatch newMatch(final Object... parameters) {
+    return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EAttribute) parameters[1]);
+  }
+  
+  @Override
   public Set<PBody> doGetContainedBodies() throws IncQueryException {
     Set<PBody> bodies = Sets.newLinkedHashSet();
     {
@@ -80,15 +90,6 @@ public final class EClassWithEStringAttributeQuerySpecification extends BaseGene
     }
     return bodies;
   }
-  
-  @SuppressWarnings("all")
-  public static class Provider implements IQuerySpecificationProvider<EClassWithEStringAttributeQuerySpecification> {
-    @Override
-    public EClassWithEStringAttributeQuerySpecification get() throws IncQueryException {
-      return instance();
-    }
-  }
-  
   
   @SuppressWarnings("all")
   private static class LazyHolder {

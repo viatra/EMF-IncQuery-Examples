@@ -79,6 +79,12 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   }
   
   @Override
+  public ECoreNamedElementNameMatch toImmutable() {
+    return isMutable() ? newMatch(fName) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"Name\"=" + prettyPrintValue(fName));
@@ -126,8 +132,46 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static ECoreNamedElementNameMatch newEmptyMatch() {
+    return new Mutable(null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pName the fixed value of pattern parameter Name, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static ECoreNamedElementNameMatch newMutableMatch(final String pName) {
+    return new Mutable(pName);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pName the fixed value of pattern parameter Name, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static ECoreNamedElementNameMatch newMatch(final String pName) {
+    return new Immutable(pName);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends ECoreNamedElementNameMatch {
+  private static final class Mutable extends ECoreNamedElementNameMatch {
     Mutable(final String pName) {
       super(pName);
       
@@ -141,7 +185,7 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends ECoreNamedElementNameMatch {
+  private static final class Immutable extends ECoreNamedElementNameMatch {
     Immutable(final String pName) {
       super(pName);
       

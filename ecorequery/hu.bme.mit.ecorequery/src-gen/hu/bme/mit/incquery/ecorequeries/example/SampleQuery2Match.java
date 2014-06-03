@@ -177,6 +177,12 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   }
   
   @Override
+  public SampleQuery2Match toImmutable() {
+    return isMutable() ? newMatch(fXElement, fYElement, fRelates1, fRelates2, fLabel1, fLabel2) : this;
+    
+  }
+  
+  @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"XElement\"=" + prettyPrintValue(fXElement) + ", ");
@@ -244,8 +250,56 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
     
   }
   
+  /**
+   * Returns an empty, mutable match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @return the empty match.
+   * 
+   */
+  public static SampleQuery2Match newEmptyMatch() {
+    return new Mutable(null, null, null, null, null, null);
+    
+  }
+  
+  /**
+   * Returns a mutable (partial) match.
+   * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
+   * 
+   * @param pXElement the fixed value of pattern parameter XElement, or null if not bound.
+   * @param pYElement the fixed value of pattern parameter YElement, or null if not bound.
+   * @param pRelates1 the fixed value of pattern parameter Relates1, or null if not bound.
+   * @param pRelates2 the fixed value of pattern parameter Relates2, or null if not bound.
+   * @param pLabel1 the fixed value of pattern parameter Label1, or null if not bound.
+   * @param pLabel2 the fixed value of pattern parameter Label2, or null if not bound.
+   * @return the new, mutable (partial) match object.
+   * 
+   */
+  public static SampleQuery2Match newMutableMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+    return new Mutable(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
+    
+  }
+  
+  /**
+   * Returns a new (partial) match.
+   * This can be used e.g. to call the matcher with a partial match.
+   * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
+   * @param pXElement the fixed value of pattern parameter XElement, or null if not bound.
+   * @param pYElement the fixed value of pattern parameter YElement, or null if not bound.
+   * @param pRelates1 the fixed value of pattern parameter Relates1, or null if not bound.
+   * @param pRelates2 the fixed value of pattern parameter Relates2, or null if not bound.
+   * @param pLabel1 the fixed value of pattern parameter Label1, or null if not bound.
+   * @param pLabel2 the fixed value of pattern parameter Label2, or null if not bound.
+   * @return the (partial) match object.
+   * 
+   */
+  public static SampleQuery2Match newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
+    return new Immutable(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
+    
+  }
+  
   @SuppressWarnings("all")
-  static final class Mutable extends SampleQuery2Match {
+  private static final class Mutable extends SampleQuery2Match {
     Mutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
       
@@ -259,7 +313,7 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   
   
   @SuppressWarnings("all")
-  static final class Immutable extends SampleQuery2Match {
+  private static final class Immutable extends SampleQuery2Match {
     Immutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
       

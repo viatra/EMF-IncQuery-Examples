@@ -15,6 +15,7 @@
 	<properties>
 		<jacoco.targetdir>${project.basedir}/../target</jacoco.targetdir>
 		<sonar.surefire.reportsPath>../target/surefire-reports/</sonar.surefire.reportsPath>
+		<incquery.p2.repository>https://hudson.eclipse.org/incquery/job/incquery-master/lastSuccessfulBuild/artifact/update-site/</incquery.p2.repository>
 	</properties>
 	<modules>
 		<module>../school</module>
@@ -48,6 +49,22 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>incquery-repository</id>
+			<layout>p2</layout>
+			<url>${incquery.p2.repository}</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>incquery-snapshots</id>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>https://repo.eclipse.org/content/repositories/emf-incquery-snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<scm>
 		<connection>scm:git:git://github.com/ujhelyiz/EMF-IncQuery-Examples.git</connection>
 		<url>https://github.com/ujhelyiz/EMF-IncQuery-Examples</url>
@@ -57,7 +74,7 @@
 		<system>Jenkins</system>
 	</ciManagement>
 	<issueManagement>
-		<url>https://github.com/ujhelyiz/EMF-IncQuery/issues</url>
+		<url>https://github.com/ujhelyiz/EMF-IncQuery-Examples/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 </project>
