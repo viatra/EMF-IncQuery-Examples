@@ -14,3 +14,4 @@ Require-Bundle: org.eclipse.pde.core,
  org.jnect.bodymodel,
  org.eclipse.incquery.runtime;bundle-version="0.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j
