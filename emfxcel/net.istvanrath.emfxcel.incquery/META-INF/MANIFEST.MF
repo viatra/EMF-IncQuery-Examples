@@ -13,3 +13,4 @@ Require-Bundle: net.istvanrath.emfxcel,
  org.eclipse.incquery.runtime,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j
