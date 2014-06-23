@@ -12,8 +12,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.9.1.v20130902-0605"/>
-<unit id="org.eclipse.xtend.sdk.feature.group" version="2.5.3.v201402240820"/>
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.5.3.v201402240820"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.6.0.v201405210727"/>
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases"/>
 </location>
 </locations>
