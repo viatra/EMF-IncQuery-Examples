@@ -1,6 +1,8 @@
 # EMFxcel: using Eclipse Modeling to extend the power and usefulness of Excel spreadsheets
 
-TODO
+In order to be able to do advanced data processing and visualization with technologies I am familiar with, I created a simple tool to process Microsoft Excel® documents using Eclipse Modeling. The solution consists of an Xcore-based Excel domain, and a slightly modified EMF generated editor that is able to open Excel files directly as EMF instance models via Apache POI, and automatically track and propagate changes as the opened file is being simultaneously modified in Excel. I demonstrate live data processing using EMF-IncQuery graph queries, and live data visualization using IncQuery Viewers.
+
+See https://incquery.net/incquery/examples/emfxcel for the detailed documentation.
 
 
 Excel is a registered trademark of Microsoft.
