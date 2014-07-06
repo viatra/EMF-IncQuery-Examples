@@ -2,9 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: school.incquery
 Bundle-SymbolicName: school.incquery;singleton:=true
-Bundle-Version: 0.8.0.qualifier
-Export-Package: school,
- school.util
+Bundle-Version: 0.9.0.qualifier
+Export-Package: school,school.util
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.transaction,
  org.eclipse.incquery.runtime;bundle-version="0.8.0",
