@@ -108,8 +108,7 @@ pattern containerDependencyLinks(C: Container, Dep: Dependency) {
 
 //try to encode the rules for the Insurer
 pattern InsurerIntentions(intention: Intention){
-	Actor.name(actor,Name);
- 	check((Name).equals("Insurer"));
+	Actor.name(actor,"Insurer");
 	find containerElements(actor, intention);
 }
 
