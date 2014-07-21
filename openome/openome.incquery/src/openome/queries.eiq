@@ -1,0 +1,129 @@
+package openome
+
+import "http:///edu/toronto/cs/openome_model.ecore"
+
+//what was in the original file
+pattern contrib_int(source, target) {
+	HelpContribution.source(h, source);
+	HelpContribution.target(h, target);
+}
+
+
+/************
+ * The examples on Drive
+ */
+
+// Positive and Negative Links
+pattern positiveLink(C: Contribution, Src: Dependable, Trg: Dependable) {
+	HelpContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);
+} or {
+	MakeContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);	
+}
+or {
+	SomePlusContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);	
+}
+
+pattern negativeLink(C: Contribution, Src: Dependable, Trg: Dependable) {
+	HurtContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);
+} or {
+	BreakContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);	
+}
+or {
+	SomeMinusContribution(C);
+	Contribution.source(C, Src);
+	Contribution.target(C, Trg);	
+}
+
+// Intentions inside a container
+pattern containerElements(C: Container, I: Intention) {
+	Container.intentions(C, I);
+}
+
+// Direct dependencies leading out of a container
+// JH: just out of or also into?
+// I see you're trying to find the depending/depender elements, not the links
+pattern containerDirectDependents(C: Container, Dep: Dependable) {
+	find containerElements(C, I);
+	//missing this, I'll try to write it
+	find dependencies(Dep, I);
+	Dependable(Dep);
+}
+
+// transitive dependencies leading out of a container
+pattern containerTransitiveDependents(C: Container, Dep: Dependable) {
+	find containerElements(C, I);
+//	find dependenciesplus(Dep, I);
+	find dependencies+(Dep, I);
+	Dependable(Dep);
+}
+
+
+/***********
+ * Jennifer's patterns
+ */
+ 
+pattern dependencies(dep: Dependable, intention: Intention) {
+	Dependency.dependencyTo(l, intention);
+	Dependency.dependencyFrom(l, dep);
+	} or {
+	Dependency.dependencyFrom(l, intention);
+  	Dependency.dependencyTo(l, dep);
+}
+
+//my failed attempt at recursion
+//pattern dependenciesplus(dep: Dependable, intention: Intention) {
+//	Dependency.dependencyTo(l, intention);
+//	Dependency.dependencyFrom(l, dep2);
+//	find dependenciesplus(dep2, dep);
+//	} or {
+//	Dependency.dependencyFrom(l, intention);
+ // 	Dependency.dependencyTo(l, dep2);
+ // 	find dependenciesplus(dep2, dep);
+  	//base case?  nope, infinite loop
+  	//} or {  
+  //	neg find dependenciesplus(dep, intention);
+//}
+
+
+pattern dependencyLinks(dep: Dependency, intention: Intention) {
+	Dependency.dependencyTo(dep, intention);
+	} or {
+	Dependency.dependencyFrom(dep, intention);
+}
+
+pattern containerDependencyLinks(C: Container, Dep: Dependency) {
+	find containerElements(C, I);
+	find dependencyLinks(Dep, I);
+}
+
+//try to encode the rules for the Insurer
+pattern InsurerIntentions(intention: Intention){
+	Actor.name(actor,Name);
+ 	check((Name).equals("Insurer"));
+	find containerElements(actor, intention);
+}
+
+pattern InsurerDependencies(dep: Dependency) {
+	find InsurerIntentions(intention);
+	find dependencyLinks(dep, intention);
+}
+
+//now we want to be able to say that the results of the above two queries do not change
+//this can be done via events?
+
+//@Constraint(location = i, severity = "warning", message = "satisfied intention: $i$")
+pattern satisfiedIntention(i: Intention) {
+	Intention.QualitativeReasoningCombinedLabel(i,EvaluationLabel::Satisfied);
+}
+
+
