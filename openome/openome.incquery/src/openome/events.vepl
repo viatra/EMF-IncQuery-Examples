@@ -1,0 +1,38 @@
+package openome
+
+uses-patterns openome.*
+
+//now we want to be able to say that the results of the above two queries do not change
+//this can be done via events?
+
+// let's give it a try
+
+IQPatternEvent newIntentionAppears(){
+	iqPatternRef: InsurerIntentions
+	iqChangeType: NEW_MATCH_FOUND
+}
+
+IQPatternEvent existingIntentionDisappears(){
+	iqPatternRef: InsurerIntentions
+	iqChangeType: EXISTING_MATCH_LOST
+}
+
+ComplexEvent theSetOfIntentionsHasChanged()
+{
+	priority: 5
+	definition: newIntentionAppears OR existingIntentionDisappears
+}
+
+
+Rule myFirstRule{
+	events: theSetOfIntentionsHasChanged
+	action{
+		System.out.println("The set of intentions has changed.")
+	}
+}
+
+
+
+
+
+
