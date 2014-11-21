@@ -197,7 +197,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EClassWithEStringAttributeMatch {
     Mutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
@@ -210,8 +209,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EClassWithEStringAttributeMatch {
     Immutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
@@ -223,5 +220,4 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

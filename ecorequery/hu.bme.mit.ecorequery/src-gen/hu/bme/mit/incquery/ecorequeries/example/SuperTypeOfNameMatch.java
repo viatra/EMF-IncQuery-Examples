@@ -195,7 +195,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends SuperTypeOfNameMatch {
     Mutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);
@@ -208,8 +207,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends SuperTypeOfNameMatch {
     Immutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);
@@ -221,5 +218,4 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

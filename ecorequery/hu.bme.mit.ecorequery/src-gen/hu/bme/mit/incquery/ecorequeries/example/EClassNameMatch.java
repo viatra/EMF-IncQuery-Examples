@@ -170,7 +170,6 @@ public abstract class EClassNameMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EClassNameMatch {
     Mutable(final String pEName) {
       super(pEName);
@@ -183,8 +182,6 @@ public abstract class EClassNameMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EClassNameMatch {
     Immutable(final String pEName) {
       super(pEName);
@@ -196,5 +193,4 @@ public abstract class EClassNameMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

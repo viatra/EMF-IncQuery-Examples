@@ -170,7 +170,6 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EReferenceWithStarMultiplicityNameMatch {
     Mutable(final String pERefName) {
       super(pERefName);
@@ -183,8 +182,6 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EReferenceWithStarMultiplicityNameMatch {
     Immutable(final String pERefName) {
       super(pERefName);
@@ -196,5 +193,4 @@ public abstract class EReferenceWithStarMultiplicityNameMatch extends BasePatter
       return false;
     }
   }
-  
 }

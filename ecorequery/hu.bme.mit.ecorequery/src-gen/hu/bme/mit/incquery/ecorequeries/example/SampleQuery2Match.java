@@ -298,7 +298,6 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends SampleQuery2Match {
     Mutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
@@ -311,8 +310,6 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends SampleQuery2Match {
     Immutable(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
@@ -324,5 +321,4 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
       return false;
     }
   }
-  
 }

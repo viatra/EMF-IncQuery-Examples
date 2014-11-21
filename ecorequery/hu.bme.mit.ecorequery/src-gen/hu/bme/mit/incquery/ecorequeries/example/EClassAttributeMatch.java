@@ -223,7 +223,6 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EClassAttributeMatch {
     Mutable(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
       super(pE, pAttr, pType);
@@ -236,8 +235,6 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EClassAttributeMatch {
     Immutable(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
       super(pE, pAttr, pType);
@@ -249,5 +246,4 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

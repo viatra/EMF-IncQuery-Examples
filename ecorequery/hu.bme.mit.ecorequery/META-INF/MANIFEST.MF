@@ -3,8 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ecorequery
 Bundle-SymbolicName: hu.bme.mit.ecorequery;singleton:=true
 Bundle-Version: 0.9.0.qualifier
-Export-Package: hu.bme.mit.incquery.ecorequeries.example,hu.bme.mit.in
- cquery.ecorequeries.example.util
+Export-Package: hu.bme.mit.incquery.ecorequeries.example,
+ hu.bme.mit.incquery.ecorequeries.example.util
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.transaction;visibility:=reexport,
  org.eclipse.incquery.runtime;bundle-version="0.7.0";visibility:=reexport,

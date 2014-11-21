@@ -171,7 +171,6 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EReferenceWithOneMultiplicityMatch {
     Mutable(final EReference pERef) {
       super(pERef);
@@ -184,8 +183,6 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EReferenceWithOneMultiplicityMatch {
     Immutable(final EReference pERef) {
       super(pERef);
@@ -197,5 +194,4 @@ public abstract class EReferenceWithOneMultiplicityMatch extends BasePatternMatc
       return false;
     }
   }
-  
 }

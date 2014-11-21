@@ -170,7 +170,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends ECoreNamedElementNameMatch {
     Mutable(final String pName) {
       super(pName);
@@ -183,8 +182,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends ECoreNamedElementNameMatch {
     Immutable(final String pName) {
       super(pName);
@@ -196,5 +193,4 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

@@ -171,7 +171,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends EObjectMatch {
     Mutable(final EObject pE) {
       super(pE);
@@ -184,8 +183,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends EObjectMatch {
     Immutable(final EObject pE) {
       super(pE);
@@ -197,5 +194,4 @@ public abstract class EObjectMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }

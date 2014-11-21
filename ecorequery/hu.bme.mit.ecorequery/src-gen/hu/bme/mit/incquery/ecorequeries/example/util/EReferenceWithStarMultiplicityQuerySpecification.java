@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedQuerySpecification;
+import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
@@ -25,7 +25,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
  * 
  */
 @SuppressWarnings("all")
-public final class EReferenceWithStarMultiplicityQuerySpecification extends BaseGeneratedQuerySpecification<EReferenceWithStarMultiplicityMatcher> {
+public final class EReferenceWithStarMultiplicityQuerySpecification extends BaseGeneratedEMFQuerySpecification<EReferenceWithStarMultiplicityMatcher> {
   /**
    * @return the singleton instance of the query specification
    * @throws IncQueryException if the pattern definition could not be loaded
@@ -89,7 +89,6 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
     return bodies;
   }
   
-  @SuppressWarnings("all")
   private static class LazyHolder {
     private final static EReferenceWithStarMultiplicityQuerySpecification INSTANCE = make();
     
@@ -98,5 +97,4 @@ public final class EReferenceWithStarMultiplicityQuerySpecification extends Base
       
     }
   }
-  
 }

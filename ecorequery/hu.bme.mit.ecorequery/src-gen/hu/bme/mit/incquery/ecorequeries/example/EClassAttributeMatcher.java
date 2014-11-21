@@ -16,7 +16,6 @@ import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.rete.misc.DeltaMonitor;
 import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
@@ -188,25 +187,6 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    */
   public boolean forOneArbitraryMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType, final IMatchProcessor<? super EClassAttributeMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pE, pAttr, pType}, processor);
-  }
-  
-  /**
-   * Registers a new filtered delta monitor on this pattern matcher.
-   * The DeltaMonitor can be used to track changes (delta) in the set of filtered pattern matches from now on, considering those matches only that conform to the given fixed values of some parameters.
-   * It can also be reset to track changes from a later point in time,
-   * and changes can even be acknowledged on an individual basis.
-   * See {@link DeltaMonitor} for details.
-   * @param fillAtStart if true, all current matches are reported as new match events; if false, the delta monitor starts empty.
-   * @param pE the fixed value of pattern parameter E, or null if not bound.
-   * @param pAttr the fixed value of pattern parameter Attr, or null if not bound.
-   * @param pType the fixed value of pattern parameter Type, or null if not bound.
-   * @return the delta monitor.
-   * @deprecated use the IncQuery Databinding API (IncQueryObservables) instead.
-   * 
-   */
-  @Deprecated
-  public DeltaMonitor<EClassAttributeMatch> newFilteredDeltaMonitor(final boolean fillAtStart, final EClass pE, final EAttribute pAttr, final EClassifier pType) {
-    return rawNewFilteredDeltaMonitor(fillAtStart, new Object[]{pE, pAttr, pType});
   }
   
   /**

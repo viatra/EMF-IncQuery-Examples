@@ -171,7 +171,6 @@ public abstract class IsEStringMatch extends BasePatternMatch {
     
   }
   
-  @SuppressWarnings("all")
   private static final class Mutable extends IsEStringMatch {
     Mutable(final EClassifier pElement) {
       super(pElement);
@@ -184,8 +183,6 @@ public abstract class IsEStringMatch extends BasePatternMatch {
     }
   }
   
-  
-  @SuppressWarnings("all")
   private static final class Immutable extends IsEStringMatch {
     Immutable(final EClassifier pElement) {
       super(pElement);
@@ -197,5 +194,4 @@ public abstract class IsEStringMatch extends BasePatternMatch {
       return false;
     }
   }
-  
 }
