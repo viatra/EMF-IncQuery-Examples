@@ -6,7 +6,6 @@ Bundle-Version: 0.9.0.qualifier
 Export-Package: hu.bme.mit.incquery.ecorequeries.example,
  hu.bme.mit.incquery.ecorequeries.example.util
 Require-Bundle: org.eclipse.emf.ecore,
- org.eclipse.emf.transaction;visibility:=reexport,
  org.eclipse.incquery.runtime;bundle-version="0.7.0";visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
