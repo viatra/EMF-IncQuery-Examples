@@ -22,6 +22,5 @@ public abstract class IsInECoreProcessor implements IMatchProcessor<IsInECoreMat
   @Override
   public void process(final IsInECoreMatch match) {
     process(match.getElement());
-    
   }
 }

@@ -63,15 +63,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<SampleQuery2Matcher> querySpecification() throws IncQueryException {
-    return SampleQuery2QuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -243,7 +234,6 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    */
   public SampleQuery2Match newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
     return SampleQuery2Match.newMatch(pXElement, pYElement, pRelates1, pRelates2, pLabel1, pLabel2);
-    
   }
   
   /**
@@ -281,7 +271,14 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EClass> getAllValuesOfXElement(final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return rawAccumulateAllValuesOfXElement(new Object[]{null, pYElement, pRelates1, pRelates2, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfXElement(new Object[]{
+    null, 
+    pYElement, 
+    pRelates1, 
+    pRelates2, 
+    pLabel1, 
+    pLabel2
+    });
   }
   
   /**
@@ -319,7 +316,14 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EClass> getAllValuesOfYElement(final EClass pXElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return rawAccumulateAllValuesOfYElement(new Object[]{pXElement, null, pRelates1, pRelates2, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfYElement(new Object[]{
+    pXElement, 
+    null, 
+    pRelates1, 
+    pRelates2, 
+    pLabel1, 
+    pLabel2
+    });
   }
   
   /**
@@ -357,7 +361,14 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EReference> getAllValuesOfRelates1(final EClass pXElement, final EClass pYElement, final EReference pRelates2, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return rawAccumulateAllValuesOfRelates1(new Object[]{pXElement, pYElement, null, pRelates2, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfRelates1(new Object[]{
+    pXElement, 
+    pYElement, 
+    null, 
+    pRelates2, 
+    pLabel1, 
+    pLabel2
+    });
   }
   
   /**
@@ -395,7 +406,14 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EReference> getAllValuesOfRelates2(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EAttribute pLabel1, final EAttribute pLabel2) {
-    return rawAccumulateAllValuesOfRelates2(new Object[]{pXElement, pYElement, pRelates1, null, pLabel1, pLabel2});
+    return rawAccumulateAllValuesOfRelates2(new Object[]{
+    pXElement, 
+    pYElement, 
+    pRelates1, 
+    null, 
+    pLabel1, 
+    pLabel2
+    });
   }
   
   /**
@@ -433,7 +451,14 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EAttribute> getAllValuesOfLabel1(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel2) {
-    return rawAccumulateAllValuesOfLabel1(new Object[]{pXElement, pYElement, pRelates1, pRelates2, null, pLabel2});
+    return rawAccumulateAllValuesOfLabel1(new Object[]{
+    pXElement, 
+    pYElement, 
+    pRelates1, 
+    pRelates2, 
+    null, 
+    pLabel2
+    });
   }
   
   /**
@@ -471,39 +496,52 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * 
    */
   public Set<EAttribute> getAllValuesOfLabel2(final EClass pXElement, final EClass pYElement, final EReference pRelates1, final EReference pRelates2, final EAttribute pLabel1) {
-    return rawAccumulateAllValuesOfLabel2(new Object[]{pXElement, pYElement, pRelates1, pRelates2, pLabel1, null});
+    return rawAccumulateAllValuesOfLabel2(new Object[]{
+    pXElement, 
+    pYElement, 
+    pRelates1, 
+    pRelates2, 
+    pLabel1, 
+    null
+    });
   }
   
   @Override
   protected SampleQuery2Match tupleToMatch(final Tuple t) {
     try {
-      return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES1), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES2), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
+    	return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES1), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES2), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SampleQuery2Match arrayToMatch(final Object[] match) {
     try {
-      return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    	return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SampleQuery2Match arrayToMatchMutable(final Object[] match) {
     try {
-      return SampleQuery2Match.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    	return SampleQuery2Match.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<SampleQuery2Matcher> querySpecification() throws IncQueryException {
+    return SampleQuery2QuerySpecification.instance();
   }
 }

@@ -21,6 +21,5 @@ public abstract class EClassNameProcessor implements IMatchProcessor<EClassNameM
   @Override
   public void process(final EClassNameMatch match) {
     process(match.getEName());
-    
   }
 }

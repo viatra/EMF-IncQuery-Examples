@@ -21,6 +21,5 @@ public abstract class ECoreNamedElementNameProcessor implements IMatchProcessor<
   @Override
   public void process(final ECoreNamedElementNameMatch match) {
     process(match.getName());
-    
   }
 }

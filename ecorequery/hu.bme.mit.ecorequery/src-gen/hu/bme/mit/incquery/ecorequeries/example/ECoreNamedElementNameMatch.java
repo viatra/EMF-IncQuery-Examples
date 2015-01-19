@@ -28,19 +28,16 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   
   private ECoreNamedElementNameMatch(final String pName) {
     this.fName = pName;
-    
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("Name".equals(parameterName)) return this.fName;
     return null;
-    
   }
   
   public String getName() {
     return this.fName;
-    
   }
   
   @Override
@@ -51,45 +48,39 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setName(final String pName) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fName = pName;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return ECoreNamedElementNameMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fName};
-    
   }
   
   @Override
   public ECoreNamedElementNameMatch toImmutable() {
     return isMutable() ? newMatch(fName) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"Name\"=" + prettyPrintValue(fName));
+    result.append("\"Name\"=" + prettyPrintValue(fName)
+    );
     return result.toString();
-    
   }
   
   @Override
@@ -98,7 +89,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     int result = 1;
     result = prime * result + ((fName == null) ? 0 : fName.hashCode());
     return result;
-    
   }
   
   @Override
@@ -106,10 +96,12 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof ECoreNamedElementNameMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -127,9 +119,8 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
     	return ECoreNamedElementNameQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -141,7 +132,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
    */
   public static ECoreNamedElementNameMatch newEmptyMatch() {
     return new Mutable(null);
-    
   }
   
   /**
@@ -154,7 +144,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
    */
   public static ECoreNamedElementNameMatch newMutableMatch(final String pName) {
     return new Mutable(pName);
-    
   }
   
   /**
@@ -167,13 +156,11 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
    */
   public static ECoreNamedElementNameMatch newMatch(final String pName) {
     return new Immutable(pName);
-    
   }
   
   private static final class Mutable extends ECoreNamedElementNameMatch {
     Mutable(final String pName) {
       super(pName);
-      
     }
     
     @Override
@@ -185,7 +172,6 @@ public abstract class ECoreNamedElementNameMatch extends BasePatternMatch {
   private static final class Immutable extends ECoreNamedElementNameMatch {
     Immutable(final String pName) {
       super(pName);
-      
     }
     
     @Override

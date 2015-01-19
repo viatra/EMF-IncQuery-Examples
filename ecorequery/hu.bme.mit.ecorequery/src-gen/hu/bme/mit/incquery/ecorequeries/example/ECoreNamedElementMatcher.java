@@ -44,15 +44,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<ECoreNamedElementMatcher> querySpecification() throws IncQueryException {
-    return ECoreNamedElementQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -188,7 +179,6 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
    */
   public ECoreNamedElementMatch newMatch(final ENamedElement pElement, final String pName) {
     return ECoreNamedElementMatch.newMatch(pElement, pName);
-    
   }
   
   /**
@@ -226,7 +216,10 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
    * 
    */
   public Set<ENamedElement> getAllValuesOfElement(final String pName) {
-    return rawAccumulateAllValuesOfElement(new Object[]{null, pName});
+    return rawAccumulateAllValuesOfElement(new Object[]{
+    null, 
+    pName
+    });
   }
   
   /**
@@ -264,39 +257,48 @@ public class ECoreNamedElementMatcher extends BaseMatcher<ECoreNamedElementMatch
    * 
    */
   public Set<String> getAllValuesOfName(final ENamedElement pElement) {
-    return rawAccumulateAllValuesOfName(new Object[]{pElement, null});
+    return rawAccumulateAllValuesOfName(new Object[]{
+    pElement, 
+    null
+    });
   }
   
   @Override
   protected ECoreNamedElementMatch tupleToMatch(final Tuple t) {
     try {
-      return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));
+    	return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) t.get(POSITION_ELEMENT), (java.lang.String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected ECoreNamedElementMatch arrayToMatch(final Object[] match) {
     try {
-      return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+    	return ECoreNamedElementMatch.newMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected ECoreNamedElementMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return ECoreNamedElementMatch.newMutableMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
+    	return ECoreNamedElementMatch.newMutableMatch((org.eclipse.emf.ecore.ENamedElement) match[POSITION_ELEMENT], (java.lang.String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<ECoreNamedElementMatcher> querySpecification() throws IncQueryException {
+    return ECoreNamedElementQuerySpecification.instance();
   }
 }

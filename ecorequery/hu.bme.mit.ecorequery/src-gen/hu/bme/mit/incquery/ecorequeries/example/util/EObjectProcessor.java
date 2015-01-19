@@ -22,6 +22,5 @@ public abstract class EObjectProcessor implements IMatchProcessor<EObjectMatch> 
   @Override
   public void process(final EObjectMatch match) {
     process(match.getE());
-    
   }
 }

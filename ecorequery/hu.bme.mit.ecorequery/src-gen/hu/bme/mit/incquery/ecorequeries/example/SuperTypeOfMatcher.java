@@ -44,15 +44,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<SuperTypeOfMatcher> querySpecification() throws IncQueryException {
-    return SuperTypeOfQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -188,7 +179,6 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
    */
   public SuperTypeOfMatch newMatch(final EClass pSuper, final EClass pSub) {
     return SuperTypeOfMatch.newMatch(pSuper, pSub);
-    
   }
   
   /**
@@ -226,7 +216,10 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
    * 
    */
   public Set<EClass> getAllValuesOfSuper(final EClass pSub) {
-    return rawAccumulateAllValuesOfSuper(new Object[]{null, pSub});
+    return rawAccumulateAllValuesOfSuper(new Object[]{
+    null, 
+    pSub
+    });
   }
   
   /**
@@ -264,39 +257,48 @@ public class SuperTypeOfMatcher extends BaseMatcher<SuperTypeOfMatch> {
    * 
    */
   public Set<EClass> getAllValuesOfSub(final EClass pSuper) {
-    return rawAccumulateAllValuesOfSub(new Object[]{pSuper, null});
+    return rawAccumulateAllValuesOfSub(new Object[]{
+    pSuper, 
+    null
+    });
   }
   
   @Override
   protected SuperTypeOfMatch tupleToMatch(final Tuple t) {
     try {
-      return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));
+    	return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_SUPER), (org.eclipse.emf.ecore.EClass) t.get(POSITION_SUB));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SuperTypeOfMatch arrayToMatch(final Object[] match) {
     try {
-      return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+    	return SuperTypeOfMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SuperTypeOfMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return SuperTypeOfMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
+    	return SuperTypeOfMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_SUPER], (org.eclipse.emf.ecore.EClass) match[POSITION_SUB]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<SuperTypeOfMatcher> querySpecification() throws IncQueryException {
+    return SuperTypeOfQuerySpecification.instance();
   }
 }

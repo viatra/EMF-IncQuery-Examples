@@ -41,15 +41,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<EReferenceWithStarMultiplicityNameMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EReferenceWithStarMultiplicityNameMatcher> querySpecification() throws IncQueryException {
-    return EReferenceWithStarMultiplicityNameQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -176,7 +167,6 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    */
   public EReferenceWithStarMultiplicityNameMatch newMatch(final String pERefName) {
     return EReferenceWithStarMultiplicityNameMatch.newMatch(pERefName);
-    
   }
   
   /**
@@ -202,33 +192,39 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-      return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) t.get(POSITION_EREFNAME));
+    	return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) t.get(POSITION_EREFNAME));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-      return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) match[POSITION_EREFNAME]);
+    	return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return EReferenceWithStarMultiplicityNameMatch.newMutableMatch((java.lang.String) match[POSITION_EREFNAME]);
+    	return EReferenceWithStarMultiplicityNameMatch.newMutableMatch((java.lang.String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EReferenceWithStarMultiplicityNameMatcher> querySpecification() throws IncQueryException {
+    return EReferenceWithStarMultiplicityNameQuerySpecification.instance();
   }
 }

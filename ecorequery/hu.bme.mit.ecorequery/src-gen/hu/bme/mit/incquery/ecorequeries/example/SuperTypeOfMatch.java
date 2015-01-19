@@ -32,7 +32,6 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   private SuperTypeOfMatch(final EClass pSuper, final EClass pSub) {
     this.fSuper = pSuper;
     this.fSub = pSub;
-    
   }
   
   @Override
@@ -40,17 +39,14 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     if ("Super".equals(parameterName)) return this.fSuper;
     if ("Sub".equals(parameterName)) return this.fSub;
     return null;
-    
   }
   
   public EClass getSuper() {
     return this.fSuper;
-    
   }
   
   public EClass getSub() {
     return this.fSub;
-    
   }
   
   @Override
@@ -65,52 +61,46 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setSuper(final EClass pSuper) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSuper = pSuper;
-    
   }
   
   public void setSub(final EClass pSub) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSub = pSub;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return SuperTypeOfMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fSuper, fSub};
-    
   }
   
   @Override
   public SuperTypeOfMatch toImmutable() {
     return isMutable() ? newMatch(fSuper, fSub) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"Super\"=" + prettyPrintValue(fSuper) + ", ");
-    result.append("\"Sub\"=" + prettyPrintValue(fSub));
-    return result.toString();
     
+    result.append("\"Sub\"=" + prettyPrintValue(fSub)
+    );
+    return result.toString();
   }
   
   @Override
@@ -120,7 +110,6 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     result = prime * result + ((fSuper == null) ? 0 : fSuper.hashCode());
     result = prime * result + ((fSub == null) ? 0 : fSub.hashCode());
     return result;
-    
   }
   
   @Override
@@ -128,10 +117,12 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof SuperTypeOfMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -151,9 +142,8 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
     	return SuperTypeOfQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -165,7 +155,6 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
    */
   public static SuperTypeOfMatch newEmptyMatch() {
     return new Mutable(null, null);
-    
   }
   
   /**
@@ -179,7 +168,6 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
    */
   public static SuperTypeOfMatch newMutableMatch(final EClass pSuper, final EClass pSub) {
     return new Mutable(pSuper, pSub);
-    
   }
   
   /**
@@ -193,13 +181,11 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
    */
   public static SuperTypeOfMatch newMatch(final EClass pSuper, final EClass pSub) {
     return new Immutable(pSuper, pSub);
-    
   }
   
   private static final class Mutable extends SuperTypeOfMatch {
     Mutable(final EClass pSuper, final EClass pSub) {
       super(pSuper, pSub);
-      
     }
     
     @Override
@@ -211,7 +197,6 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   private static final class Immutable extends SuperTypeOfMatch {
     Immutable(final EClass pSuper, final EClass pSub) {
       super(pSuper, pSub);
-      
     }
     
     @Override

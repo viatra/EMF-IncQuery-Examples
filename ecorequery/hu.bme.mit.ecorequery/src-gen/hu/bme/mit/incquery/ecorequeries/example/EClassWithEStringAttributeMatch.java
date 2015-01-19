@@ -33,7 +33,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   private EClassWithEStringAttributeMatch(final EClass pE, final EAttribute pAttr) {
     this.fE = pE;
     this.fAttr = pAttr;
-    
   }
   
   @Override
@@ -41,17 +40,14 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     if ("E".equals(parameterName)) return this.fE;
     if ("Attr".equals(parameterName)) return this.fAttr;
     return null;
-    
   }
   
   public EClass getE() {
     return this.fE;
-    
   }
   
   public EAttribute getAttr() {
     return this.fAttr;
-    
   }
   
   @Override
@@ -66,52 +62,46 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setE(final EClass pE) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
-    
   }
   
   public void setAttr(final EAttribute pAttr) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fAttr = pAttr;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.EClassWithEStringAttribute";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return EClassWithEStringAttributeMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fE, fAttr};
-    
   }
   
   @Override
   public EClassWithEStringAttributeMatch toImmutable() {
     return isMutable() ? newMatch(fE, fAttr) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"E\"=" + prettyPrintValue(fE) + ", ");
-    result.append("\"Attr\"=" + prettyPrintValue(fAttr));
-    return result.toString();
     
+    result.append("\"Attr\"=" + prettyPrintValue(fAttr)
+    );
+    return result.toString();
   }
   
   @Override
@@ -121,7 +111,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     result = prime * result + ((fE == null) ? 0 : fE.hashCode());
     result = prime * result + ((fAttr == null) ? 0 : fAttr.hashCode());
     return result;
-    
   }
   
   @Override
@@ -129,10 +118,12 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof EClassWithEStringAttributeMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -152,9 +143,8 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
     	return EClassWithEStringAttributeQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -166,7 +156,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
    */
   public static EClassWithEStringAttributeMatch newEmptyMatch() {
     return new Mutable(null, null);
-    
   }
   
   /**
@@ -180,7 +169,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
    */
   public static EClassWithEStringAttributeMatch newMutableMatch(final EClass pE, final EAttribute pAttr) {
     return new Mutable(pE, pAttr);
-    
   }
   
   /**
@@ -194,13 +182,11 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
    */
   public static EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
     return new Immutable(pE, pAttr);
-    
   }
   
   private static final class Mutable extends EClassWithEStringAttributeMatch {
     Mutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
-      
     }
     
     @Override
@@ -212,7 +198,6 @@ public abstract class EClassWithEStringAttributeMatch extends BasePatternMatch {
   private static final class Immutable extends EClassWithEStringAttributeMatch {
     Immutable(final EClass pE, final EAttribute pAttr) {
       super(pE, pAttr);
-      
     }
     
     @Override

@@ -43,15 +43,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class EClassMatcher extends BaseMatcher<EClassMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EClassMatcher> querySpecification() throws IncQueryException {
-    return EClassQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -178,7 +169,6 @@ public class EClassMatcher extends BaseMatcher<EClassMatch> {
    */
   public EClassMatch newMatch(final EClass pEClass) {
     return EClassMatch.newMatch(pEClass);
-    
   }
   
   /**
@@ -204,33 +194,39 @@ public class EClassMatcher extends BaseMatcher<EClassMatch> {
   @Override
   protected EClassMatch tupleToMatch(final Tuple t) {
     try {
-      return EClassMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_ECLASS));
+    	return EClassMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_ECLASS));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassMatch arrayToMatch(final Object[] match) {
     try {
-      return EClassMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_ECLASS]);
+    	return EClassMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_ECLASS]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return EClassMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_ECLASS]);
+    	return EClassMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_ECLASS]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EClassMatcher> querySpecification() throws IncQueryException {
+    return EClassQuerySpecification.instance();
   }
 }

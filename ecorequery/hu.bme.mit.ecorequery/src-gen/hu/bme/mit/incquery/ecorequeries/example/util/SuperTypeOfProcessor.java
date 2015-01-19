@@ -23,6 +23,5 @@ public abstract class SuperTypeOfProcessor implements IMatchProcessor<SuperTypeO
   @Override
   public void process(final SuperTypeOfMatch match) {
     process(match.getSuper(), match.getSub());
-    
   }
 }

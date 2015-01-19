@@ -22,6 +22,5 @@ public abstract class SuperTypeOfNameProcessor implements IMatchProcessor<SuperT
   @Override
   public void process(final SuperTypeOfNameMatch match) {
     process(match.getSuperName(), match.getSubName());
-    
   }
 }

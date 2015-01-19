@@ -21,6 +21,5 @@ public abstract class EReferenceWithOneMultiplicityNameProcessor implements IMat
   @Override
   public void process(final EReferenceWithOneMultiplicityNameMatch match) {
     process(match.getERefName());
-    
   }
 }

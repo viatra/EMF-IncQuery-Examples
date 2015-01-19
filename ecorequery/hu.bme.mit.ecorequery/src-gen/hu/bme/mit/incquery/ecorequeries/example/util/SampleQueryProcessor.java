@@ -28,6 +28,5 @@ public abstract class SampleQueryProcessor implements IMatchProcessor<SampleQuer
   @Override
   public void process(final SampleQueryMatch match) {
     process(match.getXElement(), match.getYElement(), match.getRelates(), match.getLabel1(), match.getLabel2());
-    
   }
 }

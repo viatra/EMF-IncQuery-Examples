@@ -31,7 +31,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
   private SuperTypeOfNameMatch(final String pSuperName, final String pSubName) {
     this.fSuperName = pSuperName;
     this.fSubName = pSubName;
-    
   }
   
   @Override
@@ -39,17 +38,14 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     if ("SuperName".equals(parameterName)) return this.fSuperName;
     if ("SubName".equals(parameterName)) return this.fSubName;
     return null;
-    
   }
   
   public String getSuperName() {
     return this.fSuperName;
-    
   }
   
   public String getSubName() {
     return this.fSubName;
-    
   }
   
   @Override
@@ -64,52 +60,46 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setSuperName(final String pSuperName) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSuperName = pSuperName;
-    
   }
   
   public void setSubName(final String pSubName) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fSubName = pSubName;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.SuperTypeOfName";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return SuperTypeOfNameMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fSuperName, fSubName};
-    
   }
   
   @Override
   public SuperTypeOfNameMatch toImmutable() {
     return isMutable() ? newMatch(fSuperName, fSubName) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"SuperName\"=" + prettyPrintValue(fSuperName) + ", ");
-    result.append("\"SubName\"=" + prettyPrintValue(fSubName));
-    return result.toString();
     
+    result.append("\"SubName\"=" + prettyPrintValue(fSubName)
+    );
+    return result.toString();
   }
   
   @Override
@@ -119,7 +109,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     result = prime * result + ((fSuperName == null) ? 0 : fSuperName.hashCode());
     result = prime * result + ((fSubName == null) ? 0 : fSubName.hashCode());
     return result;
-    
   }
   
   @Override
@@ -127,10 +116,12 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof SuperTypeOfNameMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -150,9 +141,8 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
     	return SuperTypeOfNameQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -164,7 +154,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
    */
   public static SuperTypeOfNameMatch newEmptyMatch() {
     return new Mutable(null, null);
-    
   }
   
   /**
@@ -178,7 +167,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
    */
   public static SuperTypeOfNameMatch newMutableMatch(final String pSuperName, final String pSubName) {
     return new Mutable(pSuperName, pSubName);
-    
   }
   
   /**
@@ -192,13 +180,11 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
    */
   public static SuperTypeOfNameMatch newMatch(final String pSuperName, final String pSubName) {
     return new Immutable(pSuperName, pSubName);
-    
   }
   
   private static final class Mutable extends SuperTypeOfNameMatch {
     Mutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);
-      
     }
     
     @Override
@@ -210,7 +196,6 @@ public abstract class SuperTypeOfNameMatch extends BasePatternMatch {
   private static final class Immutable extends SuperTypeOfNameMatch {
     Immutable(final String pSuperName, final String pSubName) {
       super(pSuperName, pSubName);
-      
     }
     
     @Override

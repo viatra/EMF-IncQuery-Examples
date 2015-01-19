@@ -22,6 +22,5 @@ public abstract class EReferenceWithOneMultiplicityProcessor implements IMatchPr
   @Override
   public void process(final EReferenceWithOneMultiplicityMatch match) {
     process(match.getERef());
-    
   }
 }

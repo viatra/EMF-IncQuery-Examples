@@ -24,6 +24,5 @@ public abstract class EClassWithEStringAttributeProcessor implements IMatchProce
   @Override
   public void process(final EClassWithEStringAttributeMatch match) {
     process(match.getE(), match.getAttr());
-    
   }
 }

@@ -41,15 +41,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<SuperTypeOfNameMatcher> querySpecification() throws IncQueryException {
-    return SuperTypeOfNameQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -185,7 +176,6 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
    */
   public SuperTypeOfNameMatch newMatch(final String pSuperName, final String pSubName) {
     return SuperTypeOfNameMatch.newMatch(pSuperName, pSubName);
-    
   }
   
   /**
@@ -223,7 +213,10 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
    * 
    */
   public Set<String> getAllValuesOfSuperName(final String pSubName) {
-    return rawAccumulateAllValuesOfSuperName(new Object[]{null, pSubName});
+    return rawAccumulateAllValuesOfSuperName(new Object[]{
+    null, 
+    pSubName
+    });
   }
   
   /**
@@ -261,39 +254,48 @@ public class SuperTypeOfNameMatcher extends BaseMatcher<SuperTypeOfNameMatch> {
    * 
    */
   public Set<String> getAllValuesOfSubName(final String pSuperName) {
-    return rawAccumulateAllValuesOfSubName(new Object[]{pSuperName, null});
+    return rawAccumulateAllValuesOfSubName(new Object[]{
+    pSuperName, 
+    null
+    });
   }
   
   @Override
   protected SuperTypeOfNameMatch tupleToMatch(final Tuple t) {
     try {
-      return SuperTypeOfNameMatch.newMatch((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));
+    	return SuperTypeOfNameMatch.newMatch((java.lang.String) t.get(POSITION_SUPERNAME), (java.lang.String) t.get(POSITION_SUBNAME));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SuperTypeOfNameMatch arrayToMatch(final Object[] match) {
     try {
-      return SuperTypeOfNameMatch.newMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+    	return SuperTypeOfNameMatch.newMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected SuperTypeOfNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return SuperTypeOfNameMatch.newMutableMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
+    	return SuperTypeOfNameMatch.newMutableMatch((java.lang.String) match[POSITION_SUPERNAME], (java.lang.String) match[POSITION_SUBNAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<SuperTypeOfNameMatcher> querySpecification() throws IncQueryException {
+    return SuperTypeOfNameQuerySpecification.instance();
   }
 }

@@ -43,7 +43,6 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     this.fRelates = pRelates;
     this.fLabel1 = pLabel1;
     this.fLabel2 = pLabel2;
-    
   }
   
   @Override
@@ -54,32 +53,26 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     if ("Label1".equals(parameterName)) return this.fLabel1;
     if ("Label2".equals(parameterName)) return this.fLabel2;
     return null;
-    
   }
   
   public EClass getXElement() {
     return this.fXElement;
-    
   }
   
   public EClass getYElement() {
     return this.fYElement;
-    
   }
   
   public EReference getRelates() {
     return this.fRelates;
-    
   }
   
   public EAttribute getLabel1() {
     return this.fLabel1;
-    
   }
   
   public EAttribute getLabel2() {
     return this.fLabel2;
-    
   }
   
   @Override
@@ -106,73 +99,67 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setXElement(final EClass pXElement) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fXElement = pXElement;
-    
   }
   
   public void setYElement(final EClass pYElement) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fYElement = pYElement;
-    
   }
   
   public void setRelates(final EReference pRelates) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fRelates = pRelates;
-    
   }
   
   public void setLabel1(final EAttribute pLabel1) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fLabel1 = pLabel1;
-    
   }
   
   public void setLabel2(final EAttribute pLabel2) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fLabel2 = pLabel2;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.SampleQuery";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return SampleQueryMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fXElement, fYElement, fRelates, fLabel1, fLabel2};
-    
   }
   
   @Override
   public SampleQueryMatch toImmutable() {
     return isMutable() ? newMatch(fXElement, fYElement, fRelates, fLabel1, fLabel2) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
     result.append("\"XElement\"=" + prettyPrintValue(fXElement) + ", ");
-    result.append("\"YElement\"=" + prettyPrintValue(fYElement) + ", ");
-    result.append("\"Relates\"=" + prettyPrintValue(fRelates) + ", ");
-    result.append("\"Label1\"=" + prettyPrintValue(fLabel1) + ", ");
-    result.append("\"Label2\"=" + prettyPrintValue(fLabel2));
-    return result.toString();
     
+    result.append("\"YElement\"=" + prettyPrintValue(fYElement) + ", ");
+    
+    result.append("\"Relates\"=" + prettyPrintValue(fRelates) + ", ");
+    
+    result.append("\"Label1\"=" + prettyPrintValue(fLabel1) + ", ");
+    
+    result.append("\"Label2\"=" + prettyPrintValue(fLabel2)
+    );
+    return result.toString();
   }
   
   @Override
@@ -185,7 +172,6 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     result = prime * result + ((fLabel1 == null) ? 0 : fLabel1.hashCode());
     result = prime * result + ((fLabel2 == null) ? 0 : fLabel2.hashCode());
     return result;
-    
   }
   
   @Override
@@ -193,10 +179,12 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof SampleQueryMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -222,9 +210,8 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
     	return SampleQueryQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -236,7 +223,6 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
    */
   public static SampleQueryMatch newEmptyMatch() {
     return new Mutable(null, null, null, null, null);
-    
   }
   
   /**
@@ -253,7 +239,6 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
    */
   public static SampleQueryMatch newMutableMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
     return new Mutable(pXElement, pYElement, pRelates, pLabel1, pLabel2);
-    
   }
   
   /**
@@ -270,13 +255,11 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
    */
   public static SampleQueryMatch newMatch(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
     return new Immutable(pXElement, pYElement, pRelates, pLabel1, pLabel2);
-    
   }
   
   private static final class Mutable extends SampleQueryMatch {
     Mutable(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates, pLabel1, pLabel2);
-      
     }
     
     @Override
@@ -288,7 +271,6 @@ public abstract class SampleQueryMatch extends BasePatternMatch {
   private static final class Immutable extends SampleQueryMatch {
     Immutable(final EClass pXElement, final EClass pYElement, final EReference pRelates, final EAttribute pLabel1, final EAttribute pLabel2) {
       super(pXElement, pYElement, pRelates, pLabel1, pLabel2);
-      
     }
     
     @Override

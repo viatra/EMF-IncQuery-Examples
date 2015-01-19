@@ -22,6 +22,5 @@ public abstract class IsEStringProcessor implements IMatchProcessor<IsEStringMat
   @Override
   public void process(final IsEStringMatch match) {
     process(match.getElement());
-    
   }
 }

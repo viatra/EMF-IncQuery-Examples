@@ -29,19 +29,16 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
   
   private EReferenceWithStarMultiplicityMatch(final EReference pERef) {
     this.fERef = pERef;
-    
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("ERef".equals(parameterName)) return this.fERef;
     return null;
-    
   }
   
   public EReference getERef() {
     return this.fERef;
-    
   }
   
   @Override
@@ -52,45 +49,39 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
     	return true;
     }
     return false;
-    
   }
   
   public void setERef(final EReference pERef) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fERef = pERef;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicity";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return EReferenceWithStarMultiplicityMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fERef};
-    
   }
   
   @Override
   public EReferenceWithStarMultiplicityMatch toImmutable() {
     return isMutable() ? newMatch(fERef) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"ERef\"=" + prettyPrintValue(fERef));
+    result.append("\"ERef\"=" + prettyPrintValue(fERef)
+    );
     return result.toString();
-    
   }
   
   @Override
@@ -99,7 +90,6 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
     int result = 1;
     result = prime * result + ((fERef == null) ? 0 : fERef.hashCode());
     return result;
-    
   }
   
   @Override
@@ -107,10 +97,12 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
     if (this == obj)
     	return true;
     if (!(obj instanceof EReferenceWithStarMultiplicityMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -128,9 +120,8 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
     	return EReferenceWithStarMultiplicityQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -142,7 +133,6 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
    */
   public static EReferenceWithStarMultiplicityMatch newEmptyMatch() {
     return new Mutable(null);
-    
   }
   
   /**
@@ -155,7 +145,6 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
    */
   public static EReferenceWithStarMultiplicityMatch newMutableMatch(final EReference pERef) {
     return new Mutable(pERef);
-    
   }
   
   /**
@@ -168,13 +157,11 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
    */
   public static EReferenceWithStarMultiplicityMatch newMatch(final EReference pERef) {
     return new Immutable(pERef);
-    
   }
   
   private static final class Mutable extends EReferenceWithStarMultiplicityMatch {
     Mutable(final EReference pERef) {
       super(pERef);
-      
     }
     
     @Override
@@ -186,7 +173,6 @@ public abstract class EReferenceWithStarMultiplicityMatch extends BasePatternMat
   private static final class Immutable extends EReferenceWithStarMultiplicityMatch {
     Immutable(final EReference pERef) {
       super(pERef);
-      
     }
     
     @Override

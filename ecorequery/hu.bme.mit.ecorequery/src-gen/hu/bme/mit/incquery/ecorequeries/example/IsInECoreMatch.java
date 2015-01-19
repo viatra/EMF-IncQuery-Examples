@@ -29,19 +29,16 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
   
   private IsInECoreMatch(final EClassifier pElement) {
     this.fElement = pElement;
-    
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("Element".equals(parameterName)) return this.fElement;
     return null;
-    
   }
   
   public EClassifier getElement() {
     return this.fElement;
-    
   }
   
   @Override
@@ -52,45 +49,39 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setElement(final EClassifier pElement) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fElement = pElement;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.IsInECore";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return IsInECoreMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fElement};
-    
   }
   
   @Override
   public IsInECoreMatch toImmutable() {
     return isMutable() ? newMatch(fElement) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"Element\"=" + prettyPrintValue(fElement));
+    result.append("\"Element\"=" + prettyPrintValue(fElement)
+    );
     return result.toString();
-    
   }
   
   @Override
@@ -99,7 +90,6 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     int result = 1;
     result = prime * result + ((fElement == null) ? 0 : fElement.hashCode());
     return result;
-    
   }
   
   @Override
@@ -107,10 +97,12 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof IsInECoreMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -128,9 +120,8 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
     	return IsInECoreQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -142,7 +133,6 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
    */
   public static IsInECoreMatch newEmptyMatch() {
     return new Mutable(null);
-    
   }
   
   /**
@@ -155,7 +145,6 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
    */
   public static IsInECoreMatch newMutableMatch(final EClassifier pElement) {
     return new Mutable(pElement);
-    
   }
   
   /**
@@ -168,13 +157,11 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
    */
   public static IsInECoreMatch newMatch(final EClassifier pElement) {
     return new Immutable(pElement);
-    
   }
   
   private static final class Mutable extends IsInECoreMatch {
     Mutable(final EClassifier pElement) {
       super(pElement);
-      
     }
     
     @Override
@@ -186,7 +173,6 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
   private static final class Immutable extends IsInECoreMatch {
     Immutable(final EClassifier pElement) {
       super(pElement);
-      
     }
     
     @Override

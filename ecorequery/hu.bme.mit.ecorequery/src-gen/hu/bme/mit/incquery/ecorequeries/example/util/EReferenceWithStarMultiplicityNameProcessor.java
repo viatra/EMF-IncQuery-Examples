@@ -21,6 +21,5 @@ public abstract class EReferenceWithStarMultiplicityNameProcessor implements IMa
   @Override
   public void process(final EReferenceWithStarMultiplicityNameMatch match) {
     process(match.getERefName());
-    
   }
 }

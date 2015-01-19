@@ -48,15 +48,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EClassAttributeMatcher> querySpecification() throws IncQueryException {
-    return EClassAttributeQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -201,7 +192,6 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    */
   public EClassAttributeMatch newMatch(final EClass pE, final EAttribute pAttr, final EClassifier pType) {
     return EClassAttributeMatch.newMatch(pE, pAttr, pType);
-    
   }
   
   /**
@@ -239,7 +229,11 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    * 
    */
   public Set<EClass> getAllValuesOfE(final EAttribute pAttr, final EClassifier pType) {
-    return rawAccumulateAllValuesOfE(new Object[]{null, pAttr, pType});
+    return rawAccumulateAllValuesOfE(new Object[]{
+    null, 
+    pAttr, 
+    pType
+    });
   }
   
   /**
@@ -277,7 +271,11 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    * 
    */
   public Set<EAttribute> getAllValuesOfAttr(final EClass pE, final EClassifier pType) {
-    return rawAccumulateAllValuesOfAttr(new Object[]{pE, null, pType});
+    return rawAccumulateAllValuesOfAttr(new Object[]{
+    pE, 
+    null, 
+    pType
+    });
   }
   
   /**
@@ -315,39 +313,49 @@ public class EClassAttributeMatcher extends BaseMatcher<EClassAttributeMatch> {
    * 
    */
   public Set<EClassifier> getAllValuesOfType(final EClass pE, final EAttribute pAttr) {
-    return rawAccumulateAllValuesOfType(new Object[]{pE, pAttr, null});
+    return rawAccumulateAllValuesOfType(new Object[]{
+    pE, 
+    pAttr, 
+    null
+    });
   }
   
   @Override
   protected EClassAttributeMatch tupleToMatch(final Tuple t) {
     try {
-      return EClassAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));
+    	return EClassAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR), (org.eclipse.emf.ecore.EClassifier) t.get(POSITION_TYPE));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassAttributeMatch arrayToMatch(final Object[] match) {
     try {
-      return EClassAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
+    	return EClassAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassAttributeMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return EClassAttributeMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
+    	return EClassAttributeMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR], (org.eclipse.emf.ecore.EClassifier) match[POSITION_TYPE]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EClassAttributeMatcher> querySpecification() throws IncQueryException {
+    return EClassAttributeQuerySpecification.instance();
   }
 }

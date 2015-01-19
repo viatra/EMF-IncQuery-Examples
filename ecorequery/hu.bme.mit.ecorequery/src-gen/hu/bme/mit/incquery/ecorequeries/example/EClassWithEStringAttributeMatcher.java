@@ -46,15 +46,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithEStringAttributeMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EClassWithEStringAttributeMatcher> querySpecification() throws IncQueryException {
-    return EClassWithEStringAttributeQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -190,7 +181,6 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
    */
   public EClassWithEStringAttributeMatch newMatch(final EClass pE, final EAttribute pAttr) {
     return EClassWithEStringAttributeMatch.newMatch(pE, pAttr);
-    
   }
   
   /**
@@ -228,7 +218,10 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
    * 
    */
   public Set<EClass> getAllValuesOfE(final EAttribute pAttr) {
-    return rawAccumulateAllValuesOfE(new Object[]{null, pAttr});
+    return rawAccumulateAllValuesOfE(new Object[]{
+    null, 
+    pAttr
+    });
   }
   
   /**
@@ -266,39 +259,48 @@ public class EClassWithEStringAttributeMatcher extends BaseMatcher<EClassWithESt
    * 
    */
   public Set<EAttribute> getAllValuesOfAttr(final EClass pE) {
-    return rawAccumulateAllValuesOfAttr(new Object[]{pE, null});
+    return rawAccumulateAllValuesOfAttr(new Object[]{
+    pE, 
+    null
+    });
   }
   
   @Override
   protected EClassWithEStringAttributeMatch tupleToMatch(final Tuple t) {
     try {
-      return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
+    	return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_E), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_ATTR));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatch(final Object[] match) {
     try {
-      return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    	return EClassWithEStringAttributeMatch.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassWithEStringAttributeMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return EClassWithEStringAttributeMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
+    	return EClassWithEStringAttributeMatch.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_E], (org.eclipse.emf.ecore.EAttribute) match[POSITION_ATTR]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EClassWithEStringAttributeMatcher> querySpecification() throws IncQueryException {
+    return EClassWithEStringAttributeQuerySpecification.instance();
   }
 }

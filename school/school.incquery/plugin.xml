@@ -5,16 +5,10 @@
   <extension id="school.SimpleSchoolQueries" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SimpleSchoolQueries" id="school.SimpleSchoolQueries"/>
   </extension>
-  <extension id="school.OclQueries" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.OclQueries" id="school.OclQueries"/>
-  </extension>
   <extension id="school.SchoolValidationRules" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.SchoolValidationRules" id="school.SchoolValidationRules"/>
   </extension>
   <extension id="school.RecursiveQueries" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
-  </extension>
-  <extension id="school.ProbaQueries" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:school.ProbaQueries" id="school.ProbaQueries"/>
   </extension>
 </plugin>

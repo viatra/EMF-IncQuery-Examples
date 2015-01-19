@@ -22,6 +22,5 @@ public abstract class EReferenceWithStarMultiplicityProcessor implements IMatchP
   @Override
   public void process(final EReferenceWithStarMultiplicityMatch match) {
     process(match.getERef());
-    
   }
 }

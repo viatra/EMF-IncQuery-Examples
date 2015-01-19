@@ -39,15 +39,6 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 @SuppressWarnings("all")
 public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   /**
-   * @return the singleton instance of the query specification of this pattern
-   * @throws IncQueryException if the pattern definition could not be loaded
-   * 
-   */
-  public static IQuerySpecification<EClassNameMatcher> querySpecification() throws IncQueryException {
-    return EClassNameQuerySpecification.instance();
-  }
-  
-  /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
    * The match set will be incrementally refreshed upon updates.
@@ -174,7 +165,6 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
    */
   public EClassNameMatch newMatch(final String pEName) {
     return EClassNameMatch.newMatch(pEName);
-    
   }
   
   /**
@@ -200,33 +190,39 @@ public class EClassNameMatcher extends BaseMatcher<EClassNameMatch> {
   @Override
   protected EClassNameMatch tupleToMatch(final Tuple t) {
     try {
-      return EClassNameMatch.newMatch((java.lang.String) t.get(POSITION_ENAME));
+    	return EClassNameMatch.newMatch((java.lang.String) t.get(POSITION_ENAME));
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in tuple not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in tuple not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassNameMatch arrayToMatch(final Object[] match) {
     try {
-      return EClassNameMatch.newMatch((java.lang.String) match[POSITION_ENAME]);
+    	return EClassNameMatch.newMatch((java.lang.String) match[POSITION_ENAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
   }
   
   @Override
   protected EClassNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-      return EClassNameMatch.newMutableMatch((java.lang.String) match[POSITION_ENAME]);
+    	return EClassNameMatch.newMutableMatch((java.lang.String) match[POSITION_ENAME]);
     } catch(ClassCastException e) {
-      LOGGER.error("Element(s) in array not properly typed!",e);
-      return null;
+    	LOGGER.error("Element(s) in array not properly typed!",e);
+    	return null;
     }
-    
+  }
+  
+  /**
+   * @return the singleton instance of the query specification of this pattern
+   * @throws IncQueryException if the pattern definition could not be loaded
+   * 
+   */
+  public static IQuerySpecification<EClassNameMatcher> querySpecification() throws IncQueryException {
+    return EClassNameQuerySpecification.instance();
   }
 }

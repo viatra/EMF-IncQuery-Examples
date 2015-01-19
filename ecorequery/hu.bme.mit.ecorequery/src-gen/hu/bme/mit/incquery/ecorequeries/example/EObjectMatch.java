@@ -29,19 +29,16 @@ public abstract class EObjectMatch extends BasePatternMatch {
   
   private EObjectMatch(final EObject pE) {
     this.fE = pE;
-    
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("E".equals(parameterName)) return this.fE;
     return null;
-    
   }
   
   public EObject getE() {
     return this.fE;
-    
   }
   
   @Override
@@ -52,45 +49,39 @@ public abstract class EObjectMatch extends BasePatternMatch {
     	return true;
     }
     return false;
-    
   }
   
   public void setE(final EObject pE) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fE = pE;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.EObject";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return EObjectMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fE};
-    
   }
   
   @Override
   public EObjectMatch toImmutable() {
     return isMutable() ? newMatch(fE) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"E\"=" + prettyPrintValue(fE));
+    result.append("\"E\"=" + prettyPrintValue(fE)
+    );
     return result.toString();
-    
   }
   
   @Override
@@ -99,7 +90,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
     int result = 1;
     result = prime * result + ((fE == null) ? 0 : fE.hashCode());
     return result;
-    
   }
   
   @Override
@@ -107,10 +97,12 @@ public abstract class EObjectMatch extends BasePatternMatch {
     if (this == obj)
     	return true;
     if (!(obj instanceof EObjectMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -128,9 +120,8 @@ public abstract class EObjectMatch extends BasePatternMatch {
     	return EObjectQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -142,7 +133,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
    */
   public static EObjectMatch newEmptyMatch() {
     return new Mutable(null);
-    
   }
   
   /**
@@ -155,7 +145,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
    */
   public static EObjectMatch newMutableMatch(final EObject pE) {
     return new Mutable(pE);
-    
   }
   
   /**
@@ -168,13 +157,11 @@ public abstract class EObjectMatch extends BasePatternMatch {
    */
   public static EObjectMatch newMatch(final EObject pE) {
     return new Immutable(pE);
-    
   }
   
   private static final class Mutable extends EObjectMatch {
     Mutable(final EObject pE) {
       super(pE);
-      
     }
     
     @Override
@@ -186,7 +173,6 @@ public abstract class EObjectMatch extends BasePatternMatch {
   private static final class Immutable extends EObjectMatch {
     Immutable(final EObject pE) {
       super(pE);
-      
     }
     
     @Override

@@ -28,19 +28,16 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
   
   private EReferenceWithOneMultiplicityNameMatch(final String pERefName) {
     this.fERefName = pERefName;
-    
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("ERefName".equals(parameterName)) return this.fERefName;
     return null;
-    
   }
   
   public String getERefName() {
     return this.fERefName;
-    
   }
   
   @Override
@@ -51,45 +48,39 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     	return true;
     }
     return false;
-    
   }
   
   public void setERefName(final String pERefName) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     this.fERefName = pERefName;
-    
   }
   
   @Override
   public String patternName() {
     return "hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityName";
-    
   }
   
   @Override
   public List<String> parameterNames() {
     return EReferenceWithOneMultiplicityNameMatch.parameterNames;
-    
   }
   
   @Override
   public Object[] toArray() {
     return new Object[]{fERefName};
-    
   }
   
   @Override
   public EReferenceWithOneMultiplicityNameMatch toImmutable() {
     return isMutable() ? newMatch(fERefName) : this;
-    
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"ERefName\"=" + prettyPrintValue(fERefName));
+    result.append("\"ERefName\"=" + prettyPrintValue(fERefName)
+    );
     return result.toString();
-    
   }
   
   @Override
@@ -98,7 +89,6 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     int result = 1;
     result = prime * result + ((fERefName == null) ? 0 : fERefName.hashCode());
     return result;
-    
   }
   
   @Override
@@ -106,10 +96,12 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     if (this == obj)
     	return true;
     if (!(obj instanceof EReferenceWithOneMultiplicityNameMatch)) { // this should be infrequent
-    	if (obj == null)
+    	if (obj == null) {
     		return false;
-    	if (!(obj instanceof IPatternMatch))
+    	}
+    	if (!(obj instanceof IPatternMatch)) {
     		return false;
+    	}
     	IPatternMatch otherSig  = (IPatternMatch) obj;
     	if (!specification().equals(otherSig.specification()))
     		return false;
@@ -127,9 +119,8 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
     	return EReferenceWithOneMultiplicityNameQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
-     	throw new IllegalStateException	(ex);
+     	throw new IllegalStateException (ex);
     }
-    
   }
   
   /**
@@ -141,7 +132,6 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
    */
   public static EReferenceWithOneMultiplicityNameMatch newEmptyMatch() {
     return new Mutable(null);
-    
   }
   
   /**
@@ -154,7 +144,6 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
    */
   public static EReferenceWithOneMultiplicityNameMatch newMutableMatch(final String pERefName) {
     return new Mutable(pERefName);
-    
   }
   
   /**
@@ -167,13 +156,11 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
    */
   public static EReferenceWithOneMultiplicityNameMatch newMatch(final String pERefName) {
     return new Immutable(pERefName);
-    
   }
   
   private static final class Mutable extends EReferenceWithOneMultiplicityNameMatch {
     Mutable(final String pERefName) {
       super(pERefName);
-      
     }
     
     @Override
@@ -185,7 +172,6 @@ public abstract class EReferenceWithOneMultiplicityNameMatch extends BasePattern
   private static final class Immutable extends EReferenceWithOneMultiplicityNameMatch {
     Immutable(final String pERefName) {
       super(pERefName);
-      
     }
     
     @Override

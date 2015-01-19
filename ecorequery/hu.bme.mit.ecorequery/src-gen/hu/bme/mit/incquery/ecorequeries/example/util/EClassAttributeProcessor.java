@@ -26,6 +26,5 @@ public abstract class EClassAttributeProcessor implements IMatchProcessor<EClass
   @Override
   public void process(final EClassAttributeMatch match) {
     process(match.getE(), match.getAttr(), match.getType());
-    
   }
 }

@@ -82,7 +82,6 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     	INSTANCE = new EcoreQueries();
     }
     return INSTANCE;
-    
   }
   
   private static EcoreQueries INSTANCE;
@@ -105,7 +104,6 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     querySpecifications.add(ECoreNamedElementQuerySpecification.instance());
     querySpecifications.add(ECoreNamedElementNameQuerySpecification.instance());
     querySpecifications.add(IsInECoreQuerySpecification.instance());
-    
   }
   
   public EObjectQuerySpecification getEObject() throws IncQueryException {
