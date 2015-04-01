@@ -52,7 +52,6 @@
 					<metamodels>
 						<metamodel>
   						<packageClass>school.SchoolPackage</packageClass>
-							<genmodelUri>../school/model/school.genmodel</genmodelUri>
 						</metamodel>
 					</metamodels>
 				</configuration>
