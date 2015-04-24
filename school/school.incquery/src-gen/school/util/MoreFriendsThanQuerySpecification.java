@@ -4,19 +4,22 @@ import com.google.common.collect.Sets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.PatternMatchCounter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
@@ -100,18 +103,22 @@ public final class MoreFriendsThanQuerySpecification extends BaseGeneratedEMFQue
       	PVariable var_S1 = body.getOrCreateVariableByName("S1");
       	PVariable var_S2 = body.getOrCreateVariableByName("S2");
       	PVariable var_N = body.getOrCreateVariableByName("N");
+      	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       	PVariable var__Sx1 = body.getOrCreateVariableByName("_Sx1");
       	PVariable var_M = body.getOrCreateVariableByName("M");
+      	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       	PVariable var__Sx2 = body.getOrCreateVariableByName("_Sx2");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
       		new ExportedParameter(body, var_S1, "S1"),
       				
       		new ExportedParameter(body, var_S2, "S2")
       	));
-      	new TypeUnary(body, var_S1, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      	new TypeUnary(body, var_S2, getClassifierLiteral("http://school.ecore", "Student"), "http://school.ecore/Student");
-      	new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance().getInternalQueryRepresentation(), var_N);
-      	new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance().getInternalQueryRepresentation(), var_M);
+      	new TypeConstraint(body, new FlatTuple(var_S1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new PatternMatchCounter(body, new FlatTuple(var_S1, var__Sx1), InTheCircleOfFriendsQuerySpecification.instance().getInternalQueryRepresentation(), var__virtual_0_);
+      	new Equality(body, var_N, var__virtual_0_);
+      	new PatternMatchCounter(body, new FlatTuple(var_S2, var__Sx2), InTheCircleOfFriendsQuerySpecification.instance().getInternalQueryRepresentation(), var__virtual_1_);
+      	new Equality(body, var_M, var__virtual_1_);
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
       	
       	@Override

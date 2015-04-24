@@ -4,18 +4,22 @@ import com.google.common.collect.Sets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.incquery.runtime.emf.types.EStructuralFeatureInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
 import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
@@ -99,15 +103,23 @@ public final class AlphabeticallyAfterFriendQuerySpecification extends BaseGener
       	PVariable var_S1 = body.getOrCreateVariableByName("S1");
       	PVariable var_S2 = body.getOrCreateVariableByName("S2");
       	PVariable var_s1Name = body.getOrCreateVariableByName("s1Name");
+      	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       	PVariable var_s2Name = body.getOrCreateVariableByName("s2Name");
+      	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
       		new ExportedParameter(body, var_S1, "S1"),
       				
       		new ExportedParameter(body, var_S2, "S2")
       	));
+      	new TypeConstraint(body, new FlatTuple(var_S1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
       	new PositivePatternCall(body, new FlatTuple(var_S1, var_S2), FriendlyToQuerySpecification.instance().getInternalQueryRepresentation());
-      	new TypeBinary(body, CONTEXT, var_S1, var_s1Name, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
-      	new TypeBinary(body, CONTEXT, var_S2, var_s2Name, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
+      	new TypeConstraint(body, new FlatTuple(var_S1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S1, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Student", "name")));
+      	new Equality(body, var__virtual_0_, var_s1Name);
+      	new TypeConstraint(body, new FlatTuple(var_S2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S2, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Student", "name")));
+      	new Equality(body, var__virtual_1_, var_s2Name);
       new ExpressionEvaluation(body, new IExpressionEvaluator() {
       	
       	@Override

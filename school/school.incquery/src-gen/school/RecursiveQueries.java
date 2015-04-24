@@ -4,9 +4,13 @@ import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import school.AlphabeticallyAfterFriendMatcher;
+import school.FriendOfClassMemberMatcher;
+import school.FriendsRecursiveMatcher;
 import school.IncreasingAlphabeticalFriendshipChainRecMatcher;
 import school.IncreasingAlphabeticalFriendshipChainTCMatcher;
 import school.util.AlphabeticallyAfterFriendQuerySpecification;
+import school.util.FriendOfClassMemberQuerySpecification;
+import school.util.FriendsRecursiveQuerySpecification;
 import school.util.IncreasingAlphabeticalFriendshipChainRecQuerySpecification;
 import school.util.IncreasingAlphabeticalFriendshipChainTCQuerySpecification;
 
@@ -21,6 +25,8 @@ import school.util.IncreasingAlphabeticalFriendshipChainTCQuerySpecification;
  * <li>alphabeticallyAfterFriend</li>
  * <li>increasingAlphabeticalFriendshipChainRec</li>
  * <li>increasingAlphabeticalFriendshipChainTC</li>
+ * <li>friendsRecursive</li>
+ * <li>friendOfClassMember</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -48,6 +54,8 @@ public final class RecursiveQueries extends BaseGeneratedPatternGroup {
     querySpecifications.add(AlphabeticallyAfterFriendQuerySpecification.instance());
     querySpecifications.add(IncreasingAlphabeticalFriendshipChainRecQuerySpecification.instance());
     querySpecifications.add(IncreasingAlphabeticalFriendshipChainTCQuerySpecification.instance());
+    querySpecifications.add(FriendsRecursiveQuerySpecification.instance());
+    querySpecifications.add(FriendOfClassMemberQuerySpecification.instance());
   }
   
   public AlphabeticallyAfterFriendQuerySpecification getAlphabeticallyAfterFriend() throws IncQueryException {
@@ -72,5 +80,21 @@ public final class RecursiveQueries extends BaseGeneratedPatternGroup {
   
   public IncreasingAlphabeticalFriendshipChainTCMatcher getIncreasingAlphabeticalFriendshipChainTC(final IncQueryEngine engine) throws IncQueryException {
     return IncreasingAlphabeticalFriendshipChainTCMatcher.on(engine);
+  }
+  
+  public FriendsRecursiveQuerySpecification getFriendsRecursive() throws IncQueryException {
+    return FriendsRecursiveQuerySpecification.instance();
+  }
+  
+  public FriendsRecursiveMatcher getFriendsRecursive(final IncQueryEngine engine) throws IncQueryException {
+    return FriendsRecursiveMatcher.on(engine);
+  }
+  
+  public FriendOfClassMemberQuerySpecification getFriendOfClassMember() throws IncQueryException {
+    return FriendOfClassMemberQuerySpecification.instance();
+  }
+  
+  public FriendOfClassMemberMatcher getFriendOfClassMember(final IncQueryEngine engine) throws IncQueryException {
+    return FriendOfClassMemberMatcher.on(engine);
   }
 }

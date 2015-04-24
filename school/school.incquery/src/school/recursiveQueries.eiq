@@ -17,3 +17,21 @@ pattern increasingAlphabeticalFriendshipChainRec(S1 : Student, S2 : Student) = {
 pattern increasingAlphabeticalFriendshipChainTC(S1 : Student, S2 : Student) = {
 	find alphabeticallyAfterFriend+(S1, S2);
 }
+
+pattern friendsRecursive(student : Student, friend : Student) = { 
+	Student.friendsWith(student, nestedSection); 
+	Student(nestedSection); 
+	find friendsRecursive(nestedSection, friend); 
+} or { 
+	Student.friendsWith(student, friend); 
+	check (true); 
+}
+
+pattern friendOfClassMember(clazz : SchoolClass, friend : Student) = {
+	SchoolClass.students(clazz, student);
+	Student(student);
+	find friendsRecursive(student, friend);
+} or {
+	SchoolClass.students(clazz, friend);
+	check (true);
+}

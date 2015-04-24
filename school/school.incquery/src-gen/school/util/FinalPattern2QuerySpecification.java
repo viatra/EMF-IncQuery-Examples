@@ -4,16 +4,20 @@ import com.google.common.collect.Sets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.incquery.runtime.emf.types.EStructuralFeatureInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
@@ -102,9 +106,16 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedEMFQuery
       	PVariable var_Y = body.getOrCreateVariableByName("Y");
       	PVariable var_C = body.getOrCreateVariableByName("C");
       	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       	PVariable var_T = body.getOrCreateVariableByName("T");
+      	PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
       	PVariable var_S = body.getOrCreateVariableByName("S");
       	PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
+      	PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
+      	PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
+      	PVariable var__virtual_6_ = body.getOrCreateVariableByName(".virtual{6}");
+      	PVariable var__virtual_7_ = body.getOrCreateVariableByName(".virtual{7}");
+      	PVariable var__virtual_8_ = body.getOrCreateVariableByName(".virtual{8}");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
       		new ExportedParameter(body, var_YDate, "YDate"),
       				
@@ -114,23 +125,37 @@ public final class FinalPattern2QuerySpecification extends BaseGeneratedEMFQuery
       				
       		new ExportedParameter(body, var_SName, "SName")
       	));
-      	new TypeBinary(body, CONTEXT, var_Y, var__virtual_0_, getFeatureLiteral("http://school.ecore", "Year", "schoolClasses"), "http://school.ecore/Year.schoolClasses");
-      	new TypeBinary(body, CONTEXT, var__virtual_0_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
-      	new TypeBinary(body, CONTEXT, var_C, var_T, getFeatureLiteral("http://school.ecore", "Course", "teacher"), "http://school.ecore/Course.teacher");
-      	new TypeBinary(body, CONTEXT, var_S, var__virtual_3_, getFeatureLiteral("http://school.ecore", "Student", "schoolClass"), "http://school.ecore/Student.schoolClass");
-      	new TypeBinary(body, CONTEXT, var__virtual_3_, var_C, getFeatureLiteral("http://school.ecore", "SchoolClass", "courses"), "http://school.ecore/SchoolClass.courses");
+      	new TypeConstraint(body, new FlatTuple(var_Y), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Year")));
+      	new TypeConstraint(body, new FlatTuple(var_Y, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Year", "schoolClasses")));
+      	new TypeConstraint(body, new FlatTuple(var__virtual_0_, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "SchoolClass", "courses")));
+      	new Equality(body, var__virtual_1_, var_C);
+      	new TypeConstraint(body, new FlatTuple(var_C), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Course")));
+      	new TypeConstraint(body, new FlatTuple(var_C, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Course", "teacher")));
+      	new Equality(body, var__virtual_2_, var_T);
+      	new TypeConstraint(body, new FlatTuple(var_S), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Student", "schoolClass")));
+      	new TypeConstraint(body, new FlatTuple(var__virtual_3_, var__virtual_4_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "SchoolClass", "courses")));
+      	new Equality(body, var__virtual_4_, var_C);
       	new PositivePatternCall(body, new FlatTuple(var_S), TheOnesWithTheBiggestCircleQuerySpecification.instance().getInternalQueryRepresentation());
       	new PositivePatternCall(body, new FlatTuple(var_T), TeachesTheMostCoursesQuerySpecification.instance().getInternalQueryRepresentation());
-      	new TypeBinary(body, CONTEXT, var_Y, var_YDate, getFeatureLiteral("http://school.ecore", "Year", "startingDate"), "http://school.ecore/Year.startingDate");
-      	new TypeBinary(body, CONTEXT, var_C, var_CSub, getFeatureLiteral("http://school.ecore", "Course", "subject"), "http://school.ecore/Course.subject");
-      	new TypeBinary(body, CONTEXT, var_T, var_TName, getFeatureLiteral("http://school.ecore", "Teacher", "name"), "http://school.ecore/Teacher.name");
-      	new TypeBinary(body, CONTEXT, var_S, var_SName, getFeatureLiteral("http://school.ecore", "Student", "name"), "http://school.ecore/Student.name");
+      	new TypeConstraint(body, new FlatTuple(var_Y), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Year")));
+      	new TypeConstraint(body, new FlatTuple(var_Y, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Year", "startingDate")));
+      	new Equality(body, var__virtual_5_, var_YDate);
+      	new TypeConstraint(body, new FlatTuple(var_C), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Course")));
+      	new TypeConstraint(body, new FlatTuple(var_C, var__virtual_6_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Course", "subject")));
+      	new Equality(body, var__virtual_6_, var_CSub);
+      	new TypeConstraint(body, new FlatTuple(var_T), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Teacher")));
+      	new TypeConstraint(body, new FlatTuple(var_T, var__virtual_7_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Teacher", "name")));
+      	new Equality(body, var__virtual_7_, var_TName);
+      	new TypeConstraint(body, new FlatTuple(var_S), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://school.ecore", "Student")));
+      	new TypeConstraint(body, new FlatTuple(var_S, var__virtual_8_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://school.ecore", "Student", "name")));
+      	new Equality(body, var__virtual_8_, var_SName);
       	bodies.add(body);
       }
       	{
       	PAnnotation annotation = new PAnnotation("QueryExplorer");
-      	annotation.addAttribute("message", "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$");
       	annotation.addAttribute("display", true);
+      	annotation.addAttribute("message", "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$");
       	addAnnotation(annotation);
       }
       {
