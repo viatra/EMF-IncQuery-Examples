@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ecorequery
 Bundle-SymbolicName: hu.bme.mit.ecorequery;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Export-Package: hu.bme.mit.incquery.ecorequeries.example,hu.bme.mit.in
  cquery.ecorequeries.example.util
 Require-Bundle: org.eclipse.emf.ecore,
