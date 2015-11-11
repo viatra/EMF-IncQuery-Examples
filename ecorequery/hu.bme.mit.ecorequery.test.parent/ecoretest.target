@@ -2,7 +2,7 @@
 <?pde version="3.8"?><target name="ecore" sequenceNumber="15">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.0.v201510020259"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.0.v201511100835"/>
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
