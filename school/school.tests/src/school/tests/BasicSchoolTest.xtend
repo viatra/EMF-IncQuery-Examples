@@ -12,15 +12,13 @@
 
 package school.tests
 
-import com.google.inject.Inject
-import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.incquery.runtime.api.IPatternMatch
+import org.eclipse.incquery.runtime.api.IQuerySpecification
+import org.eclipse.incquery.runtime.api.IncQueryMatcher
+import org.eclipse.incquery.runtime.rete.matcher.ReteEngine
+import org.eclipse.incquery.testing.core.api.EIQTest
 import org.junit.Test
-import org.junit.runner.RunWith
+import school.SimpleSchoolQueries
 import school.util.ClassesOfTeacherQuerySpecification
 import school.util.CourseWithNameLongerThanWeightQuerySpecification
 import school.util.CourseWithPrimeWeightQuerySpecification
@@ -45,62 +43,60 @@ import school.util.TheOnesWithTheBiggestCircleQuerySpecification
  * See https://viatra.inf.mit.bme.hu/incquery/new/examples/school for details on the example.
  * @author Istvan Rath
  */
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class BasicSchoolTest extends SchoolTestsBase {
+class BasicSchoolTest{
 	
-	@Inject extension SnapshotHelper
-	@Inject extension TestExecutor
+	val snapshot = "school.tests/model/tests.eiqsnapshot"
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def testAllQueries(){
-		assertMatchResults(queryInput, snapshot)
+		SimpleSchoolQueries.instance.specifications.forEach[
+			EIQTest.test(it as IQuerySpecification<IncQueryMatcher<IPatternMatch>>)
+				.with(snapshot).with(ReteEngine).assertEquals
+		]
 	}
 			
 	// simple test cases, for each query of the school example
 	 
-	@Test def testSchools() { testQuery("school.schools") }
-	@Test def testTeachers() { testQuery("school.teachers") }
-	@Test def testTeachersOfSchool() { testQuery("school.teachersOfSchool") }
-	@Test def testCoursesOfTeacher() { testQuery("school.coursesOfTeacher") }
-	@Test def testClassesOfTeacher() { testQuery("school.classesOfTeacher") }
-	@Test def testTeacherWithoutClass() { testQuery("school.teacherWithoutClass") }
-	@Test def testStudentOfSchool() { testQuery("school.studentOfSchool") }
-	@Test def testCourseWithWeightThirty() { testQuery("school.courseWithWeightThirty") }
-	@Test def testCourseWithNameLongerThanWeight() { testQuery("school.courseWithNameLongerThanWeight") }
-	@Test def testCourseWithPrimeWeight() { testQuery("school.courseWithPrimeWeight") }
-	@Test def testTeachesMoreClasses() { testQuery("school.teachesMoreClasses") }
-	@Test def testTeachesTheMostCourses() { testQuery("school.teachesTheMostCourses") }
-	@Test def testFriendlyTo() { testQuery("school.friendlyTo") }
-	@Test def testInTheCircleOfFriends() { testQuery("school.inTheCircleOfFriends") }
-	@Test def testMoreFriendsThan() { testQuery("school.moreFriendsThan") }
-	@Test def testTheOnesWithTheBiggestCircle() { testQuery("school.theOnesWithTheBiggestCircle") }
-	@Test def testFinalPattern() { testQuery("school.finalPattern") }	
+	@Test def testSchools() { EIQTest.test("school.schools").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTeachers() { EIQTest.test("school.teachers").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTeachersOfSchool() { EIQTest.test("school.teachersOfSchool").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testCoursesOfTeacher() { EIQTest.test("school.coursesOfTeacher").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testClassesOfTeacher() { EIQTest.test("school.classesOfTeacher").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTeacherWithoutClass() { EIQTest.test("school.teacherWithoutClass").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testStudentOfSchool() { EIQTest.test("school.studentOfSchool").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testCourseWithWeightThirty() { EIQTest.test("school.courseWithWeightThirty").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testCourseWithNameLongerThanWeight() { EIQTest.test("school.courseWithNameLongerThanWeight").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testCourseWithPrimeWeight() { EIQTest.test("school.courseWithPrimeWeight").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTeachesMoreClasses() { EIQTest.test("school.teachesMoreClasses").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTeachesTheMostCourses() { EIQTest.test("school.teachesTheMostCourses").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testFriendlyTo() { EIQTest.test("school.friendlyTo").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testInTheCircleOfFriends() { EIQTest.test("school.inTheCircleOfFriends").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testMoreFriendsThan() { EIQTest.test("school.moreFriendsThan").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testTheOnesWithTheBiggestCircle() { EIQTest.test("school.theOnesWithTheBiggestCircle").with(snapshot).with(ReteEngine).assertEquals }
+	@Test def testFinalPattern() { EIQTest.test("school.finalPattern").with(snapshot).with(ReteEngine).assertEquals }	
 	
-	@Test def mfTestSchools() { testQuery(SchoolsQuerySpecification::instance) }
-	@Test def mfTestTeachers() { testQuery(TeachersQuerySpecification::instance) }
-	@Test def mfTestTeachersOfSchool() { testQuery(TeachersOfSchoolQuerySpecification::instance) }
-	@Test def mfTestCoursesOfTeacher() { testQuery(CoursesOfTeacherQuerySpecification::instance) }
-	@Test def mfTestClassesOfTeacher() { testQuery(ClassesOfTeacherQuerySpecification::instance) }
-	@Test def mfTestTeacherWithoutClass() { testQuery(TeacherWithoutClassQuerySpecification::instance) }
-	@Test def mfTestStudentOfSchool() { testQuery(StudentOfSchoolQuerySpecification::instance) }
-	@Test def mfTestCourseWithWeightThirty() { testQuery(CourseWithWeightThirtyQuerySpecification::instance) }
-	@Test def mfTestCourseWithNameLongerThanWeight() { testQuery(CourseWithNameLongerThanWeightQuerySpecification::instance) }
-	@Test def mfTestCourseWithPrimeWeight() { testQuery(CourseWithPrimeWeightQuerySpecification::instance) }
-	@Test def mfTestTeachesMoreClasses() { testQuery(TeachesMoreClassesQuerySpecification::instance) }
-	@Test def mfTestTeachesTheMostCourses() { testQuery(TeachesTheMostCoursesQuerySpecification::instance) }
-	@Test def mfTestFriendlyTo() { testQuery(FriendlyToQuerySpecification::instance) }
-	@Test def mfTestInTheCircleOfFriends() { testQuery(InTheCircleOfFriendsQuerySpecification::instance) }
-	@Test def mfTestMoreFriendsThan() { testQuery(MoreFriendsThanQuerySpecification::instance) }
-	@Test def mfTestTheOnesWithTheBiggestCircle() { testQuery(TheOnesWithTheBiggestCircleQuerySpecification::instance) }
-	@Test def mfTestFinalPattern() { testQuery(FinalPatternQuerySpecification::instance) }	
+	@Test def mfTestSchools() { EIQTest.test(SchoolsQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTeachers() { EIQTest.test(TeachersQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTeachersOfSchool() { EIQTest.test(TeachersOfSchoolQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestCoursesOfTeacher() { EIQTest.test(CoursesOfTeacherQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestClassesOfTeacher() { EIQTest.test(ClassesOfTeacherQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTeacherWithoutClass() { EIQTest.test(TeacherWithoutClassQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestStudentOfSchool() { EIQTest.test(StudentOfSchoolQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestCourseWithWeightThirty() { EIQTest.test(CourseWithWeightThirtyQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestCourseWithNameLongerThanWeight() { EIQTest.test(CourseWithNameLongerThanWeightQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestCourseWithPrimeWeight() { EIQTest.test(CourseWithPrimeWeightQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTeachesMoreClasses() { EIQTest.test(TeachesMoreClassesQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTeachesTheMostCourses() { EIQTest.test(TeachesTheMostCoursesQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestFriendlyTo() { EIQTest.test(FriendlyToQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestInTheCircleOfFriends() { EIQTest.test(InTheCircleOfFriendsQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestMoreFriendsThan() { EIQTest.test(MoreFriendsThanQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestTheOnesWithTheBiggestCircle() { EIQTest.test(TheOnesWithTheBiggestCircleQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
+	@Test def mfTestFinalPattern() { EIQTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }	
 	
 	@Test
 	def wildcardTestFinalPattern(){
-    	val sns = snapshot
-    	val engine = AdvancedIncQueryEngine::createUnmanagedEngine(sns.EMFRootForSnapshot, true)
-    	engine.testQuery(sns, FinalPatternQuerySpecification::instance)
+    	EIQTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals
 	}
 	
 }
