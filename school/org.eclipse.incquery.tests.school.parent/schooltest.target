@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="school" sequenceNumber="28">
+<?pde version="3.8"?><target name="school" sequenceNumber="29">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.0.v201511100835"/>
-<repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.9.0.v201512010527"/>
+<repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.9.0"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="2.8.2.v201511170833"/>
+<repository location="http://download.eclipse.org/modeling/emft/mwe/updates/releases/2.8.2/R201511170833/mwe/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.mwe2.launcher.feature.group" version="2.8.2.v201511170842"/>
+<repository location="http://download.eclipse.org/modeling/emft/mwe/updates/releases/2.8.2/R201511170842/mwe2lang/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
