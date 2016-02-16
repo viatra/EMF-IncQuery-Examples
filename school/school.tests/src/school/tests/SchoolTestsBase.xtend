@@ -15,7 +15,7 @@ package school.tests
 import com.google.inject.Inject
 import com.google.inject.Injector
 import java.util.Collections
-import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
+import org.eclipse.viatra.query.testing.core.base.CommonStaticQueryTester
 
 /**
  * Base class for IncQuery tests concerning the school example.

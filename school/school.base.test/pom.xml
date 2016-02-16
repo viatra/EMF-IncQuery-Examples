@@ -9,16 +9,22 @@
 		<version>1.2.0-SNAPSHOT</version>
 		<relativePath>../school.tests.parent/pom.xml</relativePath>
 	</parent>
-	<artifactId>school.instancemodel</artifactId>
-	<packaging>eclipse-plugin</packaging>
+	<artifactId>school.base.test</artifactId>
+	<packaging>eclipse-test-plugin</packaging>
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.compiler.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

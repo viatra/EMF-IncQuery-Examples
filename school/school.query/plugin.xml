@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="school.SchoolValidationRules" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:school.SchoolValidationRules" id="school.SchoolValidationRules"/>
+  </extension>
+  <extension id="school.RecursiveQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:school.RecursiveQueries" id="school.RecursiveQueries"/>
+  </extension>
+  <extension id="school.SimpleSchoolQueries" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:school.SimpleSchoolQueries" id="school.SimpleSchoolQueries"/>
+  </extension>
+  <extension id="school.UnnamedVariables" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:school.UnnamedVariables" id="school.UnnamedVariables"/>
+  </extension>
+</plugin>

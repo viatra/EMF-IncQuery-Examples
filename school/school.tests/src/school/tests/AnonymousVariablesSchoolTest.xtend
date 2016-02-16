@@ -10,16 +10,16 @@
  *******************************************************************************/
 package school.tests
 
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.runner.RunWith
 import com.google.inject.Inject
 import org.junit.Test
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
+import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
 
 /**
  * @author Abel Hegedus

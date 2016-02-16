@@ -14,17 +14,18 @@ package school.tests
 
 import com.google.inject.Inject
 import java.util.Collections
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
+import org.eclipse.viatra.query.runtime.emf.EMFScope
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import school.Studentimport org.eclipse.incquery.runtime.api.IncQueryEngine
-import org.eclipse.incquery.runtime.emf.EMFScope
+import school.Student
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -111,7 +112,7 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	def crazyRecursiveQueryCompiles(){
 		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as IncQuerySnapshot
 		val pm = queryInput
-		val engine = IncQueryEngine::on(new EMFScope(sns.getModelRoots().get(0)));
+		val engine = ViatraQueryEngine::on(new EMFScope(sns.getModelRoots().get(0)));
 		val matcher = pm.initializeMatcherFromModel(engine,"school.friendOfClassMember")
 		Assert::assertNotNull(matcher)
 		Assert::assertNotNull(matcher.allMatches)

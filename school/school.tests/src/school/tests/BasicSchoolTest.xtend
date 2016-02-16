@@ -13,10 +13,10 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.incquery.runtime.api.AdvancedIncQueryEngine
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Test
@@ -99,7 +99,7 @@ class BasicSchoolTest extends SchoolTestsBase {
 	@Test
 	def wildcardTestFinalPattern(){
     	val sns = snapshot
-    	val engine = AdvancedIncQueryEngine::createUnmanagedEngine(sns.EMFRootForSnapshot, true)
+    	val engine = AdvancedViatraQueryEngine::createUnmanagedEngine(sns.EMFRootForSnapshot, true)
     	engine.testQuery(sns, FinalPatternQuerySpecification::instance)
 	}
 	

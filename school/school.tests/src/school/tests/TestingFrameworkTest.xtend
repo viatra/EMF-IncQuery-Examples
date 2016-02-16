@@ -1,8 +1,8 @@
 package school.tests
 
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
-import org.eclipse.incquery.snapshot.EIQSnapshot.RecordRole
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
+import org.eclipse.viatra.query.testing.snapshot.RecordRole
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
