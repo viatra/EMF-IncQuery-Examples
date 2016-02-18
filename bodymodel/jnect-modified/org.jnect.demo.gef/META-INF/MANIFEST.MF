@@ -4,12 +4,12 @@ Bundle-Name: HumanDiagramGEF
 Bundle-SymbolicName: org.jnect.demo.gef;singleton:=true
 Bundle-Version: 0.2.1.qualifier
 Bundle-Activator: org.jnect.demo.gef.Activator
+Bundle-Vendor: jnect.org
+Export-Package: org.jnect.demo.gef
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gef;bundle-version="3.7.0";visibility:=reexport,
  org.jnect.bodymodel;bundle-version="0.1.0",
  org.jnect.core;bundle-version="0.1.0"
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.jnect.demo.gef
-Bundle-Vendor: jnect.org
+Bundle-ActivationPolicy: lazy

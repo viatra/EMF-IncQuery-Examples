@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><plugin>
-  <extension id="bodymodel.ymca.Ymca" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:bodymodel.ymca.Ymca" id="bodymodel.ymca.Ymca"/>
-  </extension>
-  <extension id="bodymodel.Bodymodel" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:bodymodel.Bodymodel" id="bodymodel.Bodymodel"/>
-  </extension>
-</plugin>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="bodymodel.Bodymodel" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:bodymodel.Bodymodel" id="bodymodel.Bodymodel"/>
+  </extension>
+  <extension id="bodymodel.ymca.Ymca" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:bodymodel.ymca.Ymca" id="bodymodel.ymca.Ymca"/>
+  </extension>
+</plugin>
