@@ -8,9 +8,9 @@
 	<name>EMF-IncQuery School Example</name>
 	<url>http://viatra.inf.mit.bme.hu/incquery</url>
 	<parent>
-		<artifactId>org.eclipse.incquery.parent</artifactId>
-		<version>1.1.0-SNAPSHOT</version>
-		<groupId>org.eclipse.incquery</groupId>
+		<artifactId>org.eclipse.viatra.parent</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+		<groupId>org.eclipse.viatra</groupId>
 	</parent>
 	<packaging>pom</packaging>
 	<properties>
