@@ -10,20 +10,20 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link SampleQuery2Match}.
  * 
@@ -70,7 +70,7 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static SampleQuery2Matcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static SampleQuery2Matcher on(final ViatraQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
     SampleQuery2Matcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
@@ -99,16 +99,16 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
    * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
    * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
+   * <p>The matcher will be created within the managed {@link ViatraQueryEngine} belonging to the EMF model root, so
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead, e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}
    * 
    */
   @Deprecated
   public SampleQuery2Matcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
+    this(ViatraQueryEngine.on(emfRoot));
   }
   
   /**
@@ -117,11 +117,11 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead
    * 
    */
   @Deprecated
-  public SampleQuery2Matcher(final IncQueryEngine engine) throws IncQueryException {
+  public SampleQuery2Matcher(final ViatraQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -509,7 +509,7 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
   @Override
   protected SampleQuery2Match tupleToMatch(final Tuple t) {
     try {
-    	return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) t.get(POSITION_XELEMENT), (org.eclipse.emf.ecore.EClass) t.get(POSITION_YELEMENT), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES1), (org.eclipse.emf.ecore.EReference) t.get(POSITION_RELATES2), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL1), (org.eclipse.emf.ecore.EAttribute) t.get(POSITION_LABEL2));
+    	return SampleQuery2Match.newMatch((EClass) t.get(POSITION_XELEMENT), (EClass) t.get(POSITION_YELEMENT), (EReference) t.get(POSITION_RELATES1), (EReference) t.get(POSITION_RELATES2), (EAttribute) t.get(POSITION_LABEL1), (EAttribute) t.get(POSITION_LABEL2));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -519,7 +519,7 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
   @Override
   protected SampleQuery2Match arrayToMatch(final Object[] match) {
     try {
-    	return SampleQuery2Match.newMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    	return SampleQuery2Match.newMatch((EClass) match[POSITION_XELEMENT], (EClass) match[POSITION_YELEMENT], (EReference) match[POSITION_RELATES1], (EReference) match[POSITION_RELATES2], (EAttribute) match[POSITION_LABEL1], (EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -529,7 +529,7 @@ public class SampleQuery2Matcher extends BaseMatcher<SampleQuery2Match> {
   @Override
   protected SampleQuery2Match arrayToMatchMutable(final Object[] match) {
     try {
-    	return SampleQuery2Match.newMutableMatch((org.eclipse.emf.ecore.EClass) match[POSITION_XELEMENT], (org.eclipse.emf.ecore.EClass) match[POSITION_YELEMENT], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES1], (org.eclipse.emf.ecore.EReference) match[POSITION_RELATES2], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL1], (org.eclipse.emf.ecore.EAttribute) match[POSITION_LABEL2]);
+    	return SampleQuery2Match.newMutableMatch((EClass) match[POSITION_XELEMENT], (EClass) match[POSITION_YELEMENT], (EReference) match[POSITION_RELATES1], (EReference) match[POSITION_RELATES2], (EAttribute) match[POSITION_LABEL1], (EAttribute) match[POSITION_LABEL2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

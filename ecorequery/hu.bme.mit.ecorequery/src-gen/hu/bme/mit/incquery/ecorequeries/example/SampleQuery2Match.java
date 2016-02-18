@@ -6,9 +6,9 @@ import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern,
@@ -87,27 +87,27 @@ public abstract class SampleQuery2Match extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("XElement".equals(parameterName) ) {
-    	this.fXElement = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fXElement = (EClass) newValue;
     	return true;
     }
     if ("YElement".equals(parameterName) ) {
-    	this.fYElement = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fYElement = (EClass) newValue;
     	return true;
     }
     if ("Relates1".equals(parameterName) ) {
-    	this.fRelates1 = (org.eclipse.emf.ecore.EReference) newValue;
+    	this.fRelates1 = (EReference) newValue;
     	return true;
     }
     if ("Relates2".equals(parameterName) ) {
-    	this.fRelates2 = (org.eclipse.emf.ecore.EReference) newValue;
+    	this.fRelates2 = (EReference) newValue;
     	return true;
     }
     if ("Label1".equals(parameterName) ) {
-    	this.fLabel1 = (org.eclipse.emf.ecore.EAttribute) newValue;
+    	this.fLabel1 = (EAttribute) newValue;
     	return true;
     }
     if ("Label2".equals(parameterName) ) {
-    	this.fLabel2 = (org.eclipse.emf.ecore.EAttribute) newValue;
+    	this.fLabel2 = (EAttribute) newValue;
     	return true;
     }
     return false;

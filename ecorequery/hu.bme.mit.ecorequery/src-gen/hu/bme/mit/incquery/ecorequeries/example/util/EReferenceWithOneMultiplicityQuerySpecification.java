@@ -6,18 +6,22 @@ import hu.bme.mit.incquery.ecorequeries.example.EReferenceWithOneMultiplicityMat
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.ConstantValue;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.viatra.query.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.viatra.query.runtime.emf.types.EStructuralFeatureInstancesKey;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.Equality;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.ConstantValue;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 
 /**
  * A pattern-specific query specification that can instantiate EReferenceWithOneMultiplicityMatcher in a type-safe way.
@@ -46,7 +50,7 @@ public final class EReferenceWithOneMultiplicityQuerySpecification extends BaseG
   }
   
   @Override
-  protected EReferenceWithOneMultiplicityMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+  protected EReferenceWithOneMultiplicityMatcher instantiate(final ViatraQueryEngine engine) throws IncQueryException {
     return EReferenceWithOneMultiplicityMatcher.on(engine);
   }
   
@@ -60,11 +64,29 @@ public final class EReferenceWithOneMultiplicityQuerySpecification extends BaseG
     return EReferenceWithOneMultiplicityMatch.newMatch((org.eclipse.emf.ecore.EReference) parameters[0]);
   }
   
+  /**
+   * Inner class allowing the singleton instance of {@link EReferenceWithOneMultiplicityQuerySpecification} to be created 
+   * 	<b>not</b> at the class load time of the outer class, 
+   * 	but rather at the first call to {@link EReferenceWithOneMultiplicityQuerySpecification#instance()}.
+   * 
+   * <p> This workaround is required e.g. to support recursion.
+   * 
+   */
   private static class LazyHolder {
-    private final static EReferenceWithOneMultiplicityQuerySpecification INSTANCE = make();
+    private final static EReferenceWithOneMultiplicityQuerySpecification INSTANCE = new EReferenceWithOneMultiplicityQuerySpecification();
     
-    public static EReferenceWithOneMultiplicityQuerySpecification make() {
-      return new EReferenceWithOneMultiplicityQuerySpecification();					
+    /**
+     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
+     * This initialization order is required to support indirect recursion.
+     * 
+     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
+     * 
+     */
+    private final static Object STATIC_INITIALIZER = ensureInitialized();
+    
+    public static Object ensureInitialized() {
+      INSTANCE.ensureInitializedInternalSneaky();
+      return null;					
     }
   }
   
@@ -90,21 +112,30 @@ public final class EReferenceWithOneMultiplicityQuerySpecification extends BaseG
     public Set<PBody> doGetContainedBodies() throws QueryInitializationException {
       Set<PBody> bodies = Sets.newLinkedHashSet();
       try {
-      {
-      	PBody body = new PBody(this);
-      	PVariable var_ERef = body.getOrCreateVariableByName("ERef");
-      	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      	PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-      	body.setExportedParameters(Arrays.<ExportedParameter>asList(
-      		new ExportedParameter(body, var_ERef, "ERef")
-      	));
-      	new TypeUnary(body, var_ERef, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference"), "http://www.eclipse.org/emf/2002/Ecore/EReference");
-      	new ConstantValue(body, var__virtual_0_, 1);
-      	new TypeBinary(body, CONTEXT, var_ERef, var__virtual_0_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "lowerBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.lowerBound");
-      	new ConstantValue(body, var__virtual_2_, 1);
-      	new TypeBinary(body, CONTEXT, var_ERef, var__virtual_2_, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.upperBound");
-      	bodies.add(body);
-      }
+      	{
+      		PBody body = new PBody(this);
+      		PVariable var_ERef = body.getOrCreateVariableByName("ERef");
+      		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+      		   new ExportedParameter(body, var_ERef, "ERef")
+      		));
+      		// 	EReference(ERef)
+      		new TypeConstraint(body, new FlatTuple(var_ERef), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference")));
+      		// 	ETypedElement.lowerBound(ERef,1)
+      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      		new ConstantValue(body, var__virtual_0_, 1);
+      		new TypeConstraint(body, new FlatTuple(var_ERef), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement")));
+      		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+      		new TypeConstraint(body, new FlatTuple(var_ERef, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "lowerBound")));
+      		new Equality(body, var__virtual_1_, var__virtual_0_);
+      		// 	ETypedElement.upperBound(ERef,1)
+      		PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
+      		new ConstantValue(body, var__virtual_2_, 1);
+      		new TypeConstraint(body, new FlatTuple(var_ERef), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement")));
+      		PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
+      		new TypeConstraint(body, new FlatTuple(var_ERef, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "upperBound")));
+      		new Equality(body, var__virtual_3_, var__virtual_2_);
+      		bodies.add(body);
+      	}
       	// to silence compiler error
       	if (false) throw new IncQueryException("Never", "happens");
       } catch (IncQueryException ex) {

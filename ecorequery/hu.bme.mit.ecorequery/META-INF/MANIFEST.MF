@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ecorequery
 Bundle-SymbolicName: hu.bme.mit.ecorequery;singleton:=true
 Bundle-Version: 1.2.0.qualifier
-Export-Package: hu.bme.mit.incquery.ecorequeries.example,hu.bme.mit.in
- cquery.ecorequeries.example.util
+Export-Package: hu.bme.mit.incquery.ecorequeries.example,
+ hu.bme.mit.incquery.ecorequeries.example.util
 Require-Bundle: org.eclipse.emf.ecore,
- org.eclipse.incquery.runtime;bundle-version="0.7.0";visibility:=reexport,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.viatra.query.runtime;bundle-version="[1.2.0,2.0.0)";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j

@@ -8,18 +8,18 @@ import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.ConstantValue;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.ConstantValue;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 
 /**
  * A pattern-specific query specification that can instantiate IsEStringMatcher in a type-safe way.
@@ -48,7 +48,7 @@ public final class IsEStringQuerySpecification extends BaseGeneratedEMFQuerySpec
   }
   
   @Override
-  protected IsEStringMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+  protected IsEStringMatcher instantiate(final ViatraQueryEngine engine) throws IncQueryException {
     return IsEStringMatcher.on(engine);
   }
   
@@ -62,11 +62,29 @@ public final class IsEStringQuerySpecification extends BaseGeneratedEMFQuerySpec
     return IsEStringMatch.newMatch((org.eclipse.emf.ecore.EClassifier) parameters[0]);
   }
   
+  /**
+   * Inner class allowing the singleton instance of {@link IsEStringQuerySpecification} to be created 
+   * 	<b>not</b> at the class load time of the outer class, 
+   * 	but rather at the first call to {@link IsEStringQuerySpecification#instance()}.
+   * 
+   * <p> This workaround is required e.g. to support recursion.
+   * 
+   */
   private static class LazyHolder {
-    private final static IsEStringQuerySpecification INSTANCE = make();
+    private final static IsEStringQuerySpecification INSTANCE = new IsEStringQuerySpecification();
     
-    public static IsEStringQuerySpecification make() {
-      return new IsEStringQuerySpecification();					
+    /**
+     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
+     * This initialization order is required to support indirect recursion.
+     * 
+     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
+     * 
+     */
+    private final static Object STATIC_INITIALIZER = ensureInitialized();
+    
+    public static Object ensureInitialized() {
+      INSTANCE.ensureInitializedInternalSneaky();
+      return null;					
     }
   }
   
@@ -92,18 +110,20 @@ public final class IsEStringQuerySpecification extends BaseGeneratedEMFQuerySpec
     public Set<PBody> doGetContainedBodies() throws QueryInitializationException {
       Set<PBody> bodies = Sets.newLinkedHashSet();
       try {
-      {
-      	PBody body = new PBody(this);
-      	PVariable var_Element = body.getOrCreateVariableByName("Element");
-      	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      	body.setExportedParameters(Arrays.<ExportedParameter>asList(
-      		new ExportedParameter(body, var_Element, "Element")
-      	));
-      	new PositivePatternCall(body, new FlatTuple(var_Element), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
-      	new ConstantValue(body, var__virtual_0_, "EString");
-      	new PositivePatternCall(body, new FlatTuple(var_Element, var__virtual_0_), ECoreNamedElementQuerySpecification.instance().getInternalQueryRepresentation());
-      	bodies.add(body);
-      }
+      	{
+      		PBody body = new PBody(this);
+      		PVariable var_Element = body.getOrCreateVariableByName("Element");
+      		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+      		   new ExportedParameter(body, var_Element, "Element")
+      		));
+      		// 	find IsInECore(Element)
+      		new PositivePatternCall(body, new FlatTuple(var_Element), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	find ECoreNamedElement(Element,"EString")
+      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      		new ConstantValue(body, var__virtual_0_, "EString");
+      		new PositivePatternCall(body, new FlatTuple(var_Element, var__virtual_0_), ECoreNamedElementQuerySpecification.instance().getInternalQueryRepresentation());
+      		bodies.add(body);
+      	}
       	// to silence compiler error
       	if (false) throw new IncQueryException("Never", "happens");
       } catch (IncQueryException ex) {

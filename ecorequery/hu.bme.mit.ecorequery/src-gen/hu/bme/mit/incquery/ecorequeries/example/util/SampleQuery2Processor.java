@@ -4,7 +4,7 @@ import hu.bme.mit.incquery.ecorequeries.example.SampleQuery2Match;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
 
 /**
  * A match processor tailored for the hu.bme.mit.incquery.ecorequeries.example.SampleQuery2 pattern.

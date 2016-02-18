@@ -13,9 +13,9 @@ import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification
 import hu.bme.mit.incquery.ecorequeries.example.util.SampleQueryQuerySpecification
 import hu.bme.mit.incquery.ecorequeries.example.util.SampleQuery2QuerySpecification
 import hu.bme.mit.incquery.ecorequeries.example.util.SuperTypeOfQuerySpecification
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.incquery.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper

@@ -34,9 +34,9 @@ import hu.bme.mit.incquery.ecorequeries.example.util.SampleQuery2QuerySpecificat
 import hu.bme.mit.incquery.ecorequeries.example.util.SampleQueryQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.SuperTypeOfNameQuerySpecification;
 import hu.bme.mit.incquery.ecorequeries.example.util.SuperTypeOfQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedPatternGroup;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * A pattern group formed of all patterns defined in ecoreQueries.eiq.
@@ -110,7 +110,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EObjectQuerySpecification.instance();
   }
   
-  public EObjectMatcher getEObject(final IncQueryEngine engine) throws IncQueryException {
+  public EObjectMatcher getEObject(final ViatraQueryEngine engine) throws IncQueryException {
     return EObjectMatcher.on(engine);
   }
   
@@ -118,7 +118,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EClassQuerySpecification.instance();
   }
   
-  public EClassMatcher getEClass(final IncQueryEngine engine) throws IncQueryException {
+  public EClassMatcher getEClass(final ViatraQueryEngine engine) throws IncQueryException {
     return EClassMatcher.on(engine);
   }
   
@@ -126,7 +126,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EClassNameQuerySpecification.instance();
   }
   
-  public EClassNameMatcher getEClassName(final IncQueryEngine engine) throws IncQueryException {
+  public EClassNameMatcher getEClassName(final ViatraQueryEngine engine) throws IncQueryException {
     return EClassNameMatcher.on(engine);
   }
   
@@ -134,7 +134,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return SuperTypeOfQuerySpecification.instance();
   }
   
-  public SuperTypeOfMatcher getSuperTypeOf(final IncQueryEngine engine) throws IncQueryException {
+  public SuperTypeOfMatcher getSuperTypeOf(final ViatraQueryEngine engine) throws IncQueryException {
     return SuperTypeOfMatcher.on(engine);
   }
   
@@ -142,7 +142,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return SuperTypeOfNameQuerySpecification.instance();
   }
   
-  public SuperTypeOfNameMatcher getSuperTypeOfName(final IncQueryEngine engine) throws IncQueryException {
+  public SuperTypeOfNameMatcher getSuperTypeOfName(final ViatraQueryEngine engine) throws IncQueryException {
     return SuperTypeOfNameMatcher.on(engine);
   }
   
@@ -150,7 +150,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EClassAttributeQuerySpecification.instance();
   }
   
-  public EClassAttributeMatcher getEClassAttribute(final IncQueryEngine engine) throws IncQueryException {
+  public EClassAttributeMatcher getEClassAttribute(final ViatraQueryEngine engine) throws IncQueryException {
     return EClassAttributeMatcher.on(engine);
   }
   
@@ -158,7 +158,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EClassWithEStringAttributeQuerySpecification.instance();
   }
   
-  public EClassWithEStringAttributeMatcher getEClassWithEStringAttribute(final IncQueryEngine engine) throws IncQueryException {
+  public EClassWithEStringAttributeMatcher getEClassWithEStringAttribute(final ViatraQueryEngine engine) throws IncQueryException {
     return EClassWithEStringAttributeMatcher.on(engine);
   }
   
@@ -166,7 +166,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EReferenceWithStarMultiplicityQuerySpecification.instance();
   }
   
-  public EReferenceWithStarMultiplicityMatcher getEReferenceWithStarMultiplicity(final IncQueryEngine engine) throws IncQueryException {
+  public EReferenceWithStarMultiplicityMatcher getEReferenceWithStarMultiplicity(final ViatraQueryEngine engine) throws IncQueryException {
     return EReferenceWithStarMultiplicityMatcher.on(engine);
   }
   
@@ -174,7 +174,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EReferenceWithStarMultiplicityNameQuerySpecification.instance();
   }
   
-  public EReferenceWithStarMultiplicityNameMatcher getEReferenceWithStarMultiplicityName(final IncQueryEngine engine) throws IncQueryException {
+  public EReferenceWithStarMultiplicityNameMatcher getEReferenceWithStarMultiplicityName(final ViatraQueryEngine engine) throws IncQueryException {
     return EReferenceWithStarMultiplicityNameMatcher.on(engine);
   }
   
@@ -182,7 +182,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EReferenceWithOneMultiplicityQuerySpecification.instance();
   }
   
-  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicity(final IncQueryEngine engine) throws IncQueryException {
+  public EReferenceWithOneMultiplicityMatcher getEReferenceWithOneMultiplicity(final ViatraQueryEngine engine) throws IncQueryException {
     return EReferenceWithOneMultiplicityMatcher.on(engine);
   }
   
@@ -190,7 +190,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return EReferenceWithOneMultiplicityNameQuerySpecification.instance();
   }
   
-  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityName(final IncQueryEngine engine) throws IncQueryException {
+  public EReferenceWithOneMultiplicityNameMatcher getEReferenceWithOneMultiplicityName(final ViatraQueryEngine engine) throws IncQueryException {
     return EReferenceWithOneMultiplicityNameMatcher.on(engine);
   }
   
@@ -198,7 +198,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return SampleQueryQuerySpecification.instance();
   }
   
-  public SampleQueryMatcher getSampleQuery(final IncQueryEngine engine) throws IncQueryException {
+  public SampleQueryMatcher getSampleQuery(final ViatraQueryEngine engine) throws IncQueryException {
     return SampleQueryMatcher.on(engine);
   }
   
@@ -206,7 +206,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return SampleQuery2QuerySpecification.instance();
   }
   
-  public SampleQuery2Matcher getSampleQuery2(final IncQueryEngine engine) throws IncQueryException {
+  public SampleQuery2Matcher getSampleQuery2(final ViatraQueryEngine engine) throws IncQueryException {
     return SampleQuery2Matcher.on(engine);
   }
   
@@ -214,7 +214,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return IsEStringQuerySpecification.instance();
   }
   
-  public IsEStringMatcher getIsEString(final IncQueryEngine engine) throws IncQueryException {
+  public IsEStringMatcher getIsEString(final ViatraQueryEngine engine) throws IncQueryException {
     return IsEStringMatcher.on(engine);
   }
   
@@ -222,7 +222,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return ECoreNamedElementQuerySpecification.instance();
   }
   
-  public ECoreNamedElementMatcher getECoreNamedElement(final IncQueryEngine engine) throws IncQueryException {
+  public ECoreNamedElementMatcher getECoreNamedElement(final ViatraQueryEngine engine) throws IncQueryException {
     return ECoreNamedElementMatcher.on(engine);
   }
   
@@ -230,7 +230,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return ECoreNamedElementNameQuerySpecification.instance();
   }
   
-  public ECoreNamedElementNameMatcher getECoreNamedElementName(final IncQueryEngine engine) throws IncQueryException {
+  public ECoreNamedElementNameMatcher getECoreNamedElementName(final ViatraQueryEngine engine) throws IncQueryException {
     return ECoreNamedElementNameMatcher.on(engine);
   }
   
@@ -238,7 +238,7 @@ public final class EcoreQueries extends BaseGeneratedPatternGroup {
     return IsInECoreQuerySpecification.instance();
   }
   
-  public IsInECoreMatcher getIsInECore(final IncQueryEngine engine) throws IncQueryException {
+  public IsInECoreMatcher getIsInECore(final ViatraQueryEngine engine) throws IncQueryException {
     return IsInECoreMatcher.on(engine);
   }
 }

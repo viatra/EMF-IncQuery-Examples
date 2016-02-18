@@ -4,9 +4,9 @@ import hu.bme.mit.incquery.ecorequeries.example.util.EClassQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClass pattern,
@@ -45,7 +45,7 @@ public abstract class EClassMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("EClass".equals(parameterName) ) {
-    	this.fEClass = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fEClass = (EClass) newValue;
     	return true;
     }
     return false;

@@ -7,20 +7,20 @@ import java.util.HashSet;
 import java.util.Set;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.EReferenceWithStarMultiplicityName pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link EReferenceWithStarMultiplicityNameMatch}.
  * 
@@ -48,7 +48,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static EReferenceWithStarMultiplicityNameMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static EReferenceWithStarMultiplicityNameMatcher on(final ViatraQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
     EReferenceWithStarMultiplicityNameMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
@@ -67,16 +67,16 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
    * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
    * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
+   * <p>The matcher will be created within the managed {@link ViatraQueryEngine} belonging to the EMF model root, so
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead, e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}
    * 
    */
   @Deprecated
   public EReferenceWithStarMultiplicityNameMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
+    this(ViatraQueryEngine.on(emfRoot));
   }
   
   /**
@@ -85,11 +85,11 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead
    * 
    */
   @Deprecated
-  public EReferenceWithStarMultiplicityNameMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public EReferenceWithStarMultiplicityNameMatcher(final ViatraQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -192,7 +192,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) t.get(POSITION_EREFNAME));
+    	return EReferenceWithStarMultiplicityNameMatch.newMatch((String) t.get(POSITION_EREFNAME));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -202,7 +202,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return EReferenceWithStarMultiplicityNameMatch.newMatch((java.lang.String) match[POSITION_EREFNAME]);
+    	return EReferenceWithStarMultiplicityNameMatch.newMatch((String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -212,7 +212,7 @@ public class EReferenceWithStarMultiplicityNameMatcher extends BaseMatcher<ERefe
   @Override
   protected EReferenceWithStarMultiplicityNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return EReferenceWithStarMultiplicityNameMatch.newMutableMatch((java.lang.String) match[POSITION_EREFNAME]);
+    	return EReferenceWithStarMultiplicityNameMatch.newMutableMatch((String) match[POSITION_EREFNAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

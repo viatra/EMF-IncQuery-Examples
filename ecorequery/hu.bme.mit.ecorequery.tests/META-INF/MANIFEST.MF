@@ -3,20 +3,19 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Tests
 Bundle-SymbolicName: hu.bme.mit.ecorequery.tests
 Bundle-Version: 1.2.0.qualifier
+Export-Package: hu.bme.mit.ecorequery.tests
 Require-Bundle: org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.core.runtime,
  org.junit;bundle-version="4.8.1",
- org.eclipse.incquery.runtime;bundle-version="0.8.0",
- org.eclipse.incquery.testing.core;bundle-version="0.8.0",
- org.eclipse.incquery.snapshot;bundle-version="0.8.0",
  hu.bme.mit.ecorequery;bundle-version="0.8.0",
- org.eclipse.incquery.patternlanguage;bundle-version="0.8.0",
- org.eclipse.incquery.patternlanguage.emf;bundle-version="0.8.0",
  org.eclipse.xtext.junit4;bundle-version="[2.8.0,3.0.0)",
- com.google.inject
+ com.google.inject,
+ org.eclipse.viatra.query.runtime;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.viatra.query.testing.core;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.viatra.query.testing.snapshot;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.viatra.query.patternlanguage;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.viatra.query.patternlanguage.emf;bundle-version="[1.2.0,2.0.0)"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: hu.bme.mit.ecorequery.tests
-

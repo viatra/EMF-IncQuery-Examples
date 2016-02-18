@@ -9,20 +9,23 @@ import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
-import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.psystem.PBody;
-import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeBinary;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeUnary;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
-import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFPQuery;
+import org.eclipse.viatra.query.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
+import org.eclipse.viatra.query.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.viatra.query.runtime.emf.types.EStructuralFeatureInstancesKey;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PBody;
+import org.eclipse.viatra.query.runtime.matchers.psystem.PVariable;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.Equality;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
+import org.eclipse.viatra.query.runtime.matchers.psystem.basicenumerables.TypeConstraint;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.PParameter;
+import org.eclipse.viatra.query.runtime.matchers.psystem.queries.QueryInitializationException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.FlatTuple;
 
 /**
  * A pattern-specific query specification that can instantiate SampleQueryMatcher in a type-safe way.
@@ -51,7 +54,7 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedEMFQuerySp
   }
   
   @Override
-  protected SampleQueryMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+  protected SampleQueryMatcher instantiate(final ViatraQueryEngine engine) throws IncQueryException {
     return SampleQueryMatcher.on(engine);
   }
   
@@ -65,11 +68,29 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedEMFQuerySp
     return SampleQueryMatch.newMatch((org.eclipse.emf.ecore.EClass) parameters[0], (org.eclipse.emf.ecore.EClass) parameters[1], (org.eclipse.emf.ecore.EReference) parameters[2], (org.eclipse.emf.ecore.EAttribute) parameters[3], (org.eclipse.emf.ecore.EAttribute) parameters[4]);
   }
   
+  /**
+   * Inner class allowing the singleton instance of {@link SampleQueryQuerySpecification} to be created 
+   * 	<b>not</b> at the class load time of the outer class, 
+   * 	but rather at the first call to {@link SampleQueryQuerySpecification#instance()}.
+   * 
+   * <p> This workaround is required e.g. to support recursion.
+   * 
+   */
   private static class LazyHolder {
-    private final static SampleQueryQuerySpecification INSTANCE = make();
+    private final static SampleQueryQuerySpecification INSTANCE = new SampleQueryQuerySpecification();
     
-    public static SampleQueryQuerySpecification make() {
-      return new SampleQueryQuerySpecification();					
+    /**
+     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
+     * This initialization order is required to support indirect recursion.
+     * 
+     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
+     * 
+     */
+    private final static Object STATIC_INITIALIZER = ensureInitialized();
+    
+    public static Object ensureInitialized() {
+      INSTANCE.ensureInitializedInternalSneaky();
+      return null;					
     }
   }
   
@@ -95,35 +116,48 @@ public final class SampleQueryQuerySpecification extends BaseGeneratedEMFQuerySp
     public Set<PBody> doGetContainedBodies() throws QueryInitializationException {
       Set<PBody> bodies = Sets.newLinkedHashSet();
       try {
-      {
-      	PBody body = new PBody(this);
-      	PVariable var_XElement = body.getOrCreateVariableByName("XElement");
-      	PVariable var_YElement = body.getOrCreateVariableByName("YElement");
-      	PVariable var_Relates = body.getOrCreateVariableByName("Relates");
-      	PVariable var_Label1 = body.getOrCreateVariableByName("Label1");
-      	PVariable var_Label2 = body.getOrCreateVariableByName("Label2");
-      	body.setExportedParameters(Arrays.<ExportedParameter>asList(
-      		new ExportedParameter(body, var_XElement, "XElement"),
-      				
-      		new ExportedParameter(body, var_YElement, "YElement"),
-      				
-      		new ExportedParameter(body, var_Relates, "Relates"),
-      				
-      		new ExportedParameter(body, var_Label1, "Label1"),
-      				
-      		new ExportedParameter(body, var_Label2, "Label2")
-      	));
-      	new TypeBinary(body, CONTEXT, var_XElement, var_Relates, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures"), "http://www.eclipse.org/emf/2002/Ecore/EClass.eStructuralFeatures");
-      	new TypeUnary(body, var_Relates, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference"), "http://www.eclipse.org/emf/2002/Ecore/EReference");
-      	new TypeUnary(body, var_YElement, getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass"), "http://www.eclipse.org/emf/2002/Ecore/EClass");
-      	new TypeBinary(body, CONTEXT, var_Relates, var_YElement, getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType"), "http://www.eclipse.org/emf/2002/Ecore/ETypedElement.eType");
-      	new PositivePatternCall(body, new FlatTuple(var_Relates), EReferenceWithStarMultiplicityQuerySpecification.instance().getInternalQueryRepresentation());
-      	new PositivePatternCall(body, new FlatTuple(var_XElement, var_Label1), EClassWithEStringAttributeQuerySpecification.instance().getInternalQueryRepresentation());
-      	new PositivePatternCall(body, new FlatTuple(var_YElement, var_Label2), EClassWithEStringAttributeQuerySpecification.instance().getInternalQueryRepresentation());
-      	new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
-      	new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
-      	bodies.add(body);
-      }
+      	{
+      		PBody body = new PBody(this);
+      		PVariable var_XElement = body.getOrCreateVariableByName("XElement");
+      		PVariable var_YElement = body.getOrCreateVariableByName("YElement");
+      		PVariable var_Relates = body.getOrCreateVariableByName("Relates");
+      		PVariable var_Label1 = body.getOrCreateVariableByName("Label1");
+      		PVariable var_Label2 = body.getOrCreateVariableByName("Label2");
+      		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
+      		   new ExportedParameter(body, var_XElement, "XElement"),
+      		   new ExportedParameter(body, var_YElement, "YElement"),
+      		   new ExportedParameter(body, var_Relates, "Relates"),
+      		   new ExportedParameter(body, var_Label1, "Label1"),
+      		   new ExportedParameter(body, var_Label2, "Label2")
+      		));
+      		// 	// structural block, defining the basic pattern body	EClass(XElement)
+      		new TypeConstraint(body, new FlatTuple(var_XElement), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
+      		// 	EClass.eStructuralFeatures(XElement,Relates)
+      		new TypeConstraint(body, new FlatTuple(var_XElement), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
+      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      		new TypeConstraint(body, new FlatTuple(var_XElement, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass", "eStructuralFeatures")));
+      		new Equality(body, var__virtual_0_, var_Relates);
+      		// 	EReference(Relates)
+      		new TypeConstraint(body, new FlatTuple(var_Relates), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EReference")));
+      		// 	EClass(YElement)
+      		new TypeConstraint(body, new FlatTuple(var_YElement), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "EClass")));
+      		// 	ETypedElement.eType(Relates,YElement)
+      		new TypeConstraint(body, new FlatTuple(var_Relates), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement")));
+      		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+      		new TypeConstraint(body, new FlatTuple(var_Relates, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://www.eclipse.org/emf/2002/Ecore", "ETypedElement", "eType")));
+      		new Equality(body, var__virtual_1_, var_YElement);
+      		// 	// express the multiplicity of the ERef between X and Y	find EReferenceWithStarMultiplicity(Relates)
+      		new PositivePatternCall(body, new FlatTuple(var_Relates), EReferenceWithStarMultiplicityQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	// express that both X and Y have got an attribute of type EString	find EClassWithEStringAttribute(XElement, Label1)
+      		new PositivePatternCall(body, new FlatTuple(var_XElement, var_Label1), EClassWithEStringAttributeQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	find EClassWithEStringAttribute(YElement, Label2)
+      		new PositivePatternCall(body, new FlatTuple(var_YElement, var_Label2), EClassWithEStringAttributeQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 		// filter out matching to Ecore.ecore (as the pattern would also have matches there)	neg find IsInECore(XElement)
+      		new NegativePatternCall(body, new FlatTuple(var_XElement), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	neg find IsInECore(YElement)
+      		new NegativePatternCall(body, new FlatTuple(var_YElement), IsInECoreQuerySpecification.instance().getInternalQueryRepresentation());
+      		bodies.add(body);
+      	}
       	// to silence compiler error
       	if (false) throw new IncQueryException("Never", "happens");
       } catch (IncQueryException ex) {

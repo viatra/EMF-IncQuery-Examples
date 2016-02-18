@@ -4,9 +4,9 @@ import hu.bme.mit.incquery.ecorequeries.example.util.IsInECoreQuerySpecification
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.IsInECore pattern,
@@ -45,7 +45,7 @@ public abstract class IsInECoreMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Element".equals(parameterName) ) {
-    	this.fElement = (org.eclipse.emf.ecore.EClassifier) newValue;
+    	this.fElement = (EClassifier) newValue;
     	return true;
     }
     return false;

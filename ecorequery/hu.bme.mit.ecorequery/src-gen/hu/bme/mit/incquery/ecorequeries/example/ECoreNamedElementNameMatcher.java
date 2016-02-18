@@ -7,20 +7,20 @@ import java.util.HashSet;
 import java.util.Set;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.incquery.runtime.api.IMatchProcessor;
-import org.eclipse.incquery.runtime.api.IQuerySpecification;
-import org.eclipse.incquery.runtime.api.IncQueryEngine;
-import org.eclipse.incquery.runtime.api.impl.BaseMatcher;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
-import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
-import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
+import org.eclipse.viatra.query.runtime.api.IMatchProcessor;
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification;
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine;
+import org.eclipse.viatra.query.runtime.api.impl.BaseMatcher;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.matchers.tuple.Tuple;
+import org.eclipse.viatra.query.runtime.util.IncQueryLoggingUtil;
 
 /**
  * Generated pattern matcher API of the hu.bme.mit.incquery.ecorequeries.example.ECoreNamedElementName pattern,
  * providing pattern-specific query methods.
  * 
- * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
- * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
+ * <p>Use the pattern matcher on a given model via {@link #on(ViatraQueryEngine)},
+ * e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}.
  * 
  * <p>Matches of the pattern will be represented as {@link ECoreNamedElementNameMatch}.
  * 
@@ -47,7 +47,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static ECoreNamedElementNameMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static ECoreNamedElementNameMatcher on(final ViatraQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
     ECoreNamedElementNameMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
@@ -66,16 +66,16 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
    * If a pattern matcher is already constructed with the same root, only a light-weight reference is returned.
    * The scope of pattern matching will be the given EMF model root and below (see FAQ for more precise definition).
    * The match set will be incrementally refreshed upon updates from this scope.
-   * <p>The matcher will be created within the managed {@link IncQueryEngine} belonging to the EMF model root, so
+   * <p>The matcher will be created within the managed {@link ViatraQueryEngine} belonging to the EMF model root, so
    * multiple matchers will reuse the same engine and benefit from increased performance and reduced memory footprint.
    * @param emfRoot the root of the EMF containment hierarchy where the pattern matcher will operate. Recommended: Resource or ResourceSet.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead, e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead, e.g. in conjunction with {@link ViatraQueryEngine#on(Notifier)}
    * 
    */
   @Deprecated
   public ECoreNamedElementNameMatcher(final Notifier emfRoot) throws IncQueryException {
-    this(IncQueryEngine.on(emfRoot));
+    this(ViatraQueryEngine.on(emfRoot));
   }
   
   /**
@@ -84,11 +84,11 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
    * The match set will be incrementally refreshed upon updates.
    * @param engine the existing EMF-IncQuery engine in which this matcher will be created.
    * @throws IncQueryException if an error occurs during pattern matcher creation
-   * @deprecated use {@link #on(IncQueryEngine)} instead
+   * @deprecated use {@link #on(ViatraQueryEngine)} instead
    * 
    */
   @Deprecated
-  public ECoreNamedElementNameMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public ECoreNamedElementNameMatcher(final ViatraQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
@@ -191,7 +191,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return ECoreNamedElementNameMatch.newMatch((java.lang.String) t.get(POSITION_NAME));
+    	return ECoreNamedElementNameMatch.newMatch((String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -201,7 +201,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return ECoreNamedElementNameMatch.newMatch((java.lang.String) match[POSITION_NAME]);
+    	return ECoreNamedElementNameMatch.newMatch((String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -211,7 +211,7 @@ public class ECoreNamedElementNameMatcher extends BaseMatcher<ECoreNamedElementN
   @Override
   protected ECoreNamedElementNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return ECoreNamedElementNameMatch.newMutableMatch((java.lang.String) match[POSITION_NAME]);
+    	return ECoreNamedElementNameMatch.newMutableMatch((String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

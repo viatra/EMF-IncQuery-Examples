@@ -6,9 +6,9 @@ import java.util.List;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.EClassAttribute pattern,
@@ -63,15 +63,15 @@ public abstract class EClassAttributeMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("E".equals(parameterName) ) {
-    	this.fE = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fE = (EClass) newValue;
     	return true;
     }
     if ("Attr".equals(parameterName) ) {
-    	this.fAttr = (org.eclipse.emf.ecore.EAttribute) newValue;
+    	this.fAttr = (EAttribute) newValue;
     	return true;
     }
     if ("Type".equals(parameterName) ) {
-    	this.fType = (org.eclipse.emf.ecore.EClassifier) newValue;
+    	this.fType = (EClassifier) newValue;
     	return true;
     }
     return false;

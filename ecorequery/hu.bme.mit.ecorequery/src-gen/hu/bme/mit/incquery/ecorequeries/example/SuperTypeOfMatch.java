@@ -4,9 +4,9 @@ import hu.bme.mit.incquery.ecorequeries.example.util.SuperTypeOfQuerySpecificati
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.incquery.runtime.api.IPatternMatch;
-import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
-import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.viatra.query.runtime.api.IPatternMatch;
+import org.eclipse.viatra.query.runtime.api.impl.BasePatternMatch;
+import org.eclipse.viatra.query.runtime.exception.IncQueryException;
 
 /**
  * Pattern-specific match representation of the hu.bme.mit.incquery.ecorequeries.example.SuperTypeOf pattern,
@@ -53,11 +53,11 @@ public abstract class SuperTypeOfMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Super".equals(parameterName) ) {
-    	this.fSuper = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fSuper = (EClass) newValue;
     	return true;
     }
     if ("Sub".equals(parameterName) ) {
-    	this.fSub = (org.eclipse.emf.ecore.EClass) newValue;
+    	this.fSub = (EClass) newValue;
     	return true;
     }
     return false;
