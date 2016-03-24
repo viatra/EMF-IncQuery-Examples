@@ -15,7 +15,7 @@ package school.tests
 import com.google.inject.Inject
 import com.google.inject.Injector
 import java.util.Collections
-import org.eclipse.incquery.testing.core.base.CommonStaticQueryTester
+import org.eclipse.viatra.query.testing.core.base.CommonStaticQueryTester
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -30,8 +30,8 @@ class SchoolTestsBase extends CommonStaticQueryTester {
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	override queryInputEIQURI() { // Creates new resource set
-		"school.incquery/school/simpleSchoolQueries.eiq"
+	override queryInputVQLURI() { // Creates new resource set
+		"school.incquery/school/simpleSchoolQueries.vql"
 	}
 	
 	override queryInputDependencyURIs() {Collections.emptyList}

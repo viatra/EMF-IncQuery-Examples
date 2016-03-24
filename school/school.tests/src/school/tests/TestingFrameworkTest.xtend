@@ -1,8 +1,9 @@
 package school.tests
 
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
-import org.eclipse.incquery.snapshot.EIQSnapshot.RecordRole
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import com.google.inject.Inject
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
@@ -13,11 +14,11 @@ import org.junit.runner.RunWith
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
 class TestingFrameworkTest extends SchoolTestsBase {
   
-  def testValues(IncQuerySnapshot sns){
+  @Inject extension SnapshotHelper 
+  
+  def testValues(QuerySnapshot sns){
     sns.matchSetRecords.forEach[
-      Assert::assertTrue("Record role not set for filter", filter.role == RecordRole::FILTER)
       matches.forEach[
-        Assert::assertTrue("Record role not set for match", role == RecordRole::MATCH)
         substitutions.forEach[
           Assert::assertTrue("Substitution is not correct", derivedValue != null)
         ]

@@ -11,9 +11,9 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
@@ -21,6 +21,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import school.ClassesOfTeacherMatcher
 import school.util.ClassesOfTeacherQuerySpecification
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
+import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
+import com.google.inject.Injector
 
 /**
  * API test set for testing IncQuery with the school example.
@@ -30,9 +34,22 @@ import school.util.ClassesOfTeacherQuerySpecification
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class APISchoolTest extends SchoolTestsBase {
+class APISchoolTest {
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
+	@Inject Injector injector
+
+	def snapshot() {
+    val _snapshotURI = "school.tests/model/tests.eiqsnapshot";
+    val _loadExpectedResultsFromUri = this._modelLoadHelper.loadExpectedResultsFromUri(_snapshotURI);
+    return (_loadExpectedResultsFromUri as QuerySnapshot);
+  }
+  
+  def queryInput() {
+    val _queryInputVQLURI = "school.incquery/school/simpleSchoolQueries.vql";
+    val _loadPatternModelFromUri = this._modelLoadHelper.loadPatternModelFromUri(_queryInputVQLURI, this.injector, null);
+    return (_loadPatternModelFromUri as PatternModel);
+  }
 
 	@Test()
 	def resultMatchImmutableGeneric(){

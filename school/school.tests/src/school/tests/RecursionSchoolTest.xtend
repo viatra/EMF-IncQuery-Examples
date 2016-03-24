@@ -14,17 +14,18 @@ package school.tests
 
 import com.google.inject.Inject
 import java.util.Collections
-import org.eclipse.incquery.snapshot.EIQSnapshot.IncQuerySnapshot
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
+import org.eclipse.viatra.query.runtime.emf.EMFScope
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import school.Studentimport org.eclipse.incquery.runtime.api.IncQueryEngine
-import org.eclipse.incquery.runtime.emf.EMFScope
+import school.Student
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -42,8 +43,8 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
   
-	override queryInputEIQURI() {
-		"school.incquery/school/recursiveQueries.eiq"
+	override queryInputVQLURI() {
+		"school.incquery/school/recursiveQueries.vql"
 	}
 	override queryInputDependencyURIs() {
 		Collections.singletonList("school.incquery/school/simpleSchoolQueries.eiq")
@@ -51,14 +52,14 @@ class RecursionSchoolTest extends SchoolTestsBase {
   
   	@Test
 	def staticRecursionTest(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainRec.eiqsnapshot") as IncQuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainRec.eiqsnapshot") as QuerySnapshot
 		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
     
   	@Test
 	def staticTCTest(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as IncQuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as QuerySnapshot
 		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
@@ -80,7 +81,7 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	}
 	
 	def createFriendshipTest(String initialSnsURI, String modifiedSnsURI) {
-		val sns = loadExpectedResultsFromUri(initialSnsURI) as IncQuerySnapshot
+		val sns = loadExpectedResultsFromUri(initialSnsURI) as QuerySnapshot
 		val pm = queryInput
 		pm.assertMatchResults(sns)
 		
@@ -109,9 +110,9 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	
 	@Test
 	def crazyRecursiveQueryCompiles(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as IncQuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as QuerySnapshot
 		val pm = queryInput
-		val engine = IncQueryEngine::on(new EMFScope(sns.getModelRoots().get(0)));
+		val engine = ViatraQueryEngine::on(new EMFScope(sns.getModelRoots().get(0)));
 		val matcher = pm.initializeMatcherFromModel(engine,"school.friendOfClassMember")
 		Assert::assertNotNull(matcher)
 		Assert::assertNotNull(matcher.allMatches)

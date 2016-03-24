@@ -13,23 +13,36 @@
 package school.tests
 
 import com.google.inject.Inject
-import org.eclipse.incquery.runtime.api.IPatternMatch
-import org.eclipse.incquery.testing.core.ModelLoadHelper
-import org.eclipse.incquery.testing.core.SnapshotHelper
-import org.eclipse.incquery.testing.core.TestExecutor
-import org.eclipse.incquery.testing.core.injector.EMFPatternLanguageInjectorProvider
+import org.eclipse.viatra.query.runtime.api.GenericQueryGroup
+import org.eclipse.viatra.query.runtime.api.IPatternMatch
+import org.eclipse.viatra.query.runtime.rete.matcher.ReteBackendFactory
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
+import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import school.Course
+import school.RecursiveQueries
 import school.School
 import school.SchoolClass
 import school.SchoolFactory
+import school.SchoolValidationRules
+import school.SimpleSchoolQueries
 import school.Student
 import school.Teacher
+import school.UnnamedVariables
 import school.Year
+import school.util.TeachersOfSchoolQuerySpecification
+import school.util.TeachersQuerySpecification
+import school.util.SchoolsNamesQuerySpecification
+import school.util.TeachersNamesQuerySpecification
+import org.eclipse.emf.ecore.util.EcoreUtil
+import school.util.CoursesOfTeacherNamesQuerySpecification
 
 /**
  * Basic test set for testing IncQuery with the school example.
@@ -47,160 +60,84 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Inject extension TestExecutor
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
+	
+	val snapshotpath = "school.tests/model/tests.eiqsnapshot"
   
 	@Test
-	def testModelModification(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// add a new Teacher "New Teacher" to the first (only) School in the model
-		// theoretically, we should use a scalar-only pattern for this purpose
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
-		val s = matcher.oneArbitraryMatch.get("Sch") as School
-		Assert::assertNotNull(s)
-		if (s!=null) {			
-			val t = SchoolFactory::eINSTANCE.createTeacher
-			t.setName("New Teacher")
-			t.setSchool(s)			
-			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_manipulated.eiqsnapshot")
-			pm.assertMatchResults(newSns)
-		}
+	def void testModelModification(){
+		ViatraQueryTest.test(TeachersOfSchoolQuerySpecification.instance).and(TeachersQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+			modify(School, [true], [
+				// MODEL MODIFICATION HERE
+				// add a new Teacher "New Teacher" to the first (only) School in the model
+				val t = SchoolFactory::eINSTANCE.createTeacher
+				t.setName("New Teacher")
+				t.setSchool(it)
+			]).
+		with("school.tests/model/tests_manipulated.eiqsnapshot").assertEquals		
 	}
 	
 	@Test
-	def changeSchoolName(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// change the School "Budapest University of Technology and Economics" name to "BME"
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
-		val s = matcher.oneArbitraryMatch.get("Sch") as School
-		Assert::assertNotNull(s)
-		if (s!=null) {			
-			if(s.name == "Budapest University of Technology and Economics"){
-				s.setName("BME")
-			}			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeSchoolName.eiqsnapshot")
-			pm.assertMatchResults(newSns)
-		}
+	def void changeSchoolName(){
+		ViatraQueryTest.test(SchoolsNamesQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+			modify(School, [name == "Budapest University of Technology and Economics"], [
+				// MODEL MODIFICATION HERE
+				// change the School "Budapest University of Technology and Economics" name to "BME"
+				it.name = "BME"
+			]).
+		with("school.tests/model/tests_changeSchoolName.eiqsnapshot").assertEquals		
 	}
 	
 	
 	@Test
-	def	changeNameModelModification(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// change the Teacher "Andras Pataricza" name to "Dr. Andras Pataricza"
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.teachers")
-		val match = matcher.allMatches
-		
-		for(IPatternMatch g : match){
-			val t = g.get("T") as Teacher
-			
-			Assert::assertNotNull(t)
-			if(t!=null){		
-				if(t.name == "Andras Pataricza"){	
-					t.setName("Dr. Andras Pataricza");
-					
-					val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeName.eiqsnapshot")
-					pm.assertMatchResults(newSns)
-				}
-			}
-		}				
+	def	void changeNameModelModification(){
+		ViatraQueryTest.test(TeachersNamesQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+			modify(Teacher, [name == "Andras Pataricza"], [
+				// MODEL MODIFICATION HERE
+				// change the Teacher "Andras Pataricza" name to "Dr. Andras Pataricza"
+				it.name = "Dr. Andras Pataricza"
+			]).
+		with("school.tests/model/tests_changeName.eiqsnapshot").assertEquals			
 	}
 	
 	@Test
 	def	deleteTeacher(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// delete the Teacher "Istvan Majzik"
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
-		val s = matcher.oneArbitraryMatch.get("Sch") as School
-		Assert::assertNotNull(s)
-		if (s!=null) {	
-			val ts = s.teachers		
-			val iterator = ts.iterator
-			while(iterator.hasNext()){
-				val item = iterator.next
-				if(item.name == "Istvan Majzik")
-	        		iterator.remove();
-			}	
-			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacher.eiqsnapshot")
-			pm.assertMatchResults(newSns)				
-						
-		}
-				
+		ViatraQueryTest.test(TeachersNamesQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+		modify(Teacher, [name == "Istvan Majzik"], [
+			// MODEL MODIFICATION HERE
+			// delete the Teacher "Istvan Majzik"
+			EcoreUtil::delete(it)
+		]).with("school.tests/model/tests_deleteTeacher.eiqsnapshot").assertEquals		
 	}	
 	
 	@Test
 	def	deleteCourse(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// delete the Course "Prolog programming"
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
-		val s = matcher.oneArbitraryMatch.get("Sch") as School
-		Assert::assertNotNull(s)
-		if (s!=null) {	
-			val courses = s.courses	
-			val i = courses.iterator();
-			while (i.hasNext()) {
-			   val c = i.next(); // must be called before you can call i.remove()
-			   if(c.subject == "Prolog programming"){
-			   	i.remove();			   	
-			   }
-			}			
-						
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteCourse.eiqsnapshot")
-			pm.assertMatchResults(newSns)				
-						
-		}
-				
+		ViatraQueryTest.test(CoursesOfTeacherNamesQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+		modify(Course, [subject == "Prolog programming"], [
+			// MODEL MODIFICATION HERE
+			// delete the Course "Prolog programming"
+			EcoreUtil::delete(it)
+		]).with("school.tests/model/tests_deleteCourse.eiqsnapshot").assertEquals	
 	}
 	
 	
 	@Test
 	def	createCourse(){
-		val sns = snapshot
-		val pm = queryInput
-		pm.assertMatchResults(sns)
-		
-		// MODEL MODIFICATION HERE
-		// add a new Course "System Integration" to Teacher "Daniel Varro"
-		val matcher = pm.initializeMatcherFromModel(sns.EMFRootForSnapshot, "school.schools")
-		val s = matcher.oneArbitraryMatch.get("Sch") as School
-		Assert::assertNotNull(s)
-		if (s!=null) {
-			val teachers = s.teachers
-			
-			for(Teacher t : teachers)
-			{					
-				if(t.name == "Daniel Varro")
-				{
-					val c = SchoolFactory::eINSTANCE.createCourse
-					c.setSchool(s)
-					c.setSubject("System Integration")	
-					c.setWeight(30)		
-					c.setTeacher(t)									
-				}
-			}			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse.eiqsnapshot")
-					pm.assertMatchResults(newSns)													
-		}				
+		ViatraQueryTest.test(CoursesOfTeacherNamesQuerySpecification.instance).
+		with(new ReteBackendFactory).with(snapshotpath).assumeInputs.assertEqualsThen.
+		modify(Teacher, [name == "Daniel Varro"], [
+			// MODEL MODIFICATION HERE
+			// add a new Course "System Integration" to Teacher "Daniel Varro"
+			val c = SchoolFactory::eINSTANCE.createCourse
+			c.setSchool(it.school)
+			c.setSubject("System Integration")	
+			c.setWeight(30)		
+			c.setTeacher(it)
+		]).with("school.tests/model/tests_createCourse.eiqsnapshot").assertEquals			
 	}
 	
 	@Test

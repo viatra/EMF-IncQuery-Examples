@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/incquery/snapshot" inputSpecification="ResourceSet">
+<eiqSnapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
   <matchSetRecords patternQualifiedName="school.inTheCircleOfFriendsNames">
     <matches>
       <substitutions xsi:type="eiqSnapshot:StringSubstitution" parameterName="S1Name" value="Zoltan Ujhelyi"/>
@@ -13,4 +13,4 @@
   </matchSetRecords>
   <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
   <modelRoots href="tests_deleteAllTeacher.eiqsnapshot#/"/>
-</eiqSnapshot:IncQuerySnapshot>
+</eiqSnapshot:QuerySnapshot>

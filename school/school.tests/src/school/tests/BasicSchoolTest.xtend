@@ -12,11 +12,11 @@
 
 package school.tests
 
-import org.eclipse.incquery.runtime.api.IPatternMatch
-import org.eclipse.incquery.runtime.api.IQuerySpecification
-import org.eclipse.incquery.runtime.api.IncQueryMatcher
-import org.eclipse.incquery.runtime.rete.matcher.ReteEngine
-import org.eclipse.incquery.testing.core.api.EIQTest
+import org.eclipse.viatra.query.runtime.api.IPatternMatch
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification
+import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher
+import org.eclipse.viatra.query.runtime.rete.matcher.ReteBackendFactory
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
 import org.junit.Test
 import school.SimpleSchoolQueries
 import school.util.ClassesOfTeacherQuerySpecification
@@ -51,52 +51,52 @@ class BasicSchoolTest{
 	@Test
 	def testAllQueries(){
 		SimpleSchoolQueries.instance.specifications.forEach[
-			EIQTest.test(it as IQuerySpecification<IncQueryMatcher<IPatternMatch>>)
-				.with(snapshot).with(ReteEngine).assertEquals
+			ViatraQueryTest.test(it as IQuerySpecification<ViatraQueryMatcher<IPatternMatch>>)
+				.with(snapshot).with(new ReteBackendFactory).assertEquals
 		]
 	}
 			
 	// simple test cases, for each query of the school example
-	 
-	@Test def testSchools() { EIQTest.test("school.schools").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTeachers() { EIQTest.test("school.teachers").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTeachersOfSchool() { EIQTest.test("school.teachersOfSchool").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testCoursesOfTeacher() { EIQTest.test("school.coursesOfTeacher").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testClassesOfTeacher() { EIQTest.test("school.classesOfTeacher").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTeacherWithoutClass() { EIQTest.test("school.teacherWithoutClass").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testStudentOfSchool() { EIQTest.test("school.studentOfSchool").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testCourseWithWeightThirty() { EIQTest.test("school.courseWithWeightThirty").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testCourseWithNameLongerThanWeight() { EIQTest.test("school.courseWithNameLongerThanWeight").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testCourseWithPrimeWeight() { EIQTest.test("school.courseWithPrimeWeight").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTeachesMoreClasses() { EIQTest.test("school.teachesMoreClasses").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTeachesTheMostCourses() { EIQTest.test("school.teachesTheMostCourses").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testFriendlyTo() { EIQTest.test("school.friendlyTo").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testInTheCircleOfFriends() { EIQTest.test("school.inTheCircleOfFriends").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testMoreFriendsThan() { EIQTest.test("school.moreFriendsThan").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testTheOnesWithTheBiggestCircle() { EIQTest.test("school.theOnesWithTheBiggestCircle").with(snapshot).with(ReteEngine).assertEquals }
-	@Test def testFinalPattern() { EIQTest.test("school.finalPattern").with(snapshot).with(ReteEngine).assertEquals }	
 	
-	@Test def mfTestSchools() { EIQTest.test(SchoolsQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTeachers() { EIQTest.test(TeachersQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTeachersOfSchool() { EIQTest.test(TeachersOfSchoolQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestCoursesOfTeacher() { EIQTest.test(CoursesOfTeacherQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestClassesOfTeacher() { EIQTest.test(ClassesOfTeacherQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTeacherWithoutClass() { EIQTest.test(TeacherWithoutClassQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestStudentOfSchool() { EIQTest.test(StudentOfSchoolQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestCourseWithWeightThirty() { EIQTest.test(CourseWithWeightThirtyQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestCourseWithNameLongerThanWeight() { EIQTest.test(CourseWithNameLongerThanWeightQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestCourseWithPrimeWeight() { EIQTest.test(CourseWithPrimeWeightQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTeachesMoreClasses() { EIQTest.test(TeachesMoreClassesQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTeachesTheMostCourses() { EIQTest.test(TeachesTheMostCoursesQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestFriendlyTo() { EIQTest.test(FriendlyToQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestInTheCircleOfFriends() { EIQTest.test(InTheCircleOfFriendsQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestMoreFriendsThan() { EIQTest.test(MoreFriendsThanQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestTheOnesWithTheBiggestCircle() { EIQTest.test(TheOnesWithTheBiggestCircleQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }
-	@Test def mfTestFinalPattern() { EIQTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals }	
+	@Test def testSchools() { ViatraQueryTest.test("school.schools").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTeachers() { ViatraQueryTest.test("school.teachers").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTeachersOfSchool() { ViatraQueryTest.test("school.teachersOfSchool").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testCoursesOfTeacher() { ViatraQueryTest.test("school.coursesOfTeacher").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testClassesOfTeacher() { ViatraQueryTest.test("school.classesOfTeacher").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTeacherWithoutClass() { ViatraQueryTest.test("school.teacherWithoutClass").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testStudentOfSchool() { ViatraQueryTest.test("school.studentOfSchool").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testCourseWithWeightThirty() { ViatraQueryTest.test("school.courseWithWeightThirty").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testCourseWithNameLongerThanWeight() { ViatraQueryTest.test("school.courseWithNameLongerThanWeight").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testCourseWithPrimeWeight() { ViatraQueryTest.test("school.courseWithPrimeWeight").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTeachesMoreClasses() { ViatraQueryTest.test("school.teachesMoreClasses").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTeachesTheMostCourses() { ViatraQueryTest.test("school.teachesTheMostCourses").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testFriendlyTo() { ViatraQueryTest.test("school.friendlyTo").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testInTheCircleOfFriends() { ViatraQueryTest.test("school.inTheCircleOfFriends").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testMoreFriendsThan() { ViatraQueryTest.test("school.moreFriendsThan").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testTheOnesWithTheBiggestCircle() { ViatraQueryTest.test("school.theOnesWithTheBiggestCircle").with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def testFinalPattern() { ViatraQueryTest.test("school.finalPattern").with(snapshot).with(new ReteBackendFactory).assertEquals }	
+	
+	@Test def mfTestSchools() { ViatraQueryTest.test(SchoolsQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTeachers() { ViatraQueryTest.test(TeachersQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTeachersOfSchool() { ViatraQueryTest.test(TeachersOfSchoolQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestCoursesOfTeacher() { ViatraQueryTest.test(CoursesOfTeacherQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestClassesOfTeacher() { ViatraQueryTest.test(ClassesOfTeacherQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTeacherWithoutClass() { ViatraQueryTest.test(TeacherWithoutClassQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestStudentOfSchool() { ViatraQueryTest.test(StudentOfSchoolQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestCourseWithWeightThirty() { ViatraQueryTest.test(CourseWithWeightThirtyQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestCourseWithNameLongerThanWeight() { ViatraQueryTest.test(CourseWithNameLongerThanWeightQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestCourseWithPrimeWeight() { ViatraQueryTest.test(CourseWithPrimeWeightQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTeachesMoreClasses() { ViatraQueryTest.test(TeachesMoreClassesQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTeachesTheMostCourses() { ViatraQueryTest.test(TeachesTheMostCoursesQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestFriendlyTo() { ViatraQueryTest.test(FriendlyToQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestInTheCircleOfFriends() { ViatraQueryTest.test(InTheCircleOfFriendsQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestMoreFriendsThan() { ViatraQueryTest.test(MoreFriendsThanQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestTheOnesWithTheBiggestCircle() { ViatraQueryTest.test(TheOnesWithTheBiggestCircleQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
+	@Test def mfTestFinalPattern() { ViatraQueryTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }	
 	
 	@Test
 	def wildcardTestFinalPattern(){
-    	EIQTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(ReteEngine).assertEquals
+    	ViatraQueryTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals
 	}
 	
 }

@@ -10,10 +10,11 @@
  *******************************************************************************/
 package school.tests
 
-import org.eclipse.incquery.runtime.rete.matcher.ReteEngine
-import org.eclipse.incquery.testing.core.api.EIQTest
+import org.eclipse.viatra.query.runtime.rete.matcher.ReteEngine
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
 import org.junit.Test
 import school.util.AnonymousVariablesQuerySpecification
+import org.eclipse.viatra.query.runtime.rete.matcher.ReteBackendFactory
 
 /**
  * @author Abel Hegedus
@@ -22,8 +23,8 @@ import school.util.AnonymousVariablesQuerySpecification
 class AnonymousVariablesSchoolTest {
 
   @Test
-  def anonymousVariablesTest(){
-  	EIQTest.test(AnonymousVariablesQuerySpecification.instance).
-  	with("school.tests/model/tests_anonymous_ref.eiqsnapshot").with(ReteEngine).assertEquals
+  def void anonymousVariablesTest(){
+  	ViatraQueryTest.test(AnonymousVariablesQuerySpecification.instance).
+  	with("school.tests/model/tests_anonymous_ref.eiqsnapshot").with(new ReteBackendFactory).assertEquals
   }
 }
