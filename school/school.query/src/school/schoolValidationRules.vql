@@ -3,7 +3,7 @@ package school
 import "http://school.ecore"
 
 
-@QueryExplorer(display = false)
+@QueryExplorer(checked = false)
 pattern CourseWithTeacher(C : Course) = {Course.teacher(C,_T);}
 
 @Constraint(
