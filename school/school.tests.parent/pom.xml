@@ -59,11 +59,11 @@
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>incquery-snapshots</id>
+			<id>viatra-snapshots</id>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-			<url>https://repo.eclipse.org/content/repositories/emf-incquery-snapshots/</url>
+			<url>https://repo.eclipse.org/content/repositories/viatra2-snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<scm>
