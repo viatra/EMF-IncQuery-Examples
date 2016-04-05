@@ -12,13 +12,6 @@
 
 package school.tests
 
-import com.google.inject.Inject
-import org.eclipse.viatra.query.runtime.api.AdvancedViatraQueryEngine
-import org.eclipse.viatra.query.testing.core.SnapshotHelper
-import org.eclipse.viatra.query.testing.core.TestExecutor
-import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.viatra.query.runtime.api.IPatternMatch
 import org.eclipse.viatra.query.runtime.api.IQuerySpecification
 import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher
@@ -100,12 +93,5 @@ class BasicSchoolTest{
 	@Test def mfTestMoreFriendsThan() { ViatraQueryTest.test(MoreFriendsThanQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
 	@Test def mfTestTheOnesWithTheBiggestCircle() { ViatraQueryTest.test(TheOnesWithTheBiggestCircleQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }
 	@Test def mfTestFinalPattern() { ViatraQueryTest.test(FinalPatternQuerySpecification::instance).with(snapshot).with(new ReteBackendFactory).assertEquals }	
-	
-	@Test
-	def wildcardTestFinalPattern(){
-    	val sns = snapshot
-    	val engine = AdvancedViatraQueryEngine::createUnmanagedEngine(sns.EMFRootForSnapshot, true)
-    	engine.testQuery(sns, FinalPatternQuerySpecification::instance)
-	}
 	
 }

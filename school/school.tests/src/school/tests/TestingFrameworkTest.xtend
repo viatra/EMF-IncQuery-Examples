@@ -1,8 +1,5 @@
 package school.tests
 
-import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
-import org.eclipse.viatra.query.testing.snapshot.RecordRole
-import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import com.google.inject.Inject
 import org.eclipse.viatra.query.testing.core.SnapshotHelper
 import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider

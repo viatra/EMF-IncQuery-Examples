@@ -10,16 +10,10 @@
  *******************************************************************************/
 package school.tests
 
-import org.eclipse.viatra.query.testing.core.ModelLoadHelper
-import org.eclipse.viatra.query.testing.core.SnapshotHelper
-import org.eclipse.viatra.query.testing.core.TestExecutor
-import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.junit.runner.RunWith
-import com.google.inject.Inject
+import org.eclipse.viatra.query.runtime.rete.matcher.ReteBackendFactory
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
 import org.junit.Test
-import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
+import school.util.AnonymousVariablesQuerySpecification
 
 /**
  * @author Abel Hegedus

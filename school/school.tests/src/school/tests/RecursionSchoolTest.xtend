@@ -19,12 +19,6 @@ import org.eclipse.viatra.query.runtime.emf.EMFScope
 import org.eclipse.viatra.query.testing.core.ModelLoadHelper
 import org.eclipse.viatra.query.testing.core.TestExecutor
 import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
-import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
-import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
-import org.eclipse.viatra.query.runtime.emf.EMFScope
-import org.eclipse.viatra.query.testing.core.ModelLoadHelper
-import org.eclipse.viatra.query.testing.core.TestExecutor
-import org.eclipse.viatra.query.testing.core.injector.EMFPatternLanguageInjectorProvider
 import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner

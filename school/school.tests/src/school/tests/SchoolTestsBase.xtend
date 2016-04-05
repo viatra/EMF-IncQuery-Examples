@@ -15,7 +15,6 @@ package school.tests
 import com.google.inject.Inject
 import com.google.inject.Injector
 import java.util.Collections
-import org.eclipse.viatra.query.testing.core.base.CommonStaticQueryTester
 import org.eclipse.emf.common.notify.Notifier
 import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
 import org.eclipse.viatra.query.runtime.api.IQuerySpecification
