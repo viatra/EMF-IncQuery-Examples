@@ -22,7 +22,7 @@
 		<module>../school</module>
 		<module>../school.edit</module>
 		<module>../school.editor</module>
-		<module>../school.incquery</module>
+		<module>../school.query</module>
 		<module>../school.instancemodel</module>
 		<module>../school.tests</module>
 		<module>../school.base.test</module>
