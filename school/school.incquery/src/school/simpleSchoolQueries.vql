@@ -173,7 +173,7 @@ pattern courseWithPrimeWeight(C) {
 /*
    * Teacher T1 teaches more classes than teacher T2
    */
-@QueryExplorer(display = false)
+@QueryExplorer
 pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 	N == count find classesOfTeacher(T1, _SC1);
 	M == count find classesOfTeacher(T2, _SC2);
@@ -197,7 +197,7 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
     * Student S1 is friendly to student S2, i.e. they are friends in either direction
     * 
     */
-	@QueryExplorer(display = false)
+	@QueryExplorer
 	pattern friendlyTo(S1 : Student, S2 : Student) {
 		Student.friendsWith(S1, S2);
 	} or {
@@ -228,7 +228,7 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 	/*
     * Student S1 has more transitive friends than student S2
     */
-	@QueryExplorer(display = false)
+	@QueryExplorer
 	pattern moreFriendsThan(S1 : Student, S2 : Student) {
 		N == count find inTheCircleOfFriends(S1, _Sx1);
 		M == count find inTheCircleOfFriends(S2, _Sx2);
@@ -271,7 +271,7 @@ pattern teachesMoreClasses(T1 : Teacher, T2 : Teacher) {
 		find teachesTheMostCourses(T);
 	}
 
-	@QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$", display=true)
+	@QueryExplorer(message = "The busiest teacher $TName$ taught the most sociable student $SName$ in $YDate$")
 	@ObservableValue(name = "Year", expression = "YDate")
 	@ObservableValue(name = "Teacher", expression = "TName")
 	@ObservableValue(name = "Student", expression = "SName")
