@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.viatra.query.runtime.base.api.IncQueryBaseFactory;
+import org.eclipse.viatra.query.runtime.base.api.ViatraBaseFactory;
 import org.eclipse.viatra.query.runtime.base.api.TransitiveClosureHelper;
-import org.eclipse.viatra.query.runtime.base.exception.IncQueryBaseException;
+import org.eclipse.viatra.query.runtime.base.exception.ViatraBaseException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class DynamicTransitiveClosureHelperTest extends SchoolBaseDynamicParamet
 
     @Override
     @Before
-    public void init() throws IncQueryBaseException {
+    public void init() throws ViatraBaseException {
         super.init();
         if (!navigationHelper.isInWildcardMode()) {
             navigationHelper.registerObservedTypes(Collections
@@ -48,7 +48,7 @@ public class DynamicTransitiveClosureHelperTest extends SchoolBaseDynamicParamet
         }
         Set<EReference> refs = new HashSet<EReference>();
         refs.add(DynamicResourceMetamodel.eINSTANCE.StudentFriendsWithEReference);
-        transitiveClosureHelper = IncQueryBaseFactory.getInstance().createTransitiveClosureHelper(
+        transitiveClosureHelper = ViatraBaseFactory.getInstance().createTransitiveClosureHelper(
                 this.navigationHelper, refs);
         aStudent = navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
         bStudent = navigationHelper.findByAttributeValue("Gabor Bergmann").iterator().next().getEObject();

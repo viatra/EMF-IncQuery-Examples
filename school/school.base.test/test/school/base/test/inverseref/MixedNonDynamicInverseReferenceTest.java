@@ -18,7 +18,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.viatra.query.runtime.base.exception.IncQueryBaseException;
+import org.eclipse.viatra.query.runtime.base.exception.ViatraBaseException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -44,7 +44,7 @@ public class MixedNonDynamicInverseReferenceTest extends SchoolBaseDynamicParame
 		
 	@Override
 	@Before
-	public void init() throws IncQueryBaseException {
+	public void init() throws ViatraBaseException {
 		super.init();
 		year2012 =  navigationHelper.findByAttributeValue(2012).iterator().next().getEObject();
 		student = navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();

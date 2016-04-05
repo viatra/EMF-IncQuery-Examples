@@ -11,9 +11,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.viatra.query.runtime.base.api.IncQueryBaseFactory;
+import org.eclipse.viatra.query.runtime.base.api.ViatraBaseFactory;
 import org.eclipse.viatra.query.runtime.base.api.NavigationHelper;
-import org.eclipse.viatra.query.runtime.base.exception.IncQueryBaseException;
+import org.eclipse.viatra.query.runtime.base.exception.ViatraBaseException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -96,7 +96,7 @@ public abstract class SchoolBaseTest {
 	}
 	
 	@Before
-	public void init() throws IncQueryBaseException {
+	public void init() throws ViatraBaseException {
 		logger = Logger.getLogger(getClass());
 		testAppender = new AppenderSkeleton() {
 			
@@ -126,7 +126,7 @@ public abstract class SchoolBaseTest {
 			}
 		};
 		logger.addAppender(testAppender);
-		navigationHelper = IncQueryBaseFactory.getInstance().createNavigationHelper(notifier, wildcardMode, isDynamicModel, logger);
+		navigationHelper = ViatraBaseFactory.getInstance().createNavigationHelper(notifier, wildcardMode, isDynamicModel, logger);
 	}
 
 }

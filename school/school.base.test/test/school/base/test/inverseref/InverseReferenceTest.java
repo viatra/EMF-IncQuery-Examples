@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.viatra.query.runtime.base.exception.IncQueryBaseException;
+import org.eclipse.viatra.query.runtime.base.exception.ViatraBaseException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,7 +43,7 @@ public class InverseReferenceTest extends SchoolBaseParameterizedTest {
 		
 	@Override
 	@Before
-	public void init() throws IncQueryBaseException {
+	public void init() throws ViatraBaseException {
 		super.init();
 		year2012 = (Year) navigationHelper.findByAttributeValue(2012).iterator().next().getEObject();
 		student = (Student) navigationHelper.findByAttributeValue("Abel Hegedus").iterator().next().getEObject();
