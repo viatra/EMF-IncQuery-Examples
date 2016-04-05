@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eiqSnapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
+<snapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:snapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
   <matchSetRecords patternQualifiedName="school.increasingAlphabeticalFriendshipChainTC">
     <matches>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S1">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S1">
         <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.0/@students.0"/>
       </substitutions>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S2">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S2">
         <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.0/@students.0"/>
       </substitutions>
     </matches>
     <matches>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S1">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S1">
         <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.1/@students.0"/>
       </substitutions>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S2">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S2">
         <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.1/@students.0"/>
       </substitutions>
     </matches>
     <matches>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S1">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S1">
         <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.0/@students.1"/>
       </substitutions>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S2">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S2">
         <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.0/@students.0"/>
       </substitutions>
     </matches>
     <matches>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S1">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S1">
         <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.0/@students.1"/>
       </substitutions>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S2">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S2">
         <value href="../../school.instancemodel/BUTE.school#//@years.1/@schoolClasses.0/@students.0"/>
       </substitutions>
     </matches>
     <matches>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S1">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S1">
         <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.1/@students.0"/>
       </substitutions>
-      <substitutions xsi:type="eiqSnapshot:EMFSubstitution" parameterName="S2">
+      <substitutions xsi:type="snapshot:EMFSubstitution" parameterName="S2">
         <value href="../../school.instancemodel/BUTE.school#//@years.0/@schoolClasses.0/@students.0"/>
       </substitutions>
     </matches>
     <filter/>
   </matchSetRecords>
   <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
-</eiqSnapshot:QuerySnapshot>
+</snapshot:QuerySnapshot>

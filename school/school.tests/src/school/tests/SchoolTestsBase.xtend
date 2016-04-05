@@ -76,13 +76,13 @@ class SchoolTestsBase {
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
 	def queryInputVQLURI() { // Creates new resource set
-		"school.incquery/school/simpleSchoolQueries.vql"
+		"school.query/school/simpleSchoolQueries.vql"
 	}
 	
 	def Iterable<String> queryInputDependencyURIs() {Collections.emptyList}
 	
 	def snapshotURI() {
-		return "school.tests/model/tests.eiqsnapshot"
+		return "school.tests/model/tests.snapshot"
 	}
 
 

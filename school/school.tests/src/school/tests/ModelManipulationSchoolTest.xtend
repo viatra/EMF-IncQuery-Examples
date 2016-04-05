@@ -66,7 +66,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
 	
-	val snapshotpath = "school.tests/model/tests.eiqsnapshot"
+	val snapshotpath = "school.tests/model/tests.snapshot"
   
 	@Test
 	def void testModelModification(){
@@ -79,7 +79,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 				t.setName("New Teacher")
 				t.setSchool(it)
 			]).
-		with("school.tests/model/tests_manipulated.eiqsnapshot").assertEquals		
+		with("school.tests/model/tests_manipulated.snapshot").assertEquals		
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 				// change the School "Budapest University of Technology and Economics" name to "BME"
 				it.name = "BME"
 			]).
-		with("school.tests/model/tests_changeSchoolName.eiqsnapshot").assertEquals		
+		with("school.tests/model/tests_changeSchoolName.snapshot").assertEquals		
 	}
 	
 	
@@ -104,7 +104,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 				// change the Teacher "Andras Pataricza" name to "Dr. Andras Pataricza"
 				it.name = "Dr. Andras Pataricza"
 			]).
-		with("school.tests/model/tests_changeName.eiqsnapshot").assertEquals			
+		with("school.tests/model/tests_changeName.snapshot").assertEquals			
 	}
 	
 	@Test
@@ -115,7 +115,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			// MODEL MODIFICATION HERE
 			// delete the Teacher "Istvan Majzik"
 			EcoreUtil::delete(it)
-		]).with("school.tests/model/tests_deleteTeacher.eiqsnapshot").assertEquals		
+		]).with("school.tests/model/tests_deleteTeacher.snapshot").assertEquals		
 	}	
 	
 	@Test
@@ -126,7 +126,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			// MODEL MODIFICATION HERE
 			// delete the Course "Prolog programming"
 			EcoreUtil::delete(it)
-		]).with("school.tests/model/tests_deleteCourse.eiqsnapshot").assertEquals	
+		]).with("school.tests/model/tests_deleteCourse.snapshot").assertEquals	
 	}
 	
 	
@@ -142,7 +142,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			c.setSubject("System Integration")	
 			c.setWeight(30)		
 			c.setTeacher(it)
-		]).with("school.tests/model/tests_createCourse.eiqsnapshot").assertEquals			
+		]).with("school.tests/model/tests_createCourse.snapshot").assertEquals			
 	}
 	
 	@Test
@@ -168,7 +168,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					}				
 				}					
 			}					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseTeacher.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseTeacher.snapshot")
 			pm.assertMatchResults(newSns)						
 		}
 												
@@ -204,7 +204,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					}				
 				}					
 			}					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseClass.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_changeCourseClass.snapshot")
 			pm.assertMatchResults(newSns)						
 		}
 												
@@ -236,7 +236,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					}
 				}
 			}							
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudent.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudent.snapshot")
 			pm.assertMatchResults(newSns)
 		}
 	}
@@ -285,8 +285,8 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					}
 				}
 			}							
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudentWithFriend.eiqsnapshot")
-			val newSns2 = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_biggestCircleName.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createStudentWithFriend.snapshot")
+			val newSns2 = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_biggestCircleName.snapshot")
 			pm.assertMatchResults(newSns)
 			pm.assertMatchResults(newSns2)
 		}
@@ -315,7 +315,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			   }
 			}			
 						
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteYear.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteYear.snapshot")
 			pm.assertMatchResults(newSns)											
 		}				
 	}
@@ -345,7 +345,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					}																
 				}	
 			}
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteSchoolClass.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteSchoolClass.snapshot")
 			pm.assertMatchResults(newSns)				
 		}
 	}
@@ -375,7 +375,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					c.setTeacher(t)									
 				}
 			}			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_2.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_2.snapshot")
 					pm.assertMatchResults(newSns)													
 		}				
 	}
@@ -405,7 +405,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					c.setTeacher(t)									
 				}
 			}			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_43.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createCourse_43.snapshot")
 					pm.assertMatchResults(newSns)													
 		}				
 	}
@@ -430,7 +430,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 	        		iterator.remove();
 			}	
 			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacherVarro.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacherVarro.snapshot")
 			pm.assertMatchResults(newSns)				
 						
 		}
@@ -450,7 +450,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		Assert::assertNotNull(s)
 		if (s!=null) {	
 			s.years.clear					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllYear.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllYear.snapshot")
 			pm.assertMatchResults(newSns)								
 		}				
 	}
@@ -468,7 +468,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 		Assert::assertNotNull(s)
 		if (s!=null) {	
 			s.teachers.clear					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllTeacher.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllTeacher.snapshot")
 			pm.assertMatchResults(newSns)								
 		}				
 	}
@@ -491,7 +491,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 					y.schoolClasses.clear													
 			    }
 			}					
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllClass.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteAllClass.snapshot")
 			pm.assertMatchResults(newSns)								
 		}				
 	}
@@ -553,7 +553,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 			
 			student.setName("Istvan Szabo")
 											
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createYearClassStudentFriends.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createYearClassStudentFriends.snapshot")
 			pm.assertMatchResults(newSns)								
 		}				
 	}
@@ -577,7 +577,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
 				}
 			}	
 			
-			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacherCourse.eiqsnapshot")
+			val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_deleteTeacherCourse.snapshot")
 			pm.assertMatchResults(newSns)				
 						
 		}
@@ -600,7 +600,7 @@ class ModelManipulationSchoolTest extends SchoolTestsBase {
       val c = SchoolFactory::eINSTANCE.createSpecialisationCourse
       c.setSubject("Visitor theory")
       c.setSchool(s)
-      val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createSpecCourse.eiqsnapshot")
+      val newSns = sns.eResource.resourceSet.loadExpectedResultsFromUri("school.tests/model/tests_createSpecCourse.snapshot")
           pm.assertMatchResults(newSns)                         
     }       
   }	

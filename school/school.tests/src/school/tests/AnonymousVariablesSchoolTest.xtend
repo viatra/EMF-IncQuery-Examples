@@ -24,6 +24,6 @@ class AnonymousVariablesSchoolTest {
   @Test
   def void anonymousVariablesTest(){
   	ViatraQueryTest.test(AnonymousVariablesQuerySpecification.instance).
-  	with("school.tests/model/tests_anonymous_ref.eiqsnapshot").with(new ReteBackendFactory).assertEquals
+  	with("school.tests/model/tests_anonymous_ref.snapshot").with(new ReteBackendFactory).assertEquals
   }
 }

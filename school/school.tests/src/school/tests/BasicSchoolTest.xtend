@@ -45,14 +45,14 @@ import school.util.TheOnesWithTheBiggestCircleQuerySpecification
  */
 class BasicSchoolTest{
 	
-	val snapshot = "school.tests/model/tests.eiqsnapshot"
+	val snapshot = "school.tests/model/tests.snapshot"
 	
 	// parse pattern from URI, load expected from URI, assertMatchResults, CORRECT
 	@Test
 	def testAllQueries(){
 		SimpleSchoolQueries.instance.specifications.forEach[
 			ViatraQueryTest.test(it as IQuerySpecification<ViatraQueryMatcher<IPatternMatch>>)
-				.with(snapshot).with(new ReteBackendFactory).assertEquals
+				.with(snapshot).with(new ReteBackendFactory).assumeInputs.assertEquals
 		]
 	}
 			

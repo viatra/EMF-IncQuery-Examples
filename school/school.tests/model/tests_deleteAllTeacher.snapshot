@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eiqSnapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eiqSnapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
+<snapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:snapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
   <matchSetRecords patternQualifiedName="school.teacherWithoutClassNames">
     <filter/>
   </matchSetRecords>
   <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
-</eiqSnapshot:QuerySnapshot>
+</snapshot:QuerySnapshot>

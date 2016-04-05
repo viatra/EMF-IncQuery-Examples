@@ -42,14 +42,14 @@ class APISchoolTest {
 	@Inject Injector injector
 
 	def snapshot() {
-    val _snapshotURI = "school.tests/model/tests.eiqsnapshot";
+    val _snapshotURI = "school.tests/model/tests.snapshot";
     val _loadExpectedResultsFromUri = this._modelLoadHelper.loadExpectedResultsFromUri(_snapshotURI);
     return (_loadExpectedResultsFromUri as QuerySnapshot);
   }
   
   def queryInput() {
-    val _queryInputVQLURI = "school.incquery/school/simpleSchoolQueries.vql";
-    val _loadPatternModelFromUri = this._modelLoadHelper.loadPatternModelFromUri(_queryInputVQLURI, this.injector, null);
+    val _queryInputVQLURI = "school.query/school/simpleSchoolQueries.vql";
+    val _loadPatternModelFromUri = this._modelLoadHelper.loadPatternModelFromUri(_queryInputVQLURI, this.injector, #[]);
     return (_loadPatternModelFromUri as PatternModel);
   }
 

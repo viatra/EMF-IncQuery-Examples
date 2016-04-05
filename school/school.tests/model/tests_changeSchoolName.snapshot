@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<snapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:snapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="school.schoolsNames">
+    <matches>
+      <substitutions xsi:type="snapshot:StringSubstitution" parameterName="SchName" value="BME"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
+</snapshot:QuerySnapshot>

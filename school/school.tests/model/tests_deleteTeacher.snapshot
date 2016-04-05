@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<snapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:snapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
+  <matchSetRecords patternQualifiedName="school.teachersNames">
+    <matches>
+      <substitutions xsi:type="snapshot:StringSubstitution" parameterName="TN" value="Peter Szeredi"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="snapshot:StringSubstitution" parameterName="TN" value="Andras Pataricza"/>
+    </matches>
+    <matches>
+      <substitutions xsi:type="snapshot:StringSubstitution" parameterName="TN" value="Daniel Varro"/>
+    </matches>
+    <filter/>
+  </matchSetRecords>
+  <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
+</snapshot:QuerySnapshot>

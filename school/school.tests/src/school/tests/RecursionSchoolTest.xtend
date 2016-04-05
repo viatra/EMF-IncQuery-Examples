@@ -44,22 +44,22 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	@Inject extension ModelLoadHelper
   
 	override queryInputVQLURI() {
-		"school.incquery/school/recursiveQueries.vql"
+		"school.query/school/recursiveQueries.vql"
 	}
 	override queryInputDependencyURIs() {
-		Collections.singletonList("school.incquery/school/simpleSchoolQueries.eiq")
+		#["school.query/school/simpleSchoolQueries.vql"]
 	}
   
   	@Test
 	def staticRecursionTest(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainRec.eiqsnapshot") as QuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainRec.snapshot") as QuerySnapshot
 		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
     
   	@Test
 	def staticTCTest(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as QuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.snapshot") as QuerySnapshot
 		val pm = queryInput
 		pm.assertMatchResults(sns)
     }
@@ -67,16 +67,16 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	@Test
 	def createFriendshipTC(){
 		createFriendshipTest(
-			"school.tests/model/tests_recursion_chainTC.eiqsnapshot", 
-			"school.tests/model/tests_recursion_friendshipAdded_chainTC.eiqsnapshot"
+			"school.tests/model/tests_recursion_chainTC.snapshot", 
+			"school.tests/model/tests_recursion_friendshipAdded_chainTC.snapshot"
 		)
 	}
 	
 	@Test
 	def createFriendshipRecursion(){
 		createFriendshipTest(
-			"school.tests/model/tests_recursion_chainRec.eiqsnapshot", 
-			"school.tests/model/tests_recursion_friendshipAdded_chainRec.eiqsnapshot"
+			"school.tests/model/tests_recursion_chainRec.snapshot", 
+			"school.tests/model/tests_recursion_friendshipAdded_chainRec.snapshot"
 		)
 	}
 	
@@ -110,7 +110,7 @@ class RecursionSchoolTest extends SchoolTestsBase {
 	
 	@Test
 	def crazyRecursiveQueryCompiles(){
-		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.eiqsnapshot") as QuerySnapshot
+		val sns = loadExpectedResultsFromUri("school.tests/model/tests_recursion_chainTC.snapshot") as QuerySnapshot
 		val pm = queryInput
 		val engine = ViatraQueryEngine::on(new EMFScope(sns.getModelRoots().get(0)));
 		val matcher = pm.initializeMatcherFromModel(engine,"school.friendOfClassMember")
