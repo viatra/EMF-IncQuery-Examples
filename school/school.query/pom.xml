@@ -37,8 +37,8 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>examples.school</groupId>
-				<artifactId>incquery-maven-plugin</artifactId>
+				<groupId>org.eclipse.viatra</groupId>
+				<artifactId>viatra-maven-plugin</artifactId>
 				<version>${project.version}</version>
 				<executions>
 					<execution>
