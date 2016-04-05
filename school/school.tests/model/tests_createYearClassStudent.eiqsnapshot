@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eiqSnapshot:IncQuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/incquery/snapshot" inputSpecification="ResourceSet">
+<eiqSnapshot:QuerySnapshot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eiqSnapshot="http://www.eclipse.org/viatra/query/snapshot" inputSpecification="ResourceSet">
   <matchSetRecords patternQualifiedName="school.classesOfSchoolCode">
     <matches>
       <substitutions xsi:type="eiqSnapshot:MiscellaneousSubstitution" parameterName="Code" value="ACED0005737200136A6176612E6C616E672E436861726163746572348B47D96B1A267802000143000576616C756578700057"/>
@@ -21,4 +21,4 @@
   <modelRoots href="../../school.instancemodel/BUTE.school#/"/>
   <modelRoots href="tests_deleteAllTeacher.eiqsnapshot#/"/>
   <modelRoots href="tests_deleteAllClass.eiqsnapshot#/"/>
-</eiqSnapshot:IncQuerySnapshot>
+</eiqSnapshot:QuerySnapshot>

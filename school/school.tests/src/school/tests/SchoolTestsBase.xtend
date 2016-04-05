@@ -16,6 +16,18 @@ import com.google.inject.Inject
 import com.google.inject.Injector
 import java.util.Collections
 import org.eclipse.viatra.query.testing.core.base.CommonStaticQueryTester
+import org.eclipse.emf.common.notify.Notifier
+import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra.query.runtime.api.IQuerySpecification
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
+import org.eclipse.viatra.query.runtime.api.ViatraQueryMatcher
+import org.eclipse.viatra.query.runtime.emf.EMFScope
+import org.eclipse.viatra.query.testing.core.ModelLoadHelper
+import org.eclipse.viatra.query.testing.core.SnapshotHelper
+import org.eclipse.viatra.query.testing.core.TestExecutor
+import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
+
+import static org.junit.Assert.*
 
 /**
  * Base class for IncQuery tests concerning the school example.
@@ -23,19 +35,54 @@ import org.eclipse.viatra.query.testing.core.base.CommonStaticQueryTester
  * @author Istvan Rath
  */
 
-class SchoolTestsBase extends CommonStaticQueryTester {
+class SchoolTestsBase {
 
+	@Inject extension ModelLoadHelper
+	@Inject extension TestExecutor
+	@Inject extension SnapshotHelper
 	@Inject var Injector injector
+
+	def testQuery(String queryFQN){
+		val sns = snapshot
+		val engine = getEngine(sns.EMFRootForSnapshot)
+		val ViatraQueryMatcher matcher = queryInput.initializeMatcherFromModel(engine, queryFQN)
+		val results = matcher.compareResultSets(sns.getMatchSetRecordForPattern(queryFQN))
+		assertArrayEquals(results.logDifference,newHashSet,results)
+	}
+
+	def testQuery(IQuerySpecification queryMF){
+		val sns = snapshot
+		val engine = getEngine(sns.EMFRootForSnapshot)
+		testQuery(engine, sns, queryMF)
+	}
+
+	def testQuery(ViatraQueryEngine engine, QuerySnapshot sns, IQuerySpecification queryMF){
+		val ViatraQueryMatcher matcher = engine.getMatcher(queryMF)
+		val results = matcher.compareResultSets(sns.getMatchSetRecordForPattern(queryMF.fullyQualifiedName))
+		assertArrayEquals(results.logDifference,newHashSet,results)
+	}
+
+	def getEngine(Notifier root) {
+		return ViatraQueryEngine::on(new EMFScope(root))
+	}
+
+	def snapshot() { // Creates new resource set
+		return snapshotURI.loadExpectedResultsFromUri as QuerySnapshot
+	}
+	def queryInput() { // Creates new resource set
+		return queryInputVQLURI.loadPatternModelFromUri(injector, queryInputDependencyURIs) as PatternModel
+	}
 
 	/*
 	 * Use the XMI-serialized version of the school queries for this test set
 	 */
-	override queryInputEIQURI() { // Creates new resource set
-		"school.incquery/school/simpleSchoolQueries.eiq"
+	def queryInputVQLURI() { // Creates new resource set
+		"school.incquery/school/simpleSchoolQueries.vql"
 	}
 	
-	override queryInputDependencyURIs() {Collections.emptyList}
-	override snapshotURI() {
+	def Iterable<String> queryInputDependencyURIs() {Collections.emptyList}
+	
+	def snapshotURI() {
 		return "school.tests/model/tests.eiqsnapshot"
 	}
 

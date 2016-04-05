@@ -25,22 +25,11 @@ import org.eclipse.viatra.query.testing.snapshot.IncQuerySnapshot
  * @author Abel Hegedus
  *
  */
- @RunWith(typeof(XtextRunner))
-@InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class AnonymousVariablesSchoolTest extends SchoolTestsBase {
-  
-  @Inject extension TestExecutor
-  @Inject extension ModelLoadHelper
-  @Inject extension SnapshotHelper
-  
-  override queryInputEIQURI() {
-    "school.incquery/school/unnamedVariables.eiq"
-  }
+class AnonymousVariablesSchoolTest {
 
   @Test
-  def anonymousVariablesTest(){
-    val sns = loadExpectedResultsFromUri("school.tests/model/tests_anonymous_ref.eiqsnapshot") as IncQuerySnapshot
-    val pm = queryInput
-    pm.assertMatchResults(sns)
+  def void anonymousVariablesTest(){
+  	ViatraQueryTest.test(AnonymousVariablesQuerySpecification.instance).
+  	with("school.tests/model/tests_anonymous_ref.eiqsnapshot").with(new ReteBackendFactory).assertEquals
   }
 }

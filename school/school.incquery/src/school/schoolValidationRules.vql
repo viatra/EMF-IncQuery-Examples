@@ -1,0 +1,16 @@
+package school
+
+import "http://school.ecore"
+
+
+@QueryExplorer
+pattern CourseWithTeacher(C : Course) = {Course.teacher(C,_T);}
+
+@Constraint(
+	location = C, 
+	message = "$C.subject$ does not have a teacher",
+	severity = "warning"
+)
+pattern CourseWithoutTeacher(C : Course) = {
+	neg find CourseWithTeacher(C);
+}

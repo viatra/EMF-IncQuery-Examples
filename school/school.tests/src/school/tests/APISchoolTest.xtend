@@ -21,6 +21,12 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import school.ClassesOfTeacherMatcher
 import school.util.ClassesOfTeacherQuerySpecification
+import org.eclipse.viatra.query.testing.core.api.ViatraQueryTest
+import org.eclipse.viatra.query.patternlanguage.emf.eMFPatternLanguage.PatternModel
+import org.eclipse.viatra.query.testing.snapshot.QuerySnapshot
+import com.google.inject.Injector
+import org.eclipse.viatra.query.runtime.emf.EMFScope
+import org.eclipse.viatra.query.runtime.api.ViatraQueryEngine
 
 /**
  * API test set for testing IncQuery with the school example.
@@ -30,9 +36,22 @@ import school.util.ClassesOfTeacherQuerySpecification
  */
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EMFPatternLanguageInjectorProvider))
-class APISchoolTest extends SchoolTestsBase {
+class APISchoolTest {
 	@Inject extension ModelLoadHelper
 	@Inject extension SnapshotHelper
+	@Inject Injector injector
+
+	def snapshot() {
+    val _snapshotURI = "school.tests/model/tests.eiqsnapshot";
+    val _loadExpectedResultsFromUri = this._modelLoadHelper.loadExpectedResultsFromUri(_snapshotURI);
+    return (_loadExpectedResultsFromUri as QuerySnapshot);
+  }
+  
+  def queryInput() {
+    val _queryInputVQLURI = "school.incquery/school/simpleSchoolQueries.vql";
+    val _loadPatternModelFromUri = this._modelLoadHelper.loadPatternModelFromUri(_queryInputVQLURI, this.injector, null);
+    return (_loadPatternModelFromUri as PatternModel);
+  }
 
 	@Test()
 	def resultMatchImmutableGeneric(){
@@ -128,7 +147,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def resultMatchImmutableGenerated(){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 		val match = matcher.oneArbitraryMatch
 		Assert::assertNotNull(match)
 		Assert::assertEquals(match.specification,matcher.specification)
@@ -144,7 +163,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def matchToArrayGenerated(){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 		val sampleMatch = matcher.oneArbitraryMatch
 		Assert::assertNotNull(sampleMatch)
 		
@@ -159,7 +178,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def newMatchImmutableGenerated(){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 		val sampleMatch = matcher.oneArbitraryMatch
 		Assert::assertNotNull(sampleMatch)
 		
@@ -178,7 +197,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def newMatchMutableGenerated(){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 
 		val match = matcher.newEmptyMatch()
 		Assert::assertNotNull(match)
@@ -211,7 +230,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def void immutableModification1ExpectedExceptionGenerated (){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 		val match = matcher.newMatch(null, null)
 		Assert::assertNotNull(match)
 		match.set(0,null);
@@ -220,7 +239,7 @@ class APISchoolTest extends SchoolTestsBase {
 	def void immutableModification2ExpectedExceptionGenerated (){
 		val sns = snapshot
 		
-		val matcher = new ClassesOfTeacherMatcher(sns.EMFRootForSnapshot)
+		val matcher = ClassesOfTeacherMatcher.on(ViatraQueryEngine.on(new EMFScope(sns.EMFRootForSnapshot)))
 		val match = matcher.newMatch(null, null)
 		Assert::assertNotNull(match)
 		match.SC = null;
