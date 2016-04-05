@@ -16,7 +16,7 @@
 	<properties>
 		<jacoco.targetdir>${project.basedir}/../target</jacoco.targetdir>
 		<sonar.surefire.reportsPath>../target/surefire-reports/</sonar.surefire.reportsPath>
-		<incquery.p2.repository>https://hudson.eclipse.org/incquery/job/incquery-master/lastSuccessfulBuild/artifact/update-site/</incquery.p2.repository>
+		<viatra.p2.repository>https://hudson.eclipse.org/viatra/job/viatra-master/lastSuccessfulBuild/artifact/releng/org.eclipse.viatra.update/target/repository/</viatra.p2.repository>
 	</properties>
 	<modules>
 		<module>../school</module>
@@ -52,9 +52,9 @@
 	</build>
 	<repositories>
 		<repository>
-			<id>incquery-repository</id>
+			<id>viatra-p2-repository</id>
 			<layout>p2</layout>
-			<url>${incquery.p2.repository}</url>
+			<url>${viatra.p2.repository}</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
