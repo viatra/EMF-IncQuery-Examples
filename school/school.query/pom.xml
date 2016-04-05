@@ -9,7 +9,7 @@
 		<version>1.2.0-SNAPSHOT</version>
 		<relativePath>../school.tests.parent/pom.xml</relativePath>
 	</parent>
-	<artifactId>school.incquery</artifactId>
+	<artifactId>school.query</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<build>
 		<plugins>
