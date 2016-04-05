@@ -56,6 +56,13 @@
 			<layout>p2</layout>
 			<url>${viatra.p2.repository}</url>
 		</repository>
+		<repository>
+			<id>viatra-snapshots</id>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>https://repo.eclipse.org/content/repositories/viatra2-snapshots/</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
