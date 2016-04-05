@@ -55,7 +55,7 @@ public class MixedNonDynamicInverseReferenceTest extends SchoolBaseDynamicParame
 	 */
 	@Test
 	public void valueAndReferenceTest() {		
-		expectLogMessage("EMF-IncQuery encountered an error in processing the EMF model. This happened while trying to process new metamodel elements.");
+		expectLogMessage("VIATRA Query encountered an error in processing the EMF model. This happened while trying to process new metamodel elements.");
 		Collection<EObject> result = navigationHelper.getInverseReferences(year2012, SchoolPackage.eINSTANCE.getSchool_Years());
 		assertEquals(0, result.size()); // because different EPackage instance
 	}
